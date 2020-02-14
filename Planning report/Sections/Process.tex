@@ -1,4 +1,5 @@
 \section{Process}
+\begin{comment}
 \textcolor{red}{
 Hur gruppen har tänkt sig att genomföra arbetet är val av metod. I konstruktionsinriktade projekt kan detta tyckas vara självklart, men det kan även i detta fall finnas viktiga metodval. Helt litteraturbaserade kandidatarbeten är också genomförbara men även en litteraturstudie ska ha en ordnad och strukturerad arbetsprocess och metodik.
 \\\\
@@ -17,9 +18,27 @@ Metodavsnittet bör också beskriva hur data ska samlas in och hur det konstater
     \item Programmeringsspråk: C\#
 \end{itemize}
 }
+\end{comment}
 
-As the project requires a good understanding of the concept of PCG and its varied implementations, an initial objective is to find and study material pertaining to the subject. This includes commonly used algorithms and how they were implemented in games and other generators. These would then be evaluated for the purpose of generating isometric city environments.
+As the project requires a good understanding of the concept of PCG and its varied implementations, an initial objective is to find and study material on the subject. This includes commonly used algorithms and how they were implemented in games and other generators. These will then be evaluated to generate realistic city environments. The best candidates for different parts of the generator (e.g., terrain, roads, buildings) will be chosen and then work on the implementation can begin. Finer details such as intersection handling for roads and other potential problems would have algorithm-dependent solutions and would have to be handled further on in the project.
 
-An early candidate for generating road networks was L-systems, due to their branching nature. L-systems are typically used to generate vegetation and were introduced to model natural structures, but have also seen use in city generation algorithms.~\cite{yoav-pascal} Another possible method to explore is Voronoi diagrams, which has many application areas but could be used for determining the position of the roads.
+\subsection{Development tools and methodology}
 
-The main tools to use for the project were decided on early; the generator would be built using Unity since the main focus of the project are the PCG algorithms and not the development of a game engine. As a result of this, the code will be written in C\# due to its close connection to Unity and the fact that it's a language all individuals in the group had experience with. For structuring the objectives and sub goals of the implementation, the Scrum model was chosen due to previous good experiences with it.
+The main tools for the project were decided early on. The generator is to be built using Unity since the main focus of the project is the PCG algorithms and not the development of a game engine. As a result of this, the code will be written in C\# because of its close connection to Unity and that it is a language all group members had experience with. Blender will be used to create any 3D assets that will not be created with PCG.
+
+For structuring the objectives and sub-goals of the implementation, the project will follow the Scrum methodology due to its suitability for iterative processes and previous experiences with it. It was deemed appropriate to develop in an agile way to prevent the development from getting stuck and having to redo everything from scratch (the waterfall model can result in such scenarios).
+
+\subsection{PCG Algorithms}
+For generating terrain features such as heights, the most common and simple approach is to use Perlin noise to generate a 2D matrix containing values ranging from 0.0 to 1.0. This can then be used to determine the different heights of the terrain through displacement mapping. The issue with this method is that every location is independent from the others, which might make it feel like there is not enough uniqueness for a game environment. Multiple noise maps, controlling different aspects of the terrain, can however be used together to create, for example, overhangs and caves, thus making the terrain more interesting.
+
+An early candidate for generating road networks was L-systems, due to their branching nature. L-systems are a special case of generative grammars and are typically used to generate vegetation. They were introduced to model natural structures, but have also been used in city generation algorithms \cite{yoav-pascal}. Grammars are a set of symbols with rewrite rules that replace each symbol in the string with whatever symbols that rule dictates. The rewrite process may be stochastic or deterministic; rules in a stochastic L-system would decide randomly which valid replacement should occur, while deterministic ones produce a recognizable pattern. An L-system rewrites the symbols in a given string in parallel each iteration. 
+
+Further, an L-system may associate parameters with rewrite rules, to modify certain properties of the result\cite{graphical_l-systems}. This could perhaps be applied to length of streets and other relevant parts of the scene.
+
+Another possible method to explore is Voronoi diagrams, which has many application areas and could be used for determining the position of the roads.
+
+%dela upp tillgängliga metoder och hur de används
+
+
+
+%skriva med om att vi bytt från isometric till 3D, varför? 

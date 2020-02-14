@@ -7,7 +7,6 @@
 \usepackage[letterspace=150]{microtype}
 \usepackage{color}
 \usepackage{lipsum,mathtools}
-\usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -28,9 +27,11 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[export]{adjustbox}
-\usepackage{biblatex}
+\usepackage[style=ieee]{biblatex}
 \usepackage{url}
 \usepackage{csquotes}
+\usepackage{comment}
+\usepackage{fancyhdr}
 
 % ---- Inställningar ----
 \setlength{\parskip}{1em}   % whitespace between paragraphs
@@ -38,10 +39,14 @@
 \numberwithin{equation}{section}
 \newcommand\tab[1][0.5cm]{\hspace*{#1}}
 \addbibresource{references.bib}
+\lhead
+\rhead
+
+\newcommand{\nodate}{n\adddot d\adddot}
+\AtEveryCitekey{\iffieldundef{labelyear}{\restorefield{labelyear}{\nodate}}{}}
+\AtEveryBibitem{\iffieldundef{labelyear}{\restorefield{year}{\nodate}}{}}
 
 % ---- Färger ---
 \definecolor{light-gray}{gray}{0.40}
 \definecolor{mygreen}{RGB}{28,172,0}
 \definecolor{mylilas}{RGB}{170,55,241}
-\lhead
-\rhead

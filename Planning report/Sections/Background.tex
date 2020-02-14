@@ -1,4 +1,5 @@
 \section{Background}
+\begin{comment}
 \textcolor{red}{
 Bakgrund ska innehålla en motivering till varför det valda ämnet är intressant ur akademisk synvinkel och/eller ur tekniskt perspektiv eller i förekommande fall ur kundens/uppdragsgivarens perspektiv. I vissa fall ska den här rubriken inkludera en kort historik över ämnet. Efter att ha läst bakgrunden ska alla läsare förstå varför ämnet är relevant. Följande frågeställningar bör vara aktuella:
 \begin{itemize}
@@ -8,33 +9,45 @@ Bakgrund ska innehålla en motivering till varför det valda ämnet är intressa
     \item Kan det specifika ämnet/problemet relateras till en mer generell diskussion?
 \end{itemize}
 }
+\end{comment}
 
-%TODO: More references
+Improvements in computational power has resulted in graphical applications containing more detail and realism. One way to provide this is through the use of Procedural Content Generation (PCG) which can be defined as ''the algorithmic creation of game content with limited or indirect user input'' \cite[p. 1]{shaker2016procedural}. This means that PCG can be used to either create content fully automatically or with a low degree of human assistance.
 
-Improvements in computational power has resulted in graphical applications containing more detail and realism. One way to provide this is through the use of Procedural Content Generation (PCG) which can be defined as ''the algorithmic creation of game content with limited or indirect user input'' \cite[p. 1]{shaker2016procedural}.
-\\\\
+\subsection{Why Procedural Content Generation is useful}
+
 There are several arguments for using PCG, four of which are \cite[pp. 141-142]{search-based_pcg}:
 \begin{enumerate}
     \item PCG is memory efficient since content only has to be generated when it is needed.
     \item Using PCG is relatively effortless in terms of development time and expenses.
     \item PCG has a potential for being used to generate whole games of new kinds and with unlimited replayability.
-    \item PCG be used as a tool to make us humans think ''out of the box'' since it can provide us with content we probably would not have come up with on our own.
+    \item PCG can be used as a tool to make us humans think ''out of the box'' since it can provide us with content we probably would not have come up with on our own.
 \end{enumerate}
 
-Another reason for game developers to use PCG methods is that the algorithms are capable of creating vast amounts of game assets at a faster rate than 3D-artists. The result of this is a potential cost reduction because you don't need an entire team working on certain aspects of the game.
+ 
+Another reason for game developers to use PCG methods is that the algorithms are capable of creating vast amounts of game assets at a faster rate than 3D-artists. This will result in a potential cost reduction for the production as entire teams won't be needed to work on this particular aspect of the game. On top of this, the algorithms can be designed in a way that the world is generated in real-time, creating an endless world for the player to explore. However, special care must be taken when writing PCG algorithms to create a visually interesting and diverse world that does not break gameplay.
 
-On top of this, the algorithms can be designed in such a way that the world is generated in real time, creating an endless world for the player to explore. However, special care must be taken when writing PCG algorithms to create a visually interesting and diverse world which does not break gameplay.
 
-It is important to note that PCG is also used in industries other than game development. Two examples of this is SpeedTree~\cite{SpeedTree}, a tool for generating virtual foilage that is used by architects and animators and Esri CityEngine~\cite{CityEngine}, a modeling software for creating immersive urban environments based on geographical data.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PCG may also be used as a complementary tool for worlds built manually. When utilized in this fashion, PCG does not generate new assets, but rather hides and reveals existing ones on demand. This is a necessary tool in games with larger worlds. In such worlds, objects need to be viewed at differing levels of detail, depending on distance to the player. When far away, many objects fit on the player's screen. Rendering them all in full detail can be detrimental to performance, and also unnecessary because of restraints on screen resolution. With the help of PCG, smaller assets can be hidden when viewed from a great distance, and the detail of larger ones can be downscaled. \cite[p. 57]{shaker2016procedural}
 
-Primarily, PCG is used to generate assets of graphics in video games, typically in the form of game worlds and terrain. Though often the reason for doing this algorithmically as opposed to manually is to reduce development costs, PCG may also be used in video games as a feature. A certain genre of video games, called \textit{Roguelikes} uses PCG particularly to enhance the gaming experience. By using implementations that can perform PCG in real time, game levels can be generated on the fly. This way, players never experience the same level twice, and have an endless stream of new content to enjoy.
-\\\\
-A few examples of games using PCG are \textit{Diablo} for generating maps, \textit{Spore} for creature animations and \textit{Minecraft} for landscapes and caves \cite[p. 4]{shaker2016procedural}. Perhaps the greatest example of a game utilizing PCG is \textit{No Man's Sky}, which procedurally generates everything from vegetation and creatures to landscapes and planets and thus creates a virtually endless universe for its players to explore \cite{MIT_No_Mans_Sky}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+It is important to note that PCG is also used in industries other than game development. Two examples of this are SpeedTree~\cite{SpeedTree}, a tool for generating virtual foilage that is used by architects and animators and Esri CityEngine~\cite{CityEngine}, modeling software for creating immersive urban environments based on geographical data.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------- examples of games ----
+
+\subsection{Examples of games utilizing PCG}
+
+A few examples of games using PCG are \textit{Diablo} for generating maps, \textit{Spore} for creature animations and \textit{Minecraft} for landscapes and caves \cite[p. 5]{shaker2016procedural}. Perhaps the greatest example of a game utilizing PCG is \textit{No Man's Sky}, which procedurally generates everything from vegetation and creatures to landscapes and planets and thus creates a virtually endless and unique universe for its players to explore \cite{MIT_No_Mans_Sky}.
 
 As of May 2019 and after 10 years of its official release, \textit{Minecraft} has sold over 176 million copies \cite{Minecraft_10ys}. It is a valid theory that the random generation of worlds using PCG has something to do with the game's overwhelming success.
-\\\\
-PCG may also be used as a complementary tool for worlds built manually. When utilized in this fashion, PCG does not generate new assets, but rather hides and reveals existing ones on demand. This is a necessary tool in games with large worlds. In those worlds, objects need to be viewed at differing levels of detail, depending on the player's distance from them. When far away, many objects fit on the player's screen. Displaying them all in full detail can be detrimental to performance, and also unnecessary because of restraints on screen resolution. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ------------------ cities----------------
+
+\subsection{Using PCG to create cities} %trovärdigt
+When creating a city using PCG in games, 1it is fundamental to make it functional and realistic city for the developers to use in their games. A realistic city could suit more developers and productions due to its simplicity and recognition and can easily be changed into its final desired city. This can be done by studying urbanization of a larger city and its developments when its populations are increased, this is called Large-scale Urban Development(LUD) \cite{UrbanCity}. LUDs are a way to make sure that a growing population has housing and its housing is developed with the environment in mind. Buildings built today are now taller than before, so each new building can house more people on the same square meters of the ground as before \cite{UrbanCity}. A city is not only housing for the population, but a city is also made whole by using architecture to form the surroundings, such as culture, parks, roads, public transportation, policies, hospitals and styles of its buildings \cite{CityArchitecture}. 
+
+% skriva mer om grids och cul de sac 
+
+% mer om spelen, hur pcg används

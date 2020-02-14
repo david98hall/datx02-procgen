@@ -1,21 +1,61 @@
-\input{preamble.tex}
+\documentclass[a4paper,11pt]{article}
+
+% ---- Paket ----
+\usepackage[format=plain,font=normal]{caption}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[letterspace=150]{microtype}
+\usepackage{color}
+\usepackage{lipsum,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+
+% För figurer och subfigurer
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\usepackage{changepage}
+\usepackage{placeins}
+\usepackage{parskip}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{blindtext}
+\usepackage{scrextend}
+\usepackage[normalem]{ulem}
+\usepackage{float}
+\useunder{\uline}{\ul}{}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[export]{adjustbox}
+\usepackage[style=ieee]{biblatex}
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage{dirtytalk}
+\usepackage{comment}
+\usepackage{fancyhdr}
+
+% ---- Inställningar ----
+\setlength{\parskip}{1em}   % whitespace between paragraphs
+\setlength{\parindent}{0em} % no indentation in new paragraphs
+\numberwithin{equation}{section}
+\newcommand\tab[1][0.5cm]{\hspace*{#1}}
+\addbibresource{references.bib}
+\graphicspath{{images/}}
+\lhead
+\rhead
+\pagestyle{fancyplain}
+
+% ---- Färger ---
+\definecolor{light-gray}{gray}{0.40}
+\definecolor{mygreen}{RGB}{28,172,0}
+\definecolor{mylilas}{RGB}{170,55,241}
 
 \begin{document}
-\input{Planning report/Sections/Titlepage}
-\tableofcontents
-\newpage
-\pagestyle{fancyplain}
-\input{Planning report/Sections/Background}
-\input{Planning report/Sections/Purpose}
-\input{Planning report/Sections/Goal}
-\input{Planning report/Sections/Delimitations}
-\input{Planning report/Sections/Process}
-\input{Planning report/Sections/Ethics}
-\input{Planning report/Sections/Timetable}
-%\input{Planning report/Sections/Budget}
-\newpage
-\section{References}
-\printbibliography[heading=none]
+\input{Planning report/Sections2/Document}
 \end{document}
 
 % ---- Föreläsning om planeringsrapport ---
