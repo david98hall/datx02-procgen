@@ -1,22 +1,10 @@
 \section{Delimitations}
-\begin{comment}
-\textcolor{red}{
-Avgränsningarna ska ta upp vilka delar av problemet som inte tas upp i uppsatsen/rapporten, och anledningen till detta. Motivering av avgränsningarna är viktigt.
-}
-\textcolor{blue}{
-\textbf{Vad ska vi inte inkludera?}
-\begin{itemize}
-    \item Vi gör inget spel, utan ett verktyg för spel. Eftersom vi planerar att utveckla ett verktyg är inte gameplay del av vårt scope.
-    
-    \item Staden ska inte vara funktionell, utan helt estetisk. Anledningen till detta är tidsbegränsningar och att spelutvecklare ska kunna lägga till sina egna funktioner till det spel de utvecklar med hjälp av vårt verktyg för stadsgenerering.
-    
-    \item Visual fidelity is not a priority; focus will be on developing the algorithm rather than drawing art assets. 
-\end{itemize}
-}
-\end{comment}
+\label{section:delimitations}
 
-To better fulfill the purpose of utilizing procedural content generation as a tool for creating custom worlds in games, this study is solely focused on developing a platform for game development and not on creating actual gameplay. The user will only be able to use the tools and PCG algorithms provided by the platform to generate the layout and contents of the world. However, because the world is generated in Unity, the developer can choose to add their own assets to their world with the tools provided in Unity and use the generated content as a base.
+To better utilize procedural content generation as a tool for creating custom worlds in games, this study is solely focused on developing a tool for game development and not on creating actual gameplay. The user will only be able to use it to generate the layout and contents of the world.
 
-Generated content is mainly based on realistic aesthetics and not on functionality. Cities, for instance, will only be generated to look realistic but will lack the behaviour of realistic cities. That is, the tool can be used to generate a realistic looking city, but cannot, for instance, generate realistically working sewage systems or crowds behaving like real people. The decision of leaving realistic behaviors outside of the scope of the study is mainly due to its time constraints. This also allows the users of the tool to implement more sophisticated behavioral models to their own use cases of the generated world.
+The tool will be developed to allow developers to use it for developing most types of games. As of now, it will not be focused on specific game genres, to give the tool a wide range of use cases. This may however change further on, due to the time constraints of the project and possible constraints of the PCG algorithms.
 
-Visual fidelity is not a priority for the generated content. The focus of the study is instead more on developing the algorithms for procedural content generation of the major components cities in realistic worlds rather than drawing sophisticated art assets.
+The generated content will mainly be based on credible aesthetics and not on realistic functionality. Cities, for instance, will be generated to have realistic appearance, but will lack behaviors of a real life city such as working freeways, subways and sewage systems. They will also not be realistically accurate of how real cities were built and grew larger. To focus on credibility rather than realism is mainly due to the time constraints of this project. To accurately mimic reality would require a lot of time spent on, for instance, historical research of cities. This was therefore left out of the project. By not generating a too realistic world, we ensure that we don't limit room for creativity for users of the tool.
+
+Visual fidelity is not a priority for the generated content. The focus of the thesis is instead to spend more time developing the algorithms for procedural content generation of major city components rather than drawing sophisticated art assets. This also leaves room for developers to apply their own textures to the generated city and terrain.
