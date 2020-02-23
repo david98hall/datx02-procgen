@@ -10,5 +10,11 @@ namespace Terrain
         public IGenerator<float[,]> Strategy { get; set; }
         
         public float[,] Generate() => Strategy.Generate();
+
+        public NoiseGenerator(IGenerator<float[,]> strategy)
+        {
+            Strategy = strategy;
+        }
+        
     }
 }

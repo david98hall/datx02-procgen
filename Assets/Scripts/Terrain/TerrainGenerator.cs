@@ -1,9 +1,10 @@
-﻿using Interfaces;
+﻿using Extensions;
+using Interfaces;
 using UnityEngine;
 
 namespace Terrain
 {
-    public class TerrainGenerator : MonoBehaviour, IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<float[,]>>
+    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<float[,]>>
     {
 
         private readonly NoiseGenerator noiseGenerator;
@@ -14,61 +15,133 @@ namespace Terrain
             set => noiseGenerator.Strategy = value;
         }
 
-        public TerrainGenerator()
+        public float HeightScale { get; set; }
+
+        public AnimationCurve HeightCurve
         {
-            noiseGenerator = new NoiseGenerator();
+            get => heightCurve.Copy();
+            set => heightCurve = value.Copy();
+        }
+        private AnimationCurve heightCurve;
+        
+        public TerrainGenerator(IGenerator<float[,]> noiseStrategy)
+        {
+            HeightScale = 1;
+            heightCurve = new AnimationCurve();
+            noiseGenerator = new NoiseGenerator(noiseStrategy);
         }
         
         public (Mesh, Texture2D) Generate()
         {
             var noiseMap = noiseGenerator.Generate();
-            // TODO Generate terrain map
-            
-            // TODO Generate texture
+            // TODO Generate Whittaker texture
             // var texture = GenerateWhittakerTexture(noiseMap);
-            var texture = TEMP_TextureFromHeightMap(noiseMap);
-            throw new System.NotImplementedException();
+            return (GenerateTerrainMesh(noiseMap), CreateNoiseTexture(noiseMap));
         }
 
+        private Mesh GenerateTerrainMesh(float[,] noiseMap)
+        {
+            var width = noiseMap.GetLength(0);
+            var height = noiseMap.GetLength(1);
+
+            // There are as many vertices as there are points in the noise map
+            var numVertices = width * height;
+            var vertices = new Vector3[numVertices];
+            var textureCoordinates = new Vector2[numVertices];
+            
+            // A mesh is essentially a set of triangles forming an entity. For each vertex of the mesh,
+            // except for the ones to the far right and at the very bottom, we add two triangles to create the shape. 
+            // Since each triangle consists of three points, this results in six points per relevant vertex.
+            // This explains the size of the "triangles" array.
+            
+            /*
+             * Example: 4 * 3 = 12 vertices, meaning 6 * 3 * 2 = 36 triangle points (12 triangles)
+             * 
+             * 0 - 1 - 2 - 3
+             * | \ | \ | \ |
+             * 4 - 5 - 6 - 7
+             * | \ | \ | \ |
+             * 8 - 9 - 10-11
+             */
+            
+            var triangles = new int[6 * (width - 1) * (height - 1)];
+
+            // Calculate the mesh data based on the height scale, the height curve and the noise map
+            var vertexIndex = 0;
+            var trianglePointIndex = 0;
+            for (var x = 0; x < width; x++)
+            {
+                for (var z = 0; z < height; z++)
+                {
+                    // Add the vertices (in Unity, y is vertical)
+                    var y = HeightScale * heightCurve.Evaluate(noiseMap[x, z]);
+                    vertices[vertexIndex] = new Vector3(x, y, z);
+                    
+                    // Calculate the texture coordinate
+                    textureCoordinates[vertexIndex] = new Vector2(x / (float) width, z / (float) height);
+
+                    // Two triangles per vertex. Their points are added in a clockwise order and are based on
+                    // the current vertex
+                    if (x < width - 1 && y < height - 1)
+                    {
+                        // First triangle
+                        triangles[trianglePointIndex++] = vertexIndex;
+                        triangles[trianglePointIndex++] = vertexIndex + width + 1;
+                        triangles[trianglePointIndex++] = vertexIndex + width;
+                        
+                        // Second triangle
+                        triangles[trianglePointIndex++] = vertexIndex + width + 1;
+                        triangles[trianglePointIndex++] = vertexIndex;
+                        triangles[trianglePointIndex++] = vertexIndex + 1;
+                    }
+
+                    vertexIndex++;
+                }
+            }
+
+            // Return a mesh based on the calculated data
+            var mesh = new Mesh()
+            {
+                vertices = vertices,
+                uv = textureCoordinates,
+                triangles = triangles
+            };
+            mesh.RecalculateNormals();
+            return mesh;
+        }
+        
         private Texture2D GenerateWhittakerTexture(float[,] noiseMap)
         {
             throw new System.NotImplementedException();
         }
         
         // TODO: Remove this method (it's temporary and used for testing)
-        private static Texture2D TEMP_TextureFromHeightMap(float[,] heightMap)
+        private static Texture2D CreateNoiseTexture(float[,] noiseMap)
         {
-            var width = heightMap.GetLength(0);
-            var height = heightMap.GetLength(1);
-
-            // Map colors to the noise map values
-            var colorMap = new Color[width * height];
+            var width = noiseMap.GetLength(0);
+            var height = noiseMap.GetLength(1);
+            
+            // Interpolate between black and white based on the noise map's values
+            var pixelColors = new Color[width * height];
             for (var x = 0; x < width; x++)
             {
                 for (var y = 0; y < height; y++)
                 {
-                    colorMap[y * width + x] = Color.Lerp(Color.black, Color.white, heightMap[x, y]);
+                    pixelColors[x * height + y] = Color.Lerp(Color.black, Color.white, noiseMap[x, y]);
                 }
             }
 
-            return TEMP_TextureFromColorMap(colorMap, width, height);
+            return CreateColoredTexture(pixelColors, width, height);
         }
-        
+
         // TODO: Remove this method (it's temporary and used for testing)
-        private static Texture2D TEMP_TextureFromColorMap(Color[] colorMap, int width, int height)
+        private static Texture2D CreateColoredTexture(Color[] pixelColors, int width, int height)
         {
             var texture = new Texture2D(width, height);
-            texture.SetPixels(colorMap);
+            texture.SetPixels(pixelColors);
             texture.Apply();
             return texture;
         }
-        
 
-        public void Start()
-        {
-            // Testing
-            noiseGenerator.Strategy = new PerlinNoiseStrategy(10, 10, 1f);
-            float[,] noiseMap = noiseGenerator.Generate();
-        }
     }
 }
