@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Terrain
 {
-    public class PerlinNoiseStrategy : IGenerator<double[,]>
+    public class PerlinNoiseStrategy : IGenerator<float[,]>
     {
-        public double[,] Generate()
+        public float[,] Generate()
         {
             throw new System.NotImplementedException();
         }
