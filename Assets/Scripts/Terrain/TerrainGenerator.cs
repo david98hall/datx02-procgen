@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Terrain
 {
-    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<double[,]>>
+    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<float[,]>>
     {
 
         private readonly NoiseGenerator noiseGenerator;
 
-        public IGenerator<double[,]> Strategy
+        public IGenerator<float[,]> Strategy
         {
             get => noiseGenerator.Strategy;
             set => noiseGenerator.Strategy = value;

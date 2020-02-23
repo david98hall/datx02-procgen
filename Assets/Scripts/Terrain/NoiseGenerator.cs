@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Terrain
 {
-    public class NoiseGenerator : IGenerator<double[,]>, IStrategyzer<IGenerator<double[,]>>
+    public class NoiseGenerator : IGenerator<float[,]>, IStrategyzer<IGenerator<float[,]>>
     {
-        public IGenerator<double[,]> Strategy { get; set; }
+        public IGenerator<float[,]> Strategy { get; set; }
         
-        public double[,] Generate() => Strategy.Generate();
+        public float[,] Generate() => Strategy.Generate();
     }
 }
