@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Terrain
 {
-    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<float[,]>>
+    public class TerrainGenerator : MonoBehaviour, IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<float[,]>>
     {
 
         private readonly NoiseGenerator noiseGenerator;
@@ -31,6 +31,12 @@ namespace Terrain
         {
             throw new System.NotImplementedException();
         }
-        
+
+        public void Start()
+        {
+            // Testing
+            noiseGenerator.Strategy = new PerlinNoiseStrategy(10, 10, 1f);
+            float[,] noiseMap = noiseGenerator.Generate();
+        }
     }
 }
