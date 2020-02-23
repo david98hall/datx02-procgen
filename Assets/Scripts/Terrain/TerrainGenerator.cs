@@ -4,26 +4,48 @@ using UnityEngine;
 
 namespace Terrain
 {
+    /// <summary>
+    /// Generates terrain meshes based on noise maps generated with arbitrary strategies.
+    /// </summary>
     public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<float[,]>>
     {
 
+        #region Fields and Properties
+
         private readonly NoiseGenerator noiseGenerator;
 
+        /// <summary>
+        /// The noise map generation strategy.
+        /// </summary>
         public IGenerator<float[,]> Strategy
         {
             get => noiseGenerator.Strategy;
             set => noiseGenerator.Strategy = value;
         }
 
+        /// <summary>
+        /// The scale of heights when generating a terrain mesh. The larger the scale, the higher the "mountains".
+        /// </summary>
         public float HeightScale { get; set; }
 
+        /// <summary>
+        /// Defines what different values in generated noise maps mean
+        /// when calculating vertex heights during the mesh generation.
+        /// </summary>
         public AnimationCurve HeightCurve
         {
             get => heightCurve.Copy();
             set => heightCurve = value.Copy();
         }
         private AnimationCurve heightCurve;
-        
+
+        #endregion
+
+        /// <summary>
+        /// Initializes the terrain generator by setting its
+        /// noise map generation strategy.
+        /// </summary>
+        /// <param name="noiseStrategy">The strategy of generating noise maps.</param>
         public TerrainGenerator(IGenerator<float[,]> noiseStrategy)
         {
             HeightScale = 1;
@@ -31,6 +53,10 @@ namespace Terrain
             noiseGenerator = new NoiseGenerator(noiseStrategy);
         }
         
+        /// <summary>
+        /// Generates a terrain as a tuple consisting of a mesh and its texture
+        /// </summary>
+        /// <returns>The terrain tuple.</returns>
         public (Mesh, Texture2D) Generate()
         {
             var noiseMap = noiseGenerator.Generate();
@@ -39,7 +65,9 @@ namespace Terrain
             return (GenerateTerrainMesh(noiseMap), CreateNoiseTexture(noiseMap));
         }
 
-        private Mesh GenerateTerrainMesh(float[,] noiseMap)
+        #region Helper methods
+
+                private Mesh GenerateTerrainMesh(float[,] noiseMap)
         {
             var width = noiseMap.GetLength(0);
             var height = noiseMap.GetLength(1);
@@ -110,12 +138,15 @@ namespace Terrain
             return mesh;
         }
         
+        // TODO: Implement
         private Texture2D GenerateWhittakerTexture(float[,] noiseMap)
         {
             throw new System.NotImplementedException();
         }
-        
+
         // TODO: Remove this method (it's temporary and used for testing)
+        #region Temporary (Should be removed)
+        
         private static Texture2D CreateNoiseTexture(float[,] noiseMap)
         {
             var width = noiseMap.GetLength(0);
@@ -133,8 +164,7 @@ namespace Terrain
 
             return CreateColoredTexture(pixelColors, width, height);
         }
-
-        // TODO: Remove this method (it's temporary and used for testing)
+        
         private static Texture2D CreateColoredTexture(Color[] pixelColors, int width, int height)
         {
             var texture = new Texture2D(width, height);
@@ -142,6 +172,10 @@ namespace Terrain
             texture.Apply();
             return texture;
         }
+
+        #endregion
+
+        #endregion
 
     }
 }
