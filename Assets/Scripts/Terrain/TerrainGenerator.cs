@@ -67,7 +67,7 @@ namespace Terrain
 
         #region Helper methods
 
-                private Mesh GenerateTerrainMesh(float[,] noiseMap)
+        private Mesh GenerateTerrainMesh(float[,] noiseMap)
         {
             var width = noiseMap.GetLength(0);
             var height = noiseMap.GetLength(1);
