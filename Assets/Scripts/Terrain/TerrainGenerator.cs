@@ -30,13 +30,13 @@ namespace Terrain
             throw new System.NotImplementedException();
         }
 
-        private Texture2D GenerateWhittakerTexture(double[,] noiseMap)
+        private Texture2D GenerateWhittakerTexture(float[,] noiseMap)
         {
             throw new System.NotImplementedException();
         }
         
         // TODO: Remove this method (it's temporary and used for testing)
-        private static Texture2D TEMP_TextureFromHeightMap(double[,] heightMap)
+        private static Texture2D TEMP_TextureFromHeightMap(float[,] heightMap)
         {
             var width = heightMap.GetLength(0);
             var height = heightMap.GetLength(1);
@@ -47,7 +47,7 @@ namespace Terrain
             {
                 for (var y = 0; y < height; y++)
                 {
-                    colorMap[y * width + x] = Color.Lerp(Color.black, Color.white, (float) heightMap[x, y]);
+                    colorMap[y * width + x] = Color.Lerp(Color.black, Color.white, heightMap[x, y]);
                 }
             }
 
