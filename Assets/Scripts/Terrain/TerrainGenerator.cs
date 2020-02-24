@@ -98,9 +98,9 @@ namespace Terrain
             // Calculate the mesh data based on the height scale, the height curve and the noise map
             var vertexIndex = 0;
             var trianglePointIndex = 0;
-            for (var x = 0; x < width; x++)
+            for (var z = 0; z < height; z++)
             {
-                for (var z = 0; z < height; z++)
+                for (var x = 0; x < width; x++)
                 {
                     // Add the vertices (in Unity, y is vertical)
                     var y = HeightScale * heightCurve.Evaluate(noiseMap[x, z]);
@@ -109,19 +109,19 @@ namespace Terrain
                     // Calculate the texture coordinate
                     textureCoordinates[vertexIndex] = new Vector2(x / (float) width, z / (float) height);
 
-                    // Two triangles per vertex. Their points are added in a clockwise order and are based on
-                    // the current vertex
+                    // Two triangles per relevant vertex.
+                    // Their points are added in a counterclockwise order and are based on the current vertex
                     if (x < width - 1 && z < height - 1)
                     {
                         // First triangle
-                        triangles[trianglePointIndex++] = vertexIndex;
-                        triangles[trianglePointIndex++] = vertexIndex + width + 1;
                         triangles[trianglePointIndex++] = vertexIndex + width;
+                        triangles[trianglePointIndex++] = vertexIndex + width + 1;
+                        triangles[trianglePointIndex++] = vertexIndex;
                         
                         // Second triangle
-                        triangles[trianglePointIndex++] = vertexIndex + width + 1;
-                        triangles[trianglePointIndex++] = vertexIndex;
                         triangles[trianglePointIndex++] = vertexIndex + 1;
+                        triangles[trianglePointIndex++] = vertexIndex;
+                        triangles[trianglePointIndex++] = vertexIndex + width + 1;
                     }
 
                     vertexIndex++;
