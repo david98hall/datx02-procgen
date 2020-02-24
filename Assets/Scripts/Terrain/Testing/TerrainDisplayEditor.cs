@@ -10,7 +10,10 @@ namespace Terrain.Testing
         {
             var terrainDisplay = (TerrainDisplay) target;
 
-            DrawDefaultInspector();
+            if (DrawDefaultInspector() && terrainDisplay.autoUpdate)
+            {
+                terrainDisplay.GenerateTerrainMesh();
+            }
 
             if (GUILayout.Button("Generate Terrain"))
             {

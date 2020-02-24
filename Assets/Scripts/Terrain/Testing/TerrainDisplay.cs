@@ -28,6 +28,8 @@ namespace Terrain.Testing
         
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
+
+        public bool autoUpdate;
         
         public TerrainDisplay()
         {
@@ -37,6 +39,8 @@ namespace Terrain.Testing
         
         public void GenerateTerrainMesh()
         {
+            terrainGenerator.HeightScale = heightScale;
+            terrainGenerator.HeightCurve = heightCurve;
             terrainGenerator.Strategy = GetNoiseStrategy();
             var (mesh, texture) = terrainGenerator.Generate();
             meshFilter.sharedMesh = mesh;

@@ -60,6 +60,7 @@ namespace Terrain
         public (Mesh, Texture2D) Generate()
         {
             var noiseMap = noiseGenerator.Generate();
+
             // TODO Generate Whittaker texture
             // var texture = GenerateWhittakerTexture(noiseMap);
             return (GenerateTerrainMesh(noiseMap), CreateNoiseTexture(noiseMap));
@@ -110,7 +111,7 @@ namespace Terrain
 
                     // Two triangles per vertex. Their points are added in a clockwise order and are based on
                     // the current vertex
-                    if (x < width - 1 && y < height - 1)
+                    if (x < width - 1 && z < height - 1)
                     {
                         // First triangle
                         triangles[trianglePointIndex++] = vertexIndex;
@@ -131,8 +132,8 @@ namespace Terrain
             var mesh = new Mesh()
             {
                 vertices = vertices,
-                uv = textureCoordinates,
-                triangles = triangles
+                triangles = triangles,
+                uv = textureCoordinates
             };
             mesh.RecalculateNormals();
             return mesh;
@@ -146,6 +147,22 @@ namespace Terrain
 
         // TODO: Remove this method (it's temporary and used for testing)
         #region Temporary (Should be removed)
+        private static void Print2DArray<T>(T[,] matrix)
+        {
+            var rowLength = matrix.GetLength(0);
+            var colLength = matrix.GetLength(1);
+            var arrayString = "";
+            for (var i = 0; i < rowLength; i++)
+            {
+                for (var j = 0; j < colLength; j++)
+                {
+                    arrayString += $"{matrix[i, j]} ";
+                }
+                arrayString += System.Environment.NewLine + System.Environment.NewLine;
+            }
+
+            Debug.Log(arrayString);
+        }
         
         private static Texture2D CreateNoiseTexture(float[,] noiseMap)
         {
