@@ -22,8 +22,16 @@ namespace Terrain.Testing
         public float noiseScale;
         public int seed;
 
+        // More octaves aren't necessary and too many octaves result in a performance decrease
+        [Range(1,10)]  
         public int octaves;
+
+        // The amplitude of higher octaves should decrease
+        [Range(0, 1)]
         public float persistence;
+
+        // A lacunarity above 10 makes the terrain too spikey
+        [Range(1, 10)]
         public float lacunarity;
         public Vector2 offset;
 
