@@ -19,9 +19,11 @@
             <e p="Testing" t="Include">
               <e p="TerrainDisplay.cs" t="Include" />
               <e p="TerrainDisplayEditor.cs" t="Include" />
-              <e p="Whittaker.cs" t="Include" />
+              <e p="TextureDisplay.cs" t="Include" />
+              <e p="TextureDisplayEditor.cs" t="Include" />
             </e>
-            <e p="Whittaker.cs" t="Include" />
+            <e p="TextureGenerator.cs" t="Include" />
+            <e p="WhittakerGenerator.cs" t="Include" />
           </e>
         </e>
       </e>
