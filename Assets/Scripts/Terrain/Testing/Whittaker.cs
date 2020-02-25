@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace Terrain.Testing
 {
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class Whittaker : MonoBehaviour
     {
-        public int width = 1;
-        public int depth = 1;
+        public int width = 2;
+        public int depth = 2;
         void Start()
         {
-            //old();
-            
             var noiseMap = NoiseMap();
             var mesh = Mesh(noiseMap);
             mesh.RecalculateNormals();
-            GetComponent<MeshFilter>().mesh = mesh;
+            GetComponent<MeshFilter>().sharedMesh = mesh;
             GetComponent<MeshRenderer>().material.mainTexture = new Terrain.Whittaker(noiseMap).Generate();
         }
         
@@ -23,14 +20,13 @@ namespace Terrain.Testing
         {
             var noiseMap = new float[width, depth];
 
-            for (var x = 0; x < noiseMap.GetLength(0); x++)
+            for (var z = 0; z < noiseMap.GetLength(1); z++)
             {
-                for (var z = 0; z < noiseMap.GetLength(1); z++)
+                for (var x = 0; x < noiseMap.GetLength(0); x++)
                 {
-                    noiseMap[x, z] = x + z;
+                    noiseMap[x, z] = 0;
                 }
             }
-            
             return noiseMap;
         }
 
@@ -47,16 +43,16 @@ namespace Terrain.Testing
                 }
             }
 
-            var triangles = new int[6 * (width - 1) + (depth - 1)];
+            var triangles = new int[6 * (width - 1) * (depth - 1)];
             for (int z = 0, offset = 0, vertex = 0; z < depth - 1; z++, vertex++)
             {
                 for (var x = 0; x < width - 1; x++, vertex++)
                 {
                     triangles[offset++] = vertex;
                     triangles[offset++] = vertex + 1;
+                    triangles[offset++] = vertex + width;
                     triangles[offset++] = vertex + width + 1;
-                    triangles[offset++] = vertex + width + 2;
-                    triangles[offset++] = vertex + width + 1;
+                    triangles[offset++] = vertex + width;
                     triangles[offset++] = vertex + 1;
                 }
             }
@@ -67,50 +63,6 @@ namespace Terrain.Testing
                 triangles = triangles,
                 uv = textureCoordinates
             };
-        }
-
-        private void old()
-        {
-            var length = depth;
-            Mesh mesh = new Mesh();
-            GetComponent<MeshFilter>().mesh = mesh;
-        
-            Vector3[] vertices = new Vector3[(length + 1) * (width + 1)];
-            for (int z = 0, i = 0; z <= length; z++)
-            {
-                for (int x = 0; x <= width; x++, i++)
-                {
-                    // todo compute y
-                    vertices[i] = new Vector3(x, 0, z);
-                }
-            }
-        
-            int[] triangles = new int[6 * length * width];
-            for (int z = 0, offset = 0, vertex = 0; z < length; z++, vertex++)
-            {
-                for (int x = 0; x < width; x++, vertex++)
-                {
-                    triangles[offset++] = vertex;
-                    triangles[offset++] = vertex + 1;
-                    triangles[offset++] = vertex + width + 1;
-                    triangles[offset++] = vertex + width + 2;
-                    triangles[offset++] = vertex + width + 1;
-                    triangles[offset++] = vertex + 1;
-                    Debug.Log(vertex);
-                }
-            }
-        
-            Color[] testColors = {Color.red, Color.yellow, Color.blue};
-            Color[] colors = new Color[vertices.Length];
-            for (int i = 0; i < colors.Length; i++)
-            {
-                colors[i] = testColors[i % testColors.Length];
-            }
-        
-            mesh.Clear();
-            mesh.vertices = vertices;
-            mesh.triangles = triangles;
-            mesh.colors = colors;
         }
     }
 }

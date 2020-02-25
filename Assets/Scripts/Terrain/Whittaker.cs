@@ -1,6 +1,4 @@
-using System;
 using Interfaces;
-using Packages.Rider.Editor.UnitTesting;
 using UnityEngine;
 
 namespace Terrain
@@ -26,7 +24,7 @@ namespace Terrain
             {
                 for (var y = 0; y < _noiseMap.GetLength(1); y++)
                 {
-                    texture.SetPixel(x, y, Color.red);
+                    texture.SetPixel(x, y, computeColor(x, y));
                 }
             }
             texture.Apply(false);
@@ -34,7 +32,11 @@ namespace Terrain
         }
 
         #region Private methods
-        
+
+        private Color computeColor(int x, int y)
+        {
+            return Color.red;
+        }
         #endregion
     }
 }
