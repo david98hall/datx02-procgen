@@ -39,12 +39,13 @@ namespace Terrain.Testing
         public AnimationCurve heightCurve;
 
         private readonly TerrainGenerator terrainGenerator;
+        public TerrainGenerator.Texture2DType textureType;
         
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
 
         public bool autoUpdate;
-        
+
         public TerrainDisplay()
         {
             noiseMapStrategy = NoiseMapStrategy.PerlinNoise;
@@ -79,6 +80,7 @@ namespace Terrain.Testing
                 width = 1;
             if (height < 1) 
                 height = 1;
+            terrainGenerator.TextureType = textureType;
         }
         
     }
