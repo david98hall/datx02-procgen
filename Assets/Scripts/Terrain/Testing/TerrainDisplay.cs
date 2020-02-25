@@ -20,7 +20,13 @@ namespace Terrain.Testing
         public int width;
         public int height;
         public float noiseScale;
-        
+        public int seed;
+
+        public int octaves;
+        public float persistence;
+        public float lacunarity;
+        public Vector2 offset;
+
         public float heightScale;
         public AnimationCurve heightCurve;
 
@@ -52,7 +58,7 @@ namespace Terrain.Testing
             switch (noiseMapStrategy)
             {
                 case NoiseMapStrategy.PerlinNoise:
-                    return new PerlinNoiseStrategy(width, height, noiseScale);
+                    return new PerlinNoiseStrategy(width, height, seed, noiseScale, octaves, persistence, lacunarity, offset);
                 default:
                     throw new Exception("There is no such noise map strategy!");
             }
