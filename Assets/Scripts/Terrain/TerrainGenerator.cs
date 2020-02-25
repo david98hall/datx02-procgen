@@ -7,7 +7,7 @@ namespace Terrain
     /// <summary>
     /// Generates terrain meshes based on noise maps generated with arbitrary strategies.
     /// </summary>
-    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<float[,]>>
+    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>
     {
 
         #region Fields and Properties
@@ -17,7 +17,7 @@ namespace Terrain
         /// <summary>
         /// The noise map generation strategy.
         /// </summary>
-        public IGenerator<float[,]> Strategy
+        public IGenerator<float[,]> NoiseMapStrategy
         {
             get => noiseGenerator.Strategy;
             set => noiseGenerator.Strategy = value;

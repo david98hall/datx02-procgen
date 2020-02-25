@@ -3,24 +3,24 @@ using UnityEngine;
 
 namespace Terrain
 {
-    public class WhittakerGenerator : IGenerator<Texture2D>
+    internal class WhittakerGenerator : IGenerator<Texture2D>
     {
         #region Properties
         
         private readonly float[,] _heightMap; // [0, 1]
-        public float[,] HeightMap => (float[,]) _heightMap.Clone();
+        internal float[,] HeightMap => (float[,]) _heightMap.Clone();
         
         private readonly float[,] _temperatureMap; // [0, 1]
-        public float[,] TemperatureMap => (float[,]) _temperatureMap.Clone();
+        internal float[,] TemperatureMap => (float[,]) _temperatureMap.Clone();
 
         private readonly float[,] _precipitationMap;
-        public float[,] PrecipitationMap => (float[,]) _precipitationMap.Clone();
+        internal float[,] PrecipitationMap => (float[,]) _precipitationMap.Clone();
         
         #endregion
         
-        #region public methods
+        #region public and internal methods
         
-        public WhittakerGenerator(float[,] heightMap, float temperatureScale, float precipitationScale)
+        internal WhittakerGenerator(float[,] heightMap, float temperatureScale, float precipitationScale)
         {
             _heightMap = heightMap;
             _temperatureMap = GenerateMap(temperatureScale);

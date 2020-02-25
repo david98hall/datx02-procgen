@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Terrain
 {
-    public class TextureGenerator : IGenerator<Texture2D>, IStrategyzer<IGenerator<Texture2D>>
+    internal class TextureGenerator : IGenerator<Texture2D>
     {
-        public TextureGenerator(IGenerator<Texture2D> strategy)
+        internal TextureGenerator(IGenerator<Texture2D> strategy)
         {
             Strategy = strategy;
         }

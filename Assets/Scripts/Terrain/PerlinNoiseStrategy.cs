@@ -4,7 +4,7 @@ using System;
 
 namespace Terrain
 {
-    public class PerlinNoiseStrategy : IGenerator<float[,]>
+    internal class PerlinNoiseStrategy : IGenerator<float[,]>
     {
         private int mapWidth;
         private int mapHeight;
@@ -16,7 +16,7 @@ namespace Terrain
         private float lacunarity;
         private Vector2 offset;
 
-        public PerlinNoiseStrategy(int mapWidth, int mapHeight, int seed, float scale, int octaves, float persistence, float lacunarity, Vector2 offset)
+        internal PerlinNoiseStrategy(int mapWidth, int mapHeight, int seed, float scale, int octaves, float persistence, float lacunarity, Vector2 offset)
         {
             this.mapWidth = mapWidth;
             this.mapHeight = mapHeight;
