@@ -11,6 +11,6 @@ namespace Terrain
         }
         public Texture2D Generate() => Strategy.Generate();
 
-        public IGenerator<Texture2D> Strategy { get; set; }
+        internal IGenerator<Texture2D> Strategy { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace Terrain
         /// <summary>
         /// The strategy of generating a noise map.
         /// </summary>
-        public IGenerator<float[,]> Strategy { get; set; }
+        internal IGenerator<float[,]> Strategy { get; set; }
         
         /// <summary>
         /// Generates a noise map based on the set strategy.
