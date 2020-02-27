@@ -5,48 +5,28 @@ namespace Terrain
 {
     internal class PerlinNoiseStrategy : IGenerator<float[,]>
     {
-        private int width;
-        private int height;
-        private int seed;
-        private float scale;
+        internal int Width { get; set; }
+        internal int Height { get; set; }
+        internal int Seed { get; set; }
+        internal float Scale { get; set; }
 
-        private int octaves;
-        private float persistence;
-        private float lacunarity;
-        private Vector2 noiseOffset;
-
-        public PerlinNoiseStrategy(int width, int height, int seed, float scale, int octaves, float persistence, float lacunarity, Vector2 noiseOffset)
-        {
-            this.width = width;
-            this.height = height;
-            this.seed = seed;
-
-            this.scale = scale;
-            // To fail safely
-            if (scale <= 0)
-            {
-                scale = 0.0001f; // randomly chosen small value
-            }
-
-            this.octaves = octaves;
-            this.persistence = persistence;
-            this.lacunarity = lacunarity;
-            this.noiseOffset = noiseOffset;
-        }
+        internal int NumOctaves { get; set; }
+        internal float Persistence { get; set; }
+        internal float Lacunarity { get; set; }
+        internal Vector2 NoiseOffset { get; set; }
 
         private Vector2[] randomOffset() {
-            // prng = pseudorandom number generator
-            System.Random prng = new System.Random(seed);
+            var random = new System.Random(Seed); // Pseudo random
 
-            Vector2[] octaveOffsets = new Vector2[octaves];
+            var octaveOffsets = new Vector2[NumOctaves];
 
-            for (int i = 0; i < octaves; i++)
+            for (var i = 0; i < NumOctaves; i++)
             {
                 // Mathf.PerlinNoise will give same value over and over if the offset is too high
                 // therefore we limit the random number generator to the range [-75000,75000]
                 // this range was found through testing
-                float offsetX = prng.Next(-75000, 75000) + noiseOffset.x;
-                float offsetY = prng.Next(-75000, 75000) + noiseOffset.y;
+                var offsetX = random.Next(-75000, 75000) + NoiseOffset.x;
+                var offsetY = random.Next(-75000, 75000) + NoiseOffset.y;
                 octaveOffsets[i] = new Vector2(offsetX, offsetY);
             }
 
@@ -55,43 +35,43 @@ namespace Terrain
 
         public float[,] Generate()
         {
-            float[,] noiseMap = new float[width, height];
+            var noiseMap = new float[Width, Height];
 
             // We want to be able to generate different types of noise so we 
             // offset the input to Mathf.PerlinNoise using octaveOffsets
-            Vector2[] octaveOffsets = randomOffset();
+            var octaveOffsets = randomOffset();
 
-            float maxNosieHeight = float.MinValue;
-            float minNoiseHeight = float.MaxValue;
+            var maxNoiseHeight = float.MinValue;
+            var minNoiseHeight = float.MaxValue;
 
-            for (int y = 0; y < height; y++)
+            for (var y = 0; y < Height; y++)
             {
-                for (int x = 0; x < width; x++)
+                for (var x = 0; x < Width; x++)
                 {
                     float amplitude = 1;
                     float frequency = 1;
                     float noiseHeight = 0;
 
-                    for (int i = 0; i < octaves; i++) 
+                    for (var i = 0; i < NumOctaves; i++) 
                     {
-                        float sampleX = x / scale * frequency + octaveOffsets[i].x;
-                        float sampleY = y / scale * frequency + octaveOffsets[i].y;
+                        var sampleX = x / Scale * frequency + octaveOffsets[i].x;
+                        var sampleY = y / Scale * frequency + octaveOffsets[i].y;
 
-                        float perlinValue = Mathf.PerlinNoise(sampleX, sampleY);
+                        var perlinValue = Mathf.PerlinNoise(sampleX, sampleY);
 
                         // For more interesting noise we might want some octaves to decrease the noise height
                         // therefore we change the range of the perlin value to [-1, 1]
                         perlinValue = perlinValue * 2 - 1; 
                         noiseHeight += perlinValue * amplitude;
 
-                        amplitude *= persistence; // higher octaves have less contribution to noise
-                        frequency *= lacunarity; // higher octaves have higher frequency
+                        amplitude *= Persistence; // higher octaves have less contribution to noise
+                        frequency *= Lacunarity; // higher octaves have higher frequency
                     }
 
                     // Find the extreme points of the noise map to be used later in normalization
-                    if (noiseHeight > maxNosieHeight)
+                    if (noiseHeight > maxNoiseHeight)
                     {
-                        maxNosieHeight = noiseHeight;
+                        maxNoiseHeight = noiseHeight;
                     } else if (noiseHeight < minNoiseHeight) {
                         minNoiseHeight = noiseHeight;
                     }
@@ -100,13 +80,13 @@ namespace Terrain
             }
 
             // Normalize the noise map to the range [0, 1] because the rest of the program expect these values
-            for (int y = 0; y < height; y++)
+            for (var y = 0; y < Height; y++)
             {
-                for (int x = 0; x < width; x++)
+                for (var x = 0; x < Width; x++)
                 {
                     // InverseLerp returns a percentage value beteween minNoiseHeight and maxNoiseHeight
                     // to achieve the desired range
-                    noiseMap[x, y] = Mathf.InverseLerp(minNoiseHeight, maxNosieHeight, noiseMap[x, y]);
+                    noiseMap[x, y] = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight, noiseMap[x, y]);
                 }
             }
             return noiseMap;

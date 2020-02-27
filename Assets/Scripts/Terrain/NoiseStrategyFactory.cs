@@ -29,7 +29,18 @@ namespace Terrain
             float lacunarity,
             Vector2 offset)
         {
-            return new PerlinNoiseStrategy(width, height, seed, scale, octaves, persistence, lacunarity, offset);
+            return new PerlinNoiseStrategy()
+            {
+                Width = width, 
+                Height = height, 
+                Seed = seed, 
+                Scale = scale, 
+                NumOctaves = octaves, 
+                Persistence = persistence, 
+                Lacunarity = lacunarity, 
+                NoiseOffset = offset
+                
+            };
         }
     }
 }
