@@ -77,7 +77,10 @@ namespace Terrain
             // TODO Generate Whittaker texture
             // var texture = GenerateWhittakerTexture(noiseMap);
             //return (GenerateTerrainMesh(noiseMap), CreateNoiseTexture(noiseMap));
-            return (GenerateTerrainMesh(noiseMap), GenerateTexture(noiseMap));
+            //return (GenerateTerrainMesh(noiseMap), GenerateTexture(noiseMap));
+            
+            return (GenerateTerrainMesh(noiseMap), 
+                new WhittakerGenerator(noiseMap, 5, 8).Generate());
         }
 
         #region Helper methods
