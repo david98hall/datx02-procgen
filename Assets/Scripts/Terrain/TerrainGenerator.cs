@@ -79,8 +79,7 @@ namespace Terrain
             //return (GenerateTerrainMesh(noiseMap), CreateNoiseTexture(noiseMap));
             //return (GenerateTerrainMesh(noiseMap), GenerateTexture(noiseMap));
             
-            return (GenerateTerrainMesh(noiseMap), 
-                new WhittakerGenerator(noiseMap, 5, 8).Generate());
+            return (GenerateTerrainMesh(noiseMap), GenerateTexture(noiseMap));
         }
 
         #region Helper methods
@@ -161,7 +160,7 @@ namespace Terrain
             switch (TextureType)
             {
                 case Texture2DType.Whittaker:
-                    return new WhittakerGenerator(noiseMap, 20, 50).Generate();
+                    return new WhittakerGenerator(noiseMap, 5, 8).Generate();
                 case Texture2DType.GrayScale:
                     return new GrayScaleGenerator(noiseMap).Generate();
                 default:
