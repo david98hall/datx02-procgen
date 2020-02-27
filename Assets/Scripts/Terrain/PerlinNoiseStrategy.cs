@@ -1,25 +1,24 @@
 ﻿using Interfaces;
 using UnityEngine;
-using System;
 
 namespace Terrain
 {
     public class PerlinNoiseStrategy : IGenerator<float[,]>
     {
-        private int mapWidth;
-        private int mapHeight;
+        private int width;
+        private int height;
         private int seed;
         private float scale;
 
         private int octaves;
         private float persistence;
         private float lacunarity;
-        private Vector2 offset;
+        private Vector2 noiseOffset;
 
-        public PerlinNoiseStrategy(int mapWidth, int mapHeight, int seed, float scale, int octaves, float persistence, float lacunarity, Vector2 offset)
+        public PerlinNoiseStrategy(int width, int height, int seed, float scale, int octaves, float persistence, float lacunarity, Vector2 noiseOffset)
         {
-            this.mapWidth = mapWidth;
-            this.mapHeight = mapHeight;
+            this.width = width;
+            this.height = height;
             this.seed = seed;
 
             this.scale = scale;
@@ -32,7 +31,7 @@ namespace Terrain
             this.octaves = octaves;
             this.persistence = persistence;
             this.lacunarity = lacunarity;
-            this.offset = offset;
+            this.noiseOffset = noiseOffset;
         }
 
         private Vector2[] randomOffset() {
@@ -44,10 +43,10 @@ namespace Terrain
             for (int i = 0; i < octaves; i++)
             {
                 // Mathf.PerlinNoise will give same value over and over if the offset is too high
-                // therefore we limit the random number generator to the range [-10000,10000]
+                // therefore we limit the random number generator to the range [-75000,75000]
                 // this range was found through testing
-                float offsetX = prng.Next(-100000, 100000) + offset.x;
-                float offsetY = prng.Next(-100000, 100000) + offset.y;
+                float offsetX = prng.Next(-75000, 75000) + noiseOffset.x;
+                float offsetY = prng.Next(-75000, 75000) + noiseOffset.y;
                 octaveOffsets[i] = new Vector2(offsetX, offsetY);
             }
 
@@ -56,30 +55,18 @@ namespace Terrain
 
         public float[,] Generate()
         {
-            float[,] noiseMap = new float[mapWidth, mapHeight];
+            float[,] noiseMap = new float[width, height];
 
             // We want to be able to generate different types of noise so we 
             // offset the input to Mathf.PerlinNoise using octaveOffsets
             Vector2[] octaveOffsets = randomOffset();
-            
-            // prng = pseudorandom number generator
-            System.Random prng = new System.Random(seed);
-            for (int i = 0; i < octaves; i++)
-            {
-                // Mathf.PerlinNoise will give same value over and over if the offset is too high
-                // therefore we limit the random number generator to the range [-10000,10000]
-                // this range was found through testing
-                float offsetX = prng.Next(-100000, 100000) + offset.x;
-                float offsetY = prng.Next(-100000, 100000) + offset.y;
-                octaveOffsets[i] = new Vector2(offsetX, offsetY);
-            }
 
             float maxNosieHeight = float.MinValue;
             float minNoiseHeight = float.MaxValue;
 
-            for (int y = 0; y < mapHeight; y++)
+            for (int y = 0; y < height; y++)
             {
-                for (int x = 0; x < mapWidth; x++)
+                for (int x = 0; x < width; x++)
                 {
                     float amplitude = 1;
                     float frequency = 1;
@@ -112,12 +99,10 @@ namespace Terrain
                 }
             }
 
-
-
             // Normalize the noise map to the range [0, 1] because the rest of the program expect these values
-            for (int y = 0; y < mapHeight; y++)
+            for (int y = 0; y < height; y++)
             {
-                for (int x = 0; x < mapWidth; x++)
+                for (int x = 0; x < width; x++)
                 {
                     // InverseLerp returns a percentage value beteween minNoiseHeight and maxNoiseHeight
                     // to achieve the desired range
