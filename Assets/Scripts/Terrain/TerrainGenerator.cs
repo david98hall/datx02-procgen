@@ -14,20 +14,21 @@ namespace Terrain
         #region Noise map generation fields and properties
 
         private readonly NoiseGenerator noiseGenerator;
-
+        private readonly NoiseMeshGenerator noiseMeshGenerator;
+        
         /// <summary>
         /// The noise map generation strategy.
         /// </summary>
-        public IGenerator<float[,]> NoiseMapStrategy
-        {
-            get => noiseGenerator.Strategy;
-            set => noiseGenerator.Strategy = value;
-        }
+        public IGenerator<float[,]> NoiseMapStrategy { set => noiseGenerator.Strategy = value;}
 
         /// <summary>
         /// The scale of heights when generating a terrain mesh. The larger the scale, the higher the "mountains".
         /// </summary>
-        public float HeightScale { get; set; }
+        public float HeightScale
+        {
+            get => noiseMeshGenerator.HeightScale;
+            set => noiseMeshGenerator.HeightScale = value;
+        }
 
         /// <summary>
         /// Defines what different values in generated noise maps mean
@@ -35,10 +36,9 @@ namespace Terrain
         /// </summary>
         public AnimationCurve HeightCurve
         {
-            get => heightCurve.Copy();
-            set => heightCurve = value.Copy();
+            get => noiseMeshGenerator.HeightCurve;
+            set => noiseMeshGenerator.HeightCurve = value;
         }
-        private AnimationCurve heightCurve;
 
         #endregion
 
@@ -60,9 +60,8 @@ namespace Terrain
         /// <param name="noiseStrategy">The strategy of generating noise maps.</param>
         public TerrainGenerator(IGenerator<float[,]> noiseStrategy)
         {
-            HeightScale = 1;
-            heightCurve = new AnimationCurve();
             noiseGenerator = new NoiseGenerator(noiseStrategy);
+            noiseMeshGenerator = new NoiseMeshGenerator();
             TextureType = Texture2DType.Whittaker;
         }
         
@@ -73,86 +72,9 @@ namespace Terrain
         public (Mesh, Texture2D) Generate()
         {
             var noiseMap = noiseGenerator.Generate();
-
-            // TODO Generate Whittaker texture
-            // var texture = GenerateWhittakerTexture(noiseMap);
-            //return (GenerateTerrainMesh(noiseMap), CreateNoiseTexture(noiseMap));
-            //return (GenerateTerrainMesh(noiseMap), GenerateTexture(noiseMap));
+            noiseMeshGenerator.NoiseMap = noiseMap;
             
-            return (GenerateTerrainMesh(noiseMap), GenerateTexture(noiseMap));
-        }
-
-        #region Helper methods
-
-        private Mesh GenerateTerrainMesh(float[,] noiseMap)
-        {
-            var width = noiseMap.GetLength(0);
-            var height = noiseMap.GetLength(1);
-
-            // There are as many vertices as there are points in the noise map
-            var numVertices = width * height;
-            var vertices = new Vector3[numVertices];
-            var textureCoordinates = new Vector2[numVertices];
-            
-            // A mesh is essentially a set of triangles forming an entity. For each vertex of the mesh,
-            // except for the ones to the far right and at the very bottom, we add two triangles to create the shape. 
-            // Since each triangle consists of three points, this results in six points per relevant vertex.
-            // This explains the size of the "triangles" array.
-            
-            /*
-             * Example: 4 * 3 = 12 vertices, meaning 6 * 3 * 2 = 36 triangle points (12 triangles)
-             * 
-             * 0 - 1 - 2 - 3
-             * | \ | \ | \ |
-             * 4 - 5 - 6 - 7
-             * | \ | \ | \ |
-             * 8 - 9 - 10-11
-             */
-            
-            var triangles = new int[6 * (width - 1) * (height - 1)];
-
-            // Calculate the mesh data based on the height scale, the height curve and the noise map
-            var vertexIndex = 0;
-            var trianglePointIndex = 0;
-            for (var z = 0; z < height; z++)
-            {
-                for (var x = 0; x < width; x++)
-                {
-                    // Add the vertices (in Unity, y is vertical)
-                    var y = HeightScale * heightCurve.Evaluate(noiseMap[x, z]);
-                    vertices[vertexIndex] = new Vector3(x, y, z);
-                    
-                    // Calculate the texture coordinate
-                    textureCoordinates[vertexIndex] = new Vector2(x / (float) width, z / (float) height);
-
-                    // Two triangles per relevant vertex.
-                    // Their points are added in a counterclockwise order and are based on the current vertex
-                    if (x < width - 1 && z < height - 1)
-                    {
-                        // First triangle
-                        triangles[trianglePointIndex++] = vertexIndex + width;
-                        triangles[trianglePointIndex++] = vertexIndex + width + 1;
-                        triangles[trianglePointIndex++] = vertexIndex;
-                        
-                        // Second triangle
-                        triangles[trianglePointIndex++] = vertexIndex + 1;
-                        triangles[trianglePointIndex++] = vertexIndex;
-                        triangles[trianglePointIndex++] = vertexIndex + width + 1;
-                    }
-
-                    vertexIndex++;
-                }
-            }
-
-            // Return a mesh based on the calculated data
-            var mesh = new Mesh()
-            {
-                vertices = vertices,
-                triangles = triangles,
-                uv = textureCoordinates
-            };
-            mesh.RecalculateNormals();
-            return mesh;
+            return (noiseMeshGenerator.Generate(), GenerateTexture(noiseMap));
         }
 
         private Texture2D GenerateTexture(float[,] noiseMap)
@@ -167,8 +89,6 @@ namespace Terrain
                     throw new ArgumentOutOfRangeException();
             }
         }
-        
-        #endregion
 
     }
 }
