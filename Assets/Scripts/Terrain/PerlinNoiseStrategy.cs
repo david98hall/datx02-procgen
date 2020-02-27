@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Terrain
 {
-    public class PerlinNoiseStrategy : IGenerator<float[,]>
+    internal class PerlinNoiseStrategy : IGenerator<float[,]>
     {
         private int width;
         private int height;

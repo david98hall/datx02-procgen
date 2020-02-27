@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Terrain.Testing
 {
-    public class TerrainDisplay : MonoBehaviour
+    internal class TerrainDisplay : MonoBehaviour
     {
         
         public enum NoiseMapStrategy
@@ -39,12 +39,13 @@ namespace Terrain.Testing
         public AnimationCurve heightCurve;
 
         private readonly TerrainGenerator terrainGenerator;
+        public TerrainGenerator.Texture2DType textureType;
         
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
 
         public bool autoUpdate;
-        
+
         public TerrainDisplay()
         {
             noiseMapStrategy = NoiseMapStrategy.PerlinNoise;
@@ -55,7 +56,7 @@ namespace Terrain.Testing
         {
             terrainGenerator.HeightScale = heightScale;
             terrainGenerator.HeightCurve = heightCurve;
-            terrainGenerator.Strategy = GetNoiseStrategy();
+            terrainGenerator.NoiseMapStrategy = GetNoiseStrategy();
             var (mesh, texture) = terrainGenerator.Generate();
             meshFilter.sharedMesh = mesh;
             meshRenderer.sharedMaterial.mainTexture = texture;
@@ -66,7 +67,8 @@ namespace Terrain.Testing
             switch (noiseMapStrategy)
             {
                 case NoiseMapStrategy.PerlinNoise:
-                    return new PerlinNoiseStrategy(width, height, seed, noiseScale, octaves, persistence, lacunarity, offset);
+                    return NoiseStrategyFactory.GetPerlinNoiseStrategy(
+                        width, height, seed, noiseScale, octaves, persistence, lacunarity, offset);
                 default:
                     throw new Exception("There is no such noise map strategy!");
             }
@@ -78,6 +80,7 @@ namespace Terrain.Testing
                 width = 1;
             if (height < 1) 
                 height = 1;
+            terrainGenerator.TextureType = textureType;
         }
         
     }

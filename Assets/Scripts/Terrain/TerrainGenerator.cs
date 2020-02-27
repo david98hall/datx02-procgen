@@ -1,4 +1,5 @@
-﻿using Extensions;
+﻿using System;
+using Extensions;
 using Interfaces;
 using UnityEngine;
 
@@ -7,17 +8,17 @@ namespace Terrain
     /// <summary>
     /// Generates terrain meshes based on noise maps generated with arbitrary strategies.
     /// </summary>
-    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>, IStrategyzer<IGenerator<float[,]>>
+    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>
     {
 
-        #region Fields and Properties
+        #region Noise map generation fields and properties
 
         private readonly NoiseGenerator noiseGenerator;
 
         /// <summary>
         /// The noise map generation strategy.
         /// </summary>
-        public IGenerator<float[,]> Strategy
+        public IGenerator<float[,]> NoiseMapStrategy
         {
             get => noiseGenerator.Strategy;
             set => noiseGenerator.Strategy = value;
@@ -41,6 +42,17 @@ namespace Terrain
 
         #endregion
 
+        #region Texture generation
+
+        public enum Texture2DType
+        {
+            Whittaker, GrayScale
+        }
+
+        public Texture2DType TextureType { get; set; }
+
+        #endregion
+        
         /// <summary>
         /// Initializes the terrain generator by setting its
         /// noise map generation strategy.
@@ -51,6 +63,7 @@ namespace Terrain
             HeightScale = 1;
             heightCurve = new AnimationCurve();
             noiseGenerator = new NoiseGenerator(noiseStrategy);
+            TextureType = Texture2DType.Whittaker;
         }
         
         /// <summary>
@@ -63,7 +76,8 @@ namespace Terrain
 
             // TODO Generate Whittaker texture
             // var texture = GenerateWhittakerTexture(noiseMap);
-            return (GenerateTerrainMesh(noiseMap), CreateNoiseTexture(noiseMap));
+            //return (GenerateTerrainMesh(noiseMap), CreateNoiseTexture(noiseMap));
+            return (GenerateTerrainMesh(noiseMap), GenerateTexture(noiseMap));
         }
 
         #region Helper methods
@@ -138,60 +152,20 @@ namespace Terrain
             mesh.RecalculateNormals();
             return mesh;
         }
-        
-        // TODO: Implement
-        private Texture2D GenerateWhittakerTexture(float[,] noiseMap)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        // TODO: Remove this method (it's temporary and used for testing)
-        #region Temporary (Should be removed)
-        private static void Print2DArray<T>(T[,] matrix)
+        private Texture2D GenerateTexture(float[,] noiseMap)
         {
-            var rowLength = matrix.GetLength(0);
-            var colLength = matrix.GetLength(1);
-            var arrayString = "";
-            for (var i = 0; i < rowLength; i++)
+            switch (TextureType)
             {
-                for (var j = 0; j < colLength; j++)
-                {
-                    arrayString += $"{matrix[i, j]} ";
-                }
-                arrayString += System.Environment.NewLine + System.Environment.NewLine;
+                case Texture2DType.Whittaker:
+                    return new WhittakerGenerator(noiseMap, 20, 50).Generate();
+                case Texture2DType.GrayScale:
+                    return new GrayScaleGenerator(noiseMap).Generate();
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
-
-            Debug.Log(arrayString);
         }
         
-        private static Texture2D CreateNoiseTexture(float[,] noiseMap)
-        {
-            var width = noiseMap.GetLength(0);
-            var height = noiseMap.GetLength(1);
-            
-            // Interpolate between black and white based on the noise map's values
-            var pixelColors = new Color[width * height];
-            for (var x = 0; x < width; x++)
-            {
-                for (var y = 0; y < height; y++)
-                {
-                    pixelColors[x * height + y] = Color.Lerp(Color.black, Color.white, noiseMap[x, y]);
-                }
-            }
-
-            return CreateColoredTexture(pixelColors, width, height);
-        }
-        
-        private static Texture2D CreateColoredTexture(Color[] pixelColors, int width, int height)
-        {
-            var texture = new Texture2D(width, height);
-            texture.SetPixels(pixelColors);
-            texture.Apply();
-            return texture;
-        }
-
-        #endregion
-
         #endregion
 
     }
