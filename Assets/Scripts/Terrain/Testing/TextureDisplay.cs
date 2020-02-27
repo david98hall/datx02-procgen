@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Terrain.Testing
 {
+    /// <summary>
+    /// A visual testing class for displaying <see cref = "TextureGenerator"/>
+    /// </summary>
     [Serializable]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class TextureDisplay : MonoBehaviour
@@ -11,9 +14,12 @@ namespace Terrain.Testing
         #region Properties
         
         private TextureGenerator _generator = new TextureGenerator(null);
+        private float[,] _heightMap;
+        
         public Strategy strategy;
         public enum Strategy
         {
+            GrayScale,
             Whittaker
         }
         
@@ -22,8 +28,18 @@ namespace Terrain.Testing
         public float heightScale;
 
         #region Whittaker properties
-        public float temperatureScale = 1;
+
+        public WhittakerMap whittakerMap;
+        public enum WhittakerMap
+        {
+            Texture,
+            Height,
+            Precipitation,
+            Temperature,
+        }
+        
         public float precipitationScale = 1;
+        public float temperatureScale = 1;
 
         #endregion
         
@@ -33,31 +49,32 @@ namespace Terrain.Testing
 
         public void Refresh()
         {
-            var heightMap = HeightMap();
-            GetComponent<MeshFilter>().sharedMesh = Mesh(heightMap);
+            _heightMap = GenerateHeightMap();
+            GetComponent<MeshFilter>().sharedMesh = GenerateMesh();
             _generator.Strategy = GetStrategy();
             GetComponent<MeshRenderer>().material.mainTexture = _generator.Generate();
-            transform.position = new Vector3((float) -width / 2, -(width + depth), (float) -depth / 2);
+            transform.position = new Vector3((float) width / 2, (width + depth), (float) depth / 2);
         }
         
         #endregion
 
         #region Private Methods
 
-        private float[,] HeightMap()
+        private float[,] GenerateHeightMap()
         {
-            var noiseMap = new float[width, depth];
-            for (var z = 0; z < noiseMap.GetLength(1); z++)
+            var heightMap = new float[width, depth];
+            for (var z = 0; z < heightMap.GetLength(1); z++)
             {
-                for (var x = 0; x < noiseMap.GetLength(0); x++)
+                for (var x = 0; x < heightMap.GetLength(0); x++)
                 {
-                    noiseMap[x, z] = (float) x / (2 * width) + (float) z / (2 * depth);
+                    heightMap[x, z] = (float) x / (2 * width) + (float) z / (2 * depth);
                 }
             }
-            return noiseMap;
+
+            return heightMap;
         }
 
-        private Mesh Mesh(float[,] noiseMap)
+        private Mesh GenerateMesh()
         {
             var vertices = new Vector3[width * depth];
             var textureCoordinates = new Vector2[width * depth];
@@ -65,7 +82,7 @@ namespace Terrain.Testing
             {
                 for (var x = 0; x < width; x++, i++)
                 {
-                    vertices[i] = new Vector3(x, heightScale * noiseMap[x, z], z);
+                    vertices[i] = new Vector3(x, heightScale * _heightMap[x, z], z);
                     textureCoordinates[i] = new Vector2(x / (float) width, z / (float) depth);
                 }
             }
@@ -94,15 +111,35 @@ namespace Terrain.Testing
             mesh.RecalculateNormals();
             return mesh;
         }
-        
+
         private IGenerator<Texture2D> GetStrategy()
         {
             switch (strategy)
             {
+                case Strategy.GrayScale:
+                    return new GrayScaleGenerator(_heightMap);
                 case Strategy.Whittaker:
-                    return new WhittakerGenerator(null, temperatureScale, precipitationScale);
+                    return GetWhittakerStrategy();
                 default:
-                    return new WhittakerGenerator(null, temperatureScale, precipitationScale);
+                    return null;
+            }
+        }
+
+        private IGenerator<Texture2D> GetWhittakerStrategy()
+        {
+            var generator = new WhittakerGenerator(_heightMap, precipitationScale, temperatureScale);
+            switch (whittakerMap)
+            {
+                case WhittakerMap.Texture:
+                    return generator;
+                case WhittakerMap.Height:
+                    return new GrayScaleGenerator(generator.HeightMap);
+                case WhittakerMap.Precipitation:
+                    return new GrayScaleGenerator(generator.PrecipitationMap);
+                case WhittakerMap.Temperature:
+                    return new GrayScaleGenerator(generator.TemperatureMap);
+                default:
+                    return null;
             }
         }
         
