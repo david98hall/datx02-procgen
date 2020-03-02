@@ -11,6 +11,9 @@ public class ShapeEdit : Editor {
     SelectionInfo selectionInfo;
     bool needsRepaint;
     
+    /// <summary>
+    /// Creates the user interface for managing existing shapes.
+    /// </summary>
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -49,7 +52,9 @@ public class ShapeEdit : Editor {
             SceneView.RepaintAll();
         }
     }
-
+    /// <summary>
+    /// Handles any action or change that may occur on the scene.
+    /// </summary>
     void OnSceneGUI()
     {
         Event guiEvent = Event.current;
@@ -71,14 +76,19 @@ public class ShapeEdit : Editor {
 			}
         }
     }
-
+    /// <summary>
+    /// Adds a new shape to the list, and selects it.
+    /// </summary>
     void CreateNewShape()
     {
         Undo.RecordObject(shapeMake, "Create shape");
         shapeMake.shapes.Add(new Shape());
         selectionInfo.selectedShapeIndex = shapeMake.shapes.Count - 1;
     }
-
+    /// <summary>
+    /// Adds a new point to the selected shape at the cursor's location.
+    /// </summary>
+    /// <param name="position"> The position of the cursor.</param>
     void CreateNewPoint(Vector3 position)
     {
         bool mouseIsOverSelectedShape = selectionInfo.mouseOverShapeIndex == selectionInfo.selectedShapeIndex;
@@ -91,7 +101,9 @@ public class ShapeEdit : Editor {
 
         SelectPointUnderMouse();
     }
-
+    /// <summary>
+    /// Selects the point under the cursor. 
+    /// </summary>
     void SelectPointUnderMouse()
     {
         selectionInfo.pointIsSelected = true;
@@ -102,7 +114,9 @@ public class ShapeEdit : Editor {
         selectionInfo.positionAtStartOfDrag = SelectedShape.points[selectionInfo.pointIndex];
         needsRepaint = true;
     }
-
+    /// <summary>
+    /// Selects the shape under the cursor.
+    /// </summary>
     void SelectShapeUnderMouse()
     {
         if (selectionInfo.mouseOverShapeIndex != -1)
@@ -111,7 +125,17 @@ public class ShapeEdit : Editor {
             needsRepaint = true;
         }
     }
-
+    /// <summary>
+    /// Handles the different inputs by the user.
+    /// </summary>
+    /// <remarks>
+    /// The different inputs are: 
+    /// Left Click to add a point to the selected shape, 
+    /// Shift + Left Click to create a new shape, 
+    /// Right Click to delete a point from the selected shape, and
+    /// Left Click (Hold) to move point in space.
+    /// </remarks>
+    /// <param name="guiEvent"> Describes what kind of input the user has provided.</param>
     void HandleInput(Event guiEvent)
     {
 		Ray mouseRay = HandleUtility.GUIPointToWorldRay(guiEvent.mousePosition);
@@ -150,13 +174,13 @@ public class ShapeEdit : Editor {
 
 	}
 
-    void HandleShiftLeftMouseDown(Vector3 mousePosition)
+    private void HandleShiftLeftMouseDown(Vector3 mousePosition)
     {
         CreateNewShape();
         CreateNewPoint(mousePosition);
     }
 
-    void HandleLeftMouseDown(Vector3 mousePosition)
+    private void HandleLeftMouseDown(Vector3 mousePosition)
     {
         if (shapeMake.shapes.Count == 0)
         {
@@ -175,7 +199,7 @@ public class ShapeEdit : Editor {
         }
     }
 
-	void HandleLeftMouseUp(Vector3 mousePosition)
+	private void HandleLeftMouseUp(Vector3 mousePosition)
 	{
         if (selectionInfo.pointIsSelected)
         {
@@ -190,7 +214,7 @@ public class ShapeEdit : Editor {
 
 	}
 
-	void HandleLeftMouseDrag(Vector3 mousePosition)
+	private void HandleLeftMouseDrag(Vector3 mousePosition)
 	{
         if (selectionInfo.pointIsSelected)
         {
@@ -199,7 +223,7 @@ public class ShapeEdit : Editor {
         }
 
 	}
-    void HandleRightMouseDown(Vector3 mousepos)
+    private void HandleRightMouseDown(Vector3 mousepos)
 	{
 		if(selectionInfo.mouseIsOverPoint)
 		{
@@ -211,7 +235,10 @@ public class ShapeEdit : Editor {
 			needsRepaint = true;
 		}
 	}
-
+    /// <summary>
+    /// Keeps important variables concerning shapes and points up to date. (See the SelectionInfo class)
+    /// </summary>
+    /// <param name="mousePosition">The current position of the cursor in the scene.</param>
     void UpdateMouseOverInfo(Vector3 mousePosition)
     {
         int mouseOverPointIndex = -1;
@@ -275,7 +302,9 @@ public class ShapeEdit : Editor {
             }
         }
     }
-
+    /// <summary>
+    /// Places and moves graphical elements on the scene.
+    /// </summary>
     void Draw()
     {
         for (int shapeIndex = 0; shapeIndex < shapeMake.shapes.Count; shapeIndex++)
@@ -316,7 +345,7 @@ public class ShapeEdit : Editor {
         }
         needsRepaint = false;
     }
-
+    
     void OnEnable()
     {
         needsRepaint = true;
@@ -331,7 +360,9 @@ public class ShapeEdit : Editor {
 		Undo.undoRedoPerformed -= OnUndoOrRedo;
         Tools.hidden = false;
     }
-
+    /// <summary>
+    /// Keeps the index of the selected shape within range when and undo or redo is performed.
+    /// </summary>
     void OnUndoOrRedo()
     {
         if (selectionInfo.selectedShapeIndex >= shapeMake.shapes.Count || selectionInfo.selectedShapeIndex == -1)
@@ -347,7 +378,9 @@ public class ShapeEdit : Editor {
             return shapeMake.shapes[selectionInfo.selectedShapeIndex];
         }
     }
-
+    /// <summary>
+    /// A class that contains variables used to make decisions, as well as identify shapes and points.
+    /// </summary>
     public class SelectionInfo
     {
         public int selectedShapeIndex;
