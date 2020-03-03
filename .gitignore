@@ -68,3 +68,6 @@ crashlytics-build.properties
 # JetBrains Rider
 .idea/
 *.iml
+
+# Visual Studio Code stuff
+.vscode/*
