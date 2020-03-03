@@ -110,7 +110,7 @@ namespace Terrain
             {
                 for (var y = 0; y < map.GetLength(1); y++)
                 {
-                    map[x, y] = Mathf.PerlinNoise(x / scale, y / scale);
+                    map[x, y] = Math.Max(0, Math.Min(1, Mathf.PerlinNoise(x / scale, y / scale)));
                 }
             }
 
