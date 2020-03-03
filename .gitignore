@@ -64,3 +64,7 @@ crashlytics-build.properties
 
 # mac specific
 *.DS_Store
+
+# JetBrains Rider
+.idea/
+*.iml
