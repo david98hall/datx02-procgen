@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -11,39 +12,96 @@ namespace Cities
     /// </summary>
     public class City
     {
+        /// <summary>
+        /// The relative position of the city.
+        /// </summary>
         public Vector3 Position { get; }
 
-        // Adjacency list for road network vectors
-        public IDictionary<Vector3, IEnumerable<Vector3>> RoadNetwork => CopyRoadNetwork(_roadNetwork);
-        private readonly IDictionary<Vector3, IEnumerable<Vector3>> _roadNetwork;
+        // Adjacency set for road network vectors
+        private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
         
+        /// <summary>
+        /// All plots in the city.
+        /// </summary>
         public IEnumerator<Plot> Plots => new CopyableEnumerator<Plot>(_plots);
         private readonly IEnumerable<Plot> _plots;
-        
+
+        /// <summary>
+        /// Initializes the city and sets its relative position.
+        /// </summary>
+        /// <param name="position">The relative position of the city.</param>
         public City(Vector3 position)
         {
             Position = position;
-            _roadNetwork = new Dictionary<Vector3, IEnumerable<Vector3>>();
+            _roadNetwork = new Dictionary<Vector3, ICollection<Vector3>>();
             _plots = new List<Plot>();
         }
 
-        #region Copy Road Network
-
-        private static IDictionary<Vector3, IEnumerable<Vector3>> CopyRoadNetwork(
-            IDictionary<Vector3, IEnumerable<Vector3>> roadNetwork)
+        /// <summary>
+        /// Initialized the city with the relative position (0, 0, 0).
+        /// </summary>
+        public City() : this(Vector3.zero)
         {
-            var copy = roadNetwork
-                .Select(pair => 
-                    new KeyValuePair<Vector3, IEnumerable<Vector3>>(
-                        CopyVector(pair.Key), 
-                        pair.Value.Select(CopyVector))
-                );
-            return (IDictionary<Vector3, IEnumerable<Vector3>>) copy;
+        }
+        
+        #region Adding roads
+        
+        /// <summary>
+        /// Creates a road by creating edges between vertices.
+        /// </summary>
+        /// <param name="roadVertices">The vertices of the road.</param>
+        public void AddRoad(IEnumerator<Vector3> roadVertices)
+        {
+            var firstIteration = true;
+            var previousVertex = Vector3.negativeInfinity;
+            while (roadVertices.MoveNext())
+            {
+                // Adds the current vertex to the road network
+                var currentVertex = roadVertices.Current;                
+                AddRoadVertex(currentVertex);
+                
+                if (!firstIteration)
+                {
+                    // Add an edge from the previous vertex to the current one
+                    _roadNetwork[previousVertex].Add(currentVertex);
+                }
+                else
+                {
+                    firstIteration = false;
+                }
+
+                // Update the previous vertex to the current one
+                previousVertex = currentVertex;
+            }
+        }
+        
+        /// <summary>
+        /// Creates a road by creating edges between vertices.
+        /// </summary>
+        /// <param name="roadVertices">The vertices of the road.</param>
+        public void AddRoad(IEnumerable<Vector3> roadVertices)
+        {
+            AddRoad(roadVertices.GetEnumerator());
         }
 
-        private static Vector3 CopyVector(Vector3 vector) => new Vector3(vector.x, vector.y, vector.z);
-
-        #endregion
+        /// <summary>
+        /// Creates a road by creating edges between vertices.
+        /// </summary>
+        /// <param name="roadVertices">The vertices of the road.</param>
+        public void AddRoad(params Vector3[] roadVertices)
+        {
+            AddRoad((IEnumerator<Vector3>)roadVertices.GetEnumerator());
+        }
         
+        private void AddRoadVertex(Vector3 vertex)
+        {
+            if (!_roadNetwork.ContainsKey(vertex))
+            {
+                _roadNetwork.Add(vertex, new HashSet<Vector3>());
+            }
+        }
+        
+        #endregion
+
     }
 }
