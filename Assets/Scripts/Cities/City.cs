@@ -103,5 +103,23 @@ namespace Cities
         
         #endregion
 
+        #region Get road parts
+
+        /// <summary>
+        /// Gets all parts of the road network in this city.
+        /// </summary>
+        /// <returns>All road parts.</returns>
+        public IEnumerable<(Vector3, Vector3)> GetRoadParts()
+        {
+            return _roadNetwork.Keys.SelectMany(GetRoadParts);
+        }
+
+        private IEnumerable<(Vector3, Vector3)> GetRoadParts(Vector3 startVertex)
+        {
+            return _roadNetwork[startVertex].Select(endVertex => (startVertex, endVertex));
+        }
+
+        #endregion
+        
     }
 }

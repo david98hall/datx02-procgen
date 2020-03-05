@@ -8,9 +8,10 @@ namespace Cities
     /// </summary>
     public class Plot : ICopyable<Plot>
     {
-        
         // TODO What should the plot contain?
-
+        // TODO Shape
+        // TODO Position
+        
         public Plot Copy()
         {
             throw new System.NotImplementedException();
