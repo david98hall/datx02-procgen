@@ -5,7 +5,7 @@
  * Also provides convenience methods for accessing different hull/hole points
  */
 
-namespace Sebastian.Geometry
+namespace Utils.Geometry
 {
     public class Polygon
     {

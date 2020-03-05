@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Sebastian.Geometry
+namespace Utils.Geometry
 {
     public static class Maths2D
     {

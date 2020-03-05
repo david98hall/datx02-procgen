@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sebastian.Geometry
+namespace Utils.Geometry
 {
 	/*
      * Handles triangulation of given polygon using the 'ear-clipping' algorithm.

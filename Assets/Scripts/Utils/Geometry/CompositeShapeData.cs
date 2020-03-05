@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Linq;
 
-namespace Sebastian.Geometry
+namespace Utils.Geometry
 {
     public partial class CompositeShape
     {

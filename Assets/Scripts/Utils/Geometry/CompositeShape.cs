@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
@@ -9,7 +8,7 @@ using System.Linq;
  * Ignores invalid shapes (contain self-intersections, too few points, overlapping holes)
  */
 
-namespace Sebastian.Geometry
+namespace Utils.Geometry
 {
     public partial class CompositeShape
     {
