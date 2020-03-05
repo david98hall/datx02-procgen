@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Utils;
 
 namespace Cities
 {
@@ -15,7 +17,7 @@ namespace Cities
         public IDictionary<Vector3, IEnumerable<Vector3>> RoadNetwork => CopyRoadNetwork(_roadNetwork);
         private readonly IDictionary<Vector3, IEnumerable<Vector3>> _roadNetwork;
         
-        public IEnumerable<Plot> Plots => _plots.Select(x => x.Copy());
+        public IEnumerator<Plot> Plots => new CopyableEnumerator<Plot>(_plots);
         private readonly IEnumerable<Plot> _plots;
         
         public City(Vector3 position)
@@ -42,6 +44,6 @@ namespace Cities
         private static Vector3 CopyVector(Vector3 vector) => new Vector3(vector.x, vector.y, vector.z);
 
         #endregion
-
+        
     }
 }
