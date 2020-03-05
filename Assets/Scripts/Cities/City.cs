@@ -12,20 +12,26 @@ namespace Cities
     /// </summary>
     public class City
     {
+        #region Properties and fields
+        
         /// <summary>
         /// The relative position of the city.
         /// </summary>
         public Vector3 Position { get; }
 
-        // Adjacency set for road network vectors
-        private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
-        
         /// <summary>
         /// All plots in the city.
         /// </summary>
         public IEnumerator<Plot> Plots => new CopyableEnumerator<Plot>(_plots);
         private readonly IEnumerable<Plot> _plots;
 
+        // Adjacency set for road network vectors
+        private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
+        
+        #endregion
+        
+        #region Constructors
+        
         /// <summary>
         /// Initializes the city and sets its relative position.
         /// </summary>
@@ -44,6 +50,8 @@ namespace Cities
         {
         }
         
+        #endregion
+
         #region Adding roads
         
         /// <summary>
