@@ -129,5 +129,14 @@ namespace Cities
 
         #endregion
         
+        #region Get full roads
+
+        public IEnumerable<IEnumerable<Vector3>> GetRoads()
+        {
+            throw new NotImplementedException();
+        }
+        
+        #endregion
+        
     }
 }
