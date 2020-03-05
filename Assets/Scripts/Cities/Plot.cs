@@ -10,9 +10,7 @@ namespace Cities
     {
         
         // TODO What should the plot contain?
-        
-        public 
-        
+
         public Plot Copy()
         {
             throw new System.NotImplementedException();
