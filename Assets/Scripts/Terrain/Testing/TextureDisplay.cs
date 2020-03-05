@@ -13,8 +13,7 @@ namespace Terrain.Testing
     {
         #region Properties
         
-        private TextureGenerator _generator = new TextureGenerator(null);
-        private float[,] _heightMap;
+        private TextureGenerator _textureGenerator = new TextureGenerator(null);
         
         public Strategy strategy;
         public enum Strategy
@@ -49,10 +48,10 @@ namespace Terrain.Testing
 
         public void Refresh()
         {
-            _heightMap = GenerateHeightMap();
+            _textureGenerator.NoiseMap = GenerateHeightMap();
             GetComponent<MeshFilter>().sharedMesh = GenerateMesh();
-            _generator.Strategy = GetStrategy();
-            GetComponent<MeshRenderer>().material.mainTexture = _generator.Generate();
+            _textureGenerator.Strategy = GetStrategy();
+            GetComponent<MeshRenderer>().material.mainTexture = _textureGenerator.Generate();
             transform.position = new Vector3((float) width / 2, (width + depth), (float) depth / 2);
         }
         
@@ -76,13 +75,14 @@ namespace Terrain.Testing
 
         private Mesh GenerateMesh()
         {
+            var heights = _textureGenerator.Get();
             var vertices = new Vector3[width * depth];
             var textureCoordinates = new Vector2[width * depth];
             for (int z = 0, i = 0; z < depth; z++)
             {
                 for (var x = 0; x < width; x++, i++)
                 {
-                    vertices[i] = new Vector3(x, heightScale * _heightMap[x, z], z);
+                    vertices[i] = new Vector3(x, heightScale * heights[x, z], z);
                     textureCoordinates[i] = new Vector2(x / (float) width, z / (float) depth);
                 }
             }
@@ -117,7 +117,7 @@ namespace Terrain.Testing
             switch (strategy)
             {
                 case Strategy.GrayScale:
-                    return new GrayScaleGenerator(_heightMap);
+                    return new GrayScaleGenerator(_textureGenerator);
                 case Strategy.Whittaker:
                     return GetWhittakerStrategy();
                 default:
@@ -127,20 +127,30 @@ namespace Terrain.Testing
 
         private IGenerator<Texture2D> GetWhittakerStrategy()
         {
-            var generator = new WhittakerGenerator(_heightMap, precipitationScale, temperatureScale);
+            var whittakerGenerator = new WhittakerGenerator(_textureGenerator)
+            {
+                PrecipitationScale = precipitationScale, 
+                TemperatureScale = temperatureScale
+            };
+
+            var textureGenerator = new TextureGenerator(null);
             switch (whittakerMap)
             {
                 case WhittakerMap.Texture:
-                    return generator;
+                    return whittakerGenerator;
                 case WhittakerMap.Height:
-                    return new GrayScaleGenerator(generator.HeightMap);
+                    textureGenerator.NoiseMap = whittakerGenerator.HeightMap;
+                    break;
                 case WhittakerMap.Precipitation:
-                    return new GrayScaleGenerator(generator.PrecipitationMap);
+                    textureGenerator.NoiseMap = whittakerGenerator.PrecipitationMap;
+                    break;
                 case WhittakerMap.Temperature:
-                    return new GrayScaleGenerator(generator.TemperatureMap);
+                    textureGenerator.NoiseMap = whittakerGenerator.TemperatureMap;
+                    break;
                 default:
-                    return null;
+                    throw new Exception("There is no such noise map strategy!");
             }
+            return new GrayScaleGenerator(textureGenerator);
         }
         
         #endregion

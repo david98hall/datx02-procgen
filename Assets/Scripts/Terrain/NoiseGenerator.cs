@@ -19,7 +19,7 @@ namespace Terrain
         /// Generates a noise map based on the set strategy.
         /// </summary>
         /// <returns>The generated noise map.</returns>
-        public float[,] Generate() => Strategy.Generate();
+        public float[,] Generate() => Strategy?.Generate();
 
         /// <summary>
         /// Initialized the generator with a strategy for noise map generation.

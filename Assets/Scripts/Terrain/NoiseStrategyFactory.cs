@@ -29,6 +29,7 @@ namespace Terrain
             float lacunarity,
             Vector2 offset)
         {
+
             return new PerlinNoiseStrategy()
             {
                 Width = width, 
