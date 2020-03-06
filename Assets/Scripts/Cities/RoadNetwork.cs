@@ -158,8 +158,12 @@ namespace Cities
             // Go through all vertices in the road network and look for roads
             foreach (var current in _roadNetwork.Keys)
             {
+                var foundRoads = GetRoads(current, visited);
+                // If the found roads is null, the current vertex had already been visited; skip it.
+                if (foundRoads == null) continue;
+             
                 // Add all roads found when starting the search from the current vertex
-                foreach (var road in GetRoads(current, visited))
+                foreach (var road in foundRoads)
                 {
                     roads.Add(road);
                 }
@@ -184,7 +188,7 @@ namespace Cities
             {
                 // Look roads by searching from the neighbour
                 var neighbourRoads = GetRoads(neighbour, visited);
-                // If the neighbour roads is null, the neighbour had already been visited. Skip this neighbour.
+                // If the neighbour roads is null, the neighbour had already been visited; skip it.
                 if (neighbourRoads == null) continue;
                 
                 var roadCount = neighbourRoads.Count();
