@@ -19,23 +19,29 @@ namespace Cities
             get => _roadNetworkGenerator.Strategy;
             set => _roadNetworkGenerator.Strategy = value;
         }
-        private RoadNetworkGenerator _roadNetworkGenerator;
+        private readonly RoadNetworkGenerator _roadNetworkGenerator;
 
+        /// <summary>
+        /// The strategy for generating city plots.
+        /// </summary>
+        public IGenerator<IEnumerable<Plot>> PlotsStrategy
+        {
+            get => _plotsGenerator.Strategy;
+            set => _plotsGenerator.Strategy = value;
+        }
+        private readonly PlotsGenerator _plotsGenerator;
+        
         public CityGenerator()
         {
             _roadNetworkGenerator = new RoadNetworkGenerator(new RoadNetworkStrategySample());
+            _plotsGenerator = new PlotsGenerator(new PlotsStrategySample());
         }
         
         public City Generate()
         {
             var city = new City {RoadNetwork = _roadNetworkGenerator.Generate()};
-            city.PlotsEnumerable = GeneratePlots(city.RoadNetwork);
+            // TODO city.PlotsEnumerable = _plotsGenerator.Generate();
             return city;
-        }
-
-        private IEnumerable<Plot> GeneratePlots(RoadNetwork roadNetwork)
-        {
-            throw new NotImplementedException();
         }
 
     }

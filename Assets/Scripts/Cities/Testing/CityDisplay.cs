@@ -27,8 +27,14 @@ namespace Cities.Testing
 
         private void DisplayCity(City city)
         {
-            throw new NotImplementedException();
+            DisplayRoadNetwork(city.RoadNetwork);
         }
 
+        private void DisplayRoadNetwork(RoadNetwork roadNetwork)
+        {
+            // TODO
+            throw new NotImplementedException();
+        }
+        
     }
 }
