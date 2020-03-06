@@ -32,7 +32,8 @@ namespace Cities.Testing
 
         private void DisplayRoadNetwork(RoadNetwork roadNetwork)
         {
-            // TODO
+            var roads = roadNetwork.GetRoads();
+            // TODO Draw the roads
             throw new NotImplementedException();
         }
         

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Interfaces;
 using UnityEngine;
 
 namespace Cities
@@ -146,9 +144,13 @@ namespace Cities
 
         #region Get roads
         
+        /// <summary>
+        /// Returns all roads in this network.
+        /// </summary>
+        /// <returns>All roads.</returns>
         public IEnumerable<IEnumerable<Vector3>> GetRoads()
         {
-            // TODO
+            // TODO Return roads between intersections
             throw new NotImplementedException();
         }
         
