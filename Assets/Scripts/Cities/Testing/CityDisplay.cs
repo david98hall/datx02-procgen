@@ -42,6 +42,8 @@ namespace Cities.Testing
                 var roadRenderer = item.AddComponent<LineRenderer>();
                 roadRenderer.positionCount = road.Count();
                 roadRenderer.SetPositions(road.ToArray());
+                roadRenderer.startWidth = 0.3f;
+                roadRenderer.endWidth = 0.3f;
                 roadRenderers.Add(item);
             }
             

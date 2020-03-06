@@ -43,8 +43,8 @@ namespace Cities
             _roadNetwork = _roadNetworkGenerator.Generate();
             var city = new City
             {
-                RoadNetwork = _roadNetwork, 
-                PlotsEnumerable = _plotsGenerator.Generate()
+                RoadNetwork = _roadNetwork // TODO, 
+                // TODO PlotsEnumerable = _plotsGenerator.Generate()
             };
             return city;
         }
