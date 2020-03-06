@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Interfaces;
 using UnityEngine;
 
@@ -33,8 +34,22 @@ namespace Cities.Testing
         private void DisplayRoadNetwork(RoadNetwork roadNetwork)
         {
             var roads = roadNetwork.GetRoads();
-            // TODO Draw the roads
-            throw new NotImplementedException();
+            
+            // TODO Create one LineRenderer for each road
+
+            // TODO Remove everything below in this method
+            if (roads.Any())
+            {
+                var road = roads.First();
+                
+                roadRenderer.positionCount = road.Count();
+                roadRenderer.SetPositions(road.ToArray());
+            }
+            else
+            {
+                Debug.Log("No road to display!");
+            }
+            
         }
         
     }
