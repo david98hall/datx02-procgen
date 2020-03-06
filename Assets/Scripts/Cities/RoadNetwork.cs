@@ -10,7 +10,7 @@ namespace Cities
     /// <summary>
     /// Represents a network of roads.
     /// </summary>
-    public class RoadNetwork : ICopyable<RoadNetwork>
+    public class RoadNetwork : ICloneable
     {
         
         // Adjacency set for road network vectors
@@ -154,6 +154,6 @@ namespace Cities
             throw new NotImplementedException();
         }
 
-        public RoadNetwork Copy() => new RoadNetwork(this);
+        public object Clone() => new RoadNetwork(this);
     }
 }

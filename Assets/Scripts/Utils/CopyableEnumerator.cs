@@ -9,7 +9,7 @@ namespace Utils
     /// An enumerator that returns a copy of each element during traversal.
     /// </summary>
     /// <typeparam name="T">The copyable type contained in the enumerator.</typeparam>
-    public class CopyableEnumerator<T> : IEnumerator<T> where T : ICopyable<T>
+    public class CopyableEnumerator<T> : IEnumerator<T> where T : ICloneable
     {
         private readonly IEnumerator<T> _enumerator;
         
@@ -42,7 +42,7 @@ namespace Utils
         {
             get
             {
-                if (_enumerator.Current != null) return _enumerator.Current.Copy();
+                if (_enumerator.Current != null) return (T)_enumerator.Current.Clone();
                 throw new NullReferenceException("The current enumerator value is null and cannot be copied!");
             }
         }

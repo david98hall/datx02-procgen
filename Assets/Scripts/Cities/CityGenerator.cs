@@ -49,6 +49,6 @@ namespace Cities
             return city;
         }
 
-        public RoadNetwork Get() => _roadNetwork.Copy();
+        public RoadNetwork Get() => (RoadNetwork)_roadNetwork.Clone();
     }
 }
