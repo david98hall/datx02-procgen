@@ -188,9 +188,8 @@ namespace Cities
                 // Look roads by searching from the neighbour
                 var neighbourRoads = GetRoads(neighbour, visited);
                 // If the neighbour roads is null, the neighbour had already been visited; skip it.
-                if (neighbourRoads == null) continue;
 
-                var roadCount = neighbourRoads.Count();
+                var roadCount = neighbourRoads?.Count ?? 0;
                 switch (roadCount)
                 {
                     case 0:
