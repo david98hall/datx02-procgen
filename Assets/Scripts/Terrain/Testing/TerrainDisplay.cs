@@ -39,10 +39,18 @@ namespace Terrain.Testing
         public AnimationCurve heightCurve;
 
         private readonly TerrainGenerator terrainGenerator;
-        public TerrainGenerator.Texture2DType textureType;
         
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
+
+        public enum TextureStrategy
+        {
+            Whittaker, GrayScale
+        }
+
+        public TextureStrategy textureStrategy;
+        public float precipitationScale;
+        public float temperatureScale;
 
         public bool autoUpdate;
 
@@ -57,9 +65,8 @@ namespace Terrain.Testing
             terrainGenerator.HeightScale = heightScale;
             terrainGenerator.HeightCurve = heightCurve;
             terrainGenerator.NoiseMapStrategy = GetNoiseStrategy();
-            var (mesh, texture) = terrainGenerator.Generate();
-            meshFilter.sharedMesh = mesh;
-            meshRenderer.sharedMaterial.mainTexture = texture;
+            terrainGenerator.TextureStrategy = GetTextureStrategy();
+            (meshFilter.sharedMesh, meshRenderer.sharedMaterial.mainTexture) = terrainGenerator.Generate();
         }
 
         private IGenerator<float[,]> GetNoiseStrategy()
@@ -73,6 +80,23 @@ namespace Terrain.Testing
                     throw new Exception("There is no such noise map strategy!");
             }
         }
+        
+        private IGenerator<Texture2D> GetTextureStrategy()
+        {
+            switch (textureStrategy)
+            {
+                case TextureStrategy.Whittaker:
+                    var whittakerGenerator = 
+                        (WhittakerGenerator) terrainGenerator.TextureGeneratorFactory.Whittaker();
+                    whittakerGenerator.PrecipitationScale = precipitationScale;
+                    whittakerGenerator.TemperatureScale = temperatureScale;
+                    return whittakerGenerator;
+                case TextureStrategy.GrayScale:
+                    return terrainGenerator.TextureGeneratorFactory.GrayScale();
+                default:
+                    throw new Exception("There is no such noise map strategy!");
+            }
+        }
           
         private void OnValidate()
         {
@@ -80,7 +104,6 @@ namespace Terrain.Testing
                 width = 1;
             if (height < 1) 
                 height = 1;
-            terrainGenerator.TextureType = textureType;
         }
         
     }
