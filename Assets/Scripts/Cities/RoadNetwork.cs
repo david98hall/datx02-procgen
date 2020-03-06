@@ -16,6 +16,8 @@ namespace Cities
         // Adjacency set for road network vectors
         private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
         
+        #region Constructors
+        
         public RoadNetwork()
         {
             _roadNetwork = new Dictionary<Vector3, ICollection<Vector3>>();
@@ -27,16 +29,10 @@ namespace Cities
         
         private RoadNetwork(IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
         {
-            _roadNetwork = (Dictionary<Vector3, ICollection<Vector3>>)roadNetwork.Select(CopyRoadNetworkEntry);
+            _roadNetwork = CloneRoadNetwork(roadNetwork);
         }
 
-        private KeyValuePair<Vector3, ICollection<Vector3>> CopyRoadNetworkEntry(
-            KeyValuePair<Vector3, ICollection<Vector3>> entry)
-        {
-            var key = new Vector3(entry.Key.x, entry.Key.y, entry.Key.z);
-            var value = new HashSet<Vector3>((HashSet<Vector3>)entry.Value);
-            return new KeyValuePair<Vector3, ICollection<Vector3>>(key, value);
-        }
+        #endregion
         
         #region Adding roads
 
@@ -148,12 +144,41 @@ namespace Cities
 
         #endregion
 
+        #region Get roads
+        
         public IEnumerable<IEnumerable<Vector3>> GetRoads()
         {
             // TODO
             throw new NotImplementedException();
         }
+        
+        #endregion
 
+        #region Cloning
+        
         public object Clone() => new RoadNetwork(this);
+        
+        private IDictionary<Vector3, ICollection<Vector3>> CloneRoadNetwork(
+            IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
+        {
+            var copy = new Dictionary<Vector3, ICollection<Vector3>>();
+
+            foreach (var key in roadNetwork.Keys)
+            {
+                var valuesCopy = new HashSet<Vector3>();
+
+                foreach (var value in roadNetwork[key])
+                {
+                    valuesCopy.Add(new Vector3(value.x, value.y, value.z));
+                }
+                
+                copy.Add(key, valuesCopy);
+            }
+            
+            return copy;
+        }
+        
+        #endregion
+        
     }
 }
