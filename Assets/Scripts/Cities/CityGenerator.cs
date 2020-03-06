@@ -8,7 +8,7 @@ namespace Cities
     /// <summary>
     /// Generates cities.
     /// </summary>
-    public class CityGenerator : IGenerator<City>
+    public class CityGenerator : IGenerator<City>, IInjector<RoadNetwork>
     {
 
         /// <summary>
@@ -20,7 +20,8 @@ namespace Cities
             set => _roadNetworkGenerator.Strategy = value;
         }
         private readonly RoadNetworkGenerator _roadNetworkGenerator;
-
+        private RoadNetwork _roadNetwork;
+        
         /// <summary>
         /// The strategy for generating city plots.
         /// </summary>
@@ -34,15 +35,20 @@ namespace Cities
         public CityGenerator()
         {
             _roadNetworkGenerator = new RoadNetworkGenerator(new RoadNetworkStrategySample());
-            _plotsGenerator = new PlotsGenerator(new PlotsStrategySample());
+            _plotsGenerator = new PlotsGenerator(new PlotsStrategySample(this));
         }
         
         public City Generate()
         {
-            var city = new City {RoadNetwork = _roadNetworkGenerator.Generate()};
-            // TODO city.PlotsEnumerable = _plotsGenerator.Generate();
+            _roadNetwork = _roadNetworkGenerator.Generate();
+            var city = new City
+            {
+                RoadNetwork = _roadNetwork, 
+                PlotsEnumerable = _plotsGenerator.Generate()
+            };
             return city;
         }
 
+        public RoadNetwork Get() => _roadNetwork.Copy();
     }
 }

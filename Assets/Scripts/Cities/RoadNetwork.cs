@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Interfaces;
 using UnityEngine;
 
 namespace Cities
@@ -8,7 +10,7 @@ namespace Cities
     /// <summary>
     /// Represents a network of roads.
     /// </summary>
-    public class RoadNetwork
+    public class RoadNetwork : ICopyable<RoadNetwork>
     {
         
         // Adjacency set for road network vectors
@@ -17,6 +19,23 @@ namespace Cities
         public RoadNetwork()
         {
             _roadNetwork = new Dictionary<Vector3, ICollection<Vector3>>();
+        }
+
+        public RoadNetwork(RoadNetwork roadNetwork) : this(roadNetwork._roadNetwork)
+        {
+        }
+        
+        private RoadNetwork(IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
+        {
+            _roadNetwork = (Dictionary<Vector3, ICollection<Vector3>>)roadNetwork.Select(CopyRoadNetworkEntry);
+        }
+
+        private KeyValuePair<Vector3, ICollection<Vector3>> CopyRoadNetworkEntry(
+            KeyValuePair<Vector3, ICollection<Vector3>> entry)
+        {
+            var key = new Vector3(entry.Key.x, entry.Key.y, entry.Key.z);
+            var value = new HashSet<Vector3>((HashSet<Vector3>)entry.Value);
+            return new KeyValuePair<Vector3, ICollection<Vector3>>(key, value);
         }
         
         #region Adding roads
@@ -134,6 +153,7 @@ namespace Cities
             // TODO
             throw new NotImplementedException();
         }
-        
+
+        public RoadNetwork Copy() => new RoadNetwork(this);
     }
 }
