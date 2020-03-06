@@ -14,6 +14,7 @@ namespace Cities
         
         public Plot Copy()
         {
+            
             throw new System.NotImplementedException();
         }
     }
