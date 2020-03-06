@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Extensions;
 using UnityEngine;
 
 namespace Cities
@@ -150,8 +152,80 @@ namespace Cities
         /// <returns>All roads.</returns>
         public IEnumerable<IEnumerable<Vector3>> GetRoads()
         {
-            // TODO Return roads between intersections
-            throw new NotImplementedException();
+            var roads = new HashSet<LinkedList<Vector3>>();
+            var visited = new HashSet<Vector3>();
+
+            // Go through all vertices in the road network and look for roads
+            foreach (var current in _roadNetwork.Keys)
+            {
+                // Add all roads found when starting the search from the current vertex
+                foreach (var road in GetRoads(current, visited))
+                {
+                    roads.Add(road);
+                }
+            }
+            
+            return roads;
+        }
+
+        private ISet<LinkedList<Vector3>> GetRoads(Vector3 start, ISet<Vector3> visited)
+        {
+            // If the vertex has already been visited, abort
+            if (visited.Contains(start))
+                return null;
+            
+            var roads = new HashSet<LinkedList<Vector3>>();
+            
+            // Mark the start vertex as visited
+            visited.Add(start);
+
+            // Traverse all neighbours to the start node
+            foreach (var neighbour in _roadNetwork[start])
+            {
+                // Look roads by searching from the neighbour
+                var neighbourRoads = GetRoads(neighbour, visited);
+                // If the neighbour roads is null, the neighbour had already been visited. Skip this neighbour.
+                if (neighbourRoads == null) continue;
+                
+                var roadCount = neighbourRoads.Count();
+                if (roadCount == 1)
+                {
+                    // If there was only one road when searching from the neighbour, append it to the road
+                    // from the start vertex. This creates one, long, road.
+                    var road = new LinkedList<Vector3>();
+                    road.AddLast(start);
+                    road.AppendRange(neighbourRoads.First());
+                    roads.Add(road);
+                } 
+                else if (roadCount > 1)
+                {
+                    // Add a road from the start vertex to the neighbour in question
+                    var road = new LinkedList<Vector3>();
+                    road.AddLast(start);
+                    roads.Add(road);
+                    
+                    // Add roads found when searching from the neighbour vertex
+                    var neighbourRoadsEnumerator = neighbourRoads.GetEnumerator();
+                    while (neighbourRoadsEnumerator.MoveNext())
+                    {
+                        if (road.Count() == 1)
+                        {
+                            // Only the start vertex has been added to the road starting from it.
+                            // Add the first of the found neighbour roads to the start vertex road.
+                            road.AppendRange(neighbourRoadsEnumerator.Current);
+                        }
+                        else
+                        {
+                            // A road has already been added from the start vertex.
+                            // Add the roads as they were created when searching from the neighbour vertex.
+                            roads.Add(neighbourRoadsEnumerator.Current);
+                        }
+                    }
+                }
+
+            }
+
+            return roads;
         }
         
         #endregion
