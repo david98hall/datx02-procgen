@@ -9,15 +9,14 @@ namespace Cities.Testing
 {
     public class CityDisplay : MonoBehaviour
     {
-        public LineRenderer roadRenderer;
-
-        public bool autoUpdate;
-
         private readonly CityGenerator _cityGenerator;
 
+        private readonly HashSet<GameObject> roadRenderers;
+        
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
+            roadRenderers = new HashSet<GameObject>();
         }
         
         public void GenerateCity()
@@ -33,23 +32,28 @@ namespace Cities.Testing
 
         private void DisplayRoadNetwork(RoadNetwork roadNetwork)
         {
-            var roads = roadNetwork.GetRoads();
+            ClearRoads();
             
-            // TODO Create one LineRenderer for each road
+            var roads = roadNetwork.GetRoads();
 
-            // TODO Remove everything below in this method
-            if (roads.Any())
+            foreach (var road in roads)
             {
-                var road = roads.First();
-                
+                var item = new GameObject("LineRenderer");
+                var roadRenderer = item.AddComponent<LineRenderer>();
                 roadRenderer.positionCount = road.Count();
                 roadRenderer.SetPositions(road.ToArray());
-            }
-            else
-            {
-                Debug.Log("No road to display!");
+                roadRenderers.Add(item);
             }
             
+        }
+
+        private void ClearRoads()
+        {
+            foreach (var roadRenderer in roadRenderers)
+            {
+                DestroyImmediate(roadRenderer);
+            }
+            roadRenderers.Clear();
         }
         
     }
