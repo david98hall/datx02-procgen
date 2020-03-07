@@ -36,15 +36,21 @@ namespace Cities.Testing
             
             var roads = roadNetwork.GetRoads();
 
+            var roadCount = 1;
             foreach (var road in roads)
             {
-                var item = new GameObject("LineRenderer");
+                // Create a game object with a LineRenderer component
+                var item = new GameObject("Road " + roadCount++);
                 var roadRenderer = item.AddComponent<LineRenderer>();
-                roadRenderer.positionCount = road.Count();
-                roadRenderer.SetPositions(road.ToArray());
+                roadRenderers.Add(item);
+                // Set the appearance of the road
                 roadRenderer.startWidth = 0.3f;
                 roadRenderer.endWidth = 0.3f;
-                roadRenderers.Add(item);
+                // TODO Change color/material
+                // Add the vertices of the road
+                var roadVertices = road.ToArray();
+                roadRenderer.positionCount = roadVertices.Length;
+                roadRenderer.SetPositions(roadVertices);
             }
             
         }
