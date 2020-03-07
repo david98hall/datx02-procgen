@@ -46,7 +46,6 @@ namespace Cities.Testing
                 // Set the appearance of the road
                 roadRenderer.startWidth = 0.3f;
                 roadRenderer.endWidth = 0.3f;
-                // TODO Change color/material
                 // Add the vertices of the road
                 var roadVertices = road.ToArray();
                 roadRenderer.positionCount = roadVertices.Length;
@@ -55,6 +54,11 @@ namespace Cities.Testing
             
         }
 
+        internal void Clear()
+        {
+            ClearRoads();
+        }
+        
         private void ClearRoads()
         {
             foreach (var roadRenderer in roadRenderers)

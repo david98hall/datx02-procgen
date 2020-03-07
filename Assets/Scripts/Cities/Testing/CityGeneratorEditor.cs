@@ -17,6 +17,11 @@ namespace Cities.Testing
                 cityObject.GenerateCity();
             }
             
+            if (GUILayout.Button("Clear"))
+            {
+                cityObject.Clear();;
+            }
+            
         }
     }
 }
