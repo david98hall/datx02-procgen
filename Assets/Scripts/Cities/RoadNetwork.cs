@@ -188,17 +188,15 @@ namespace Cities
                 // Look roads by searching from the neighbour
                 var neighbourRoads = GetRoads(neighbour, visited);
 
-                // If the neighbour roads is null, the neighbour had already been visited; skip its neighbours.
-                var roadCount = neighbourRoads?.Count ?? 0;
-
                 // Create a new road
                 var road = new LinkedList<Vector3>();
                 road.AddLast(start);
                 roads.Add(road);
                 
-                switch (roadCount)
+                switch (neighbourRoads?.Count ?? 0)
                 {
                     case 0:
+                        // If the neighbour roads is null, the neighbour had already been visited; skip its neighbours.
                         // Make a road from start to neighbour
                         road.AddLast(neighbour);
                         break;
