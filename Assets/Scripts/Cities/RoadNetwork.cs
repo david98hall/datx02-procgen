@@ -187,62 +187,49 @@ namespace Cities
             {
                 // Look roads by searching from the neighbour
                 var neighbourRoads = GetRoads(neighbour, visited);
-                // If the neighbour roads is null, the neighbour had already been visited; skip it.
 
+                // If the neighbour roads is null, the neighbour had already been visited; skip its neighbours.
                 var roadCount = neighbourRoads?.Count ?? 0;
+
+                // Create a new road
+                var road = new LinkedList<Vector3>();
+                road.AddLast(start);
+                roads.Add(road);
+                
                 switch (roadCount)
                 {
                     case 0:
-                    {
-                        // If there are no neighbour roads, add a road from the start vertex to the neighbour vertex
-                        var road = new LinkedList<Vector3>();
-                        road.AddLast(start);
+                        // Make a road from start to neighbour
                         road.AddLast(neighbour);
-                        roads.Add(road);
                         break;
-                    }
                     case 1:
-                    {
-                        // If there was only one road when searching from the neighbour, append it to the road
-                        // from the start vertex. This creates one, long, road.
-                        var road = new LinkedList<Vector3>();
-                        road.AddLast(start);
+                        // Append the only found road going out from the neighbour to the start vertex
+                        // to extend the road.
                         road.AppendRange(neighbourRoads.First());
-                        roads.Add(road);
                         break;
-                    }
                     default:
                     {
-                        if (roadCount > 1)
+                        // Add roads found when searching from the neighbour vertex
+                        var neighbourRoadsEnumerator = neighbourRoads.GetEnumerator();
+                        while (neighbourRoadsEnumerator.MoveNext())
                         {
-                            // Add a road from the start vertex to the neighbour in question
-                            var road = new LinkedList<Vector3>();
-                            road.AddLast(start);
-                            roads.Add(road);
-                    
-                            // Add roads found when searching from the neighbour vertex
-                            var neighbourRoadsEnumerator = neighbourRoads.GetEnumerator();
-                            while (neighbourRoadsEnumerator.MoveNext())
+                            if (road.Count == 1)
                             {
-                                if (road.Count == 1)
-                                {
-                                    // Only the start vertex has been added to the road starting from it.
-                                    // Add the first of the found neighbour roads to the start vertex road.
-                                    road.AppendRange(neighbourRoadsEnumerator.Current);
-                                }
-                                else
-                                {
-                                    // A road has already been added from the start vertex.
-                                    // Add the roads as they were created when searching from the neighbour vertex.
-                                    roads.Add(neighbourRoadsEnumerator.Current);
-                                }
+                                // Only the start vertex has been added to the road starting from it.
+                                // Add the first of the found neighbour roads to the start vertex road.
+                                road.AppendRange(neighbourRoadsEnumerator.Current);
+                            }
+                            else
+                            {
+                                // A road has already been added from the start vertex.
+                                // Add the roads as they were created when searching from the neighbour vertex.
+                                roads.Add(neighbourRoadsEnumerator.Current);
                             }
                         }
 
                         break;
                     }
                 }
-
             }
 
             return roads;
