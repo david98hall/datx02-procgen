@@ -195,16 +195,21 @@ namespace Cities
                 
                 switch (neighbourRoads?.Count ?? 0)
                 {
+                    // No neighbour roads
                     case 0:
                         // If the neighbour roads is null, the neighbour had already been visited; skip its neighbours.
                         // Make a road from start to neighbour
                         road.AddLast(neighbour);
                         break;
+                    
+                    // One neighbour road was found
                     case 1:
                         // Append the only found road going out from the neighbour to the start vertex
                         // to extend the road.
                         road.AppendRange(neighbourRoads.First());
                         break;
+                    
+                    // At least two neighbour roads were found
                     default:
                     {
                         // Add roads found when searching from the neighbour vertex
@@ -239,11 +244,12 @@ namespace Cities
         
         public object Clone() => new RoadNetwork(this);
         
-        private IDictionary<Vector3, ICollection<Vector3>> CloneRoadNetwork(
+        private static IDictionary<Vector3, ICollection<Vector3>> CloneRoadNetwork(
             IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
         {
             var copy = new Dictionary<Vector3, ICollection<Vector3>>();
 
+            // Clone the adjacency set
             foreach (var key in roadNetwork.Keys)
             {
                 var valuesCopy = new HashSet<Vector3>();
