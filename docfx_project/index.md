@@ -1,4 +1,3 @@
-# This is the **HOMEPAGE**.
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
-## Quick Start Notes:
-1. Add images to the *images* folder if the file is referencing an image.
+# Introduction to ENTER_PRODUCT_NAME
+
+ENTER_PRODUCT_NAME is a Unity extension that makes it easier for both professional game developers and hobbyists to create 3D city assets for their games. It uses procedural content generation with some user input to generate useful cities that consist of terrain, road networks and buildings.
