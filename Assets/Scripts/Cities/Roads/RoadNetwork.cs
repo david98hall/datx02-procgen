@@ -77,30 +77,47 @@ namespace Cities.Roads
         /// <param name="roadVertices">The vertices of the road.</param>
         public void AddRoad(IEnumerator<Vector3> roadVertices)
         {
+            // Check that there is at least one vertex
             if (!roadVertices.MoveNext()) return;
             var previousVertex = roadVertices.Current;
-            var roadParts = new HashSet<(Vector3, Vector3)>(GetRoadParts());
             
+            // Check that there is at least two vertices
+            if (!roadVertices.MoveNext()) return;
+            
+            var roadParts = new HashSet<(Vector3, Vector3)>(GetRoadParts());
+
+            // The road vertices are at least two, add a road between the first two
+            AddRoad(previousVertex, roadVertices.Current, roadParts);
+            previousVertex = roadVertices.Current;
+            
+            // Add roads between the rest of the vertices along the full road
             while (roadVertices.MoveNext())
             {
-                // Adds the previous vertex to the road network
-                AddRoadVertex(previousVertex);
-
-                if (SplitAtIntersections(previousVertex, roadVertices.Current, roadParts)) 
-                {
-                    _roadNetwork[previousVertex].Remove(roadVertices.Current);
-                }
-                else
-                {
-                    // Add an edge straight from the previous vertex to the current one
-                    _roadNetwork[previousVertex].Add(roadVertices.Current);
-                }
-                
-                // Update the previous vertex to the current one
+                AddRoad(previousVertex, roadVertices.Current, roadParts);
                 previousVertex = roadVertices.Current;
             }
             
-            AddRoadVertex(previousVertex);
+            // At the last the vertex of the road
+            AddRoadVertex(roadVertices.Current);
+        }
+
+        private void AddRoad(Vector3 start, Vector3 end, IEnumerable<(Vector3, Vector3)> roadParts)
+        {
+            // Adds the start to the road network
+            AddRoadVertex(start);
+            
+            if (SplitAtIntersections(start, end, roadParts)) 
+            {
+                // If an intersection was found between start and end, the road was split
+                // and the start to end entry has to be removed since the road now has the
+                // intersection on its path from start to end.
+                _roadNetwork[start].Remove(end);
+            }
+            else
+            {
+                // Add an edge straight from the previous vertex to the current one
+                _roadNetwork[start].Add(end);
+            }
         }
         
         // Returns true if a split occurred
