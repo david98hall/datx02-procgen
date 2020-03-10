@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class UnityExtensions
+    <title>Class TextureGeneratorFactory
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class UnityExtensions
+    <meta name="title" content="Class TextureGeneratorFactory
    ">
     <meta name="generator" content="docfx 2.50.0.0">
     
@@ -68,18 +68,20 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Extensions.UnityExtensions">
+            <article class="content wrap" id="_content" data-uid="Terrain.TextureGeneratorFactory">
   
   
-  <h1 id="Extensions_UnityExtensions" data-uid="Extensions.UnityExtensions" class="text-break">Class UnityExtensions
+  <h1 id="Terrain_TextureGeneratorFactory" data-uid="Terrain.TextureGeneratorFactory" class="text-break">Class TextureGeneratorFactory
   </h1>
-  <div class="markdown level0 summary"><p>Useful extensions for classes in the Unity Engine API.</p>
+  <div class="markdown level0 summary"><p>Factory for creating textures. Texture generators are mainly dependent on the noise map
+from a terrain generator. To avoid circular dependencies for the generators, this class is
+dependent on an injector for noise maps.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">UnityExtensions</span></div>
+    <div class="level1"><span class="xref">TextureGeneratorFactory</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -105,48 +107,30 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Extensions.html">Extensions</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrain.html">Terrain</a></h6>
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
-  <h5 id="Extensions_UnityExtensions_syntax">Syntax</h5>
+  <h5 id="Terrain_TextureGeneratorFactory_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class UnityExtensions</code></pre>
+    <pre><code class="lang-csharp hljs">public class TextureGeneratorFactory</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/city-classes/apiSpec/new?filename=Extensions_UnityExtensions_Copy_UnityEngine_AnimationCurve_.md&amp;value=---%0Auid%3A%20Extensions.UnityExtensions.Copy(UnityEngine.AnimationCurve)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/city-classes/apiSpec/new?filename=Terrain_TextureGeneratorFactory_GrayScale.md&amp;value=---%0Auid%3A%20Terrain.TextureGeneratorFactory.GrayScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/city-classes/Assets/Scripts/Extensions/UnityExtensions.cs/#L16">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/city-classes/Assets/Scripts/Terrain/TextureGeneratorFactory.cs/#L40">View Source</a>
   </span>
-  <a id="Extensions_UnityExtensions_Copy_" data-uid="Extensions.UnityExtensions.Copy*"></a>
-  <h4 id="Extensions_UnityExtensions_Copy_UnityEngine_AnimationCurve_" data-uid="Extensions.UnityExtensions.Copy(UnityEngine.AnimationCurve)">Copy(AnimationCurve)</h4>
-  <div class="markdown level1 summary"><p>Copies this animation curve and returns the result.</p>
+  <a id="Terrain_TextureGeneratorFactory_GrayScale_" data-uid="Terrain.TextureGeneratorFactory.GrayScale*"></a>
+  <h4 id="Terrain_TextureGeneratorFactory_GrayScale" data-uid="Terrain.TextureGeneratorFactory.GrayScale">GrayScale()</h4>
+  <div class="markdown level1 summary"><p>Constructs and returns a grayscale texture generation from <span class="xref">Terrain.TextureGeneratorFactory._noiseMapInjector</span></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static AnimationCurve Copy(this AnimationCurve animationCurve)</code></pre>
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;Texture2D&gt; GrayScale()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEngine.AnimationCurve</span></td>
-        <td><span class="parametername">animationCurve</span></td>
-        <td><p>The animation curve to copy.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -157,8 +141,40 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.AnimationCurve</span></td>
-        <td><p>A copy of the animation curve.</p>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">UnityEngine.Texture2D</span>&gt;</td>
+        <td><p>A grayscale generator as its abstract super type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/city-classes/apiSpec/new?filename=Terrain_TextureGeneratorFactory_Whittaker.md&amp;value=---%0Auid%3A%20Terrain.TextureGeneratorFactory.Whittaker%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/city-classes/Assets/Scripts/Terrain/TextureGeneratorFactory.cs/#L31">View Source</a>
+  </span>
+  <a id="Terrain_TextureGeneratorFactory_Whittaker_" data-uid="Terrain.TextureGeneratorFactory.Whittaker*"></a>
+  <h4 id="Terrain_TextureGeneratorFactory_Whittaker" data-uid="Terrain.TextureGeneratorFactory.Whittaker">Whittaker()</h4>
+  <div class="markdown level1 summary"><p>Constructs and returns a whittaker texture generation from <span class="xref">Terrain.TextureGeneratorFactory._noiseMapInjector</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;Texture2D&gt; Whittaker()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">UnityEngine.Texture2D</span>&gt;</td>
+        <td><p>A whittaker generator as its abstract super type</p>
 </td>
       </tr>
     </tbody>
@@ -171,10 +187,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/new/city-classes/apiSpec/new?filename=Extensions_UnityExtensions.md&amp;value=---%0Auid%3A%20Extensions.UnityExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/city-classes/apiSpec/new?filename=Terrain_TextureGeneratorFactory.md&amp;value=---%0Auid%3A%20Terrain.TextureGeneratorFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/city-classes/Assets/Scripts/Extensions/UnityExtensions.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/city-classes/Assets/Scripts/Terrain/TextureGeneratorFactory.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

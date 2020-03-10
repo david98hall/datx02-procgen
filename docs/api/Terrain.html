@@ -83,10 +83,11 @@
       <h4><a class="xref" href="Terrain.TerrainGenerator.html">TerrainGenerator</a></h4>
       <section><p>Generates terrain meshes based on noise maps generated with arbitrary strategies.</p>
 </section>
-    <h3 id="enums">Enums
-  </h3>
-      <h4><a class="xref" href="Terrain.TerrainGenerator.Texture2DType.html">TerrainGenerator.Texture2DType</a></h4>
-      <section></section>
+      <h4><a class="xref" href="Terrain.TextureGeneratorFactory.html">TextureGeneratorFactory</a></h4>
+      <section><p>Factory for creating textures. Texture generators are mainly dependent on the noise map
+from a terrain generator. To avoid circular dependencies for the generators, this class is
+dependent on an injector for noise maps.</p>
+</section>
 </article>
           </div>
           
