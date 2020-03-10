@@ -8,7 +8,11 @@ namespace Cities
     internal abstract class RoadNetworkStrategy : IGenerator<RoadNetwork>
     {
 
-        protected readonly IInjector<float[,]> _terrainNoiseMapInjector;
+        /// <summary>
+        /// The terrain noise map to adapt the road network to.
+        /// </summary>
+        protected float[,] TerrainNoiseMap => _terrainNoiseMapInjector.Get();
+        private readonly IInjector<float[,]> _terrainNoiseMapInjector;
         
         /// <summary>
         /// Sets the terrain noise map injector

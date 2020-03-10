@@ -19,7 +19,7 @@ namespace Cities
         // TODO Remove the method:
         internal IGenerator<IEnumerable<Plot>> CreateSamplePlotGenerator()
         {
-            return new PlotsStrategySample(_roadNetworkInjector);
+            return new PlotStrategySample(_roadNetworkInjector);
         } 
         
     }
