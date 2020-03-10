@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
 
-namespace Cities
+namespace Cities.Roads
 {
     internal class RoadNetworkStrategySample : RoadNetworkStrategy
     {

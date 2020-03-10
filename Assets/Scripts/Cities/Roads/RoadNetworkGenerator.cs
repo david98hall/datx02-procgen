@@ -1,6 +1,6 @@
 ﻿using Interfaces;
 
-namespace Cities
+namespace Cities.Roads
 {
     /// <summary>
     /// Generates road networks

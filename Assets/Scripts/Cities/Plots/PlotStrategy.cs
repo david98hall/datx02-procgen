@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Cities.Roads;
 using Interfaces;
 
-namespace Cities
+namespace Cities.Plots
 {
     /// <summary>
     /// Generates plots based on a road network.

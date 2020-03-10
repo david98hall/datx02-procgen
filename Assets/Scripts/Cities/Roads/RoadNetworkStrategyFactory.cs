@@ -1,7 +1,7 @@
 ﻿using System;
 using Interfaces;
 
-namespace Cities
+namespace Cities.Roads
 {
     /// <summary>
     /// Creates strategies for generating road networks.

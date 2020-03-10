@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Interfaces;
 
-namespace Cities
+namespace Cities.Plots
 {
     internal class PlotsGenerator : IGenerator<IEnumerable<Plot>>
     {

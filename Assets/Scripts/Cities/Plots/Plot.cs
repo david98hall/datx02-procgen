@@ -2,7 +2,7 @@
 using Interfaces;
 using UnityEngine;
 
-namespace Cities
+namespace Cities.Plots
 {
     /// <summary>
     /// Represents a plot of land where something can be built.

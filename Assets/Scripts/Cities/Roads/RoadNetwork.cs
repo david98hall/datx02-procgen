@@ -4,7 +4,7 @@ using System.Linq;
 using Extensions;
 using UnityEngine;
 
-namespace Cities
+namespace Cities.Roads
 {
     /// <summary>
     /// Represents a network of roads.
