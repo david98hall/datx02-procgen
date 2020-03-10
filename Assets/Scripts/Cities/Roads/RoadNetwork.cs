@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Extensions;
 using UnityEngine;
+using Utils.Geometry;
 
 namespace Cities.Roads
 {
@@ -76,6 +78,8 @@ namespace Cities.Roads
         {
             var firstIteration = true;
             var previousVertex = Vector3.negativeInfinity;
+            var roadParts = GetRoadParts().GetEnumerator();
+            var i = 1;
             while (roadVertices.MoveNext())
             {
                 // Adds the current vertex to the road network
@@ -84,17 +88,59 @@ namespace Cities.Roads
                 
                 if (!firstIteration)
                 {
-                    // Add an edge from the previous vertex to the current one
-                    _roadNetwork[previousVertex].Add(currentVertex);
+                    var intersectionPoints = 
+                        GetIntersectionPoints(previousVertex, currentVertex, roadParts);
+                    if (intersectionPoints.Any())
+                    {
+                        // Add all intersection points on other road parts if there are any
+                        foreach (var (start, intersection, end) in intersectionPoints)
+                        {
+                            _roadNetwork[start].Remove(end);
+                            _roadNetwork[start].Add(intersection);
+                            _roadNetwork[previousVertex].Add(intersection);
+                            AddRoadVertex(intersection);
+                            _roadNetwork[intersection].Add(end);
+                            _roadNetwork[intersection].Add(currentVertex);
+                        }
+                    }
+                    else
+                    {
+                        // Add an edge straight from the previous vertex to the current one
+                        _roadNetwork[previousVertex].Add(currentVertex);
+                    }
                 }
                 else
                 {
                     firstIteration = false;
                 }
 
+                i++;
+                
                 // Update the previous vertex to the current one
                 previousVertex = currentVertex;
             }
+        }
+
+        private static ICollection<(Vector3 start, Vector3 intersection, Vector3 end)> GetIntersectionPoints(
+            Vector3 linePoint1, Vector3 linePoint2, IEnumerator<(Vector3, Vector3)> roadParts)
+        {
+            var intersectionPoints = new HashSet<(Vector3 start, Vector3 intersection, Vector3 end)>();
+            
+            while (roadParts.MoveNext())
+            {
+                var (partStart, partEnd) = roadParts.Current;
+                
+                // If the argument line intersects the road part line
+                if (Maths3D.Intersection(
+                    out var intersectionPoint, 
+                    linePoint1, linePoint2, 
+                    partStart, partEnd))
+                {
+                    intersectionPoints.Add((partStart, intersectionPoint, partEnd));
+                }
+            }
+
+            return intersectionPoints;
         }
         
         /// <summary>
@@ -122,6 +168,8 @@ namespace Cities.Roads
                 _roadNetwork.Add(vertex, new HashSet<Vector3>());
             }
         }
+        
+        
         
         #endregion
 
