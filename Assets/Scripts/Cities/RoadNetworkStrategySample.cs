@@ -5,9 +5,14 @@ using UnityEngine;
 
 namespace Cities
 {
-    internal class RoadNetworkStrategySample : IGenerator<RoadNetwork>
+    internal class RoadNetworkStrategySample : RoadNetworkStrategy
     {
-        public RoadNetwork Generate()
+        
+        internal RoadNetworkStrategySample(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
+        {
+        }
+        
+        public override RoadNetwork Generate()
         {
             var roadNetwork = new RoadNetwork();
             

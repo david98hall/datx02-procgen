@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
+using Utils.Geometry;
 
 namespace Cities
 {
     /// <summary>
     /// Generates cities.
     /// </summary>
-    public class CityGenerator : IGenerator<City>, IInjector<RoadNetwork>
+    public class CityGenerator : IGenerator<City>, IInjector<RoadNetwork>, IInjector<float[,]>
     {
 
         /// <summary>
@@ -31,10 +32,15 @@ namespace Cities
             set => _plotsGenerator.Strategy = value;
         }
         private readonly PlotsGenerator _plotsGenerator;
+
+        /// <summary>
+        /// A noise map of the terrain to build the city on.
+        /// </summary>
+        public float[,] TerrainNoiseMap { get; set; }
         
         public CityGenerator()
         {
-            _roadNetworkGenerator = new RoadNetworkGenerator(new RoadNetworkStrategySample());
+            _roadNetworkGenerator = new RoadNetworkGenerator(new RoadNetworkStrategySample(this));
             _plotsGenerator = new PlotsGenerator(new PlotsStrategySample(this));
         }
         
@@ -50,5 +56,7 @@ namespace Cities
         }
 
         public RoadNetwork Get() => (RoadNetwork)_roadNetwork.Clone();
+
+        float[,] IInjector<float[,]>.Get() => (float[,])TerrainNoiseMap.Clone();
     }
 }
