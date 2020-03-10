@@ -18,14 +18,5 @@ namespace Cities
         /// <returns>The generated noise map.</returns>
         public RoadNetwork Generate() => Strategy.Generate();
 
-        /// <summary>
-        /// Initialized the generator with a strategy for road network generation.
-        /// </summary>
-        /// <param name="strategy">The noise map generation strategy.</param>
-        internal RoadNetworkGenerator(IGenerator<RoadNetwork> strategy)
-        {
-            Strategy = strategy;
-        }
-        
     }
 }

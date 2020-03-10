@@ -28,5 +28,10 @@ namespace Cities
             throw new NotImplementedException();
         }
 
+        internal IGenerator<RoadNetwork> CreateSampleStrategy()
+        {
+            return new RoadNetworkStrategySample(_terrainMeshNoiseMapInjector);
+        }
+
     }
 }

@@ -9,7 +9,7 @@ namespace Cities
     /// <summary>
     /// Generates cities.
     /// </summary>
-    public class CityGenerator : IGenerator<City>, IInjector<RoadNetwork>, IInjector<float[,]>
+    public class CityGenerator : IGenerator<City>, IInjector<RoadNetwork>
     {
 
         /// <summary>
@@ -33,15 +33,10 @@ namespace Cities
         }
         private readonly PlotsGenerator _plotsGenerator;
 
-        /// <summary>
-        /// A noise map of the terrain to build the city on.
-        /// </summary>
-        public float[,] TerrainNoiseMap { get; set; }
-        
         public CityGenerator()
         {
-            _roadNetworkGenerator = new RoadNetworkGenerator(new RoadNetworkStrategySample(this));
-            _plotsGenerator = new PlotsGenerator(new PlotsStrategySample(this));
+            _roadNetworkGenerator = new RoadNetworkGenerator();
+            _plotsGenerator = new PlotsGenerator();
         }
         
         public City Generate()
@@ -56,7 +51,6 @@ namespace Cities
         }
 
         public RoadNetwork Get() => (RoadNetwork)_roadNetwork.Clone();
-
-        float[,] IInjector<float[,]>.Get() => (float[,])TerrainNoiseMap.Clone();
+        
     }
 }
