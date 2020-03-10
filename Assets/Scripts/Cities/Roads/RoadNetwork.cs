@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Extensions;
@@ -16,6 +15,8 @@ namespace Cities.Roads
         
         // Adjacency set for road network vectors
         private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
+
+        public IEnumerable<Vector3> Intersections => _roadNetwork.Keys.Where(v => _roadNetwork[v].Count > 1);
         
         #region Constructors
         
@@ -76,55 +77,62 @@ namespace Cities.Roads
         /// <param name="roadVertices">The vertices of the road.</param>
         public void AddRoad(IEnumerator<Vector3> roadVertices)
         {
-            var firstIteration = true;
-            var previousVertex = Vector3.negativeInfinity;
-            var roadParts = GetRoadParts().GetEnumerator();
-            var i = 1;
+            if (!roadVertices.MoveNext()) return;
+            var previousVertex = roadVertices.Current;
+            var roadParts = new HashSet<(Vector3, Vector3)>(GetRoadParts());
+            
             while (roadVertices.MoveNext())
             {
-                // Adds the current vertex to the road network
-                var currentVertex = roadVertices.Current;                
-                AddRoadVertex(currentVertex);
-                
-                if (!firstIteration)
+                // Adds the previous vertex to the road network
+                AddRoadVertex(previousVertex);
+
+                if (SplitAtIntersections(previousVertex, roadVertices.Current, roadParts)) 
                 {
-                    var intersectionPoints = 
-                        GetIntersectionPoints(previousVertex, currentVertex, roadParts);
-                    if (intersectionPoints.Any())
-                    {
-                        // Add all intersection points on other road parts if there are any
-                        foreach (var (start, intersection, end) in intersectionPoints)
-                        {
-                            _roadNetwork[start].Remove(end);
-                            _roadNetwork[start].Add(intersection);
-                            _roadNetwork[previousVertex].Add(intersection);
-                            AddRoadVertex(intersection);
-                            _roadNetwork[intersection].Add(end);
-                            _roadNetwork[intersection].Add(currentVertex);
-                        }
-                    }
-                    else
-                    {
-                        // Add an edge straight from the previous vertex to the current one
-                        _roadNetwork[previousVertex].Add(currentVertex);
-                    }
+                    _roadNetwork[previousVertex].Remove(roadVertices.Current);
                 }
                 else
                 {
-                    firstIteration = false;
+                    // Add an edge straight from the previous vertex to the current one
+                    _roadNetwork[previousVertex].Add(roadVertices.Current);
                 }
-
-                i++;
                 
                 // Update the previous vertex to the current one
-                previousVertex = currentVertex;
+                previousVertex = roadVertices.Current;
             }
+            
+            AddRoadVertex(previousVertex);
         }
+        
+        // Returns true if a split occurred
+        private bool SplitAtIntersections(Vector3 lineStart, Vector3 lineEnd, IEnumerable<(Vector3, Vector3)> roadParts)
+        {
+            var intersections = GetIntersectionPoints(
+                lineStart, lineEnd, roadParts.GetEnumerator());
 
+            // No intersections; return false
+            if (!intersections.Any()) return false;
+            
+            // Add all intersection points on other road parts if there are any
+            foreach (var (start, intersection, end) in intersections)
+            {
+                _roadNetwork[start].Remove(end);
+
+                _roadNetwork[start].Add(intersection);
+                _roadNetwork[lineStart].Add(intersection);
+
+                AddRoadVertex(intersection);
+                _roadNetwork[intersection].Add(end);
+                _roadNetwork[intersection].Add(lineEnd);
+            }
+
+            // Intersections found, return true
+            return true;
+        }
+        
         private static ICollection<(Vector3 start, Vector3 intersection, Vector3 end)> GetIntersectionPoints(
             Vector3 linePoint1, Vector3 linePoint2, IEnumerator<(Vector3, Vector3)> roadParts)
         {
-            var intersectionPoints = new HashSet<(Vector3 start, Vector3 intersection, Vector3 end)>();
+            var intersectionPoints = new HashSet<(Vector3, Vector3, Vector3)>();
             
             while (roadParts.MoveNext())
             {
