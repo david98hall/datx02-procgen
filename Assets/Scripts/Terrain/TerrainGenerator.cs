@@ -1,6 +1,4 @@
-﻿using System;
-using Extensions;
-using Interfaces;
+﻿using Interfaces;
 using UnityEngine;
 
 namespace Terrain
@@ -12,6 +10,8 @@ namespace Terrain
     {
 
         #region Noise map generation fields and properties
+        
+        private float[,] _noiseMap;
 
         private readonly NoiseGenerator noiseGenerator;
         private readonly NoiseMeshGenerator noiseMeshGenerator;
@@ -44,25 +44,36 @@ namespace Terrain
 
         #region Texture generation
 
-        public enum Texture2DType
-        {
-            Whittaker, GrayScale
-        }
-
-        public Texture2DType TextureType { get; set; }
+        /// <summary>
+        /// Generator for creating textures
+        /// </summary>
+        private readonly TextureGenerator textureGenerator;
+        
+        /// <summary>
+        /// Strategy to set for the texture generator
+        /// </summary>
+        public IGenerator<Texture2D> TextureStrategy { set => textureGenerator.Strategy = value;}
+        
+        
+        /// <summary>
+        /// Factory for creating texture generators.
+        /// Is required to be a instance and not static to avoid circular dependencies between
+        /// this terrain generator and texture generators.
+        /// </summary>
+        internal readonly TextureGeneratorFactory TextureGeneratorFactory;
 
         #endregion
         
         /// <summary>
-        /// Initializes the terrain generator by setting its
-        /// noise map generation strategy.
+        /// Initializes the terrain generator by setting its generators to no strategy
         /// </summary>
         /// <param name="noiseStrategy">The strategy of generating noise maps.</param>
         public TerrainGenerator(IGenerator<float[,]> noiseStrategy)
         {
             noiseGenerator = new NoiseGenerator(noiseStrategy);
             noiseMeshGenerator = new NoiseMeshGenerator();
-            TextureType = Texture2DType.Whittaker;
+            textureGenerator = new TextureGenerator(null);
+            TextureGeneratorFactory = new TextureGeneratorFactory(textureGenerator);
         }
         
         /// <summary>
@@ -73,22 +84,8 @@ namespace Terrain
         {
             var noiseMap = noiseGenerator.Generate();
             noiseMeshGenerator.NoiseMap = noiseMap;
-            
-            return (noiseMeshGenerator.Generate(), GenerateTexture(noiseMap));
+            textureGenerator.NoiseMap = noiseMap;
+            return (noiseMeshGenerator.Generate(), textureGenerator.Generate());
         }
-
-        private Texture2D GenerateTexture(float[,] noiseMap)
-        {
-            switch (TextureType)
-            {
-                case Texture2DType.Whittaker:
-                    return new WhittakerGenerator(noiseMap, 5, 8).Generate();
-                case Texture2DType.GrayScale:
-                    return new GrayScaleGenerator(noiseMap).Generate();
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
     }
 }
