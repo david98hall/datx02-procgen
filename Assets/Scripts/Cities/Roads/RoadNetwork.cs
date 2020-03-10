@@ -206,7 +206,7 @@ namespace Cities.Roads
                     case 1:
                         // Append the only found road going out from the neighbour to the start vertex
                         // to extend the road.
-                        road.AppendRange(neighbourRoads.First());
+                        road.AddRange(neighbourRoads.First());
                         break;
                     
                     // At least two neighbour roads were found
@@ -220,7 +220,7 @@ namespace Cities.Roads
                             {
                                 // Only the start vertex has been added to the road starting from it.
                                 // Add the first of the found neighbour roads to the start vertex road.
-                                road.AppendRange(neighbourRoadsEnumerator.Current);
+                                road.AddRange(neighbourRoadsEnumerator.Current);
                             }
                             else
                             {
