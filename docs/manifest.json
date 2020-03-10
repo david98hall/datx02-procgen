@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.City.html",
-          "hash": "/O1OyHXSiX8wIx64yfkXRw=="
+          "hash": "MTcVR6nb4i0FV2vh36+KFQ=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.CityGenerator.html",
-          "hash": "BMuS8ZciFkZvO/IXCJvS7Q=="
+          "hash": "AoZU3tXMtxngUMGXyovyeg=="
         }
       },
       "is_incremental": false,
@@ -29,11 +29,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Cities.Plot.yml",
+      "source_relative_path": "api/Cities.Plots.Plot.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Cities.Plot.html",
-          "hash": "0D+CuG5liIFvL/nAHFT/bQ=="
+          "relative_path": "api/Cities.Plots.Plot.html",
+          "hash": "cTi85oLaKb3UUMIyMqmoqA=="
         }
       },
       "is_incremental": false,
@@ -41,11 +41,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Cities.PlotsStrategyFactory.yml",
+      "source_relative_path": "api/Cities.Plots.PlotsStrategyFactory.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Cities.PlotsStrategyFactory.html",
-          "hash": "8gqISMh+eYORZNyzBoG3sQ=="
+          "relative_path": "api/Cities.Plots.PlotsStrategyFactory.html",
+          "hash": "LIlEijgTMy2VxZpFQQU2+g=="
         }
       },
       "is_incremental": false,
@@ -53,11 +53,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Cities.RoadNetwork.yml",
+      "source_relative_path": "api/Cities.Plots.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Cities.RoadNetwork.html",
-          "hash": "II9WCfbESCtbyQOyyz5vWA=="
+          "relative_path": "api/Cities.Plots.html",
+          "hash": "xvBwWSWSe1b66DGqeewSAQ=="
         }
       },
       "is_incremental": false,
@@ -65,11 +65,35 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Cities.RoadNetworkStrategyFactory.yml",
+      "source_relative_path": "api/Cities.Roads.RoadNetwork.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Cities.RoadNetworkStrategyFactory.html",
-          "hash": "FeL++NTuBHD2Or2FfTnDxQ=="
+          "relative_path": "api/Cities.Roads.RoadNetwork.html",
+          "hash": "guV+Bhx7DIpIXcsdLA1uBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Roads.RoadNetworkStrategyFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Roads.RoadNetworkStrategyFactory.html",
+          "hash": "AXmmy7imlxOqcTZ7D9JG1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Roads.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Roads.html",
+          "hash": "UStQdoqUBPmx/09nzdErwA=="
         }
       },
       "is_incremental": false,
@@ -81,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Testing.CityDisplay.html",
-          "hash": "Hv7SUmsHL0JA/z6Tp3EZ2A=="
+          "hash": "rb3ZnPwhHto+xChfKxI1Rg=="
         }
       },
       "is_incremental": false,
@@ -117,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.html",
-          "hash": "fNxoueqDOXKZjD2YR8LvKA=="
+          "hash": "JTx0UkPexhZoLEf/UbiSlQ=="
         }
       },
       "is_incremental": false,
@@ -549,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "tDoOKpckaRE/pdmkc8thLQ=="
+          "hash": "zu96ezJwt+I8/XT64NyxOQ=="
         }
       },
       "is_incremental": false,
@@ -564,7 +588,7 @@
           "hash": "v+6rBHy9Ohy5yikGuZCL5w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -588,7 +612,7 @@
           "hash": "lBpXlR3Ec73sZxOtGz0n2Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -607,25 +631,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 0
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 44,
-          "skipped_file_count": 0
+          "total_file_count": 46,
+          "skipped_file_count": 36
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -638,8 +660,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

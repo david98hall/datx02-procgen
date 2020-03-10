@@ -123,226 +123,238 @@ references:
   isSpec: "True"
   fullName: Cities.CityGenerator.RoadNetworkStrategy
   nameWithType: CityGenerator.RoadNetworkStrategy
-- uid: Cities.Plot
+- uid: Cities.Plots
+  name: Cities.Plots
+  href: api/Cities.Plots.html
+  commentId: N:Cities.Plots
+  fullName: Cities.Plots
+  nameWithType: Cities.Plots
+- uid: Cities.Plots.Plot
   name: Plot
-  href: api/Cities.Plot.html
-  commentId: T:Cities.Plot
-  fullName: Cities.Plot
+  href: api/Cities.Plots.Plot.html
+  commentId: T:Cities.Plots.Plot
+  fullName: Cities.Plots.Plot
   nameWithType: Plot
-- uid: Cities.Plot.Clone
+- uid: Cities.Plots.Plot.Clone
   name: Clone()
-  href: api/Cities.Plot.html#Cities_Plot_Clone
-  commentId: M:Cities.Plot.Clone
-  fullName: Cities.Plot.Clone()
+  href: api/Cities.Plots.Plot.html#Cities_Plots_Plot_Clone
+  commentId: M:Cities.Plots.Plot.Clone
+  fullName: Cities.Plots.Plot.Clone()
   nameWithType: Plot.Clone()
-- uid: Cities.Plot.Clone*
+- uid: Cities.Plots.Plot.Clone*
   name: Clone
-  href: api/Cities.Plot.html#Cities_Plot_Clone_
-  commentId: Overload:Cities.Plot.Clone
+  href: api/Cities.Plots.Plot.html#Cities_Plots_Plot_Clone_
+  commentId: Overload:Cities.Plots.Plot.Clone
   isSpec: "True"
-  fullName: Cities.Plot.Clone
+  fullName: Cities.Plots.Plot.Clone
   nameWithType: Plot.Clone
-- uid: Cities.PlotsStrategyFactory
+- uid: Cities.Plots.PlotsStrategyFactory
   name: PlotsStrategyFactory
-  href: api/Cities.PlotsStrategyFactory.html
-  commentId: T:Cities.PlotsStrategyFactory
-  fullName: Cities.PlotsStrategyFactory
+  href: api/Cities.Plots.PlotsStrategyFactory.html
+  commentId: T:Cities.Plots.PlotsStrategyFactory
+  fullName: Cities.Plots.PlotsStrategyFactory
   nameWithType: PlotsStrategyFactory
-- uid: Cities.PlotsStrategyFactory.#ctor(Interfaces.IInjector{Cities.RoadNetwork})
+- uid: Cities.Plots.PlotsStrategyFactory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
   name: PlotsStrategyFactory(IInjector<RoadNetwork>)
-  href: api/Cities.PlotsStrategyFactory.html#Cities_PlotsStrategyFactory__ctor_Interfaces_IInjector_Cities_RoadNetwork__
-  commentId: M:Cities.PlotsStrategyFactory.#ctor(Interfaces.IInjector{Cities.RoadNetwork})
+  href: api/Cities.Plots.PlotsStrategyFactory.html#Cities_Plots_PlotsStrategyFactory__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
+  commentId: M:Cities.Plots.PlotsStrategyFactory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
   name.vb: PlotsStrategyFactory(IInjector(Of RoadNetwork))
-  fullName: Cities.PlotsStrategyFactory.PlotsStrategyFactory(Interfaces.IInjector<Cities.RoadNetwork>)
-  fullName.vb: Cities.PlotsStrategyFactory.PlotsStrategyFactory(Interfaces.IInjector(Of Cities.RoadNetwork))
+  fullName: Cities.Plots.PlotsStrategyFactory.PlotsStrategyFactory(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
+  fullName.vb: Cities.Plots.PlotsStrategyFactory.PlotsStrategyFactory(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
   nameWithType: PlotsStrategyFactory.PlotsStrategyFactory(IInjector<RoadNetwork>)
   nameWithType.vb: PlotsStrategyFactory.PlotsStrategyFactory(IInjector(Of RoadNetwork))
-- uid: Cities.PlotsStrategyFactory.#ctor*
+- uid: Cities.Plots.PlotsStrategyFactory.#ctor*
   name: PlotsStrategyFactory
-  href: api/Cities.PlotsStrategyFactory.html#Cities_PlotsStrategyFactory__ctor_
-  commentId: Overload:Cities.PlotsStrategyFactory.#ctor
+  href: api/Cities.Plots.PlotsStrategyFactory.html#Cities_Plots_PlotsStrategyFactory__ctor_
+  commentId: Overload:Cities.Plots.PlotsStrategyFactory.#ctor
   isSpec: "True"
-  fullName: Cities.PlotsStrategyFactory.PlotsStrategyFactory
+  fullName: Cities.Plots.PlotsStrategyFactory.PlotsStrategyFactory
   nameWithType: PlotsStrategyFactory.PlotsStrategyFactory
-- uid: Cities.RoadNetwork
+- uid: Cities.Roads
+  name: Cities.Roads
+  href: api/Cities.Roads.html
+  commentId: N:Cities.Roads
+  fullName: Cities.Roads
+  nameWithType: Cities.Roads
+- uid: Cities.Roads.RoadNetwork
   name: RoadNetwork
-  href: api/Cities.RoadNetwork.html
-  commentId: T:Cities.RoadNetwork
-  fullName: Cities.RoadNetwork
+  href: api/Cities.Roads.RoadNetwork.html
+  commentId: T:Cities.Roads.RoadNetwork
+  fullName: Cities.Roads.RoadNetwork
   nameWithType: RoadNetwork
-- uid: Cities.RoadNetwork.#ctor
+- uid: Cities.Roads.RoadNetwork.#ctor
   name: RoadNetwork()
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork__ctor
-  commentId: M:Cities.RoadNetwork.#ctor
-  fullName: Cities.RoadNetwork.RoadNetwork()
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork__ctor
+  commentId: M:Cities.Roads.RoadNetwork.#ctor
+  fullName: Cities.Roads.RoadNetwork.RoadNetwork()
   nameWithType: RoadNetwork.RoadNetwork()
-- uid: Cities.RoadNetwork.#ctor(Cities.RoadNetwork)
+- uid: Cities.Roads.RoadNetwork.#ctor(Cities.Roads.RoadNetwork)
   name: RoadNetwork(RoadNetwork)
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork__ctor_Cities_RoadNetwork_
-  commentId: M:Cities.RoadNetwork.#ctor(Cities.RoadNetwork)
-  fullName: Cities.RoadNetwork.RoadNetwork(Cities.RoadNetwork)
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork__ctor_Cities_Roads_RoadNetwork_
+  commentId: M:Cities.Roads.RoadNetwork.#ctor(Cities.Roads.RoadNetwork)
+  fullName: Cities.Roads.RoadNetwork.RoadNetwork(Cities.Roads.RoadNetwork)
   nameWithType: RoadNetwork.RoadNetwork(RoadNetwork)
-- uid: Cities.RoadNetwork.#ctor*
+- uid: Cities.Roads.RoadNetwork.#ctor*
   name: RoadNetwork
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork__ctor_
-  commentId: Overload:Cities.RoadNetwork.#ctor
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork__ctor_
+  commentId: Overload:Cities.Roads.RoadNetwork.#ctor
   isSpec: "True"
-  fullName: Cities.RoadNetwork.RoadNetwork
+  fullName: Cities.Roads.RoadNetwork.RoadNetwork
   nameWithType: RoadNetwork.RoadNetwork
-- uid: Cities.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+- uid: Cities.Roads.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
   name: AddRoad(IEnumerable<Vector3>)
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_AddRoad_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
-  commentId: M:Cities.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_AddRoad_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Cities.Roads.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
   name.vb: AddRoad(IEnumerable(Of Vector3))
-  fullName: Cities.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
-  fullName.vb: Cities.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  fullName: Cities.Roads.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Cities.Roads.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
   nameWithType: RoadNetwork.AddRoad(IEnumerable<Vector3>)
   nameWithType.vb: RoadNetwork.AddRoad(IEnumerable(Of Vector3))
-- uid: Cities.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerator{UnityEngine.Vector3})
+- uid: Cities.Roads.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerator{UnityEngine.Vector3})
   name: AddRoad(IEnumerator<Vector3>)
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_AddRoad_System_Collections_Generic_IEnumerator_UnityEngine_Vector3__
-  commentId: M:Cities.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerator{UnityEngine.Vector3})
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_AddRoad_System_Collections_Generic_IEnumerator_UnityEngine_Vector3__
+  commentId: M:Cities.Roads.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerator{UnityEngine.Vector3})
   name.vb: AddRoad(IEnumerator(Of Vector3))
-  fullName: Cities.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerator<UnityEngine.Vector3>)
-  fullName.vb: Cities.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerator(Of UnityEngine.Vector3))
+  fullName: Cities.Roads.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerator<UnityEngine.Vector3>)
+  fullName.vb: Cities.Roads.RoadNetwork.AddRoad(System.Collections.Generic.IEnumerator(Of UnityEngine.Vector3))
   nameWithType: RoadNetwork.AddRoad(IEnumerator<Vector3>)
   nameWithType.vb: RoadNetwork.AddRoad(IEnumerator(Of Vector3))
-- uid: Cities.RoadNetwork.AddRoad(UnityEngine.Vector3[])
+- uid: Cities.Roads.RoadNetwork.AddRoad(UnityEngine.Vector3[])
   name: AddRoad(Vector3[])
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_AddRoad_UnityEngine_Vector3___
-  commentId: M:Cities.RoadNetwork.AddRoad(UnityEngine.Vector3[])
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_AddRoad_UnityEngine_Vector3___
+  commentId: M:Cities.Roads.RoadNetwork.AddRoad(UnityEngine.Vector3[])
   name.vb: AddRoad(Vector3())
-  fullName: Cities.RoadNetwork.AddRoad(UnityEngine.Vector3[])
-  fullName.vb: Cities.RoadNetwork.AddRoad(UnityEngine.Vector3())
+  fullName: Cities.Roads.RoadNetwork.AddRoad(UnityEngine.Vector3[])
+  fullName.vb: Cities.Roads.RoadNetwork.AddRoad(UnityEngine.Vector3())
   nameWithType: RoadNetwork.AddRoad(Vector3[])
   nameWithType.vb: RoadNetwork.AddRoad(Vector3())
-- uid: Cities.RoadNetwork.AddRoad*
+- uid: Cities.Roads.RoadNetwork.AddRoad*
   name: AddRoad
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_AddRoad_
-  commentId: Overload:Cities.RoadNetwork.AddRoad
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_AddRoad_
+  commentId: Overload:Cities.Roads.RoadNetwork.AddRoad
   isSpec: "True"
-  fullName: Cities.RoadNetwork.AddRoad
+  fullName: Cities.Roads.RoadNetwork.AddRoad
   nameWithType: RoadNetwork.AddRoad
-- uid: Cities.RoadNetwork.AddRoads*
+- uid: Cities.Roads.RoadNetwork.AddRoads*
   name: AddRoads
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_AddRoads_
-  commentId: Overload:Cities.RoadNetwork.AddRoads
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_AddRoads_
+  commentId: Overload:Cities.Roads.RoadNetwork.AddRoads
   isSpec: "True"
-  fullName: Cities.RoadNetwork.AddRoads
+  fullName: Cities.Roads.RoadNetwork.AddRoads
   nameWithType: RoadNetwork.AddRoads
-- uid: Cities.RoadNetwork.AddRoads``1(``0[])
+- uid: Cities.Roads.RoadNetwork.AddRoads``1(``0[])
   name: AddRoads<T>(T[])
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_AddRoads__1___0___
-  commentId: M:Cities.RoadNetwork.AddRoads``1(``0[])
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_AddRoads__1___0___
+  commentId: M:Cities.Roads.RoadNetwork.AddRoads``1(``0[])
   name.vb: AddRoads(Of T)(T())
-  fullName: Cities.RoadNetwork.AddRoads<T>(T[])
-  fullName.vb: Cities.RoadNetwork.AddRoads(Of T)(T())
+  fullName: Cities.Roads.RoadNetwork.AddRoads<T>(T[])
+  fullName.vb: Cities.Roads.RoadNetwork.AddRoads(Of T)(T())
   nameWithType: RoadNetwork.AddRoads<T>(T[])
   nameWithType.vb: RoadNetwork.AddRoads(Of T)(T())
-- uid: Cities.RoadNetwork.AddRoads``1(System.Collections.Generic.IEnumerable{``0})
+- uid: Cities.Roads.RoadNetwork.AddRoads``1(System.Collections.Generic.IEnumerable{``0})
   name: AddRoads<T>(IEnumerable<T>)
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_AddRoads__1_System_Collections_Generic_IEnumerable___0__
-  commentId: M:Cities.RoadNetwork.AddRoads``1(System.Collections.Generic.IEnumerable{``0})
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_AddRoads__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:Cities.Roads.RoadNetwork.AddRoads``1(System.Collections.Generic.IEnumerable{``0})
   name.vb: AddRoads(Of T)(IEnumerable(Of T))
-  fullName: Cities.RoadNetwork.AddRoads<T>(System.Collections.Generic.IEnumerable<T>)
-  fullName.vb: Cities.RoadNetwork.AddRoads(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  fullName: Cities.Roads.RoadNetwork.AddRoads<T>(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Cities.Roads.RoadNetwork.AddRoads(Of T)(System.Collections.Generic.IEnumerable(Of T))
   nameWithType: RoadNetwork.AddRoads<T>(IEnumerable<T>)
   nameWithType.vb: RoadNetwork.AddRoads(Of T)(IEnumerable(Of T))
-- uid: Cities.RoadNetwork.AddRoads``1(System.Collections.Generic.IEnumerator{``0})
+- uid: Cities.Roads.RoadNetwork.AddRoads``1(System.Collections.Generic.IEnumerator{``0})
   name: AddRoads<T>(IEnumerator<T>)
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_AddRoads__1_System_Collections_Generic_IEnumerator___0__
-  commentId: M:Cities.RoadNetwork.AddRoads``1(System.Collections.Generic.IEnumerator{``0})
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_AddRoads__1_System_Collections_Generic_IEnumerator___0__
+  commentId: M:Cities.Roads.RoadNetwork.AddRoads``1(System.Collections.Generic.IEnumerator{``0})
   name.vb: AddRoads(Of T)(IEnumerator(Of T))
-  fullName: Cities.RoadNetwork.AddRoads<T>(System.Collections.Generic.IEnumerator<T>)
-  fullName.vb: Cities.RoadNetwork.AddRoads(Of T)(System.Collections.Generic.IEnumerator(Of T))
+  fullName: Cities.Roads.RoadNetwork.AddRoads<T>(System.Collections.Generic.IEnumerator<T>)
+  fullName.vb: Cities.Roads.RoadNetwork.AddRoads(Of T)(System.Collections.Generic.IEnumerator(Of T))
   nameWithType: RoadNetwork.AddRoads<T>(IEnumerator<T>)
   nameWithType.vb: RoadNetwork.AddRoads(Of T)(IEnumerator(Of T))
-- uid: Cities.RoadNetwork.Clone
+- uid: Cities.Roads.RoadNetwork.Clone
   name: Clone()
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_Clone
-  commentId: M:Cities.RoadNetwork.Clone
-  fullName: Cities.RoadNetwork.Clone()
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_Clone
+  commentId: M:Cities.Roads.RoadNetwork.Clone
+  fullName: Cities.Roads.RoadNetwork.Clone()
   nameWithType: RoadNetwork.Clone()
-- uid: Cities.RoadNetwork.Clone*
+- uid: Cities.Roads.RoadNetwork.Clone*
   name: Clone
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_Clone_
-  commentId: Overload:Cities.RoadNetwork.Clone
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_Clone_
+  commentId: Overload:Cities.Roads.RoadNetwork.Clone
   isSpec: "True"
-  fullName: Cities.RoadNetwork.Clone
+  fullName: Cities.Roads.RoadNetwork.Clone
   nameWithType: RoadNetwork.Clone
-- uid: Cities.RoadNetwork.GetRoadParts
+- uid: Cities.Roads.RoadNetwork.GetRoadParts
   name: GetRoadParts()
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_GetRoadParts
-  commentId: M:Cities.RoadNetwork.GetRoadParts
-  fullName: Cities.RoadNetwork.GetRoadParts()
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetRoadParts
+  commentId: M:Cities.Roads.RoadNetwork.GetRoadParts
+  fullName: Cities.Roads.RoadNetwork.GetRoadParts()
   nameWithType: RoadNetwork.GetRoadParts()
-- uid: Cities.RoadNetwork.GetRoadParts*
+- uid: Cities.Roads.RoadNetwork.GetRoadParts*
   name: GetRoadParts
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_GetRoadParts_
-  commentId: Overload:Cities.RoadNetwork.GetRoadParts
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetRoadParts_
+  commentId: Overload:Cities.Roads.RoadNetwork.GetRoadParts
   isSpec: "True"
-  fullName: Cities.RoadNetwork.GetRoadParts
+  fullName: Cities.Roads.RoadNetwork.GetRoadParts
   nameWithType: RoadNetwork.GetRoadParts
-- uid: Cities.RoadNetwork.GetRoads
+- uid: Cities.Roads.RoadNetwork.GetRoads
   name: GetRoads()
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_GetRoads
-  commentId: M:Cities.RoadNetwork.GetRoads
-  fullName: Cities.RoadNetwork.GetRoads()
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetRoads
+  commentId: M:Cities.Roads.RoadNetwork.GetRoads
+  fullName: Cities.Roads.RoadNetwork.GetRoads()
   nameWithType: RoadNetwork.GetRoads()
-- uid: Cities.RoadNetwork.GetRoads*
+- uid: Cities.Roads.RoadNetwork.GetRoads*
   name: GetRoads
-  href: api/Cities.RoadNetwork.html#Cities_RoadNetwork_GetRoads_
-  commentId: Overload:Cities.RoadNetwork.GetRoads
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetRoads_
+  commentId: Overload:Cities.Roads.RoadNetwork.GetRoads
   isSpec: "True"
-  fullName: Cities.RoadNetwork.GetRoads
+  fullName: Cities.Roads.RoadNetwork.GetRoads
   nameWithType: RoadNetwork.GetRoads
-- uid: Cities.RoadNetworkStrategyFactory
+- uid: Cities.Roads.RoadNetworkStrategyFactory
   name: RoadNetworkStrategyFactory
-  href: api/Cities.RoadNetworkStrategyFactory.html
-  commentId: T:Cities.RoadNetworkStrategyFactory
-  fullName: Cities.RoadNetworkStrategyFactory
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html
+  commentId: T:Cities.Roads.RoadNetworkStrategyFactory
+  fullName: Cities.Roads.RoadNetworkStrategyFactory
   nameWithType: RoadNetworkStrategyFactory
-- uid: Cities.RoadNetworkStrategyFactory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+- uid: Cities.Roads.RoadNetworkStrategyFactory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
   name: RoadNetworkStrategyFactory(IInjector<Single[,]>)
-  href: api/Cities.RoadNetworkStrategyFactory.html#Cities_RoadNetworkStrategyFactory__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Cities.RoadNetworkStrategyFactory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory__ctor_Interfaces_IInjector_System_Single_0__0____
+  commentId: M:Cities.Roads.RoadNetworkStrategyFactory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
   name.vb: RoadNetworkStrategyFactory(IInjector(Of Single(,)))
-  fullName: Cities.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Cities.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(Interfaces.IInjector(Of System.Single(,)))
+  fullName: Cities.Roads.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(Interfaces.IInjector<System.Single[,]>)
+  fullName.vb: Cities.Roads.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(Interfaces.IInjector(Of System.Single(,)))
   nameWithType: RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(IInjector<Single[,]>)
   nameWithType.vb: RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(IInjector(Of Single(,)))
-- uid: Cities.RoadNetworkStrategyFactory.#ctor*
+- uid: Cities.Roads.RoadNetworkStrategyFactory.#ctor*
   name: RoadNetworkStrategyFactory
-  href: api/Cities.RoadNetworkStrategyFactory.html#Cities_RoadNetworkStrategyFactory__ctor_
-  commentId: Overload:Cities.RoadNetworkStrategyFactory.#ctor
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory__ctor_
+  commentId: Overload:Cities.Roads.RoadNetworkStrategyFactory.#ctor
   isSpec: "True"
-  fullName: Cities.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory
+  fullName: Cities.Roads.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory
   nameWithType: RoadNetworkStrategyFactory.RoadNetworkStrategyFactory
-- uid: Cities.RoadNetworkStrategyFactory.CreateAgentStrategy
+- uid: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
   name: CreateAgentStrategy()
-  href: api/Cities.RoadNetworkStrategyFactory.html#Cities_RoadNetworkStrategyFactory_CreateAgentStrategy
-  commentId: M:Cities.RoadNetworkStrategyFactory.CreateAgentStrategy
-  fullName: Cities.RoadNetworkStrategyFactory.CreateAgentStrategy()
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateAgentStrategy
+  commentId: M:Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
+  fullName: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy()
   nameWithType: RoadNetworkStrategyFactory.CreateAgentStrategy()
-- uid: Cities.RoadNetworkStrategyFactory.CreateAgentStrategy*
+- uid: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy*
   name: CreateAgentStrategy
-  href: api/Cities.RoadNetworkStrategyFactory.html#Cities_RoadNetworkStrategyFactory_CreateAgentStrategy_
-  commentId: Overload:Cities.RoadNetworkStrategyFactory.CreateAgentStrategy
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateAgentStrategy_
+  commentId: Overload:Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
   isSpec: "True"
-  fullName: Cities.RoadNetworkStrategyFactory.CreateAgentStrategy
+  fullName: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
   nameWithType: RoadNetworkStrategyFactory.CreateAgentStrategy
-- uid: Cities.RoadNetworkStrategyFactory.CreateLSystemStrategy
+- uid: Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy
   name: CreateLSystemStrategy()
-  href: api/Cities.RoadNetworkStrategyFactory.html#Cities_RoadNetworkStrategyFactory_CreateLSystemStrategy
-  commentId: M:Cities.RoadNetworkStrategyFactory.CreateLSystemStrategy
-  fullName: Cities.RoadNetworkStrategyFactory.CreateLSystemStrategy()
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateLSystemStrategy
+  commentId: M:Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy
+  fullName: Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy()
   nameWithType: RoadNetworkStrategyFactory.CreateLSystemStrategy()
-- uid: Cities.RoadNetworkStrategyFactory.CreateLSystemStrategy*
+- uid: Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy*
   name: CreateLSystemStrategy
-  href: api/Cities.RoadNetworkStrategyFactory.html#Cities_RoadNetworkStrategyFactory_CreateLSystemStrategy_
-  commentId: Overload:Cities.RoadNetworkStrategyFactory.CreateLSystemStrategy
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateLSystemStrategy_
+  commentId: Overload:Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy
   isSpec: "True"
-  fullName: Cities.RoadNetworkStrategyFactory.CreateLSystemStrategy
+  fullName: Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy
   nameWithType: RoadNetworkStrategyFactory.CreateLSystemStrategy
 - uid: Cities.Testing
   name: Cities.Testing
