@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TerrainGenerator
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TerrainGenerator
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrain.TerrainGenerator">
+  
+  
+  <h1 id="Terrain_TerrainGenerator" data-uid="Terrain.TerrainGenerator" class="text-break">Class TerrainGenerator
+  </h1>
+  <div class="markdown level0 summary"><p>Generates terrain meshes based on noise maps generated with arbitrary strategies.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TerrainGenerator</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Mesh</span>, <span class="xref">UnityEngine.Texture2D</span>&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrain.html">Terrain</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="Terrain_TerrainGenerator_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TerrainGenerator : IGenerator&lt;(Mesh, Texture2D)&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/docfx-master/apiSpec/new?filename=Terrain_TerrainGenerator__ctor_Interfaces_IGenerator_System_Single_0__0____.md&amp;value=---%0Auid%3A%20Terrain.TerrainGenerator.%23ctor(Interfaces.IGenerator%7BSystem.Single%5B0%3A%2C0%3A%5D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/docfx-master/Assets/Scripts/Terrain/TerrainGenerator.cs/#L61">View Source</a>
+  </span>
+  <a id="Terrain_TerrainGenerator__ctor_" data-uid="Terrain.TerrainGenerator.#ctor*"></a>
+  <h4 id="Terrain_TerrainGenerator__ctor_Interfaces_IGenerator_System_Single_0__0____" data-uid="Terrain.TerrainGenerator.#ctor(Interfaces.IGenerator{System.Single[0:,0:]})">TerrainGenerator(IGenerator&lt;Single[,]&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes the terrain generator by setting its
+noise map generation strategy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TerrainGenerator(IGenerator&lt;float[, ]&gt; noiseStrategy)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
+        <td><span class="parametername">noiseStrategy</span></td>
+        <td><p>The strategy of generating noise maps.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/docfx-master/apiSpec/new?filename=Terrain_TerrainGenerator_HeightCurve.md&amp;value=---%0Auid%3A%20Terrain.TerrainGenerator.HeightCurve%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/docfx-master/Assets/Scripts/Terrain/TerrainGenerator.cs/#L37">View Source</a>
+  </span>
+  <a id="Terrain_TerrainGenerator_HeightCurve_" data-uid="Terrain.TerrainGenerator.HeightCurve*"></a>
+  <h4 id="Terrain_TerrainGenerator_HeightCurve" data-uid="Terrain.TerrainGenerator.HeightCurve">HeightCurve</h4>
+  <div class="markdown level1 summary"><p>Defines what different values in generated noise maps mean
+when calculating vertex heights during the mesh generation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationCurve HeightCurve { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.AnimationCurve</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/docfx-master/apiSpec/new?filename=Terrain_TerrainGenerator_HeightScale.md&amp;value=---%0Auid%3A%20Terrain.TerrainGenerator.HeightScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/docfx-master/Assets/Scripts/Terrain/TerrainGenerator.cs/#L27">View Source</a>
+  </span>
+  <a id="Terrain_TerrainGenerator_HeightScale_" data-uid="Terrain.TerrainGenerator.HeightScale*"></a>
+  <h4 id="Terrain_TerrainGenerator_HeightScale" data-uid="Terrain.TerrainGenerator.HeightScale">HeightScale</h4>
+  <div class="markdown level1 summary"><p>The scale of heights when generating a terrain mesh. The larger the scale, the higher the &quot;mountains&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float HeightScale { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/docfx-master/apiSpec/new?filename=Terrain_TerrainGenerator_NoiseMapStrategy.md&amp;value=---%0Auid%3A%20Terrain.TerrainGenerator.NoiseMapStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/docfx-master/Assets/Scripts/Terrain/TerrainGenerator.cs/#L22">View Source</a>
+  </span>
+  <a id="Terrain_TerrainGenerator_NoiseMapStrategy_" data-uid="Terrain.TerrainGenerator.NoiseMapStrategy*"></a>
+  <h4 id="Terrain_TerrainGenerator_NoiseMapStrategy" data-uid="Terrain.TerrainGenerator.NoiseMapStrategy">NoiseMapStrategy</h4>
+  <div class="markdown level1 summary"><p>The noise map generation strategy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;float[, ]&gt; NoiseMapStrategy { set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/docfx-master/apiSpec/new?filename=Terrain_TerrainGenerator_TextureType.md&amp;value=---%0Auid%3A%20Terrain.TerrainGenerator.TextureType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/docfx-master/Assets/Scripts/Terrain/TerrainGenerator.cs/#L52">View Source</a>
+  </span>
+  <a id="Terrain_TerrainGenerator_TextureType_" data-uid="Terrain.TerrainGenerator.TextureType*"></a>
+  <h4 id="Terrain_TerrainGenerator_TextureType" data-uid="Terrain.TerrainGenerator.TextureType">TextureType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TerrainGenerator.Texture2DType TextureType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrain.TerrainGenerator.Texture2DType.html">TerrainGenerator.Texture2DType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/docfx-master/apiSpec/new?filename=Terrain_TerrainGenerator_Generate.md&amp;value=---%0Auid%3A%20Terrain.TerrainGenerator.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/docfx-master/Assets/Scripts/Terrain/TerrainGenerator.cs/#L72">View Source</a>
+  </span>
+  <a id="Terrain_TerrainGenerator_Generate_" data-uid="Terrain.TerrainGenerator.Generate*"></a>
+  <h4 id="Terrain_TerrainGenerator_Generate" data-uid="Terrain.TerrainGenerator.Generate">Generate()</h4>
+  <div class="markdown level1 summary"><p>Generates a terrain as a tuple consisting of a mesh and its texture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (Mesh, Texture2D) Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Mesh</span>, <span class="xref">UnityEngine.Texture2D</span>&gt;</td>
+        <td><p>The terrain tuple.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/docfx-master/apiSpec/new?filename=Terrain_TerrainGenerator.md&amp;value=---%0Auid%3A%20Terrain.TerrainGenerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/docfx-master/Assets/Scripts/Terrain/TerrainGenerator.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
