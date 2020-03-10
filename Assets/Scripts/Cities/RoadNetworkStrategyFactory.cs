@@ -6,16 +6,23 @@ namespace Cities
     /// <summary>
     /// Creates strategies for generating road networks.
     /// </summary>
-    public static class RoadNetworkStrategyFactory
+    public class RoadNetworkStrategyFactory
     {
 
-        public static IGenerator<RoadNetwork> CreateAgentStrategy()
+        private readonly IInjector<float[,]> _terrainMeshNoiseMapInjector;
+        
+        public RoadNetworkStrategyFactory(IInjector<float[,]> terrainMeshNoiseMapInjector)
+        {
+            _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
+        }
+        
+        public IGenerator<RoadNetwork> CreateAgentStrategy()
         {
             // TODO
             throw new NotImplementedException();
         }        
         
-        public static IGenerator<RoadNetwork> CreateLSystemStrategy()
+        public IGenerator<RoadNetwork> CreateLSystemStrategy()
         {
             // TODO
             throw new NotImplementedException();
