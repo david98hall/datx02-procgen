@@ -142,8 +142,7 @@ namespace Cities.Roads
                     _roadNetwork[intersection].Add(end);
 
                 // Add road from the intersection to the other end point
-                if ((!_roadNetwork.ContainsKey(lineEnd) || 
-                     !_roadNetwork[lineEnd].Contains(intersection)) &&
+                if ((!_roadNetwork.ContainsKey(lineEnd) || !_roadNetwork[lineEnd].Contains(intersection)) &&
                     !intersection.Equals(lineEnd))
                 {
                     _roadNetwork[intersection].Add(lineEnd);      

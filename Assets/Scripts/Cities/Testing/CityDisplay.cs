@@ -10,6 +10,8 @@ namespace Cities.Testing
         private readonly CityGenerator _cityGenerator;
 
         private readonly HashSet<GameObject> roadRenderers;
+
+        public Material roadMaterial;
         
         public CityDisplay()
         {
@@ -44,13 +46,23 @@ namespace Cities.Testing
                 var item = new GameObject("Road " + roadCount++);
                 var roadRenderer = item.AddComponent<LineRenderer>();
                 roadRenderers.Add(item);
+                
                 // Set the appearance of the road
                 roadRenderer.startWidth = 0.3f;
                 roadRenderer.endWidth = 0.3f;
+                roadRenderer.numCornerVertices = 90;
+                roadRenderer.numCapVertices = 90;
+                roadRenderer.textureMode = LineTextureMode.Tile;
+                roadRenderer.generateLightingData = true;
+                if (roadMaterial != null)
+                {
+                    roadRenderer.sharedMaterial = roadMaterial;
+                }
+                
                 // Add the vertices of the road
-                var roadVertices = road.ToArray();
-                roadRenderer.positionCount = roadVertices.Length;
-                roadRenderer.SetPositions(roadVertices);
+                var roadArray = road.ToArray();
+                roadRenderer.positionCount = roadArray.Length;
+                roadRenderer.SetPositions(roadArray);
             }
             
         }
