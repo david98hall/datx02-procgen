@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Utils.Geometry
 {
@@ -7,8 +8,9 @@ namespace Utils.Geometry
     /// </summary>
     public static class Maths3D
     {
+
         /// <summary>
-        /// Returns true and the intersection point if the two lines intersect.
+        /// Returns true and the intersection point if the two line segments intersect.
         /// </summary>
         /// <param name="intersection">The intersection point.</param>
         /// <param name="point1">The starting point of the first line.</param>
@@ -16,7 +18,20 @@ namespace Utils.Geometry
         /// <param name="point3">The starting point of the second line.</param>
         /// <param name="point4">The second point of the second line.</param>
         /// <returns>true if the two lines intersect, false otherwise.</returns>
-        public static bool Intersection(
+        public static bool LineSegmentIntersection(
+            out Vector3 intersection,
+            Vector3 point1, Vector3 point2,
+            Vector3 point3, Vector3 point4)
+        {
+            var intersectionInDir1 = LineSegmentIntersection1(out _, point1, point2, point3, point4);
+            var intersectionInDir2 = 
+                LineSegmentIntersection1(out intersection, point3, point4, point1, point2);
+
+            return intersectionInDir1 && intersectionInDir2;
+        }
+
+        // Direction based
+        private static bool LineSegmentIntersection1(
             out Vector3 intersection, 
             Vector3 point1, Vector3 point2, 
             Vector3 point3, Vector3 point4)
@@ -29,14 +44,19 @@ namespace Utils.Geometry
             var cross2 = Vector3.Cross(pointLine, relVec2);
 
             var planarFactor = Vector3.Dot(pointLine, cross1);
-            const float epsilon = 0.0001f;
+            const float epsilon = 0.000001f;
             if (Mathf.Abs(planarFactor) < epsilon && cross1.sqrMagnitude > epsilon)
             {
                 // The lines are in the same plane and are not parallel.
                 // Start at point 1 and "go" along vector 1 to the point of intersection
                 var scale = Vector3.Dot(cross2, cross1) / cross1.sqrMagnitude;
-                intersection = point1 + relVec1 * scale;
-                return true;
+                
+                if (0 <= scale && scale <= 1)
+                {
+                    // The intersection is on the line segments and not outside, somewhere else on the lines
+                    intersection = point1 + relVec1 * scale;
+                    return true;   
+                }
             }
 
             // The lines are not in the same plane, therefore they are not intersecting
