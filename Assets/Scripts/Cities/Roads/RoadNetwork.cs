@@ -17,7 +17,7 @@ namespace Cities.Roads
         private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
 
         public IEnumerable<Vector3> Intersections => _roadNetwork.Keys.Where(v => _roadNetwork[v].Count > 1);
-        
+
         #region Constructors
         
         public RoadNetwork()
@@ -66,12 +66,10 @@ namespace Cities.Roads
         /// </summary>
         /// <param name="roads">The roads to add.</param>
         /// <typeparam name="T">An IEnumerable type of Vector3s.</typeparam>
-        
         public void AddRoads<T>(params T[] roads) where T : IEnumerable<Vector3>
         {
             AddRoads((IEnumerator<IEnumerable<Vector3>>)roads.GetEnumerator());
         }
-        
         
         /// <summary>
         /// Creates a road by creating edges between vertices.
@@ -85,17 +83,15 @@ namespace Cities.Roads
             
             // Check that there is at least two vertices
             if (!roadVertices.MoveNext()) return;
-            
-            var roadParts = new HashSet<(Vector3, Vector3)>(GetRoadParts());
 
             // The road vertices are at least two, add a road between the first two
-            AddRoad(previousVertex, roadVertices.Current, roadParts);
+            AddRoad(previousVertex, roadVertices.Current, GetRoadParts());
             previousVertex = roadVertices.Current;
             
             // Add roads between the rest of the vertices along the full road
             while (roadVertices.MoveNext())
             {
-                AddRoad(previousVertex, roadVertices.Current, roadParts);
+                AddRoad(previousVertex, roadVertices.Current, GetRoadParts());
                 previousVertex = roadVertices.Current;
             }
             
@@ -108,20 +104,13 @@ namespace Cities.Roads
             // Adds the start to the road network
             AddRoadVertex(start);
             
-            if (SplitAtIntersections(start, end, roadParts)) 
-            {
-                // If an intersection was found between start and end, the road was split
-                // and the start to end entry has to be removed since the road now has the
-                // intersection on its path from start to end.
-                _roadNetwork[start].Remove(end);
-            }
-            else
+            if (!SplitAtIntersections(start, end, roadParts)) 
             {
                 // Add an edge straight from the previous vertex to the current one
                 _roadNetwork[start].Add(end);
             }
         }
-        
+
         // Returns true if a split occurred
         private bool SplitAtIntersections(Vector3 lineStart, Vector3 lineEnd, IEnumerable<(Vector3, Vector3)> roadParts)
         {
@@ -134,14 +123,34 @@ namespace Cities.Roads
             // Add all intersection points on other road parts if there are any
             foreach (var (start, intersection, end) in intersections)
             {
+                AddRoadVertex(intersection);
+                
+                // Remove full roads since they now intersect
+                _roadNetwork[lineStart].Remove(lineEnd);
                 _roadNetwork[start].Remove(end);
 
-                _roadNetwork[start].Add(intersection);
-                _roadNetwork[lineStart].Add(intersection);
+                // Add road from one of the start points to the intersection
+                if (!_roadNetwork[intersection].Contains(start) && !intersection.Equals(start))
+                    _roadNetwork[start].Add(intersection);
 
-                AddRoadVertex(intersection);
-                _roadNetwork[intersection].Add(end);
-                _roadNetwork[intersection].Add(lineEnd);
+                // Add road from the other start point to the intersection
+                if (!_roadNetwork[intersection].Contains(lineStart)&& !intersection.Equals(lineStart)) 
+                    _roadNetwork[lineStart].Add(intersection);
+
+                // Add road from the intersection to one of the end points
+                if (!_roadNetwork[end].Contains(intersection) && !intersection.Equals(end)) 
+                    _roadNetwork[intersection].Add(end);
+
+                // Add road from the intersection to the other end point
+                if ((!_roadNetwork.ContainsKey(lineEnd) || !_roadNetwork[lineEnd].Contains(intersection)) &&
+                    !intersection.Equals(lineEnd))
+                {
+                    _roadNetwork[intersection].Add(lineEnd);      
+                }
+
+                // Update the start point to the intersection, in case there
+                // are more intersections along the rest of the road
+                lineStart = intersection;
             }
 
             // Intersections found, return true
@@ -158,15 +167,15 @@ namespace Cities.Roads
                 var (partStart, partEnd) = roadParts.Current;
                 
                 // If the argument line intersects the road part line
-                if (Maths3D.LineSegmentIntersection(
-                    out var intersectionPoint, 
+                if (!Maths3D.LineSegmentIntersection(
+                    out var intersectionPoint,
                     linePoint1, linePoint2,
-                    partStart, partEnd))
-                {
-                    intersectionPoints.Add((partStart, intersectionPoint, partEnd));
-                }
+                    partStart, partEnd)) continue;
+                
+                // Register the intersection point
+                intersectionPoints.Add((partStart, intersectionPoint, partEnd));
             }
-
+            
             return intersectionPoints;
         }
         
@@ -195,8 +204,6 @@ namespace Cities.Roads
                 _roadNetwork.Add(vertex, new HashSet<Vector3>());
             }
         }
-        
-        
         
         #endregion
 
@@ -251,16 +258,16 @@ namespace Cities.Roads
             // If the vertex has already been visited, abort
             if (visited.Contains(start))
                 return null;
-            
+
             var roads = new HashSet<LinkedList<Vector3>>();
             
             // Mark the start vertex as visited
             visited.Add(start);
 
-            // Traverse all neighbours to the start node
+            // Traverse all of the start node's neighbours
             foreach (var neighbour in _roadNetwork[start])
             {
-                // Look roads by searching from the neighbour
+                // Look up roads by searching from the neighbour
                 var neighbourRoads = GetRoads(neighbour, visited);
 
                 // Create a new road
@@ -291,7 +298,6 @@ namespace Cities.Roads
                         var neighbourRoadsEnumerator = neighbourRoads.GetEnumerator();
                         while (neighbourRoadsEnumerator.MoveNext())
                         {
-                            /*
                             if (road.Count == 1)
                             {
                                 // Only the start vertex has been added to the road starting from it.
@@ -304,9 +310,6 @@ namespace Cities.Roads
                                 // Add the roads as they were created when searching from the neighbour vertex.
                                 roads.Add(neighbourRoadsEnumerator.Current);
                             }
-                            */
-                            road.AddLast(neighbour);
-                            roads.Add(neighbourRoadsEnumerator.Current);
                         }
 
                         break;
