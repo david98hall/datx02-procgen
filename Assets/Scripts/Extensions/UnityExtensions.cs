@@ -18,5 +18,21 @@ namespace Extensions
             {
                 postWrapMode = animationCurve.postWrapMode, preWrapMode = animationCurve.preWrapMode
             };
+        
+        public static Vector2 ToXZ(this Vector3 v3)
+        {
+            return new Vector2(v3.x, v3.z);
+        }
+        
+        public static Vector2 ToXY(this Vector3 v3)
+        {
+            return new Vector2(v3.x, v3.y);
+        }
+        
+        public static Vector2 ToZY(this Vector3 v3)
+        {
+            return new Vector2(v3.z, v3.y);
+        }
+        
     }
 }

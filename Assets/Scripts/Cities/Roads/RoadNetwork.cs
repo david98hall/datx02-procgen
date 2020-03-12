@@ -156,9 +156,9 @@ namespace Cities.Roads
                 var (partStart, partEnd) = roadParts.Current;
                 
                 // If the argument line intersects the road part line
-                if (Maths3D.Intersection(
+                if (Maths3D.LineSegmentIntersection(
                     out var intersectionPoint, 
-                    linePoint1, linePoint2, 
+                    linePoint1, linePoint2,
                     partStart, partEnd))
                 {
                     intersectionPoints.Add((partStart, intersectionPoint, partEnd));
@@ -289,6 +289,7 @@ namespace Cities.Roads
                         var neighbourRoadsEnumerator = neighbourRoads.GetEnumerator();
                         while (neighbourRoadsEnumerator.MoveNext())
                         {
+                            /*
                             if (road.Count == 1)
                             {
                                 // Only the start vertex has been added to the road starting from it.
@@ -301,6 +302,9 @@ namespace Cities.Roads
                                 // Add the roads as they were created when searching from the neighbour vertex.
                                 roads.Add(neighbourRoadsEnumerator.Current);
                             }
+                            */
+                            road.AddLast(neighbour);
+                            roads.Add(neighbourRoadsEnumerator.Current);
                         }
 
                         break;

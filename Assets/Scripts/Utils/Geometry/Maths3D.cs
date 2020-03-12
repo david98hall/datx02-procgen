@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Extensions;
+using UnityEngine;
 
 namespace Utils.Geometry
 {
@@ -7,42 +9,94 @@ namespace Utils.Geometry
     /// </summary>
     public static class Maths3D
     {
-        /// <summary>
-        /// Returns true and the intersection point if the two lines intersect.
-        /// </summary>
-        /// <param name="intersection">The intersection point.</param>
-        /// <param name="point1">The starting point of the first line.</param>
-        /// <param name="point2">The second point of the first line.</param>
-        /// <param name="point3">The starting point of the second line.</param>
-        /// <param name="point4">The second point of the second line.</param>
-        /// <returns>true if the two lines intersect, false otherwise.</returns>
-        public static bool Intersection(
+
+        public static bool LineSegmentIntersection(
+            out Vector3 intersection, 
+            Vector3 start1, Vector3 end1, 
+            Vector3 start2, Vector3 end2)
+        {
+            var dirVec1 = end1 - start1;
+            var dirVec2 = end2 - start2;
+
+            // Solve equation system
+            // start1.x + t * dirVec1.x = start2.x + s * dirVec2.x
+            // start1.y + t * dirVec1.y = start2.y + s * dirVec2.y
+            // start1.z + t * dirVec1.z = start2.z + s * dirVec2.z
+            // Used to get rid of one of the variables
+            
+            float t, lhs, rhs;
+            if (!float.IsInfinity(dirVec1.x / dirVec1.y))
+            {
+                var elimination = dirVec1.x / dirVec1.y;
+                var s = (start1.x - start2.x - elimination * (start1.y - start2.y)) / (dirVec2.x - dirVec2.y * elimination);
+                t = (start2.x + s * dirVec2.x - start1.x) / dirVec1.x;   
+                
+                lhs = start1.z + t * dirVec1.z;
+                rhs = start2.z + s * dirVec2.z;
+            }
+            else if (!float.IsInfinity(dirVec1.x / dirVec1.z))
+            {
+                var elimination = dirVec1.x / dirVec1.z;
+                var s = (start1.x - start2.x - elimination * (start1.z - start2.z)) / (dirVec2.x - dirVec2.z * elimination);
+                t = (start2.x + s * dirVec2.x - start1.x) / dirVec1.x;   
+                
+                lhs = start1.y + t * dirVec1.y;
+                rhs = start2.y + s * dirVec2.y;
+            }
+            else
+            {
+                var elimination = dirVec1.y / dirVec1.z;
+                var s = (start1.y - start2.y - elimination * (start1.z - start2.z)) / (dirVec2.y - dirVec2.z * elimination);
+                t = (start2.y + s * dirVec2.y - start1.y) / dirVec1.y;   
+                
+                lhs = start1.x + t * dirVec1.x;
+                rhs = start2.x + s * dirVec2.x;
+            }
+
+            if (Math.Abs(lhs - rhs) < 0.01f)
+            {
+                intersection = start1 + t * dirVec1;
+                return true;  
+            }
+            
+            intersection = Vector2.negativeInfinity;
+            return false;
+        }
+        
+        /*
+        public static bool LineSegmentIntersection(
             out Vector3 intersection, 
             Vector3 point1, Vector3 point2, 
             Vector3 point3, Vector3 point4)
         {
-            var relVec1 = point2 - point1;
-            var relVec2 = point4 - point3;
-            
-            var pointLine = point3 - point1;
-            var cross1 = Vector3.Cross(relVec1, relVec2);
-            var cross2 = Vector3.Cross(pointLine, relVec2);
-
-            var planarFactor = Vector3.Dot(pointLine, cross1);
-            const float epsilon = 0.0001f;
-            if (Mathf.Abs(planarFactor) < epsilon && cross1.sqrMagnitude > epsilon)
+            if (Maths2D.LineSegmentIntersection(
+                out var intersectionXZ,
+                point1.ToXZ(),
+                point2.ToXZ(),
+                point3.ToXZ(),
+                point4.ToXZ()
+                ))
             {
-                // The lines are in the same plane and are not parallel.
-                // Start at point 1 and "go" along vector 1 to the point of intersection
-                var scale = Vector3.Dot(cross2, cross1) / cross1.sqrMagnitude;
-                intersection = point1 + relVec1 * scale;
-                return true;
+                var largestY = Math.Abs(point1.y) > Math.Abs(point2.y) ? point1.y : point2.y;
+                var normal = new Vector2(intersectionXZ.x, largestY);
+
+                if (Maths2D.LineSegmentIntersection(
+                    out var intersectionXY,
+                    intersectionXZ, normal,
+                    point3.ToXY(),
+                    point4.ToXY()
+                    ))
+                {
+
+                    intersection = new Vector3(intersectionXZ.x, intersectionXY.y, intersectionXZ.y);
+                    return true;
+                }
             }
 
-            // The lines are not in the same plane, therefore they are not intersecting
             intersection = Vector3.negativeInfinity;
             return false;
         }
-        
+        */
+
     }
 }
