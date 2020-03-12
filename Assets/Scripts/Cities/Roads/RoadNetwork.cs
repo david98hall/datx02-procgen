@@ -285,6 +285,8 @@ namespace Cities.Roads
                     // At least two neighbour roads were found
                     default:
                     {
+                        road.AddLast(neighbour);
+                        
                         // Add roads found when searching from the neighbour vertex
                         var neighbourRoadsEnumerator = neighbourRoads.GetEnumerator();
                         while (neighbourRoadsEnumerator.MoveNext())
@@ -303,7 +305,6 @@ namespace Cities.Roads
                                 roads.Add(neighbourRoadsEnumerator.Current);
                             }
                             */
-                            road.AddLast(neighbour);
                             roads.Add(neighbourRoadsEnumerator.Current);
                         }
 
