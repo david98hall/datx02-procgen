@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/birka/Documents/GitHub/datx02-procgen/docfx_project",
+  "source_base_path": "D:/Documents/GitHub/datx02-procgen/docfx_project",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -12,7 +12,7 @@
           "hash": "MTcVR6nb4i0FV2vh36+KFQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "AoZU3tXMtxngUMGXyovyeg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.Plot.html",
-          "hash": "cTi85oLaKb3UUMIyMqmoqA=="
+          "hash": "yb8tlwM+FzDKaOHDC42Sgg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "LIlEijgTMy2VxZpFQQU2+g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -60,7 +60,7 @@
           "hash": "xvBwWSWSe1b66DGqeewSAQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.RoadNetwork.html",
-          "hash": "guV+Bhx7DIpIXcsdLA1uBg=="
+          "hash": "1uxy72T47HmoW2Msm7Ewcg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -84,7 +84,7 @@
           "hash": "AXmmy7imlxOqcTZ7D9JG1g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -96,7 +96,7 @@
           "hash": "UStQdoqUBPmx/09nzdErwA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Testing.CityDisplay.html",
-          "hash": "rb3ZnPwhHto+xChfKxI1Rg=="
+          "hash": "JEbsA5GcUmodPlrPsSTsbQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -120,7 +120,7 @@
           "hash": "W6Nq6krHDnRnXk384ST1gw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -132,7 +132,7 @@
           "hash": "Ev1Y3HljAyx+SbRFECXX4A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -144,7 +144,7 @@
           "hash": "JTx0UkPexhZoLEf/UbiSlQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -156,7 +156,7 @@
           "hash": "gurpybHUnU8sJujNZkvtrw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -168,7 +168,7 @@
           "hash": "Bva+HDezjVAdJZ//2pRbag=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -180,7 +180,7 @@
           "hash": "8HLtOOypmQpj74tja/AC9w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -192,7 +192,7 @@
           "hash": "6Ui1H7lHX3xfQt1UOweWSQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -204,7 +204,7 @@
           "hash": "KQ1/mKPWlmPvmIbkIqJnsA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -216,16 +216,16 @@
           "hash": "V7KuJDdw+64NFCYrkMkXtA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Extensions.LinkedListExtensions.yml",
+      "source_relative_path": "api/Extensions.CollectionExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Extensions.LinkedListExtensions.html",
-          "hash": "QZjalxs5av9DBntl+INOgQ=="
+          "relative_path": "api/Extensions.CollectionExtensions.html",
+          "hash": "Fmx/YbEEFPXprK9SI7DLZA=="
         }
       },
       "is_incremental": false,
@@ -240,7 +240,7 @@
           "hash": "eMpOYefnPMxrHKiilpFocQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Extensions.html",
-          "hash": "V/8dcWApysLDbqK0r7q5rA=="
+          "hash": "G6M2mWhnOjngBfUNVABjPA=="
         }
       },
       "is_incremental": false,
@@ -264,7 +264,7 @@
           "hash": "xmbzrfkUN8xZfiYt9VYdUw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -276,7 +276,7 @@
           "hash": "FBLZjcbSWmjL4w+JPXomXw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -288,7 +288,7 @@
           "hash": "YXZ0FHHqmZm1ejQow84RnQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -300,7 +300,7 @@
           "hash": "2t3xTEbBTQVkSJcp2HRy/Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -312,7 +312,7 @@
           "hash": "Q1ZDG7pASmIJdcLN7LXcdw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -324,7 +324,7 @@
           "hash": "U/TxQdgQ7hdo4jMqHc8DEQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -336,7 +336,7 @@
           "hash": "78Bc38Q6ypwbDdrefYvQ4g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -348,7 +348,7 @@
           "hash": "M5cXXfbR0msEL8uXvcCBtw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -360,7 +360,7 @@
           "hash": "cRcG9vrR2P2HIv/0+pHMRQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -372,7 +372,7 @@
           "hash": "epPOuIf+uSoDPTLOicSDzw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -384,7 +384,7 @@
           "hash": "DxbYmyalEQzP1FOcBIpDLA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -396,7 +396,7 @@
           "hash": "B8e1vPjWXtr43pqQz0SM6g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -408,7 +408,7 @@
           "hash": "Z2x6sEtEgPhdrZ6v1ktT3A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -420,7 +420,7 @@
           "hash": "msL3HRQy8sXO35vrd4ZOhw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -432,7 +432,7 @@
           "hash": "Cp18gIkpfe12mzGJUMy+3w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -444,7 +444,7 @@
           "hash": "iGb5KRoxT9KAUt19W20e+A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -456,7 +456,7 @@
           "hash": "buQ7tktxOKedpise6cEPgQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -468,7 +468,19 @@
           "hash": "OkyPMBzdAgSSZKwsT/itcA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.Maths3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.Maths3D.html",
+          "hash": "YgU5YMtoKgU/PDst0MMsoA=="
+        }
+      },
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -480,7 +492,7 @@
           "hash": "luksjw2x4qoOsrEzGK4CGg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -492,7 +504,7 @@
           "hash": "RIwKuT+qjpRXnQKJ60OONg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -504,7 +516,7 @@
           "hash": "wZ+ImHWAf7s9HFxxVdGLhg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -516,7 +528,7 @@
           "hash": "Jc9oUdXn2NPVe7oynIL8kw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -528,7 +540,7 @@
           "hash": "OjWYgQhXjaL2jiraca1iow=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -537,10 +549,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.html",
-          "hash": "ruRzdCupAdC+jfHJBjZa2Q=="
+          "hash": "Lpue4DVAyh6pYGrzrPVehw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -552,7 +564,7 @@
           "hash": "vNjSCyRlpTKb092uU2GC/g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -564,7 +576,7 @@
           "hash": "n7Lpb4dGJY45V9KrXZqAPw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -573,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "zu96ezJwt+I8/XT64NyxOQ=="
+          "hash": "NZC8kZ5ypMUbBEs+w0Wa9g=="
         }
       },
       "is_incremental": false,
@@ -646,8 +658,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 46,
-          "skipped_file_count": 36
+          "total_file_count": 47,
+          "skipped_file_count": 46
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
