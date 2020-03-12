@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Extensions
 {
     /// <summary>
-    /// Extensions for classes implementing ICollection or ICollection<T>.
+    /// Extensions for classes implementing ICollection or ICollection&lt;T&gt;.
     /// </summary>
     public static class CollectionExtensions   
     {

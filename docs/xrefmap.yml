@@ -135,6 +135,25 @@ references:
   commentId: T:Cities.Plots.Plot
   fullName: Cities.Plots.Plot
   nameWithType: Plot
+- uid: Cities.Plots.Plot.#ctor
+  name: Plot()
+  href: api/Cities.Plots.Plot.html#Cities_Plots_Plot__ctor
+  commentId: M:Cities.Plots.Plot.#ctor
+  fullName: Cities.Plots.Plot.Plot()
+  nameWithType: Plot.Plot()
+- uid: Cities.Plots.Plot.#ctor(Cities.Plots.Plot)
+  name: Plot(Plot)
+  href: api/Cities.Plots.Plot.html#Cities_Plots_Plot__ctor_Cities_Plots_Plot_
+  commentId: M:Cities.Plots.Plot.#ctor(Cities.Plots.Plot)
+  fullName: Cities.Plots.Plot.Plot(Cities.Plots.Plot)
+  nameWithType: Plot.Plot(Plot)
+- uid: Cities.Plots.Plot.#ctor*
+  name: Plot
+  href: api/Cities.Plots.Plot.html#Cities_Plots_Plot__ctor_
+  commentId: Overload:Cities.Plots.Plot.#ctor
+  isSpec: "True"
+  fullName: Cities.Plots.Plot.Plot
+  nameWithType: Plot.Plot
 - uid: Cities.Plots.Plot.Clone
   name: Clone()
   href: api/Cities.Plots.Plot.html#Cities_Plots_Plot_Clone
@@ -308,6 +327,19 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.RoadNetwork.GetRoads
   nameWithType: RoadNetwork.GetRoads
+- uid: Cities.Roads.RoadNetwork.Intersections
+  name: Intersections
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_Intersections
+  commentId: P:Cities.Roads.RoadNetwork.Intersections
+  fullName: Cities.Roads.RoadNetwork.Intersections
+  nameWithType: RoadNetwork.Intersections
+- uid: Cities.Roads.RoadNetwork.Intersections*
+  name: Intersections
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_Intersections_
+  commentId: Overload:Cities.Roads.RoadNetwork.Intersections
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.Intersections
+  nameWithType: RoadNetwork.Intersections
 - uid: Cities.Roads.RoadNetworkStrategyFactory
   name: RoadNetworkStrategyFactory
   href: api/Cities.Roads.RoadNetworkStrategyFactory.html
@@ -394,6 +426,12 @@ references:
   isSpec: "True"
   fullName: Cities.Testing.CityDisplay.GenerateCity
   nameWithType: CityDisplay.GenerateCity
+- uid: Cities.Testing.CityDisplay.roadMaterial
+  name: roadMaterial
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_roadMaterial
+  commentId: F:Cities.Testing.CityDisplay.roadMaterial
+  fullName: Cities.Testing.CityDisplay.roadMaterial
+  nameWithType: CityDisplay.roadMaterial
 - uid: Cities.Testing.CityGeneratorEditor
   name: CityGeneratorEditor
   href: api/Cities.Testing.CityGeneratorEditor.html
@@ -566,44 +604,62 @@ references:
   commentId: N:Extensions
   fullName: Extensions
   nameWithType: Extensions
-- uid: Extensions.LinkedListExtensions
-  name: LinkedListExtensions
-  href: api/Extensions.LinkedListExtensions.html
-  commentId: T:Extensions.LinkedListExtensions
-  fullName: Extensions.LinkedListExtensions
-  nameWithType: LinkedListExtensions
-- uid: Extensions.LinkedListExtensions.AppendRange*
-  name: AppendRange
-  href: api/Extensions.LinkedListExtensions.html#Extensions_LinkedListExtensions_AppendRange_
-  commentId: Overload:Extensions.LinkedListExtensions.AppendRange
+- uid: Extensions.CollectionExtensions
+  name: CollectionExtensions
+  href: api/Extensions.CollectionExtensions.html
+  commentId: T:Extensions.CollectionExtensions
+  fullName: Extensions.CollectionExtensions
+  nameWithType: CollectionExtensions
+- uid: Extensions.CollectionExtensions.AddRange*
+  name: AddRange
+  href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_AddRange_
+  commentId: Overload:Extensions.CollectionExtensions.AddRange
   isSpec: "True"
-  fullName: Extensions.LinkedListExtensions.AppendRange
-  nameWithType: LinkedListExtensions.AppendRange
-- uid: Extensions.LinkedListExtensions.AppendRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0})
-  name: AppendRange<T>(LinkedList<T>, IEnumerable<T>)
-  href: api/Extensions.LinkedListExtensions.html#Extensions_LinkedListExtensions_AppendRange__1_System_Collections_Generic_LinkedList___0__System_Collections_Generic_IEnumerable___0__
-  commentId: M:Extensions.LinkedListExtensions.AppendRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0})
-  name.vb: AppendRange(Of T)(LinkedList(Of T), IEnumerable(Of T))
-  fullName: Extensions.LinkedListExtensions.AppendRange<T>(System.Collections.Generic.LinkedList<T>, System.Collections.Generic.IEnumerable<T>)
-  fullName.vb: Extensions.LinkedListExtensions.AppendRange(Of T)(System.Collections.Generic.LinkedList(Of T), System.Collections.Generic.IEnumerable(Of T))
-  nameWithType: LinkedListExtensions.AppendRange<T>(LinkedList<T>, IEnumerable<T>)
-  nameWithType.vb: LinkedListExtensions.AppendRange(Of T)(LinkedList(Of T), IEnumerable(Of T))
-- uid: Extensions.LinkedListExtensions.PrependRange*
+  fullName: Extensions.CollectionExtensions.AddRange
+  nameWithType: CollectionExtensions.AddRange
+- uid: Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  name: AddRange<T>(ICollection<T>, IEnumerable<T>)
+  href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_AddRange__1_System_Collections_Generic_ICollection___0__System_Collections_Generic_IEnumerable___0__
+  commentId: M:Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  name.vb: AddRange(Of T)(ICollection(Of T), IEnumerable(Of T))
+  fullName: Extensions.CollectionExtensions.AddRange<T>(System.Collections.Generic.ICollection<T>, System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Extensions.CollectionExtensions.AddRange(Of T)(System.Collections.Generic.ICollection(Of T), System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: CollectionExtensions.AddRange<T>(ICollection<T>, IEnumerable<T>)
+  nameWithType.vb: CollectionExtensions.AddRange(Of T)(ICollection(Of T), IEnumerable(Of T))
+- uid: Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0})
+  name: AddRange<T>(ICollection<T>, IEnumerable<T>, Func<T, T>)
+  href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_AddRange__1_System_Collections_Generic_ICollection___0__System_Collections_Generic_IEnumerable___0__System_Func___0___0__
+  commentId: M:Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0})
+  name.vb: AddRange(Of T)(ICollection(Of T), IEnumerable(Of T), Func(Of T, T))
+  fullName: Extensions.CollectionExtensions.AddRange<T>(System.Collections.Generic.ICollection<T>, System.Collections.Generic.IEnumerable<T>, System.Func<T, T>)
+  fullName.vb: Extensions.CollectionExtensions.AddRange(Of T)(System.Collections.Generic.ICollection(Of T), System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, T))
+  nameWithType: CollectionExtensions.AddRange<T>(ICollection<T>, IEnumerable<T>, Func<T, T>)
+  nameWithType.vb: CollectionExtensions.AddRange(Of T)(ICollection(Of T), IEnumerable(Of T), Func(Of T, T))
+- uid: Extensions.CollectionExtensions.PrependRange*
   name: PrependRange
-  href: api/Extensions.LinkedListExtensions.html#Extensions_LinkedListExtensions_PrependRange_
-  commentId: Overload:Extensions.LinkedListExtensions.PrependRange
+  href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_PrependRange_
+  commentId: Overload:Extensions.CollectionExtensions.PrependRange
   isSpec: "True"
-  fullName: Extensions.LinkedListExtensions.PrependRange
-  nameWithType: LinkedListExtensions.PrependRange
-- uid: Extensions.LinkedListExtensions.PrependRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0})
+  fullName: Extensions.CollectionExtensions.PrependRange
+  nameWithType: CollectionExtensions.PrependRange
+- uid: Extensions.CollectionExtensions.PrependRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0})
   name: PrependRange<T>(LinkedList<T>, IEnumerable<T>)
-  href: api/Extensions.LinkedListExtensions.html#Extensions_LinkedListExtensions_PrependRange__1_System_Collections_Generic_LinkedList___0__System_Collections_Generic_IEnumerable___0__
-  commentId: M:Extensions.LinkedListExtensions.PrependRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0})
+  href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_PrependRange__1_System_Collections_Generic_LinkedList___0__System_Collections_Generic_IEnumerable___0__
+  commentId: M:Extensions.CollectionExtensions.PrependRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0})
   name.vb: PrependRange(Of T)(LinkedList(Of T), IEnumerable(Of T))
-  fullName: Extensions.LinkedListExtensions.PrependRange<T>(System.Collections.Generic.LinkedList<T>, System.Collections.Generic.IEnumerable<T>)
-  fullName.vb: Extensions.LinkedListExtensions.PrependRange(Of T)(System.Collections.Generic.LinkedList(Of T), System.Collections.Generic.IEnumerable(Of T))
-  nameWithType: LinkedListExtensions.PrependRange<T>(LinkedList<T>, IEnumerable<T>)
-  nameWithType.vb: LinkedListExtensions.PrependRange(Of T)(LinkedList(Of T), IEnumerable(Of T))
+  fullName: Extensions.CollectionExtensions.PrependRange<T>(System.Collections.Generic.LinkedList<T>, System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Extensions.CollectionExtensions.PrependRange(Of T)(System.Collections.Generic.LinkedList(Of T), System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: CollectionExtensions.PrependRange<T>(LinkedList<T>, IEnumerable<T>)
+  nameWithType.vb: CollectionExtensions.PrependRange(Of T)(LinkedList(Of T), IEnumerable(Of T))
+- uid: Extensions.CollectionExtensions.PrependRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0})
+  name: PrependRange<T>(LinkedList<T>, IEnumerable<T>, Func<T, T>)
+  href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_PrependRange__1_System_Collections_Generic_LinkedList___0__System_Collections_Generic_IEnumerable___0__System_Func___0___0__
+  commentId: M:Extensions.CollectionExtensions.PrependRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0})
+  name.vb: PrependRange(Of T)(LinkedList(Of T), IEnumerable(Of T), Func(Of T, T))
+  fullName: Extensions.CollectionExtensions.PrependRange<T>(System.Collections.Generic.LinkedList<T>, System.Collections.Generic.IEnumerable<T>, System.Func<T, T>)
+  fullName.vb: Extensions.CollectionExtensions.PrependRange(Of T)(System.Collections.Generic.LinkedList(Of T), System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, T))
+  nameWithType: CollectionExtensions.PrependRange<T>(LinkedList<T>, IEnumerable<T>, Func<T, T>)
+  nameWithType.vb: CollectionExtensions.PrependRange(Of T)(LinkedList(Of T), IEnumerable(Of T), Func(Of T, T))
 - uid: Extensions.UnityExtensions
   name: UnityExtensions
   href: api/Extensions.UnityExtensions.html
@@ -1385,6 +1441,28 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.SideOfLine
   nameWithType: Maths2D.SideOfLine
+- uid: Utils.Geometry.Maths3D
+  name: Maths3D
+  href: api/Utils.Geometry.Maths3D.html
+  commentId: T:Utils.Geometry.Maths3D
+  fullName: Utils.Geometry.Maths3D
+  nameWithType: Maths3D
+- uid: Utils.Geometry.Maths3D.LineSegmentIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name: LineSegmentIntersection(out Vector3, Vector3, Vector3, Vector3, Vector3)
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_LineSegmentIntersection_UnityEngine_Vector3__UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.Maths3D.LineSegmentIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name.vb: LineSegmentIntersection(ByRef Vector3, Vector3, Vector3, Vector3, Vector3)
+  fullName: Utils.Geometry.Maths3D.LineSegmentIntersection(out UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  fullName.vb: Utils.Geometry.Maths3D.LineSegmentIntersection(ByRef UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: Maths3D.LineSegmentIntersection(out Vector3, Vector3, Vector3, Vector3, Vector3)
+  nameWithType.vb: Maths3D.LineSegmentIntersection(ByRef Vector3, Vector3, Vector3, Vector3, Vector3)
+- uid: Utils.Geometry.Maths3D.LineSegmentIntersection*
+  name: LineSegmentIntersection
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_LineSegmentIntersection_
+  commentId: Overload:Utils.Geometry.Maths3D.LineSegmentIntersection
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths3D.LineSegmentIntersection
+  nameWithType: Maths3D.LineSegmentIntersection
 - uid: Utils.Geometry.Polygon
   name: Polygon
   href: api/Utils.Geometry.Polygon.html
