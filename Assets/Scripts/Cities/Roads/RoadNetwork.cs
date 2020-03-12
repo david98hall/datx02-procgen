@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Extensions;
@@ -17,11 +16,8 @@ namespace Cities.Roads
         // Adjacency set for road network vectors
         private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
 
-        public IEnumerable<Vector3> RoadVertices => _roadNetwork.Keys.Select(v => v.Clone());
+        public IEnumerable<Vector3> Intersections => _roadNetwork.Keys.Where(v => _roadNetwork[v].Count > 1);
         
-        public IEnumerable<Vector3> Intersections => 
-            _roadNetwork.Keys.Where(v => _roadNetwork[v].Count > 1).Select(v => v.Clone());
-
         #region Constructors
         
         public RoadNetwork()
@@ -87,20 +83,22 @@ namespace Cities.Roads
             
             // Check that there is at least two vertices
             if (!roadVertices.MoveNext()) return;
+            
+            var roadParts = new HashSet<(Vector3, Vector3)>(GetRoadParts());
 
             // The road vertices are at least two, add a road between the first two
-            AddRoad(previousVertex, roadVertices.Current, GetRoadParts());
+            AddRoad(previousVertex, roadVertices.Current, roadParts);
             previousVertex = roadVertices.Current;
             
             // Add roads between the rest of the vertices along the full road
             while (roadVertices.MoveNext())
             {
-                AddRoad(previousVertex, roadVertices.Current, GetRoadParts());
+                AddRoad(previousVertex, roadVertices.Current, roadParts);
                 previousVertex = roadVertices.Current;
             }
             
             // At the last the vertex of the road
-            AddRoadVertex(previousVertex);
+            AddRoadVertex(roadVertices.Current);
         }
 
         private void AddRoad(Vector3 start, Vector3 end, IEnumerable<(Vector3, Vector3)> roadParts)
@@ -108,13 +106,20 @@ namespace Cities.Roads
             // Adds the start to the road network
             AddRoadVertex(start);
             
-            if (!SplitAtIntersections(start, end, roadParts)) 
+            if (SplitAtIntersections(start, end, roadParts)) 
+            {
+                // If an intersection was found between start and end, the road was split
+                // and the start to end entry has to be removed since the road now has the
+                // intersection on its path from start to end.
+                _roadNetwork[start].Remove(end);
+            }
+            else
             {
                 // Add an edge straight from the previous vertex to the current one
                 _roadNetwork[start].Add(end);
             }
         }
-
+        
         // Returns true if a split occurred
         private bool SplitAtIntersections(Vector3 lineStart, Vector3 lineEnd, IEnumerable<(Vector3, Vector3)> roadParts)
         {
@@ -127,34 +132,14 @@ namespace Cities.Roads
             // Add all intersection points on other road parts if there are any
             foreach (var (start, intersection, end) in intersections)
             {
-                AddRoadVertex(intersection);
-                
-                // Remove full roads since they now intersect
-                _roadNetwork[lineStart].Remove(lineEnd);
                 _roadNetwork[start].Remove(end);
 
-                // Add road from one of the start points to the intersection
-                if (!_roadNetwork[intersection].Contains(start) && !intersection.Equals(start))
-                    _roadNetwork[start].Add(intersection);
+                _roadNetwork[start].Add(intersection);
+                _roadNetwork[lineStart].Add(intersection);
 
-                // Add road from the other start point to the intersection
-                if (!_roadNetwork[intersection].Contains(lineStart)&& !intersection.Equals(lineStart)) 
-                    _roadNetwork[lineStart].Add(intersection);
-
-                // Add road from the intersection to one of the end points
-                if (!_roadNetwork[end].Contains(intersection) && !intersection.Equals(end)) 
-                    _roadNetwork[intersection].Add(end);
-
-                // Add road from the intersection to the other end point
-                if ((!_roadNetwork.ContainsKey(lineEnd) || !_roadNetwork[lineEnd].Contains(intersection)) &&
-                    !intersection.Equals(lineEnd))
-                {
-                    _roadNetwork[intersection].Add(lineEnd);      
-                }
-
-                // Update the start point to the intersection, in case there
-                // are more intersections along the rest of the road
-                lineStart = intersection;
+                AddRoadVertex(intersection);
+                _roadNetwork[intersection].Add(end);
+                _roadNetwork[intersection].Add(lineEnd);
             }
 
             // Intersections found, return true
@@ -171,15 +156,15 @@ namespace Cities.Roads
                 var (partStart, partEnd) = roadParts.Current;
                 
                 // If the argument line intersects the road part line
-                if (!Maths3D.LineSegmentIntersection(
-                    out var intersectionPoint,
+                if (Maths3D.LineSegmentIntersection(
+                    out var intersectionPoint, 
                     linePoint1, linePoint2,
-                    partStart, partEnd)) continue;
-                
-                // Register the intersection point
-                intersectionPoints.Add((partStart, intersectionPoint, partEnd));
+                    partStart, partEnd))
+                {
+                    intersectionPoints.Add((partStart, intersectionPoint, partEnd));
+                }
             }
-            
+
             return intersectionPoints;
         }
         
@@ -198,7 +183,7 @@ namespace Cities.Roads
         /// <param name="roadVertices">The vertices of the road.</param>
         public void AddRoad(params Vector3[] roadVertices)
         {
-            AddRoad((IEnumerable<Vector3>) roadVertices);
+            AddRoad((IEnumerator<Vector3>)roadVertices.GetEnumerator());
         }
         
         private void AddRoadVertex(Vector3 vertex)
@@ -209,6 +194,8 @@ namespace Cities.Roads
             }
         }
         
+        
+        
         #endregion
 
         #region Get road parts
@@ -217,11 +204,9 @@ namespace Cities.Roads
         /// Gets all parts of the road network in this city.
         /// </summary>
         /// <returns>All road parts.</returns>
-        public IEnumerable<(Vector3, Vector3)> GetRoadParts() => GetRoadParts(_roadNetwork);
-
-        private IEnumerable<(Vector3, Vector3)> GetRoadParts(IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
+        public IEnumerable<(Vector3, Vector3)> GetRoadParts()
         {
-            return roadNetwork.Keys.SelectMany(GetRoadParts);
+            return _roadNetwork.Keys.SelectMany(GetRoadParts);
         }
 
         private IEnumerable<(Vector3, Vector3)> GetRoadParts(Vector3 startVertex)
@@ -264,21 +249,21 @@ namespace Cities.Roads
             // If the vertex has already been visited, abort
             if (visited.Contains(start))
                 return null;
-
+            
             var roads = new HashSet<LinkedList<Vector3>>();
             
             // Mark the start vertex as visited
             visited.Add(start);
 
-            // Traverse all of the start node's neighbours
+            // Traverse all neighbours to the start node
             foreach (var neighbour in _roadNetwork[start])
             {
-                // Look up roads by searching from the neighbour
+                // Look roads by searching from the neighbour
                 var neighbourRoads = GetRoads(neighbour, visited);
 
                 // Create a new road
                 var road = new LinkedList<Vector3>();
-                road.AddLast(start.Clone());
+                road.AddLast(start);
                 roads.Add(road);
                 
                 switch (neighbourRoads?.Count ?? 0)
@@ -287,7 +272,7 @@ namespace Cities.Roads
                     case 0:
                         // If the neighbour roads is null, the neighbour had already been visited; skip its neighbours.
                         // Make a road from start to neighbour
-                        road.AddLast(neighbour.Clone());
+                        road.AddLast(neighbour);
                         break;
                     
                     // One neighbour road was found
@@ -304,6 +289,7 @@ namespace Cities.Roads
                         var neighbourRoadsEnumerator = neighbourRoads.GetEnumerator();
                         while (neighbourRoadsEnumerator.MoveNext())
                         {
+                            /*
                             if (road.Count == 1)
                             {
                                 // Only the start vertex has been added to the road starting from it.
@@ -316,6 +302,9 @@ namespace Cities.Roads
                                 // Add the roads as they were created when searching from the neighbour vertex.
                                 roads.Add(neighbourRoadsEnumerator.Current);
                             }
+                            */
+                            road.AddLast(neighbour);
+                            roads.Add(neighbourRoadsEnumerator.Current);
                         }
 
                         break;
@@ -325,64 +314,8 @@ namespace Cities.Roads
 
             return roads;
         }
-
-        public IEnumerable<Vector3> GetAdjacentVertices(Vector3 vector)
-        {
-            return !_roadNetwork.ContainsKey(vector) ? null : _roadNetwork[vector].Select(v => v.Clone());
-        }
-
-        public int GetNumberOfAdjacentVectors(Vector3 vector)
-        {
-            return !_roadNetwork.ContainsKey(vector) ? -1 : _roadNetwork[vector].Count;
-        }
-
-        public bool IsAdjacent(Vector3 v1, Vector3 v2)
-        {
-            return _roadNetwork.ContainsKey(v1) && _roadNetwork[v1].Contains(v2);
-        }
         
         #endregion
-
-        public IDictionary<Vector3, ICollection<Vector3>> ConvertToUndirectedGraph()
-        {
-            var undirected = new Dictionary<Vector3, ICollection<Vector3>>();
-            
-            // Helper method
-            void AddVertex(Vector3 vertex)
-            {
-                if (!undirected.ContainsKey(vertex)) 
-                    undirected.Add(vertex, new HashSet<Vector3>());
-            }
-            
-            // If A -> B is an edge in _roadNetwork, add B -> A as an edge
-            // and do this for all roads to make the network undirected.
-            foreach (var vertex in _roadNetwork.Keys)
-            {
-                var vertexClone = vertex.Clone();
-                AddVertex(vertexClone);
-                foreach (var neighbour in _roadNetwork[vertex])
-                {
-                    var neighbourClone = neighbour.Clone();
-                    undirected[vertexClone].Add(neighbour);
-                    AddVertex(neighbourClone);
-                    undirected[neighbourClone].Add(vertexClone);
-                }
-            }
-
-            return undirected;
-        }
-
-        public RoadNetwork GetAsUndirected() => new RoadNetwork(ConvertToUndirectedGraph());
-
-        public RoadNetwork GetXZProjection(float y = 0)
-        {
-            var projectionNetwork = new RoadNetwork();
-            foreach (var (Start, End) in GetRoadParts())
-            {
-                projectionNetwork.AddRoad(new Vector3(Start.x, y, Start.z), new Vector3(End.x, y, End.z));
-            }
-            return projectionNetwork;
-        }
 
         #region Cloning
         
@@ -400,15 +333,15 @@ namespace Cities.Roads
 
                 foreach (var value in roadNetwork[key])
                 {
-                    valuesCopy.Add(value.Clone());
+                    valuesCopy.Add(new Vector3(value.x, value.y, value.z));
                 }
                 
-                copy.Add(key.Clone(), valuesCopy);
+                copy.Add(key, valuesCopy);
             }
             
             return copy;
         }
-
+        
         #endregion
         
     }
