@@ -123,18 +123,31 @@ namespace Cities.Roads
             // Add all intersection points on other road parts if there are any
             foreach (var (start, intersection, end) in intersections)
             {
+                AddRoadVertex(intersection);
+                
                 // Remove full roads since they now intersect
                 _roadNetwork[lineStart].Remove(lineEnd);
                 _roadNetwork[start].Remove(end);
 
-                // Add a road from each start point to the intersection point
-                _roadNetwork[start].Add(intersection);
-                _roadNetwork[lineStart].Add(intersection);
+                // Add road from one of the start points to the intersection
+                if (!_roadNetwork[intersection].Contains(start) && !intersection.Equals(start))
+                    _roadNetwork[start].Add(intersection);
 
-                // Add a road from the intersection to each end point
-                AddRoadVertex(intersection);
-                _roadNetwork[intersection].Add(end);
-                _roadNetwork[intersection].Add(lineEnd);
+                // Add road from the other start point to the intersection
+                if (!_roadNetwork[intersection].Contains(lineStart)&& !intersection.Equals(lineStart)) 
+                    _roadNetwork[lineStart].Add(intersection);
+
+                // Add road from the intersection to one of the end points
+                if (!_roadNetwork[end].Contains(intersection) && !intersection.Equals(end)) 
+                    _roadNetwork[intersection].Add(end);
+
+                // Add road from the intersection to the other end point
+                if ((!_roadNetwork.ContainsKey(lineEnd) || 
+                     !_roadNetwork[lineEnd].Contains(intersection)) &&
+                    !intersection.Equals(lineEnd))
+                {
+                    _roadNetwork[intersection].Add(lineEnd);      
+                }
 
                 // Update the start point to the intersection, in case there
                 // are more intersections along the rest of the road
