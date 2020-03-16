@@ -12,10 +12,10 @@ public class RoadDraw : MonoBehaviour
     /// <summary>
     /// Represents the current state of the turtle(s)
     /// </summary>
-    class State
+    static class State
     {
-        Vector3 pos;
-        Vector3 direction;
+        static Node current;
+        static Vector3 direction;
     }
 
     /// <summary>
@@ -26,14 +26,21 @@ public class RoadDraw : MonoBehaviour
         Vector3 pos;
         Node prev;
         HashSet<Node> next = new HashSet<Node>();
-    }
 
-    /*public override void OnInspectorGUI()
-    {
-        if(GUILayout.Button("Rewrite L-system"))
+        public Node(Vector3 pos, Node prev)
         {
-            system.Rewrite();
-            Debug.Log(system.ToString());
+            this.pos = pos;
+            this.prev = prev;
         }
-    }*/
+
+        public void Add(Node n)
+        {
+            next.Add(n);
+        }
+
+    }
+    public void Draw()
+    {
+        Handles.RectangleHandleCap(0,Vector3.zero,Quaternion.LookRotation(Vector3.forward,Vector3.up),2,EventType.Repaint);
+    }
 }

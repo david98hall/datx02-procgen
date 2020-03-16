@@ -22,7 +22,7 @@ public class Lsystem
 
     public Lsystem(char c){
         axiom = c;
-        ruleset.Add('F',"FFG-");
+        ruleset.Add('F',"+FG-");
         ruleset.Add('G',"GF+F");
         tree = new StringBuilder(c.ToString());
     }
