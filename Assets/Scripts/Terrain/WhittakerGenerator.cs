@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Terrain
@@ -12,7 +13,7 @@ namespace Terrain
     /// </summary>
     internal class WhittakerGenerator : IGenerator<Texture2D>
     {
-        #region Properties
+        #region Properties and constructors
 
         /// <summary>
         /// The injector from which a height map can be fetched
@@ -44,18 +45,18 @@ namespace Terrain
         /// </returns>
         internal float[,] TemperatureMap => (float[,]) GenerateMap(TemperatureScale).Clone();
 
-        #endregion
-        
-        #region public and internal methods
-
         /// <summary>
         /// Constructs a WhittakerGenerator object from a given height map injector
         /// <param name = "heightMapInjector"> The given height map.</param>
         /// </summary>
-        internal WhittakerGenerator(IInjector<float[,]> heightMapInjector)
+        internal WhittakerGenerator([NotNull] IInjector<float[,]> heightMapInjector)
         {
             _heightMapInjector = heightMapInjector;
         }
+        
+        #endregion
+        
+        #region public and internal methods
 
         /// <summary>
         /// Generates the whittaker textures from the height, precipitation and temperature maps
@@ -89,7 +90,7 @@ namespace Terrain
         
         #endregion
 
-        #region Private 
+        #region Private methods
         
         /// <summary>
         /// Generates a 2x2 array (map) with the same size as the height map from

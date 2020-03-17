@@ -1,14 +1,145 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Extensions;
 using Interfaces;
+using JetBrains.Annotations;
+using UnityEngine;
 
 namespace Cities.Roads
 {
-    public class AStarGenerator : IGenerator<RoadNetwork>
+    internal class AStarGenerator : IGenerator<RoadNetwork>
     {
+
+        #region Properties and constructors
         
-        public RoadNetwork Generate()
+        private readonly IInjector<float[,]> _heightMapInjector;
+        private Dictionary<Node, ISet<Node>> _paths = new Dictionary<Node, ISet<Node>>();
+        
+        internal float Beta { get; set; }
+
+        public AStarGenerator([NotNull] IInjector<float[,]> heightMapInjector) 
+        {
+            _heightMapInjector = heightMapInjector;
+        }
+
+        public void Clear() => _paths.Clear();
+
+        public void Add((int, int) start, (int, int) goal)
         {
             
-            throw new System.NotImplementedException();
         }
+        #endregion
+        
+        #region Public and internal methods
+        public RoadNetwork Generate()
+        {
+            var roadNetwork = new RoadNetwork();
+            
+            foreach (var start in _paths.Keys)
+            {
+                foreach (var goal in _paths[start])
+                {
+                    roadNetwork.AddRoads(Path(start, goal));
+                }
+            }
+
+            return roadNetwork;
+        }
+
+        #endregion
+
+        #region Private methods
+
+        private IEnumerable<Vector3> Path(Node start, Node goal)
+        {
+            var heights = _heightMapInjector.Get();
+            var queue = new SortedSet<Node>(Comparer<Node>.Create((node1, node2) => node1.CompareTo(node2)));
+            var visited = new HashSet<Node>();
+            
+            Node node;
+            for (node = start; !node.Equals(goal) && queue.Any(); node = queue.First())
+            {
+                queue.Remove(node);
+                if (!visited.Add(node)) continue;
+                queue.AddRange(node.Neighbors(heights, visited, goal, Beta));
+            }
+
+            return node.Path();
+        }
+        
+        #endregion
+
+        #region Node class
+        private class Node : IComparable
+        {
+            #region Properties and constructors
+
+            private readonly Vector3 _location;
+            private readonly float _cost;
+            private readonly Node _predecessor;
+            
+            internal Node(int x, float y, int z)
+            {
+                _location = new Vector3(x, y, z);
+            }
+            private Node(int x, float y, int z, Node predecessor, Node goal, float beta) : this(x, y, z)
+            {
+                _cost = Cost(predecessor, beta) + Cost(goal, beta);
+                _predecessor = predecessor;
+            }
+            
+            #endregion
+            
+            #region Public and internal methods
+            public int CompareTo(object other) => ReferenceEquals(this, other) || 
+                                                  other is Node node && _cost.CompareTo(node._cost) >= 0 ? 0 : -1;
+            
+            public override bool Equals(object other) => ReferenceEquals(this, other) || 
+                                                         other is Node node && _location.Equals(node._location);
+            
+            public override int GetHashCode() => _location.GetHashCode();
+
+            internal IEnumerable<Node> Neighbors(float[,] heights, ICollection<Node> visited, Node goal, float beta)
+            {
+                var xMin = (int) Math.Max(_location.x - 1, 0);
+                var xMax = (int) Math.Min(_location.x + 1, heights.GetLength(0));
+                var zMin = (int) Math.Max(_location.z - 1, 0);
+                var zMax = (int) Math.Min(_location.x + 1, heights.GetLength(1));
+
+                for (var x = xMin; x < xMax; x++)
+                {
+                    for (var z = zMin; z < zMax; z++)
+                    {
+                        if (x == (int) _location.x && z == (int) _location.z) continue;
+                        var node = new Node(x, heights[x, z], z, this, goal, beta);
+                        if (visited.Contains(node)) continue;
+                        yield return node;
+                    }
+                }
+            }
+
+            internal IEnumerable<Vector3> Path()
+            {
+                for (var node = this; node != null; node = node._predecessor)
+                {
+                    yield return node._location;
+                }
+            }
+            
+            #endregion
+
+            #region Private methods
+            
+            private float Cost(Node node, float beta)
+            {
+                var distance = Vector2.Distance(_location.ToXZ(), node._location.ToXZ());
+                return distance + (1 - Math.Abs(_location.z - _location.z)) * beta;
+            }
+            
+            #endregion
+        }
+        
+        #endregion
     }
 }
