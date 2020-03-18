@@ -15,6 +15,11 @@ namespace Cities.Roads
         {
             _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
         }
+
+        public IGenerator<RoadNetwork> AStarGenerator()
+        {
+            return new AStarGenerator(_terrainMeshNoiseMapInjector);
+        }
         
         public IGenerator<RoadNetwork> CreateAgentStrategy()
         {

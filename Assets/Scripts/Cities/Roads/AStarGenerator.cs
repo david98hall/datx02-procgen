@@ -14,46 +14,51 @@ namespace Cities.Roads
         #region Properties and constructors
         
         private readonly IInjector<float[,]> _heightMapInjector;
-        private Dictionary<Node, ISet<Node>> _paths = new Dictionary<Node, ISet<Node>>();
         
+        private readonly Dictionary<(int, int), ISet<(int, int)>> _paths;
         internal float Beta { get; set; }
 
         public AStarGenerator([NotNull] IInjector<float[,]> heightMapInjector) 
         {
             _heightMapInjector = heightMapInjector;
+            _paths = new Dictionary<(int, int), ISet<(int, int)>>();
         }
-
-        public void Clear() => _paths.Clear();
-
-        public void Add((int, int) start, (int, int) goal)
-        {
-            
-        }
+        
         #endregion
         
         #region Public and internal methods
         public RoadNetwork Generate()
         {
+            var heights = _heightMapInjector.Get();
             var roadNetwork = new RoadNetwork();
             
-            foreach (var start in _paths.Keys)
+            foreach (var (xStart, zStart) in _paths.Keys)
             {
-                foreach (var goal in _paths[start])
+                var start = new Node(xStart, heights[xStart, zStart], zStart);
+                foreach (var (xGoal, zGoal) in _paths[(xStart, zStart)])
                 {
-                    roadNetwork.AddRoads(Path(start, goal));
+                    var goal = new Node(xGoal, heights[xGoal, zGoal], zGoal);
+                    roadNetwork.AddRoads(Path(start, goal, heights));
                 }
             }
 
             return roadNetwork;
         }
+        
+        public void Add((int, int) start, (int, int) goal)
+        {
+            if (!_paths.ContainsKey(start)) _paths[start] = new HashSet<(int, int)>();
+            _paths[start].Add(goal);
+        }
+        
+        public void Clear() => _paths.Clear();
 
         #endregion
 
         #region Private methods
 
-        private IEnumerable<Vector3> Path(Node start, Node goal)
+        private IEnumerable<Vector3> Path(Node start, Node goal, float[,] heights)
         {
-            var heights = _heightMapInjector.Get();
             var queue = new SortedSet<Node>(Comparer<Node>.Create((node1, node2) => node1.CompareTo(node2)));
             var visited = new HashSet<Node>();
             
@@ -113,7 +118,7 @@ namespace Cities.Roads
                     {
                         if (x == (int) _location.x && z == (int) _location.z) continue;
                         var node = new Node(x, heights[x, z], z, this, goal, beta);
-                        if (visited.Contains(node)) continue;
+                        if (visited.Contains(node) || _predecessor.Equals(node)) continue;
                         yield return node;
                     }
                 }
