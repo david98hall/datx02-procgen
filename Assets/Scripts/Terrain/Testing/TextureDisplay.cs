@@ -1,6 +1,7 @@
 ﻿using System;
 using Interfaces;
 using UnityEngine;
+using Utils;
 
 namespace Terrain.Testing
 {
@@ -48,11 +49,11 @@ namespace Terrain.Testing
 
         public void Refresh()
         {
-            _textureGenerator.NoiseMap = GenerateHeightMap();
-            GetComponent<MeshFilter>().sharedMesh = GenerateMesh();
+            _textureGenerator.NoiseMap = TerrainUtil.Slope(width, depth);
+            GetComponent<MeshFilter>().sharedMesh = TerrainUtil.Mesh(_textureGenerator.Get(), heightScale);
             _textureGenerator.Strategy = GetStrategy();
             GetComponent<MeshRenderer>().material.mainTexture = _textureGenerator.Generate();
-            transform.position = new Vector3((float) width / 2, (width + depth), (float) depth / 2);
+            transform.position = new Vector3((float) width / 2, width + depth, (float) depth / 2);
         }
         
         #endregion
@@ -73,45 +74,6 @@ namespace Terrain.Testing
             return heightMap;
         }
 
-        private Mesh GenerateMesh()
-        {
-            var heights = _textureGenerator.Get();
-            var vertices = new Vector3[width * depth];
-            var textureCoordinates = new Vector2[width * depth];
-            for (int z = 0, i = 0; z < depth; z++)
-            {
-                for (var x = 0; x < width; x++, i++)
-                {
-                    vertices[i] = new Vector3(x, heightScale * heights[x, z], z);
-                    textureCoordinates[i] = new Vector2(x / (float) width, z / (float) depth);
-                }
-            }
-
-            var triangles = new int[6 * (width - 1) * (depth - 1)];
-            for (int z = 0, offset = 0, vertex = 0; z < depth - 1; z++, vertex++)
-            {
-                for (var x = 0; x < width - 1; x++, vertex++)
-                {
-                    triangles[offset++] = vertex;
-                    triangles[offset++] = vertex + 1;
-                    triangles[offset++] = vertex + width;
-                    triangles[offset++] = vertex + width + 1;
-                    triangles[offset++] = vertex + width;
-                    triangles[offset++] = vertex + 1;
-                }
-            }
-
-            var mesh = new Mesh()
-            {
-                vertices = vertices,
-                triangles = triangles,
-                uv = textureCoordinates
-            };
-            
-            mesh.RecalculateNormals();
-            return mesh;
-        }
-
         private IGenerator<Texture2D> GetStrategy()
         {
             switch (strategy)
@@ -121,7 +83,7 @@ namespace Terrain.Testing
                 case Strategy.Whittaker:
                     return GetWhittakerStrategy();
                 default:
-                    return null;
+                    throw new Exception("There is no such strategy!");
             }
         }
 
@@ -148,7 +110,7 @@ namespace Terrain.Testing
                     textureGenerator.NoiseMap = whittakerGenerator.TemperatureMap;
                     break;
                 default:
-                    throw new Exception("There is no such noise map strategy!");
+                    throw new Exception("There is no such strategy!");
             }
             return new GrayScaleGenerator(textureGenerator);
         }
