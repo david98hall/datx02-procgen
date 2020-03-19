@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Cities.Plots;
 using Cities.Roads;
 using UnityEngine;
 
@@ -17,8 +18,9 @@ namespace Cities.Testing
         {
             _cityGenerator = new CityGenerator
             {
-                RoadNetworkStrategy = new RoadNetworkStrategyFactory(null).CreateSampleStrategy()
+                RoadNetworkStrategy = new RoadNetworkStrategyFactory(null).CreateSampleStrategy()                
             };
+            _cityGenerator.PlotsStrategy = new PlotsStrategyFactory(_cityGenerator).CreateSampleStrategy();
             roadRenderers = new HashSet<GameObject>();
         }
         
