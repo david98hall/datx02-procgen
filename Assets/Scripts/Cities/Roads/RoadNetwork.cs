@@ -17,10 +17,10 @@ namespace Cities.Roads
         // Adjacency set for road network vectors
         private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
 
-        public IEnumerable<Vector3> RoadVertices => _roadNetwork.Keys.Select(CloneVector3);
+        public IEnumerable<Vector3> RoadVertices => _roadNetwork.Keys.Select(v => v.Clone());
         
         public IEnumerable<Vector3> Intersections => 
-            _roadNetwork.Keys.Where(v => _roadNetwork[v].Count > 1).Select(CloneVector3);
+            _roadNetwork.Keys.Where(v => _roadNetwork[v].Count > 1).Select(v => v.Clone());
 
         #region Constructors
         
@@ -276,7 +276,7 @@ namespace Cities.Roads
 
                 // Create a new road
                 var road = new LinkedList<Vector3>();
-                road.AddLast(CloneVector3(start));
+                road.AddLast(start.Clone());
                 roads.Add(road);
                 
                 switch (neighbourRoads?.Count ?? 0)
@@ -285,7 +285,7 @@ namespace Cities.Roads
                     case 0:
                         // If the neighbour roads is null, the neighbour had already been visited; skip its neighbours.
                         // Make a road from start to neighbour
-                        road.AddLast(CloneVector3(neighbour));
+                        road.AddLast(neighbour.Clone());
                         break;
                     
                     // One neighbour road was found
@@ -326,12 +326,17 @@ namespace Cities.Roads
 
         public IEnumerable<Vector3> GetAdjacentVertices(Vector3 vector)
         {
-            return !_roadNetwork.ContainsKey(vector) ? null : _roadNetwork[vector].Select(CloneVector3);
+            return !_roadNetwork.ContainsKey(vector) ? null : _roadNetwork[vector].Select(v => v.Clone());
         }
 
         public int GetNumberOfAdjacentVectors(Vector3 vector)
         {
             return !_roadNetwork.ContainsKey(vector) ? -1 : _roadNetwork[vector].Count;
+        }
+
+        public bool IsAdjacent(Vector3 v1, Vector3 v2)
+        {
+            return _roadNetwork.ContainsKey(v1) && _roadNetwork[v1].Contains(v2);
         }
         
         #endregion
@@ -352,17 +357,15 @@ namespace Cities.Roads
 
                 foreach (var value in roadNetwork[key])
                 {
-                    valuesCopy.Add(CloneVector3(value));
+                    valuesCopy.Add(value.Clone());
                 }
                 
-                copy.Add(CloneVector3(key), valuesCopy);
+                copy.Add(key.Clone(), valuesCopy);
             }
             
             return copy;
         }
 
-        private static Vector3 CloneVector3(Vector3 v) => new Vector3(v.x, v.y, v.z);
-        
         #endregion
         
     }

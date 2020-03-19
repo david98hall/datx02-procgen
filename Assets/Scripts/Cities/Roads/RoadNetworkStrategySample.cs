@@ -16,7 +16,6 @@ namespace Cities.Roads
         {
             var roadNetwork = new RoadNetwork();
             
-            /*
             var road1 = new LinkedList<Vector3>();
             road1.AddLast(new Vector3(0, 0, 0));
             road1.AddLast(new Vector3(0, 0, 0 + 5));
@@ -29,8 +28,8 @@ namespace Cities.Roads
             road2.AddLast(new Vector3(0, 0, 2.5f));
             road2.AddLast(new Vector3(5, 0, 2.5f));
             roadNetwork.AddRoad(road2);
-            */
-            
+
+            /*
             var road2 = new LinkedList<Vector3>();
             road2.AddLast(new Vector3(0.5f, 0, 0.5f));
             road2.AddLast(new Vector3(0, 0, 1));
@@ -77,6 +76,7 @@ namespace Cities.Roads
             road7.AddLast(new Vector3(offset1, 0, offset1 + 1));
             road7.AddLast(new Vector3(offset1 + sqWidth, 0, offset1 + 1));
             roadNetwork.AddRoad(road7);
+            */
 
             return roadNetwork;
         }

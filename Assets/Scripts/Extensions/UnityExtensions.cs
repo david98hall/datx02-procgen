@@ -18,5 +18,13 @@ namespace Extensions
             {
                 postWrapMode = animationCurve.postWrapMode, preWrapMode = animationCurve.preWrapMode
             };
+        
+        /// <summary>
+        /// Clones this vector.
+        /// </summary>
+        /// <param name="v">The vector to clone</param>
+        /// <returns>The cloned vector.</returns>
+        public static Vector3 Clone(this Vector3 v) => new Vector3(v.x, v.y, v.z);
+        
     }
 }

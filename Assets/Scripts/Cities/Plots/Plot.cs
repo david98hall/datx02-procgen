@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Extensions;
 using UnityEngine;
 
@@ -10,7 +12,8 @@ namespace Cities.Plots
     /// </summary>
     public class Plot : ICloneable
     {
-        private readonly ICollection<Vector3>_shapeVertices = new LinkedList<Vector3>();
+        public IEnumerable<Vector3> Vertices => _shapeVertices.Select(v => v.Clone());
+        private readonly ICollection<Vector3> _shapeVertices = new LinkedList<Vector3>();
 
         public Plot()
         {
