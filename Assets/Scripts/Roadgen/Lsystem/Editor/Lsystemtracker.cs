@@ -6,11 +6,6 @@ using UnityEditor;
 [CustomEditor(typeof(RoadDraw))]
 public class Lsystemtracker : Editor
 {
-    public void Draw()
-    {
-        Handles.RectangleHandleCap(0,Vector3.zero,Quaternion.LookRotation(Vector3.forward,Vector3.up),2,EventType.Repaint);
-        HandleUtility.Repaint();
-    }
     void OnSceneGUI()
     {
         if(true)
@@ -30,9 +25,6 @@ public class Lsystemtracker : Editor
         {
             roadDraw.system = new Lsystem(roadDraw.system.axiom);
         }
-        if(GUILayout.Button("Draw a Line"))
-        {
-            Draw();
-        }
+    
     }
 }
