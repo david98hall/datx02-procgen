@@ -15,11 +15,6 @@ namespace Cities.Testing
     {
         private readonly CityGenerator _cityGenerator;
         private readonly HashSet<GameObject> roadRenderers;
-        public enum RoadStrategy
-        {
-            Sample, 
-            AStar,
-        }
 
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
@@ -31,6 +26,11 @@ namespace Cities.Testing
         public float beta;
         
         public Material roadMaterial;
+        public enum RoadStrategy
+        {
+            Sample, 
+            AStar,
+        }
         
         public CityDisplay()
         {
