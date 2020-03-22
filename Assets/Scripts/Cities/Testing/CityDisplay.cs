@@ -9,10 +9,11 @@ using Utils;
 
 namespace Cities.Testing
 {
+    [Serializable]
+    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class CityDisplay : MonoBehaviour
     {
         private readonly CityGenerator _cityGenerator;
-
         private readonly HashSet<GameObject> roadRenderers;
 
         public MeshFilter meshFilter;
@@ -31,6 +32,7 @@ namespace Cities.Testing
             AStar,
         }
         
+        
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
@@ -40,6 +42,13 @@ namespace Cities.Testing
         
         public void GenerateCity()
         {
+            var heightMapInjector = new TerrainUtil.HeightMapInjector 
+                {Width = width, Depth = depth, Type = heightMapType};
+
+            meshFilter.sharedMesh = TerrainUtil.Mesh(heightMapInjector.Get(), scale);
+            meshRenderer.sharedMaterial.mainTexture = Texture2D.redTexture;
+            
+            _cityGenerator.RoadNetworkStrategy = GetRoadStrategy();
             var city = _cityGenerator.Generate();
             DisplayCity(city);
         }
