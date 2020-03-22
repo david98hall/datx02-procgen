@@ -31,11 +31,11 @@ namespace Utils
                 for (var x = 0; x < width - 1; x++, vertex++)
                 {
                     triangles[offset++] = vertex;
-                    triangles[offset++] = vertex + 1;
                     triangles[offset++] = vertex + width;
+                    triangles[offset++] = vertex + 1;
                     triangles[offset++] = vertex + width + 1;
-                    triangles[offset++] = vertex + width;
                     triangles[offset++] = vertex + 1;
+                    triangles[offset++] = vertex + width;
                 }
             }
             

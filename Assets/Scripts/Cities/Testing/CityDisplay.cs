@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cities.Plots;
 using Cities.Roads;
 using Interfaces;
 using UnityEngine;
@@ -27,10 +28,12 @@ namespace Cities.Testing
         public int width;
         public int depth;
         public int scale;
-        
+        public float beta;
+
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
+            _cityGenerator.PlotsStrategy = new PlotsStrategyFactory(_cityGenerator).CreateSampleStrategy();
             roadRenderers = new HashSet<GameObject>();
         }
         
@@ -105,8 +108,8 @@ namespace Cities.Testing
                 case RoadStrategy.Sample:
                     return new RoadNetworkStrategySample(heightMapInjector);
                 case RoadStrategy.AStar:
-                    var aStar =  new AStarGenerator(heightMapInjector);
-                    aStar.Add((0, 0), (width / 2, depth / 2));
+                    var aStar =  new AStarGenerator(heightMapInjector) {Beta = beta};
+                    aStar.Add((0, 0), (width - 1, depth - 1));
                     return aStar;
                 default:
                     throw new ArgumentOutOfRangeException();

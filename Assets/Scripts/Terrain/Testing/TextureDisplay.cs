@@ -49,7 +49,7 @@ namespace Terrain.Testing
 
         public void Refresh()
         {
-            _textureGenerator.NoiseMap = TerrainUtil.Slope(width, depth);
+            _textureGenerator.NoiseMap = TerrainUtil.Pyramid(width, depth);
             GetComponent<MeshFilter>().sharedMesh = TerrainUtil.Mesh(_textureGenerator.Get(), heightScale);
             _textureGenerator.Strategy = GetStrategy();
             GetComponent<MeshRenderer>().material.mainTexture = _textureGenerator.Generate();

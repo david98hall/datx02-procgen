@@ -31,7 +31,6 @@ namespace Cities.Roads
         {
             var heights = _heightMapInjector.Get();
             var roadNetwork = new RoadNetwork();
-            
             foreach (var (xStart, zStart) in _paths.Keys)
             {
                 var start = new Node(xStart, heights[xStart, zStart], zStart);
@@ -39,8 +38,6 @@ namespace Cities.Roads
                 {
                     var goal = new Node(xGoal, heights[xGoal, zGoal], zGoal);
                     roadNetwork.AddRoad(Path(start, goal, heights));
-
-                    Debug.Log("Start: " + start + ", Goal: " + goal);
                 }
             }
 
@@ -61,16 +58,17 @@ namespace Cities.Roads
 
         private IEnumerable<Vector3> Path(Node start, Node goal, float[,] heights)
         {
+            
             var queue = new SortedSet<Node>(Comparer<Node>.Create((node1, node2) => node1.CompareTo(node2)));
             var visited = new HashSet<Node>();
-            
+
+            queue.Add(start);
             Node node;
-            for (node = start; !node.Equals(goal) && queue.Any(); node = queue.First())
+            for (node = queue.First(); !goal.Equals(node) && queue.Any(); node = queue.First())
             {
                 queue.Remove(node);
                 if (!visited.Add(node)) continue;
                 queue.AddRange(node.Neighbors(heights, visited, goal, Beta));
-                Debug.Log("Current: " + node);
             }
 
             return node.Path();
@@ -79,60 +77,64 @@ namespace Cities.Roads
         #endregion
 
         #region Node class
-        private class Node : IComparable
+        private class Node : IComparable<Node>
         {
             #region Properties and constructors
 
             private readonly Vector3 _location;
+            private readonly float _heuristic;
             private readonly float _cost;
             private readonly Node _predecessor;
-            
+
             internal Node(int x, float y, int z)
             {
                 _location = new Vector3(x, y, z);
             }
             private Node(int x, float y, int z, Node predecessor, Node goal, float beta) : this(x, y, z)
             {
-                _cost = Cost(predecessor, beta) + Cost(goal, beta);
+                _cost = predecessor._cost + Cost(predecessor, beta);
+                _heuristic = Cost(goal, beta);
                 _predecessor = predecessor;
             }
             
             #endregion
             
             #region Public and internal methods
-            public int CompareTo(object other) => ReferenceEquals(this, other) || 
-                                                  other is Node node && _cost.CompareTo(node._cost) >= 0 ? 0 : -1;
-            
+
+            public int CompareTo(Node other)
+            {
+                if (Equals(other)) return 0;
+                var cost = (_cost + _heuristic).CompareTo(other._cost + other._heuristic);
+                return cost == 0 ? -1 : cost;
+            }
+
             public override bool Equals(object other) => ReferenceEquals(this, other) || 
-                                                         other is Node node && _location.Equals(node._location);
-            
+                                                         other is Node node && _location == node._location;
+
             public override int GetHashCode() => _location.GetHashCode();
 
             internal IEnumerable<Node> Neighbors(float[,] heights, ICollection<Node> visited, Node goal, float beta)
             {
                 var xMin = (int) Math.Max(_location.x - 1, 0);
-                var xMax = (int) Math.Min(_location.x + 1, heights.GetLength(0));
+                var xMax = (int) Math.Min(_location.x + 1, heights.GetLength(0) - 1);
                 var zMin = (int) Math.Max(_location.z - 1, 0);
-                var zMax = (int) Math.Min(_location.x + 1, heights.GetLength(1));
-
-                for (var x = xMin; x < xMax; x++)
+                var zMax = (int) Math.Min(_location.z + 1, heights.GetLength(1) - 1);
+                
+                for (var x = xMin; x <= xMax; x++)
                 {
-                    for (var z = zMin; z < zMax; z++)
+                    for (var z = zMin; z <= zMax; z++)
                     {
                         if (x == (int) _location.x && z == (int) _location.z) continue;
                         var node = new Node(x, heights[x, z], z, this, goal, beta);
-                        if (visited.Contains(node) || _predecessor.Equals(node)) continue;
+                        if (visited.Contains(node) || node.Equals(_predecessor)) continue;
                         yield return node;
                     }
                 }
             }
 
-            public override string ToString()
-            {
-                return "Node: {path: " + _location + 
-                       (_predecessor == null ? "" : " to " + _predecessor._location) + 
-                       ", cost :" + _cost + "} \n";
-            }
+            public override string ToString() => "Node: {path: " + _location + 
+                                                 (_predecessor == null ? "" : " from " + _predecessor._location) + 
+                                                 ", cost :" + (_cost + _heuristic) + "} \n";
 
             internal IEnumerable<Vector3> Path()
             {
@@ -146,11 +148,10 @@ namespace Cities.Roads
 
             #region Private methods
             
-            private float Cost(Node node, float beta)
+            private float Cost(Node other, float beta)
             {
-                var distance = Vector2.Distance(new Vector2(_location.x, _location.z), 
-                    new Vector2(node._location.x, node._location.z));
-                return distance + (1 - Math.Abs(_location.z - _location.z)) * beta;
+                return Vector3.Distance(_location, other._location) * 
+                       (1 + beta * Math.Abs(_location.y - other._location.y));
             }
             
             #endregion
