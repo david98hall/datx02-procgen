@@ -21,7 +21,6 @@ namespace Cities.Testing
             {
                 cityObject.Clear();;
             }
-            
         }
     }
 }

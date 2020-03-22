@@ -1,14 +1,14 @@
 using System;
-using UnityEditor.PackageManager.UI;
+using Interfaces;
+using Terrain;
 using UnityEngine;
 
 namespace Utils
 {
-    public class TerrainUtil
+    public static class TerrainUtil
     {
         
-        private TerrainUtil() {}
-
+        
         public static Mesh Mesh(float[,] heightMap, float scale)
         {
             var width = heightMap.GetLength(0);
@@ -49,6 +49,20 @@ namespace Utils
             mesh.RecalculateNormals();
             return mesh;
         }
+        
+        public static float[,] HeightMap(int width, int depth, Func<int, int, float> height)
+        {
+            var heightMap = new float[width, depth];
+            for (var z = 0; z < width; z++)
+            {
+                for (var x = 0; x < depth; x++)
+                {
+                    heightMap[x, z] = height(x, z);
+                }
+            }
+
+            return heightMap;
+        }
 
         public static float[,] Flat(int width, int depth) => HeightMap(width, depth, (x, z) => 0);
 
@@ -58,19 +72,45 @@ namespace Utils
                 (float) x / (2 * (width - 1)) + (float) z / (2 * (depth - 1)));
         }
 
-        public static float[,] HeightMap(int width, int depth, Func<int, int, float> height)
+        public static float[,] Pyramid(int width, int depth)
         {
-            var heightMap = new float[width, depth];
-            for (var z = 0; z < width; z++)
+            /*
+             * x - width/2: [-width/2, width/2]
+             * 2 * x / width - 1 = [min: -1, mid: 0, max: 1]
+             * abs(2 * x / width - 1) = [min: 1, mid: 0, max: 1]
+             * 1 - abs(2 * x / width - 1) = [min: 0, mid: 1, max: 1]
+             */
+            return HeightMap(width, width, (x, z) =>
+                1 - Math.Max(Math.Abs(2 * (float) x / width - 1), Math.Abs(2 * (float) z / depth - 1)));
+        }
+        
+        public class HeightMapInjector : IInjector<float[,]>
+        {
+            public enum MapType
             {
-                for (var x = 0; x < depth; x++)
-                {
+                Flat, 
+                Slope,
+                Pyramid
+            }
+            
+            public MapType Type { get; set; }
+            public int Width { get; set; }
+            public int Depth { get; set; }
 
-                    heightMap[x, z] = height(x, z);
+            public float[,] Get()
+            {
+                switch (Type)
+                {
+                    case MapType.Flat:
+                        return Flat(Width, Depth);
+                    case MapType.Slope:
+                        return Slope(Width, Depth);
+                    case MapType.Pyramid:
+                        return Pyramid(Width, Depth);
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
-
-            return heightMap;
         }
     }
 }

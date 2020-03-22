@@ -18,7 +18,7 @@ namespace Cities.Roads
         private readonly Dictionary<(int, int), ISet<(int, int)>> _paths;
         internal float Beta { get; set; }
 
-        public AStarGenerator([NotNull] IInjector<float[,]> heightMapInjector) 
+        internal AStarGenerator([NotNull] IInjector<float[,]> heightMapInjector) 
         {
             _heightMapInjector = heightMapInjector;
             _paths = new Dictionary<(int, int), ISet<(int, int)>>();
@@ -38,7 +38,9 @@ namespace Cities.Roads
                 foreach (var (xGoal, zGoal) in _paths[(xStart, zStart)])
                 {
                     var goal = new Node(xGoal, heights[xGoal, zGoal], zGoal);
-                    roadNetwork.AddRoads(Path(start, goal, heights));
+                    roadNetwork.AddRoad(Path(start, goal, heights));
+
+                    Debug.Log("Start: " + start + ", Goal: " + goal);
                 }
             }
 
@@ -68,6 +70,7 @@ namespace Cities.Roads
                 queue.Remove(node);
                 if (!visited.Add(node)) continue;
                 queue.AddRange(node.Neighbors(heights, visited, goal, Beta));
+                Debug.Log("Current: " + node);
             }
 
             return node.Path();
@@ -122,6 +125,13 @@ namespace Cities.Roads
                         yield return node;
                     }
                 }
+            }
+
+            public override string ToString()
+            {
+                return "Node: {path: " + _location + 
+                       (_predecessor == null ? "" : " to " + _predecessor._location) + 
+                       ", cost :" + _cost + "} \n";
             }
 
             internal IEnumerable<Vector3> Path()
