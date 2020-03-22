@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
@@ -20,9 +21,7 @@ namespace Cities.Plots
         {
             var plots = new HashSet<Plot>();
             
-            var roadParts = RoadNetwork.GetRoadParts().ToList();
-
-//            plots.AddRange(GeneratePlots(roadParts));
+            // plots.AddRange(GeneratePlots());
 
             var plotStrings = plots.Select(plot =>
             {
@@ -41,5 +40,10 @@ namespace Cities.Plots
             return plots;
         }
 
+        private static IEnumerable<Plot> GeneratePlots()
+        {
+            throw new NotImplementedException();
+        }
+        
     }
 }
