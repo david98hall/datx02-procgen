@@ -341,6 +341,34 @@ namespace Cities.Roads
         
         #endregion
 
+        public IDictionary<Vector3, ICollection<Vector3>> ConvertToUndirectedGraph()
+        {
+            var undirected = new Dictionary<Vector3, ICollection<Vector3>>();
+            
+            // Helper method
+            void AddVertex(Vector3 vertex)
+            {
+                if (!undirected.ContainsKey(vertex)) 
+                    undirected.Add(vertex, new HashSet<Vector3>());
+            }
+            
+            // If A -> B is an edge in _roadNetwork, add B -> A as an edge
+            // and do this for all roads to make the network undirected.
+            foreach (var vertex in _roadNetwork.Keys)
+            {
+                var vertexClone = vertex.Clone();
+                AddVertex(vertexClone);
+                foreach (var neighbour in _roadNetwork[vertex])
+                {
+                    var neighbourClone = neighbour.Clone();
+                    AddVertex(neighbourClone);
+                    undirected[neighbourClone].Add(vertexClone);
+                }
+            }
+
+            return undirected;
+        }
+        
         #region Cloning
         
         public object Clone() => new RoadNetwork(this);
