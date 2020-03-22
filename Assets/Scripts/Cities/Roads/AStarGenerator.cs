@@ -148,7 +148,8 @@ namespace Cities.Roads
             
             private float Cost(Node node, float beta)
             {
-                var distance = Vector2.Distance(_location.ToXZ(), node._location.ToXZ());
+                var distance = Vector2.Distance(new Vector2(_location.x, _location.z), 
+                    new Vector2(node._location.x, node._location.z));
                 return distance + (1 - Math.Abs(_location.z - _location.z)) * beta;
             }
             
