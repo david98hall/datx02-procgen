@@ -217,9 +217,11 @@ namespace Cities.Roads
         /// Gets all parts of the road network in this city.
         /// </summary>
         /// <returns>All road parts.</returns>
-        public IEnumerable<(Vector3, Vector3)> GetRoadParts()
+        public IEnumerable<(Vector3, Vector3)> GetRoadParts() => GetRoadParts(_roadNetwork);
+
+        private IEnumerable<(Vector3, Vector3)> GetRoadParts(IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
         {
-            return _roadNetwork.Keys.SelectMany(GetRoadParts);
+            return roadNetwork.Keys.SelectMany(GetRoadParts);
         }
 
         private IEnumerable<(Vector3, Vector3)> GetRoadParts(Vector3 startVertex)
@@ -341,7 +343,7 @@ namespace Cities.Roads
         
         #endregion
 
-        public IReadOnlyDictionary<Vector3, ICollection<Vector3>> ConvertToUndirectedGraph()
+        public IDictionary<Vector3, ICollection<Vector3>> ConvertToUndirectedGraph()
         {
             var undirected = new Dictionary<Vector3, ICollection<Vector3>>();
             
