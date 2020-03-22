@@ -341,7 +341,7 @@ namespace Cities.Roads
         
         #endregion
 
-        public IDictionary<Vector3, ICollection<Vector3>> ConvertToUndirectedGraph()
+        public IReadOnlyDictionary<Vector3, ICollection<Vector3>> ConvertToUndirectedGraph()
         {
             var undirected = new Dictionary<Vector3, ICollection<Vector3>>();
             
@@ -369,7 +369,7 @@ namespace Cities.Roads
 
             return undirected;
         }
-        
+
         #region Cloning
         
         public object Clone() => new RoadNetwork(this);
