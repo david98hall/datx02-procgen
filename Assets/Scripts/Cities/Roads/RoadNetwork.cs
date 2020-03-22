@@ -361,6 +361,7 @@ namespace Cities.Roads
                 foreach (var neighbour in _roadNetwork[vertex])
                 {
                     var neighbourClone = neighbour.Clone();
+                    undirected[vertexClone].Add(neighbour);
                     AddVertex(neighbourClone);
                     undirected[neighbourClone].Add(vertexClone);
                 }
