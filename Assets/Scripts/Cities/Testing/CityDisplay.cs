@@ -1,31 +1,48 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Cities.Plots;
 using Cities.Roads;
+using Interfaces;
 using UnityEngine;
+using Utils;
 
 namespace Cities.Testing
 {
+    [Serializable]
+    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class CityDisplay : MonoBehaviour
     {
         private readonly CityGenerator _cityGenerator;
-
         private readonly HashSet<GameObject> roadRenderers;
+        public enum RoadStrategy
+        {
+            Sample, 
+            AStar,
+        }
 
-        public Material roadMaterial;
+        public MeshFilter meshFilter;
+        public MeshRenderer meshRenderer;
+        public RoadStrategy roadStrategy;
+        public TerrainUtil.HeightMapInjector.MapType heightMapType;
+        public int width;
+        public int depth;
+        public int scale;
         
         public CityDisplay()
         {
-            _cityGenerator = new CityGenerator
-            {
-                RoadNetworkStrategy = new RoadNetworkStrategyFactory(null).CreateSampleStrategy()                
-            };
-            _cityGenerator.PlotsStrategy = new PlotsStrategyFactory(_cityGenerator).CreateSampleStrategy();
+            _cityGenerator = new CityGenerator();
             roadRenderers = new HashSet<GameObject>();
         }
         
         public void GenerateCity()
         {
+            var heightMapInjector = new TerrainUtil.HeightMapInjector 
+                {Width = width, Depth = depth, Type = heightMapType};
+
+            meshFilter.sharedMesh = TerrainUtil.Mesh(heightMapInjector.Get(), scale);
+            meshRenderer.sharedMaterial.mainTexture = Texture2D.redTexture;
+            
+            _cityGenerator.RoadNetworkStrategy = GetRoadStrategy();
             var city = _cityGenerator.Generate();
             DisplayCity(city);
         }
@@ -48,23 +65,13 @@ namespace Cities.Testing
                 var item = new GameObject("Road " + roadCount++);
                 var roadRenderer = item.AddComponent<LineRenderer>();
                 roadRenderers.Add(item);
-                
                 // Set the appearance of the road
                 roadRenderer.startWidth = 0.3f;
                 roadRenderer.endWidth = 0.3f;
-                roadRenderer.numCornerVertices = 90;
-                roadRenderer.numCapVertices = 90;
-                roadRenderer.textureMode = LineTextureMode.Tile;
-                roadRenderer.generateLightingData = true;
-                if (roadMaterial != null)
-                {
-                    roadRenderer.sharedMaterial = roadMaterial;
-                }
-                
                 // Add the vertices of the road
-                var roadArray = road.ToArray();
-                roadRenderer.positionCount = roadArray.Length;
-                roadRenderer.SetPositions(roadArray);
+                var roadVertices = road.ToArray();
+                roadRenderer.positionCount = roadVertices.Length;
+                roadRenderer.SetPositions(roadVertices);
             }
             
         }
@@ -82,6 +89,28 @@ namespace Cities.Testing
             }
             roadRenderers.Clear();
         }
-        
+
+        private IGenerator<RoadNetwork> GetRoadStrategy()
+        {
+            
+            var heightMapInjector = new TerrainUtil.HeightMapInjector
+            {
+                Width = width, 
+                Depth = depth, 
+                Type = heightMapType
+            };
+            
+            switch (roadStrategy)
+            {
+                case RoadStrategy.Sample:
+                    return new RoadNetworkStrategySample(heightMapInjector);
+                case RoadStrategy.AStar:
+                    var aStar =  new AStarGenerator(heightMapInjector);
+                    aStar.Add((0, 0), (width / 2, depth / 2));
+                    return aStar;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
     }
 }
