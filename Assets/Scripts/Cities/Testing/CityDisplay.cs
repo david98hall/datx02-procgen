@@ -31,13 +31,11 @@ namespace Cities.Testing
             Sample, 
             AStar,
         }
-        
-        
+
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
             _cityGenerator.PlotsStrategy = new PlotsStrategyFactory(_cityGenerator).CreateSampleStrategy();
-            roadRenderers = new HashSet<GameObject>();
         }
         
         public void GenerateCity()

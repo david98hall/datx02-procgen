@@ -256,6 +256,7 @@ namespace Cities.Roads
                         // skip node if it is already visited or if it is the previous node in the path
                         if (visited.Contains(node) || node.Equals(_predecessor)) continue;
                         
+                        // yield the not already visited node
                         yield return node;
                     }
                 }
