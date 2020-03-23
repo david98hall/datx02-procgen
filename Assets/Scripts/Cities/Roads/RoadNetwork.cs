@@ -100,7 +100,7 @@ namespace Cities.Roads
             }
             
             // At the last the vertex of the road
-            AddRoadVertex(roadVertices.Current);
+            AddRoadVertex(previousVertex);
         }
 
         private void AddRoad(Vector3 start, Vector3 end, IEnumerable<(Vector3, Vector3)> roadParts)
@@ -198,7 +198,7 @@ namespace Cities.Roads
         /// <param name="roadVertices">The vertices of the road.</param>
         public void AddRoad(params Vector3[] roadVertices)
         {
-            AddRoad((IEnumerator<Vector3>)roadVertices.GetEnumerator());
+            AddRoad((IEnumerable<Vector3>) roadVertices);
         }
         
         private void AddRoadVertex(Vector3 vertex)
@@ -372,16 +372,16 @@ namespace Cities.Roads
             return undirected;
         }
 
-        public RoadNetwork GetXZProjection()
+        public RoadNetwork GetXZProjection(float y = 0)
         {
             var projectionNetwork = new RoadNetwork();
             foreach (var (Start, End) in GetRoadParts())
             {
-                projectionNetwork.AddRoad(new Vector3(Start.x, 0, Start.z), new Vector3(End.x, 0, End.z));
+                projectionNetwork.AddRoad(new Vector3(Start.x, y, Start.z), new Vector3(End.x, y, End.z));
             }
             return projectionNetwork;
         }
-
+        
         #region Cloning
         
         public object Clone() => new RoadNetwork(this);
