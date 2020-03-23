@@ -26,9 +26,10 @@ namespace Cities.Roads
 
             var road2 = new LinkedList<Vector3>();
             road2.AddLast(new Vector3(0, 0, 2.5f));
+            road2.AddLast(new Vector3(2.5f, 1, 2.5f));
             road2.AddLast(new Vector3(5, 0, 2.5f));
             roadNetwork.AddRoad(road2);
-
+            
             /*
             var road2 = new LinkedList<Vector3>();
             road2.AddLast(new Vector3(0.5f, 0, 0.5f));
