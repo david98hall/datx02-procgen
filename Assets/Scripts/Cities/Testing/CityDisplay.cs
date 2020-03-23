@@ -108,7 +108,7 @@ namespace Cities.Testing
                 case RoadStrategy.Sample:
                     return new RoadNetworkStrategySample(heightMapInjector);
                 case RoadStrategy.AStar:
-                    var aStar =  new AStarGenerator(heightMapInjector) {Beta = beta};
+                    var aStar =  new AStarGenerator(heightMapInjector) {HeightBias = beta};
                     aStar.Add((0, 0), (width - 1, depth - 1));
                     return aStar;
                 default:
