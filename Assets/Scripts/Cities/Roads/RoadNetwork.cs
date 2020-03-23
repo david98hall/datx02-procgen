@@ -372,6 +372,16 @@ namespace Cities.Roads
             return undirected;
         }
 
+        public RoadNetwork GetXZProjection()
+        {
+            var projectionNetwork = new RoadNetwork();
+            foreach (var (Start, End) in GetRoadParts())
+            {
+                projectionNetwork.AddRoad(new Vector3(Start.x, 0, Start.z), new Vector3(End.x, 0, End.z));
+            }
+            return projectionNetwork;
+        }
+
         #region Cloning
         
         public object Clone() => new RoadNetwork(this);
