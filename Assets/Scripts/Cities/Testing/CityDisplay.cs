@@ -2,6 +2,7 @@
 using System.Linq;
 using Cities.Plots;
 using Cities.Roads;
+using Extensions;
 using UnityEngine;
 
 namespace Cities.Testing
@@ -32,43 +33,62 @@ namespace Cities.Testing
 
         private void DisplayCity(City city)
         {
+            ClearRoads();
+            DisplayPlotBorders(city.Plots);
             DisplayRoadNetwork(city.RoadNetwork);
         }
 
+        private void DisplayPlotBorders(IEnumerator<Plot> plots)
+        {
+            var plotCount = 1;
+            while (plots.MoveNext())
+            {
+                if (plots.Current != null)
+                {
+                    DrawRoad(plots.Current.Vertices, "Plot Border " + plotCount++); 
+                }
+            }
+        }
+        
         private void DisplayRoadNetwork(RoadNetwork roadNetwork)
         {
-            ClearRoads();
-            
-            var roads = roadNetwork.GetRoads();
+            DrawRoads(roadNetwork.GetRoads());
+        }
 
+        private void DrawRoads(IEnumerable<IEnumerable<Vector3>> roads)
+        {
             var roadCount = 1;
             foreach (var road in roads)
             {
-                // Create a game object with a LineRenderer component
-                var item = new GameObject("Road " + roadCount++);
-                var roadRenderer = item.AddComponent<LineRenderer>();
-                roadRenderers.Add(item);
-                
-                // Set the appearance of the road
-                roadRenderer.startWidth = 0.3f;
-                roadRenderer.endWidth = 0.3f;
-                roadRenderer.numCornerVertices = 90;
-                roadRenderer.numCapVertices = 90;
-                roadRenderer.textureMode = LineTextureMode.Tile;
-                roadRenderer.generateLightingData = true;
-                if (roadMaterial != null)
-                {
-                    roadRenderer.sharedMaterial = roadMaterial;
-                }
-                
-                // Add the vertices of the road
-                var roadArray = road.ToArray();
-                roadRenderer.positionCount = roadArray.Length;
-                roadRenderer.SetPositions(roadArray);
+                DrawRoad(road, "Road " + roadCount++);
             }
-            
         }
 
+        private void DrawRoad(IEnumerable<Vector3> road, string roadName)
+        {
+            // Create a game object with a LineRenderer component
+            var item = new GameObject(roadName);
+            var roadRenderer = item.AddComponent<LineRenderer>();
+            roadRenderers.Add(item);
+                
+            // Set the appearance of the road
+            roadRenderer.startWidth = 0.3f;
+            roadRenderer.endWidth = 0.3f;
+            roadRenderer.numCornerVertices = 90;
+            roadRenderer.numCapVertices = 90;
+            roadRenderer.textureMode = LineTextureMode.Tile;
+            roadRenderer.generateLightingData = true;
+            if (roadMaterial != null)
+            {
+                roadRenderer.sharedMaterial = roadMaterial;
+            }
+                
+            // Add the vertices of the road
+            var roadArray = road.ToArray();
+            roadRenderer.positionCount = roadArray.Length;
+            roadRenderer.SetPositions(roadArray);
+        }
+        
         internal void Clear()
         {
             ClearRoads();
