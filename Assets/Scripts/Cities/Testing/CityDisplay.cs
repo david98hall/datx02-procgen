@@ -34,7 +34,7 @@ namespace Cities.Testing
         private void DisplayCity(City city)
         {
             ClearRoads();
-            DisplayPlotBorders(city.Plots);
+            // DisplayPlotBorders(city.Plots);
             DisplayRoadNetwork(city.RoadNetwork);
         }
 
@@ -45,7 +45,7 @@ namespace Cities.Testing
             {
                 if (plots.Current != null)
                 {
-                    DrawRoad(plots.Current.Vertices, "Plot Border " + plotCount++); 
+                    DrawRoad(plots.Current.Vertices, "Plot Border " + plotCount++, null); 
                 }
             }
         }
@@ -60,11 +60,11 @@ namespace Cities.Testing
             var roadCount = 1;
             foreach (var road in roads)
             {
-                DrawRoad(road, "Road " + roadCount++);
+                DrawRoad(road, "Road " + roadCount++, roadMaterial);
             }
         }
 
-        private void DrawRoad(IEnumerable<Vector3> road, string roadName)
+        private void DrawRoad(IEnumerable<Vector3> road, string roadName, Material material)
         {
             // Create a game object with a LineRenderer component
             var item = new GameObject(roadName);
@@ -78,9 +78,9 @@ namespace Cities.Testing
             roadRenderer.numCapVertices = 90;
             roadRenderer.textureMode = LineTextureMode.Tile;
             roadRenderer.generateLightingData = true;
-            if (roadMaterial != null)
+            if (material != null)
             {
-                roadRenderer.sharedMaterial = roadMaterial;
+                roadRenderer.sharedMaterial = material;
             }
                 
             // Add the vertices of the road
