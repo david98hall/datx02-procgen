@@ -20,12 +20,20 @@ namespace Cities.Plots
         }
 
         /// <summary>
+        /// Sets the shape of this plot.
+        /// </summary>
+        /// <param name="shape">The shape of this plot.</param>
+        public Plot(IEnumerable<Vector3> shape)
+        {
+            SetShapeVertices(shape);
+        }
+        
+        /// <summary>
         /// Clones the passed Plot.
         /// </summary>
         /// <param name="other">The Plot to clone.</param>
-        public Plot(Plot other)
+        public Plot(Plot other) : this(other._shapeVertices)
         {
-            SetShapeVertices(other._shapeVertices);
         }
         
         /// <summary>
