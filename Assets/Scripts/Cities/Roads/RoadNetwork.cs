@@ -372,6 +372,8 @@ namespace Cities.Roads
             return undirected;
         }
 
+        public RoadNetwork GetAsUndirected() => new RoadNetwork(ConvertToUndirectedGraph());
+
         public RoadNetwork GetXZProjection(float y = 0)
         {
             var projectionNetwork = new RoadNetwork();
@@ -380,6 +382,67 @@ namespace Cities.Roads
                 projectionNetwork.AddRoad(new Vector3(Start.x, y, Start.z), new Vector3(End.x, y, End.z));
             }
             return projectionNetwork;
+        }
+
+        public IEnumerable<IEnumerable<Vector3>> GetCycles()
+        {
+            var cycles = new HashSet<IEnumerable<Vector3>>();
+            
+            var roadPartCount = GetRoadParts().Count();
+            var cycleSize = 3;
+            while (cycleSize <= roadPartCount)
+            {
+                foreach (var vertex in _roadNetwork.Keys)
+                {
+                    var tempCycles = GetCycles(
+                        cycleSize,
+                        new LinkedList<Vector3>(new []{vertex})
+                    );
+                    foreach (var cycle in tempCycles)
+                    {
+                        if (cycle == null) continue;
+                        cycles.Add(cycle);
+                    }
+                }
+
+                cycleSize++;
+            }
+
+            return cycles;
+        }
+        
+        private IEnumerable<IEnumerable<Vector3>> GetCycles(
+            int stepsRemaining,
+            LinkedList<Vector3> path)
+        {
+            var cycles = new HashSet<IEnumerable<Vector3>>();
+
+            if (stepsRemaining == 0)
+            {
+                if (!path.First.Value.Equals(path.Last.Value)) return null;
+                cycles.Add(path);
+                return cycles;
+            }
+
+            var nextSteps = stepsRemaining - 1;
+            var adjacentVertices = _roadNetwork[path.Last.Value];
+            foreach (var neighbour in adjacentVertices)
+            {
+                if (path.Last.Previous != null && neighbour.Equals(path.Last.Previous.Value)) continue;
+                
+                var neighbourPath = new LinkedList<Vector3>(path);
+                neighbourPath.AddLast(neighbour);
+                var tempCycles = GetCycles(nextSteps, neighbourPath);
+                
+                if (tempCycles == null) continue;
+                
+                foreach (var cycle in tempCycles)
+                {
+                    cycles.Add(cycle);
+                }
+            }
+
+            return cycles;
         }
         
         #region Cloning
