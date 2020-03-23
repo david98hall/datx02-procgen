@@ -236,18 +236,26 @@ namespace Cities.Roads
             /// <returns></returns>
             internal IEnumerable<Node> Adjacent(float[,] heights, ICollection<Node> visited, Node goal, float heightBias)
             {
+                // find valid min and max indices
                 var xMin = (int) Math.Max(_location.x - 1, 0);
                 var xMax = (int) Math.Min(_location.x + 1, heights.GetLength(0) - 1);
                 var zMin = (int) Math.Max(_location.z - 1, 0);
                 var zMax = (int) Math.Min(_location.z + 1, heights.GetLength(1) - 1);
                 
+                // iterate adjacent nodes
+                // yield if not visited
                 for (var x = xMin; x <= xMax; x++)
                 {
                     for (var z = zMin; z <= zMax; z++)
                     {
+                        // skip node if it is equal to this node
                         if (x == (int) _location.x && z == (int) _location.z) continue;
+                        
                         var node = new Node(x, heights[x, z], z, this, goal, heightBias);
+                        
+                        // skip node if it is already visited or if it is the previous node in the path
                         if (visited.Contains(node) || node.Equals(_predecessor)) continue;
+                        
                         yield return node;
                     }
                 }
