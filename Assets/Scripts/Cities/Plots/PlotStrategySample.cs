@@ -19,29 +19,6 @@ namespace Cities.Plots
         
         public override IEnumerable<Plot> Generate()
         {
-            var plots = new HashSet<Plot>();
-            
-            plots.AddRange(GeneratePlots());
-            GeneratePlots();
-            var plotStrings = plots.Select(plot =>
-            {
-                const string arrow = " -> ";
-                var plotString = plot.Vertices.Aggregate("Plot: ", (current, vector) => current + (vector + arrow));
-                return plotString.Substring(0, plotString.Length - arrow.Length);
-            });
-
-            Debug.Log("Number of plots: " + plots.Count);
-            
-            foreach (var plotString in plotStrings)
-            {
-                Debug.Log(plotString);
-            }
-            
-            return plots;
-        }
-
-        private IEnumerable<Plot> GeneratePlots()
-        {
             return GetPolygons().Select(polygon => new Plot(polygon));
         }
 
