@@ -147,6 +147,15 @@ references:
   commentId: M:Cities.Plots.Plot.#ctor(Cities.Plots.Plot)
   fullName: Cities.Plots.Plot.Plot(Cities.Plots.Plot)
   nameWithType: Plot.Plot(Plot)
+- uid: Cities.Plots.Plot.#ctor(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name: Plot(IEnumerable<Vector3>)
+  href: api/Cities.Plots.Plot.html#Cities_Plots_Plot__ctor_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Cities.Plots.Plot.#ctor(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name.vb: Plot(IEnumerable(Of Vector3))
+  fullName: Cities.Plots.Plot.Plot(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Cities.Plots.Plot.Plot(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  nameWithType: Plot.Plot(IEnumerable<Vector3>)
+  nameWithType.vb: Plot.Plot(IEnumerable(Of Vector3))
 - uid: Cities.Plots.Plot.#ctor*
   name: Plot
   href: api/Cities.Plots.Plot.html#Cities_Plots_Plot__ctor_
@@ -167,6 +176,19 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.Plot.Clone
   nameWithType: Plot.Clone
+- uid: Cities.Plots.Plot.Vertices
+  name: Vertices
+  href: api/Cities.Plots.Plot.html#Cities_Plots_Plot_Vertices
+  commentId: P:Cities.Plots.Plot.Vertices
+  fullName: Cities.Plots.Plot.Vertices
+  nameWithType: Plot.Vertices
+- uid: Cities.Plots.Plot.Vertices*
+  name: Vertices
+  href: api/Cities.Plots.Plot.html#Cities_Plots_Plot_Vertices_
+  commentId: Overload:Cities.Plots.Plot.Vertices
+  isSpec: "True"
+  fullName: Cities.Plots.Plot.Vertices
+  nameWithType: Plot.Vertices
 - uid: Cities.Plots.PlotsStrategyFactory
   name: PlotsStrategyFactory
   href: api/Cities.Plots.PlotsStrategyFactory.html
@@ -301,6 +323,58 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.RoadNetwork.Clone
   nameWithType: RoadNetwork.Clone
+- uid: Cities.Roads.RoadNetwork.ConvertToUndirectedGraph
+  name: ConvertToUndirectedGraph()
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_ConvertToUndirectedGraph
+  commentId: M:Cities.Roads.RoadNetwork.ConvertToUndirectedGraph
+  fullName: Cities.Roads.RoadNetwork.ConvertToUndirectedGraph()
+  nameWithType: RoadNetwork.ConvertToUndirectedGraph()
+- uid: Cities.Roads.RoadNetwork.ConvertToUndirectedGraph*
+  name: ConvertToUndirectedGraph
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_ConvertToUndirectedGraph_
+  commentId: Overload:Cities.Roads.RoadNetwork.ConvertToUndirectedGraph
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.ConvertToUndirectedGraph
+  nameWithType: RoadNetwork.ConvertToUndirectedGraph
+- uid: Cities.Roads.RoadNetwork.GetAdjacentVertices(UnityEngine.Vector3)
+  name: GetAdjacentVertices(Vector3)
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetAdjacentVertices_UnityEngine_Vector3_
+  commentId: M:Cities.Roads.RoadNetwork.GetAdjacentVertices(UnityEngine.Vector3)
+  fullName: Cities.Roads.RoadNetwork.GetAdjacentVertices(UnityEngine.Vector3)
+  nameWithType: RoadNetwork.GetAdjacentVertices(Vector3)
+- uid: Cities.Roads.RoadNetwork.GetAdjacentVertices*
+  name: GetAdjacentVertices
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetAdjacentVertices_
+  commentId: Overload:Cities.Roads.RoadNetwork.GetAdjacentVertices
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.GetAdjacentVertices
+  nameWithType: RoadNetwork.GetAdjacentVertices
+- uid: Cities.Roads.RoadNetwork.GetAsUndirected
+  name: GetAsUndirected()
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetAsUndirected
+  commentId: M:Cities.Roads.RoadNetwork.GetAsUndirected
+  fullName: Cities.Roads.RoadNetwork.GetAsUndirected()
+  nameWithType: RoadNetwork.GetAsUndirected()
+- uid: Cities.Roads.RoadNetwork.GetAsUndirected*
+  name: GetAsUndirected
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetAsUndirected_
+  commentId: Overload:Cities.Roads.RoadNetwork.GetAsUndirected
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.GetAsUndirected
+  nameWithType: RoadNetwork.GetAsUndirected
+- uid: Cities.Roads.RoadNetwork.GetNumberOfAdjacentVertices(UnityEngine.Vector3)
+  name: GetNumberOfAdjacentVertices(Vector3)
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetNumberOfAdjacentVertices_UnityEngine_Vector3_
+  commentId: M:Cities.Roads.RoadNetwork.GetNumberOfAdjacentVertices(UnityEngine.Vector3)
+  fullName: Cities.Roads.RoadNetwork.GetNumberOfAdjacentVertices(UnityEngine.Vector3)
+  nameWithType: RoadNetwork.GetNumberOfAdjacentVertices(Vector3)
+- uid: Cities.Roads.RoadNetwork.GetNumberOfAdjacentVertices*
+  name: GetNumberOfAdjacentVertices
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetNumberOfAdjacentVertices_
+  commentId: Overload:Cities.Roads.RoadNetwork.GetNumberOfAdjacentVertices
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.GetNumberOfAdjacentVertices
+  nameWithType: RoadNetwork.GetNumberOfAdjacentVertices
 - uid: Cities.Roads.RoadNetwork.GetRoadParts
   name: GetRoadParts()
   href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetRoadParts
@@ -327,6 +401,19 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.RoadNetwork.GetRoads
   nameWithType: RoadNetwork.GetRoads
+- uid: Cities.Roads.RoadNetwork.GetXZProjection(System.Single)
+  name: GetXZProjection(Single)
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetXZProjection_System_Single_
+  commentId: M:Cities.Roads.RoadNetwork.GetXZProjection(System.Single)
+  fullName: Cities.Roads.RoadNetwork.GetXZProjection(System.Single)
+  nameWithType: RoadNetwork.GetXZProjection(Single)
+- uid: Cities.Roads.RoadNetwork.GetXZProjection*
+  name: GetXZProjection
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetXZProjection_
+  commentId: Overload:Cities.Roads.RoadNetwork.GetXZProjection
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.GetXZProjection
+  nameWithType: RoadNetwork.GetXZProjection
 - uid: Cities.Roads.RoadNetwork.Intersections
   name: Intersections
   href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_Intersections
@@ -340,6 +427,32 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.RoadNetwork.Intersections
   nameWithType: RoadNetwork.Intersections
+- uid: Cities.Roads.RoadNetwork.IsAdjacent(UnityEngine.Vector3,UnityEngine.Vector3)
+  name: IsAdjacent(Vector3, Vector3)
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_IsAdjacent_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Cities.Roads.RoadNetwork.IsAdjacent(UnityEngine.Vector3,UnityEngine.Vector3)
+  fullName: Cities.Roads.RoadNetwork.IsAdjacent(UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: RoadNetwork.IsAdjacent(Vector3, Vector3)
+- uid: Cities.Roads.RoadNetwork.IsAdjacent*
+  name: IsAdjacent
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_IsAdjacent_
+  commentId: Overload:Cities.Roads.RoadNetwork.IsAdjacent
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.IsAdjacent
+  nameWithType: RoadNetwork.IsAdjacent
+- uid: Cities.Roads.RoadNetwork.RoadVertices
+  name: RoadVertices
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_RoadVertices
+  commentId: P:Cities.Roads.RoadNetwork.RoadVertices
+  fullName: Cities.Roads.RoadNetwork.RoadVertices
+  nameWithType: RoadNetwork.RoadVertices
+- uid: Cities.Roads.RoadNetwork.RoadVertices*
+  name: RoadVertices
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_RoadVertices_
+  commentId: Overload:Cities.Roads.RoadNetwork.RoadVertices
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.RoadVertices
+  nameWithType: RoadNetwork.RoadVertices
 - uid: Cities.Roads.RoadNetworkStrategyFactory
   name: RoadNetworkStrategyFactory
   href: api/Cities.Roads.RoadNetworkStrategyFactory.html
@@ -362,6 +475,19 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory
   nameWithType: RoadNetworkStrategyFactory.RoadNetworkStrategyFactory
+- uid: Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator
+  name: AStarGenerator()
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_AStarGenerator
+  commentId: M:Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator
+  fullName: Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator()
+  nameWithType: RoadNetworkStrategyFactory.AStarGenerator()
+- uid: Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator*
+  name: AStarGenerator
+  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_AStarGenerator_
+  commentId: Overload:Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator
+  nameWithType: RoadNetworkStrategyFactory.AStarGenerator
 - uid: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
   name: CreateAgentStrategy()
   href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateAgentStrategy
@@ -413,6 +539,12 @@ references:
   isSpec: "True"
   fullName: Cities.Testing.CityDisplay.CityDisplay
   nameWithType: CityDisplay.CityDisplay
+- uid: Cities.Testing.CityDisplay.depth
+  name: depth
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_depth
+  commentId: F:Cities.Testing.CityDisplay.depth
+  fullName: Cities.Testing.CityDisplay.depth
+  nameWithType: CityDisplay.depth
 - uid: Cities.Testing.CityDisplay.GenerateCity
   name: GenerateCity()
   href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_GenerateCity
@@ -426,12 +558,72 @@ references:
   isSpec: "True"
   fullName: Cities.Testing.CityDisplay.GenerateCity
   nameWithType: CityDisplay.GenerateCity
+- uid: Cities.Testing.CityDisplay.heightBias
+  name: heightBias
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_heightBias
+  commentId: F:Cities.Testing.CityDisplay.heightBias
+  fullName: Cities.Testing.CityDisplay.heightBias
+  nameWithType: CityDisplay.heightBias
+- uid: Cities.Testing.CityDisplay.heightMapType
+  name: heightMapType
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_heightMapType
+  commentId: F:Cities.Testing.CityDisplay.heightMapType
+  fullName: Cities.Testing.CityDisplay.heightMapType
+  nameWithType: CityDisplay.heightMapType
+- uid: Cities.Testing.CityDisplay.meshFilter
+  name: meshFilter
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_meshFilter
+  commentId: F:Cities.Testing.CityDisplay.meshFilter
+  fullName: Cities.Testing.CityDisplay.meshFilter
+  nameWithType: CityDisplay.meshFilter
+- uid: Cities.Testing.CityDisplay.meshRenderer
+  name: meshRenderer
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_meshRenderer
+  commentId: F:Cities.Testing.CityDisplay.meshRenderer
+  fullName: Cities.Testing.CityDisplay.meshRenderer
+  nameWithType: CityDisplay.meshRenderer
 - uid: Cities.Testing.CityDisplay.roadMaterial
   name: roadMaterial
   href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_roadMaterial
   commentId: F:Cities.Testing.CityDisplay.roadMaterial
   fullName: Cities.Testing.CityDisplay.roadMaterial
   nameWithType: CityDisplay.roadMaterial
+- uid: Cities.Testing.CityDisplay.roadStrategy
+  name: roadStrategy
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_roadStrategy
+  commentId: F:Cities.Testing.CityDisplay.roadStrategy
+  fullName: Cities.Testing.CityDisplay.roadStrategy
+  nameWithType: CityDisplay.roadStrategy
+- uid: Cities.Testing.CityDisplay.RoadStrategy
+  name: CityDisplay.RoadStrategy
+  href: api/Cities.Testing.CityDisplay.RoadStrategy.html
+  commentId: T:Cities.Testing.CityDisplay.RoadStrategy
+  fullName: Cities.Testing.CityDisplay.RoadStrategy
+  nameWithType: CityDisplay.RoadStrategy
+- uid: Cities.Testing.CityDisplay.RoadStrategy.AStar
+  name: AStar
+  href: api/Cities.Testing.CityDisplay.RoadStrategy.html#Cities_Testing_CityDisplay_RoadStrategy_AStar
+  commentId: F:Cities.Testing.CityDisplay.RoadStrategy.AStar
+  fullName: Cities.Testing.CityDisplay.RoadStrategy.AStar
+  nameWithType: CityDisplay.RoadStrategy.AStar
+- uid: Cities.Testing.CityDisplay.RoadStrategy.Sample
+  name: Sample
+  href: api/Cities.Testing.CityDisplay.RoadStrategy.html#Cities_Testing_CityDisplay_RoadStrategy_Sample
+  commentId: F:Cities.Testing.CityDisplay.RoadStrategy.Sample
+  fullName: Cities.Testing.CityDisplay.RoadStrategy.Sample
+  nameWithType: CityDisplay.RoadStrategy.Sample
+- uid: Cities.Testing.CityDisplay.scale
+  name: scale
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_scale
+  commentId: F:Cities.Testing.CityDisplay.scale
+  fullName: Cities.Testing.CityDisplay.scale
+  nameWithType: CityDisplay.scale
+- uid: Cities.Testing.CityDisplay.width
+  name: width
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_width
+  commentId: F:Cities.Testing.CityDisplay.width
+  fullName: Cities.Testing.CityDisplay.width
+  nameWithType: CityDisplay.width
 - uid: Cities.Testing.CityGeneratorEditor
   name: CityGeneratorEditor
   href: api/Cities.Testing.CityGeneratorEditor.html
@@ -536,25 +728,6 @@ references:
   commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.selectedShapeIndex
   fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.selectedShapeIndex
   nameWithType: ShapeEdit.SelectionInfo.selectedShapeIndex
-- uid: DrawTool.ExtensionMethods
-  name: ExtensionMethods
-  href: api/DrawTool.ExtensionMethods.html
-  commentId: T:DrawTool.ExtensionMethods
-  fullName: DrawTool.ExtensionMethods
-  nameWithType: ExtensionMethods
-- uid: DrawTool.ExtensionMethods.ToXZ(UnityEngine.Vector3)
-  name: ToXZ(Vector3)
-  href: api/DrawTool.ExtensionMethods.html#DrawTool_ExtensionMethods_ToXZ_UnityEngine_Vector3_
-  commentId: M:DrawTool.ExtensionMethods.ToXZ(UnityEngine.Vector3)
-  fullName: DrawTool.ExtensionMethods.ToXZ(UnityEngine.Vector3)
-  nameWithType: ExtensionMethods.ToXZ(Vector3)
-- uid: DrawTool.ExtensionMethods.ToXZ*
-  name: ToXZ
-  href: api/DrawTool.ExtensionMethods.html#DrawTool_ExtensionMethods_ToXZ_
-  commentId: Overload:DrawTool.ExtensionMethods.ToXZ
-  isSpec: "True"
-  fullName: DrawTool.ExtensionMethods.ToXZ
-  nameWithType: ExtensionMethods.ToXZ
 - uid: DrawTool.ShapeMake
   name: ShapeMake
   href: api/DrawTool.ShapeMake.html
@@ -666,6 +839,19 @@ references:
   commentId: T:Extensions.UnityExtensions
   fullName: Extensions.UnityExtensions
   nameWithType: UnityExtensions
+- uid: Extensions.UnityExtensions.Clone(UnityEngine.Vector3)
+  name: Clone(Vector3)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_Clone_UnityEngine_Vector3_
+  commentId: M:Extensions.UnityExtensions.Clone(UnityEngine.Vector3)
+  fullName: Extensions.UnityExtensions.Clone(UnityEngine.Vector3)
+  nameWithType: UnityExtensions.Clone(Vector3)
+- uid: Extensions.UnityExtensions.Clone*
+  name: Clone
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_Clone_
+  commentId: Overload:Extensions.UnityExtensions.Clone
+  isSpec: "True"
+  fullName: Extensions.UnityExtensions.Clone
+  nameWithType: UnityExtensions.Clone
 - uid: Extensions.UnityExtensions.Copy(UnityEngine.AnimationCurve)
   name: Copy(AnimationCurve)
   href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_Copy_UnityEngine_AnimationCurve_
@@ -679,6 +865,32 @@ references:
   isSpec: "True"
   fullName: Extensions.UnityExtensions.Copy
   nameWithType: UnityExtensions.Copy
+- uid: Extensions.UnityExtensions.DegreesTo(UnityEngine.Vector2,UnityEngine.Vector2)
+  name: DegreesTo(Vector2, Vector2)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_DegreesTo_UnityEngine_Vector2_UnityEngine_Vector2_
+  commentId: M:Extensions.UnityExtensions.DegreesTo(UnityEngine.Vector2,UnityEngine.Vector2)
+  fullName: Extensions.UnityExtensions.DegreesTo(UnityEngine.Vector2, UnityEngine.Vector2)
+  nameWithType: UnityExtensions.DegreesTo(Vector2, Vector2)
+- uid: Extensions.UnityExtensions.DegreesTo*
+  name: DegreesTo
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_DegreesTo_
+  commentId: Overload:Extensions.UnityExtensions.DegreesTo
+  isSpec: "True"
+  fullName: Extensions.UnityExtensions.DegreesTo
+  nameWithType: UnityExtensions.DegreesTo
+- uid: Extensions.UnityExtensions.RadiansTo(UnityEngine.Vector2,UnityEngine.Vector2)
+  name: RadiansTo(Vector2, Vector2)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_RadiansTo_UnityEngine_Vector2_UnityEngine_Vector2_
+  commentId: M:Extensions.UnityExtensions.RadiansTo(UnityEngine.Vector2,UnityEngine.Vector2)
+  fullName: Extensions.UnityExtensions.RadiansTo(UnityEngine.Vector2, UnityEngine.Vector2)
+  nameWithType: UnityExtensions.RadiansTo(Vector2, Vector2)
+- uid: Extensions.UnityExtensions.RadiansTo*
+  name: RadiansTo
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_RadiansTo_
+  commentId: Overload:Extensions.UnityExtensions.RadiansTo
+  isSpec: "True"
+  fullName: Extensions.UnityExtensions.RadiansTo
+  nameWithType: UnityExtensions.RadiansTo
 - uid: Interfaces
   name: Interfaces
   href: api/Interfaces.html
@@ -1377,12 +1589,112 @@ references:
   commentId: F:Utils.Geometry.CompositeShape.vertices
   fullName: Utils.Geometry.CompositeShape.vertices
   nameWithType: CompositeShape.vertices
+- uid: Utils.Geometry.LineSegment
+  name: LineSegment
+  href: api/Utils.Geometry.LineSegment.html
+  commentId: T:Utils.Geometry.LineSegment
+  fullName: Utils.Geometry.LineSegment
+  nameWithType: LineSegment
+- uid: Utils.Geometry.LineSegment.#ctor(UnityEngine.Vector3,UnityEngine.Vector3)
+  name: LineSegment(Vector3, Vector3)
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment__ctor_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.LineSegment.#ctor(UnityEngine.Vector3,UnityEngine.Vector3)
+  fullName: Utils.Geometry.LineSegment.LineSegment(UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: LineSegment.LineSegment(Vector3, Vector3)
+- uid: Utils.Geometry.LineSegment.#ctor*
+  name: LineSegment
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment__ctor_
+  commentId: Overload:Utils.Geometry.LineSegment.#ctor
+  isSpec: "True"
+  fullName: Utils.Geometry.LineSegment.LineSegment
+  nameWithType: LineSegment.LineSegment
+- uid: Utils.Geometry.LineSegment.DirectionVector
+  name: DirectionVector
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_DirectionVector
+  commentId: P:Utils.Geometry.LineSegment.DirectionVector
+  fullName: Utils.Geometry.LineSegment.DirectionVector
+  nameWithType: LineSegment.DirectionVector
+- uid: Utils.Geometry.LineSegment.DirectionVector*
+  name: DirectionVector
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_DirectionVector_
+  commentId: Overload:Utils.Geometry.LineSegment.DirectionVector
+  isSpec: "True"
+  fullName: Utils.Geometry.LineSegment.DirectionVector
+  nameWithType: LineSegment.DirectionVector
+- uid: Utils.Geometry.LineSegment.End
+  name: End
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_End
+  commentId: P:Utils.Geometry.LineSegment.End
+  fullName: Utils.Geometry.LineSegment.End
+  nameWithType: LineSegment.End
+- uid: Utils.Geometry.LineSegment.End*
+  name: End
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_End_
+  commentId: Overload:Utils.Geometry.LineSegment.End
+  isSpec: "True"
+  fullName: Utils.Geometry.LineSegment.End
+  nameWithType: LineSegment.End
+- uid: Utils.Geometry.LineSegment.IsParallelTo(Utils.Geometry.LineSegment)
+  name: IsParallelTo(LineSegment)
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_IsParallelTo_Utils_Geometry_LineSegment_
+  commentId: M:Utils.Geometry.LineSegment.IsParallelTo(Utils.Geometry.LineSegment)
+  fullName: Utils.Geometry.LineSegment.IsParallelTo(Utils.Geometry.LineSegment)
+  nameWithType: LineSegment.IsParallelTo(LineSegment)
+- uid: Utils.Geometry.LineSegment.IsParallelTo*
+  name: IsParallelTo
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_IsParallelTo_
+  commentId: Overload:Utils.Geometry.LineSegment.IsParallelTo
+  isSpec: "True"
+  fullName: Utils.Geometry.LineSegment.IsParallelTo
+  nameWithType: LineSegment.IsParallelTo
+- uid: Utils.Geometry.LineSegment.RelativeVector
+  name: RelativeVector
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_RelativeVector
+  commentId: P:Utils.Geometry.LineSegment.RelativeVector
+  fullName: Utils.Geometry.LineSegment.RelativeVector
+  nameWithType: LineSegment.RelativeVector
+- uid: Utils.Geometry.LineSegment.RelativeVector*
+  name: RelativeVector
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_RelativeVector_
+  commentId: Overload:Utils.Geometry.LineSegment.RelativeVector
+  isSpec: "True"
+  fullName: Utils.Geometry.LineSegment.RelativeVector
+  nameWithType: LineSegment.RelativeVector
+- uid: Utils.Geometry.LineSegment.Start
+  name: Start
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_Start
+  commentId: P:Utils.Geometry.LineSegment.Start
+  fullName: Utils.Geometry.LineSegment.Start
+  nameWithType: LineSegment.Start
+- uid: Utils.Geometry.LineSegment.Start*
+  name: Start
+  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_Start_
+  commentId: Overload:Utils.Geometry.LineSegment.Start
+  isSpec: "True"
+  fullName: Utils.Geometry.LineSegment.Start
+  nameWithType: LineSegment.Start
 - uid: Utils.Geometry.Maths2D
   name: Maths2D
   href: api/Utils.Geometry.Maths2D.html
   commentId: T:Utils.Geometry.Maths2D
   fullName: Utils.Geometry.Maths2D
   nameWithType: Maths2D
+- uid: Utils.Geometry.Maths2D.LineSegmentIntersection(UnityEngine.Vector2@,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
+  name: LineSegmentIntersection(out Vector2, Vector2, Vector2, Vector2, Vector2)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentIntersection_UnityEngine_Vector2__UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_
+  commentId: M:Utils.Geometry.Maths2D.LineSegmentIntersection(UnityEngine.Vector2@,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
+  name.vb: LineSegmentIntersection(ByRef Vector2, Vector2, Vector2, Vector2, Vector2)
+  fullName: Utils.Geometry.Maths2D.LineSegmentIntersection(out UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2)
+  fullName.vb: Utils.Geometry.Maths2D.LineSegmentIntersection(ByRef UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2)
+  nameWithType: Maths2D.LineSegmentIntersection(out Vector2, Vector2, Vector2, Vector2, Vector2)
+  nameWithType.vb: Maths2D.LineSegmentIntersection(ByRef Vector2, Vector2, Vector2, Vector2, Vector2)
+- uid: Utils.Geometry.Maths2D.LineSegmentIntersection*
+  name: LineSegmentIntersection
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentIntersection_
+  commentId: Overload:Utils.Geometry.Maths2D.LineSegmentIntersection
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.LineSegmentIntersection
+  nameWithType: Maths2D.LineSegmentIntersection
 - uid: Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
   name: LineSegmentsIntersect(Vector2, Vector2, Vector2, Vector2)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentsIntersect_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_
@@ -1447,6 +1759,22 @@ references:
   commentId: T:Utils.Geometry.Maths3D
   fullName: Utils.Geometry.Maths3D
   nameWithType: Maths3D
+- uid: Utils.Geometry.Maths3D.LineIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name: LineIntersection(out Vector3, Vector3, Vector3, Vector3, Vector3)
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_LineIntersection_UnityEngine_Vector3__UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.Maths3D.LineIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name.vb: LineIntersection(ByRef Vector3, Vector3, Vector3, Vector3, Vector3)
+  fullName: Utils.Geometry.Maths3D.LineIntersection(out UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  fullName.vb: Utils.Geometry.Maths3D.LineIntersection(ByRef UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: Maths3D.LineIntersection(out Vector3, Vector3, Vector3, Vector3, Vector3)
+  nameWithType.vb: Maths3D.LineIntersection(ByRef Vector3, Vector3, Vector3, Vector3, Vector3)
+- uid: Utils.Geometry.Maths3D.LineIntersection*
+  name: LineIntersection
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_LineIntersection_
+  commentId: Overload:Utils.Geometry.Maths3D.LineIntersection
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths3D.LineIntersection
+  nameWithType: Maths3D.LineIntersection
 - uid: Utils.Geometry.Maths3D.LineSegmentIntersection(UnityEngine.Vector3@,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
   name: LineSegmentIntersection(out Vector3, Vector3, Vector3, Vector3, Vector3)
   href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_LineSegmentIntersection_UnityEngine_Vector3__UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_
@@ -1681,3 +2009,357 @@ references:
   commentId: F:Utils.Geometry.Triangulator.Vertex.position
   fullName: Utils.Geometry.Triangulator.Vertex.position
   nameWithType: Triangulator.Vertex.position
+- uid: Utils.TerrainUtil
+  name: TerrainUtil
+  href: api/Utils.TerrainUtil.html
+  commentId: T:Utils.TerrainUtil
+  fullName: Utils.TerrainUtil
+  nameWithType: TerrainUtil
+- uid: Utils.TerrainUtil.Flat(System.Int32,System.Int32)
+  name: Flat(Int32, Int32)
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Flat_System_Int32_System_Int32_
+  commentId: M:Utils.TerrainUtil.Flat(System.Int32,System.Int32)
+  fullName: Utils.TerrainUtil.Flat(System.Int32, System.Int32)
+  nameWithType: TerrainUtil.Flat(Int32, Int32)
+- uid: Utils.TerrainUtil.Flat*
+  name: Flat
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Flat_
+  commentId: Overload:Utils.TerrainUtil.Flat
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.Flat
+  nameWithType: TerrainUtil.Flat
+- uid: Utils.TerrainUtil.HeightMap(System.Int32,System.Int32,System.Func{System.Int32,System.Int32,System.Single})
+  name: HeightMap(Int32, Int32, Func<Int32, Int32, Single>)
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_HeightMap_System_Int32_System_Int32_System_Func_System_Int32_System_Int32_System_Single__
+  commentId: M:Utils.TerrainUtil.HeightMap(System.Int32,System.Int32,System.Func{System.Int32,System.Int32,System.Single})
+  name.vb: HeightMap(Int32, Int32, Func(Of Int32, Int32, Single))
+  fullName: Utils.TerrainUtil.HeightMap(System.Int32, System.Int32, System.Func<System.Int32, System.Int32, System.Single>)
+  fullName.vb: Utils.TerrainUtil.HeightMap(System.Int32, System.Int32, System.Func(Of System.Int32, System.Int32, System.Single))
+  nameWithType: TerrainUtil.HeightMap(Int32, Int32, Func<Int32, Int32, Single>)
+  nameWithType.vb: TerrainUtil.HeightMap(Int32, Int32, Func(Of Int32, Int32, Single))
+- uid: Utils.TerrainUtil.HeightMap*
+  name: HeightMap
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_HeightMap_
+  commentId: Overload:Utils.TerrainUtil.HeightMap
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.HeightMap
+  nameWithType: TerrainUtil.HeightMap
+- uid: Utils.TerrainUtil.HeightMapInjector
+  name: TerrainUtil.HeightMapInjector
+  href: api/Utils.TerrainUtil.HeightMapInjector.html
+  commentId: T:Utils.TerrainUtil.HeightMapInjector
+  fullName: Utils.TerrainUtil.HeightMapInjector
+  nameWithType: TerrainUtil.HeightMapInjector
+- uid: Utils.TerrainUtil.HeightMapInjector.Depth
+  name: Depth
+  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Depth
+  commentId: P:Utils.TerrainUtil.HeightMapInjector.Depth
+  fullName: Utils.TerrainUtil.HeightMapInjector.Depth
+  nameWithType: TerrainUtil.HeightMapInjector.Depth
+- uid: Utils.TerrainUtil.HeightMapInjector.Depth*
+  name: Depth
+  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Depth_
+  commentId: Overload:Utils.TerrainUtil.HeightMapInjector.Depth
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.HeightMapInjector.Depth
+  nameWithType: TerrainUtil.HeightMapInjector.Depth
+- uid: Utils.TerrainUtil.HeightMapInjector.Get
+  name: Get()
+  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Get
+  commentId: M:Utils.TerrainUtil.HeightMapInjector.Get
+  fullName: Utils.TerrainUtil.HeightMapInjector.Get()
+  nameWithType: TerrainUtil.HeightMapInjector.Get()
+- uid: Utils.TerrainUtil.HeightMapInjector.Get*
+  name: Get
+  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Get_
+  commentId: Overload:Utils.TerrainUtil.HeightMapInjector.Get
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.HeightMapInjector.Get
+  nameWithType: TerrainUtil.HeightMapInjector.Get
+- uid: Utils.TerrainUtil.HeightMapInjector.MapType
+  name: TerrainUtil.HeightMapInjector.MapType
+  href: api/Utils.TerrainUtil.HeightMapInjector.MapType.html
+  commentId: T:Utils.TerrainUtil.HeightMapInjector.MapType
+  fullName: Utils.TerrainUtil.HeightMapInjector.MapType
+  nameWithType: TerrainUtil.HeightMapInjector.MapType
+- uid: Utils.TerrainUtil.HeightMapInjector.MapType.Flat
+  name: Flat
+  href: api/Utils.TerrainUtil.HeightMapInjector.MapType.html#Utils_TerrainUtil_HeightMapInjector_MapType_Flat
+  commentId: F:Utils.TerrainUtil.HeightMapInjector.MapType.Flat
+  fullName: Utils.TerrainUtil.HeightMapInjector.MapType.Flat
+  nameWithType: TerrainUtil.HeightMapInjector.MapType.Flat
+- uid: Utils.TerrainUtil.HeightMapInjector.MapType.Pyramid
+  name: Pyramid
+  href: api/Utils.TerrainUtil.HeightMapInjector.MapType.html#Utils_TerrainUtil_HeightMapInjector_MapType_Pyramid
+  commentId: F:Utils.TerrainUtil.HeightMapInjector.MapType.Pyramid
+  fullName: Utils.TerrainUtil.HeightMapInjector.MapType.Pyramid
+  nameWithType: TerrainUtil.HeightMapInjector.MapType.Pyramid
+- uid: Utils.TerrainUtil.HeightMapInjector.MapType.Slope
+  name: Slope
+  href: api/Utils.TerrainUtil.HeightMapInjector.MapType.html#Utils_TerrainUtil_HeightMapInjector_MapType_Slope
+  commentId: F:Utils.TerrainUtil.HeightMapInjector.MapType.Slope
+  fullName: Utils.TerrainUtil.HeightMapInjector.MapType.Slope
+  nameWithType: TerrainUtil.HeightMapInjector.MapType.Slope
+- uid: Utils.TerrainUtil.HeightMapInjector.Type
+  name: Type
+  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Type
+  commentId: P:Utils.TerrainUtil.HeightMapInjector.Type
+  fullName: Utils.TerrainUtil.HeightMapInjector.Type
+  nameWithType: TerrainUtil.HeightMapInjector.Type
+- uid: Utils.TerrainUtil.HeightMapInjector.Type*
+  name: Type
+  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Type_
+  commentId: Overload:Utils.TerrainUtil.HeightMapInjector.Type
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.HeightMapInjector.Type
+  nameWithType: TerrainUtil.HeightMapInjector.Type
+- uid: Utils.TerrainUtil.HeightMapInjector.Width
+  name: Width
+  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Width
+  commentId: P:Utils.TerrainUtil.HeightMapInjector.Width
+  fullName: Utils.TerrainUtil.HeightMapInjector.Width
+  nameWithType: TerrainUtil.HeightMapInjector.Width
+- uid: Utils.TerrainUtil.HeightMapInjector.Width*
+  name: Width
+  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Width_
+  commentId: Overload:Utils.TerrainUtil.HeightMapInjector.Width
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.HeightMapInjector.Width
+  nameWithType: TerrainUtil.HeightMapInjector.Width
+- uid: Utils.TerrainUtil.Mesh(System.Single[0:,0:],System.Single)
+  name: Mesh(Single[,], Single)
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Mesh_System_Single_0__0___System_Single_
+  commentId: M:Utils.TerrainUtil.Mesh(System.Single[0:,0:],System.Single)
+  name.vb: Mesh(Single(,), Single)
+  fullName: Utils.TerrainUtil.Mesh(System.Single[,], System.Single)
+  fullName.vb: Utils.TerrainUtil.Mesh(System.Single(,), System.Single)
+  nameWithType: TerrainUtil.Mesh(Single[,], Single)
+  nameWithType.vb: TerrainUtil.Mesh(Single(,), Single)
+- uid: Utils.TerrainUtil.Mesh*
+  name: Mesh
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Mesh_
+  commentId: Overload:Utils.TerrainUtil.Mesh
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.Mesh
+  nameWithType: TerrainUtil.Mesh
+- uid: Utils.TerrainUtil.Pyramid(System.Int32,System.Int32)
+  name: Pyramid(Int32, Int32)
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Pyramid_System_Int32_System_Int32_
+  commentId: M:Utils.TerrainUtil.Pyramid(System.Int32,System.Int32)
+  fullName: Utils.TerrainUtil.Pyramid(System.Int32, System.Int32)
+  nameWithType: TerrainUtil.Pyramid(Int32, Int32)
+- uid: Utils.TerrainUtil.Pyramid*
+  name: Pyramid
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Pyramid_
+  commentId: Overload:Utils.TerrainUtil.Pyramid
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.Pyramid
+  nameWithType: TerrainUtil.Pyramid
+- uid: Utils.TerrainUtil.Slope(System.Int32,System.Int32)
+  name: Slope(Int32, Int32)
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Slope_System_Int32_System_Int32_
+  commentId: M:Utils.TerrainUtil.Slope(System.Int32,System.Int32)
+  fullName: Utils.TerrainUtil.Slope(System.Int32, System.Int32)
+  nameWithType: TerrainUtil.Slope(Int32, Int32)
+- uid: Utils.TerrainUtil.Slope*
+  name: Slope
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Slope_
+  commentId: Overload:Utils.TerrainUtil.Slope
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.Slope
+  nameWithType: TerrainUtil.Slope
+- uid: Utils.Tuples
+  name: Utils.Tuples
+  href: api/Utils.Tuples.html
+  commentId: N:Utils.Tuples
+  fullName: Utils.Tuples
+  nameWithType: Utils.Tuples
+- uid: Utils.Tuples.MutableTuple`2
+  name: MutableTuple<T1, T2>
+  href: api/Utils.Tuples.MutableTuple-2.html
+  commentId: T:Utils.Tuples.MutableTuple`2
+  name.vb: MutableTuple(Of T1, T2)
+  fullName: Utils.Tuples.MutableTuple<T1, T2>
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2)
+  nameWithType: MutableTuple<T1, T2>
+  nameWithType.vb: MutableTuple(Of T1, T2)
+- uid: Utils.Tuples.MutableTuple`2.#ctor(`0,`1)
+  name: MutableTuple(T1, T2)
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2__ctor__0__1_
+  commentId: M:Utils.Tuples.MutableTuple`2.#ctor(`0,`1)
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.MutableTuple(T1, T2)
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).MutableTuple(T1, T2)
+  nameWithType: MutableTuple<T1, T2>.MutableTuple(T1, T2)
+  nameWithType.vb: MutableTuple(Of T1, T2).MutableTuple(T1, T2)
+- uid: Utils.Tuples.MutableTuple`2.#ctor*
+  name: MutableTuple
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2__ctor_
+  commentId: Overload:Utils.Tuples.MutableTuple`2.#ctor
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.MutableTuple
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).MutableTuple
+  nameWithType: MutableTuple<T1, T2>.MutableTuple
+  nameWithType.vb: MutableTuple(Of T1, T2).MutableTuple
+- uid: Utils.Tuples.MutableTuple`2.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_Equals_System_Object_
+  commentId: M:Utils.Tuples.MutableTuple`2.Equals(System.Object)
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.Equals(System.Object)
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).Equals(System.Object)
+  nameWithType: MutableTuple<T1, T2>.Equals(Object)
+  nameWithType.vb: MutableTuple(Of T1, T2).Equals(Object)
+- uid: Utils.Tuples.MutableTuple`2.Equals(Utils.Tuples.MutableTuple{`0,`1})
+  name: Equals(MutableTuple<T1, T2>)
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_Equals_Utils_Tuples_MutableTuple__0__1__
+  commentId: M:Utils.Tuples.MutableTuple`2.Equals(Utils.Tuples.MutableTuple{`0,`1})
+  name.vb: Equals(MutableTuple(Of T1, T2))
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.Equals(Utils.Tuples.MutableTuple<T1, T2>)
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).Equals(Utils.Tuples.MutableTuple(Of T1, T2))
+  nameWithType: MutableTuple<T1, T2>.Equals(MutableTuple<T1, T2>)
+  nameWithType.vb: MutableTuple(Of T1, T2).Equals(MutableTuple(Of T1, T2))
+- uid: Utils.Tuples.MutableTuple`2.Equals*
+  name: Equals
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_Equals_
+  commentId: Overload:Utils.Tuples.MutableTuple`2.Equals
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.Equals
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).Equals
+  nameWithType: MutableTuple<T1, T2>.Equals
+  nameWithType.vb: MutableTuple(Of T1, T2).Equals
+- uid: Utils.Tuples.MutableTuple`2.GetHashCode
+  name: GetHashCode()
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_GetHashCode
+  commentId: M:Utils.Tuples.MutableTuple`2.GetHashCode
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.GetHashCode()
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).GetHashCode()
+  nameWithType: MutableTuple<T1, T2>.GetHashCode()
+  nameWithType.vb: MutableTuple(Of T1, T2).GetHashCode()
+- uid: Utils.Tuples.MutableTuple`2.GetHashCode*
+  name: GetHashCode
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_GetHashCode_
+  commentId: Overload:Utils.Tuples.MutableTuple`2.GetHashCode
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.GetHashCode
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).GetHashCode
+  nameWithType: MutableTuple<T1, T2>.GetHashCode
+  nameWithType.vb: MutableTuple(Of T1, T2).GetHashCode
+- uid: Utils.Tuples.MutableTuple`2.Item1
+  name: Item1
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_Item1
+  commentId: P:Utils.Tuples.MutableTuple`2.Item1
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.Item1
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).Item1
+  nameWithType: MutableTuple<T1, T2>.Item1
+  nameWithType.vb: MutableTuple(Of T1, T2).Item1
+- uid: Utils.Tuples.MutableTuple`2.Item1*
+  name: Item1
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_Item1_
+  commentId: Overload:Utils.Tuples.MutableTuple`2.Item1
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.Item1
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).Item1
+  nameWithType: MutableTuple<T1, T2>.Item1
+  nameWithType.vb: MutableTuple(Of T1, T2).Item1
+- uid: Utils.Tuples.MutableTuple`2.Item2
+  name: Item2
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_Item2
+  commentId: P:Utils.Tuples.MutableTuple`2.Item2
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.Item2
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).Item2
+  nameWithType: MutableTuple<T1, T2>.Item2
+  nameWithType.vb: MutableTuple(Of T1, T2).Item2
+- uid: Utils.Tuples.MutableTuple`2.Item2*
+  name: Item2
+  href: api/Utils.Tuples.MutableTuple-2.html#Utils_Tuples_MutableTuple_2_Item2_
+  commentId: Overload:Utils.Tuples.MutableTuple`2.Item2
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2>.Item2
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2).Item2
+  nameWithType: MutableTuple<T1, T2>.Item2
+  nameWithType.vb: MutableTuple(Of T1, T2).Item2
+- uid: Utils.Tuples.MutableTuple`3
+  name: MutableTuple<T1, T2, T3>
+  href: api/Utils.Tuples.MutableTuple-3.html
+  commentId: T:Utils.Tuples.MutableTuple`3
+  name.vb: MutableTuple(Of T1, T2, T3)
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3)
+  nameWithType: MutableTuple<T1, T2, T3>
+  nameWithType.vb: MutableTuple(Of T1, T2, T3)
+- uid: Utils.Tuples.MutableTuple`3.#ctor(`0,`1,`1)
+  name: MutableTuple(T1, T2, T2)
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3__ctor__0__1__1_
+  commentId: M:Utils.Tuples.MutableTuple`3.#ctor(`0,`1,`1)
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.MutableTuple(T1, T2, T2)
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).MutableTuple(T1, T2, T2)
+  nameWithType: MutableTuple<T1, T2, T3>.MutableTuple(T1, T2, T2)
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).MutableTuple(T1, T2, T2)
+- uid: Utils.Tuples.MutableTuple`3.#ctor*
+  name: MutableTuple
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3__ctor_
+  commentId: Overload:Utils.Tuples.MutableTuple`3.#ctor
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.MutableTuple
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).MutableTuple
+  nameWithType: MutableTuple<T1, T2, T3>.MutableTuple
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).MutableTuple
+- uid: Utils.Tuples.MutableTuple`3.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3_Equals_System_Object_
+  commentId: M:Utils.Tuples.MutableTuple`3.Equals(System.Object)
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.Equals(System.Object)
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).Equals(System.Object)
+  nameWithType: MutableTuple<T1, T2, T3>.Equals(Object)
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).Equals(Object)
+- uid: Utils.Tuples.MutableTuple`3.Equals(Utils.Tuples.MutableTuple{`0,`1,`2})
+  name: Equals(MutableTuple<T1, T2, T3>)
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3_Equals_Utils_Tuples_MutableTuple__0__1__2__
+  commentId: M:Utils.Tuples.MutableTuple`3.Equals(Utils.Tuples.MutableTuple{`0,`1,`2})
+  name.vb: Equals(MutableTuple(Of T1, T2, T3))
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.Equals(Utils.Tuples.MutableTuple<T1, T2, T3>)
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).Equals(Utils.Tuples.MutableTuple(Of T1, T2, T3))
+  nameWithType: MutableTuple<T1, T2, T3>.Equals(MutableTuple<T1, T2, T3>)
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).Equals(MutableTuple(Of T1, T2, T3))
+- uid: Utils.Tuples.MutableTuple`3.Equals*
+  name: Equals
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3_Equals_
+  commentId: Overload:Utils.Tuples.MutableTuple`3.Equals
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.Equals
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).Equals
+  nameWithType: MutableTuple<T1, T2, T3>.Equals
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).Equals
+- uid: Utils.Tuples.MutableTuple`3.GetHashCode
+  name: GetHashCode()
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3_GetHashCode
+  commentId: M:Utils.Tuples.MutableTuple`3.GetHashCode
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.GetHashCode()
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).GetHashCode()
+  nameWithType: MutableTuple<T1, T2, T3>.GetHashCode()
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).GetHashCode()
+- uid: Utils.Tuples.MutableTuple`3.GetHashCode*
+  name: GetHashCode
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3_GetHashCode_
+  commentId: Overload:Utils.Tuples.MutableTuple`3.GetHashCode
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.GetHashCode
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).GetHashCode
+  nameWithType: MutableTuple<T1, T2, T3>.GetHashCode
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).GetHashCode
+- uid: Utils.Tuples.MutableTuple`3.Item3
+  name: Item3
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3_Item3
+  commentId: P:Utils.Tuples.MutableTuple`3.Item3
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.Item3
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).Item3
+  nameWithType: MutableTuple<T1, T2, T3>.Item3
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).Item3
+- uid: Utils.Tuples.MutableTuple`3.Item3*
+  name: Item3
+  href: api/Utils.Tuples.MutableTuple-3.html#Utils_Tuples_MutableTuple_3_Item3_
+  commentId: Overload:Utils.Tuples.MutableTuple`3.Item3
+  isSpec: "True"
+  fullName: Utils.Tuples.MutableTuple<T1, T2, T3>.Item3
+  fullName.vb: Utils.Tuples.MutableTuple(Of T1, T2, T3).Item3
+  nameWithType: MutableTuple<T1, T2, T3>.Item3
+  nameWithType.vb: MutableTuple(Of T1, T2, T3).Item3
