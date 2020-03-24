@@ -61,7 +61,7 @@ namespace Cities.Testing
         private void DisplayCity(City city)
         {
             ClearRoads();
-            DisplayPlotBorders(city.Plots);
+            // DisplayPlotBorders(city.Plots);
             DisplayRoadNetwork(city.RoadNetwork);
         }
 

@@ -56,54 +56,53 @@ namespace Cities.Plots
         
         private static bool TryGetPolygon(
             RoadNetwork roadNetwork,
-            Vector3 startVector,
+            Vector3 startVertex,
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges, 
             out IReadOnlyCollection<Vector3> polygon)
         {
-            polygon = GetPolygon(roadNetwork, startVector, visitedEdges);
+            polygon = GetPolygon(roadNetwork, startVertex, startVertex, visitedEdges);
             return polygon != null;
         }
         
         private static IReadOnlyCollection<Vector3> GetPolygon(
             RoadNetwork roadNetwork,
-            Vector3 startVector,
+            Vector3 startVertex,
+            Vector3 currentVertex,
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges)
         {
-            if (TryGetRightmostNeighbour(roadNetwork, startVector, out var rightmostNeighbour))
+            if (TryGetUnvisitedRightmostNeighbour(
+                roadNetwork, currentVertex, visitedEdges, out var rightmostNeighbour))
             {
-                var edge = (startVector, rightmostNeighbour);
-
-                var polygonPath = new LinkedList<Vector3>();
-                polygonPath.AddLast(startVector);
-                
-                if (visitedEdges.Contains(edge))
-                {
-                    /*
-                    var msg = $"Edge {edge} already visited. Here are all visited edges:\n";
-                    msg = visitedEdges.Aggregate(msg, (current, e) => current + ("\n" + e));
-                    Debug.Log(msg);
-                    */
-                    return null;
-                }
+                var edge = (currentVertex, rightmostNeighbour);
                 visitedEdges.Add(edge);
 
-                var polygonPathExtension = GetPolygon(roadNetwork, rightmostNeighbour, visitedEdges);
-                if (polygonPathExtension == null)
+                var polygonPath = new LinkedList<Vector3>();
+                polygonPath.AddLast(currentVertex);
+                polygonPath.AddLast(rightmostNeighbour);
+
+                if (!startVertex.Equals(rightmostNeighbour))
                 {
-                    polygonPath.AddLast(rightmostNeighbour);
+                    var pathExtension = GetPolygon(
+                        roadNetwork, startVertex, rightmostNeighbour, visitedEdges);
+
+                    if (pathExtension != null)
+                    {
+                        polygonPath.RemoveLast();
+                        polygonPath.AddRange(pathExtension);
+                    }
                 }
-                else
-                {
-                    polygonPath.AddRange(polygonPathExtension);
-                }
-                
+
                 return polygonPath;
             }
 
             return null;
         }
         
-        private static bool TryGetRightmostNeighbour(RoadNetwork roadNetwork, Vector3 vertex, out Vector3 rightmost)
+        private static bool TryGetUnvisitedRightmostNeighbour(
+            RoadNetwork roadNetwork, 
+            Vector3 vertex,
+            ICollection<(Vector3 Start, Vector3 End)> visitedEdges,
+            out Vector3 rightmost)
         {
             rightmost = Vector3.negativeInfinity;
             
@@ -115,13 +114,15 @@ namespace Cities.Plots
             foreach (var neighbour in roadNetwork.GetAdjacentVertices(vertex))
             {
                 var angleToNeighbour = vertexXZ.DegreesTo(new Vector2(neighbour.x, neighbour.z));
-                    
-                if (!(angleToNeighbour < minAngle)) continue;
-                    
+
+                if (angleToNeighbour < minAngle && !visitedEdges.Contains((vertex, neighbour)))
+                {
+                    minAngle = angleToNeighbour;
+                    rightmost = neighbour;
+                    foundRightmost = true;
+                }
+
                 // Update the rightmost neighbour and the minimum angle so far
-                minAngle = angleToNeighbour;
-                rightmost = neighbour;
-                foundRightmost = true;
             }
 
             return foundRightmost;
