@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Extensions;
@@ -296,15 +295,15 @@ namespace Cities.Roads
                     case 1:
                         // Append the only found road going out from the neighbour to the start vertex
                         // to extend the road.
-                        road.AddRange(neighbourRoads.First());
+                        road.AddRange(neighbourRoads?.First());
                         break;
                     
                     // At least two neighbour roads were found
                     default:
                     {
                         // Add roads found when searching from the neighbour vertex
-                        var neighbourRoadsEnumerator = neighbourRoads.GetEnumerator();
-                        while (neighbourRoadsEnumerator.MoveNext())
+                        var neighbourRoadsEnumerator = neighbourRoads?.GetEnumerator();
+                        while (neighbourRoadsEnumerator != null && neighbourRoadsEnumerator.MoveNext())
                         {
                             if (road.Count == 1)
                             {
@@ -414,9 +413,9 @@ namespace Cities.Roads
         public RoadNetwork GetXZProjection(float y = 0)
         {
             var projectionNetwork = new RoadNetwork();
-            foreach (var (Start, End) in GetRoadParts())
+            foreach (var (start, end) in GetRoadParts())
             {
-                projectionNetwork.AddRoad(new Vector3(Start.x, y, Start.z), new Vector3(End.x, y, End.z));
+                projectionNetwork.AddRoad(new Vector3(start.x, y, start.z), new Vector3(end.x, y, end.z));
             }
             return projectionNetwork;
         }

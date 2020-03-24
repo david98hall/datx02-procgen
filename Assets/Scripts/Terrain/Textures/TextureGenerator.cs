@@ -1,7 +1,7 @@
 using Interfaces;
 using UnityEngine;
 
-namespace Terrain
+namespace Terrain.Textures
 {
     /// <summary>
     /// Generates 2D textures with arbitrary strategies.
@@ -30,10 +30,7 @@ namespace Terrain
         /// <returns>
         /// A reference to <see cref="_noiseMap"/>
         /// </returns>
-        public float[,] Get()
-        {
-            return _noiseMap;
-        }
+        public float[,] Get() => _noiseMap;
 
         /// <summary>
         /// The strategy of generating 2D textures.
@@ -57,7 +54,6 @@ namespace Terrain
         {
             Strategy = strategy;
         }
-        
         /// <summary>
         /// Generates a 2D textures with the current strategy.
         /// See <see cref = "Interfaces.IGenerator{T}.Generate()"/>.

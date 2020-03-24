@@ -53,9 +53,10 @@ namespace Utils
         public static float[,] HeightMap(int width, int depth, Func<int, int, float> height)
         {
             var heightMap = new float[width, depth];
-            for (var z = 0; z < width; z++)
+            
+            for (var x = 0; x < width; x++)
             {
-                for (var x = 0; x < depth; x++)
+                for (var z = 0; z < depth; z++)
                 {
                     heightMap[x, z] = height(x, z);
                 }
@@ -74,13 +75,7 @@ namespace Utils
 
         public static float[,] Pyramid(int width, int depth)
         {
-            /*
-             * x - width/2: [-width/2, width/2]
-             * 2 * x / width - 1 = [min: -1, mid: 0, max: 1]
-             * abs(2 * x / width - 1) = [min: 1, mid: 0, max: 1]
-             * 1 - abs(2 * x / width - 1) = [min: 0, mid: 1, max: 1]
-             */
-            return HeightMap(width, width, (x, z) =>
+            return HeightMap(width, depth, (x, z) =>
                 1 - Math.Max(Math.Abs(2 * (float) x / width - 1), Math.Abs(2 * (float) z / depth - 1)));
         }
         
