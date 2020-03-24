@@ -18,7 +18,21 @@ namespace Cities.Plots
         
         public override IEnumerable<Plot> Generate()
         {
-            return GetPolygons().Select(polygon => new Plot(polygon));
+            var plots = GetPolygons().Select(polygon => new Plot(polygon));
+            
+            var plotStrings = plots.Select(plot =>
+            {
+                const string arrow = " -> ";
+                var plotString = plot.Vertices.Aggregate("Plot: ", (current, vector) => current + (vector + arrow));
+                return plotString.Substring(0, plotString.Length - arrow.Length);
+            });
+
+            foreach (var plotString in plotStrings)
+            {
+                Debug.Log(plotString);
+            }
+            
+            return plots;
         }
 
         private IEnumerable<IReadOnlyCollection<Vector3>> GetPolygons()
@@ -58,19 +72,31 @@ namespace Cities.Plots
             if (TryGetRightmostNeighbour(roadNetwork, startVector, out var rightmostNeighbour))
             {
                 var edge = (startVector, rightmostNeighbour);
-                
-                if (visitedEdges.Contains(edge)) return null;
-                visitedEdges.Add(edge);
-             
+
                 var polygonPath = new LinkedList<Vector3>();
                 polygonPath.AddLast(startVector);
-                polygonPath.AddLast(rightmostNeighbour);
                 
+                if (visitedEdges.Contains(edge))
+                {
+                    /*
+                    var msg = $"Edge {edge} already visited. Here are all visited edges:\n";
+                    msg = visitedEdges.Aggregate(msg, (current, e) => current + ("\n" + e));
+                    Debug.Log(msg);
+                    */
+                    return null;
+                }
+                visitedEdges.Add(edge);
+
                 var polygonPathExtension = GetPolygon(roadNetwork, rightmostNeighbour, visitedEdges);
-                if (polygonPathExtension != null)
+                if (polygonPathExtension == null)
+                {
+                    polygonPath.AddLast(rightmostNeighbour);
+                }
+                else
                 {
                     polygonPath.AddRange(polygonPathExtension);
                 }
+                
                 return polygonPath;
             }
 
