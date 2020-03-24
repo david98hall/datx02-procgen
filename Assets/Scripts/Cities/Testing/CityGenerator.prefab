@@ -43,4 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec58691816ef03344ae29e93b5ad45b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
+  roadStrategy: 0
+  heightMapType: 0
+  width: 0
+  depth: 0
+  scale: 0
+  heightBias: 0
   roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
+  plotBorderMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
