@@ -328,23 +328,49 @@ namespace Cities.Roads
             return roads;
         }
 
-        public IEnumerable<Vector3> GetAdjacentVertices(Vector3 vector)
+        #endregion
+
+        #region Vertex info
+
+        /// <summary>
+        /// Gets the adjacent vertices.
+        /// </summary>
+        /// <param name="vertex">The vector who's adjacent vertices will be returned.</param>
+        /// <returns>The adjacent vertices of the passed vertex.</returns>
+        public IEnumerable<Vector3> GetAdjacentVertices(Vector3 vertex)
         {
-            return !_roadNetwork.ContainsKey(vector) ? null : _roadNetwork[vector].Select(v => v.Clone());
+            return !_roadNetwork.ContainsKey(vertex) ? null : _roadNetwork[vertex].Select(v => v.Clone());
         }
 
-        public int GetNumberOfAdjacentVectors(Vector3 vector)
+        /// <summary>
+        /// Gets the number of adjacent vertices.
+        /// </summary>
+        /// <param name="vertex">The vector who's adjacent vertices will be returned.</param>
+        /// <returns>The number of adjacent vertices.</returns>
+        public int GetNumberOfAdjacentVertices(Vector3 vertex)
         {
-            return !_roadNetwork.ContainsKey(vector) ? -1 : _roadNetwork[vector].Count;
+            return !_roadNetwork.ContainsKey(vertex) ? -1 : _roadNetwork[vertex].Count;
         }
 
+        /// <summary>
+        /// Returns true if v2 is adjacent to v1.
+        /// </summary>
+        /// <param name="v1">The vertex to check adjacency to.</param>
+        /// <param name="v2">The vertex to check whether it's adjacent to v1 or not.</param>
+        /// <returns>true if v2 is adjacent to v1.</returns>
         public bool IsAdjacent(Vector3 v1, Vector3 v2)
         {
             return _roadNetwork.ContainsKey(v1) && _roadNetwork[v1].Contains(v2);
         }
-        
-        #endregion
 
+        #endregion
+        
+        #region Conversion
+
+        /// <summary>
+        /// Convert this road network into an undirected graph.
+        /// </summary>
+        /// <returns>The undirected graph.</returns>
         public IDictionary<Vector3, ICollection<Vector3>> ConvertToUndirectedGraph()
         {
             var undirected = new Dictionary<Vector3, ICollection<Vector3>>();
@@ -373,9 +399,18 @@ namespace Cities.Roads
 
             return undirected;
         }
-
+        
+        /// <summary>
+        /// Creates an undirected clone of this road network.
+        /// </summary>
+        /// <returns>The undirected road network.</returns>
         public RoadNetwork GetAsUndirected() => new RoadNetwork(ConvertToUndirectedGraph());
 
+        /// <summary>
+        /// Projects this road network to the xz plane at a specified y-value.
+        /// </summary>
+        /// <param name="y">The y-value of the plane to project to.</param>
+        /// <returns>The projected road network.</returns>
         public RoadNetwork GetXZProjection(float y = 0)
         {
             var projectionNetwork = new RoadNetwork();
@@ -385,6 +420,8 @@ namespace Cities.Roads
             }
             return projectionNetwork;
         }
+
+        #endregion
 
         #region Cloning
         
