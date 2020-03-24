@@ -26,18 +26,11 @@ namespace Cities.Roads
 
             var road2 = new LinkedList<Vector3>();
             road2.AddLast(new Vector3(0, 0, 2.5f));
+            road2.AddLast(new Vector3(2.5f, 1, 2.5f));
             road2.AddLast(new Vector3(5, 0, 2.5f));
             roadNetwork.AddRoad(road2);
 
             /*
-            var road2 = new LinkedList<Vector3>();
-            road2.AddLast(new Vector3(0.5f, 0, 0.5f));
-            road2.AddLast(new Vector3(0, 0, 1));
-            road2.AddLast(new Vector3(-2.5f, 0, 3.5f));
-            road2.AddLast(new Vector3(-4.5f, 0, 2));
-            road2.AddLast(new Vector3(-6.5f, 0, 1));
-            roadNetwork.AddRoad(road2);
-            
             // Circular road
             var road3 = new LinkedList<Vector3>();
             for (var i = 0f; i < 2 * Math.PI; i += 0.01f)
@@ -47,8 +40,10 @@ namespace Cities.Roads
                 var dZ = (float)Math.Sin(i) + offset;
                 road3.AddLast(new Vector3(dX, 0, dZ));
             }
-            roadNetwork.AddRoad(road3);            
-            
+            roadNetwork.AddRoad(road3);
+            */
+
+            /*
             // Road looking like a square
             var road4 = new LinkedList<Vector3>();
             const float offset1 = -6;
@@ -59,7 +54,6 @@ namespace Cities.Roads
             road4.AddLast(new Vector3(offset1 + sqWidth, 0, offset1));
             road4.AddLast(new Vector3(offset1, 0, offset1));
             roadNetwork.AddRoad(road4);
-
             var road51 = new LinkedList<Vector3>();
             road51.AddLast(new Vector3(offset1, 0, offset1));
             road51.AddLast(new Vector3(offset1 + sqWidth / 2, 2, offset1 + sqWidth / 2));

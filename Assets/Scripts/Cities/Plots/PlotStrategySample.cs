@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
@@ -18,85 +19,75 @@ namespace Cities.Plots
         
         public override IEnumerable<Plot> Generate()
         {
-            var plots = new HashSet<Plot>();
-            
-            var roadParts = RoadNetwork.GetRoadParts().ToList();
-
-            plots.AddRange(GenerateTrianglePlots(roadParts));
-
-            var plotStrings = plots.Select(plot =>
-            {
-                const string arrow = " -> ";
-                var plotString = plot.Vertices.Aggregate("Plot: ", (current, vector) => current + (vector + arrow));
-                return plotString.Substring(0, plotString.Length - arrow.Length);
-            });
-
-            Debug.Log("Number of plots: " + plots.Count);
-            
-            foreach (var plotString in plotStrings)
-            {
-                Debug.Log(plotString);
-            }
-            
-            return plots;
+            return GetPolygons().Select(polygon => new Plot(polygon));
         }
 
-        private IEnumerable<Plot> GenerateTrianglePlots(IReadOnlyCollection<(Vector3 Start, Vector3 End)> roadParts)
+        private IEnumerable<IReadOnlyCollection<Vector3>> GetPolygons()
         {
-            var plots = new HashSet<Plot>();
-            var vertexPairs = 
-                RoadNetwork.RoadVertices.Zip(RoadNetwork.RoadVertices, (v1, v2) => (v1, v2));
+            var allPolygons = new HashSet<IReadOnlyCollection<Vector3>>();
+            
+            var roadNetwork = RoadNetwork.GetXZProjection().GetAsUndirected();
 
-            var potentialTriangleEdges = new HashSet<(Vector3 Start, Vector3 End)>();
-
-            foreach (var (Start1, End1) in vertexPairs)
+            var visitedEdges = new HashSet<(Vector3 Start, Vector3 End)>();
+            
+            foreach (var vertex in roadNetwork.RoadVertices)
             {
-                var saveSegment = true;
-                
-                foreach (var (Start2, End2) in roadParts)
+                var polygon = new LinkedList<Vector3>();
+                if (TryGetPolygon(roadNetwork, vertex, visitedEdges, polygon))
                 {
-                    var isIntersection = Maths3D.LineSegmentIntersection(
-                            out var intersection, Start1, End1, Start2, End2);
-                    saveSegment &= !isIntersection || intersection.Equals(Start2) || intersection.Equals(End2);
-                }
-
-                if (saveSegment)
-                {
-                    potentialTriangleEdges.Add((Start1, End1));
+                    allPolygons.Add(polygon);
                 }
             }
-            
-            foreach (var (Start, End) in potentialTriangleEdges)
-            {
-                foreach (var endNeighbour in RoadNetwork.GetAdjacentVertices(End))
-                {
-                    foreach (var endNeighbourNeighbour in RoadNetwork.GetAdjacentVertices(endNeighbour))
-                    {
-                        if (!RoadNetwork.IsAdjacent(endNeighbourNeighbour, Start)) continue;
-                        // Triangle found
-                        var trianglePlot = new Plot();
-                        trianglePlot.SetShapeVertices(new []{Start, End, endNeighbour, Start});
-                        plots.Add(trianglePlot);
-                    }
-                }
-            }
-            
-            return plots;
+
+            return allPolygons;
         }
         
-        /*
-            var cycleStrings = stronglyConnectedRoads.Select(road =>
+        private static bool TryGetPolygon(
+            RoadNetwork roadNetwork,
+            Vector3 startVector,
+            ICollection<(Vector3 Start, Vector3 End)> visitedEdges, 
+            ICollection<Vector3> polygon)
+        {
+            polygon.Add(startVector);
+            
+            if (TryGetRightmostNeighbour(roadNetwork, startVector, out var rightmostNeighbour))
             {
-                const string arrow = " -> ";
-                var cycle = road.Aggregate("Cycle: ", (current, vector) => current + (vector + arrow));
-                return cycle.Substring(0, cycle.Length - arrow.Length);
-            });
+                var edge = (startVector, rightmostNeighbour);
 
-            foreach (var cycle in cycleStrings)
-            {
-                Debug.Log(cycle);
+                if (!visitedEdges.Contains(edge))
+                {
+                    visitedEdges.Add(edge);
+                    TryGetPolygon(roadNetwork, rightmostNeighbour, visitedEdges, polygon);
+                    return true;
+                }   
             }
-            */
+
+            return false;
+        }
         
+        private static bool TryGetRightmostNeighbour(RoadNetwork roadNetwork, Vector3 vertex, out Vector3 rightmost)
+        {
+            rightmost = Vector3.negativeInfinity;
+            
+            // Find the rightmost neighbour since we always turn right when arriving at
+            // a new vertex to close a potential polygon as quick as possible.
+            var vertexXZ = new Vector2(vertex.x, vertex.z);
+            var foundRightmost = false;
+            var minAngle = float.MaxValue;
+            foreach (var neighbour in roadNetwork.GetAdjacentVertices(vertex))
+            {
+                var angleToNeighbour = vertexXZ.DegreesTo(new Vector2(neighbour.x, neighbour.z));
+                    
+                if (!(angleToNeighbour < minAngle)) continue;
+                    
+                // Update the rightmost neighbour and the minimum angle so far
+                minAngle = angleToNeighbour;
+                rightmost = neighbour;
+                foundRightmost = true;
+            }
+
+            return foundRightmost;
+        }
+
     }
 }

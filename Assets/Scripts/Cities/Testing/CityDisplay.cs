@@ -4,6 +4,7 @@ using System.Linq;
 using Cities.Plots;
 using Cities.Roads;
 using Interfaces;
+using Extensions;
 using UnityEngine;
 using Utils;
 
@@ -36,6 +37,7 @@ namespace Cities.Testing
         {
             _cityGenerator = new CityGenerator();
             _cityGenerator.PlotsStrategy = new PlotsStrategyFactory(_cityGenerator).CreateSampleStrategy();
+            roadRenderers = new HashSet<GameObject>();
         }
         
         public void GenerateCity()
