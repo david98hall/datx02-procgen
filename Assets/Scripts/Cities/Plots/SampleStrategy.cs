@@ -60,19 +60,24 @@ namespace Cities.Plots
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges, 
             out IReadOnlyCollection<Vector3> polygon)
         {
-            polygon = GetPolygon(roadNetwork, startVertex, startVertex, visitedEdges);
+            polygon = GetPolygon(roadNetwork, startVertex, Vector3.negativeInfinity, startVertex, visitedEdges);
             return polygon != null;
         }
-        
-        private static IReadOnlyCollection<Vector3> GetPolygon(
+
+        private static LinkedList<Vector3> GetPolygon(
             RoadNetwork roadNetwork,
             Vector3 startVertex,
+            Vector3 previousVertex,
             Vector3 currentVertex,
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges)
         {
             if (TryGetUnvisitedRightmostNeighbour(
                 roadNetwork, currentVertex, visitedEdges, out var rightmostNeighbour))
             {
+
+                if (previousVertex.Equals(rightmostNeighbour)) 
+                    return null;
+                
                 var edge = (currentVertex, rightmostNeighbour);
                 visitedEdges.Add(edge);
 
@@ -83,13 +88,13 @@ namespace Cities.Plots
                 if (!startVertex.Equals(rightmostNeighbour))
                 {
                     var pathExtension = GetPolygon(
-                        roadNetwork, startVertex, rightmostNeighbour, visitedEdges);
+                        roadNetwork, startVertex, currentVertex, rightmostNeighbour, visitedEdges);
 
-                    if (pathExtension != null)
-                    {
-                        polygonPath.RemoveLast();
-                        polygonPath.AddRange(pathExtension);
-                    }
+                    if (pathExtension == null)
+                        return null;
+                    
+                    polygonPath.RemoveLast();
+                    polygonPath.AddRange(pathExtension);
                 }
 
                 return polygonPath;

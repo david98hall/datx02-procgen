@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Extensions;
 using Interfaces;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ namespace Cities.Roads
         {
             var roadNetwork = new RoadNetwork();
             
+            /*
+            // Square road with overlapping line
             var road1 = new LinkedList<Vector3>();
             road1.AddLast(new Vector3(0, 0, 0));
             road1.AddLast(new Vector3(0, 0, 0 + 5));
@@ -29,22 +32,24 @@ namespace Cities.Roads
             road2.AddLast(new Vector3(2.5f, 1, 2.5f));
             road2.AddLast(new Vector3(5, 0, 2.5f));
             roadNetwork.AddRoad(road2);
-
+            */
+            
             /*
             // Circular road
+            const float offset = 0;
+            const float radius = 3;
             var road3 = new LinkedList<Vector3>();
             for (var i = 0f; i < 2 * Math.PI; i += 0.01f)
             {
-                const float offset = 3;
-                var dX = (float)Math.Cos(i) + offset;
-                var dZ = (float)Math.Sin(i) + offset;
-                road3.AddLast(new Vector3(dX, 0, dZ));
+                var dX = radius * Math.Cos(i) + offset;
+                var dZ = radius * Math.Sin(i) + offset;
+                road3.AddLast(new Vector3((float)dX, 0, (float)dZ));
             }
+            roadNetwork.AddRoad(road3.Last.Value.Clone(), new Vector3(radius + offset, 0, offset));
             roadNetwork.AddRoad(road3);
             */
-
-            /*
-            // Road looking like a square
+            
+            // Road looking like a square with an overlapping cross
             var road4 = new LinkedList<Vector3>();
             const float offset1 = -6;
             const float sqWidth = 5;
@@ -70,7 +75,6 @@ namespace Cities.Roads
             road7.AddLast(new Vector3(offset1, 0, offset1 + 1));
             road7.AddLast(new Vector3(offset1 + sqWidth, 0, offset1 + 1));
             roadNetwork.AddRoad(road7);
-            */
 
             return roadNetwork;
         }
