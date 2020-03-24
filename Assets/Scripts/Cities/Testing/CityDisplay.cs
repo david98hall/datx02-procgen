@@ -42,11 +42,14 @@ namespace Cities.Testing
         
         public void GenerateCity()
         {
-            var heightMapInjector = new TerrainUtil.HeightMapInjector 
-                {Width = width, Depth = depth, Type = heightMapType};
+            if (roadStrategy != RoadStrategy.Sample)
+            {
+                var heightMapInjector = new TerrainUtil.HeightMapInjector 
+                    {Width = width, Depth = depth, Type = heightMapType};
 
-            meshFilter.sharedMesh = TerrainUtil.Mesh(heightMapInjector.Get(), scale);
-            meshRenderer.sharedMaterial.mainTexture = Texture2D.redTexture;
+                meshFilter.sharedMesh = TerrainUtil.Mesh(heightMapInjector.Get(), scale);
+                meshRenderer.sharedMaterial.mainTexture = Texture2D.redTexture;
+            }
             
             _cityGenerator.RoadNetworkStrategy = GetRoadStrategy();
             var city = _cityGenerator.Generate();
