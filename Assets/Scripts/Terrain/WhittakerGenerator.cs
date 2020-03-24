@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Terrain
@@ -12,10 +13,10 @@ namespace Terrain
     /// </summary>
     internal class WhittakerGenerator : IGenerator<Texture2D>
     {
-        #region Properties
+        #region Properties and constructors
 
         /// <summary>
-        /// The injector from which a height map can be fetched
+        /// The injector from which a height map can be fetched.
         /// </summary>
         private readonly IInjector<float[,]> _heightMapInjector;
 
@@ -30,40 +31,40 @@ namespace Terrain
         internal float PrecipitationScale { get; set; }
         
         /// <returns>
-        /// Generates a precipitation map with <see cref="GenerateMap"/>
+        /// Generates a precipitation map with <see cref="GenerateMap"/>.
         /// </returns>
         internal float[,] PrecipitationMap => (float[,]) GenerateMap(PrecipitationScale).Clone();
         
         /// <summary>
-        /// The scale used for generating a temperature map
+        /// The scale used for generating a temperature map.
         /// </summary>
         internal float TemperatureScale { get; set; }
         
         /// <returns>
-        /// Generates a temperature map with <see cref="GenerateMap"/>
+        /// Generates a temperature map with <see cref="GenerateMap"/>.
         /// </returns>
         internal float[,] TemperatureMap => (float[,]) GenerateMap(TemperatureScale).Clone();
 
+        /// <summary>
+        /// Constructs a WhittakerGenerator object from a given height map injector.
+        /// <param name = "heightMapInjector"> The given height map.</param>.
+        /// </summary>
+        internal WhittakerGenerator([NotNull] IInjector<float[,]> heightMapInjector)
+        {
+            _heightMapInjector = heightMapInjector;
+        }
+        
         #endregion
         
         #region public and internal methods
 
         /// <summary>
-        /// Constructs a WhittakerGenerator object from a given height map injector
-        /// <param name = "heightMapInjector"> The given height map.</param>
-        /// </summary>
-        internal WhittakerGenerator(IInjector<float[,]> heightMapInjector)
-        {
-            _heightMapInjector = heightMapInjector;
-        }
-
-        /// <summary>
-        /// Generates the whittaker textures from the height, precipitation and temperature maps
-        /// see <see cref = "Interfaces.IGenerator{T}.Generate()"/>.
+        /// Generates the whittaker textures from the height, precipitation and temperature maps.
+        /// See <see cref = "Interfaces.IGenerator{T}.Generate()"/>.
         /// See <see cref = "ComputeColor(float, float, float)"/>.
         /// </summary>
         /// <returns>
-        /// The generated Texture2D object
+        /// The generated Texture2D object.
         /// </returns>
         public Texture2D Generate()
         {
@@ -89,7 +90,7 @@ namespace Terrain
         
         #endregion
 
-        #region Private 
+        #region Private methods
         
         /// <summary>
         /// Generates a 2x2 array (map) with the same size as the height map from
@@ -98,7 +99,7 @@ namespace Terrain
         /// <param name = "scale"> The given scale.</param>
         /// </summary>
         /// <returns>
-        /// The generated map
+        /// The generated map.
         /// </returns>
         private float[,] GenerateMap(float scale)
         {
@@ -131,7 +132,7 @@ namespace Terrain
         /// The precipitation and temperature are recalculated with the height as a bias.
         /// </summary>
         /// <returns>
-        /// The computed color
+        /// The computed color.
         /// </returns>
         private static Color ComputeColor(float height, float precipitation, float temperature)
         {

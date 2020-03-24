@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Extensions;
+using UnityEditor;
 using UnityEngine;
 using Utils.Geometry;
 
@@ -283,7 +284,10 @@ namespace DrawTool.Editor
                     for (int i = 0; i < currentShape.points.Count; i++)
                     {
                         Vector3 nextPointInShape = currentShape.points[(i + 1) % currentShape.points.Count];
-                        float dstFromMouseToLine = HandleUtility.DistancePointToLineSegment(mousePosition.ToXZ(), currentShape.points[i].ToXZ(), nextPointInShape.ToXZ());
+                        float dstFromMouseToLine = HandleUtility.DistancePointToLineSegment(
+                            new Vector2(mousePosition.x, mousePosition.z),
+                            new Vector2(currentShape.points[i].x, currentShape.points[i].z),
+                            new Vector2(nextPointInShape.x, nextPointInShape.z));
                         if (dstFromMouseToLine < closestLineDst)
                         {
                             closestLineDst = dstFromMouseToLine;

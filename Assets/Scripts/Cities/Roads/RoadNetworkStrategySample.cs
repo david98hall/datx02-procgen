@@ -54,7 +54,6 @@ namespace Cities.Roads
             road4.AddLast(new Vector3(offset1 + sqWidth, 0, offset1));
             road4.AddLast(new Vector3(offset1, 0, offset1));
             roadNetwork.AddRoad(road4);
-
             var road51 = new LinkedList<Vector3>();
             road51.AddLast(new Vector3(offset1, 0, offset1));
             road51.AddLast(new Vector3(offset1 + sqWidth / 2, 2, offset1 + sqWidth / 2));
