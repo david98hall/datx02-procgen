@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
 using Extensions;
@@ -30,8 +31,7 @@ namespace Cities.Plots
             
             foreach (var vertex in roadNetwork.RoadVertices)
             {
-                var polygon = new LinkedList<Vector3>();
-                if (TryGetPolygon(roadNetwork, vertex, visitedEdges, polygon))
+                if (TryGetPolygon(roadNetwork, vertex, visitedEdges, out var polygon))
                 {
                     allPolygons.Add(polygon);
                 }
@@ -44,23 +44,37 @@ namespace Cities.Plots
             RoadNetwork roadNetwork,
             Vector3 startVector,
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges, 
-            ICollection<Vector3> polygon)
+            out IReadOnlyCollection<Vector3> polygon)
         {
-            polygon.Add(startVector);
-            
+            polygon = GetPolygon(roadNetwork, startVector, visitedEdges);
+            return polygon != null;
+        }
+        
+        private static IReadOnlyCollection<Vector3> GetPolygon(
+            RoadNetwork roadNetwork,
+            Vector3 startVector,
+            ICollection<(Vector3 Start, Vector3 End)> visitedEdges)
+        {
             if (TryGetRightmostNeighbour(roadNetwork, startVector, out var rightmostNeighbour))
             {
                 var edge = (startVector, rightmostNeighbour);
-
-                if (!visitedEdges.Contains(edge))
+                
+                if (visitedEdges.Contains(edge)) return null;
+                visitedEdges.Add(edge);
+             
+                var polygonPath = new LinkedList<Vector3>();
+                polygonPath.AddLast(startVector);
+                polygonPath.AddLast(rightmostNeighbour);
+                
+                var polygonPathExtension = GetPolygon(roadNetwork, rightmostNeighbour, visitedEdges);
+                if (polygonPathExtension != null)
                 {
-                    visitedEdges.Add(edge);
-                    TryGetPolygon(roadNetwork, rightmostNeighbour, visitedEdges, polygon);
-                    return true;
-                }   
+                    polygonPath.AddRange(polygonPathExtension);
+                }
+                return polygonPath;
             }
 
-            return false;
+            return null;
         }
         
         private static bool TryGetRightmostNeighbour(RoadNetwork roadNetwork, Vector3 vertex, out Vector3 rightmost)
