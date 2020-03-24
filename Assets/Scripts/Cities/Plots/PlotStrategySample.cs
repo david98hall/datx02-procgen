@@ -1,19 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
 using Extensions;
 using Interfaces;
+using JetBrains.Annotations;
 using UnityEngine;
-using Utils.Geometry;
 
 namespace Cities.Plots
 {
     internal class PlotStrategySample : PlotStrategy
     {
 
-        public PlotStrategySample(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
+        public PlotStrategySample([NotNull] IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
         {
         }
         
