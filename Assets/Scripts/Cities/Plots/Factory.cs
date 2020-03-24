@@ -7,21 +7,18 @@ namespace Cities.Plots
     /// <summary>
     /// Creates strategies for generating city plots.
     /// </summary>
-    public class PlotsStrategyFactory
+    public class Factory
     {
-
         private readonly IInjector<RoadNetwork> _roadNetworkInjector;
         
-        public PlotsStrategyFactory(IInjector<RoadNetwork> roadNetworkInjector)
+        public Factory(IInjector<RoadNetwork> roadNetworkInjector)
         {
             _roadNetworkInjector = roadNetworkInjector;
         }
 
-        // TODO Remove the method:
         internal IGenerator<IEnumerable<Plot>> CreateSampleStrategy()
         {
-            return new PlotStrategySample(_roadNetworkInjector);
-        } 
-        
+            return new SampleStrategy(_roadNetworkInjector);
+        }
     }
 }

@@ -3,7 +3,7 @@ using Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Terrain
+namespace Terrain.Textures
 {
     /// <summary>
     /// Generates 2D textures from a given height map with a simple version of a Whittaker diagram.
@@ -11,19 +11,14 @@ namespace Terrain
     /// This class also takes the height into consideration.
     /// see <see cref = "Interfaces.IGenerator{T}"/>.
     /// </summary>
-    internal class WhittakerGenerator : IGenerator<Texture2D>
+    internal class WhittakerGenerator : Strategy<float[,], Texture2D>
     {
         #region Properties and constructors
 
-        /// <summary>
-        /// The injector from which a height map can be fetched.
-        /// </summary>
-        private readonly IInjector<float[,]> _heightMapInjector;
-
         /// <returns>
-        /// A copy of the height map from <see cref = "_heightMapInjector"/>.
+        /// A copy of the height map from <see cref = "Strategy{TI,TO}.Injector"/>.
         /// </returns>
-        internal float[,] HeightMap => (float[,]) _heightMapInjector.Get().Clone();
+        internal float[,] HeightMap => (float[,]) Injector.Get().Clone();
 
         /// <summary>
         /// The scale used for generating a precipitation map
@@ -49,9 +44,8 @@ namespace Terrain
         /// Constructs a WhittakerGenerator object from a given height map injector.
         /// <param name = "heightMapInjector"> The given height map.</param>.
         /// </summary>
-        internal WhittakerGenerator([NotNull] IInjector<float[,]> heightMapInjector)
+        internal WhittakerGenerator([NotNull] IInjector<float[,]> heightMapInjector) : base(heightMapInjector)
         {
-            _heightMapInjector = heightMapInjector;
         }
         
         #endregion
@@ -66,9 +60,9 @@ namespace Terrain
         /// <returns>
         /// The generated Texture2D object.
         /// </returns>
-        public Texture2D Generate()
+        public override Texture2D Generate()
         {
-            var heights = _heightMapInjector.Get();
+            var heights = Injector.Get();
             var precipitation = GenerateMap(PrecipitationScale);
             var temperature = GenerateMap(TemperatureScale);
             
@@ -94,7 +88,7 @@ namespace Terrain
         
         /// <summary>
         /// Generates a 2x2 array (map) with the same size as the height map from
-        /// <see cref = "_heightMapInjector"/> in the range of [0, 1].
+        /// <see cref = "Strategy{TI,TO}.Injector"/> in the range of [0, 1].
         /// The map is generated with <see cref = "Mathf.PerlinNoise(float, float)"/> with a given scale.
         /// <param name = "scale"> The given scale.</param>
         /// </summary>
@@ -103,7 +97,7 @@ namespace Terrain
         /// </returns>
         private float[,] GenerateMap(float scale)
         {
-            var heights = _heightMapInjector.Get();
+            var heights = Injector.Get();
             var map = new float[heights.GetLength(0), heights.GetLength(1)];
             
             for (var x = 0; x < map.GetLength(0); x++)

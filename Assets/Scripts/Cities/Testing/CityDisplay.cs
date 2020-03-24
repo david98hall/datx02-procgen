@@ -4,7 +4,6 @@ using System.Linq;
 using Cities.Plots;
 using Cities.Roads;
 using Interfaces;
-using Extensions;
 using UnityEngine;
 using Utils;
 
@@ -15,15 +14,22 @@ namespace Cities.Testing
     public class CityDisplay : MonoBehaviour
     {
         private readonly CityGenerator _cityGenerator;
-        private readonly HashSet<GameObject> roadRenderers;
+        private readonly HashSet<GameObject> _roadRenderers;
 
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
         public RoadStrategy roadStrategy;
         public TerrainUtil.HeightMapInjector.MapType heightMapType;
+        
+        [Range(1,100)]
         public int width;
+        
+        [Range(1,100)]
         public int depth;
+        [Range(1,100)]
         public int scale;
+        
+        [Range(0,1)]
         public float heightBias;
         
         public Material roadMaterial;
@@ -36,8 +42,8 @@ namespace Cities.Testing
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
-            _cityGenerator.PlotsStrategy = new PlotsStrategyFactory(_cityGenerator).CreateSampleStrategy();
-            roadRenderers = new HashSet<GameObject>();
+            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateSampleStrategy();
+            _roadRenderers = new HashSet<GameObject>();
         }
         
         public void GenerateCity()
@@ -91,7 +97,7 @@ namespace Cities.Testing
             // Create a game object with a LineRenderer component
             var item = new GameObject(roadName);
             var roadRenderer = item.AddComponent<LineRenderer>();
-            roadRenderers.Add(item);
+            _roadRenderers.Add(item);
                 
             // Set the appearance of the road
             roadRenderer.startWidth = 0.3f;
@@ -118,11 +124,11 @@ namespace Cities.Testing
         
         private void ClearRoads()
         {
-            foreach (var roadRenderer in roadRenderers)
+            foreach (var roadRenderer in _roadRenderers)
             {
                 DestroyImmediate(roadRenderer);
             }
-            roadRenderers.Clear();
+            _roadRenderers.Clear();
         }
 
         private IGenerator<RoadNetwork> GetRoadStrategy()
@@ -138,9 +144,9 @@ namespace Cities.Testing
             switch (roadStrategy)
             {
                 case RoadStrategy.Sample:
-                    return new RoadNetworkStrategySample(heightMapInjector);
+                    return new Roads.SampleStrategy(heightMapInjector);
                 case RoadStrategy.AStar:
-                    var aStar =  new AStarGenerator(heightMapInjector) {HeightBias = heightBias};
+                    var aStar =  new AStarStrategy(heightMapInjector) {HeightBias = heightBias};
                     aStar.Add((0, 0), (width - 1, depth - 1));
                     return aStar;
                 default:
