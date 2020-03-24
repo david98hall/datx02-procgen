@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Extensions
@@ -18,5 +19,37 @@ namespace Extensions
             {
                 postWrapMode = animationCurve.postWrapMode, preWrapMode = animationCurve.preWrapMode
             };
+        
+        /// <summary>
+        /// Clones this vector.
+        /// </summary>
+        /// <param name="v">The vector to clone</param>
+        /// <returns>The cloned vector.</returns>
+        public static Vector3 Clone(this Vector3 v) => new Vector3(v.x, v.y, v.z);
+
+        /// <summary>
+        /// Gets the angle in radians from v1 to v2.
+        /// </summary>
+        /// <param name="v1">The vector to get the angle from.</param>
+        /// <param name="v2">The vector to get the angle to.</param>
+        /// <returns>The angle in radians from v1 to v2.</returns>
+        public static float RadiansTo(this Vector2 v1, Vector2 v2)
+        {
+            return (float) (DegreesTo(v1, v2) * Math.PI / 180);
+        }
+        
+        /// <summary>
+        /// Gets the angle in degrees from v1 to v2.
+        /// </summary>
+        /// <param name="v1">The vector to get the angle from.</param>
+        /// <param name="v2">The vector to get the angle to.</param>
+        /// <returns>The angle in degrees from v1 to v2.</returns>
+        public static float DegreesTo(this Vector2 v1, Vector2 v2)
+        {
+            var v1Rotated90 = new Vector2(-v1.y, v1.x);
+            var sign = (Vector2.Dot(v1Rotated90, v2) < 0) ? -1.0f : 1.0f;
+            return Vector2.Angle(v1, v2) * sign;
+        }
+        
     }
 }

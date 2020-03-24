@@ -1,15 +1,243 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/birka/Documents/GitHub/datx02-procgen/docfx_project",
+  "source_base_path": "D:/Documents/GitHub/datx02-procgen/docfx_project",
   "xrefmap": "xrefmap.yml",
   "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.City.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.City.html",
+          "hash": "MTcVR6nb4i0FV2vh36+KFQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.CityGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.CityGenerator.html",
+          "hash": "AoZU3tXMtxngUMGXyovyeg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Plots.Plot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Plots.Plot.html",
+          "hash": "yb8tlwM+FzDKaOHDC42Sgg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Plots.PlotsStrategyFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Plots.PlotsStrategyFactory.html",
+          "hash": "LIlEijgTMy2VxZpFQQU2+g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Plots.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Plots.html",
+          "hash": "xvBwWSWSe1b66DGqeewSAQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Roads.RoadNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Roads.RoadNetwork.html",
+          "hash": "1uxy72T47HmoW2Msm7Ewcg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Roads.RoadNetworkStrategyFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Roads.RoadNetworkStrategyFactory.html",
+          "hash": "AXmmy7imlxOqcTZ7D9JG1g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Roads.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Roads.html",
+          "hash": "UStQdoqUBPmx/09nzdErwA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Testing.CityDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Testing.CityDisplay.html",
+          "hash": "JEbsA5GcUmodPlrPsSTsbQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Testing.CityGeneratorEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Testing.CityGeneratorEditor.html",
+          "hash": "W6Nq6krHDnRnXk384ST1gw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Testing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Testing.html",
+          "hash": "Ev1Y3HljAyx+SbRFECXX4A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.html",
+          "hash": "JTx0UkPexhZoLEf/UbiSlQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DrawTool.Editor.ShapeEdit.SelectionInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DrawTool.Editor.ShapeEdit.SelectionInfo.html",
+          "hash": "gurpybHUnU8sJujNZkvtrw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DrawTool.Editor.ShapeEdit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DrawTool.Editor.ShapeEdit.html",
+          "hash": "Bva+HDezjVAdJZ//2pRbag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DrawTool.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DrawTool.Editor.html",
+          "hash": "8HLtOOypmQpj74tja/AC9w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DrawTool.ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DrawTool.ExtensionMethods.html",
+          "hash": "6Ui1H7lHX3xfQt1UOweWSQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DrawTool.ShapeMake.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DrawTool.ShapeMake.html",
+          "hash": "KQ1/mKPWlmPvmIbkIqJnsA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DrawTool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DrawTool.html",
+          "hash": "V7KuJDdw+64NFCYrkMkXtA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extensions.CollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extensions.CollectionExtensions.html",
+          "hash": "Fmx/YbEEFPXprK9SI7DLZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
     {
       "type": "ManagedReference",
       "source_relative_path": "api/Extensions.UnityExtensions.yml",
       "output": {
         ".html": {
           "relative_path": "api/Extensions.UnityExtensions.html",
-          "hash": "nqpq300sVvdOzqU+eTE25g=="
+          "hash": "eMpOYefnPMxrHKiilpFocQ=="
         }
       },
       "is_incremental": true,
@@ -21,10 +249,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Extensions.html",
-          "hash": "oeKDMND03ZAbhr4RS4IBAQ=="
+          "hash": "G6M2mWhnOjngBfUNVABjPA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,7 +261,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Interfaces.IGenerator-1.html",
-          "hash": "S/28lhTrjuYEZwvji2uMOA=="
+          "hash": "xmbzrfkUN8xZfiYt9VYdUw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Interfaces.IInjector-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Interfaces.IInjector-1.html",
+          "hash": "FBLZjcbSWmjL4w+JPXomXw=="
         }
       },
       "is_incremental": true,
@@ -45,127 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Interfaces.html",
-          "hash": "1985dUepkKvBGCGLaQclUQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.CompositeShape.CompositeShapeData.LineSegment.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.CompositeShape.CompositeShapeData.LineSegment.html",
-          "hash": "qPvGn9tG30al8IBSrXweBw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.CompositeShape.CompositeShapeData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.CompositeShape.CompositeShapeData.html",
-          "hash": "gOXHxrRrhe4oSA74VHLFwA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.CompositeShape.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.CompositeShape.html",
-          "hash": "Lgpwe9sNR4/68IIc5L384Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.Maths2D.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.Maths2D.html",
-          "hash": "Ln67cPGZ5hQ0BlfxLevNdw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.Polygon.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.Polygon.html",
-          "hash": "L33vB9FMXjCs/9vbSrvQ0g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.Shape.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.Shape.html",
-          "hash": "O0QksZ+EnqIKfbqJivdz+A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.Triangulator.HoleData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.Triangulator.HoleData.html",
-          "hash": "VVmIKfaNyD/Op7N/2qchhg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.Triangulator.Vertex.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.Triangulator.Vertex.html",
-          "hash": "i9DoL6srh71zmP65cbAdyw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.Triangulator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.Triangulator.html",
-          "hash": "HB3clJ9zNf3va8os9l/7MQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Sebastian.Geometry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Sebastian.Geometry.html",
-          "hash": "Be7scDDXSx/tu7P/9hYmpA=="
+          "hash": "YXZ0FHHqmZm1ejQow84RnQ=="
         }
       },
       "is_incremental": true,
@@ -177,19 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.NoiseStrategyFactory.html",
-          "hash": "QJiqQCg9/6rudPY3NV+CRw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.TerrainGenerator.Texture2DType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.TerrainGenerator.Texture2DType.html",
-          "hash": "B9R4Bl28INTY/tllS6plFw=="
+          "hash": "2t3xTEbBTQVkSJcp2HRy/Q=="
         }
       },
       "is_incremental": true,
@@ -201,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.TerrainGenerator.html",
-          "hash": "AOp1wlO7NIlsUUuQ5aTEww=="
+          "hash": "Q1ZDG7pASmIJdcLN7LXcdw=="
         }
       },
       "is_incremental": true,
@@ -213,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TerrainDisplayEditor.html",
-          "hash": "Rdrb+fKJNCIZbYR8Bx+N2w=="
+          "hash": "U/TxQdgQ7hdo4jMqHc8DEQ=="
         }
       },
       "is_incremental": true,
@@ -225,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TextureDisplay.Strategy.html",
-          "hash": "A7PRTTfJqxXANHrJFmYnVw=="
+          "hash": "78Bc38Q6ypwbDdrefYvQ4g=="
         }
       },
       "is_incremental": true,
@@ -237,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TextureDisplay.WhittakerMap.html",
-          "hash": "UJGUcmuXV9zhc3OoaheXHQ=="
+          "hash": "M5cXXfbR0msEL8uXvcCBtw=="
         }
       },
       "is_incremental": true,
@@ -249,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TextureDisplay.html",
-          "hash": "aw4OVo+Uz8LEiDxsvi8tMw=="
+          "hash": "cRcG9vrR2P2HIv/0+pHMRQ=="
         }
       },
       "is_incremental": true,
@@ -261,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TextureDisplayEditor.html",
-          "hash": "nZ4AZH6mGoHGskFHdVltTQ=="
+          "hash": "epPOuIf+uSoDPTLOicSDzw=="
         }
       },
       "is_incremental": true,
@@ -281,11 +389,179 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terrain.TextureGeneratorFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terrain.TextureGeneratorFactory.html",
+          "hash": "B8e1vPjWXtr43pqQz0SM6g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terrain.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terrain.html",
-          "hash": "nynik/6Zlgps4KwHufXswA=="
+          "hash": "Z2x6sEtEgPhdrZ6v1ktT3A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.CopyableEnumerator-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.CopyableEnumerator-1.html",
+          "hash": "msL3HRQy8sXO35vrd4ZOhw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.html",
+          "hash": "Cp18gIkpfe12mzGJUMy+3w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.html",
+          "hash": "iGb5KRoxT9KAUt19W20e+A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.CompositeShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.CompositeShape.html",
+          "hash": "buQ7tktxOKedpise6cEPgQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.Maths2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.Maths2D.html",
+          "hash": "OkyPMBzdAgSSZKwsT/itcA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.Maths3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.Maths3D.html",
+          "hash": "YgU5YMtoKgU/PDst0MMsoA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.Polygon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.Polygon.html",
+          "hash": "luksjw2x4qoOsrEzGK4CGg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.Shape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.Shape.html",
+          "hash": "RIwKuT+qjpRXnQKJ60OONg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.Triangulator.HoleData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.Triangulator.HoleData.html",
+          "hash": "wZ+ImHWAf7s9HFxxVdGLhg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.Triangulator.Vertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.Triangulator.Vertex.html",
+          "hash": "Jc9oUdXn2NPVe7oynIL8kw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.Triangulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.Triangulator.html",
+          "hash": "OjWYgQhXjaL2jiraca1iow=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.html",
+          "hash": "Lpue4DVAyh6pYGrzrPVehw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.html",
+          "hash": "vNjSCyRlpTKb092uU2GC/g=="
         }
       },
       "is_incremental": true,
@@ -297,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "q1z9o3K1YM6tEri3BHa1jQ=="
+          "hash": "n7Lpb4dGJY45V9KrXZqAPw=="
         }
       },
       "is_incremental": true,
@@ -309,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "13ZGm+FqVQ5X0HjgZ+qtgw=="
+          "hash": "NZC8kZ5ypMUbBEs+w0Wa9g=="
         }
       },
       "is_incremental": false,
@@ -321,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "2OVWv54baAVtiObTUfJ1pQ=="
+          "hash": "v+6rBHy9Ohy5yikGuZCL5w=="
         }
       },
       "is_incremental": true,
@@ -345,10 +621,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "HesocA7sfIaxH6+7nrAnaA=="
+          "hash": "lBpXlR3Ec73sZxOtGz0n2Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -377,13 +653,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 2
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 24,
-          "skipped_file_count": 24
+          "total_file_count": 47,
+          "skipped_file_count": 46
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
