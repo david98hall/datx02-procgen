@@ -27,6 +27,8 @@ namespace Cities.Testing
         public float heightBias;
         
         public Material roadMaterial;
+        public Material plotBorderMaterial;
+        
         public enum RoadStrategy
         {
             Sample, 
@@ -59,7 +61,7 @@ namespace Cities.Testing
         private void DisplayCity(City city)
         {
             ClearRoads();
-            // DisplayPlotBorders(city.Plots);
+            DisplayPlotBorders(city.Plots);
             DisplayRoadNetwork(city.RoadNetwork);
         }
 
@@ -70,7 +72,7 @@ namespace Cities.Testing
             {
                 if (plots.Current != null)
                 {
-                    DrawRoad(plots.Current.Vertices, "Plot Border " + plotCount++, null); 
+                    DrawRoad(plots.Current.Vertices, "Plot Border " + plotCount++, plotBorderMaterial); 
                 }
             }
         }
