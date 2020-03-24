@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Interfaces;
-using Terrain;
+using Terrain.Textures;
 using UnityEngine;
 
 namespace Terrain.Testing
@@ -38,7 +36,7 @@ namespace Terrain.Testing
         public float heightScale;
         public AnimationCurve heightCurve;
 
-        private readonly TerrainGenerator terrainGenerator;
+        private readonly TerrainGenerator _terrainGenerator;
         
         public MeshFilter meshFilter;
         public MeshRenderer meshRenderer;
@@ -57,16 +55,16 @@ namespace Terrain.Testing
         public TerrainDisplay()
         {
             noiseMapStrategy = NoiseMapStrategy.PerlinNoise;
-            terrainGenerator = new TerrainGenerator(null);
+            _terrainGenerator = new TerrainGenerator();
         }
         
         public void GenerateTerrainMesh()
         {
-            terrainGenerator.HeightScale = heightScale;
-            terrainGenerator.HeightCurve = heightCurve;
-            terrainGenerator.NoiseMapStrategy = GetNoiseStrategy();
-            terrainGenerator.TextureStrategy = GetTextureStrategy();
-            (meshFilter.sharedMesh, meshRenderer.sharedMaterial.mainTexture) = terrainGenerator.Generate();
+            _terrainGenerator.HeightScale = heightScale;
+            _terrainGenerator.HeightCurve = heightCurve;
+            _terrainGenerator.NoiseStrategy = GetNoiseStrategy();
+            _terrainGenerator.TextureStrategy = GetTextureStrategy();
+            (meshFilter.sharedMesh, meshRenderer.sharedMaterial.mainTexture) = _terrainGenerator.Generate();
         }
 
         private IGenerator<float[,]> GetNoiseStrategy()
@@ -74,7 +72,7 @@ namespace Terrain.Testing
             switch (noiseMapStrategy)
             {
                 case NoiseMapStrategy.PerlinNoise:
-                    return NoiseStrategyFactory.GetPerlinNoiseStrategy(
+                    return new Factory().CreatePerlinNoiseStrategy(
                         width, height, seed, noiseScale, octaves, persistence, lacunarity, offset);
                 default:
                     throw new Exception("There is no such noise map strategy!");
@@ -87,12 +85,12 @@ namespace Terrain.Testing
             {
                 case TextureStrategy.Whittaker:
                     var whittakerGenerator = 
-                        (WhittakerGenerator) terrainGenerator.TextureGeneratorFactory.Whittaker();
+                        (WhittakerGenerator) _terrainGenerator.TextureStrategyFactory.CreateWhittakerStrategy();
                     whittakerGenerator.PrecipitationScale = precipitationScale;
                     whittakerGenerator.TemperatureScale = temperatureScale;
                     return whittakerGenerator;
                 case TextureStrategy.GrayScale:
-                    return terrainGenerator.TextureGeneratorFactory.GrayScale();
+                    return _terrainGenerator.TextureStrategyFactory.CreateGrayScaleStrategy();
                 default:
                     throw new Exception("There is no such noise map strategy!");
             }

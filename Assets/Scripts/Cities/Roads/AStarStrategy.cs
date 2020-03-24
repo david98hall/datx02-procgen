@@ -10,19 +10,13 @@ namespace Cities.Roads
 {
     /// <summary>
     /// Generates the optimal roads between a set of start and goal nodes with a given height bias.
+    /// Extends the <see cref="Strategy{TI,TO}"/> class.
     /// </summary>
-    internal class AStarGenerator : IGenerator<RoadNetwork>
+    internal class AStarStrategy : Strategy<float[,], RoadNetwork>
     {
 
         #region Properties and constructors
-        
-        /// <summary>
-        /// Injector from which a height map can be fetched.
-        /// Is used in <see cref="Generate"/> and implicitly in <see cref="Path"/>
-        /// for selecting the next node in a path.
-        /// </summary>
-        private readonly IInjector<float[,]> _heightMapInjector;
-        
+
         /// <summary>
         /// A dictionary of the the start and goal nodes.
         /// Start nodes are given as keys.
@@ -30,7 +24,7 @@ namespace Cities.Roads
         /// Is used in <see cref="Generate"/> to find the optimal path between each pair of start and goal nodes.
         /// Each pair of start and goal nodes is implicitly used in <see cref="Path"/> to found the optimal path
         /// between the given pair of nodes.
-        /// Since the height map in <see cref="_heightMapInjector"/> may be changed externally, the nodes in the
+        /// Since the height map in <see cref="Strategy{TI,TO}.Injector"/> may be changed externally, the nodes in the
         /// dictionary may be invalid. 
         /// </summary>
         private readonly Dictionary<(int, int), ISet<(int, int)>> _paths;
@@ -57,9 +51,8 @@ namespace Cities.Roads
         /// Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.
         /// </summary>
         /// <param name="heightMapInjector">Non null height map injector object.</param>
-        internal AStarGenerator([NotNull] IInjector<float[,]> heightMapInjector) 
+        internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector) : base(heightMapInjector)
         {
-            _heightMapInjector = heightMapInjector;
             _paths = new Dictionary<(int, int), ISet<(int, int)>>();
         }
         
@@ -70,13 +63,13 @@ namespace Cities.Roads
         /// <summary>
         /// Implementation of <see cref = "Interfaces.IGenerator{T}.Generate()"/>.
         /// Generates a road network with the optimal roads between each pair of start and goal nodes in the
-        /// height map from <see cref="_heightMapInjector"/>.
+        /// height map from <see cref="Strategy{TI,TO}.Injector"/>.
         /// Iterates each pair of nodes in <see cref="_paths"/> and calculates the optimal path with <see cref="Path"/>.
         /// </summary>
         /// <returns>The generated <see cref="RoadNetwork"/> object.</returns>
-        public RoadNetwork Generate()
+        public override RoadNetwork Generate()
         {
-            var heights = _heightMapInjector.Get();
+            var heights = Injector.Get();
             var roadNetwork = new RoadNetwork();
             foreach (var (xStart, zStart) in _paths.Keys)
             {
@@ -95,7 +88,7 @@ namespace Cities.Roads
         /// Adds a new pair of start and goal nodes to <see cref="_paths"/>.
         /// If the start node does not already exist, a empty set of goal nodes from that node is added.
         /// The validity of the start and goal node is not checked, since the height map in
-        /// <see cref="_heightMapInjector"/> may be changed externally.
+        /// <see cref="Strategy{TI,TO}.Injector"/> may be changed externally.
         /// </summary>
         /// <param name="start">The given start node.</param>
         /// <param name="goal">The given goal node.</param>
@@ -126,7 +119,7 @@ namespace Cities.Roads
         /// </summary>
         /// <param name="start">The given start node</param>
         /// <param name="goal">The given goal node</param>
-        /// <param name="heights">The height map from <see cref="_heightMapInjector"/></param>
+        /// <param name="heights">The height map from <see cref="Strategy{TI,TO}.Injector"/></param>
         /// <returns>An enumerable object of the location of the nodes is the path, given as vectors.</returns>
         private IEnumerable<Vector3> Path(Node start, Node goal, float[,] heights)
         {
@@ -165,7 +158,7 @@ namespace Cities.Roads
             #region Properties and constructors
 
             /// <summary>
-            /// 3D location of the node in the height map from <see cref="AStarGenerator._heightMapInjector"/>.
+            /// 3D location of the node in the height map from <see cref="Strategy{TI,TO}.Injector"/>.
             /// x and z values are defined as the indices in the height map, while the y is defined as the value
             /// of the indices in the height map.
             /// </summary>
@@ -190,7 +183,7 @@ namespace Cities.Roads
 
             /// <summary>
             /// Constructs a node object of a given location with no cost.
-            /// Is used by <see cref="AStarGenerator.Generate"/> to construct the start and goal nodes.
+            /// Is used by <see cref="AStarStrategy.Generate"/> to construct the start and goal nodes.
             /// </summary>
             /// <param name="x">x coordinate.</param>
             /// <param name="y">y coordinate.</param>
@@ -322,7 +315,7 @@ namespace Cities.Roads
             /// Calculates cost between two nodes.
             /// The cost is defined as the sum of the 3D distance between the node and the 3D distance times the height
             /// difference between the nodes.
-            /// A height bias defined by <see cref="AStarGenerator._heightBias"/> determines the impacts of the
+            /// A height bias defined by <see cref="AStarStrategy._heightBias"/> determines the impacts of the
             /// height difference.
             /// When the height bias is zero, the height has no impact.
             /// </summary>

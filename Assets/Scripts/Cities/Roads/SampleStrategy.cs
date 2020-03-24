@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Cities.Roads
 {
-    internal class RoadNetworkStrategySample : RoadNetworkStrategy
+    internal class SampleStrategy : Strategy<float[,], RoadNetwork>
     {
         
-        internal RoadNetworkStrategySample(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
+        internal SampleStrategy(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
         {
         }
         

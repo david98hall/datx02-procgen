@@ -1,6 +1,7 @@
 ﻿using System;
 using Extensions;
 using Interfaces;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Terrain
@@ -27,29 +28,23 @@ namespace Terrain
         }
         private AnimationCurve heightCurve;
         
-        /// <summary>
-        /// The noise map that meshes will be based on.
-        /// </summary>
-        internal float[,] NoiseMap 
-        { 
-            get => (float[,]) noiseMap.Clone();
-            set => noiseMap = value; 
-        }
-        private float[,] noiseMap;
+        private readonly IInjector<float[,]> _noiseMapInjector;
         
-        internal NoiseMeshGenerator()
+        internal NoiseMeshGenerator([NotNull] IInjector<float[,]> noiseMapInjector)
         {
+            _noiseMapInjector = noiseMapInjector;
             HeightScale = 1;
             heightCurve = new AnimationCurve();
         }
         
         public Mesh Generate()
         {
-            if (NoiseMap == null)
+            if (_noiseMapInjector.Get() == null)
             {
                 throw new NullReferenceException("The noise map is not set!");
             }
-            
+
+            var noiseMap = _noiseMapInjector.Get();
             var width = noiseMap.GetLength(0);
             var height = noiseMap.GetLength(1);
 

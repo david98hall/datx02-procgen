@@ -1,19 +1,16 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
 using Extensions;
 using Interfaces;
 using UnityEngine;
-using Utils.Geometry;
 
 namespace Cities.Plots
 {
-    internal class PlotStrategySample : PlotStrategy
+    internal class SampleStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
     {
 
-        public PlotStrategySample(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
+        public SampleStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
         {
         }
         
@@ -26,7 +23,7 @@ namespace Cities.Plots
         {
             var allPolygons = new HashSet<IReadOnlyCollection<Vector3>>();
             
-            var roadNetwork = RoadNetwork.GetXZProjection().GetAsUndirected();
+            var roadNetwork = Injector.Get().GetXZProjection().GetAsUndirected();
 
             var visitedEdges = new HashSet<(Vector3 Start, Vector3 End)>();
             
@@ -71,12 +68,12 @@ namespace Cities.Plots
             
             // Find the rightmost neighbour since we always turn right when arriving at
             // a new vertex to close a potential polygon as quick as possible.
-            var vertexXZ = new Vector2(vertex.x, vertex.z);
+            var vertexXz = new Vector2(vertex.x, vertex.z);
             var foundRightmost = false;
             var minAngle = float.MaxValue;
             foreach (var neighbour in roadNetwork.GetAdjacentVertices(vertex))
             {
-                var angleToNeighbour = vertexXZ.DegreesTo(new Vector2(neighbour.x, neighbour.z));
+                var angleToNeighbour = vertexXz.DegreesTo(new Vector2(neighbour.x, neighbour.z));
                     
                 if (!(angleToNeighbour < minAngle)) continue;
                     

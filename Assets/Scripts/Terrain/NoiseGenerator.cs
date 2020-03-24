@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Interfaces;
-using UnityEngine;
+﻿using Interfaces;
 
 namespace Terrain
 {
@@ -29,6 +26,5 @@ namespace Terrain
         {
             Strategy = strategy;
         }
-        
     }
 }
