@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cities.Plots;
 using Cities.Roads;
+using Extensions;
 using Interfaces;
 using UnityEngine;
 using Utils;
@@ -11,33 +12,43 @@ namespace Cities.Testing
 {
     [Serializable]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-    public class CityDisplay : MonoBehaviour
+    public class CityDisplay : MonoBehaviour, IInjector<float[,]>
     {
         private readonly CityGenerator _cityGenerator;
         private readonly HashSet<GameObject> _roadRenderers;
 
         public MeshFilter meshFilter;
+        
         public MeshRenderer meshRenderer;
+        public enum RoadStrategy
+        {
+            Sample, 
+            AStar,
+        }
+        
         public RoadStrategy roadStrategy;
-        public TerrainUtil.HeightMapInjector.MapType heightMapType;
+        
+        public enum MapType
+        {
+            Flat, 
+            Slope,
+            Pyramid
+        }
+        
+        public MapType heightMapType;
         
         [Range(1,100)]
         public int width;
         
         [Range(1,100)]
         public int depth;
-        [Range(1,100)]
+        [Range(1,10)]
         public int scale;
         
         [Range(0,1)]
         public float heightBias;
         
         public Material roadMaterial;
-        public enum RoadStrategy
-        {
-            Sample, 
-            AStar,
-        }
 
         public CityDisplay()
         {
@@ -48,6 +59,13 @@ namespace Cities.Testing
         
         public void GenerateCity()
         {
+            ClearRoads();
+            meshFilter.sharedMesh = GetTerrainMesh();
+            meshRenderer.sharedMaterial.mainTexture = Texture2D.redTexture;
+            _cityGenerator.RoadNetworkStrategy = GetRoadStrategy();
+            DisplayCity(_cityGenerator.Generate());
+            
+            /*
             var heightMapInjector = new TerrainUtil.HeightMapInjector 
                 {Width = width, Depth = depth, Type = heightMapType};
 
@@ -57,11 +75,48 @@ namespace Cities.Testing
             _cityGenerator.RoadNetworkStrategy = GetRoadStrategy();
             var city = _cityGenerator.Generate();
             DisplayCity(city);
+            */
+        }
+
+        private Mesh GetTerrainMesh()
+        {
+            float[,] heightMap;
+            switch (heightMapType)
+            {
+                case MapType.Flat:
+                    heightMap = TerrainUtil.Flat(width, depth);
+                    break;
+                case MapType.Slope:
+                    heightMap = TerrainUtil.Slope(width, depth);
+                    break;
+                case MapType.Pyramid:
+                    heightMap = TerrainUtil.Pyramid(width, depth);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            return TerrainUtil.Mesh(heightMap, scale);
+        }
+        
+        private IGenerator<RoadNetwork> GetRoadStrategy()
+        {
+            switch (roadStrategy)
+            {
+                case RoadStrategy.Sample:
+                    return new Roads.SampleStrategy(this);
+                case RoadStrategy.AStar:
+                    var aStar =  new AStarStrategy(this) {HeightBias = heightBias};
+                    aStar.Add((0, 0), (width/2, depth/2));
+                    return aStar;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private void DisplayCity(City city)
         {
-            ClearRoads();
+            //ClearRoads();
             // DisplayPlotBorders(city.Plots);
             DisplayRoadNetwork(city.RoadNetwork);
         }
@@ -130,28 +185,8 @@ namespace Cities.Testing
             }
             _roadRenderers.Clear();
         }
+        
+        public float[,] Get() => GetTerrainMesh().HeightMap();
 
-        private IGenerator<RoadNetwork> GetRoadStrategy()
-        {
-            
-            var heightMapInjector = new TerrainUtil.HeightMapInjector
-            {
-                Width = width, 
-                Depth = depth, 
-                Type = heightMapType
-            };
-            
-            switch (roadStrategy)
-            {
-                case RoadStrategy.Sample:
-                    return new Roads.SampleStrategy(heightMapInjector);
-                case RoadStrategy.AStar:
-                    var aStar =  new AStarStrategy(heightMapInjector) {HeightBias = heightBias};
-                    aStar.Add((0, 0), (width - 1, depth - 1));
-                    return aStar;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
     }
 }

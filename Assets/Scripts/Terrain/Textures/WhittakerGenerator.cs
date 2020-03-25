@@ -15,11 +15,6 @@ namespace Terrain.Textures
     {
         #region Properties and constructors
 
-        /// <returns>
-        /// A copy of the height map from <see cref = "Strategy{TI,TO}.Injector"/>.
-        /// </returns>
-        internal float[,] HeightMap => (float[,]) Injector.Get().Clone();
-
         /// <summary>
         /// The scale used for generating a precipitation map
         /// </summary>

@@ -50,6 +50,30 @@ namespace Extensions
             var sign = (Vector2.Dot(v1Rotated90, v2) < 0) ? -1.0f : 1.0f;
             return Vector2.Angle(v1, v2) * sign;
         }
-        
+
+        /// <summary>
+        /// Creates and returns the underlying height map from a 3D mesh
+        /// </summary>
+        /// <param name="mesh">The given mesh</param>
+        /// <returns>A height map of the mesh</returns>
+        public static float[,] HeightMap(this Mesh mesh)
+        {
+            var xMax = 0;
+            var zMax = 0;
+
+            foreach (var vertex in mesh.vertices)
+            {
+                if (vertex.x > xMax) xMax = (int) vertex.x;
+                if (vertex.z > zMax) zMax = (int) vertex.z;
+            }
+
+            var heightMap = new float[xMax + 1, zMax + 1];
+            foreach (var vertex in mesh.vertices)
+            {
+                heightMap[(int) vertex.x, (int) vertex.z] = vertex.y;
+            }
+
+            return heightMap;
+        }
     }
 }
