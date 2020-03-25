@@ -163,9 +163,14 @@ namespace Cities.Roads
             /// of the indices in the height map.
             /// </summary>
             private readonly Vector3 _location;
+            
+            /// <summary>
+            /// The previous node in the path to this node.
+            /// </summary>
+            private readonly Node _predecessor;
 
             /// <summary>
-            /// The accumulated cost from the start node to this node.
+            /// The accumulated cost from the previous node to this node.
             /// Is calculated with <see cref="Cost"/>
             /// </summary>
             private readonly float _cost;
@@ -176,11 +181,6 @@ namespace Cities.Roads
             /// </summary>
             private readonly float _heuristic;
             
-            /// <summary>
-            /// The previous node in the path to this node.
-            /// </summary>
-            private readonly Node _predecessor;
-
             /// <summary>
             /// Constructs a node object of a given location with no cost.
             /// Is used by <see cref="AStarStrategy.Generate"/> to construct the start and goal nodes.
@@ -207,9 +207,9 @@ namespace Cities.Roads
             /// between two nodes. </param>
             private Node(int x, float y, int z, Node predecessor, Node goal, float heightBias) : this(x, y, z)
             {
-                _cost = predecessor._cost + Cost(predecessor, heightBias);
-                _heuristic = Cost(goal, heightBias);
                 _predecessor = predecessor;
+                _cost = Cost(predecessor, heightBias);
+                _heuristic = Cost(goal, 0);
             }
             
             #endregion
@@ -248,8 +248,6 @@ namespace Cities.Roads
                         
                         // skip node if it is already visited or if it is the previous node in the path
                         if (visited.Contains(node) || node.Equals(_predecessor)) continue;
-                        
-                        // yield the not already visited node
                         yield return node;
                     }
                 }
