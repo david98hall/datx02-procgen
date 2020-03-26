@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Utils.Geometry
 {
@@ -7,6 +8,53 @@ namespace Utils.Geometry
     /// </summary>
     public static class Maths3D
     {
+        private const float tolerance = 0.000001f;
+        
+        /// <summary>
+        /// Returns true if the vertex is on the line segment.
+        /// </summary>
+        /// <param name="vertex">The vertex to check.</param>
+        /// <param name="segmentStart">The start point of the line segment.</param>
+        /// <param name="segmentEnd">The end point of the line segment.</param>
+        /// <returns>true if the vertex is on the line segment.</returns>
+        public static bool OnLineSegment(Vector3 vertex, Vector3 segmentStart, Vector3 segmentEnd)
+        {
+            return OnLine(vertex, segmentStart, segmentEnd)
+                   && Math.Min(segmentStart.x, segmentEnd.x) <= vertex.x &&
+                   vertex.x <= Math.Max(segmentStart.x, segmentEnd.x)
+                   && Math.Min(segmentStart.y, segmentEnd.y) <= vertex.y &&
+                   vertex.y <= Math.Max(segmentStart.y, segmentEnd.y)
+                   && Math.Min(segmentStart.z, segmentEnd.z) <= vertex.z &&
+                   vertex.z <= Math.Max(segmentStart.z, segmentEnd.z);
+        }
+        
+        /// <summary>
+        /// Returns true if the vertex is on the line.
+        /// </summary>
+        /// <param name="vertex">Te vertex to check.</param>
+        /// <param name="linePoint1">A point on the line.</param>
+        /// <param name="linePoint2">Another point on the line.</param>
+        /// <returns>true if the vertex is on the line.</returns>
+        public static bool OnLine(Vector3 vertex, Vector3 linePoint1, Vector3 linePoint2)
+        {
+            var lineX = linePoint2.x - linePoint1.x;
+            var lineY = linePoint2.y - linePoint1.y;
+            var lineZ = linePoint2.z - linePoint1.z;
+
+            if (lineY == 0 && lineZ == 0)
+                return vertex.y == 0 && vertex.z == 0;
+            
+            if (lineX == 0 && lineZ == 0)
+                return vertex.x == 0 && vertex.z == 0;
+            
+            if (lineX == 0 && lineY == 0)
+                return vertex.x == 0 && vertex.y == 0;
+            
+            var xProportion = (vertex.x - linePoint1.x) / lineX;
+            var yProportion = (vertex.y - linePoint1.y) / lineY;
+            var zProportion = (vertex.z - linePoint1.z) / lineZ;
+            return Math.Abs(xProportion - yProportion) < tolerance && Math.Abs(zProportion - yProportion) < tolerance;
+        }
 
         /// <summary>
         /// Returns true and the intersection point if the two line segments intersect.
@@ -65,8 +113,7 @@ namespace Utils.Geometry
             var cross2 = Vector3.Cross(pointLine, relVec2);
 
             var planarFactor = Vector3.Dot(pointLine, cross1);
-            const float epsilon = 0.000001f;
-            if (Mathf.Abs(planarFactor) < epsilon && cross1.sqrMagnitude > epsilon)
+            if (Mathf.Abs(planarFactor) < tolerance && cross1.sqrMagnitude > tolerance)
             {
                 // The lines are in the same plane and are not parallel.
                 // Start at point 1 and "go" along vector 1 to the point of intersection
