@@ -11,6 +11,7 @@ namespace Cities.Testing
             var cityObject = (CityDisplay) target;
 
             DrawDefaultInspector();
+            //if(GUILayout.TextField("Tree", cityObject.))
 
             if (GUILayout.Button("Generate City"))
             {

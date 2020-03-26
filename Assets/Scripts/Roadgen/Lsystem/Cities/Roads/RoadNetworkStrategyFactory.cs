@@ -25,7 +25,7 @@ namespace Cities.Roads
         public IGenerator<RoadNetwork> CreateLSystemStrategy()
         {
             // TODO
-            throw new NotImplementedException();
+            return new LsystemStrategy(_terrainMeshNoiseMapInjector);
         }
 
         internal IGenerator<RoadNetwork> CreateSampleStrategy()

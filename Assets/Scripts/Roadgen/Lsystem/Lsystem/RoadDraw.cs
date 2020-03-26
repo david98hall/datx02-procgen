@@ -13,33 +13,13 @@ using Cities.Roads;
     /// <summary>
     /// Represents the current state of the turtle(s)
     /// </summary>
-    static class State
+    
+    /*static class State
     {
         static Node current;
         static Vector3 direction;
     }
-
-    /// <summary>
-    /// A point in space that connects roads
-    /// </summary>
-    class Node
-    {
-        Vector3 pos;
-        Node prev;
-        HashSet<Node> next = new HashSet<Node>();
-
-        public Node(Vector3 pos, Node prev)
-        {
-            this.pos = pos;
-            this.prev = prev;
-        }
-
-        public void Add(Node n)
-        {
-            next.Add(n);
-        }
-
-    }
+    */
     
     
 }

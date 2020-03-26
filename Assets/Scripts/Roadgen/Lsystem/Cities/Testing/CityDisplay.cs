@@ -17,7 +17,7 @@ namespace Cities.Testing
         {
             _cityGenerator = new CityGenerator
             {
-                RoadNetworkStrategy = new RoadNetworkStrategyFactory(null).CreateSampleStrategy()
+                RoadNetworkStrategy = new RoadNetworkStrategyFactory(null).CreateLSystemStrategy()
             };
             roadRenderers = new HashSet<GameObject>();
         }
