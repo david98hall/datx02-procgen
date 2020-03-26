@@ -119,6 +119,7 @@ namespace Cities.Roads
                    || SplitAtIntersections(lineStart, lineEnd);
         }
 
+        // Splits at parallel overlaps and returns true if there needs to be a check for intersections next.
         private bool SplitAtParallelOverlaps(Vector3 lineStart, Vector3 lineEnd)
         {
             foreach (var (partStart, partEnd) in GetRoadParts())
@@ -154,7 +155,7 @@ namespace Cities.Roads
                         _roadNetwork[lineStart].Add(partEnd);
                     }
 
-                    return true;
+                    return false;
                 } 
                 
                 if (lineStartOnPart)
@@ -170,7 +171,7 @@ namespace Cities.Roads
                         _roadNetwork[partStart].Add(lineEnd);
                     }
                     
-                    return true;
+                    return false;
                 }
 
                 if (OnLineSegment(partStart, lineStart, lineEnd)
@@ -180,6 +181,7 @@ namespace Cities.Roads
                     // and is going to be placed on top of it. The start and end of
                     // the line is not on the existing road part.
                     _roadNetwork[partStart].Remove(partEnd);
+
                     return false;
                 }
                 
