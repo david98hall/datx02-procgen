@@ -6,6 +6,8 @@ using Cities.Roads;
 using Interfaces;
 using UnityEngine;
 using Utils;
+using Factory = Cities.Plots.Factory;
+using SampleStrategy = Cities.Roads.SampleStrategy;
 
 namespace Cities.Testing
 {
@@ -44,7 +46,7 @@ namespace Cities.Testing
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
-            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateSampleStrategy();
+            _cityGenerator.PlotStrategy = new Factory(_cityGenerator).CreateSampleStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
         
@@ -68,6 +70,7 @@ namespace Cities.Testing
         {
             ClearRoads();
             // DisplayPlotBorders(city.Plots);
+            // DisplayRoadNetworkParts(city.RoadNetwork);
             DisplayRoadNetwork(city.RoadNetwork);
         }
 
@@ -86,6 +89,16 @@ namespace Cities.Testing
         private void DisplayRoadNetwork(RoadNetwork roadNetwork)
         {
             DrawRoads(roadNetwork.GetRoads());
+        }
+        
+        private void DisplayRoadNetworkParts(RoadNetwork roadNetwork)
+        {
+            var roadParts = new HashSet<IEnumerable<Vector3>>();
+            foreach (var (start, end) in roadNetwork.GetRoadParts())
+            {
+                roadParts.Add(new [] {start, end});
+            }
+            DrawRoads(roadParts);
         }
 
         private void DrawRoads(IEnumerable<IEnumerable<Vector3>> roads)
@@ -149,7 +162,7 @@ namespace Cities.Testing
             switch (roadStrategy)
             {
                 case RoadStrategy.Sample:
-                    return new Roads.SampleStrategy(heightMapInjector);
+                    return new SampleStrategy(heightMapInjector);
                 case RoadStrategy.AStar:
                     var aStar =  new AStarStrategy(heightMapInjector) {HeightBias = heightBias};
                     aStar.Add((0, 0), (width - 1, depth - 1));

@@ -92,7 +92,6 @@ namespace Cities.Roads
             // Add roads between the rest of the vertices along the full road
             do
             {
-                AddRoadVertex(previousVertex);
                 AddAndSplitRoads(previousVertex, roadVertices.Current);
                 previousVertex = roadVertices.Current;
             } while (roadVertices.MoveNext());
@@ -104,6 +103,8 @@ namespace Cities.Roads
         // Returns true if a road from lineStart to lineEnd should be added
         private void AddAndSplitRoads(Vector3 lineStart, Vector3 lineEnd)
         {
+            AddRoadVertex(lineStart);
+            
             foreach (var (partStart, partEnd) in GetRoadParts())
             {
                 // If the line segment is not even on the part line, it couldn't possibly overlap in parallel
