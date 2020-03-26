@@ -89,27 +89,23 @@ namespace Cities.Roads
             // Check that there is at least two vertices
             if (!roadVertices.MoveNext()) return;
 
-            // The road vertices are at least two, add a road between the first two
-            AddRoad(previousVertex, roadVertices.Current, GetRoadParts());
-            previousVertex = roadVertices.Current;
-            
             // Add roads between the rest of the vertices along the full road
-            while (roadVertices.MoveNext())
+            do
             {
-                AddRoad(previousVertex, roadVertices.Current, GetRoadParts());
+                AddAndIntersectRoad(previousVertex, roadVertices.Current);
                 previousVertex = roadVertices.Current;
-            }
+            } while (roadVertices.MoveNext());
             
             // At the last the vertex of the road
             AddRoadVertex(previousVertex);
         }
 
-        private void AddRoad(Vector3 start, Vector3 end, IEnumerable<(Vector3, Vector3)> roadParts)
+        private void AddAndIntersectRoad(Vector3 start, Vector3 end)
         {
             // Adds the start to the road network
             AddRoadVertex(start);
             
-            if (!SplitAtIntersections(start, end, roadParts)) 
+            if (!SplitAtIntersections(start, end, GetRoadParts())) 
             {
                 // Add an edge straight from the previous vertex to the current one
                 _roadNetwork[start].Add(end);
