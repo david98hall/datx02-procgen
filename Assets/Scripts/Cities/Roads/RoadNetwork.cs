@@ -131,15 +131,12 @@ namespace Cities.Roads
                     // line is not on the road part but the end is.
                     
                     // Extend the road from lineStart to partEnd
-                    _roadNetwork[partStart].Remove(partEnd);
                     if (!lineStart.Equals(partEnd))
                     {
-                        AddRoadVertex(lineStart);
-                        _roadNetwork[lineStart].Add(partEnd);
+                        _roadNetwork[partStart].Remove(partEnd);
+                        AddAndSplitRoadsAtIntersections(lineStart, partEnd);
+                        return;
                     }
-
-                    AddAndSplitRoadsAtIntersections(lineStart, lineEnd);
-                    return;
                 } 
                 
                 if (lineStartOnPart)
@@ -149,14 +146,12 @@ namespace Cities.Roads
                     // line is not on the road part but the start is.
                     
                     // Extend the road from partStart to lineEnd
-                    _roadNetwork[partStart].Remove(partEnd);
                     if (!partStart.Equals(lineEnd))
                     {
-                        _roadNetwork[partStart].Add(lineEnd);
+                        _roadNetwork[partStart].Remove(partEnd);
+                        AddAndSplitRoadsAtIntersections(partStart, lineEnd);
+                        return;
                     }
-                    
-                    AddAndSplitRoadsAtIntersections(lineStart, lineEnd);
-                    return;
                 }
 
                 if (OnLineSegment(partStart, lineStart, lineEnd)
@@ -166,9 +161,7 @@ namespace Cities.Roads
                     // and is going to be placed on top of it. The start and end of
                     // the line is not on the existing road part.
                     _roadNetwork[partStart].Remove(partEnd);
-
-                    AddAndSplitRoadsAtIntersections(lineStart, lineEnd);
-                    return;
+                    break;
                 }
                 
             }
