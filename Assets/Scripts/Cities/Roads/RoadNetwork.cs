@@ -122,36 +122,30 @@ namespace Cities.Roads
                     // placed between the start and end of the already existing road part.
                     // Do nothing since the road being added is already contained.
                     return;
-                } 
-                
-                if (lineEndOnPart)
-                {
-                    // The line being added is parallel to the current road part
-                    // and is going to be placed on top of it. The start of the
-                    // line is not on the road part but the end is.
-                    
-                    // Extend the road from lineStart to partEnd
-                    if (!lineStart.Equals(partEnd))
-                    {
-                        _roadNetwork[partStart].Remove(partEnd);
-                        AddAndSplitRoadsAtIntersections(lineStart, partEnd);
-                        return;
-                    }
-                } 
-                
-                if (lineStartOnPart)
+                }
+
+                if (lineStartOnPart && !partStart.Equals(lineEnd))
                 {
                     // The line being added is parallel to the current road part
                     // and is going to be placed on top of it. The end of the
                     // line is not on the road part but the start is.
                     
                     // Extend the road from partStart to lineEnd
-                    if (!partStart.Equals(lineEnd))
-                    {
-                        _roadNetwork[partStart].Remove(partEnd);
-                        AddAndSplitRoadsAtIntersections(partStart, lineEnd);
-                        return;
-                    }
+                    _roadNetwork[partStart].Remove(partEnd);
+                    AddAndSplitRoadsAtIntersections(partStart, lineEnd);
+                    return;
+                }
+                
+                if (lineEndOnPart && !lineStart.Equals(partEnd))
+                {
+                    // The line being added is parallel to the current road part
+                    // and is going to be placed on top of it. The start of the
+                    // line is not on the road part but the end is.
+                    
+                    // Extend the road from lineStart to partEnd
+                    _roadNetwork[partStart].Remove(partEnd);
+                    AddAndSplitRoadsAtIntersections(lineStart, partEnd);
+                    return;
                 }
 
                 if (OnLineSegment(partStart, lineStart, lineEnd)
