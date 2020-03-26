@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Extensions;
 using UnityEngine;
-using Utils.Geometry;
+using static Utils.Geometry.Maths3D;
 
 namespace Cities.Roads
 {
@@ -105,7 +105,7 @@ namespace Cities.Roads
             // Adds the start to the road network
             AddRoadVertex(start);
             
-            if (!SplitAtIntersections(start, end, GetRoadParts())) 
+            if (!SplitAtOverlaps(start, end)) 
             {
                 // Add an edge straight from the previous vertex to the current one
                 _roadNetwork[start].Add(end);
@@ -113,10 +113,101 @@ namespace Cities.Roads
         }
 
         // Returns true if a split occurred
-        private bool SplitAtIntersections(Vector3 lineStart, Vector3 lineEnd, IEnumerable<(Vector3, Vector3)> roadParts)
+        private bool SplitAtOverlaps(Vector3 lineStart, Vector3 lineEnd)
+        {
+            return SplitAtParallelOverlaps(lineStart, lineEnd) 
+                   || SplitAtIntersections(lineStart, lineEnd);
+        }
+
+        private bool SplitAtParallelOverlaps(Vector3 lineStart, Vector3 lineEnd)
+        {
+            foreach (var (partStart, partEnd) in GetRoadParts())
+            {
+                // If the line segment is not even on the part line, it couldn't possibly overlap in parallel
+                var onPartLine = OnLine(lineStart, partStart, partEnd) 
+                                 && OnLine(lineEnd, partStart, partEnd);
+                if (!onPartLine)
+                    continue;
+                
+                var lineStartOnPart = OnLineSegment(lineStart, partStart, partEnd);
+                var lineEndOnPart = OnLineSegment(lineEnd, partStart, partEnd);
+                if (lineStartOnPart && lineEndOnPart)
+                {
+                    // The line being added is parallel to the current road part
+                    // and is on going to be placed on top of it. The line is going to be
+                    // placed between the start and end of the already existing road part.
+                    return true;
+                } 
+                
+                if (lineEndOnPart)
+                {
+                    // The line being added is parallel to the current road part
+                    // and is on going to be placed on top of it. The start of the
+                    // line is not on the road part but the end is.
+                    Debug.Log("End on part");
+                    _roadNetwork[partStart].Remove(partEnd);
+                    
+                    // Add a road from lineStart to partStart
+                    if (!lineStart.Equals(partStart))
+                    {
+                        AddRoadVertex(lineStart);
+                        _roadNetwork[lineStart].Add(partStart);
+                    }
+                    
+                    // Add a road from partStart to lineEnd
+                    if (!lineStart.Equals(partStart))
+                    {
+                        _roadNetwork[partStart].Add(lineEnd);   
+                    }
+
+                    // Add a road from lineEnd to partEnd
+                    if (!lineEnd.Equals(partEnd))
+                    {
+                        AddRoadVertex(lineEnd);
+                        _roadNetwork[lineEnd].Add(partEnd);   
+                    }
+
+                    return true;
+                } 
+                
+                if (lineStartOnPart)
+                {
+                    // The line being added is parallel to the current road part
+                    // and is on going to be placed on top of it. The end of the
+                    // line is not on the road part but the start is.
+                    Debug.Log("Start on part");
+                    _roadNetwork[partStart].Remove(partEnd);
+                    
+                    // Add a road from partStart to lineStart
+                    if (!partStart.Equals(lineStart))
+                    {
+                        _roadNetwork[partStart].Add(lineStart);
+                    }
+                    
+                    // Add a road from lineStart to partEnd
+                    if (!lineStart.Equals(partEnd))
+                    {
+                        AddRoadVertex(lineStart);
+                        _roadNetwork[lineStart].Add(partEnd);
+                    }
+
+                    // Add a road from partEnd to lineEnd
+                    if (!partEnd.Equals(lineEnd))
+                    {
+                        _roadNetwork[partEnd].Add(lineEnd);
+                    }
+                    
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
+        private bool SplitAtIntersections(Vector3 lineStart, Vector3 lineEnd)
         {
             var intersections = GetIntersectionPoints(
-                lineStart, lineEnd, roadParts.GetEnumerator());
+                lineStart, lineEnd, GetRoadParts().GetEnumerator());
 
             // No intersections; return false
             if (!intersections.Any()) return false;
@@ -167,14 +258,14 @@ namespace Cities.Roads
             {
                 var (partStart, partEnd) = roadParts.Current;
                 
-                // If the argument line intersects the road part line
-                if (!Maths3D.LineSegmentIntersection(
-                    out var intersectionPoint,
-                    linePoint1, linePoint2,
-                    partStart, partEnd)) continue;
-                
-                // Register the intersection point
-                intersectionPoints.Add((partStart, intersectionPoint, partEnd));
+                // If the argument line intersects the road part line, register the intersection point
+                if (LineSegmentIntersection(
+                    out var intersectionPoint, 
+                    linePoint1, linePoint2, 
+                    partStart, partEnd))
+                {
+                    intersectionPoints.Add((partStart, intersectionPoint, partEnd));   
+                }
             }
             
             return intersectionPoints;

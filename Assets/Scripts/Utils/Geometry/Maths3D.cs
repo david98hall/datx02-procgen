@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using static System.Math;
 
 namespace Utils.Geometry
 {
@@ -20,12 +20,9 @@ namespace Utils.Geometry
         public static bool OnLineSegment(Vector3 vertex, Vector3 segmentStart, Vector3 segmentEnd)
         {
             return OnLine(vertex, segmentStart, segmentEnd)
-                   && Math.Min(segmentStart.x, segmentEnd.x) <= vertex.x &&
-                   vertex.x <= Math.Max(segmentStart.x, segmentEnd.x)
-                   && Math.Min(segmentStart.y, segmentEnd.y) <= vertex.y &&
-                   vertex.y <= Math.Max(segmentStart.y, segmentEnd.y)
-                   && Math.Min(segmentStart.z, segmentEnd.z) <= vertex.z &&
-                   vertex.z <= Math.Max(segmentStart.z, segmentEnd.z);
+                   && Min(segmentStart.x, segmentEnd.x) <= vertex.x && vertex.x <= Max(segmentStart.x, segmentEnd.x)
+                   && Min(segmentStart.y, segmentEnd.y) <= vertex.y && vertex.y <= Max(segmentStart.y, segmentEnd.y)
+                   && Min(segmentStart.z, segmentEnd.z) <= vertex.z && vertex.z <= Max(segmentStart.z, segmentEnd.z);
         }
         
         /// <summary>
@@ -53,7 +50,7 @@ namespace Utils.Geometry
             var xProportion = (vertex.x - linePoint1.x) / lineX;
             var yProportion = (vertex.y - linePoint1.y) / lineY;
             var zProportion = (vertex.z - linePoint1.z) / lineZ;
-            return Math.Abs(xProportion - yProportion) < tolerance && Math.Abs(zProportion - yProportion) < tolerance;
+            return Abs(xProportion - yProportion) < tolerance && Abs(zProportion - yProportion) < tolerance;
         }
 
         /// <summary>
