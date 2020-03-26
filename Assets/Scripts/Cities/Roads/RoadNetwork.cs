@@ -92,7 +92,8 @@ namespace Cities.Roads
             // Add roads between the rest of the vertices along the full road
             do
             {
-                AddAndIntersectRoad(previousVertex, roadVertices.Current);
+                AddRoadVertex(previousVertex);
+                AddAndSplitRoads(previousVertex, roadVertices.Current);
                 previousVertex = roadVertices.Current;
             } while (roadVertices.MoveNext());
             
@@ -100,27 +101,8 @@ namespace Cities.Roads
             AddRoadVertex(previousVertex);
         }
 
-        private void AddAndIntersectRoad(Vector3 start, Vector3 end)
-        {
-            // Adds the start to the road network
-            AddRoadVertex(start);
-            
-            if (!SplitAtOverlaps(start, end)) 
-            {
-                // Add an edge straight from the previous vertex to the current one
-                _roadNetwork[start].Add(end);
-            }
-        }
-
-        // Returns true if a split occurred
-        private bool SplitAtOverlaps(Vector3 lineStart, Vector3 lineEnd)
-        {
-            return SplitAtParallelOverlaps(lineStart, lineEnd)
-                   || SplitAtIntersections(lineStart, lineEnd);
-        }
-
-        // Splits at parallel overlaps and returns true if there needs to be a check for intersections next.
-        private bool SplitAtParallelOverlaps(Vector3 lineStart, Vector3 lineEnd)
+        // Returns true if a road from lineStart to lineEnd should be added
+        private void AddAndSplitRoads(Vector3 lineStart, Vector3 lineEnd)
         {
             foreach (var (partStart, partEnd) in GetRoadParts())
             {
@@ -138,7 +120,7 @@ namespace Cities.Roads
                     // and is going to be placed on top of it. The line is going to be
                     // placed between the start and end of the already existing road part.
                     // Do nothing since the road being added is already contained.
-                    return true;
+                    return;
                 } 
                 
                 if (lineEndOnPart)
@@ -155,7 +137,8 @@ namespace Cities.Roads
                         _roadNetwork[lineStart].Add(partEnd);
                     }
 
-                    return false;
+                    AddAndSplitRoadsAtIntersections(lineStart, lineEnd);
+                    return;
                 } 
                 
                 if (lineStartOnPart)
@@ -171,7 +154,8 @@ namespace Cities.Roads
                         _roadNetwork[partStart].Add(lineEnd);
                     }
                     
-                    return false;
+                    AddAndSplitRoadsAtIntersections(lineStart, lineEnd);
+                    return;
                 }
 
                 if (OnLineSegment(partStart, lineStart, lineEnd)
@@ -182,21 +166,26 @@ namespace Cities.Roads
                     // the line is not on the existing road part.
                     _roadNetwork[partStart].Remove(partEnd);
 
-                    return false;
+                    AddAndSplitRoadsAtIntersections(lineStart, lineEnd);
+                    return;
                 }
                 
             }
 
-            return false;
+            AddAndSplitRoadsAtIntersections(lineStart, lineEnd);
         }
         
-        private bool SplitAtIntersections(Vector3 lineStart, Vector3 lineEnd)
+        private void AddAndSplitRoadsAtIntersections(Vector3 lineStart, Vector3 lineEnd)
         {
             var intersections = GetIntersectionPoints(
                 lineStart, lineEnd, GetRoadParts().GetEnumerator());
 
             // No intersections; return false
-            if (!intersections.Any()) return false;
+            if (!intersections.Any())
+            {
+                _roadNetwork[lineStart].Add(lineEnd);
+                return;
+            }
             
             // Add all intersection points on other road parts if there are any
             foreach (var (start, intersection, end) in intersections)
@@ -230,9 +219,6 @@ namespace Cities.Roads
                 // are more intersections along the rest of the road
                 lineStart = intersection;
             }
-
-            // Intersections found, return true
-            return true;
         }
         
         private static ICollection<(Vector3 start, Vector3 intersection, Vector3 end)> GetIntersectionPoints(
