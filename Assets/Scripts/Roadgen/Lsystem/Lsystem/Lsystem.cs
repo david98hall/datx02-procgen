@@ -35,14 +35,16 @@ public class Lsystem
     public RoadNetwork network = new RoadNetwork();
     State state;
     Queue<State> states = new Queue<State>();
+    private float toRad = Mathf.Deg2Rad;
+    private float pi = Mathf.PI;
 
     public Lsystem(char c){
         
         axiom = c;
         state = new State(Vector3.zero, 0);
-        ruleset.Add('F',"FS");
-        ruleset.Add('S', "F+");
-        ruleset.Add('B',"FF+");
+        ruleset.Add('F',"F+FB]");
+        ruleset.Add('S', "B-FB[");
+        ruleset.Add('B',"FS[F+]");
         tree = new StringBuilder(c.ToString());
     }
 
@@ -63,9 +65,6 @@ public class Lsystem
     /// </summary>
     public void Rewrite()
     {
-        Vector3 direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
-        double scale = 3;
-        LinkedList<Vector3> road = new LinkedList<Vector3>();
         System.Random rdm = new System.Random();
         StringBuilder newTree = new StringBuilder();
         foreach (char c in tree.ToString())
@@ -74,8 +73,10 @@ public class Lsystem
             {
                 string r = ruleset[c];
                 newTree.Append(r);
+                LinkedList<Vector3> road = new LinkedList<Vector3>();
+                Vector3 direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                 road.AddLast(state.pos);
-                float length = (float) (scale * rdm.NextDouble());
+                float length = Random.Range(1,3);
                 switch(c)
                 {
                     case 'S':   //Create split-off road
@@ -86,10 +87,10 @@ public class Lsystem
                         double condition = rdm.NextDouble();
                         if(condition >= 0.5)
                         {
-                            splitAngle = state.angle + 90*condition;
+                            splitAngle = state.angle + Random.Range(45*toRad,75*toRad);
                         }else
                         {
-                            splitAngle = state.angle - 90*(1-condition);
+                            splitAngle = state.angle - Random.Range(45*toRad,75*toRad);
                         }
                         Vector3 splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
                         State splitState;
@@ -105,10 +106,10 @@ public class Lsystem
                                 Vector3 rotate90;
                                 if(condition >= 0.5)
                                 {
-                                    rotate90 = new Vector3(Mathf.Cos((float) splitAngle + 90), 0, Mathf.Sin((float) splitAngle + 90));
+                                    rotate90 = new Vector3(Mathf.Cos((float) splitAngle + 90*toRad), 0, Mathf.Sin((float) splitAngle + 90*toRad));
                                 }else
                                 {
-                                    rotate90 = new Vector3(Mathf.Cos((float) splitAngle - 90), 0, Mathf.Sin((float) splitAngle - 90));
+                                    rotate90 = new Vector3(Mathf.Cos((float) splitAngle - 90*toRad), 0, Mathf.Sin((float) splitAngle - 90*toRad));
                                 }
                                 splitRoad.AddLast(state.pos + 2 * splitDir);
                                 splitState = new State(state.pos + 2*splitDir + rotate90, splitAngle);
@@ -122,21 +123,23 @@ public class Lsystem
                             }
                         }
                         network.AddRoad(splitRoad);
+                        Debug.Log("Intersections: "+ network.Intersections.ToString());
                         break;
                         }
                 }
                 road.AddLast(state.pos + length * direction);
                 network.AddRoad(road);
+                state.pos += length * direction;
             }
             catch(KeyNotFoundException)
             {
                 switch(c)
                 {
                     case '+':
-                        state.angle += 60 * rdm.NextDouble();
+                        state.angle += Random.Range(30*toRad,55*toRad);
                         break;
                     case '-':
-                        state.angle -= 60 * rdm.NextDouble();
+                        state.angle -= Random.Range(30*toRad,55*toRad);
                         break;
                     case '[':
                         states.Enqueue(state);
@@ -147,9 +150,11 @@ public class Lsystem
                         break;
 
                 }
-                state.angle %= 360;
+                state.angle %= 2*pi;
             }
         }
         tree = newTree;
+        Debug.Log("Position: "+state.pos);
+        Debug.Log("Angle: "+state.angle*180/Mathf.PI);
     }
 }

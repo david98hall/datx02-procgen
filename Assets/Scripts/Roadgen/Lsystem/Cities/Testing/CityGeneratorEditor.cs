@@ -20,7 +20,7 @@ namespace Cities.Testing
             
             if (GUILayout.Button("Clear"))
             {
-                cityObject.Clear();;
+                cityObject.Clear();
             }
             
         }
