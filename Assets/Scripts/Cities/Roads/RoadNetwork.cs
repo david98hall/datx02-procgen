@@ -164,6 +164,7 @@ namespace Cities.Roads
         private void AddAndSplitRoadsAtIntersections(Vector3 lineStart, Vector3 lineEnd)
         {
             AddRoadVertex(lineStart);
+            AddRoadVertex(lineEnd);
             
             var intersections = GetIntersectionPoints(
                 lineStart, lineEnd, GetRoadParts().GetEnumerator());
@@ -185,35 +186,28 @@ namespace Cities.Roads
                 _roadNetwork[start].Remove(end);
 
                 // Add road from one of the start points to the intersection
-                if (!_roadNetwork[intersection].Contains(start) && !intersection.Equals(start))
+                if (!intersection.Equals(start) && !_roadNetwork[intersection].Contains(start))
                     _roadNetwork[start].Add(intersection);
 
                 // Add road from the other start point to the intersection
-                if (!_roadNetwork[intersection].Contains(lineStart) && !intersection.Equals(lineStart)) 
+                if (!intersection.Equals(lineStart) && !_roadNetwork[intersection].Contains(lineStart)) 
                     _roadNetwork[lineStart].Add(intersection);
 
                 // Add road from the intersection to one of the end points
-                if (!_roadNetwork[end].Contains(intersection) && !intersection.Equals(end)) 
+                if (!intersection.Equals(end) && !_roadNetwork[end].Contains(intersection)) 
                     _roadNetwork[intersection].Add(end);
 
                 // Add road from the intersection to the other end point
-                if ((!_roadNetwork.ContainsKey(lineEnd) || !_roadNetwork[lineEnd].Contains(intersection)) &&
-                    !intersection.Equals(lineEnd))
-                {
-                    _roadNetwork[intersection].Add(lineEnd);      
-                }
+                if (!intersection.Equals(lineEnd) && !_roadNetwork[lineEnd].Contains(intersection))
+                    _roadNetwork[intersection].Add(lineEnd);
 
+                // Potentially split to the "left" of the intersection
                 if (!lineStart.Equals(intersection))
-                {
-                    // Potentially split to the "left" of the intersection
                     AddAndSplitRoadsAtIntersections(lineStart, intersection);
-                }
                 
+                // Potentially split to the "right" of the intersection
                 if (!lineEnd.Equals(intersection))
-                {
-                    // Potentially split to the "right" of the intersection
                     AddAndSplitRoadsAtIntersections(intersection, lineEnd);
-                }
             }
             
             if (!intersectionsOtherThanOnLineEndings)
