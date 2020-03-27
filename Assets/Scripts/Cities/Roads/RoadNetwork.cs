@@ -189,7 +189,7 @@ namespace Cities.Roads
                     _roadNetwork[start].Add(intersection);
 
                 // Add road from the other start point to the intersection
-                if (!_roadNetwork[intersection].Contains(lineStart)&& !intersection.Equals(lineStart)) 
+                if (!_roadNetwork[intersection].Contains(lineStart) && !intersection.Equals(lineStart)) 
                     _roadNetwork[lineStart].Add(intersection);
 
                 // Add road from the intersection to one of the end points
@@ -203,9 +203,12 @@ namespace Cities.Roads
                     _roadNetwork[intersection].Add(lineEnd);      
                 }
 
-                // Update the start point to the intersection, in case there
-                // are more intersections along the rest of the road
-                lineStart = intersection;
+                if (!intersection.Equals(lineEnd))
+                {
+                    // Update the start point to the intersection, in case there
+                    // are more intersections along the rest of the road
+                    lineStart = intersection;
+                }
             }
         }
         
