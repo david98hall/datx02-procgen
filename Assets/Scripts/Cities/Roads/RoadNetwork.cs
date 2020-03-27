@@ -208,6 +208,8 @@ namespace Cities.Roads
                 // Potentially split to the "right" of the intersection
                 if (!lineEnd.Equals(intersection))
                     AddAndSplitRoadsAtIntersections(intersection, lineEnd);
+
+                break;
             }
             
             if (!intersectionsOtherThanOnLineEndings)
