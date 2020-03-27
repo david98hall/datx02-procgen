@@ -50,6 +50,20 @@ namespace Extensions
             var sign = (Vector2.Dot(v1Rotated90, v2) < 0) ? -1.0f : 1.0f;
             return Vector2.Angle(v1, v2) * sign;
         }
+
+        /// <summary>
+        /// Returns true if the vectors are equal depending on the tolerance.
+        /// </summary>
+        /// <param name="v1">The first vector to compare.</param>
+        /// <param name="v2">The second vector to compare.</param>
+        /// <param name="tolerance">The tolerance for equality.</param>
+        /// <returns>true if the vectors are equal depending on the tolerance.</returns>
+        public static bool EqualWithTolerance(this Vector3 v1, Vector3 v2, float tolerance)
+        {
+            return Math.Abs(v1.x - v2.x) <= tolerance
+                   && Math.Abs(v1.y - v2.y) <= tolerance
+                   && Math.Abs(v1.z - v2.z) <= tolerance;
+        }
         
     }
 }
