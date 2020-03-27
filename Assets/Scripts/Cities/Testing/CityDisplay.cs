@@ -52,7 +52,7 @@ namespace Cities.Testing
         
         public void GenerateCity()
         {
-            if (roadStrategy != RoadStrategy.Sample)
+            if (roadStrategy == RoadStrategy.AStar)
             {
                 var heightMapInjector = new TerrainUtil.HeightMapInjector 
                     {Width = width, Depth = depth, Type = heightMapType};
