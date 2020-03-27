@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/Documents/GitHub/datx02-procgen/docfx_project",
+  "source_base_path": "C:/Users/birka/Documents/GitHub/datx02-procgen/docfx_project",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.City.html",
-          "hash": "MTcVR6nb4i0FV2vh36+KFQ=="
+          "hash": "wKUPJOm7CJtseKqu1NcvSg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.CityGenerator.html",
-          "hash": "AoZU3tXMtxngUMGXyovyeg=="
+          "hash": "lFAHR1vlHuuyWzeEQSC9/Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.Plot.html",
-          "hash": "yb8tlwM+FzDKaOHDC42Sgg=="
+          "hash": "Rcw2QmBdk1csXB8dV9lNVA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.PlotsStrategyFactory.html",
-          "hash": "LIlEijgTMy2VxZpFQQU2+g=="
+          "hash": "nvb4OozNFMwA0gjfFW4QGQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -60,7 +60,7 @@
           "hash": "xvBwWSWSe1b66DGqeewSAQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.RoadNetwork.html",
-          "hash": "1uxy72T47HmoW2Msm7Ewcg=="
+          "hash": "eDbbjOvBuYspe2/wGLKShQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.RoadNetworkStrategyFactory.html",
-          "hash": "AXmmy7imlxOqcTZ7D9JG1g=="
+          "hash": "4HIMMYs58x97iZsJNbI7rg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -96,7 +96,19 @@
           "hash": "UStQdoqUBPmx/09nzdErwA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Cities.Testing.CityDisplay.RoadStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Cities.Testing.CityDisplay.RoadStrategy.html",
+          "hash": "db+3XdQxM6TzVatxs76beQ=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Testing.CityDisplay.html",
-          "hash": "JEbsA5GcUmodPlrPsSTsbQ=="
+          "hash": "O2RcoY9AlY06D+CIT3PROQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +129,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Testing.CityGeneratorEditor.html",
-          "hash": "W6Nq6krHDnRnXk384ST1gw=="
+          "hash": "owZxrwTumS7UGg9ed/fqew=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Testing.html",
-          "hash": "Ev1Y3HljAyx+SbRFECXX4A=="
+          "hash": "rjWIM8Dxn1ro0+eQhTUYxA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -144,7 +156,7 @@
           "hash": "JTx0UkPexhZoLEf/UbiSlQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "api/DrawTool.Editor.ShapeEdit.SelectionInfo.html",
-          "hash": "gurpybHUnU8sJujNZkvtrw=="
+          "hash": "/AyEZEcXC0GItCKN4XF1gg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/DrawTool.Editor.ShapeEdit.html",
-          "hash": "Bva+HDezjVAdJZ//2pRbag=="
+          "hash": "fztcMeyrjFiL2wsKl00iGQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -180,19 +192,7 @@
           "hash": "8HLtOOypmQpj74tja/AC9w=="
         }
       },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DrawTool.ExtensionMethods.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DrawTool.ExtensionMethods.html",
-          "hash": "6Ui1H7lHX3xfQt1UOweWSQ=="
-        }
-      },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -201,10 +201,10 @@
       "output": {
         ".html": {
           "relative_path": "api/DrawTool.ShapeMake.html",
-          "hash": "KQ1/mKPWlmPvmIbkIqJnsA=="
+          "hash": "iO/nT/2HkfadrEh1hX5A9g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "api/DrawTool.html",
-          "hash": "V7KuJDdw+64NFCYrkMkXtA=="
+          "hash": "23fX9KPUtsCNMyvBGDRh6Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Extensions.CollectionExtensions.html",
-          "hash": "Fmx/YbEEFPXprK9SI7DLZA=="
+          "hash": "ARrvys0MiOBu5D7ybc++1g=="
         }
       },
       "is_incremental": false,
@@ -237,10 +237,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Extensions.UnityExtensions.html",
-          "hash": "eMpOYefnPMxrHKiilpFocQ=="
+          "hash": "Zwbpqzenm/ns+tz54VCOmg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -261,10 +261,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Interfaces.IGenerator-1.html",
-          "hash": "xmbzrfkUN8xZfiYt9VYdUw=="
+          "hash": "nLh5kE7PhHBXPOKUs4Vh8A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -273,10 +273,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Interfaces.IInjector-1.html",
-          "hash": "FBLZjcbSWmjL4w+JPXomXw=="
+          "hash": "wod+zibrYOtqEnSwwwSDyg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -288,7 +288,7 @@
           "hash": "YXZ0FHHqmZm1ejQow84RnQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -297,10 +297,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.NoiseStrategyFactory.html",
-          "hash": "2t3xTEbBTQVkSJcp2HRy/Q=="
+          "hash": "O+VRiPgyOFY8rUbYwYxC1A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -309,10 +309,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.TerrainGenerator.html",
-          "hash": "Q1ZDG7pASmIJdcLN7LXcdw=="
+          "hash": "UFM39CV2AQiBr0zhF8tvHA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -321,10 +321,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TerrainDisplayEditor.html",
-          "hash": "U/TxQdgQ7hdo4jMqHc8DEQ=="
+          "hash": "IfSAT41eo7wckGKWDEP7MQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -333,10 +333,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TextureDisplay.Strategy.html",
-          "hash": "78Bc38Q6ypwbDdrefYvQ4g=="
+          "hash": "JoHaAKJWfvYoTTqcsCVklA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -345,10 +345,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TextureDisplay.WhittakerMap.html",
-          "hash": "M5cXXfbR0msEL8uXvcCBtw=="
+          "hash": "xK8Pz4f9Mv81saydQpBLIA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -357,10 +357,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TextureDisplay.html",
-          "hash": "cRcG9vrR2P2HIv/0+pHMRQ=="
+          "hash": "u7uYan2+cX+lZXJeVhmDYw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -369,10 +369,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.Testing.TextureDisplayEditor.html",
-          "hash": "epPOuIf+uSoDPTLOicSDzw=="
+          "hash": "qsib8aAHJmDqgHRGQHtZGg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -384,7 +384,7 @@
           "hash": "DxbYmyalEQzP1FOcBIpDLA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -393,10 +393,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Terrain.TextureGeneratorFactory.html",
-          "hash": "B8e1vPjWXtr43pqQz0SM6g=="
+          "hash": "r6TLeWuWCLky8/Mgi/Tomg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -408,7 +408,7 @@
           "hash": "Z2x6sEtEgPhdrZ6v1ktT3A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -417,10 +417,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.CopyableEnumerator-1.html",
-          "hash": "msL3HRQy8sXO35vrd4ZOhw=="
+          "hash": "V0YzS7ZDtA1hEH9sm+rOhw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -429,10 +429,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.html",
-          "hash": "Cp18gIkpfe12mzGJUMy+3w=="
+          "hash": "9pWsN5qxolSJk+/nuMDOPw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -441,10 +441,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.html",
-          "hash": "iGb5KRoxT9KAUt19W20e+A=="
+          "hash": "doaCT4cYZ8NdMglkfmN5sA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -453,10 +453,22 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.CompositeShape.html",
-          "hash": "buQ7tktxOKedpise6cEPgQ=="
+          "hash": "CkIgHO0XNRtc+jbmO/Z14Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.LineSegment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.LineSegment.html",
+          "hash": "sC1I1AHS9y3Sk7jz5EsRKw=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -465,10 +477,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Maths2D.html",
-          "hash": "OkyPMBzdAgSSZKwsT/itcA=="
+          "hash": "qOQVnANr6VaohTDhzQoItA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -477,10 +489,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Maths3D.html",
-          "hash": "YgU5YMtoKgU/PDst0MMsoA=="
+          "hash": "1F79uyBFJjVnNdlBvNCKkw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -489,10 +501,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Polygon.html",
-          "hash": "luksjw2x4qoOsrEzGK4CGg=="
+          "hash": "vmFJQSQ7HXCq7W/kcoHSxQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -501,10 +513,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Shape.html",
-          "hash": "RIwKuT+qjpRXnQKJ60OONg=="
+          "hash": "UsDkbQzbtH2D6D/B7cRCPg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -513,10 +525,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Triangulator.HoleData.html",
-          "hash": "wZ+ImHWAf7s9HFxxVdGLhg=="
+          "hash": "ggJmREDlMnedLZsju1HYyA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -525,10 +537,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Triangulator.Vertex.html",
-          "hash": "Jc9oUdXn2NPVe7oynIL8kw=="
+          "hash": "K8JvGxDNHRPwUJnJ9rUohg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -537,10 +549,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Triangulator.html",
-          "hash": "OjWYgQhXjaL2jiraca1iow=="
+          "hash": "ekuRs+q6HJXrA0IDmkhA3w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -549,10 +561,82 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.html",
-          "hash": "Lpue4DVAyh6pYGrzrPVehw=="
+          "hash": "wsNPFIAy6sQCaZG3fJmdog=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.TerrainUtil.HeightMapInjector.MapType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.TerrainUtil.HeightMapInjector.MapType.html",
+          "hash": "RBOCSvNvj/vVUMZK6oyvHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.TerrainUtil.HeightMapInjector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.TerrainUtil.HeightMapInjector.html",
+          "hash": "0Mlj5uXiOfcIuehILlZ6Jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.TerrainUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.TerrainUtil.html",
+          "hash": "2OlHG+XpevLc8uzUuY5/Sw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Tuples.MutableTuple-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Tuples.MutableTuple-2.html",
+          "hash": "xRcMI6ekMKxATje9yNONjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Tuples.MutableTuple-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Tuples.MutableTuple-3.html",
+          "hash": "2GEzPwddF991DEiwlpFEVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Tuples.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Tuples.html",
+          "hash": "pp4HO9QjA6TyAzvCoE310g=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -561,10 +645,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.html",
-          "hash": "vNjSCyRlpTKb092uU2GC/g=="
+          "hash": "awEUFOyxA1NxUFpLF8pZKg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -576,7 +660,7 @@
           "hash": "n7Lpb4dGJY45V9KrXZqAPw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -585,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "NZC8kZ5ypMUbBEs+w0Wa9g=="
+          "hash": "PMrVmNYwfbQLpN/Mk4T3ng=="
         }
       },
       "is_incremental": false,
@@ -658,8 +742,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 47,
-          "skipped_file_count": 46
+          "total_file_count": 54,
+          "skipped_file_count": 6
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

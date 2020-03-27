@@ -6,7 +6,7 @@ namespace Terrain
     /// <summary>
     /// Creates different types of noise map generation strategies.
     /// </summary>
-    public static class NoiseStrategyFactory
+    public class Factory
     {
         /// <summary>
         /// Instantiates a perlin noise strategy for generating noise maps.
@@ -20,7 +20,7 @@ namespace Terrain
         /// <param name="lacunarity">TODO</param>
         /// <param name="offset">The offset when generating a noise map.</param>
         /// <returns></returns>
-        public static IGenerator<float[,]> GetPerlinNoiseStrategy(
+        public IGenerator<float[,]> CreatePerlinNoiseStrategy(
             int width, int height,
             int seed,
             float scale,

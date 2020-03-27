@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using Terrain.Textures;
 using UnityEngine;
 
 namespace Terrain
@@ -6,28 +7,28 @@ namespace Terrain
     /// <summary>
     /// Generates terrain meshes based on noise maps generated with arbitrary strategies.
     /// </summary>
-    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>
+    public class TerrainGenerator : IGenerator<(Mesh, Texture2D)>, IInjector<float[,]>
     {
-
-        #region Noise map generation fields and properties
         
-        private float[,] _noiseMap;
+        #region Noise map generation fields and properties
 
-        private readonly NoiseGenerator noiseGenerator;
-        private readonly NoiseMeshGenerator noiseMeshGenerator;
+        private float[,] _noiseMap;
+        
+        private readonly Generator<float[,]> _noiseGenerator;
+        private readonly NoiseMeshGenerator _noiseMeshGenerator;
         
         /// <summary>
         /// The noise map generation strategy.
         /// </summary>
-        public IGenerator<float[,]> NoiseMapStrategy { set => noiseGenerator.Strategy = value;}
+        public IGenerator<float[,]> NoiseStrategy { set => _noiseGenerator.Strategy = value;}
 
         /// <summary>
         /// The scale of heights when generating a terrain mesh. The larger the scale, the higher the "mountains".
         /// </summary>
         public float HeightScale
         {
-            get => noiseMeshGenerator.HeightScale;
-            set => noiseMeshGenerator.HeightScale = value;
+            get => _noiseMeshGenerator.HeightScale;
+            set => _noiseMeshGenerator.HeightScale = value;
         }
 
         /// <summary>
@@ -36,8 +37,8 @@ namespace Terrain
         /// </summary>
         public AnimationCurve HeightCurve
         {
-            get => noiseMeshGenerator.HeightCurve;
-            set => noiseMeshGenerator.HeightCurve = value;
+            get => _noiseMeshGenerator.HeightCurve;
+            set => _noiseMeshGenerator.HeightCurve = value;
         }
 
         #endregion
@@ -47,12 +48,14 @@ namespace Terrain
         /// <summary>
         /// Generator for creating textures
         /// </summary>
-        private readonly TextureGenerator textureGenerator;
+        //private readonly TextureGenerator textureGenerator;
+        
+        private readonly Generator<Texture2D> _textureGenerator;
         
         /// <summary>
         /// Strategy to set for the texture generator
         /// </summary>
-        public IGenerator<Texture2D> TextureStrategy { set => textureGenerator.Strategy = value;}
+        public IGenerator<Texture2D> TextureStrategy { set => _textureGenerator.Strategy = value;}
         
         
         /// <summary>
@@ -60,20 +63,19 @@ namespace Terrain
         /// Is required to be a instance and not static to avoid circular dependencies between
         /// this terrain generator and texture generators.
         /// </summary>
-        internal readonly TextureGeneratorFactory TextureGeneratorFactory;
+        public readonly Textures.Factory TextureStrategyFactory;
 
         #endregion
         
         /// <summary>
         /// Initializes the terrain generator by setting its generators to no strategy
         /// </summary>
-        /// <param name="noiseStrategy">The strategy of generating noise maps.</param>
-        public TerrainGenerator(IGenerator<float[,]> noiseStrategy)
+        public TerrainGenerator()
         {
-            noiseGenerator = new NoiseGenerator(noiseStrategy);
-            noiseMeshGenerator = new NoiseMeshGenerator();
-            textureGenerator = new TextureGenerator(null);
-            TextureGeneratorFactory = new TextureGeneratorFactory(textureGenerator);
+            _noiseGenerator = new Generator<float[,]>();
+            _noiseMeshGenerator = new NoiseMeshGenerator(this);
+            _textureGenerator = new Generator<Texture2D>();
+            TextureStrategyFactory = new Textures.Factory(this);
         }
         
         /// <summary>
@@ -82,10 +84,10 @@ namespace Terrain
         /// <returns>The terrain tuple.</returns>
         public (Mesh, Texture2D) Generate()
         {
-            var noiseMap = noiseGenerator.Generate();
-            noiseMeshGenerator.NoiseMap = noiseMap;
-            textureGenerator.NoiseMap = noiseMap;
-            return (noiseMeshGenerator.Generate(), textureGenerator.Generate());
+            _noiseMap = _noiseGenerator.Generate();
+            return (_noiseMeshGenerator.Generate(), _textureGenerator.Generate());
         }
+        
+        public float[,] Get() => (float[,])_noiseMap.Clone();
     }
 }
