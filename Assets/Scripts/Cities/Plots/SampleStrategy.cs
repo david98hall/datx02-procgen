@@ -33,14 +33,19 @@ namespace Cities.Plots
             return plots;
         }
 
+        // Gets all minimal polygons in the XZ-plane where the road network's XZ-projection intersections are found.
         private IEnumerable<IReadOnlyCollection<Vector3>> GetPolygons()
         {
-            var allPolygons = new HashSet<IReadOnlyCollection<Vector3>>();
-            
+            // In 3D, a plot with a "floating" road above it will thus be split in two to avoid a building colliding
+            // with it.
+        
+            // Project the road network to the XZ-plane and get is as an undirected graph
+            // in order to get access to all XZ-intersections and make it possible to find all polygons,
+            // contiguous or not.
             var roadNetwork = Injector.Get().GetXZProjection().GetAsUndirected();
 
+            var allPolygons = new HashSet<IReadOnlyCollection<Vector3>>();
             var visitedEdges = new HashSet<(Vector3 Start, Vector3 End)>();
-            
             foreach (var vertex in roadNetwork.RoadVertices)
             {
                 if (TryGetPolygon(roadNetwork, vertex, visitedEdges, out var polygon))
@@ -52,6 +57,7 @@ namespace Cities.Plots
             return allPolygons;
         }
         
+        // Returns false if a polygon was not found
         private static bool TryGetPolygon(
             RoadNetwork roadNetwork,
             Vector3 startVertex,
@@ -62,6 +68,7 @@ namespace Cities.Plots
             return polygon != null;
         }
 
+        // Looks for a minimal polygon in the road network's XZ-projection.
         private static LinkedList<Vector3> GetPolygon(
             RoadNetwork roadNetwork,
             Vector3 startVertex,
@@ -81,17 +88,23 @@ namespace Cities.Plots
 
                 var polygonPath = new LinkedList<Vector3>();
                 polygonPath.AddLast(currentVertex);
-                polygonPath.AddLast(rightmostNeighbour);
 
-                if (!startVertex.Equals(rightmostNeighbour))
+                if (startVertex.Equals(rightmostNeighbour))
                 {
+                    // The rightmost neighbour is equal to the start vertex of the polygon.
+                    // The polygon has thus been found; do not keep looking for more vertices.
+                    polygonPath.AddLast(rightmostNeighbour);
+                }
+                else
+                {
+                    // The rightmost neighbour does not equal the start vertex of the potential polygon and
+                    // the search for vertices thus has to continue in order to potentially find a polygon.
                     var pathExtension = GetPolygon(
                         roadNetwork, startVertex, currentVertex, rightmostNeighbour, visitedEdges);
 
                     if (pathExtension == null)
                         return null;
                     
-                    polygonPath.RemoveLast();
                     polygonPath.AddRange(pathExtension);
                 }
 
@@ -101,6 +114,7 @@ namespace Cities.Plots
             return null;
         }
         
+        // Returns true if a rightmost vertex is found that has not been visited from the given vertex before.
         private static bool TryGetUnvisitedRightmostNeighbour(
             RoadNetwork roadNetwork, 
             Vector3 vertex,
@@ -116,7 +130,7 @@ namespace Cities.Plots
             var minAngle = float.MaxValue;
             foreach (var neighbour in roadNetwork.GetAdjacentVertices(vertex))
             {
-                var angleToNeighbour = vertexXz.TurningDegreesTo(new Vector2(neighbour.x, neighbour.z)); // % 360;
+                var angleToNeighbour = vertexXz.TurningDegreesTo(new Vector2(neighbour.x, neighbour.z)) % 360;
                 
                 if (angleToNeighbour < minAngle && !visitedEdges.Contains((vertex, neighbour)))
                 {
