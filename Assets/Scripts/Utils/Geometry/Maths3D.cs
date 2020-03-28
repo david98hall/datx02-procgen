@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using static System.Math;
 
 namespace Utils.Geometry
@@ -28,10 +29,11 @@ namespace Utils.Geometry
         /// <summary>
         /// Returns true if the vertex is on the line.
         /// </summary>
-        /// <param name="vertex">Te vertex to check.</param>
         /// <param name="linePoint1">A point on the line.</param>
         /// <param name="linePoint2">Another point on the line.</param>
+        /// <param name="vertex">Te vertex to check.</param>
         /// <returns>true if the vertex is on the line.</returns>
+        // public static bool OnLine(Vector3 linePoint1, Vector3 linePoint2, Vector3 vertex)
         public static bool OnLine(Vector3 vertex, Vector3 linePoint1, Vector3 linePoint2)
         {
             var lineX = linePoint2.x - linePoint1.x;
@@ -40,19 +42,51 @@ namespace Utils.Geometry
 
             if (lineY == 0 && lineZ == 0)
                 return vertex.y == 0 && vertex.z == 0;
-            
+
             if (lineX == 0 && lineZ == 0)
                 return vertex.x == 0 && vertex.z == 0;
-            
+
             if (lineX == 0 && lineY == 0)
                 return vertex.x == 0 && vertex.y == 0;
-            
+
             var xProportion = (vertex.x - linePoint1.x) / lineX;
             var yProportion = (vertex.y - linePoint1.y) / lineY;
             var zProportion = (vertex.z - linePoint1.z) / lineZ;
             return Abs(xProportion - yProportion) < tolerance && Abs(zProportion - yProportion) < tolerance;
+
+            /*
+            var relVec1 = linePoint2 - linePoint1;
+            var relVec2 = vertex - linePoint1;
+            var crossProduct = Vector3.Cross(relVec1, relVec2);
+
+            if (Abs(crossProduct.magnitude) > float.Epsilon)
+                return false;
+
+            var dotProduct = Vector3.Dot(relVec1, relVec2);
+
+            return 0 <= dotProduct && dotProduct <= (linePoint2 - linePoint1).sqrMagnitude;
+            */
         }
 
+        /*
+        def isBetween(a, b, c):
+        crossproduct = (c.y - a.y) * (b.x - a.x) - (c.x - a.x) * (b.y - a.y)
+
+        # compare versus epsilon for floating point values, or != 0 if using integers
+        if abs(crossproduct) > epsilon:
+        return False
+
+            dotproduct = (c.x - a.x) * (b.x - a.x) + (c.y - a.y)*(b.y - a.y)
+                         if dotproduct < 0:
+        return False
+
+            squaredlengthba = (b.x - a.x)*(b.x - a.x) + (b.y - a.y)*(b.y - a.y)
+                              if dotproduct > squaredlengthba:
+        return False
+
+        return True
+            */
+        
         /// <summary>
         /// Returns true and the intersection point if the two line segments intersect.
         /// </summary>
