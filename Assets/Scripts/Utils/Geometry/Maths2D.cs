@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Extensions;
+using UnityEngine;
 
 namespace Utils.Geometry
 {
@@ -74,6 +76,35 @@ namespace Utils.Geometry
             intersection = Vector2.negativeInfinity;
             return false;
         }
+
+        /// <summary>
+        /// Returns the angle in degrees between the two points.
+        /// The angle is always zero if the points are on the same x or y level.
+        /// </summary>
+        /// <param name="point1">The first point.</param>
+        /// <param name="point2">The second point.</param>
+        /// <returns>The angle in degrees between the two points</returns>
+        public static float GetDegreesBetween(Vector2 point1, Vector2 point2)
+        {
+            return (float) (GetRadiansBetween(point1, point2) * 180 / Math.PI);
+        }
         
+        /// <summary>
+        /// Returns the angle in radians between the two points.
+        /// The angle is always zero if the points are on the same x or y level.
+        /// </summary>
+        /// <param name="point1">The first point.</param>
+        /// <param name="point2">The second point.</param>
+        /// <returns>The angle in radians between the two points</returns>
+        public static float GetRadiansBetween(Vector2 point1, Vector2 point2)
+        {
+            var deltaX = point2.x - point1.x;
+
+            if (deltaX == 0)
+                return 0;
+            
+            return (float) Math.Atan((point2.y - point1.y) / deltaX);
+        }
+
     }
 }

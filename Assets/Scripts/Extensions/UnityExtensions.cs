@@ -52,6 +52,31 @@ namespace Extensions
         }
 
         /// <summary>
+        /// Gets the radians a vector has to turn to be pointing
+        /// in the same direction as another.
+        /// </summary>
+        /// <param name="v1">The vector to get the angle from.</param>
+        /// <param name="v2">The vector to get the angle to.</param>
+        /// <returns>The angle in radians from v1 to v2.</returns>
+        public static float TurningRadiansTo(this Vector2 v1, Vector2 v2)
+        {
+            var r = new Vector2(1, 0);
+            return r.RadiansTo(v2) - r.RadiansTo(v1);
+        }
+        
+        /// <summary>
+        /// Gets the degrees a vector has to turn to be pointing
+        /// in the same direction as another.
+        /// </summary>
+        /// <param name="v1">The vector to get the angle from.</param>
+        /// <param name="v2">The vector to get the angle to.</param>
+        /// <returns>The angle in degrees from v1 to v2.</returns>
+        public static float TurningDegreesTo(this Vector2 v1, Vector2 v2)
+        {
+            return (float) (TurningRadiansTo(v1, v2) * 180 / Math.PI);
+        }
+        
+        /// <summary>
         /// Returns true if the vectors are equal depending on the tolerance.
         /// </summary>
         /// <param name="v1">The first vector to compare.</param>

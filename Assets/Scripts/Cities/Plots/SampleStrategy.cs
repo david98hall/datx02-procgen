@@ -1,10 +1,8 @@
-﻿﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
 using Extensions;
 using Interfaces;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Cities.Plots
@@ -31,7 +29,7 @@ namespace Cities.Plots
             {
                 Debug.Log(plotString);
             }
-            
+
             return plots;
         }
 
@@ -118,8 +116,8 @@ namespace Cities.Plots
             var minAngle = float.MaxValue;
             foreach (var neighbour in roadNetwork.GetAdjacentVertices(vertex))
             {
-                var angleToNeighbour = vertexXz.DegreesTo(new Vector2(neighbour.x, neighbour.z));
-
+                var angleToNeighbour = vertexXz.TurningDegreesTo(new Vector2(neighbour.x, neighbour.z)); // % 360;
+                
                 if (angleToNeighbour < minAngle && !visitedEdges.Contains((vertex, neighbour)))
                 {
                     // Update the rightmost neighbour and the minimum angle so far
@@ -132,5 +130,7 @@ namespace Cities.Plots
             return foundRightmost;
         }
 
+
+        
     }
 }
