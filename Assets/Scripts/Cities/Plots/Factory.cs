@@ -18,7 +18,7 @@ namespace Cities.Plots
 
         internal IGenerator<IEnumerable<Plot>> CreateSampleStrategy()
         {
-            return new SampleStrategy2(_roadNetworkInjector);
+            return new SampleStrategy(_roadNetworkInjector);
         }
     }
 }

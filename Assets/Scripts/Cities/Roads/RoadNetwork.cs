@@ -16,11 +16,22 @@ namespace Cities.Roads
         // Adjacency set for road network vectors
         private readonly IDictionary<Vector3, ICollection<Vector3>> _roadNetwork;
 
+        /// <summary>
+        /// All vertices in this network.
+        /// </summary>
         public IEnumerable<Vector3> RoadVertices => _roadNetwork.Keys.Select(v => v.Clone());
         
+        /// <summary>
+        /// All intersection vertices in this network.
+        /// </summary>
         public IEnumerable<Vector3> Intersections => 
             _roadNetwork.Keys.Where(v => _roadNetwork[v].Count > 1).Select(v => v.Clone());
 
+        /// <summary>
+        /// The total number of vertices in this network.
+        /// </summary>
+        public int VertexCount => _roadNetwork.Keys.Count;
+        
         #region Constructors
         
         public RoadNetwork()

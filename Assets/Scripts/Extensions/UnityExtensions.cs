@@ -75,6 +75,26 @@ namespace Extensions
         {
             return (float) (TurningRadiansTo(v1, v2) * 180 / Math.PI);
         }
+
+        public static float AngleInDegrees(this Vector2 v1)
+        {
+            return (float) (AngleInRadians(v1) * 180 / Math.PI);
+        }
+        
+        public static float AngleInRadians(this Vector2 v1)
+        {
+            if (v1.x == 0)
+            {
+                if (v1.y == 0)
+                    return 0;
+                if (v1.y > 0)
+                    return (float) Math.PI / 2;
+                if (v1.y < 0)
+                    return (float) -Math.PI / 2;
+            }
+
+            return (float) Math.Atan(v1.y / v1.x);
+        }
         
         /// <summary>
         /// Returns true if the vectors are equal depending on the tolerance.
