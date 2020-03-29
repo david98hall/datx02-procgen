@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Cities.Plots;
 using Cities.Roads;
 using Interfaces;
 using UnityEngine;
 using Utils;
+using Utils.Dispatching;
 using Factory = Cities.Plots.Factory;
 using SampleStrategy = Cities.Roads.SampleStrategy;
 
@@ -49,12 +51,12 @@ namespace Cities.Testing
             _cityGenerator.PlotStrategy = new Factory(_cityGenerator).CreateSampleStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
-        
-        public void GenerateCity()
+
+        public async void GenerateCityAsync()
         {
             if (roadStrategy == RoadStrategy.AStar)
             {
-                var heightMapInjector = new TerrainUtil.HeightMapInjector 
+                var heightMapInjector = new TerrainUtil.HeightMapInjector
                     {Width = width, Depth = depth, Type = heightMapType};
 
                 meshFilter.sharedMesh = TerrainUtil.Mesh(heightMapInjector.Get(), scale);
@@ -62,14 +64,13 @@ namespace Cities.Testing
             }
             
             _cityGenerator.RoadNetworkStrategy = GetRoadStrategy();
-            var city = _cityGenerator.Generate();
-            DisplayCity(city);
+            DisplayCity(await Task.Run(() => _cityGenerator.Generate()));
         }
 
         private void DisplayCity(City city)
         {
             ClearRoads();
-            // DisplayPlotBorders(city.Plots);
+            DisplayPlotBorders(city.Plots);
             // DisplayRoadNetworkParts(city.RoadNetwork);
             DisplayRoadNetwork(city.RoadNetwork);
         }
@@ -151,7 +152,6 @@ namespace Cities.Testing
 
         private IGenerator<RoadNetwork> GetRoadStrategy()
         {
-            
             var heightMapInjector = new TerrainUtil.HeightMapInjector
             {
                 Width = width, 

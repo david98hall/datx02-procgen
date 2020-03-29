@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Cities.Roads;
 using Extensions;
 using Interfaces;
@@ -16,48 +17,40 @@ namespace Cities.Plots
         
         public override IEnumerable<Plot> Generate()
         {
-            var plots = GetPolygons().Select(polygon => new Plot(polygon));
-            
-            /*
-            var plotStrings = plots.Select(plot =>
-            {
-                const string arrow = " -> ";
-                var plotString = plot.Vertices.Aggregate("Plot: ", (current, vector) => current + (vector + arrow));
-                return plotString.Substring(0, plotString.Length - arrow.Length);
-            });
-
-            foreach (var plotString in plotStrings)
-            {
-                Debug.Log(plotString);
-            }
-            */
-
-            return plots;
+            return GetPolygons()
+                .Where(p => p.Count > 2)
+                .Select(polygon => new Plot(polygon));
         }
 
         // Gets all minimal polygons in the XZ-plane where the road network's XZ-projection intersections are found.
         private IEnumerable<IReadOnlyCollection<Vector3>> GetPolygons()
         {
-            // In 3D, a plot with a "floating" road above it will thus be split in two to avoid a building colliding
-            // with it.
-        
-            // Project the road network to the XZ-plane and get is as an undirected graph
-            // in order to get access to all XZ-intersections and make it possible to find all polygons,
-            // contiguous or not.
             var roadNetwork = Injector.Get().GetXZProjection().GetAsUndirected();
+
+            var numberOfPolygons = roadNetwork.VertexCount - 2;
+            if (numberOfPolygons < 1) 
+                return new List<IReadOnlyCollection<Vector3>>();
             
-            var allPolygons = new List<IReadOnlyCollection<Vector3>>();
+            var polygonTasks = new Task[roadNetwork.VertexCount];
+            var i = 0;
             foreach (var vertex in roadNetwork.RoadVertices)
             {
-                if (TryGetPolygons(roadNetwork, vertex, out var polygons))
-                {
-                    allPolygons.AddRange(polygons);
-                }
+                polygonTasks[i] = Task.Run(() =>
+                    TryGetPolygons(roadNetwork, vertex, out var polygons)
+                        ? polygons
+                        : new List<IReadOnlyCollection<Vector3>>());
+                i++;
             }
+
+            Task.WaitAll(polygonTasks);
+            var allPolygons = polygonTasks
+                .SelectMany(task => ((Task<IReadOnlyCollection<IReadOnlyCollection<Vector3>>>)task).Result)
+                .Where(p => p.Any())
+                .ToList();
+
             allPolygons.Sort((polygon1, polygon2) => 
                 polygon1.Count < polygon2.Count ? -1 : polygon1.Count > polygon2.Count ? 1 : 0);
 
-            var numberOfPolygons = roadNetwork.VertexCount - 2;
             var resultingPolygons = new List<IReadOnlyCollection<Vector3>>(numberOfPolygons);
             foreach (var polygon in allPolygons)
             {
@@ -68,7 +61,7 @@ namespace Cities.Plots
                     resultingPolygons.Add(polygon);
             }
             
-            return resultingPolygons;
+            return resultingPolygons; 
         }
 
         private static IEnumerable<(Vector3 Start, Vector3 End)> GetPolygonEdges(IReadOnlyCollection<Vector3> polygon)
