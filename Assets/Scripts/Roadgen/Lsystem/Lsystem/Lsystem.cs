@@ -123,7 +123,7 @@ public class Lsystem
                             }
                         }
                         network.AddRoad(splitRoad);
-                        Debug.Log("Intersections: "+ network.Intersections.ToString());
+                        //Debug.Log("Intersections: "+ network.Intersections.ToString());
                         break;
                         }
                 }

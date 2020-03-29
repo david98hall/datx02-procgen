@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Cities.Roads;
 using Interfaces;
+using JetBrains.Annotations;
 
 namespace Cities.Plots
 {
@@ -20,7 +21,7 @@ namespace Cities.Plots
         /// Sets the road network injector.
         /// </summary>
         /// <param name="roadNetworkInjector">The road network injector.</param>
-        internal PlotStrategy(IInjector<RoadNetwork> roadNetworkInjector)
+        internal PlotStrategy([NotNull] IInjector<RoadNetwork> roadNetworkInjector)
         {
             _roadNetworkInjector = roadNetworkInjector;
         }

@@ -1,41 +1,36 @@
 ﻿using Interfaces;
 using UnityEngine;
 
-namespace Terrain
+namespace Terrain.Textures
 {
     
     /// <summary>
     /// Can generate a gray scaled texture based on a noise map.
     /// </summary>
-    internal class GrayScaleGenerator : IGenerator<Texture2D>
+    internal class GrayScaleStrategy : Strategy<float[,], Texture2D>
     {
-        private readonly IInjector<float[,]> _noiseMapInjector;
-        
         /// <summary>
         /// Initializes this generator with a injector from which a noise map can be fetched
         /// </summary>
         /// <param name="noiseMapInjector">
         /// The noise map injector used to generate a texture
         /// </param>
-        internal GrayScaleGenerator(IInjector<float[,]> noiseMapInjector)
+        internal GrayScaleStrategy(IInjector<float[,]> noiseMapInjector) : base(noiseMapInjector)
         {
-            _noiseMapInjector = noiseMapInjector;
         }
         
         /// <summary>
         /// The noise map used to generate textures (values are in the range: [0, 1])
         /// </summary>
-        internal float[,] NoiseMap => (float[,]) _noiseMapInjector.Get().Clone();
-        
-        
-        
+        internal float[,] NoiseMap => (float[,]) Injector.Get().Clone();
+
         /// <summary>
         /// Generates a gray scaled texture based on a noise map.
         /// </summary>
         /// <returns></returns>
-        public Texture2D Generate()
+        public override Texture2D Generate()
         {
-            var noiseMap = _noiseMapInjector.Get();
+            var noiseMap = Injector.Get();
             var width = noiseMap.GetLength(0);
             var height = noiseMap.GetLength(1);
             

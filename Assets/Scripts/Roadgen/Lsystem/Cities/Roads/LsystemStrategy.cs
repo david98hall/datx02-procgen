@@ -18,19 +18,12 @@ namespace Cities.Roads{
         }
         
         public override RoadNetwork Generate(){
-            if(start)
-                system = new Lsystem('F');
-            /*
             system = new Lsystem(system.axiom);
             for (int i = 0; i < 3; i++)
             {
                 system.Rewrite();
             }
-            */
             Debug.Log(system.ToString());
-            system.Rewrite();
-            start = false;
-            //int vr;
             return system.network;
         }
         

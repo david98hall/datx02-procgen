@@ -51,5 +51,29 @@ namespace Utils.Geometry
             return (r > 0 && r < 1) && (s > 0 && s < 1);
         }
 
+        public static bool LineSegmentIntersection(
+            out Vector2 intersection, Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2)
+        {
+            var dirVec1 = end1 - start1;
+            var dirVec2 = end2 - start2;
+
+            // Solve equation system
+            // start1.x + t * dirVec1.x = start2.x + s * dirVec2.x
+            // start1.y + t * dirVec1.y = start2.y + s * dirVec2.y
+            // Used to get rid of one of the variables
+            var elimination = dirVec1.x / dirVec1.y;
+            var s = (start1.x - start2.x - elimination * (start1.y - start2.y)) / (dirVec2.x - dirVec2.y * elimination);
+            var t = (start2.x + s * dirVec2.x - start1.x) / dirVec1.x;
+
+            if (0 <= t && t <= 1)
+            {
+                intersection = start1 + t * dirVec1;
+                return true;  
+            }
+
+            intersection = Vector2.negativeInfinity;
+            return false;
+        }
+        
     }
 }
