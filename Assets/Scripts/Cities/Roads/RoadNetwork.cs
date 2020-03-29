@@ -231,7 +231,7 @@ namespace Cities.Roads
             
         }
         
-        private static ICollection<(Vector3 start, Vector3 intersection, Vector3 end)> GetIntersectionPoints(
+        private static IEnumerable<(Vector3 start, Vector3 intersection, Vector3 end)> GetIntersectionPoints(
             Vector3 linePoint1, Vector3 linePoint2, IEnumerator<(Vector3, Vector3)> roadParts)
         {
             var intersectionPoints = new HashSet<(Vector3, Vector3, Vector3)>();
@@ -287,7 +287,7 @@ namespace Cities.Roads
         /// Gets all parts of the road network in this city.
         /// </summary>
         /// <returns>All road parts.</returns>
-        public IEnumerable<(Vector3, Vector3)> GetRoadParts() => GetRoadParts(_roadNetwork);
+        public IEnumerable<(Vector3 Start, Vector3 End)> GetRoadParts() => GetRoadParts(_roadNetwork);
 
         private IEnumerable<(Vector3, Vector3)> GetRoadParts(IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
         {

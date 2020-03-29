@@ -72,7 +72,7 @@ namespace Cities.Testing
             ClearRoads();
             DisplayPlotBorders(city.Plots);
             // DisplayRoadNetworkParts(city.RoadNetwork);
-            DisplayRoadNetwork(city.RoadNetwork);
+            DrawRoads(city.RoadNetwork.GetRoads());
         }
 
         private void DisplayPlotBorders(IEnumerator<Plot> plots)
@@ -82,36 +82,29 @@ namespace Cities.Testing
             {
                 if (plots.Current != null)
                 {
-                    DrawRoad(plots.Current.Vertices, "Plot Border " + plotCount++, plotBorderMaterial); 
+                    DrawRoad(plots.Current.Vertices, 
+                        "Plot Border " + plotCount++, 
+                        plotBorderMaterial, 
+                        0.15f); 
                 }
             }
         }
-        
-        private void DisplayRoadNetwork(RoadNetwork roadNetwork)
-        {
-            DrawRoads(roadNetwork.GetRoads());
-        }
-        
+
         private void DisplayRoadNetworkParts(RoadNetwork roadNetwork)
         {
-            var roadParts = new HashSet<IEnumerable<Vector3>>();
-            foreach (var (start, end) in roadNetwork.GetRoadParts())
-            {
-                roadParts.Add(new [] {start, end});
-            }
-            DrawRoads(roadParts);
+            DrawRoads(roadNetwork.GetRoadParts().Select(road => new [] {road.Start, road.End}));
         }
 
-        private void DrawRoads(IEnumerable<IEnumerable<Vector3>> roads)
+        private void DrawRoads(IEnumerable<IEnumerable<Vector3>> roads, float roadWidth = 0.3f)
         {
             var roadCount = 1;
             foreach (var road in roads)
             {
-                DrawRoad(road, "Road " + roadCount++, roadMaterial);
+                DrawRoad(road, "Road " + roadCount++, roadMaterial, roadWidth);
             }
         }
 
-        private void DrawRoad(IEnumerable<Vector3> road, string roadName, Material material)
+        private void DrawRoad(IEnumerable<Vector3> road, string roadName, Material material, float roadWidth)
         {
             // Create a game object with a LineRenderer component
             var item = new GameObject(roadName);
@@ -119,8 +112,8 @@ namespace Cities.Testing
             _roadRenderers.Add(item);
                 
             // Set the appearance of the road
-            roadRenderer.startWidth = 0.3f;
-            roadRenderer.endWidth = 0.3f;
+            roadRenderer.startWidth = roadWidth;
+            roadRenderer.endWidth = roadWidth;
             roadRenderer.numCornerVertices = 90;
             roadRenderer.numCapVertices = 90;
             roadRenderer.textureMode = LineTextureMode.Tile;
