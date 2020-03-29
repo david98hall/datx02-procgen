@@ -48,7 +48,7 @@ namespace Cities.Testing
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
-            _cityGenerator.PlotStrategy = new Factory(_cityGenerator).CreateSampleStrategy();
+            _cityGenerator.PlotStrategy = new Factory(_cityGenerator).CreateSortingStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
 

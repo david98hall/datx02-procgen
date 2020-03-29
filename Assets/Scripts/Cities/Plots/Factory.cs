@@ -15,10 +15,10 @@ namespace Cities.Plots
         {
             _roadNetworkInjector = roadNetworkInjector;
         }
-
-        internal IGenerator<IEnumerable<Plot>> CreateSampleStrategy()
+        
+        internal IGenerator<IEnumerable<Plot>> CreateSortingStrategy()
         {
-            return new SampleStrategy(_roadNetworkInjector);
+            return new SortingStrategy(_roadNetworkInjector);
         }
     }
 }

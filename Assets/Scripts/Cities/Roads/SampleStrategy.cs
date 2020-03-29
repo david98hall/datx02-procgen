@@ -17,58 +17,45 @@ namespace Cities.Roads
         {
             var roadNetwork = new RoadNetwork();
             
-            const float offset1 = 0;
-            const float size = 5;
+            const float size = 5f;
+            const float radius = size * 1.5f;
 
-            /*
-            var road1 = new LinkedList<Vector3>();
-            road1.AddLast(new Vector3(offset1, 0, offset1 + 1));
-            road1.AddLast(new Vector3(offset1 + size, 0, offset1 + 1));
-            roadNetwork.AddRoad(road1);
+            var circleRoad = new LinkedList<Vector3>();
+            for (var i = 0f; i < 2 * Math.PI; i += 0.1f)
+            {
+                var x = (float) (radius * Math.Cos(i));
+                var z = (float) (radius * Math.Sin(i));
+                circleRoad.AddLast(new Vector3(x, 0, z));
+            }
+            circleRoad.AddLast(new Vector3(radius, 0, 0));
+            roadNetwork.AddRoad(circleRoad);
             
-            var road2 = new LinkedList<Vector3>();
-            road2.AddLast(new Vector3(offset1 + 1, 0, offset1));
-            road2.AddLast(new Vector3(offset1 + 1, 0, offset1 + 2));
-            roadNetwork.AddRoad(road2);
-
-            var road3 = new LinkedList<Vector3>();
-            road3.AddLast(new Vector3(offset1 + 4, 0, offset1 + 2));
-            road3.AddLast(new Vector3(offset1 + 3, 1, offset1 + 1));
-            road3.AddLast(new Vector3(offset1 + 2, 0, offset1));
-            roadNetwork.AddRoad(road3);
-
-            var road4 = new LinkedList<Vector3>();
-            road4.AddLast(new Vector3(offset1 + 7, 0, offset1 + 2));
-            road4.AddLast(new Vector3(offset1 + 6, 1, offset1 + 1));
-            road4.AddLast(new Vector3(offset1 + 5, 0, offset1));
-            roadNetwork.AddRoad(road4);
-            */
-
-            var road1 = new LinkedList<Vector3>();
-            road1.AddLast(new Vector3(offset1, 0, offset1));
-            road1.AddLast(new Vector3(offset1, 0, offset1 + size));
-            road1.AddLast(new Vector3(offset1 + size, 0, offset1 + size));
-            road1.AddLast(new Vector3(offset1 + size, 0, offset1));
-            road1.AddLast(new Vector3(offset1, 0, offset1));
-            roadNetwork.AddRoad(road1);
+            const float offset1 = -size / 2;
+            var squareRoad = new LinkedList<Vector3>();
+            squareRoad.AddLast(new Vector3(offset1, 0, offset1));
+            squareRoad.AddLast(new Vector3(offset1, 0, offset1 + size));
+            squareRoad.AddLast(new Vector3(offset1 + size, 0, offset1 + size));
+            squareRoad.AddLast(new Vector3(offset1 + size, 0, offset1));
+            squareRoad.AddLast(new Vector3(offset1, 0, offset1));
+            roadNetwork.AddRoad(squareRoad);
             
-            var road2 = new LinkedList<Vector3>();
-            road2.AddLast(new Vector3(offset1, 0, offset1 + size));
-            road2.AddLast(new Vector3(offset1 + size / 2, 2, offset1 + size / 2));
-            road2.AddLast(new Vector3(offset1 + size, 0, offset1));
-            roadNetwork.AddRoad(road2);
+            var diagonalRoad1 = new LinkedList<Vector3>();
+            diagonalRoad1.AddLast(new Vector3(offset1, 0, offset1 + size));
+            diagonalRoad1.AddLast(new Vector3(offset1 + size / 2, 2, offset1 + size / 2));
+            diagonalRoad1.AddLast(new Vector3(offset1 + size, 0, offset1));
+            roadNetwork.AddRoad(diagonalRoad1);
             
-            var road3 = new LinkedList<Vector3>();
-            road3.AddLast(new Vector3(offset1, 0, offset1));
-            road3.AddLast(new Vector3(offset1 + size / 2, 2, offset1 + size / 2));
-            road3.AddLast(new Vector3(offset1 + size, 0, offset1 + size));
-            roadNetwork.AddRoad(road3);
+            var diagonalRoad2 = new LinkedList<Vector3>();
+            diagonalRoad2.AddLast(new Vector3(offset1, 0, offset1));
+            diagonalRoad2.AddLast(new Vector3(offset1 + size / 2, 2, offset1 + size / 2));
+            diagonalRoad2.AddLast(new Vector3(offset1 + size, 0, offset1 + size));
+            roadNetwork.AddRoad(diagonalRoad2);
 
-            var road4 = new LinkedList<Vector3>();
-            road4.AddLast(new Vector3(offset1, 0, offset1 + size / 4));
-            road4.AddLast(new Vector3(offset1 + size, 0, offset1 + size / 4));
-            roadNetwork.AddRoad(road4);
-            
+            var straightRoad = new LinkedList<Vector3>();
+            straightRoad.AddLast(new Vector3(offset1, 0, offset1 + size / 4));
+            straightRoad.AddLast(new Vector3(offset1 + size, 0, offset1 + size / 4));
+            roadNetwork.AddRoad(straightRoad);
+
             return roadNetwork;
         }
     }

@@ -8,15 +8,21 @@ using UnityEngine;
 
 namespace Cities.Plots
 {
-    internal class SampleStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
+    /// <summary>
+    /// Generates plots based on a road network by sorting enclosed plots by their vertex counts and then extracts
+    /// them in order until all plots are found.
+    /// </summary>
+    internal class SortingStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
     {
 
-        public SampleStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
+        public SortingStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
         {
         }
         
         public override IEnumerable<Plot> Generate()
         {
+            // TODO Generate plots along roads, i.e., where there are no existing polygons
+            
             return GetPolygons()
                 .Where(p => p.Count > 2)
                 .Select(polygon => new Plot(polygon));
@@ -54,7 +60,7 @@ namespace Cities.Plots
             var resultingPolygons = new List<IReadOnlyCollection<Vector3>>(numberOfPolygons);
             foreach (var polygon in allPolygons)
             {
-                if (resultingPolygons.Count == numberOfPolygons)
+                if (resultingPolygons.Count == numberOfPolygons) // TODO This check is not enough!
                     break;
                 
                 if (!resultingPolygons.Any(polygon.ContainsAll))
