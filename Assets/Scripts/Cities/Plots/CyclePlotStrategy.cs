@@ -70,7 +70,7 @@ namespace Cities.Plots
             allCycles.Sort((cycle1, cycle2) => 
                 cycle1.Count < cycle2.Count ? -1 : cycle1.Count > cycle2.Count ? 1 : 0);
 
-            // Filter away any bigger cycles that
+            // Filter away any bigger cycles that overlap smaller ones
             Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
             var resultingCycles = new LinkedList<IReadOnlyCollection<Vector3>>();
             foreach (var cycle in allCycles)
