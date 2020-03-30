@@ -128,7 +128,7 @@ namespace Cities.Plots
                 startVertex,
                 startVertex,
                 new HashSet<(Vector3 Start, Vector3 End)>());
-            return cycles != null;
+            return cycles.Any();
         }
         
         /// <summary>
@@ -138,7 +138,7 @@ namespace Cities.Plots
         /// <param name="startVertex">The vertex the search started.</param>
         /// <param name="currentVertex">The vertex that the search has reached.</param>
         /// <param name="visitedEdges">All visited edges so far during the search in the road network.</param>
-        /// <returns>All cycles found in the road network; if none: null.</returns>
+        /// <returns>All cycles found in the road network.</returns>
         private static IReadOnlyCollection<IReadOnlyCollection<Vector3>> GetCycles(
             RoadNetwork roadNetwork,
             Vector3 startVertex,
@@ -168,7 +168,7 @@ namespace Cities.Plots
                 // Get all (potential) cycles, searching from the current neighbour
                 var pathExtensions = GetCycles(
                     roadNetwork, startVertex, neighbour, localVisitedEdges);
-                if (pathExtensions == null)
+                if (!pathExtensions.Any())
                     continue;
                 
                 // Traverse any found cycles found when searching from the current neighbour
@@ -185,13 +185,16 @@ namespace Cities.Plots
                 }
             }
 
+            /*
             if (!cycles.Any()) return null;
             
             // If any cycles were found, sort them by their vertex count
             cycles.Sort((extension1, extension2) => 
                 extension1.Count < extension2.Count ? -1 : extension1.Count > extension2.Count ? 1 : 0);
             return cycles;
-
+            */
+            
+            return cycles;
         }
 
     }
