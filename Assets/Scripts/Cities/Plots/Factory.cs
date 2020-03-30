@@ -18,7 +18,7 @@ namespace Cities.Plots
         
         internal IGenerator<IEnumerable<Plot>> CreateSortingStrategy()
         {
-            return new SortingStrategy(_roadNetworkInjector);
+            return new CyclePlotStrategy(_roadNetworkInjector);
         }
     }
 }
