@@ -126,13 +126,13 @@ namespace Utils.Geometry
         /// <returns>true if the given vertex is inside.</returns>
         public static bool IsInsidePolygon(Vector2 vertex, IReadOnlyCollection<Vector2> vertices)
         {
-            if (vertices.Contains(vertex))
-                return true;
-
             // There must be at least 3 vertices in the body's shape
             if (vertices.Count < 3)
                 return false;
 
+            if (vertices.Contains(vertex))
+                return true;
+            
             // Ray casting:
             
             // Create a ray going through the vertex
