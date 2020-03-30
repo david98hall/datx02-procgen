@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Cities.Roads;
 using Extensions;
 using Interfaces;
 using UnityEngine;
+using Utils.Geometry;
 
 namespace Cities.Plots
 {
@@ -33,8 +35,7 @@ namespace Cities.Plots
         {
             var roadNetwork = Injector.Get().GetXZProjection().GetAsUndirected();
 
-            var numberOfPolygons = roadNetwork.VertexCount - 2;
-            if (numberOfPolygons < 1) 
+            if (roadNetwork.VertexCount - 2 < 1) 
                 return new List<IReadOnlyCollection<Vector3>>();
             
             var polygonTasks = new Task[roadNetwork.VertexCount];
@@ -57,19 +58,40 @@ namespace Cities.Plots
             allPolygons.Sort((polygon1, polygon2) => 
                 polygon1.Count < polygon2.Count ? -1 : polygon1.Count > polygon2.Count ? 1 : 0);
 
-            var resultingPolygons = new List<IReadOnlyCollection<Vector3>>(numberOfPolygons);
+            Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
+            
+            var resultingPolygons = new LinkedList<IReadOnlyCollection<Vector3>>();
             foreach (var polygon in allPolygons)
             {
-                if (resultingPolygons.Count == numberOfPolygons) // TODO This check is not enough!
-                    break;
-                
-                if (!resultingPolygons.Any(polygon.ContainsAll))
-                    resultingPolygons.Add(polygon);
+                var traceCenters = Maths2D.GetRayCastPolygonCenters(polygon.Select(Vec3ToVec2), 1f);
+                var isOverlapping = resultingPolygons.Any(resultingPolygon =>
+                {
+                    foreach (var centerPoint in traceCenters)
+                    {
+                        Debug.Log(centerPoint);
+                        if (Maths2D.IsInsidePolygon(centerPoint, resultingPolygon.Select(Vec3ToVec2)))
+                            return true;
+                    }
+
+                    return false;
+                });
+
+                if (!isOverlapping && !resultingPolygons.Any(polygon.ContainsAll))
+                    resultingPolygons.AddLast(polygon);
             }
             
             return resultingPolygons; 
         }
 
+        private static IEnumerable<(Vector2 Start, Vector2 End)> GetPolygonEdgesXz(IReadOnlyCollection<Vector3> polygon)
+        {
+            var polygonsCopy = new LinkedList<Vector3>(polygon);
+            var first = polygonsCopy.First.Value;
+            polygonsCopy.RemoveFirst();
+            polygonsCopy.AddLast(first);
+            return polygon.Zip(polygonsCopy, (v1, v2) => (new Vector2(v1.x, v1.z), new Vector2(v2.x, v2.z)));
+        }
+        
         private static IEnumerable<(Vector3 Start, Vector3 End)> GetPolygonEdges(IReadOnlyCollection<Vector3> polygon)
         {
             var polygonsCopy = new LinkedList<Vector3>(polygon);

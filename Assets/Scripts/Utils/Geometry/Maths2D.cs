@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -117,49 +118,108 @@ namespace Utils.Geometry
 
             return (minX, minY, maxX, maxY);
         }
-        
+
+        public static Vector2 GetCenterPoint(IEnumerable<Vector2> vertices)
+        {
+            var (minX, minY, maxX, maxY) = GetExtremeBounds(vertices);
+            return new Vector2(minX, minY) + new Vector2(maxX - minX, maxY - minY) / 2;
+        }
+
         /// <summary>
         /// Returns true if the given vertex is inside the polygon represented by the given vertices.
         /// </summary>
         /// <param name="vertex">The vertex to check if it is inside of the polygon.</param>
         /// <param name="vertices">The vertices of the polygon.</param>
         /// <returns>true if the given vertex is inside.</returns>
-        public static bool IsInsidePolygon(Vector2 vertex, IReadOnlyCollection<Vector2> vertices)
+        public static bool IsInsidePolygon(Vector2 vertex, IEnumerable<Vector2> vertices)
         {
-            // There must be at least 3 vertices in the body's shape
-            if (vertices.Count < 3)
-                return false;
-
-            if (vertices.Contains(vertex))
+            var verticesList = vertices.ToList();
+            
+            if (verticesList.Contains(vertex))
                 return true;
             
-            // Ray casting:
-            
-            // Create a ray going through the vertex
-            var rayEnd = new Vector2(float.MaxValue, vertex.y);
+            // There must be at least 3 vertices in the body's shape.
+            // For the vertex to be inside the polygon, it can't be outside its extreme bounds.
+            var extremeBounds = GetExtremeBounds(verticesList);
+            if (verticesList.Count < 3 && !IsInsideExtremeBounds(vertex, extremeBounds))
+                return false;
 
-            // Count intersections of the above line with sides of polygon 
-            var rayIntersectionCount = 0;
+            // Return true if the ray cast intersection count is odd, false otherwise
+            var rayCastIntersection = RayCastIntersections(
+                vertex,
+                new Vector2(extremeBounds.MaxX, vertex.y), 
+                verticesList);
+            return rayCastIntersection.Count() % 2 == 1;
+        }
+
+        private static IEnumerable<Vector2> RayCastIntersections(Vector2 rayStart, Vector2 rayEnd, IEnumerable<Vector2> vertices)
+        {
+            var intersections = new LinkedList<Vector2>();
+
             var vertexEnumerator = vertices.GetEnumerator();
             vertexEnumerator.MoveNext();
             var first = vertexEnumerator.Current;
             var segmentStart = first;
+
+            void AddIfIntersection(Vector2 segmentEnd)
+            {
+                Vector3 Vec2ToVec3(Vector2 v) => new Vector3(v.x, 0, v.y);
+                Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
+
+                if (Maths3D.LineSegmentIntersection(
+                    out var intersection,
+                    Vec2ToVec3(rayStart), Vec2ToVec3(rayEnd), 
+                    Vec2ToVec3(segmentStart), Vec2ToVec3(segmentEnd)))
+                {
+                    intersections.AddLast(Vec3ToVec2(intersection));
+                }
+            }
+            
             while (vertexEnumerator.MoveNext())
             {
-                if (LineSegmentsIntersect(vertex, rayEnd, segmentStart, vertexEnumerator.Current, true))
-                    rayIntersectionCount++;
-
+                AddIfIntersection(vertexEnumerator.Current);
                 segmentStart = vertexEnumerator.Current;
             }
             vertexEnumerator.Dispose();
-            
-            if (LineSegmentsIntersect(vertex, rayEnd, segmentStart, first, true))
-                rayIntersectionCount++;
+            AddIfIntersection(first);
 
-            // Return true if count is odd, false otherwise
-            return rayIntersectionCount % 2 == 1;
+            return intersections;
         }
+        
+        public static IEnumerable<Vector2> GetRayCastPolygonCenters(IEnumerable<Vector2> polygonVertices, float step)
+        {
+            if (step <= 0)
+                throw new ArgumentException("The step argument has to larger than zero!");
 
+            var traceCenters = new LinkedList<Vector2>();
+            
+            var vertices = polygonVertices.ToList();
+            var (minX, minY, maxX, maxY) = GetExtremeBounds(vertices);
+            for (var y = minY; y <= maxY; y += step)
+            {
+                var rayStart = new Vector2(minX, y);
+                var rayEnd = new Vector2(maxX, y);
+
+                var intersections = 
+                    RayCastIntersections(rayStart, rayEnd,vertices).GetEnumerator();
+
+                if (!intersections.MoveNext())
+                    continue;
+
+                var intersectionStart = intersections.Current;
+                
+                while (intersections.MoveNext())
+                {
+                    traceCenters.AddLast(intersectionStart + (intersections.Current - intersectionStart) / 2);
+                    intersectionStart = intersections.Current;
+                }
+                intersections.Dispose();
+                
+            }
+
+            return traceCenters;
+        }
+        
         #endregion
         
     }
