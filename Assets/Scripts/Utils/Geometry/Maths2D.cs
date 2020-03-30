@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Extensions;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Utils.Geometry
@@ -56,7 +55,8 @@ namespace Utils.Geometry
                 : (0 < r && r < 1) && (0 < s && s < 1);
         }
 
-        public static bool LineSegmentIntersection(
+        // TODO Not 100% that this works. Make it public if you're sure.
+        private static bool LineSegmentIntersection(
             out Vector2 intersection, Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2)
         {
             var dirVec1 = end1 - start1;
@@ -118,12 +118,19 @@ namespace Utils.Geometry
             return (minX, minY, maxX, maxY);
         }
         
+        /// <summary>
+        /// Returns true if the given vertex is inside the polygon represented by the given vertices.
+        /// </summary>
+        /// <param name="vertex">The vertex to check if it is inside of the polygon.</param>
+        /// <param name="vertices">The vertices of the polygon.</param>
+        /// <returns>true if the given vertex is inside.</returns>
         public static bool IsInsidePolygon(Vector2 vertex, IReadOnlyCollection<Vector2> vertices)
         {
-            var extremeBounds = GetExtremeBounds(vertices);
-            
+            if (vertices.Contains(vertex))
+                return true;
+
             // There must be at least 3 vertices in the body's shape
-            if (vertices.Count < 3 || !IsInsideExtremeBounds(vertex, extremeBounds))
+            if (vertices.Count < 3)
                 return false;
 
             // Ray casting:
@@ -136,25 +143,19 @@ namespace Utils.Geometry
             var vertexEnumerator = vertices.GetEnumerator();
             vertexEnumerator.MoveNext();
             var first = vertexEnumerator.Current;
-            var current = first;
+            var segmentStart = first;
             while (vertexEnumerator.MoveNext())
             {
-                var next = vertexEnumerator.Current;
-
-                Debug.Log((current, next));
-                
-                if (LineSegmentsIntersect(vertex, rayEnd, current, next, true))
+                if (LineSegmentsIntersect(vertex, rayEnd, segmentStart, vertexEnumerator.Current, true))
                     rayIntersectionCount++;
 
-                current = next;
+                segmentStart = vertexEnumerator.Current;
             }
             vertexEnumerator.Dispose();
             
-            if (Maths3D.LineSegmentIntersection(out _, vertex, rayEnd, current, first))
+            if (LineSegmentsIntersect(vertex, rayEnd, segmentStart, first, true))
                 rayIntersectionCount++;
-            
-            Debug.Log(rayIntersectionCount);
-            
+
             // Return true if count is odd, false otherwise
             return rayIntersectionCount % 2 == 1;
         }
