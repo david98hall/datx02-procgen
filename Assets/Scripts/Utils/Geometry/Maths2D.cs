@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Extensions;
 using UnityEngine;
 
@@ -24,33 +25,35 @@ namespace Utils.Geometry
 
         public static bool PointInTriangle(Vector2 a, Vector2 b, Vector2 c, Vector2 p)
         {
-            float area = 0.5f * (-b.y * c.x + a.y * (-b.x + c.x) + a.x * (b.y - c.y) + b.x * c.y);
-            float s = 1 / (2 * area) * (a.y * c.x - a.x * c.y + (c.y - a.y) * p.x + (a.x - c.x) * p.y);
-            float t = 1 / (2 * area) * (a.x * b.y - a.y * b.x + (a.y - b.y) * p.x + (b.x - a.x) * p.y);
+            var area = 0.5f * (-b.y * c.x + a.y * (-b.x + c.x) + a.x * (b.y - c.y) + b.x * c.y);
+            var s = 1 / (2 * area) * (a.y * c.x - a.x * c.y + (c.y - a.y) * p.x + (a.x - c.x) * p.y);
+            var t = 1 / (2 * area) * (a.x * b.y - a.y * b.x + (a.y - b.y) * p.x + (b.x - a.x) * p.y);
             return s >= 0 && t >= 0 && (s + t) <= 1;
 
         }
 
-        public static bool LineSegmentsIntersect(Vector2 a, Vector2 b, Vector2 c, Vector2 d)
+        public static bool LineSegmentsIntersect(Vector2 a, Vector2 b, Vector2 c, Vector2 d, bool considerSegmentExtremes = false)
         {
-            float denominator = ((b.x - a.x) * (d.y - c.y)) - ((b.y - a.y) * (d.x - c.x));
+            var denominator = ((b.x - a.x) * (d.y - c.y)) - ((b.y - a.y) * (d.x - c.x));
             if (Mathf.Approximately(denominator, 0))
             {
                 return false;
             }
 
-            float numerator1 = ((a.y - c.y) * (d.x - c.x)) - ((a.x - c.x) * (d.y - c.y));
-            float numerator2 = ((a.y - c.y) * (b.x - a.x)) - ((a.x - c.x) * (b.y - a.y));
+            var numerator1 = ((a.y - c.y) * (d.x - c.x)) - ((a.x - c.x) * (d.y - c.y));
+            var numerator2 = ((a.y - c.y) * (b.x - a.x)) - ((a.x - c.x) * (b.y - a.y));
 
             if (Mathf.Approximately(numerator1, 0) || Mathf.Approximately(numerator2, 0))
             {
                 return false;
             }
 
-            float r = numerator1 / denominator;
-            float s = numerator2 / denominator;
+            var r = numerator1 / denominator;
+            var s = numerator2 / denominator;
 
-            return (r > 0 && r < 1) && (s > 0 && s < 1);
+            return considerSegmentExtremes 
+                ? (0 <= r && r <= 1) && (0 <= s && s <= 1)
+                : (0 < r && r < 1) && (0 < s && s < 1);
         }
 
         public static bool LineSegmentIntersection(
@@ -77,34 +80,86 @@ namespace Utils.Geometry
             return false;
         }
 
-        /// <summary>
-        /// Returns the angle in degrees between the two points.
-        /// The angle is always zero if the points are on the same x or y level.
-        /// </summary>
-        /// <param name="point1">The first point.</param>
-        /// <param name="point2">The second point.</param>
-        /// <returns>The angle in degrees between the two points</returns>
-        public static float GetDegreesBetween(Vector2 point1, Vector2 point2)
+        #region Polygon
+
+        public static bool IsInsideExtremeBounds(Vector2 vertex, IEnumerable<Vector2> vertices)
         {
-            return (float) (GetRadiansBetween(point1, point2) * 180 / Math.PI);
+            return IsInsideExtremeBounds(vertex, GetExtremeBounds(vertices));
+        }
+
+        public static bool IsInsideExtremeBounds(
+            Vector2 vertex, (float MinX, float MinY, float MaxX, float MaxY) extremeBounds)
+        {
+            var (minX, minY, maxX, maxY) = extremeBounds;
+            var inHorizontalBounds = minX <= vertex.x && vertex.x <= maxX;
+            var inVerticalBounds = minY <= vertex.y && vertex.y <= maxY;
+            return inHorizontalBounds && inVerticalBounds;
         }
         
-        /// <summary>
-        /// Returns the angle in radians between the two points.
-        /// The angle is always zero if the points are on the same x or y level.
-        /// </summary>
-        /// <param name="point1">The first point.</param>
-        /// <param name="point2">The second point.</param>
-        /// <returns>The angle in radians between the two points</returns>
-        public static float GetRadiansBetween(Vector2 point1, Vector2 point2)
+        public static (float MinX, float MinY, float MaxX, float MaxY) GetExtremeBounds(IEnumerable<Vector2> vertices)
         {
-            var deltaX = point2.x - point1.x;
+            var minX = float.MaxValue;
+            var minY = float.MaxValue;
+            var maxX = float.MinValue;
+            var maxY = float.MinValue;
+            foreach (var polygonVertex in vertices)
+            {
+                if (polygonVertex.x < minX)
+                    minX = polygonVertex.x;
+                else if (polygonVertex.x > maxX)
+                    maxX = polygonVertex.x;
+                
+                if (polygonVertex.y < minY)
+                    minY = polygonVertex.y;
+                else if (polygonVertex.y > maxY)
+                    maxY = polygonVertex.y;
+            }
 
-            if (deltaX == 0)
-                return 0;
+            return (minX, minY, maxX, maxY);
+        }
+        
+        public static bool IsInsidePolygon(Vector2 vertex, IReadOnlyCollection<Vector2> vertices)
+        {
+            var extremeBounds = GetExtremeBounds(vertices);
             
-            return (float) Math.Atan((point2.y - point1.y) / deltaX);
+            // There must be at least 3 vertices in the body's shape
+            if (vertices.Count < 3 || !IsInsideExtremeBounds(vertex, extremeBounds))
+                return false;
+
+            // Ray casting:
+            
+            // Create a ray going through the vertex
+            var rayEnd = new Vector2(float.MaxValue, vertex.y);
+
+            // Count intersections of the above line with sides of polygon 
+            var rayIntersectionCount = 0;
+            var vertexEnumerator = vertices.GetEnumerator();
+            vertexEnumerator.MoveNext();
+            var first = vertexEnumerator.Current;
+            var current = first;
+            while (vertexEnumerator.MoveNext())
+            {
+                var next = vertexEnumerator.Current;
+
+                Debug.Log((current, next));
+                
+                if (LineSegmentsIntersect(vertex, rayEnd, current, next, true))
+                    rayIntersectionCount++;
+
+                current = next;
+            }
+            vertexEnumerator.Dispose();
+            
+            if (Maths3D.LineSegmentIntersection(out _, vertex, rayEnd, current, first))
+                rayIntersectionCount++;
+            
+            Debug.Log(rayIntersectionCount);
+            
+            // Return true if count is odd, false otherwise
+            return rayIntersectionCount % 2 == 1;
         }
 
+        #endregion
+        
     }
 }
