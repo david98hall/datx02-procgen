@@ -8,7 +8,6 @@ namespace Utils
     public static class TerrainUtil
     {
         
-        
         public static Mesh Mesh(float[,] heightMap, float scale)
         {
             var width = heightMap.GetLength(0);
@@ -77,35 +76,6 @@ namespace Utils
         {
             return HeightMap(width, depth, (x, z) =>
                 1 - Math.Max(Math.Abs(2 * (float) x / width - 1), Math.Abs(2 * (float) z / depth - 1)));
-        }
-        
-        public class HeightMapInjector : IInjector<float[,]>
-        {
-            public enum MapType
-            {
-                Flat, 
-                Slope,
-                Pyramid
-            }
-            
-            public MapType Type { get; set; }
-            public int Width { get; set; }
-            public int Depth { get; set; }
-
-            public float[,] Get()
-            {
-                switch (Type)
-                {
-                    case MapType.Flat:
-                        return Flat(Width, Depth);
-                    case MapType.Slope:
-                        return Slope(Width, Depth);
-                    case MapType.Pyramid:
-                        return Pyramid(Width, Depth);
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            }
         }
     }
 }
