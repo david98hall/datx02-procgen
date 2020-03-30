@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace Cities.Roads
 {
+    /// <summary>
+    /// A RoadNetwork strategy for testing.
+    /// </summary>
     internal class SampleStrategy : Strategy<float[,], RoadNetwork>
     {
         

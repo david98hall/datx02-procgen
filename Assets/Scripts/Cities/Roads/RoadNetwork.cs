@@ -39,6 +39,10 @@ namespace Cities.Roads
             _roadNetwork = new Dictionary<Vector3, ICollection<Vector3>>();
         }
 
+        /// <summary>
+        /// Makes this a clone of the given road network.
+        /// </summary>
+        /// <param name="roadNetwork">The road network to clone.</param>
         public RoadNetwork(RoadNetwork roadNetwork) : this(roadNetwork._roadNetwork)
         {
         }

@@ -7,9 +7,7 @@ using Cities.Roads;
 using Interfaces;
 using UnityEngine;
 using Utils;
-using Utils.Dispatching;
 using Factory = Cities.Plots.Factory;
-using SampleStrategy = Cities.Roads.SampleStrategy;
 
 namespace Cities.Testing
 {
@@ -48,7 +46,7 @@ namespace Cities.Testing
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
-            _cityGenerator.PlotStrategy = new Factory(_cityGenerator).CreateSortingStrategy();
+            _cityGenerator.PlotStrategy = new Factory(_cityGenerator).CreateCycleStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
 

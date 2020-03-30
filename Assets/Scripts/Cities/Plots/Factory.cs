@@ -11,14 +11,18 @@ namespace Cities.Plots
     {
         private readonly IInjector<RoadNetwork> _roadNetworkInjector;
         
+        /// <summary>
+        /// Initializes this factory with a RoadNetwork injector.
+        /// </summary>
+        /// <param name="roadNetworkInjector">The RoadNetwork injector.</param>
         public Factory(IInjector<RoadNetwork> roadNetworkInjector)
         {
             _roadNetworkInjector = roadNetworkInjector;
         }
         
-        internal IGenerator<IEnumerable<Plot>> CreateSortingStrategy()
+        internal IGenerator<IEnumerable<Plot>> CreateCycleStrategy()
         {
-            return new CyclePlotStrategy(_roadNetworkInjector);
+            return new CycleStrategy(_roadNetworkInjector);
         }
     }
 }
