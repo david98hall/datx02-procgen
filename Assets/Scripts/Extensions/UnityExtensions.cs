@@ -40,6 +40,30 @@ namespace Extensions
                    && Math.Abs(v1.y - v2.y) <= tolerance
                    && Math.Abs(v1.z - v2.z) <= tolerance;
         }
-        
+
+        /// <summary>
+        /// Creates and returns the underlying height map from a 3D mesh
+        /// </summary>
+        /// <param name="mesh">The given mesh</param>
+        /// <returns>A height map of the mesh</returns>
+        public static float[,] HeightMap(this Mesh mesh)
+        {
+            var xMax = 0;
+            var zMax = 0;
+
+            foreach (var vertex in mesh.vertices)
+            {
+                if (vertex.x > xMax) xMax = (int) vertex.x;
+                if (vertex.z > zMax) zMax = (int) vertex.z;
+            }
+
+            var heightMap = new float[xMax + 1, zMax + 1];
+            foreach (var vertex in mesh.vertices)
+            {
+                heightMap[(int) vertex.x, (int) vertex.z] = vertex.y;
+            }
+
+            return heightMap;
+        }
     }
 }
