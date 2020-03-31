@@ -68,7 +68,6 @@ namespace Cities.Roads
         /// </summary>
         public void Rewrite()
         {
-            var noiseMap = _noiseMapInjector.Get();
             System.Random rdm = new System.Random();
             StringBuilder newTree = new StringBuilder();
             foreach (char c in tree.ToString())
