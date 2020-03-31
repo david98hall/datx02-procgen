@@ -14,7 +14,7 @@ namespace Cities.Testing
 
             if (GUILayout.Button("Generate City"))
             {
-                cityObject.GenerateCityAsync();
+                cityObject.GenerateCity();
             }
             
             if (GUILayout.Button("Clear"))
