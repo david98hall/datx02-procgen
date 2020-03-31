@@ -1,6 +1,6 @@
-﻿﻿using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Extensions
 {
@@ -9,6 +9,19 @@ namespace Extensions
     /// </summary>
     public static class CollectionExtensions   
     {
+
+        /// <summary>
+        /// Checks if the source contains each item at least once.
+        /// </summary>
+        /// <param name="source">The source to check.</param>
+        /// <param name="items">The items to check for.</param>
+        /// <typeparam name="T">The item type.</typeparam>
+        /// <returns>true if each item is contains at least once in the source.</returns>
+        public static bool ContainsAll<T>(this IEnumerable<T> source, IEnumerable<T> items)
+        {
+            var sourceList = source.ToList();
+            return items.All(item => sourceList.Contains(item));
+        }
         
         /// <summary>
         /// Appends elements to the end of the collection.
