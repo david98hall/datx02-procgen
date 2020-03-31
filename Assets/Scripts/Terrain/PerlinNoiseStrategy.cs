@@ -15,7 +15,7 @@ namespace Terrain
         internal float Lacunarity { get; set; }
         internal Vector2 NoiseOffset { get; set; }
 
-        private Vector2[] randomOffset() {
+        private Vector2[] RandomOffset() {
             var random = new System.Random(Seed); // Pseudo random
 
             var octaveOffsets = new Vector2[NumOctaves];
@@ -39,7 +39,7 @@ namespace Terrain
 
             // We want to be able to generate different types of noise so we 
             // offset the input to Mathf.PerlinNoise using octaveOffsets
-            var octaveOffsets = randomOffset();
+            var octaveOffsets = RandomOffset();
 
             var maxNoiseHeight = float.MinValue;
             var minNoiseHeight = float.MaxValue;
