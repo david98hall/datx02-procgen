@@ -20,31 +20,14 @@ namespace Cities.Roads
             _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
         }
 
-        public IGenerator<RoadNetwork> CreateAStarStrategy()
-        {
-            return new AStarStrategy(_terrainMeshNoiseMapInjector);
-        }
-        
-        public IGenerator<RoadNetwork> CreateAgentStrategy()
-        {
-            // TODO
-            throw new NotImplementedException();
-        }        
-        
-        public IGenerator<RoadNetwork> CreateLSystemStrategy()
-        {
-            // TODO
-            throw new NotImplementedException();
-        }
+        public IGenerator<RoadNetwork> CreateAStarStrategy() => new AStarStrategy(_terrainMeshNoiseMapInjector);
+
+        public IGenerator<RoadNetwork> CreateLSystemStrategy() => new LSystemStrategy(_terrainMeshNoiseMapInjector);
 
         /// <summary>
         /// Creates a sample strategy for testing.
         /// </summary>
         /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy()
-        {
-            return new SampleStrategy(_terrainMeshNoiseMapInjector);
-        }
-
+        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshNoiseMapInjector);
     }
 }

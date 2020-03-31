@@ -1,5 +1,4 @@
 ﻿using Interfaces;
-using Terrain.Textures;
 using UnityEngine;
 
 namespace Terrain
