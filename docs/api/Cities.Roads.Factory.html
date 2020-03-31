@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CityGenerator
+    <title>Class Factory
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CityGenerator
+    <meta name="title" content="Class Factory
    ">
     <meta name="generator" content="docfx 2.50.0.0">
     
@@ -68,23 +68,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Cities.CityGenerator">
+            <article class="content wrap" id="_content" data-uid="Cities.Roads.Factory">
   
   
-  <h1 id="Cities_CityGenerator" data-uid="Cities.CityGenerator" class="text-break">Class CityGenerator
+  <h1 id="Cities_Roads_Factory" data-uid="Cities.Roads.Factory" class="text-break">Class Factory
   </h1>
-  <div class="markdown level0 summary"><p>Generates cities.</p>
+  <div class="markdown level0 summary"><p>Creates strategies for generating road networks.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">CityGenerator</span></div>
-  </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="Cities.City.html">City</a>&gt;</div>
-    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level1"><span class="xref">Factory</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -110,79 +105,66 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Cities.html">Cities</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cities.Roads.html">Cities.Roads</a></h6>
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
-  <h5 id="Cities_CityGenerator_syntax">Syntax</h5>
+  <h5 id="Cities_Roads_Factory_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CityGenerator : IGenerator&lt;City&gt;, IInjector&lt;RoadNetwork&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class Factory</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_CityGenerator__ctor.md&amp;value=---%0Auid%3A%20Cities.CityGenerator.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory__ctor_Interfaces_IInjector_System_Single_0__0____.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory.%23ctor(Interfaces.IInjector%7BSystem.Single%5B0%3A%2C0%3A%5D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/CityGenerator.cs/#L35">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L18">View Source</a>
   </span>
-  <a id="Cities_CityGenerator__ctor_" data-uid="Cities.CityGenerator.#ctor*"></a>
-  <h4 id="Cities_CityGenerator__ctor" data-uid="Cities.CityGenerator.#ctor">CityGenerator()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CityGenerator()</code></pre>
-  </div>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_CityGenerator_PlotStrategy.md&amp;value=---%0Auid%3A%20Cities.CityGenerator.PlotStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/CityGenerator.cs/#L28">View Source</a>
-  </span>
-  <a id="Cities_CityGenerator_PlotStrategy_" data-uid="Cities.CityGenerator.PlotStrategy*"></a>
-  <h4 id="Cities_CityGenerator_PlotStrategy" data-uid="Cities.CityGenerator.PlotStrategy">PlotStrategy</h4>
-  <div class="markdown level1 summary"><p>The strategy for generating city plots.</p>
+  <a id="Cities_Roads_Factory__ctor_" data-uid="Cities.Roads.Factory.#ctor*"></a>
+  <h4 id="Cities_Roads_Factory__ctor_Interfaces_IInjector_System_Single_0__0____" data-uid="Cities.Roads.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})">Factory(IInjector&lt;Single[,]&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes this factory with a noise map injector.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IGenerator&lt;IEnumerable&lt;Plot&gt;&gt; PlotStrategy { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Factory(IInjector&lt;float[, ]&gt; terrainMeshNoiseMapInjector)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</td>
-        <td></td>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
+        <td><span class="parametername">terrainMeshNoiseMapInjector</span></td>
+        <td><p>The noise map injector.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_CityGenerator_RoadNetworkStrategy.md&amp;value=---%0Auid%3A%20Cities.CityGenerator.RoadNetworkStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory_CreateAgentStrategy.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory.CreateAgentStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/CityGenerator.cs/#L17">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L28">View Source</a>
   </span>
-  <a id="Cities_CityGenerator_RoadNetworkStrategy_" data-uid="Cities.CityGenerator.RoadNetworkStrategy*"></a>
-  <h4 id="Cities_CityGenerator_RoadNetworkStrategy" data-uid="Cities.CityGenerator.RoadNetworkStrategy">RoadNetworkStrategy</h4>
-  <div class="markdown level1 summary"><p>The strategy for generating road networks.</p>
-</div>
+  <a id="Cities_Roads_Factory_CreateAgentStrategy_" data-uid="Cities.Roads.Factory.CreateAgentStrategy*"></a>
+  <h4 id="Cities_Roads_Factory_CreateAgentStrategy" data-uid="Cities.Roads.Factory.CreateAgentStrategy">CreateAgentStrategy()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IGenerator&lt;RoadNetwork&gt; RoadNetworkStrategy { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;RoadNetwork&gt; CreateAgentStrategy()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -197,22 +179,20 @@
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_CityGenerator_Generate.md&amp;value=---%0Auid%3A%20Cities.CityGenerator.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory_CreateAStarStrategy.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory.CreateAStarStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/CityGenerator.cs/#L41">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L23">View Source</a>
   </span>
-  <a id="Cities_CityGenerator_Generate_" data-uid="Cities.CityGenerator.Generate*"></a>
-  <h4 id="Cities_CityGenerator_Generate" data-uid="Cities.CityGenerator.Generate">Generate()</h4>
+  <a id="Cities_Roads_Factory_CreateAStarStrategy_" data-uid="Cities.Roads.Factory.CreateAStarStrategy*"></a>
+  <h4 id="Cities_Roads_Factory_CreateAStarStrategy" data-uid="Cities.Roads.Factory.CreateAStarStrategy">CreateAStarStrategy()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public City Generate()</code></pre>
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;RoadNetwork&gt; CreateAStarStrategy()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -224,25 +204,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Cities.City.html">City</a></td>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_CityGenerator_Get.md&amp;value=---%0Auid%3A%20Cities.CityGenerator.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory_CreateLSystemStrategy.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory.CreateLSystemStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/CityGenerator.cs/#L51">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L34">View Source</a>
   </span>
-  <a id="Cities_CityGenerator_Get_" data-uid="Cities.CityGenerator.Get*"></a>
-  <h4 id="Cities_CityGenerator_Get" data-uid="Cities.CityGenerator.Get">Get()</h4>
+  <a id="Cities_Roads_Factory_CreateLSystemStrategy_" data-uid="Cities.Roads.Factory.CreateLSystemStrategy*"></a>
+  <h4 id="Cities_Roads_Factory_CreateLSystemStrategy" data-uid="Cities.Roads.Factory.CreateLSystemStrategy">CreateLSystemStrategy()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RoadNetwork Get()</code></pre>
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;RoadNetwork&gt; CreateLSystemStrategy()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -254,18 +234,11 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
-  </div>
 </article>
           </div>
           
@@ -274,10 +247,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_CityGenerator.md&amp;value=---%0Auid%3A%20Cities.CityGenerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/CityGenerator.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -118,7 +118,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Extensions_CollectionExtensions_AddRange__1_System_Collections_Generic_ICollection___0__System_Collections_Generic_IEnumerable___0__.md&amp;value=---%0Auid%3A%20Extensions.CollectionExtensions.AddRange%60%601(System.Collections.Generic.ICollection%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L19">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L32">View Source</a>
   </span>
   <a id="Extensions_CollectionExtensions_AddRange_" data-uid="Extensions.CollectionExtensions.AddRange*"></a>
   <h4 id="Extensions_CollectionExtensions_AddRange__1_System_Collections_Generic_ICollection___0__System_Collections_Generic_IEnumerable___0__" data-uid="Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">AddRange&lt;T&gt;(ICollection&lt;T&gt;, IEnumerable&lt;T&gt;)</h4>
@@ -174,7 +174,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Extensions_CollectionExtensions_AddRange__1_System_Collections_Generic_ICollection___0__System_Collections_Generic_IEnumerable___0__System_Func___0___0__.md&amp;value=---%0Auid%3A%20Extensions.CollectionExtensions.AddRange%60%601(System.Collections.Generic.ICollection%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L31">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L44">View Source</a>
   </span>
   <a id="Extensions_CollectionExtensions_AddRange_" data-uid="Extensions.CollectionExtensions.AddRange*"></a>
   <h4 id="Extensions_CollectionExtensions_AddRange__1_System_Collections_Generic_ICollection___0__System_Collections_Generic_IEnumerable___0__System_Func___0___0__" data-uid="Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0})">AddRange&lt;T&gt;(ICollection&lt;T&gt;, IEnumerable&lt;T&gt;, Func&lt;T, T&gt;)</h4>
@@ -233,10 +233,82 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Extensions_CollectionExtensions_ContainsAll__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__.md&amp;value=---%0Auid%3A%20Extensions.CollectionExtensions.ContainsAll%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L20">View Source</a>
+  </span>
+  <a id="Extensions_CollectionExtensions_ContainsAll_" data-uid="Extensions.CollectionExtensions.ContainsAll*"></a>
+  <h4 id="Extensions_CollectionExtensions_ContainsAll__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__" data-uid="Extensions.CollectionExtensions.ContainsAll``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">ContainsAll&lt;T&gt;(IEnumerable&lt;T&gt;, IEnumerable&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Checks if the source contains each item at least once.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool ContainsAll&lt;T&gt;(this IEnumerable&lt;T&gt; source, IEnumerable&lt;T&gt; items)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>The items to check for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if each item is contains at least once in the source.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The item type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Extensions_CollectionExtensions_PrependRange__1_System_Collections_Generic_LinkedList___0__System_Collections_Generic_IEnumerable___0__.md&amp;value=---%0Auid%3A%20Extensions.CollectionExtensions.PrependRange%60%601(System.Collections.Generic.LinkedList%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L45">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L58">View Source</a>
   </span>
   <a id="Extensions_CollectionExtensions_PrependRange_" data-uid="Extensions.CollectionExtensions.PrependRange*"></a>
   <h4 id="Extensions_CollectionExtensions_PrependRange__1_System_Collections_Generic_LinkedList___0__System_Collections_Generic_IEnumerable___0__" data-uid="Extensions.CollectionExtensions.PrependRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0})">PrependRange&lt;T&gt;(LinkedList&lt;T&gt;, IEnumerable&lt;T&gt;)</h4>
@@ -292,7 +364,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Extensions_CollectionExtensions_PrependRange__1_System_Collections_Generic_LinkedList___0__System_Collections_Generic_IEnumerable___0__System_Func___0___0__.md&amp;value=---%0Auid%3A%20Extensions.CollectionExtensions.PrependRange%60%601(System.Collections.Generic.LinkedList%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L57">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Extensions/CollectionExtensions.cs/#L70">View Source</a>
   </span>
   <a id="Extensions_CollectionExtensions_PrependRange_" data-uid="Extensions.CollectionExtensions.PrependRange*"></a>
   <h4 id="Extensions_CollectionExtensions_PrependRange__1_System_Collections_Generic_LinkedList___0__System_Collections_Generic_IEnumerable___0__System_Func___0___0__" data-uid="Extensions.CollectionExtensions.PrependRange``1(System.Collections.Generic.LinkedList{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0})">PrependRange&lt;T&gt;(LinkedList&lt;T&gt;, IEnumerable&lt;T&gt;, Func&lt;T, T&gt;)</h4>

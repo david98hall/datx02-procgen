@@ -97,19 +97,19 @@ references:
   isSpec: "True"
   fullName: Cities.CityGenerator.Get
   nameWithType: CityGenerator.Get
-- uid: Cities.CityGenerator.PlotsStrategy
-  name: PlotsStrategy
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_PlotsStrategy
-  commentId: P:Cities.CityGenerator.PlotsStrategy
-  fullName: Cities.CityGenerator.PlotsStrategy
-  nameWithType: CityGenerator.PlotsStrategy
-- uid: Cities.CityGenerator.PlotsStrategy*
-  name: PlotsStrategy
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_PlotsStrategy_
-  commentId: Overload:Cities.CityGenerator.PlotsStrategy
+- uid: Cities.CityGenerator.PlotStrategy
+  name: PlotStrategy
+  href: api/Cities.CityGenerator.html#Cities_CityGenerator_PlotStrategy
+  commentId: P:Cities.CityGenerator.PlotStrategy
+  fullName: Cities.CityGenerator.PlotStrategy
+  nameWithType: CityGenerator.PlotStrategy
+- uid: Cities.CityGenerator.PlotStrategy*
+  name: PlotStrategy
+  href: api/Cities.CityGenerator.html#Cities_CityGenerator_PlotStrategy_
+  commentId: Overload:Cities.CityGenerator.PlotStrategy
   isSpec: "True"
-  fullName: Cities.CityGenerator.PlotsStrategy
-  nameWithType: CityGenerator.PlotsStrategy
+  fullName: Cities.CityGenerator.PlotStrategy
+  nameWithType: CityGenerator.PlotStrategy
 - uid: Cities.CityGenerator.RoadNetworkStrategy
   name: RoadNetworkStrategy
   href: api/Cities.CityGenerator.html#Cities_CityGenerator_RoadNetworkStrategy
@@ -129,6 +129,41 @@ references:
   commentId: N:Cities.Plots
   fullName: Cities.Plots
   nameWithType: Cities.Plots
+- uid: Cities.Plots.Factory
+  name: Factory
+  href: api/Cities.Plots.Factory.html
+  commentId: T:Cities.Plots.Factory
+  fullName: Cities.Plots.Factory
+  nameWithType: Factory
+- uid: Cities.Plots.Factory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
+  name: Factory(IInjector<RoadNetwork>)
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
+  commentId: M:Cities.Plots.Factory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
+  name.vb: Factory(IInjector(Of RoadNetwork))
+  fullName: Cities.Plots.Factory.Factory(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
+  fullName.vb: Cities.Plots.Factory.Factory(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
+  nameWithType: Factory.Factory(IInjector<RoadNetwork>)
+  nameWithType.vb: Factory.Factory(IInjector(Of RoadNetwork))
+- uid: Cities.Plots.Factory.#ctor*
+  name: Factory
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__ctor_
+  commentId: Overload:Cities.Plots.Factory.#ctor
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.Factory
+  nameWithType: Factory.Factory
+- uid: Cities.Plots.Factory.CreateCycleStrategy
+  name: CreateCycleStrategy()
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateCycleStrategy
+  commentId: M:Cities.Plots.Factory.CreateCycleStrategy
+  fullName: Cities.Plots.Factory.CreateCycleStrategy()
+  nameWithType: Factory.CreateCycleStrategy()
+- uid: Cities.Plots.Factory.CreateCycleStrategy*
+  name: CreateCycleStrategy
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateCycleStrategy_
+  commentId: Overload:Cities.Plots.Factory.CreateCycleStrategy
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.CreateCycleStrategy
+  nameWithType: Factory.CreateCycleStrategy
 - uid: Cities.Plots.Plot
   name: Plot
   href: api/Cities.Plots.Plot.html
@@ -189,34 +224,73 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.Plot.Vertices
   nameWithType: Plot.Vertices
-- uid: Cities.Plots.PlotsStrategyFactory
-  name: PlotsStrategyFactory
-  href: api/Cities.Plots.PlotsStrategyFactory.html
-  commentId: T:Cities.Plots.PlotsStrategyFactory
-  fullName: Cities.Plots.PlotsStrategyFactory
-  nameWithType: PlotsStrategyFactory
-- uid: Cities.Plots.PlotsStrategyFactory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
-  name: PlotsStrategyFactory(IInjector<RoadNetwork>)
-  href: api/Cities.Plots.PlotsStrategyFactory.html#Cities_Plots_PlotsStrategyFactory__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
-  commentId: M:Cities.Plots.PlotsStrategyFactory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
-  name.vb: PlotsStrategyFactory(IInjector(Of RoadNetwork))
-  fullName: Cities.Plots.PlotsStrategyFactory.PlotsStrategyFactory(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
-  fullName.vb: Cities.Plots.PlotsStrategyFactory.PlotsStrategyFactory(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
-  nameWithType: PlotsStrategyFactory.PlotsStrategyFactory(IInjector<RoadNetwork>)
-  nameWithType.vb: PlotsStrategyFactory.PlotsStrategyFactory(IInjector(Of RoadNetwork))
-- uid: Cities.Plots.PlotsStrategyFactory.#ctor*
-  name: PlotsStrategyFactory
-  href: api/Cities.Plots.PlotsStrategyFactory.html#Cities_Plots_PlotsStrategyFactory__ctor_
-  commentId: Overload:Cities.Plots.PlotsStrategyFactory.#ctor
-  isSpec: "True"
-  fullName: Cities.Plots.PlotsStrategyFactory.PlotsStrategyFactory
-  nameWithType: PlotsStrategyFactory.PlotsStrategyFactory
 - uid: Cities.Roads
   name: Cities.Roads
   href: api/Cities.Roads.html
   commentId: N:Cities.Roads
   fullName: Cities.Roads
   nameWithType: Cities.Roads
+- uid: Cities.Roads.Factory
+  name: Factory
+  href: api/Cities.Roads.Factory.html
+  commentId: T:Cities.Roads.Factory
+  fullName: Cities.Roads.Factory
+  nameWithType: Factory
+- uid: Cities.Roads.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  name: Factory(IInjector<Single[,]>)
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__ctor_Interfaces_IInjector_System_Single_0__0____
+  commentId: M:Cities.Roads.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  name.vb: Factory(IInjector(Of Single(,)))
+  fullName: Cities.Roads.Factory.Factory(Interfaces.IInjector<System.Single[,]>)
+  fullName.vb: Cities.Roads.Factory.Factory(Interfaces.IInjector(Of System.Single(,)))
+  nameWithType: Factory.Factory(IInjector<Single[,]>)
+  nameWithType.vb: Factory.Factory(IInjector(Of Single(,)))
+- uid: Cities.Roads.Factory.#ctor*
+  name: Factory
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__ctor_
+  commentId: Overload:Cities.Roads.Factory.#ctor
+  isSpec: "True"
+  fullName: Cities.Roads.Factory.Factory
+  nameWithType: Factory.Factory
+- uid: Cities.Roads.Factory.CreateAgentStrategy
+  name: CreateAgentStrategy()
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAgentStrategy
+  commentId: M:Cities.Roads.Factory.CreateAgentStrategy
+  fullName: Cities.Roads.Factory.CreateAgentStrategy()
+  nameWithType: Factory.CreateAgentStrategy()
+- uid: Cities.Roads.Factory.CreateAgentStrategy*
+  name: CreateAgentStrategy
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAgentStrategy_
+  commentId: Overload:Cities.Roads.Factory.CreateAgentStrategy
+  isSpec: "True"
+  fullName: Cities.Roads.Factory.CreateAgentStrategy
+  nameWithType: Factory.CreateAgentStrategy
+- uid: Cities.Roads.Factory.CreateAStarStrategy
+  name: CreateAStarStrategy()
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy
+  commentId: M:Cities.Roads.Factory.CreateAStarStrategy
+  fullName: Cities.Roads.Factory.CreateAStarStrategy()
+  nameWithType: Factory.CreateAStarStrategy()
+- uid: Cities.Roads.Factory.CreateAStarStrategy*
+  name: CreateAStarStrategy
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy_
+  commentId: Overload:Cities.Roads.Factory.CreateAStarStrategy
+  isSpec: "True"
+  fullName: Cities.Roads.Factory.CreateAStarStrategy
+  nameWithType: Factory.CreateAStarStrategy
+- uid: Cities.Roads.Factory.CreateLSystemStrategy
+  name: CreateLSystemStrategy()
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateLSystemStrategy
+  commentId: M:Cities.Roads.Factory.CreateLSystemStrategy
+  fullName: Cities.Roads.Factory.CreateLSystemStrategy()
+  nameWithType: Factory.CreateLSystemStrategy()
+- uid: Cities.Roads.Factory.CreateLSystemStrategy*
+  name: CreateLSystemStrategy
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateLSystemStrategy_
+  commentId: Overload:Cities.Roads.Factory.CreateLSystemStrategy
+  isSpec: "True"
+  fullName: Cities.Roads.Factory.CreateLSystemStrategy
+  nameWithType: Factory.CreateLSystemStrategy
 - uid: Cities.Roads.RoadNetwork
   name: RoadNetwork
   href: api/Cities.Roads.RoadNetwork.html
@@ -453,67 +527,19 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.RoadNetwork.RoadVertices
   nameWithType: RoadNetwork.RoadVertices
-- uid: Cities.Roads.RoadNetworkStrategyFactory
-  name: RoadNetworkStrategyFactory
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html
-  commentId: T:Cities.Roads.RoadNetworkStrategyFactory
-  fullName: Cities.Roads.RoadNetworkStrategyFactory
-  nameWithType: RoadNetworkStrategyFactory
-- uid: Cities.Roads.RoadNetworkStrategyFactory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name: RoadNetworkStrategyFactory(IInjector<Single[,]>)
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Cities.Roads.RoadNetworkStrategyFactory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name.vb: RoadNetworkStrategyFactory(IInjector(Of Single(,)))
-  fullName: Cities.Roads.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Cities.Roads.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(Interfaces.IInjector(Of System.Single(,)))
-  nameWithType: RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(IInjector<Single[,]>)
-  nameWithType.vb: RoadNetworkStrategyFactory.RoadNetworkStrategyFactory(IInjector(Of Single(,)))
-- uid: Cities.Roads.RoadNetworkStrategyFactory.#ctor*
-  name: RoadNetworkStrategyFactory
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory__ctor_
-  commentId: Overload:Cities.Roads.RoadNetworkStrategyFactory.#ctor
+- uid: Cities.Roads.RoadNetwork.VertexCount
+  name: VertexCount
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_VertexCount
+  commentId: P:Cities.Roads.RoadNetwork.VertexCount
+  fullName: Cities.Roads.RoadNetwork.VertexCount
+  nameWithType: RoadNetwork.VertexCount
+- uid: Cities.Roads.RoadNetwork.VertexCount*
+  name: VertexCount
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_VertexCount_
+  commentId: Overload:Cities.Roads.RoadNetwork.VertexCount
   isSpec: "True"
-  fullName: Cities.Roads.RoadNetworkStrategyFactory.RoadNetworkStrategyFactory
-  nameWithType: RoadNetworkStrategyFactory.RoadNetworkStrategyFactory
-- uid: Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator
-  name: AStarGenerator()
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_AStarGenerator
-  commentId: M:Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator
-  fullName: Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator()
-  nameWithType: RoadNetworkStrategyFactory.AStarGenerator()
-- uid: Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator*
-  name: AStarGenerator
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_AStarGenerator_
-  commentId: Overload:Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator
-  isSpec: "True"
-  fullName: Cities.Roads.RoadNetworkStrategyFactory.AStarGenerator
-  nameWithType: RoadNetworkStrategyFactory.AStarGenerator
-- uid: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
-  name: CreateAgentStrategy()
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateAgentStrategy
-  commentId: M:Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
-  fullName: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy()
-  nameWithType: RoadNetworkStrategyFactory.CreateAgentStrategy()
-- uid: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy*
-  name: CreateAgentStrategy
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateAgentStrategy_
-  commentId: Overload:Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
-  isSpec: "True"
-  fullName: Cities.Roads.RoadNetworkStrategyFactory.CreateAgentStrategy
-  nameWithType: RoadNetworkStrategyFactory.CreateAgentStrategy
-- uid: Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy
-  name: CreateLSystemStrategy()
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateLSystemStrategy
-  commentId: M:Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy
-  fullName: Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy()
-  nameWithType: RoadNetworkStrategyFactory.CreateLSystemStrategy()
-- uid: Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy*
-  name: CreateLSystemStrategy
-  href: api/Cities.Roads.RoadNetworkStrategyFactory.html#Cities_Roads_RoadNetworkStrategyFactory_CreateLSystemStrategy_
-  commentId: Overload:Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy
-  isSpec: "True"
-  fullName: Cities.Roads.RoadNetworkStrategyFactory.CreateLSystemStrategy
-  nameWithType: RoadNetworkStrategyFactory.CreateLSystemStrategy
+  fullName: Cities.Roads.RoadNetwork.VertexCount
+  nameWithType: RoadNetwork.VertexCount
 - uid: Cities.Testing
   name: Cities.Testing
   href: api/Cities.Testing.html
@@ -558,6 +584,19 @@ references:
   isSpec: "True"
   fullName: Cities.Testing.CityDisplay.GenerateCity
   nameWithType: CityDisplay.GenerateCity
+- uid: Cities.Testing.CityDisplay.Get
+  name: Get()
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_Get
+  commentId: M:Cities.Testing.CityDisplay.Get
+  fullName: Cities.Testing.CityDisplay.Get()
+  nameWithType: CityDisplay.Get()
+- uid: Cities.Testing.CityDisplay.Get*
+  name: Get
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_Get_
+  commentId: Overload:Cities.Testing.CityDisplay.Get
+  isSpec: "True"
+  fullName: Cities.Testing.CityDisplay.Get
+  nameWithType: CityDisplay.Get
 - uid: Cities.Testing.CityDisplay.heightBias
   name: heightBias
   href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_heightBias
@@ -570,6 +609,30 @@ references:
   commentId: F:Cities.Testing.CityDisplay.heightMapType
   fullName: Cities.Testing.CityDisplay.heightMapType
   nameWithType: CityDisplay.heightMapType
+- uid: Cities.Testing.CityDisplay.MapType
+  name: CityDisplay.MapType
+  href: api/Cities.Testing.CityDisplay.MapType.html
+  commentId: T:Cities.Testing.CityDisplay.MapType
+  fullName: Cities.Testing.CityDisplay.MapType
+  nameWithType: CityDisplay.MapType
+- uid: Cities.Testing.CityDisplay.MapType.Flat
+  name: Flat
+  href: api/Cities.Testing.CityDisplay.MapType.html#Cities_Testing_CityDisplay_MapType_Flat
+  commentId: F:Cities.Testing.CityDisplay.MapType.Flat
+  fullName: Cities.Testing.CityDisplay.MapType.Flat
+  nameWithType: CityDisplay.MapType.Flat
+- uid: Cities.Testing.CityDisplay.MapType.Pyramid
+  name: Pyramid
+  href: api/Cities.Testing.CityDisplay.MapType.html#Cities_Testing_CityDisplay_MapType_Pyramid
+  commentId: F:Cities.Testing.CityDisplay.MapType.Pyramid
+  fullName: Cities.Testing.CityDisplay.MapType.Pyramid
+  nameWithType: CityDisplay.MapType.Pyramid
+- uid: Cities.Testing.CityDisplay.MapType.Slope
+  name: Slope
+  href: api/Cities.Testing.CityDisplay.MapType.html#Cities_Testing_CityDisplay_MapType_Slope
+  commentId: F:Cities.Testing.CityDisplay.MapType.Slope
+  fullName: Cities.Testing.CityDisplay.MapType.Slope
+  nameWithType: CityDisplay.MapType.Slope
 - uid: Cities.Testing.CityDisplay.meshFilter
   name: meshFilter
   href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_meshFilter
@@ -582,6 +645,12 @@ references:
   commentId: F:Cities.Testing.CityDisplay.meshRenderer
   fullName: Cities.Testing.CityDisplay.meshRenderer
   nameWithType: CityDisplay.meshRenderer
+- uid: Cities.Testing.CityDisplay.plotBorderMaterial
+  name: plotBorderMaterial
+  href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_plotBorderMaterial
+  commentId: F:Cities.Testing.CityDisplay.plotBorderMaterial
+  fullName: Cities.Testing.CityDisplay.plotBorderMaterial
+  nameWithType: CityDisplay.plotBorderMaterial
 - uid: Cities.Testing.CityDisplay.roadMaterial
   name: roadMaterial
   href: api/Cities.Testing.CityDisplay.html#Cities_Testing_CityDisplay_roadMaterial
@@ -808,6 +877,22 @@ references:
   fullName.vb: Extensions.CollectionExtensions.AddRange(Of T)(System.Collections.Generic.ICollection(Of T), System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, T))
   nameWithType: CollectionExtensions.AddRange<T>(ICollection<T>, IEnumerable<T>, Func<T, T>)
   nameWithType.vb: CollectionExtensions.AddRange(Of T)(ICollection(Of T), IEnumerable(Of T), Func(Of T, T))
+- uid: Extensions.CollectionExtensions.ContainsAll*
+  name: ContainsAll
+  href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_ContainsAll_
+  commentId: Overload:Extensions.CollectionExtensions.ContainsAll
+  isSpec: "True"
+  fullName: Extensions.CollectionExtensions.ContainsAll
+  nameWithType: CollectionExtensions.ContainsAll
+- uid: Extensions.CollectionExtensions.ContainsAll``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+  name: ContainsAll<T>(IEnumerable<T>, IEnumerable<T>)
+  href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_ContainsAll__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__
+  commentId: M:Extensions.CollectionExtensions.ContainsAll``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})
+  name.vb: ContainsAll(Of T)(IEnumerable(Of T), IEnumerable(Of T))
+  fullName: Extensions.CollectionExtensions.ContainsAll<T>(System.Collections.Generic.IEnumerable<T>, System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Extensions.CollectionExtensions.ContainsAll(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: CollectionExtensions.ContainsAll<T>(IEnumerable<T>, IEnumerable<T>)
+  nameWithType.vb: CollectionExtensions.ContainsAll(Of T)(IEnumerable(Of T), IEnumerable(Of T))
 - uid: Extensions.CollectionExtensions.PrependRange*
   name: PrependRange
   href: api/Extensions.CollectionExtensions.html#Extensions_CollectionExtensions_PrependRange_
@@ -865,38 +950,81 @@ references:
   isSpec: "True"
   fullName: Extensions.UnityExtensions.Copy
   nameWithType: UnityExtensions.Copy
-- uid: Extensions.UnityExtensions.DegreesTo(UnityEngine.Vector2,UnityEngine.Vector2)
-  name: DegreesTo(Vector2, Vector2)
-  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_DegreesTo_UnityEngine_Vector2_UnityEngine_Vector2_
-  commentId: M:Extensions.UnityExtensions.DegreesTo(UnityEngine.Vector2,UnityEngine.Vector2)
-  fullName: Extensions.UnityExtensions.DegreesTo(UnityEngine.Vector2, UnityEngine.Vector2)
-  nameWithType: UnityExtensions.DegreesTo(Vector2, Vector2)
-- uid: Extensions.UnityExtensions.DegreesTo*
-  name: DegreesTo
-  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_DegreesTo_
-  commentId: Overload:Extensions.UnityExtensions.DegreesTo
+- uid: Extensions.UnityExtensions.EqualWithTolerance(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+  name: EqualWithTolerance(Vector3, Vector3, Single)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_EqualWithTolerance_UnityEngine_Vector3_UnityEngine_Vector3_System_Single_
+  commentId: M:Extensions.UnityExtensions.EqualWithTolerance(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+  fullName: Extensions.UnityExtensions.EqualWithTolerance(UnityEngine.Vector3, UnityEngine.Vector3, System.Single)
+  nameWithType: UnityExtensions.EqualWithTolerance(Vector3, Vector3, Single)
+- uid: Extensions.UnityExtensions.EqualWithTolerance*
+  name: EqualWithTolerance
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_EqualWithTolerance_
+  commentId: Overload:Extensions.UnityExtensions.EqualWithTolerance
   isSpec: "True"
-  fullName: Extensions.UnityExtensions.DegreesTo
-  nameWithType: UnityExtensions.DegreesTo
-- uid: Extensions.UnityExtensions.RadiansTo(UnityEngine.Vector2,UnityEngine.Vector2)
-  name: RadiansTo(Vector2, Vector2)
-  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_RadiansTo_UnityEngine_Vector2_UnityEngine_Vector2_
-  commentId: M:Extensions.UnityExtensions.RadiansTo(UnityEngine.Vector2,UnityEngine.Vector2)
-  fullName: Extensions.UnityExtensions.RadiansTo(UnityEngine.Vector2, UnityEngine.Vector2)
-  nameWithType: UnityExtensions.RadiansTo(Vector2, Vector2)
-- uid: Extensions.UnityExtensions.RadiansTo*
-  name: RadiansTo
-  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_RadiansTo_
-  commentId: Overload:Extensions.UnityExtensions.RadiansTo
+  fullName: Extensions.UnityExtensions.EqualWithTolerance
+  nameWithType: UnityExtensions.EqualWithTolerance
+- uid: Extensions.UnityExtensions.HeightMap(UnityEngine.Mesh)
+  name: HeightMap(Mesh)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_HeightMap_UnityEngine_Mesh_
+  commentId: M:Extensions.UnityExtensions.HeightMap(UnityEngine.Mesh)
+  fullName: Extensions.UnityExtensions.HeightMap(UnityEngine.Mesh)
+  nameWithType: UnityExtensions.HeightMap(Mesh)
+- uid: Extensions.UnityExtensions.HeightMap*
+  name: HeightMap
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_HeightMap_
+  commentId: Overload:Extensions.UnityExtensions.HeightMap
   isSpec: "True"
-  fullName: Extensions.UnityExtensions.RadiansTo
-  nameWithType: UnityExtensions.RadiansTo
+  fullName: Extensions.UnityExtensions.HeightMap
+  nameWithType: UnityExtensions.HeightMap
 - uid: Interfaces
   name: Interfaces
   href: api/Interfaces.html
   commentId: N:Interfaces
   fullName: Interfaces
   nameWithType: Interfaces
+- uid: Interfaces.Generator`1
+  name: Generator<T>
+  href: api/Interfaces.Generator-1.html
+  commentId: T:Interfaces.Generator`1
+  name.vb: Generator(Of T)
+  fullName: Interfaces.Generator<T>
+  fullName.vb: Interfaces.Generator(Of T)
+  nameWithType: Generator<T>
+  nameWithType.vb: Generator(Of T)
+- uid: Interfaces.Generator`1.Generate
+  name: Generate()
+  href: api/Interfaces.Generator-1.html#Interfaces_Generator_1_Generate
+  commentId: M:Interfaces.Generator`1.Generate
+  fullName: Interfaces.Generator<T>.Generate()
+  fullName.vb: Interfaces.Generator(Of T).Generate()
+  nameWithType: Generator<T>.Generate()
+  nameWithType.vb: Generator(Of T).Generate()
+- uid: Interfaces.Generator`1.Generate*
+  name: Generate
+  href: api/Interfaces.Generator-1.html#Interfaces_Generator_1_Generate_
+  commentId: Overload:Interfaces.Generator`1.Generate
+  isSpec: "True"
+  fullName: Interfaces.Generator<T>.Generate
+  fullName.vb: Interfaces.Generator(Of T).Generate
+  nameWithType: Generator<T>.Generate
+  nameWithType.vb: Generator(Of T).Generate
+- uid: Interfaces.Generator`1.Strategy
+  name: Strategy
+  href: api/Interfaces.Generator-1.html#Interfaces_Generator_1_Strategy
+  commentId: P:Interfaces.Generator`1.Strategy
+  fullName: Interfaces.Generator<T>.Strategy
+  fullName.vb: Interfaces.Generator(Of T).Strategy
+  nameWithType: Generator<T>.Strategy
+  nameWithType.vb: Generator(Of T).Strategy
+- uid: Interfaces.Generator`1.Strategy*
+  name: Strategy
+  href: api/Interfaces.Generator-1.html#Interfaces_Generator_1_Strategy_
+  commentId: Overload:Interfaces.Generator`1.Strategy
+  isSpec: "True"
+  fullName: Interfaces.Generator<T>.Strategy
+  fullName.vb: Interfaces.Generator(Of T).Strategy
+  nameWithType: Generator<T>.Strategy
+  nameWithType.vb: Generator(Of T).Strategy
 - uid: Interfaces.IGenerator`1
   name: IGenerator<T>
   href: api/Interfaces.IGenerator-1.html
@@ -949,46 +1077,95 @@ references:
   fullName.vb: Interfaces.IInjector(Of T).Get
   nameWithType: IInjector<T>.Get
   nameWithType.vb: IInjector(Of T).Get
+- uid: Interfaces.Strategy`2
+  name: Strategy<TI, TO>
+  href: api/Interfaces.Strategy-2.html
+  commentId: T:Interfaces.Strategy`2
+  name.vb: Strategy(Of TI, TO)
+  fullName: Interfaces.Strategy<TI, TO>
+  fullName.vb: Interfaces.Strategy(Of TI, TO)
+  nameWithType: Strategy<TI, TO>
+  nameWithType.vb: Strategy(Of TI, TO)
+- uid: Interfaces.Strategy`2.#ctor(Interfaces.IInjector{`0})
+  name: Strategy(IInjector<TI>)
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2__ctor_Interfaces_IInjector__0__
+  commentId: M:Interfaces.Strategy`2.#ctor(Interfaces.IInjector{`0})
+  name.vb: Strategy(IInjector(Of TI))
+  fullName: Interfaces.Strategy<TI, TO>.Strategy(Interfaces.IInjector<TI>)
+  fullName.vb: Interfaces.Strategy(Of TI, TO).Strategy(Interfaces.IInjector(Of TI))
+  nameWithType: Strategy<TI, TO>.Strategy(IInjector<TI>)
+  nameWithType.vb: Strategy(Of TI, TO).Strategy(IInjector(Of TI))
+- uid: Interfaces.Strategy`2.#ctor*
+  name: Strategy
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2__ctor_
+  commentId: Overload:Interfaces.Strategy`2.#ctor
+  isSpec: "True"
+  fullName: Interfaces.Strategy<TI, TO>.Strategy
+  fullName.vb: Interfaces.Strategy(Of TI, TO).Strategy
+  nameWithType: Strategy<TI, TO>.Strategy
+  nameWithType.vb: Strategy(Of TI, TO).Strategy
+- uid: Interfaces.Strategy`2.Generate
+  name: Generate()
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate
+  commentId: M:Interfaces.Strategy`2.Generate
+  fullName: Interfaces.Strategy<TI, TO>.Generate()
+  fullName.vb: Interfaces.Strategy(Of TI, TO).Generate()
+  nameWithType: Strategy<TI, TO>.Generate()
+  nameWithType.vb: Strategy(Of TI, TO).Generate()
+- uid: Interfaces.Strategy`2.Generate*
+  name: Generate
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate_
+  commentId: Overload:Interfaces.Strategy`2.Generate
+  isSpec: "True"
+  fullName: Interfaces.Strategy<TI, TO>.Generate
+  fullName.vb: Interfaces.Strategy(Of TI, TO).Generate
+  nameWithType: Strategy<TI, TO>.Generate
+  nameWithType.vb: Strategy(Of TI, TO).Generate
+- uid: Interfaces.Strategy`2.Injector
+  name: Injector
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector
+  commentId: F:Interfaces.Strategy`2.Injector
+  fullName: Interfaces.Strategy<TI, TO>.Injector
+  fullName.vb: Interfaces.Strategy(Of TI, TO).Injector
+  nameWithType: Strategy<TI, TO>.Injector
+  nameWithType.vb: Strategy(Of TI, TO).Injector
 - uid: Terrain
   name: Terrain
   href: api/Terrain.html
   commentId: N:Terrain
   fullName: Terrain
   nameWithType: Terrain
-- uid: Terrain.NoiseStrategyFactory
-  name: NoiseStrategyFactory
-  href: api/Terrain.NoiseStrategyFactory.html
-  commentId: T:Terrain.NoiseStrategyFactory
-  fullName: Terrain.NoiseStrategyFactory
-  nameWithType: NoiseStrategyFactory
-- uid: Terrain.NoiseStrategyFactory.GetPerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
-  name: GetPerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
-  href: api/Terrain.NoiseStrategyFactory.html#Terrain_NoiseStrategyFactory_GetPerlinNoiseStrategy_System_Int32_System_Int32_System_Int32_System_Single_System_Int32_System_Single_System_Single_UnityEngine_Vector2_
-  commentId: M:Terrain.NoiseStrategyFactory.GetPerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
-  fullName: Terrain.NoiseStrategyFactory.GetPerlinNoiseStrategy(System.Int32, System.Int32, System.Int32, System.Single, System.Int32, System.Single, System.Single, UnityEngine.Vector2)
-  nameWithType: NoiseStrategyFactory.GetPerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
-- uid: Terrain.NoiseStrategyFactory.GetPerlinNoiseStrategy*
-  name: GetPerlinNoiseStrategy
-  href: api/Terrain.NoiseStrategyFactory.html#Terrain_NoiseStrategyFactory_GetPerlinNoiseStrategy_
-  commentId: Overload:Terrain.NoiseStrategyFactory.GetPerlinNoiseStrategy
+- uid: Terrain.Factory
+  name: Factory
+  href: api/Terrain.Factory.html
+  commentId: T:Terrain.Factory
+  fullName: Terrain.Factory
+  nameWithType: Factory
+- uid: Terrain.Factory.CreatePerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
+  name: CreatePerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
+  href: api/Terrain.Factory.html#Terrain_Factory_CreatePerlinNoiseStrategy_System_Int32_System_Int32_System_Int32_System_Single_System_Int32_System_Single_System_Single_UnityEngine_Vector2_
+  commentId: M:Terrain.Factory.CreatePerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
+  fullName: Terrain.Factory.CreatePerlinNoiseStrategy(System.Int32, System.Int32, System.Int32, System.Single, System.Int32, System.Single, System.Single, UnityEngine.Vector2)
+  nameWithType: Factory.CreatePerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
+- uid: Terrain.Factory.CreatePerlinNoiseStrategy*
+  name: CreatePerlinNoiseStrategy
+  href: api/Terrain.Factory.html#Terrain_Factory_CreatePerlinNoiseStrategy_
+  commentId: Overload:Terrain.Factory.CreatePerlinNoiseStrategy
   isSpec: "True"
-  fullName: Terrain.NoiseStrategyFactory.GetPerlinNoiseStrategy
-  nameWithType: NoiseStrategyFactory.GetPerlinNoiseStrategy
+  fullName: Terrain.Factory.CreatePerlinNoiseStrategy
+  nameWithType: Factory.CreatePerlinNoiseStrategy
 - uid: Terrain.TerrainGenerator
   name: TerrainGenerator
   href: api/Terrain.TerrainGenerator.html
   commentId: T:Terrain.TerrainGenerator
   fullName: Terrain.TerrainGenerator
   nameWithType: TerrainGenerator
-- uid: Terrain.TerrainGenerator.#ctor(Interfaces.IGenerator{System.Single[0:,0:]})
-  name: TerrainGenerator(IGenerator<Single[,]>)
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__ctor_Interfaces_IGenerator_System_Single_0__0____
-  commentId: M:Terrain.TerrainGenerator.#ctor(Interfaces.IGenerator{System.Single[0:,0:]})
-  name.vb: TerrainGenerator(IGenerator(Of Single(,)))
-  fullName: Terrain.TerrainGenerator.TerrainGenerator(Interfaces.IGenerator<System.Single[,]>)
-  fullName.vb: Terrain.TerrainGenerator.TerrainGenerator(Interfaces.IGenerator(Of System.Single(,)))
-  nameWithType: TerrainGenerator.TerrainGenerator(IGenerator<Single[,]>)
-  nameWithType.vb: TerrainGenerator.TerrainGenerator(IGenerator(Of Single(,)))
+- uid: Terrain.TerrainGenerator.#ctor
+  name: TerrainGenerator()
+  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__ctor
+  commentId: M:Terrain.TerrainGenerator.#ctor
+  fullName: Terrain.TerrainGenerator.TerrainGenerator()
+  nameWithType: TerrainGenerator.TerrainGenerator()
 - uid: Terrain.TerrainGenerator.#ctor*
   name: TerrainGenerator
   href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__ctor_
@@ -1009,6 +1186,19 @@ references:
   isSpec: "True"
   fullName: Terrain.TerrainGenerator.Generate
   nameWithType: TerrainGenerator.Generate
+- uid: Terrain.TerrainGenerator.Get
+  name: Get()
+  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_Get
+  commentId: M:Terrain.TerrainGenerator.Get
+  fullName: Terrain.TerrainGenerator.Get()
+  nameWithType: TerrainGenerator.Get()
+- uid: Terrain.TerrainGenerator.Get*
+  name: Get
+  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_Get_
+  commentId: Overload:Terrain.TerrainGenerator.Get
+  isSpec: "True"
+  fullName: Terrain.TerrainGenerator.Get
+  nameWithType: TerrainGenerator.Get
 - uid: Terrain.TerrainGenerator.HeightCurve
   name: HeightCurve
   href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_HeightCurve
@@ -1035,19 +1225,19 @@ references:
   isSpec: "True"
   fullName: Terrain.TerrainGenerator.HeightScale
   nameWithType: TerrainGenerator.HeightScale
-- uid: Terrain.TerrainGenerator.NoiseMapStrategy
-  name: NoiseMapStrategy
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_NoiseMapStrategy
-  commentId: P:Terrain.TerrainGenerator.NoiseMapStrategy
-  fullName: Terrain.TerrainGenerator.NoiseMapStrategy
-  nameWithType: TerrainGenerator.NoiseMapStrategy
-- uid: Terrain.TerrainGenerator.NoiseMapStrategy*
-  name: NoiseMapStrategy
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_NoiseMapStrategy_
-  commentId: Overload:Terrain.TerrainGenerator.NoiseMapStrategy
+- uid: Terrain.TerrainGenerator.NoiseStrategy
+  name: NoiseStrategy
+  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_NoiseStrategy
+  commentId: P:Terrain.TerrainGenerator.NoiseStrategy
+  fullName: Terrain.TerrainGenerator.NoiseStrategy
+  nameWithType: TerrainGenerator.NoiseStrategy
+- uid: Terrain.TerrainGenerator.NoiseStrategy*
+  name: NoiseStrategy
+  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_NoiseStrategy_
+  commentId: Overload:Terrain.TerrainGenerator.NoiseStrategy
   isSpec: "True"
-  fullName: Terrain.TerrainGenerator.NoiseMapStrategy
-  nameWithType: TerrainGenerator.NoiseMapStrategy
+  fullName: Terrain.TerrainGenerator.NoiseStrategy
+  nameWithType: TerrainGenerator.NoiseStrategy
 - uid: Terrain.TerrainGenerator.TextureStrategy
   name: TextureStrategy
   href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_TextureStrategy
@@ -1061,6 +1251,12 @@ references:
   isSpec: "True"
   fullName: Terrain.TerrainGenerator.TextureStrategy
   nameWithType: TerrainGenerator.TextureStrategy
+- uid: Terrain.TerrainGenerator.TextureStrategyFactory
+  name: TextureStrategyFactory
+  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_TextureStrategyFactory
+  commentId: F:Terrain.TerrainGenerator.TextureStrategyFactory
+  fullName: Terrain.TerrainGenerator.TextureStrategyFactory
+  nameWithType: TerrainGenerator.TextureStrategyFactory
 - uid: Terrain.Testing
   name: Terrain.Testing
   href: api/Terrain.Testing.html
@@ -1098,6 +1294,19 @@ references:
   commentId: F:Terrain.Testing.TextureDisplay.depth
   fullName: Terrain.Testing.TextureDisplay.depth
   nameWithType: TextureDisplay.depth
+- uid: Terrain.Testing.TextureDisplay.Get
+  name: Get()
+  href: api/Terrain.Testing.TextureDisplay.html#Terrain_Testing_TextureDisplay_Get
+  commentId: M:Terrain.Testing.TextureDisplay.Get
+  fullName: Terrain.Testing.TextureDisplay.Get()
+  nameWithType: TextureDisplay.Get()
+- uid: Terrain.Testing.TextureDisplay.Get*
+  name: Get
+  href: api/Terrain.Testing.TextureDisplay.html#Terrain_Testing_TextureDisplay_Get_
+  commentId: Overload:Terrain.Testing.TextureDisplay.Get
+  isSpec: "True"
+  fullName: Terrain.Testing.TextureDisplay.Get
+  nameWithType: TextureDisplay.Get
 - uid: Terrain.Testing.TextureDisplay.heightScale
   name: heightScale
   href: api/Terrain.Testing.TextureDisplay.html#Terrain_Testing_TextureDisplay_heightScale
@@ -1165,12 +1374,6 @@ references:
   commentId: T:Terrain.Testing.TextureDisplay.WhittakerMap
   fullName: Terrain.Testing.TextureDisplay.WhittakerMap
   nameWithType: TextureDisplay.WhittakerMap
-- uid: Terrain.Testing.TextureDisplay.WhittakerMap.Height
-  name: Height
-  href: api/Terrain.Testing.TextureDisplay.WhittakerMap.html#Terrain_Testing_TextureDisplay_WhittakerMap_Height
-  commentId: F:Terrain.Testing.TextureDisplay.WhittakerMap.Height
-  fullName: Terrain.Testing.TextureDisplay.WhittakerMap.Height
-  nameWithType: TextureDisplay.WhittakerMap.Height
 - uid: Terrain.Testing.TextureDisplay.WhittakerMap.Precipitation
   name: Precipitation
   href: api/Terrain.Testing.TextureDisplay.WhittakerMap.html#Terrain_Testing_TextureDisplay_WhittakerMap_Precipitation
@@ -1214,38 +1417,44 @@ references:
   isSpec: "True"
   fullName: Terrain.Testing.TextureDisplayEditor.OnInspectorGUI
   nameWithType: TextureDisplayEditor.OnInspectorGUI
-- uid: Terrain.TextureGeneratorFactory
-  name: TextureGeneratorFactory
-  href: api/Terrain.TextureGeneratorFactory.html
-  commentId: T:Terrain.TextureGeneratorFactory
-  fullName: Terrain.TextureGeneratorFactory
-  nameWithType: TextureGeneratorFactory
-- uid: Terrain.TextureGeneratorFactory.GrayScale
-  name: GrayScale()
-  href: api/Terrain.TextureGeneratorFactory.html#Terrain_TextureGeneratorFactory_GrayScale
-  commentId: M:Terrain.TextureGeneratorFactory.GrayScale
-  fullName: Terrain.TextureGeneratorFactory.GrayScale()
-  nameWithType: TextureGeneratorFactory.GrayScale()
-- uid: Terrain.TextureGeneratorFactory.GrayScale*
-  name: GrayScale
-  href: api/Terrain.TextureGeneratorFactory.html#Terrain_TextureGeneratorFactory_GrayScale_
-  commentId: Overload:Terrain.TextureGeneratorFactory.GrayScale
+- uid: Terrain.Textures
+  name: Terrain.Textures
+  href: api/Terrain.Textures.html
+  commentId: N:Terrain.Textures
+  fullName: Terrain.Textures
+  nameWithType: Terrain.Textures
+- uid: Terrain.Textures.Factory
+  name: Factory
+  href: api/Terrain.Textures.Factory.html
+  commentId: T:Terrain.Textures.Factory
+  fullName: Terrain.Textures.Factory
+  nameWithType: Factory
+- uid: Terrain.Textures.Factory.CreateGrayScaleStrategy
+  name: CreateGrayScaleStrategy()
+  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory_CreateGrayScaleStrategy
+  commentId: M:Terrain.Textures.Factory.CreateGrayScaleStrategy
+  fullName: Terrain.Textures.Factory.CreateGrayScaleStrategy()
+  nameWithType: Factory.CreateGrayScaleStrategy()
+- uid: Terrain.Textures.Factory.CreateGrayScaleStrategy*
+  name: CreateGrayScaleStrategy
+  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory_CreateGrayScaleStrategy_
+  commentId: Overload:Terrain.Textures.Factory.CreateGrayScaleStrategy
   isSpec: "True"
-  fullName: Terrain.TextureGeneratorFactory.GrayScale
-  nameWithType: TextureGeneratorFactory.GrayScale
-- uid: Terrain.TextureGeneratorFactory.Whittaker
-  name: Whittaker()
-  href: api/Terrain.TextureGeneratorFactory.html#Terrain_TextureGeneratorFactory_Whittaker
-  commentId: M:Terrain.TextureGeneratorFactory.Whittaker
-  fullName: Terrain.TextureGeneratorFactory.Whittaker()
-  nameWithType: TextureGeneratorFactory.Whittaker()
-- uid: Terrain.TextureGeneratorFactory.Whittaker*
-  name: Whittaker
-  href: api/Terrain.TextureGeneratorFactory.html#Terrain_TextureGeneratorFactory_Whittaker_
-  commentId: Overload:Terrain.TextureGeneratorFactory.Whittaker
+  fullName: Terrain.Textures.Factory.CreateGrayScaleStrategy
+  nameWithType: Factory.CreateGrayScaleStrategy
+- uid: Terrain.Textures.Factory.CreateWhittakerStrategy
+  name: CreateWhittakerStrategy()
+  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory_CreateWhittakerStrategy
+  commentId: M:Terrain.Textures.Factory.CreateWhittakerStrategy
+  fullName: Terrain.Textures.Factory.CreateWhittakerStrategy()
+  nameWithType: Factory.CreateWhittakerStrategy()
+- uid: Terrain.Textures.Factory.CreateWhittakerStrategy*
+  name: CreateWhittakerStrategy
+  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory_CreateWhittakerStrategy_
+  commentId: Overload:Terrain.Textures.Factory.CreateWhittakerStrategy
   isSpec: "True"
-  fullName: Terrain.TextureGeneratorFactory.Whittaker
-  nameWithType: TextureGeneratorFactory.Whittaker
+  fullName: Terrain.Textures.Factory.CreateWhittakerStrategy
+  nameWithType: Factory.CreateWhittakerStrategy
 - uid: Utils
   name: Utils
   href: api/Utils.html
@@ -1679,28 +1888,101 @@ references:
   commentId: T:Utils.Geometry.Maths2D
   fullName: Utils.Geometry.Maths2D
   nameWithType: Maths2D
-- uid: Utils.Geometry.Maths2D.LineSegmentIntersection(UnityEngine.Vector2@,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
-  name: LineSegmentIntersection(out Vector2, Vector2, Vector2, Vector2, Vector2)
-  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentIntersection_UnityEngine_Vector2__UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_
-  commentId: M:Utils.Geometry.Maths2D.LineSegmentIntersection(UnityEngine.Vector2@,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
-  name.vb: LineSegmentIntersection(ByRef Vector2, Vector2, Vector2, Vector2, Vector2)
-  fullName: Utils.Geometry.Maths2D.LineSegmentIntersection(out UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2)
-  fullName.vb: Utils.Geometry.Maths2D.LineSegmentIntersection(ByRef UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2)
-  nameWithType: Maths2D.LineSegmentIntersection(out Vector2, Vector2, Vector2, Vector2, Vector2)
-  nameWithType.vb: Maths2D.LineSegmentIntersection(ByRef Vector2, Vector2, Vector2, Vector2, Vector2)
-- uid: Utils.Geometry.Maths2D.LineSegmentIntersection*
-  name: LineSegmentIntersection
-  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentIntersection_
-  commentId: Overload:Utils.Geometry.Maths2D.LineSegmentIntersection
+- uid: Utils.Geometry.Maths2D.GetCenterPoint(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name: GetCenterPoint(IEnumerable<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetCenterPoint_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.GetCenterPoint(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name.vb: GetCenterPoint(IEnumerable(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.GetCenterPoint(System.Collections.Generic.IEnumerable<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.GetCenterPoint(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.GetCenterPoint(IEnumerable<Vector2>)
+  nameWithType.vb: Maths2D.GetCenterPoint(IEnumerable(Of Vector2))
+- uid: Utils.Geometry.Maths2D.GetCenterPoint*
+  name: GetCenterPoint
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetCenterPoint_
+  commentId: Overload:Utils.Geometry.Maths2D.GetCenterPoint
   isSpec: "True"
-  fullName: Utils.Geometry.Maths2D.LineSegmentIntersection
-  nameWithType: Maths2D.LineSegmentIntersection
-- uid: Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
-  name: LineSegmentsIntersect(Vector2, Vector2, Vector2, Vector2)
-  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentsIntersect_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_
-  commentId: M:Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
-  fullName: Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2)
-  nameWithType: Maths2D.LineSegmentsIntersect(Vector2, Vector2, Vector2, Vector2)
+  fullName: Utils.Geometry.Maths2D.GetCenterPoint
+  nameWithType: Maths2D.GetCenterPoint
+- uid: Utils.Geometry.Maths2D.GetExtremeBounds(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name: GetExtremeBounds(IEnumerable<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetExtremeBounds_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.GetExtremeBounds(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name.vb: GetExtremeBounds(IEnumerable(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.GetExtremeBounds(System.Collections.Generic.IEnumerable<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.GetExtremeBounds(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.GetExtremeBounds(IEnumerable<Vector2>)
+  nameWithType.vb: Maths2D.GetExtremeBounds(IEnumerable(Of Vector2))
+- uid: Utils.Geometry.Maths2D.GetExtremeBounds*
+  name: GetExtremeBounds
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetExtremeBounds_
+  commentId: Overload:Utils.Geometry.Maths2D.GetExtremeBounds
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.GetExtremeBounds
+  nameWithType: Maths2D.GetExtremeBounds
+- uid: Utils.Geometry.Maths2D.GetRayCastPolygonCenters(System.Collections.Generic.IEnumerable{UnityEngine.Vector2},System.Single)
+  name: GetRayCastPolygonCenters(IEnumerable<Vector2>, Single)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetRayCastPolygonCenters_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__System_Single_
+  commentId: M:Utils.Geometry.Maths2D.GetRayCastPolygonCenters(System.Collections.Generic.IEnumerable{UnityEngine.Vector2},System.Single)
+  name.vb: GetRayCastPolygonCenters(IEnumerable(Of Vector2), Single)
+  fullName: Utils.Geometry.Maths2D.GetRayCastPolygonCenters(System.Collections.Generic.IEnumerable<UnityEngine.Vector2>, System.Single)
+  fullName.vb: Utils.Geometry.Maths2D.GetRayCastPolygonCenters(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2), System.Single)
+  nameWithType: Maths2D.GetRayCastPolygonCenters(IEnumerable<Vector2>, Single)
+  nameWithType.vb: Maths2D.GetRayCastPolygonCenters(IEnumerable(Of Vector2), Single)
+- uid: Utils.Geometry.Maths2D.GetRayCastPolygonCenters*
+  name: GetRayCastPolygonCenters
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetRayCastPolygonCenters_
+  commentId: Overload:Utils.Geometry.Maths2D.GetRayCastPolygonCenters
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.GetRayCastPolygonCenters
+  nameWithType: Maths2D.GetRayCastPolygonCenters
+- uid: Utils.Geometry.Maths2D.IsInsideExtremeBounds(UnityEngine.Vector2,System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name: IsInsideExtremeBounds(Vector2, IEnumerable<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_IsInsideExtremeBounds_UnityEngine_Vector2_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.IsInsideExtremeBounds(UnityEngine.Vector2,System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name.vb: IsInsideExtremeBounds(Vector2, IEnumerable(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.IsInsideExtremeBounds(UnityEngine.Vector2, System.Collections.Generic.IEnumerable<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.IsInsideExtremeBounds(UnityEngine.Vector2, System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.IsInsideExtremeBounds(Vector2, IEnumerable<Vector2>)
+  nameWithType.vb: Maths2D.IsInsideExtremeBounds(Vector2, IEnumerable(Of Vector2))
+- uid: Utils.Geometry.Maths2D.IsInsideExtremeBounds(UnityEngine.Vector2,System.ValueTuple{System.Single,System.Single,System.Single,System.Single})
+  name: IsInsideExtremeBounds(Vector2, (Single MinX, Single MinY, Single MaxX, Single MaxY))
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_IsInsideExtremeBounds_UnityEngine_Vector2_System_ValueTuple_System_Single_System_Single_System_Single_System_Single__
+  commentId: M:Utils.Geometry.Maths2D.IsInsideExtremeBounds(UnityEngine.Vector2,System.ValueTuple{System.Single,System.Single,System.Single,System.Single})
+  name.vb: IsInsideExtremeBounds(Vector2, (MinX As Single, MinY As Single, MaxX As Single, MaxY As Single))
+  fullName: Utils.Geometry.Maths2D.IsInsideExtremeBounds(UnityEngine.Vector2, System.ValueTuple<System.Single, System.Single, System.Single, System.Single>)
+  fullName.vb: Utils.Geometry.Maths2D.IsInsideExtremeBounds(UnityEngine.Vector2, System.ValueTuple(Of System.Single, System.Single, System.Single, System.Single))
+  nameWithType: Maths2D.IsInsideExtremeBounds(Vector2, (Single MinX, Single MinY, Single MaxX, Single MaxY))
+  nameWithType.vb: Maths2D.IsInsideExtremeBounds(Vector2, (MinX As Single, MinY As Single, MaxX As Single, MaxY As Single))
+- uid: Utils.Geometry.Maths2D.IsInsideExtremeBounds*
+  name: IsInsideExtremeBounds
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_IsInsideExtremeBounds_
+  commentId: Overload:Utils.Geometry.Maths2D.IsInsideExtremeBounds
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.IsInsideExtremeBounds
+  nameWithType: Maths2D.IsInsideExtremeBounds
+- uid: Utils.Geometry.Maths2D.IsInsidePolygon(UnityEngine.Vector2,System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name: IsInsidePolygon(Vector2, IEnumerable<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_IsInsidePolygon_UnityEngine_Vector2_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.IsInsidePolygon(UnityEngine.Vector2,System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name.vb: IsInsidePolygon(Vector2, IEnumerable(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.IsInsidePolygon(UnityEngine.Vector2, System.Collections.Generic.IEnumerable<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.IsInsidePolygon(UnityEngine.Vector2, System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.IsInsidePolygon(Vector2, IEnumerable<Vector2>)
+  nameWithType.vb: Maths2D.IsInsidePolygon(Vector2, IEnumerable(Of Vector2))
+- uid: Utils.Geometry.Maths2D.IsInsidePolygon*
+  name: IsInsidePolygon
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_IsInsidePolygon_
+  commentId: Overload:Utils.Geometry.Maths2D.IsInsidePolygon
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.IsInsidePolygon
+  nameWithType: Maths2D.IsInsidePolygon
+- uid: Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Boolean)
+  name: LineSegmentsIntersect(Vector2, Vector2, Vector2, Vector2, Boolean)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentsIntersect_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_System_Boolean_
+  commentId: M:Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Boolean)
+  fullName: Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Vector2, System.Boolean)
+  nameWithType: Maths2D.LineSegmentsIntersect(Vector2, Vector2, Vector2, Vector2, Boolean)
 - uid: Utils.Geometry.Maths2D.LineSegmentsIntersect*
   name: LineSegmentsIntersect
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentsIntersect_
@@ -1734,6 +2016,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.PseudoDistanceFromPointToLine
   nameWithType: Maths2D.PseudoDistanceFromPointToLine
+- uid: Utils.Geometry.Maths2D.RayCastIntersections(UnityEngine.Vector2,UnityEngine.Vector2,System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name: RayCastIntersections(Vector2, Vector2, IEnumerable<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_RayCastIntersections_UnityEngine_Vector2_UnityEngine_Vector2_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.RayCastIntersections(UnityEngine.Vector2,UnityEngine.Vector2,System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name.vb: RayCastIntersections(Vector2, Vector2, IEnumerable(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.RayCastIntersections(UnityEngine.Vector2, UnityEngine.Vector2, System.Collections.Generic.IEnumerable<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.RayCastIntersections(UnityEngine.Vector2, UnityEngine.Vector2, System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.RayCastIntersections(Vector2, Vector2, IEnumerable<Vector2>)
+  nameWithType.vb: Maths2D.RayCastIntersections(Vector2, Vector2, IEnumerable(Of Vector2))
+- uid: Utils.Geometry.Maths2D.RayCastIntersections*
+  name: RayCastIntersections
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_RayCastIntersections_
+  commentId: Overload:Utils.Geometry.Maths2D.RayCastIntersections
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.RayCastIntersections
+  nameWithType: Maths2D.RayCastIntersections
 - uid: Utils.Geometry.Maths2D.SideOfLine(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
   name: SideOfLine(Single, Single, Single, Single, Single, Single)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_SideOfLine_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_
@@ -1791,6 +2089,32 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths3D.LineSegmentIntersection
   nameWithType: Maths3D.LineSegmentIntersection
+- uid: Utils.Geometry.Maths3D.OnLine(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name: OnLine(Vector3, Vector3, Vector3)
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_OnLine_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.Maths3D.OnLine(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  fullName: Utils.Geometry.Maths3D.OnLine(UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: Maths3D.OnLine(Vector3, Vector3, Vector3)
+- uid: Utils.Geometry.Maths3D.OnLine*
+  name: OnLine
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_OnLine_
+  commentId: Overload:Utils.Geometry.Maths3D.OnLine
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths3D.OnLine
+  nameWithType: Maths3D.OnLine
+- uid: Utils.Geometry.Maths3D.OnLineSegment(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name: OnLineSegment(Vector3, Vector3, Vector3)
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_OnLineSegment_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.Maths3D.OnLineSegment(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  fullName: Utils.Geometry.Maths3D.OnLineSegment(UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: Maths3D.OnLineSegment(Vector3, Vector3, Vector3)
+- uid: Utils.Geometry.Maths3D.OnLineSegment*
+  name: OnLineSegment
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_OnLineSegment_
+  commentId: Overload:Utils.Geometry.Maths3D.OnLineSegment
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths3D.OnLineSegment
+  nameWithType: Maths3D.OnLineSegment
 - uid: Utils.Geometry.Polygon
   name: Polygon
   href: api/Utils.Geometry.Polygon.html
@@ -2044,88 +2368,6 @@ references:
   isSpec: "True"
   fullName: Utils.TerrainUtil.HeightMap
   nameWithType: TerrainUtil.HeightMap
-- uid: Utils.TerrainUtil.HeightMapInjector
-  name: TerrainUtil.HeightMapInjector
-  href: api/Utils.TerrainUtil.HeightMapInjector.html
-  commentId: T:Utils.TerrainUtil.HeightMapInjector
-  fullName: Utils.TerrainUtil.HeightMapInjector
-  nameWithType: TerrainUtil.HeightMapInjector
-- uid: Utils.TerrainUtil.HeightMapInjector.Depth
-  name: Depth
-  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Depth
-  commentId: P:Utils.TerrainUtil.HeightMapInjector.Depth
-  fullName: Utils.TerrainUtil.HeightMapInjector.Depth
-  nameWithType: TerrainUtil.HeightMapInjector.Depth
-- uid: Utils.TerrainUtil.HeightMapInjector.Depth*
-  name: Depth
-  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Depth_
-  commentId: Overload:Utils.TerrainUtil.HeightMapInjector.Depth
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.HeightMapInjector.Depth
-  nameWithType: TerrainUtil.HeightMapInjector.Depth
-- uid: Utils.TerrainUtil.HeightMapInjector.Get
-  name: Get()
-  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Get
-  commentId: M:Utils.TerrainUtil.HeightMapInjector.Get
-  fullName: Utils.TerrainUtil.HeightMapInjector.Get()
-  nameWithType: TerrainUtil.HeightMapInjector.Get()
-- uid: Utils.TerrainUtil.HeightMapInjector.Get*
-  name: Get
-  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Get_
-  commentId: Overload:Utils.TerrainUtil.HeightMapInjector.Get
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.HeightMapInjector.Get
-  nameWithType: TerrainUtil.HeightMapInjector.Get
-- uid: Utils.TerrainUtil.HeightMapInjector.MapType
-  name: TerrainUtil.HeightMapInjector.MapType
-  href: api/Utils.TerrainUtil.HeightMapInjector.MapType.html
-  commentId: T:Utils.TerrainUtil.HeightMapInjector.MapType
-  fullName: Utils.TerrainUtil.HeightMapInjector.MapType
-  nameWithType: TerrainUtil.HeightMapInjector.MapType
-- uid: Utils.TerrainUtil.HeightMapInjector.MapType.Flat
-  name: Flat
-  href: api/Utils.TerrainUtil.HeightMapInjector.MapType.html#Utils_TerrainUtil_HeightMapInjector_MapType_Flat
-  commentId: F:Utils.TerrainUtil.HeightMapInjector.MapType.Flat
-  fullName: Utils.TerrainUtil.HeightMapInjector.MapType.Flat
-  nameWithType: TerrainUtil.HeightMapInjector.MapType.Flat
-- uid: Utils.TerrainUtil.HeightMapInjector.MapType.Pyramid
-  name: Pyramid
-  href: api/Utils.TerrainUtil.HeightMapInjector.MapType.html#Utils_TerrainUtil_HeightMapInjector_MapType_Pyramid
-  commentId: F:Utils.TerrainUtil.HeightMapInjector.MapType.Pyramid
-  fullName: Utils.TerrainUtil.HeightMapInjector.MapType.Pyramid
-  nameWithType: TerrainUtil.HeightMapInjector.MapType.Pyramid
-- uid: Utils.TerrainUtil.HeightMapInjector.MapType.Slope
-  name: Slope
-  href: api/Utils.TerrainUtil.HeightMapInjector.MapType.html#Utils_TerrainUtil_HeightMapInjector_MapType_Slope
-  commentId: F:Utils.TerrainUtil.HeightMapInjector.MapType.Slope
-  fullName: Utils.TerrainUtil.HeightMapInjector.MapType.Slope
-  nameWithType: TerrainUtil.HeightMapInjector.MapType.Slope
-- uid: Utils.TerrainUtil.HeightMapInjector.Type
-  name: Type
-  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Type
-  commentId: P:Utils.TerrainUtil.HeightMapInjector.Type
-  fullName: Utils.TerrainUtil.HeightMapInjector.Type
-  nameWithType: TerrainUtil.HeightMapInjector.Type
-- uid: Utils.TerrainUtil.HeightMapInjector.Type*
-  name: Type
-  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Type_
-  commentId: Overload:Utils.TerrainUtil.HeightMapInjector.Type
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.HeightMapInjector.Type
-  nameWithType: TerrainUtil.HeightMapInjector.Type
-- uid: Utils.TerrainUtil.HeightMapInjector.Width
-  name: Width
-  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Width
-  commentId: P:Utils.TerrainUtil.HeightMapInjector.Width
-  fullName: Utils.TerrainUtil.HeightMapInjector.Width
-  nameWithType: TerrainUtil.HeightMapInjector.Width
-- uid: Utils.TerrainUtil.HeightMapInjector.Width*
-  name: Width
-  href: api/Utils.TerrainUtil.HeightMapInjector.html#Utils_TerrainUtil_HeightMapInjector_Width_
-  commentId: Overload:Utils.TerrainUtil.HeightMapInjector.Width
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.HeightMapInjector.Width
-  nameWithType: TerrainUtil.HeightMapInjector.Width
 - uid: Utils.TerrainUtil.Mesh(System.Single[0:,0:],System.Single)
   name: Mesh(Single[,], Single)
   href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Mesh_System_Single_0__0___System_Single_

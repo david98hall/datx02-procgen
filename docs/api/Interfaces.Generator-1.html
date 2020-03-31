@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IInjector&lt;T&gt;
+    <title>Class Generator&lt;T&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IInjector&lt;T&gt;
+    <meta name="title" content="Class Generator&lt;T&gt;
    ">
     <meta name="generator" content="docfx 2.50.0.0">
     
@@ -68,19 +68,51 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Interfaces.IInjector`1">
+            <article class="content wrap" id="_content" data-uid="Interfaces.Generator`1">
   
   
-  <h1 id="Interfaces_IInjector_1" data-uid="Interfaces.IInjector`1" class="text-break">Interface IInjector&lt;T&gt;
+  <h1 id="Interfaces_Generator_1" data-uid="Interfaces.Generator`1" class="text-break">Class Generator&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Class used as dependency injection to avoid circular dependencies.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Generator&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;T&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Interfaces.html">Interfaces</a></h6>
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
-  <h5 id="Interfaces_IInjector_1_syntax">Syntax</h5>
+  <h5 id="Interfaces_Generator_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IInjector&lt;out T&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class Generator&lt;T&gt; : IGenerator&lt;T&gt; where T : class</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -93,8 +125,39 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>The protected dependency type.</p>
-</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Generator_1_Strategy.md&amp;value=---%0Auid%3A%20Interfaces.Generator%601.Strategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Generator.cs/#L5">View Source</a>
+  </span>
+  <a id="Interfaces_Generator_1_Strategy_" data-uid="Interfaces.Generator`1.Strategy*"></a>
+  <h4 id="Interfaces_Generator_1_Strategy" data-uid="Interfaces.Generator`1.Strategy">Strategy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;T&gt; Strategy { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;T&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -102,19 +165,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_IInjector_1_Get.md&amp;value=---%0Auid%3A%20Interfaces.IInjector%601.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Generator_1_Generate.md&amp;value=---%0Auid%3A%20Interfaces.Generator%601.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/IInjectior.cs/#L13">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Generator.cs/#L7">View Source</a>
   </span>
-  <a id="Interfaces_IInjector_1_Get_" data-uid="Interfaces.IInjector`1.Get*"></a>
-  <h4 id="Interfaces_IInjector_1_Get" data-uid="Interfaces.IInjector`1.Get">Get()</h4>
-  <div class="markdown level1 summary"><p>Returns the protected object</p>
-</div>
+  <a id="Interfaces_Generator_1_Generate_" data-uid="Interfaces.Generator`1.Generate*"></a>
+  <h4 id="Interfaces_Generator_1_Generate" data-uid="Interfaces.Generator`1.Generate">Generate()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T Get()</code></pre>
+    <pre><code class="lang-csharp hljs">public T Generate()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -127,11 +189,14 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>The protected object</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
 </article>
           </div>
           
@@ -140,10 +205,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_IInjector_1.md&amp;value=---%0Auid%3A%20Interfaces.IInjector%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Generator_1.md&amp;value=---%0Auid%3A%20Interfaces.Generator%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/IInjectior.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Generator.cs/#L3" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

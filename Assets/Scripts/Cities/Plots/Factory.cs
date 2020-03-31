@@ -20,7 +20,12 @@ namespace Cities.Plots
             _roadNetworkInjector = roadNetworkInjector;
         }
         
-        internal IGenerator<IEnumerable<Plot>> CreateCycleStrategy()
+        /// <summary>
+        /// Creates a strategy for finding plots in cycles of the
+        /// road network at hand.
+        /// </summary>
+        /// <returns>The found plots.</returns>
+        public IGenerator<IEnumerable<Plot>> CreateCycleStrategy()
         {
             return new CycleStrategy(_roadNetworkInjector);
         }

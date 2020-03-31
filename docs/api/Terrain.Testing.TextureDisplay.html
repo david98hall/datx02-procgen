@@ -73,7 +73,7 @@
   
   <h1 id="Terrain_Testing_TextureDisplay" data-uid="Terrain.Testing.TextureDisplay" class="text-break">Class TextureDisplay
   </h1>
-  <div class="markdown level0 summary"><p>A visual testing class for displaying <span class="xref">Terrain.TextureGenerator</span></p>
+  <div class="markdown level0 summary"><p>A visual testing class for displaying generation of textures</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -84,6 +84,10 @@
     <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
     <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
     <div class="level5"><span class="xref">TextureDisplay</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -379,7 +383,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class TextureDisplay : MonoBehaviour</code></pre>
+public class TextureDisplay : MonoBehaviour, IInjector&lt;float[, ]&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -388,7 +392,7 @@ public class TextureDisplay : MonoBehaviour</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Testing_TextureDisplay_depth.md&amp;value=---%0Auid%3A%20Terrain.Testing.TextureDisplay.depth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L27">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L28">View Source</a>
   </span>
   <h4 id="Terrain_Testing_TextureDisplay_depth" data-uid="Terrain.Testing.TextureDisplay.depth">depth</h4>
   <div class="markdown level1 summary"></div>
@@ -417,7 +421,7 @@ public class TextureDisplay : MonoBehaviour</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Testing_TextureDisplay_heightScale.md&amp;value=---%0Auid%3A%20Terrain.Testing.TextureDisplay.heightScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L28">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L29">View Source</a>
   </span>
   <h4 id="Terrain_Testing_TextureDisplay_heightScale" data-uid="Terrain.Testing.TextureDisplay.heightScale">heightScale</h4>
   <div class="markdown level1 summary"></div>
@@ -475,7 +479,7 @@ public class TextureDisplay : MonoBehaviour</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Testing_TextureDisplay_strategy.md&amp;value=---%0Auid%3A%20Terrain.Testing.TextureDisplay.strategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L19">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L20">View Source</a>
   </span>
   <h4 id="Terrain_Testing_TextureDisplay_strategy" data-uid="Terrain.Testing.TextureDisplay.strategy">strategy</h4>
   <div class="markdown level1 summary"></div>
@@ -533,7 +537,7 @@ public class TextureDisplay : MonoBehaviour</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Testing_TextureDisplay_whittakerMap.md&amp;value=---%0Auid%3A%20Terrain.Testing.TextureDisplay.whittakerMap%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L32">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L33">View Source</a>
   </span>
   <h4 id="Terrain_Testing_TextureDisplay_whittakerMap" data-uid="Terrain.Testing.TextureDisplay.whittakerMap">whittakerMap</h4>
   <div class="markdown level1 summary"></div>
@@ -562,7 +566,7 @@ public class TextureDisplay : MonoBehaviour</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Testing_TextureDisplay_width.md&amp;value=---%0Auid%3A%20Terrain.Testing.TextureDisplay.width%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L26">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L27">View Source</a>
   </span>
   <h4 id="Terrain_Testing_TextureDisplay_width" data-uid="Terrain.Testing.TextureDisplay.width">width</h4>
   <div class="markdown level1 summary"></div>
@@ -590,6 +594,36 @@ public class TextureDisplay : MonoBehaviour</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Testing_TextureDisplay_Get.md&amp;value=---%0Auid%3A%20Terrain.Testing.TextureDisplay.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L58">View Source</a>
+  </span>
+  <a id="Terrain_Testing_TextureDisplay_Get_" data-uid="Terrain.Testing.TextureDisplay.Get*"></a>
+  <h4 id="Terrain_Testing_TextureDisplay_Get" data-uid="Terrain.Testing.TextureDisplay.Get">Get()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[, ] Get()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span>[,]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Testing_TextureDisplay_Refresh.md&amp;value=---%0Auid%3A%20Terrain.Testing.TextureDisplay.Refresh%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -603,6 +637,10 @@ public class TextureDisplay : MonoBehaviour</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Refresh()</code></pre>
   </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
+  </div>
 </article>
           </div>
           
@@ -614,7 +652,7 @@ public class TextureDisplay : MonoBehaviour</code></pre>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Testing_TextureDisplay.md&amp;value=---%0Auid%3A%20Terrain.Testing.TextureDisplay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Testing/TextureDisplay.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
