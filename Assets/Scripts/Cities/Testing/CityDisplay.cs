@@ -8,7 +8,6 @@ using Extensions;
 using Interfaces;
 using UnityEngine;
 using Utils;
-using Factory = Cities.Plots.Factory;
 
 namespace Cities.Testing
 {
@@ -51,33 +50,21 @@ namespace Cities.Testing
         public float heightBias;
         
         public Material roadMaterial;
-        public Material plotBorderMaterial;
-        
-        public enum RoadStrategy
-        {
-            Sample, 
-            AStar,
-        }
 
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
-            _cityGenerator.PlotStrategy = new Factory(_cityGenerator).CreateCycleStrategy();
+            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateCycleStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
-
+        
         public async void GenerateCityAsync()
         {
-            if (roadStrategy == RoadStrategy.AStar)
-            {
-                var heightMapInjector = new TerrainUtil.HeightMapInjector
-                    {Width = width, Depth = depth, Type = heightMapType};                 
-                meshFilter.sharedMesh = TerrainUtil.Mesh(heightMapInjector.Get(), scale);
-                meshRenderer.sharedMaterial.mainTexture = Texture2D.redTexture;
-            }
-            
+            ClearRoads();
+            meshFilter.sharedMesh = GetTerrainMesh();
+            meshRenderer.sharedMaterial.mainTexture = Texture2D.redTexture;
             _cityGenerator.RoadNetworkStrategy = GetRoadStrategy();
-            DisplayCity(await Task.Run(() => _cityGenerator.Generate()));          
+            DisplayCity(await Task.Run(() => _cityGenerator.Generate()));
         }
 
         private Mesh GetTerrainMesh()
@@ -118,10 +105,9 @@ namespace Cities.Testing
 
         private void DisplayCity(City city)
         {
-            ClearRoads();
-            DisplayPlotBorders(city.Plots);
-            // DisplayRoadNetworkParts(city.RoadNetwork);
-            DrawRoads(city.RoadNetwork.GetRoads());
+            //ClearRoads();
+            // DisplayPlotBorders(city.Plots);
+            DisplayRoadNetwork(city.RoadNetwork);
         }
 
         private void DisplayPlotBorders(IEnumerator<Plot> plots)
@@ -131,29 +117,26 @@ namespace Cities.Testing
             {
                 if (plots.Current != null)
                 {
-                    DrawRoad(plots.Current.Vertices, 
-                        "Plot Border " + plotCount++, 
-                        plotBorderMaterial, 
-                        0.15f); 
+                    DrawRoad(plots.Current.Vertices, "Plot Border " + plotCount++, null); 
                 }
             }
         }
-
-        private void DisplayRoadNetworkParts(RoadNetwork roadNetwork)
+        
+        private void DisplayRoadNetwork(RoadNetwork roadNetwork)
         {
-            DrawRoads(roadNetwork.GetRoadParts().Select(road => new [] {road.Start, road.End}));
+            DrawRoads(roadNetwork.GetRoads());
         }
 
-        private void DrawRoads(IEnumerable<IEnumerable<Vector3>> roads, float roadWidth = 0.3f)
+        private void DrawRoads(IEnumerable<IEnumerable<Vector3>> roads)
         {
             var roadCount = 1;
             foreach (var road in roads)
             {
-                DrawRoad(road, "Road " + roadCount++, roadMaterial, roadWidth);
+                DrawRoad(road, "Road " + roadCount++, roadMaterial);
             }
         }
 
-        private void DrawRoad(IEnumerable<Vector3> road, string roadName, Material material, float roadWidth)
+        private void DrawRoad(IEnumerable<Vector3> road, string roadName, Material material)
         {
             // Create a game object with a LineRenderer component
             var item = new GameObject(roadName);
@@ -161,8 +144,8 @@ namespace Cities.Testing
             _roadRenderers.Add(item);
                 
             // Set the appearance of the road
-            roadRenderer.startWidth = roadWidth;
-            roadRenderer.endWidth = roadWidth;
+            roadRenderer.startWidth = 0.3f;
+            roadRenderer.endWidth = 0.3f;
             roadRenderer.numCornerVertices = 90;
             roadRenderer.numCapVertices = 90;
             roadRenderer.textureMode = LineTextureMode.Tile;
@@ -194,26 +177,5 @@ namespace Cities.Testing
         
         public float[,] Get() => GetTerrainMesh().HeightMap();
 
-        private IGenerator<RoadNetwork> GetRoadStrategy()
-        {
-            var heightMapInjector = new TerrainUtil.HeightMapInjector
-            {
-                Width = width, 
-                Depth = depth, 
-                Type = heightMapType
-            };
-            
-            switch (roadStrategy)
-            {
-                case RoadStrategy.Sample:
-                    return new SampleStrategy(heightMapInjector);
-                case RoadStrategy.AStar:
-                    var aStar =  new AStarStrategy(heightMapInjector) {HeightBias = heightBias};
-                    aStar.Add((0, 0), (width - 1, depth - 1));
-                    return aStar;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
     }
 }
