@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using System;
 using UnityEngine;
@@ -14,19 +15,17 @@ public class LSystem
     public class State{
         public Vector3 pos;
         public double angle;
-        
+
         public State(Vector3 pos, double angle)
         {
             this.pos = pos;
             this.angle = angle;
         }
-        
         public State(){
             pos = Vector3.zero;
             angle = 0;
         }
     }
-    
     // F -> The Road goes forward
     // S -> The Road splits
     // B -> The Road branches off in a particular shape
@@ -34,7 +33,7 @@ public class LSystem
     // - -> Turn right by some amount
     // [ -> Start working on the next state in the queue, saving the current one
     // ] -> Mark the current state as finished, and proceed to the next one in the queue
-    
+
     public IDictionary<char, string> ruleset = new Dictionary<char, string>();
     StringBuilder tree;
     public char axiom;

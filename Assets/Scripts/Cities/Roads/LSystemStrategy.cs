@@ -19,7 +19,7 @@ namespace Cities.Roads{
         
         public override RoadNetwork Generate(){
             system = new LSystem(system.axiom);
-            for (var i = 0; i < iterations; i++)
+            for (var i = 0; i < 3; i++)
             {
                 system.Rewrite();
             }
