@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using System;
 using UnityEngine;
@@ -253,8 +252,7 @@ public class LSystem
         int n = 0;
         foreach (Vector3 sect in network.Intersections)
         {
-            if(Vector3.Distance(pos, sect) <= radius)
-            n++;
+            if(Vector3.Distance(pos, sect) <= radius) n++;
         }
         Debug.Log("intersections at position "+pos +"within radius "+radius+": " + n);
         return n;
