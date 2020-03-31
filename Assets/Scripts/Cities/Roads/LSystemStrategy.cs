@@ -7,18 +7,17 @@ namespace Cities.Roads{
         LSystem system;
         internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
         {
-            system = new LSystem('F');
+            system = new LSystem(Injector, 'F');
             start = true;
         }
         
         public override RoadNetwork Generate(){
-            system = new LSystem(system.axiom);
+            system = new LSystem(Injector, system.axiom);
             for (var i = 0; i < 3; i++)
             {
                 system.Rewrite();
             }
             return system.network;
         }
-        
     }
 }

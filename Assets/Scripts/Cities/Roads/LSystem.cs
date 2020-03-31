@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text;
+using Interfaces;
 using UnityEngine;
 
 namespace Cities.Roads
@@ -9,8 +10,8 @@ namespace Cities.Roads
     /// </summary>
     public class LSystem
     {
-
-        public class State{
+        public class State
+        {
             public Vector3 pos;
             public double angle;
 
@@ -20,6 +21,9 @@ namespace Cities.Roads
                 this.angle = angle;
             }
         }
+
+
+        private readonly IInjector<float[,]> _noiseMapInjector;
         // F -> The Road goes forward
         // S -> The Road splits
         // B -> The Road branches off in a particular shape
@@ -27,7 +31,6 @@ namespace Cities.Roads
         // - -> Turn right by some amount
         // [ -> Start working on the next state in the queue, saving the current one
         // ] -> Mark the current state as finished, and proceed to the next one in the queue
-
         public IDictionary<char, string> ruleset = new Dictionary<char, string>();
         StringBuilder tree;
         public char axiom;
@@ -37,8 +40,9 @@ namespace Cities.Roads
         private float toRad = Mathf.Deg2Rad;
         private float pi = Mathf.PI;
 
-        public LSystem(char c){
-        
+        public LSystem(IInjector<float[,]> noiseMapInjector, char c)
+        {
+            _noiseMapInjector = noiseMapInjector;
             axiom = c;
             state = new State(Vector3.zero, 0);
             ruleset.Add('F',"F+FB]");
@@ -64,6 +68,7 @@ namespace Cities.Roads
         /// </summary>
         public void Rewrite()
         {
+            var noiseMap = _noiseMapInjector.Get();
             System.Random rdm = new System.Random();
             StringBuilder newTree = new StringBuilder();
             foreach (char c in tree.ToString())
