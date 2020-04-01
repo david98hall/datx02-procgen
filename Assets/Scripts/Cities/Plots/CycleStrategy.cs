@@ -85,7 +85,7 @@ namespace Cities.Plots
                 // Find out if the cycle is overlapping any minimal one
                 var cycleXz = cycle.Select(Vec3ToVec2);
                 var isOverlapping = minimalCycles.Any(minimalCycle => 
-                    Maths2D.AnyPolygonCenterOverlap(cycleXz, minimalCycle.Select(Vec3ToVec2)));
+                    Maths2D.AnyPolygonCenterOverlaps(cycleXz, minimalCycle.Select(Vec3ToVec2)));
 
                 // If this cycle doesn't overlap any minimal cycle, it is minimal as well
                 if (!isOverlapping && !minimalCycles.Any(cycle.ContainsAll))

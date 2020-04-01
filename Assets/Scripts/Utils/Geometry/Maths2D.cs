@@ -175,7 +175,7 @@ namespace Utils.Geometry
             // There must be at least 3 vertices in the body's shape.
             // For the vertex to be inside the polygon, it can't be outside its extreme bounds.
             var extremeBounds = GetExtremeBounds(verticesList);
-            if (verticesList.Count < 3 && !IsInsideExtremeBounds(vertex, extremeBounds))
+            if (verticesList.Count < 3 || !IsInsideExtremeBounds(vertex, extremeBounds))
                 return false;
 
             // Return true if the ray cast intersection count is odd, false otherwise
@@ -193,7 +193,7 @@ namespace Utils.Geometry
         /// <param name="polygon1">The first polygon.</param>
         /// <param name="polygon2">The second polygon.</param>
         /// <returns>true if any center point in the first polygon is inside the second.</returns>
-        public static bool AnyPolygonCenterOverlap(IEnumerable<Vector2> polygon1, IEnumerable<Vector2> polygon2)
+        public static bool AnyPolygonCenterOverlaps(IEnumerable<Vector2> polygon1, IEnumerable<Vector2> polygon2)
         {
             // Use ray casting to find center points within the first polygon
             const float raySpacing = 0.2f;
