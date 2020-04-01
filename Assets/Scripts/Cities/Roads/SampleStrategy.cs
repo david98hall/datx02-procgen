@@ -18,47 +18,85 @@ namespace Cities.Roads
         public override RoadNetwork Generate()
         {
             var roadNetwork = new RoadNetwork();
-            
-            const float size = 5f;
-            const float radius = size * 1.5f;
-
-            var circleRoad = new LinkedList<Vector3>();
-            for (var i = 0f; i < 2 * Math.PI; i += 0.1f)
-            {
-                var x = (float) (radius * Math.Cos(i));
-                var z = (float) (radius * Math.Sin(i));
-                circleRoad.AddLast(new Vector3(x, 0, z));
-            }
-            circleRoad.AddLast(new Vector3(radius, 0, 0));
-            roadNetwork.AddRoad(circleRoad);
-            
-            const float offset1 = -size / 2;
-            var squareRoad = new LinkedList<Vector3>();
-            squareRoad.AddLast(new Vector3(offset1, 0, offset1));
-            squareRoad.AddLast(new Vector3(offset1, 0, offset1 + size));
-            squareRoad.AddLast(new Vector3(offset1 + size, 0, offset1 + size));
-            squareRoad.AddLast(new Vector3(offset1 + size, 0, offset1));
-            squareRoad.AddLast(new Vector3(offset1, 0, offset1));
-            roadNetwork.AddRoad(squareRoad);
-            
-            var diagonalRoad1 = new LinkedList<Vector3>();
-            diagonalRoad1.AddLast(new Vector3(offset1, 0, offset1 + size));
-            diagonalRoad1.AddLast(new Vector3(offset1 + size / 2, 2, offset1 + size / 2));
-            diagonalRoad1.AddLast(new Vector3(offset1 + size, 0, offset1));
-            roadNetwork.AddRoad(diagonalRoad1);
-            
-            var diagonalRoad2 = new LinkedList<Vector3>();
-            diagonalRoad2.AddLast(new Vector3(offset1, 0, offset1));
-            diagonalRoad2.AddLast(new Vector3(offset1 + size / 2, 2, offset1 + size / 2));
-            diagonalRoad2.AddLast(new Vector3(offset1 + size, 0, offset1 + size));
-            roadNetwork.AddRoad(diagonalRoad2);
-
-            var straightRoad = new LinkedList<Vector3>();
-            straightRoad.AddLast(new Vector3(offset1, 0, offset1 + size / 4));
-            straightRoad.AddLast(new Vector3(offset1 + size, 0, offset1 + size / 4));
-            roadNetwork.AddRoad(straightRoad);
-
+            roadNetwork.AddRoads(CreateTestExample1());
+            roadNetwork.AddRoads(CreateTestExample2());
             return roadNetwork;
         }
+
+        #region Test examples
+        
+        // Cycles within cycle
+        private static IEnumerable<IEnumerable<Vector3>> CreateTestExample1()
+        {
+            var roads = new HashSet<IEnumerable<Vector3>> {CreateCircleRoad(7.5f, 0.5f)};
+            roads.AddRange(CreatePyramid(5f, -2.5f, -2.5f));
+            return roads;
+        }
+        
+        // No cycles within other cycles
+        private static IEnumerable<IEnumerable<Vector3>> CreateTestExample2()
+        {
+            var roads = new HashSet<IEnumerable<Vector3>>{CreateCircleRoad(7.5f, 0.5f, 17.5f)};
+            roads.AddRange(CreatePyramid(5f, 25, -2.5f));
+            return roads;
+        }
+        #endregion
+        
+        #region Types of roads
+        private static IEnumerable<Vector3> CreateSquareRoad(float size, float offsetX = 0, float offsetZ = 0)
+        {
+            var squareRoad = new LinkedList<Vector3>();
+            squareRoad.AddLast(new Vector3(offsetX, 0, offsetZ));
+            squareRoad.AddLast(new Vector3(offsetX, 0, offsetZ + size));
+            squareRoad.AddLast(new Vector3(offsetX + size, 0, offsetZ + size));
+            squareRoad.AddLast(new Vector3(offsetX + size, 0, offsetZ));
+            squareRoad.AddLast(new Vector3(offsetX, 0, offsetZ));
+
+            return squareRoad;
+        }
+        
+        private static IEnumerable<Vector3> CreateCircleRoad(float radius, float resolution, float offsetX = 0, float offsetZ = 0)
+        {
+            var circleRoad = new LinkedList<Vector3>();
+            for (var i = 0f; i < 2 * Math.PI; i += resolution)
+            {
+                var x = (float) (radius * Math.Cos(i)) + offsetX;
+                var z = (float) (radius * Math.Sin(i)) + offsetZ;
+                circleRoad.AddLast(new Vector3(x, 0, z));
+            }
+            circleRoad.AddLast(new Vector3(radius + offsetX, 0, offsetZ));
+
+            return circleRoad;
+        }
+        #endregion
+        
+        #region Example road networks
+
+        private static IEnumerable<IEnumerable<Vector3>> CreatePyramid(
+            float size, float offsetX, float offsetZ)
+        {
+            var roads = new HashSet<IEnumerable<Vector3>> {CreateSquareRoad(size, offsetX, offsetZ)};
+
+            var diagonalRoad1 = new LinkedList<Vector3>();
+            diagonalRoad1.AddLast(new Vector3(offsetX, 0, offsetZ + size));
+            diagonalRoad1.AddLast(new Vector3(offsetX + size / 2, 2, offsetZ + size / 2));
+            diagonalRoad1.AddLast(new Vector3(offsetX + size, 0, offsetZ));
+            roads.Add(diagonalRoad1);
+            
+            var diagonalRoad2 = new LinkedList<Vector3>();
+            diagonalRoad2.AddLast(new Vector3(offsetX, 0, offsetZ));
+            diagonalRoad2.AddLast(new Vector3(offsetX + size / 2, 2, offsetZ + size / 2));
+            diagonalRoad2.AddLast(new Vector3(offsetX + size, 0, offsetZ + size));
+            roads.Add(diagonalRoad2);
+
+            var straightRoad = new LinkedList<Vector3>();
+            straightRoad.AddLast(new Vector3(offsetX, 0, offsetZ + size / 4));
+            straightRoad.AddLast(new Vector3(offsetX + size, 0, offsetZ + size / 4));
+            roads.Add(straightRoad);
+
+            return roads;
+        }
+        #endregion
+        
     }
 }
