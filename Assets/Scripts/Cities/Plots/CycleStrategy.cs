@@ -48,29 +48,36 @@ namespace Cities.Plots
             if (roadNetwork.VertexCount < 3) 
                 return new List<IReadOnlyCollection<Vector3>>();
             
-            // Find all cycles in the road network
-            var allCycles = TaskUtils.RunActionInTasks(
-                    roadNetwork.RoadVertices,
-                    vertex => TryGetCycles(roadNetwork, vertex, out var cycles)
-                        ? cycles 
-                        : new List<IReadOnlyCollection<Vector3>>())
-                .SelectMany(cycle => cycle)
-                .Where(c => c.Any())
-                .ToList();
-
-            // Sort the cycles from lowest vertex count to highest in order to later only save the minimal cycles
-            allCycles.Sort((cycle1, cycle2) => 
-                cycle1.Count < cycle2.Count ? -1 : cycle1.Count > cycle2.Count ? 1 : 0);
+            // Get all cycles in the road network and sort them from lowest vertex
+            // count to highest in order to later only save the minimal cycles
+            var cycles = GetAllCycles(roadNetwork).ToList();
+            cycles.Sort((cycle1, cycle2) => cycle1.Count < cycle2.Count ? -1 : cycle1.Count > cycle2.Count ? 1 : 0);
             
-            return GetMinimalCycles(allCycles); 
+            return GetMinimalCycles(cycles); 
         }
 
+        /// <summary>
+        /// Gets all cycles in the road network.
+        /// </summary>
+        /// <param name="roadNetwork">The road network.</param>
+        /// <returns>All cycles in the road network.</returns>
+        private static IEnumerable<IReadOnlyCollection<Vector3>> GetAllCycles(RoadNetwork roadNetwork)
+        {
+            return TaskUtils.RunActionInTasks(
+                    roadNetwork.RoadVertices,
+                    vertex => TryGetCycles(roadNetwork, vertex, out var vertexCycles)
+                        ? vertexCycles
+                        : new List<IReadOnlyCollection<Vector3>>())
+                .SelectMany(cycle => cycle)
+                .Where(c => c.Any());
+        }
+        
         /// <summary>
         /// Extracts all minimal cycles (neither cycle contains another nor intersects another).
         /// </summary>
         /// <param name="cycles">The cycles to extract from.</param>
         /// <returns>All extracted minimal cycles in the given enumerable.</returns>
-        private IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCycles(
+        private static IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCycles(
             IEnumerable<IReadOnlyCollection<Vector3>> cycles)
         {
             var minimalCycles = new LinkedList<IReadOnlyCollection<Vector3>>();
