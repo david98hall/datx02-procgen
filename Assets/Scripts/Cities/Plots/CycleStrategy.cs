@@ -49,12 +49,11 @@ namespace Cities.Plots
                 return new List<IReadOnlyCollection<Vector3>>();
             
             // Find all cycles in the road network
-            var cycleTasks = TaskUtils.RunActionInTasks(roadNetwork.RoadVertices, vertex => 
-                TryGetCycles(roadNetwork, vertex, out var cycles)
-                    ? cycles 
-                    : new List<IReadOnlyCollection<Vector3>>());
-            
-            var allCycles = cycleTasks
+            var allCycles = TaskUtils.RunActionInTasks(
+                    roadNetwork.RoadVertices,
+                    vertex => TryGetCycles(roadNetwork, vertex, out var cycles)
+                        ? cycles 
+                        : new List<IReadOnlyCollection<Vector3>>())
                 .SelectMany(cycle => cycle)
                 .Where(c => c.Any())
                 .ToList();
