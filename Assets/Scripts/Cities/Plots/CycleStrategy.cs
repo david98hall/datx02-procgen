@@ -29,11 +29,7 @@ namespace Cities.Plots
         /// Generates plots within cycles of the road network.
         /// </summary>
         /// <returns>The generated plots.</returns>
-        public override IEnumerable<Plot> Generate()
-        {
-            return GetMinimalCyclesInXZ()
-                .Select(cycle => new Plot(cycle));
-        }
+        public override IEnumerable<Plot> Generate() => GetMinimalCyclesInXZ().Select(cycle => new Plot(cycle));
 
         /// <summary>
         /// Gets all minimal cycles in the XZ-plane where the road network's XZ-projection intersections are found.
@@ -53,7 +49,7 @@ namespace Cities.Plots
             var cycles = GetAllCycles(roadNetwork).ToList();
             cycles.Sort((cycle1, cycle2) => cycle1.Count < cycle2.Count ? -1 : cycle1.Count > cycle2.Count ? 1 : 0);
             
-            return GetMinimalCycles(cycles); 
+            return ExtractMinimalCycles(cycles); 
         }
 
         /// <summary>
@@ -77,29 +73,21 @@ namespace Cities.Plots
         /// </summary>
         /// <param name="cycles">The cycles to extract from.</param>
         /// <returns>All extracted minimal cycles in the given enumerable.</returns>
-        private static IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCycles(
+        private static IEnumerable<IReadOnlyCollection<Vector3>> ExtractMinimalCycles(
             IEnumerable<IReadOnlyCollection<Vector3>> cycles)
         {
             var minimalCycles = new LinkedList<IReadOnlyCollection<Vector3>>();
             
-            // Filter away any bigger cycles that overlap smaller ones
+            // Filter away any cycles that overlap minimal ones; they're not minimal
             Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
             foreach (var cycle in cycles)
             {
-                // Use ray casting to find center points within the cycle
-                var rayCastCenters = Maths2D.GetRayCastPolygonCenters(cycle.Select(Vec3ToVec2), 1f);
-                var isOverlapping = minimalCycles.Any(resultingCycle =>
-                {
-                    // If any center point in within a result cycle, this one overlaps it and should be skipped
-                    foreach (var centerPoint in rayCastCenters)
-                    {
-                        if (Maths2D.IsInsidePolygon(centerPoint, resultingCycle.Select(Vec3ToVec2)))
-                            return true;
-                    }
-                    return false;
-                });
+                // Find out if the cycle is overlapping any minimal one
+                var cycleXz = cycle.Select(Vec3ToVec2);
+                var isOverlapping = minimalCycles.Any(minimalCycle => 
+                    Maths2D.AnyPolygonCenterOverlap(cycleXz, minimalCycle.Select(Vec3ToVec2)));
 
-                // If this cycle doesn't overlap any result cycle, add it to the result too
+                // If this cycle doesn't overlap any minimal cycle, it is minimal as well
                 if (!isOverlapping && !minimalCycles.Any(cycle.ContainsAll))
                     minimalCycles.AddLast(cycle);
             }

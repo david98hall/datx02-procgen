@@ -187,6 +187,22 @@ namespace Utils.Geometry
         }
 
         /// <summary>
+        /// Returns true if any center point in the first polygon is inside the second.
+        /// </summary>
+        /// <param name="polygon1">The first polygon.</param>
+        /// <param name="polygon2">The second polygon.</param>
+        /// <returns>true if any center point in the first polygon is inside the second.</returns>
+        public static bool AnyPolygonCenterOverlap(IEnumerable<Vector2> polygon1, IEnumerable<Vector2> polygon2)
+        {
+            // Use ray casting to find center points within the first polygon
+            const float raySpacing = 0.2f;
+            var rayCastCenters = GetRayCastPolygonCenters(polygon1, raySpacing);
+            
+            // If any center point in within the second polygon, the polygons overlap
+            return rayCastCenters.Any(centerPoint => IsInsidePolygon(centerPoint, polygon2));
+        }
+        
+        /// <summary>
         /// Gets all intersection points along the ray cast of the specified coordinates.
         /// </summary>
         /// <param name="rayStart">The start of the ray.</param>
