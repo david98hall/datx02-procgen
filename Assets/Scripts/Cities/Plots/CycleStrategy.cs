@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Cities.Roads;
 using Extensions;
 using Interfaces;
@@ -31,6 +29,8 @@ namespace Cities.Plots
         /// <returns>The generated plots.</returns>
         public override IEnumerable<Plot> Generate() => GetMinimalCyclesInXZ().Select(cycle => new Plot(cycle));
 
+        private static Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
+        
         /// <summary>
         /// Gets all minimal cycles in the XZ-plane where the road network's XZ-projection intersections are found.
         /// </summary>
@@ -44,10 +44,15 @@ namespace Cities.Plots
             if (roadNetwork.VertexCount < 3) 
                 return new List<IReadOnlyCollection<Vector3>>();
             
-            // Get all cycles in the road network and sort them from lowest vertex
-            // count to highest in order to later only save the minimal cycles
+            // Get all cycles in the road network and sort them from the smallest area
+            // to the largest in order to later only save the minimal cycles
             var cycles = GetAllCycles(roadNetwork).ToList();
-            cycles.Sort((cycle1, cycle2) => cycle1.Count < cycle2.Count ? -1 : cycle1.Count > cycle2.Count ? 1 : 0);
+            cycles.Sort((cycle1, cycle2) =>
+            {
+                var area1 = Maths2D.CalculatePolygonArea(cycle1.Select(Vec3ToVec2));
+                var area2 = Maths2D.CalculatePolygonArea(cycle2.Select(Vec3ToVec2));
+                return area1 < area2 ? -1 : area1 > area2 ? 1 : 0;
+            });
             
             return ExtractMinimalCycles(cycles); 
         }
@@ -79,7 +84,6 @@ namespace Cities.Plots
             var minimalCycles = new LinkedList<IReadOnlyCollection<Vector3>>();
             
             // Filter away any cycles that overlap minimal ones; they're not minimal
-            Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
             foreach (var cycle in cycles)
             {
                 // Find out if the cycle is overlapping any minimal one
