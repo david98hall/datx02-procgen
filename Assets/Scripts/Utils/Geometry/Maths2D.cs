@@ -188,6 +188,7 @@ namespace Utils.Geometry
 
         /// <summary>
         /// Returns true if any center point in the first polygon is inside the second.
+        /// This is useful in cases where overlaps are searched for but edge intersections do not count.
         /// </summary>
         /// <param name="polygon1">The first polygon.</param>
         /// <param name="polygon2">The second polygon.</param>
@@ -270,7 +271,7 @@ namespace Utils.Geometry
             // polygon's extreme bounds and create a ray cast every step.
             var vertices = polygonVertices.ToList();
             var (minX, minY, maxX, maxY) = GetExtremeBounds(vertices);
-            for (var y = minY; y <= maxY; y += step)
+            for (var y = minY + step; y <= maxY - step; y += step)
             {
                 // Find all ray intersections with the polygon's edges
                 var rayStart = new Vector2(minX, y);
