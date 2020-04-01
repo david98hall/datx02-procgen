@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Cities.Roads;
@@ -29,8 +30,7 @@ namespace Cities.Plots
         /// <returns>The generated plots.</returns>
         public override IEnumerable<Plot> Generate()
         {
-            return GetCyclesInXZ()
-                .Where(p => p.Count > 2)
+            return GetMinimalCyclesInXZ()
                 .Select(cycle => new Plot(cycle));
         }
 
@@ -38,7 +38,7 @@ namespace Cities.Plots
         /// Gets all minimal cycles in the XZ-plane where the road network's XZ-projection intersections are found.
         /// </summary>
         /// <returns>All minimal cycles in the XZ-plane</returns>
-        private IEnumerable<IReadOnlyCollection<Vector3>> GetCyclesInXZ()
+        private IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCyclesInXZ()
         {
             // XZ-projection of the undirected road network
             var roadNetwork = Injector.Get().GetXZProjection().GetAsUndirected();
@@ -47,37 +47,65 @@ namespace Cities.Plots
             if (roadNetwork.VertexCount < 3) 
                 return new List<IReadOnlyCollection<Vector3>>();
             
-            // Create a task for searching for cycles from each respective vertex in the road network
-            var cycleTasks = new Task[roadNetwork.VertexCount];
-            var i = 0;
-            foreach (var vertex in roadNetwork.RoadVertices)
-            {
-                cycleTasks[i] = Task.Run(() =>
-                    TryGetCycles(roadNetwork, vertex, out var cycles)
-                        ? cycles
-                        : new List<IReadOnlyCollection<Vector3>>());
-                i++;
-            }
-
-            // Wait for the cycles searching tasks to finish and gather their resulting cycles
-            Task.WaitAll(cycleTasks);
+            // Find all cycles in the road network
+            var cycleTasks = RunActionInTasks(roadNetwork.RoadVertices, vertex => 
+                TryGetCycles(roadNetwork, vertex, out var cycles)
+                    ? cycles 
+                    : new List<IReadOnlyCollection<Vector3>>());
+            
             var allCycles = cycleTasks
-                .SelectMany(task => ((Task<IReadOnlyCollection<IReadOnlyCollection<Vector3>>>)task).Result)
+                .SelectMany(cycle => cycle)
                 .Where(c => c.Any())
                 .ToList();
 
             // Sort the cycles from lowest vertex count to highest in order to later only save the minimal cycles
             allCycles.Sort((cycle1, cycle2) => 
                 cycle1.Count < cycle2.Count ? -1 : cycle1.Count > cycle2.Count ? 1 : 0);
+            
+            return GetMinimalCycles(allCycles); 
+        }
 
+        /// <summary>
+        /// Runs a task for each input item, executing the output action.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="outputAction">The action to apply on each input item.</param>
+        /// <typeparam name="TI">The input type.</typeparam>
+        /// <typeparam name="TO">The output type.</typeparam>
+        /// <returns>Each task's output.</returns>
+        private static IEnumerable<TO> RunActionInTasks<TI, TO>(IEnumerable<TI> input, Func<TI, TO> outputAction)
+        {
+            // Run one task per input item
+            var tasks = new LinkedList<Task>();
+            foreach (var item in input)
+            {
+                tasks.AddLast(Task.Run(() => outputAction(item)));
+            }
+            
+            // Wait for all tasks to finish
+            Task.WaitAll(tasks.ToArray());
+            
+            // Extract the result from each task and return it
+            return tasks.Select(task => ((Task<TO>) task).Result);
+        }
+        
+        /// <summary>
+        /// Extracts all minimal cycles (neither cycle contains another nor intersects another).
+        /// </summary>
+        /// <param name="cycles">The cycles to extract from.</param>
+        /// <returns>All extracted minimal cycles in the given enumerable.</returns>
+        private IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCycles(
+            IEnumerable<IReadOnlyCollection<Vector3>> cycles)
+        {
+            var minimalCycles = new LinkedList<IReadOnlyCollection<Vector3>>();
+            
             // Filter away any bigger cycles that overlap smaller ones
             Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
-            var resultingCycles = new LinkedList<IReadOnlyCollection<Vector3>>();
-            foreach (var cycle in allCycles)
+            foreach (var cycle in cycles)
             {
                 // Use ray casting to find center points within the cycle
                 var rayCastCenters = Maths2D.GetRayCastPolygonCenters(cycle.Select(Vec3ToVec2), 1f);
-                var isOverlapping = resultingCycles.Any(resultingCycle =>
+                var isOverlapping = minimalCycles.Any(resultingCycle =>
                 {
                     // If any center point in within a result cycle, this one overlaps it and should be skipped
                     foreach (var centerPoint in rayCastCenters)
@@ -89,14 +117,13 @@ namespace Cities.Plots
                 });
 
                 // If this cycle doesn't overlap any result cycle, add it to the result too
-                if (!isOverlapping && !resultingCycles.Any(cycle.ContainsAll))
-                    resultingCycles.AddLast(cycle);
+                if (!isOverlapping && !minimalCycles.Any(cycle.ContainsAll))
+                    minimalCycles.AddLast(cycle);
             }
-            
-            // Return all minimal cycles (neither cycle contains another nor intersects another)
-            return resultingCycles; 
-        }
 
+            return minimalCycles;
+        }
+        
         /// <summary>
         /// Gets all edges of the cycle as an enumerable of tuples.
         /// </summary>
