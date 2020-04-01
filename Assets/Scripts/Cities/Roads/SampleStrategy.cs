@@ -37,8 +37,8 @@ namespace Cities.Roads
         // No cycles within other cycles
         private static IEnumerable<IEnumerable<Vector3>> CreateTestExample2()
         {
-            var roads = new HashSet<IEnumerable<Vector3>>{CreateCircleRoad(7.5f, 0.5f, 17.5f)};
-            roads.AddRange(CreatePyramid(5f, 25, -2.5f));
+            var roads = new HashSet<IEnumerable<Vector3>>{CreateCircleRoad(7.5f, 0.5f, 22.5f)};
+            roads.AddRange(CreatePyramid(5f, 35, -3.75f));
             return roads;
         }
         #endregion
@@ -74,7 +74,7 @@ namespace Cities.Roads
         #region Example road networks
 
         private static IEnumerable<IEnumerable<Vector3>> CreatePyramid(
-            float size, float offsetX, float offsetZ)
+            float size, float offsetX = 0, float offsetZ = 0)
         {
             var roads = new HashSet<IEnumerable<Vector3>> {CreateSquareRoad(size, offsetX, offsetZ)};
 
