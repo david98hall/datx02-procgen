@@ -160,6 +160,41 @@ namespace Utils.Geometry
         }
 
         /// <summary>
+        /// Calculates the polygon's area.
+        /// </summary>
+        /// <param name="polygonVertices">The vertices of the polygon.</param>
+        /// <returns>The area of the polygon.</returns>
+        /// <exception cref="ArgumentException">Throws if there aren't enough vertices (i.e., not a polygon).</exception>
+        public static float CalculatePolygonArea(IEnumerable<Vector2> polygonVertices)
+        {
+            // Check that there are enough vertices
+            var vertices = polygonVertices.ToList();
+            if (vertices.Count < 3)
+                throw new ArgumentException("Not enough vertices, can't calculate the area!");
+
+            // Calculate the area with coordinate geometry
+            var enumerator = vertices.GetEnumerator();
+            enumerator.MoveNext();
+            var first = enumerator.Current;
+            var previous = first;
+            var area = 0f;
+            while (enumerator.MoveNext())
+            {
+                var current = enumerator.Current;
+                
+                // Take the cross product
+                area += previous.x * current.y - previous.y * current.x;
+                
+                previous = current;
+            }
+            area += previous.x * first.y - previous.y * first.x;
+
+            enumerator.Dispose();
+            
+            return Math.Abs(area) / 2;
+        }
+        
+        /// <summary>
         /// Returns true if the given vertex is inside the polygon represented by the given vertices.
         /// </summary>
         /// <param name="vertex">The vertex to check if it is inside of the polygon.</param>

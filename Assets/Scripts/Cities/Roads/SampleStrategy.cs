@@ -37,7 +37,12 @@ namespace Cities.Roads
         // No cycles within other cycles
         private static IEnumerable<IEnumerable<Vector3>> CreateTestExample2()
         {
-            var roads = new HashSet<IEnumerable<Vector3>>{CreateCircleRoad(7.5f, 0.5f, 22.5f)};
+            var roads = new HashSet<IEnumerable<Vector3>>
+            {
+                CreateCircleRoad(7.5f, 0.5f, 22.5f),
+                CreateCircleRoad(5, 0.5f, 22.5f),
+                CreateCircleRoad(2.5f, 0.5f, 22.5f)
+            };
             roads.AddRange(CreatePyramid(5f, 35, -3.75f));
             return roads;
         }
