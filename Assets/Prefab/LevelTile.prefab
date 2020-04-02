@@ -120,19 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3224c28e78554d93aa66a27c6690964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heightTerrainTypes:
-  - name: 
-    height: 0.25
-    color: {r: 0.8018868, g: 0.2004717, b: 0.6535915, a: 0}
-  - name: 
-    height: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
-  - name: 
-    height: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
-  - name: 
-    height: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
   heatTerrainTypes:
   - name: Hottest
     height: 0.25
@@ -143,9 +130,6 @@ MonoBehaviour:
   - name: cold
     height: 0.75
     color: {r: 0, g: 0.4116345, b: 0.94509804, a: 0}
-  - name: coldest
-    height: 1
-    color: {r: 0.34456214, g: 0.7053614, b: 0.8396226, a: 0}
   waves:
   - seed: 5613
     frequency: 1

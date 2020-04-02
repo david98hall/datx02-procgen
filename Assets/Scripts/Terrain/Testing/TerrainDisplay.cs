@@ -53,6 +53,7 @@ namespace Terrain.Testing
 
         public bool autoUpdate;
 
+
         public TerrainDisplay()
         {
             noiseMapStrategy = NoiseMapStrategy.PerlinNoise;
@@ -66,6 +67,8 @@ namespace Terrain.Testing
             _terrainGenerator.NoiseStrategy = GetNoiseStrategy();
             _terrainGenerator.TextureStrategy = GetTextureStrategy();
             (meshFilter.sharedMesh, meshRenderer.sharedMaterial.mainTexture) = _terrainGenerator.Generate();
+
+            
         }
 
         private IGenerator<float[,]> GetNoiseStrategy()
