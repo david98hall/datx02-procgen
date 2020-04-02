@@ -56,6 +56,8 @@ public class TileGeneration : MonoBehaviour
 
     private float centerVertexZ, maxDistanceZ;
 
+
+
     void Start()
     {
         GenerateTile(centerVertexZ, maxDistanceZ);
@@ -141,7 +143,7 @@ public class TileGeneration : MonoBehaviour
     ///  This method will be responsible for changing the Plane Mesh vertices according to the height map, 
     ///and its called in the end of the GenerateTile method.
     ///</summary>
-    private void UpdateMeshVertices (float [,] heightMap)
+    void UpdateMeshVertices (float [,] heightMap)
     {
         int tileDepth = heightMap.GetLength(0);
         int tileWidth = heightMap.GetLength(1);
