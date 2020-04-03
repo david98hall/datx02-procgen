@@ -67,32 +67,28 @@ namespace Cities.Plots
         }
 
         private static IReadOnlyCollection<Vector3> FindCycle(
-            Vector3 startVertex,
+            Vector3 start,
             Vector3 vertex, 
             RoadNetwork roadNetwork, 
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges,
             bool firstIteration = true)
         {
-            if (!firstIteration && startVertex.Equals(vertex))
-                return new[] {vertex};
+            if (!firstIteration && start.Equals(vertex))
+                return new []{vertex};
             
-            if (!TryGetNeighboursClockwise(vertex, roadNetwork, visitedEdges, out var neighbours))
-                return null;
-
-            foreach (var neighbour in neighbours)
+            foreach (var neighbour in GetNeighboursClockwise(vertex, roadNetwork))
             {
-                Debug.Log((vertex, neighbour));
+                var edge = (vertex, neighbour);
+                if (visitedEdges.Contains(edge) || visitedEdges.Contains((neighbour, vertex))) continue;
                 
                 // Mark the edge as visited
-                visitedEdges.Add((vertex, neighbour));
+                visitedEdges.Add(edge);
                 
                 // Find the end of the cycle (if there is one)
-                var cycleEnd = FindCycle(startVertex, neighbour, roadNetwork, visitedEdges, false);
+                var cycleEnd = FindCycle(start, neighbour, roadNetwork, visitedEdges, false);
                 
                 if (cycleEnd != null)
                 {
-                    Debug.Log("Hej");
-                    
                     // A cycle was found!
                     var cyclePath = new LinkedList<Vector3>();
                     cyclePath.AddLast(vertex);
@@ -105,31 +101,6 @@ namespace Cities.Plots
             return null;
         }
 
-        private static bool TryGetNeighboursClockwise(
-            Vector3 vertex, 
-            RoadNetwork roadNetwork, 
-            ICollection<(Vector3 Start, Vector3 End)> visitedEdges,
-            out IEnumerable<Vector3> neighbours)
-        {
-            neighbours = null;
-            
-            var clockwiseNeighbours = GetNeighboursClockwise(vertex, roadNetwork);
-            if (clockwiseNeighbours == null)
-                return false;
-
-            var neighboursList = new LinkedList<Vector3>();
-            foreach (var neighbour in clockwiseNeighbours)
-            {
-                if (!visitedEdges.Contains((vertex, neighbour)))
-                {
-                    neighboursList.AddLast(neighbour);
-                }
-            }
-
-            neighbours = neighboursList;
-            return neighbours.Any();
-        }
-        
         private static Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
         
         private static IEnumerable<Vector3> GetNeighboursClockwise(
@@ -157,7 +128,7 @@ namespace Cities.Plots
                 return clockwiseDiff1 < clockwiseDiff2 ? -1 : clockwiseDiff1 > clockwiseDiff2 ? 1 : 0;
             });
             
-            return clockwiseNeighbours.Any() ? clockwiseNeighbours.Select(tuple => tuple.Vertex) : null;
+            return clockwiseNeighbours.Select(tuple => tuple.Vertex);
         }
         
     }
