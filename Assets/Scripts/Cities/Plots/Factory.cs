@@ -29,5 +29,15 @@ namespace Cities.Plots
         {
             return new CycleStrategy(_roadNetworkInjector);
         }
+        
+        /// <summary>
+        /// Finds cyclic plots by always turning clockwise when searching the road network.
+        /// </summary>
+        /// <returns>The found plots.</returns>
+        public IGenerator<IEnumerable<Plot>> CreateClockwiseCycleStrategy()
+        {
+            return new CycleStrategy(_roadNetworkInjector);
+        }
+        
     }
 }
