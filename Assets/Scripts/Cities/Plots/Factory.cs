@@ -36,7 +36,7 @@ namespace Cities.Plots
         /// <returns>The found plots.</returns>
         public IGenerator<IEnumerable<Plot>> CreateClockwiseCycleStrategy()
         {
-            return new CycleStrategy(_roadNetworkInjector);
+            return new ClockwiseCycleStrategy(_roadNetworkInjector);
         }
         
     }
