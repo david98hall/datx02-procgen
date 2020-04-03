@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Cities.Roads;
 using Interfaces;
 
@@ -28,6 +29,16 @@ namespace Cities.Plots
         public IGenerator<IEnumerable<Plot>> CreateCycleStrategy()
         {
             return new CycleStrategy(_roadNetworkInjector);
+        }
+
+        /// <summary>
+        /// Creates a strategy for finding plots in cycles of the
+        /// road network at hand.
+        /// </summary>
+        /// <returns>The found plots.</returns>
+        public IGenerator<IEnumerable<Plot>> CreatePlotSampleStrategy()
+        {
+            return new PlotSampleStrategy(_roadNetworkInjector);
         }
     }
 }

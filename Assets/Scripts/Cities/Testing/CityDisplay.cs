@@ -55,7 +55,8 @@ namespace Cities.Testing
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
-            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateCycleStrategy();
+            // _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateCycleStrategy();
+            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreatePlotSampleStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
         

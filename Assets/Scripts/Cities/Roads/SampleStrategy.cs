@@ -19,8 +19,9 @@ namespace Cities.Roads
         public override RoadNetwork Generate()
         {
             var roadNetwork = new RoadNetwork();
-            roadNetwork.AddRoads(CreateTestExample1());
-            roadNetwork.AddRoads(CreateTestExample2());
+            // roadNetwork.AddRoads(CreateTestExample1());
+            // roadNetwork.AddRoads(CreateTestExample2());
+            roadNetwork.AddRoads(new HashSet<IEnumerable<Vector3>> { CreateHighway() });
             return roadNetwork;
         }
 
@@ -73,6 +74,17 @@ namespace Cities.Roads
             circleRoad.AddLast(new Vector3(radius + offsetX, 0, offsetZ));
 
             return circleRoad;
+        }
+
+        private static IEnumerable<Vector3> CreateHighway()
+        {
+            var highway = new LinkedList<Vector3>();
+            highway.AddLast(new Vector3(0f, 0f, 0f));
+            highway.AddLast(new Vector3(7f, 0f, 4f));
+            highway.AddLast(new Vector3(10f, 0f, 10f));
+            highway.AddLast(new Vector3(11f, 0f, 17f));
+
+            return highway;
         }
         #endregion
         
