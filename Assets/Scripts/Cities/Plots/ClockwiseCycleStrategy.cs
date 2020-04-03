@@ -30,12 +30,38 @@ namespace Cities.Plots
             if (roadNetwork.VertexCount < 3) 
                 return new List<IReadOnlyCollection<Vector3>>();
 
+            // Find all minimal cycles in the road network (if any)
             var cycles = new HashSet<IReadOnlyCollection<Vector3>>();
-
-            // TODO Generate minimal cycles by always turning clockwise
+            var visitedEdges = new HashSet<(Vector3 Start, Vector3 End)>();
+            foreach (var vertex in roadNetwork.RoadVertices)
+            {
+                if (TryFindCycle(vertex, roadNetwork, visitedEdges, out var cycle))
+                {
+                    cycles.Add(cycle);
+                }
+            }
             
             return cycles;
-        }        
+        }
+
+        private static bool TryFindCycle(
+            Vector3 vertex, 
+            RoadNetwork roadNetwork, 
+            ICollection<(Vector3 Start, Vector3 End)> visitedEdges,
+            out IReadOnlyCollection<Vector3> cycle)
+        {
+            cycle = FindCycle(vertex, roadNetwork, visitedEdges);
+            return cycle != null;
+        }
+
+        private static IReadOnlyCollection<Vector3> FindCycle(
+            Vector3 vertex, 
+            RoadNetwork roadNetwork, 
+            ICollection<(Vector3 Start, Vector3 End)> visitedEdges)
+        {
+            // TODO Implement clockwise search
+            return null;
+        }
         
     }
 }
