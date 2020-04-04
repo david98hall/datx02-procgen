@@ -55,7 +55,7 @@ namespace Cities.Testing
         public CityDisplay()
         {
             _cityGenerator = new CityGenerator();
-            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateCycleStrategy();
+            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateClockwiseCycleStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
         
@@ -83,8 +83,8 @@ namespace Cities.Testing
         {
             ClearRoads();
             DisplayPlotBorders(city.Plots);
-            // DisplayRoadNetworkParts(city.RoadNetwork);
-            DrawRoads(city.RoadNetwork.GetRoads());
+            DisplayRoadNetworkParts(city.RoadNetwork);
+            // DrawRoads(city.RoadNetwork.GetRoads());
         }
         
         private void DisplayPlotBorders(IEnumerator<Plot> plots)
