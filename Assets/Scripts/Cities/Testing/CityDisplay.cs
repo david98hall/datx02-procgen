@@ -56,7 +56,8 @@ namespace Cities.Testing
         {
             _cityGenerator = new CityGenerator();
             // _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateCycleStrategy();
-            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreatePlotSampleStrategy();
+            // _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreatePlotSampleStrategy();
+            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateAdjacentStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
         

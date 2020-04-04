@@ -30,12 +30,20 @@ namespace Cities.Plots
         {
             return new CycleStrategy(_roadNetworkInjector);
         }
+        
+        /// <summary>
+        /// Creates a strategy for plots adjacent to the road network.
+        /// </summary>
+        /// <returns>The plots adjacent to the roads.</returns>
+        public IGenerator<IEnumerable<Plot>> CreateAdjacentStrategy()
+        {
+            return new AdjacentStrategy(_roadNetworkInjector);
+        }
 
         /// <summary>
-        /// Creates a strategy for finding plots in cycles of the
-        /// road network at hand.
+        /// Creates a strategy for manually created sample plots for testing.
         /// </summary>
-        /// <returns>The found plots.</returns>
+        /// <returns>The sample plots.</returns>
         public IGenerator<IEnumerable<Plot>> CreatePlotSampleStrategy()
         {
             return new PlotSampleStrategy(_roadNetworkInjector);
