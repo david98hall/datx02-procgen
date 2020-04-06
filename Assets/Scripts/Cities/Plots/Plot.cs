@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Extensions;
 using UnityEngine;
+using Utils.Geometry;
 
 namespace Cities.Plots
 {
@@ -47,44 +48,95 @@ namespace Cities.Plots
 
         public object Clone() => new Plot(this);
 
-        public Boolean collidesWith(Plot p) 
+        /// <summary>
+        /// Check if this plot collides with another given plot using the separating axis theorem (SAT).
+        /// Based on http://www.dyn4j.org/2010/01/sat/#sat-convex
+        /// </summary>
+        /// <param name="p">The plot to check collision with.</param>
+        /// <returns>A boolean that states whether or not the plots are colliding</returns>
+        public bool CollidesWith(Plot p) 
         {
-            var axes = new LinkedList<Vector3>();
-            
-            throw new System.NotImplementedException();
-            /* Pseudocode
-            # project both shapes onto the axis
-            Projection p1 = shape1.project(axis);
-            Projection p2 = shape2.project(axis);
-             # do the projections overlap?
-            if (!p1.overlap(p2)) {
-                // then we can guarantee that the shapes do not overlap
-                return false;
+            // The axes you must test are the normals of each shape's edges.
+            var axes = this.EdgeNormals().Concat(p.EdgeNormals());
+
+            foreach (var axis in axes)
+            {
+                var p1 = projectOnto(axis);
+                var p2 = p.projectOnto(axis);
+                if (!overlap(p1, p2))
+                {
+                    // Based on SAT
+                    return false;
+                }
             }
-            */
+            
+            // If we found no overlap on any of the axes, we know there is no collision.
+            return true;
         }
 
         // Find the normals of each edge of the plot        
-        private IEnumerable<Vector3> edgeNormals() 
+        private IEnumerable<Vector3> EdgeNormals() 
         {
             var normals = new LinkedList<Vector3>();
 
-            // Iterate over the vertices to find each edge
+            // Iterate over the vertices to find each edge vector
             using (var vertexEnum = Vertices.GetEnumerator())
             {
+                if (!vertexEnum.MoveNext())
+                    throw new ApplicationException("Cannot find edge normals of a plot without vertices.");
                 
-            }
-            for (int i = 0; i < Vertices.Count - 1; i++)
-            {
-                Vector3 v1 = Vertices[i];
-                Vector3 v2 = Vertices[i + 1];
-
-                // Subtract the two vertices to get the edge vector
-                Vector3 ev = v1 - v2;
-                // The direction of the normal doesn't matter
-
+                var v1 = vertexEnum.Current;
+                while (vertexEnum.MoveNext())
+                {
+                    var v2 = vertexEnum.Current;
+                    // The direction of the normal doesn't matter so the order of subtraction is arbitrarily chosen.
+                    var ev = v1 - vertexEnum.Current;
+                    normals.AddLast(Maths3D.PerpendicularClockwise(ev).normalized);
+                    v1 = v2;
+                }
             }
             return normals;
         }
+
+        /// <summary>
+        /// Project each vertex of this plot onto a given axis, returning the minimum and maximum value.
+        /// This can be seen as squashing a polygon (2D) onto a line (1D) returning an interval along the line.
+        /// </summary>
+        /// <returns>The minimum and maximum value of the projection.</returns>
+        private Tuple<float, float> projectOnto(Vector3 axis)
+        {
+            // Use the enumerator instead of foreach in order to only have to loop once.
+            using (var vertexEnum = Vertices.GetEnumerator())
+            {
+                if (!vertexEnum.MoveNext())
+                    throw new ApplicationException("Cannot project a plot without vertices onto an axis.");
+                var min = Vector3.Dot(vertexEnum.Current, axis);
+                var max = min;
+
+                while (vertexEnum.MoveNext())
+                {
+                    // For the projection we use the dot product
+                    var dp = Vector3.Dot(vertexEnum.Current, axis);
+                    if (dp < min)
+                    {
+                        min = dp;
+                    } else if (dp > max)
+                    {
+                        max = dp;
+                    }
+                }
+                return new Tuple<float, float>(min, max);
+            }
+        }
+        
+        // Tests if two projections on an axis are overlapping
+        private static bool overlap(Tuple<float, float> p1, Tuple<float, float> p2)
+        {
+            // Easy to understand if you think of the intervals as time. The equation essentially answers the
+            // question: "could two people have met?", with: "yes, if both were born before the other died".
+            return p1.Item1 < p2.Item2 && p2.Item1 < p1.Item2;
+        }
     }
+    
+    
 }

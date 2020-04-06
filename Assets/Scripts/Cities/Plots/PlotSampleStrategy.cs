@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 using UnityEngine;
 
 using Cities.Roads;
@@ -35,17 +36,19 @@ namespace Cities.Plots
             var p1 = new Plot(vertices);
             plots.Add(p1);
 
-            // Another square
+            // Another square, offset and rotated 45 degrees around the y-axis
             vertices = new LinkedList<Vector3>();
-            vertices.AddLast(new Vector3(1f, 1f, 1f));
-            vertices.AddLast(new Vector3(-4f, 1f, 1f));
-            vertices.AddLast(new Vector3(-4f, 1f, -4f));
-            vertices.AddLast(new Vector3(1f, 1f, -4f));
-            vertices.AddLast(new Vector3(1f, 1f, 1f));
-            var p2 = new Plot(vertices);
+            const int offsetX = 5;
+            const int offsetZ = 5;
+            vertices.AddLast(new Vector3(offsetX, 0f, offsetZ));
+            vertices.AddLast(new Vector3(offsetX + 5f, 0f, offsetZ));
+            vertices.AddLast(new Vector3(offsetX + 5f, 0f, 5f + offsetZ));
+            vertices.AddLast(new Vector3(offsetX, 0f, 5f + offsetZ));
+            vertices.AddLast(new Vector3(offsetX, 0f, offsetZ));
+            var p2 = new Plot(vertices.Select(v => Quaternion.Euler(0f, 45f, 0f) * v));
             plots.Add(p2);
 
-            Debug.Log("Plots are colliding (t/f): " + p1.collidesWith(p2));
+            Debug.Log("Plots are colliding (t/f): " + p1.CollidesWith(p2));
 
             return plots;
         }
