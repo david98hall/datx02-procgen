@@ -12,14 +12,14 @@ namespace Cities.Plots
     /// <summary>
     /// Generates plots within cycles of the road network.
     /// </summary>
-    internal class CycleStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
+    internal class BruteMinimalCycleStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
     {
 
         /// <summary>
         /// Initializes this strategy by setting the RoadNetwork injector.
         /// </summary>
         /// <param name="roadNetworkInjector">The RoadNetwork injector.</param>
-        public CycleStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
+        public BruteMinimalCycleStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
         {
         }
         
