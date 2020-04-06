@@ -18,11 +18,6 @@ namespace Terrain.Textures
         internal GrayScaleStrategy(IInjector<float[,]> noiseMapInjector) : base(noiseMapInjector)
         {
         }
-        
-        /// <summary>
-        /// The noise map used to generate textures (values are in the range: [0, 1])
-        /// </summary>
-        internal float[,] NoiseMap => (float[,]) Injector.Get().Clone();
 
         /// <summary>
         /// Generates a gray scaled texture based on a noise map.

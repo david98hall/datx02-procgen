@@ -23,10 +23,10 @@ namespace Terrain
         /// </summary>
         internal AnimationCurve HeightCurve
         {
-            get => heightCurve.Copy();
-            set => heightCurve = value.Copy();
+            get => _heightCurve.Copy();
+            set => _heightCurve = value.Copy();
         }
-        private AnimationCurve heightCurve;
+        private AnimationCurve _heightCurve;
         
         private readonly IInjector<float[,]> _noiseMapInjector;
         
@@ -34,7 +34,7 @@ namespace Terrain
         {
             _noiseMapInjector = noiseMapInjector;
             HeightScale = 1;
-            heightCurve = new AnimationCurve();
+            _heightCurve = new AnimationCurve();
         }
         
         public Mesh Generate()
@@ -78,7 +78,7 @@ namespace Terrain
                 for (var x = 0; x < width; x++)
                 {
                     // Add the vertices (in Unity, y is vertical)
-                    var y = HeightScale * heightCurve.Evaluate(noiseMap[x, z]);
+                    var y = HeightScale * _heightCurve.Evaluate(noiseMap[x, z]);
                     vertices[vertexIndex] = new Vector3(x, y, z);
                     
                     // Calculate the texture coordinate
