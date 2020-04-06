@@ -160,6 +160,41 @@ namespace Utils.Geometry
         }
 
         /// <summary>
+        /// Calculates the polygon's area.
+        /// </summary>
+        /// <param name="polygonVertices">The vertices of the polygon.</param>
+        /// <returns>The area of the polygon.</returns>
+        /// <exception cref="ArgumentException">Throws if there aren't enough vertices (i.e., not a polygon).</exception>
+        public static float CalculatePolygonArea(IEnumerable<Vector2> polygonVertices)
+        {
+            // Check that there are enough vertices
+            var vertices = polygonVertices.ToList();
+            if (vertices.Count < 3)
+                throw new ArgumentException("Not enough vertices, can't calculate the area!");
+
+            // Calculate the area with coordinate geometry
+            var enumerator = vertices.GetEnumerator();
+            enumerator.MoveNext();
+            var first = enumerator.Current;
+            var previous = first;
+            var area = 0f;
+            while (enumerator.MoveNext())
+            {
+                var current = enumerator.Current;
+                
+                // Take the cross product
+                area += previous.x * current.y - previous.y * current.x;
+                
+                previous = current;
+            }
+            area += previous.x * first.y - previous.y * first.x;
+
+            enumerator.Dispose();
+            
+            return Math.Abs(area) / 2;
+        }
+        
+        /// <summary>
         /// Returns true if the given vertex is inside the polygon represented by the given vertices.
         /// </summary>
         /// <param name="vertex">The vertex to check if it is inside of the polygon.</param>
@@ -175,7 +210,7 @@ namespace Utils.Geometry
             // There must be at least 3 vertices in the body's shape.
             // For the vertex to be inside the polygon, it can't be outside its extreme bounds.
             var extremeBounds = GetExtremeBounds(verticesList);
-            if (verticesList.Count < 3 && !IsInsideExtremeBounds(vertex, extremeBounds))
+            if (verticesList.Count < 3 || !IsInsideExtremeBounds(vertex, extremeBounds))
                 return false;
 
             // Return true if the ray cast intersection count is odd, false otherwise
@@ -186,6 +221,23 @@ namespace Utils.Geometry
             return rayCastIntersection.Count() % 2 == 1;
         }
 
+        /// <summary>
+        /// Returns true if any center point in the first polygon is inside the second.
+        /// This is useful in cases where overlaps are searched for but edge intersections do not count.
+        /// </summary>
+        /// <param name="polygon1">The first polygon.</param>
+        /// <param name="polygon2">The second polygon.</param>
+        /// <returns>true if any center point in the first polygon is inside the second.</returns>
+        public static bool AnyPolygonCenterOverlaps(IEnumerable<Vector2> polygon1, IEnumerable<Vector2> polygon2)
+        {
+            // Use ray casting to find center points within the first polygon
+            const float raySpacing = 0.2f;
+            var rayCastCenters = GetRayCastPolygonCenters(polygon1, raySpacing);
+            
+            // If any center point in within the second polygon, the polygons overlap
+            return rayCastCenters.Any(centerPoint => IsInsidePolygon(centerPoint, polygon2));
+        }
+        
         /// <summary>
         /// Gets all intersection points along the ray cast of the specified coordinates.
         /// </summary>
@@ -254,7 +306,7 @@ namespace Utils.Geometry
             // polygon's extreme bounds and create a ray cast every step.
             var vertices = polygonVertices.ToList();
             var (minX, minY, maxX, maxY) = GetExtremeBounds(vertices);
-            for (var y = minY; y <= maxY; y += step)
+            for (var y = minY + step; y <= maxY - step; y += step)
             {
                 // Find all ray intersections with the polygon's edges
                 var rayStart = new Vector2(minX, y);
@@ -280,6 +332,19 @@ namespace Utils.Geometry
             // Return all "center points" found when ray casting
             // for each step when moving from minimum to maximum y
             return castCenters;
+        }
+
+        /// <summary>
+        /// Returns true if the two polygons overlap.
+        /// </summary>
+        /// <param name="polygon1">The first polygon.</param>
+        /// <param name="polygon2">The second polygon.</param>
+        /// <returns>true if the two polygons overlap.</returns>
+        public static bool PolygonsOverlap(IEnumerable<Vector2> polygon1, IEnumerable<Vector2> polygon2)
+        {
+            var polygon1List = polygon1.ToList();
+            return polygon1List.Any(vertex => IsInsidePolygon(vertex, polygon2))
+                   || polygon2.Any(vertex => IsInsidePolygon(vertex, polygon1List));
         }
         
         #endregion
