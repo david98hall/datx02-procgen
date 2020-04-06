@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
@@ -23,7 +24,7 @@ namespace Cities.Plots
 
         public override IEnumerable<Plot> Generate()
         {
-            DebugStuff();
+            // DebugStuff();
             return GetMinimalCyclesXz().Select(cycle => new Plot(cycle));
         }
 
@@ -31,6 +32,9 @@ namespace Cities.Plots
         {
             Debug.Log(Vector2.SignedAngle(new Vector2(1, 0), new Vector2(0, 1)));
             Debug.Log(Vector2.SignedAngle(new Vector2(0, 1), new Vector2(1, -1)));
+            Debug.Log(Vector2.SignedAngle(new Vector2(-1, 0), new Vector2(1, 0)));
+            Debug.Log(Vector2.SignedAngle(new Vector2(1, 0), new Vector2(-1, 0)));
+            Debug.Log(Vector2.SignedAngle(Vector2.right, new Vector2(1, -1)));
         }
         
         private IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCyclesXz()
@@ -80,10 +84,11 @@ namespace Cities.Plots
             if (!firstIteration && start.Equals(vertex))
                 return new []{vertex};
 
-            foreach (var neighbour in GetNeighboursClockwise(vertex, previous, roadNetwork))
+            if (TryGetClockwiseNeighbour(vertex, previous, roadNetwork, visitedEdges, out var neighbour))
             {
                 var edge = (vertex, neighbour);
-                if (visitedEdges.Contains(edge)) continue;
+                if (visitedEdges.Contains(edge))
+                    return null;
 
                 // Mark the edge as visited
                 visitedEdges.Add(edge);
@@ -107,43 +112,32 @@ namespace Cities.Plots
 
         private static Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
         
-        private static IEnumerable<Vector3> GetNeighboursClockwise(
+        private static bool TryGetClockwiseNeighbour(
             Vector3 vertex,
             Vector3 previous,
-            RoadNetwork roadNetwork)
+            RoadNetwork roadNetwork,
+            ICollection<(Vector3 Start, Vector3 End)> visitedEdges,
+            out Vector3 clockwiseNeighbour)
         {
-            var neighbours = new HashSet<(Vector3 Vertex, float Angle)>();
+            clockwiseNeighbour = Vector3.negativeInfinity;
             
             var vertexXz = Vec3ToVec2(vertex);
-            var direction = (vertexXz - Vec3ToVec2(previous)).normalized;
+            var direction = vertexXz - Vec3ToVec2(previous);
+            var maxAngle = float.MinValue;
             foreach (var neighbour in roadNetwork.GetAdjacentVertices(vertex))
             {
-                var angle = Vector2.SignedAngle(direction, Vec3ToVec2(neighbour));
-                //if (angle <= 0)
-                //{
-                    neighbours.Add((neighbour, angle));
-                //}
-                Debug.Log((vertexXz, direction, Vec3ToVec2(neighbour), angle));
+                var newDirection = Vec3ToVec2(neighbour) - vertexXz;
+                var angle = Vector2.SignedAngle(direction, newDirection);
+                var couldGoTo = !neighbour.Equals(previous) && !visitedEdges.Contains((vertex, neighbour));
+                if (angle > maxAngle && couldGoTo)
+                {
+                    maxAngle = angle;
+                    clockwiseNeighbour = neighbour;
+                }
+                Debug.Log((vertexXz, direction, Vec3ToVec2(neighbour), angle, visitedEdges.Contains((vertex, neighbour))));
             }
-            
-            var clockwiseNeighbours = new List<(Vector3 Vertex, float Angle)>(neighbours);
-            clockwiseNeighbours.Sort((vertex1, vertex2) =>
-            {
-                // Debug.Log("Magnitudes: " + (vertex1.Vertex, vertex1.Vertex.magnitude) + " + " + (vertex2.Vertex, vertex2.Vertex.magnitude));
 
-                var (vector1, angle1) = vertex1;
-                var (vector2, angle2) = vertex2;
-                
-                if (angle1 < angle2)
-                    return -1;
-                if (angle1 == angle2)
-                    return vector1.magnitude < vector2.magnitude ? -1 : vector1.magnitude > vector2.magnitude ? 1 : 0;
-                return 1;
-                
-                // return vertex1.Angle < vertex2.Angle ? -1 : vertex1.Angle > vertex2.Angle ? 1 : 0;
-            });
-            
-            return clockwiseNeighbours.Select(tuple => tuple.Vertex);
+            return !clockwiseNeighbour.Equals(Vector3.negativeInfinity);
         }
         
     }
