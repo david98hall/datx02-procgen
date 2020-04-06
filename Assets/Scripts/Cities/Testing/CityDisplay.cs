@@ -25,6 +25,7 @@ namespace Cities.Testing
         {
             Sample, 
             AStar,
+            Lsystem
         }
         
         public RoadStrategy roadStrategy;
@@ -186,6 +187,8 @@ namespace Cities.Testing
                     var aStar =  new AStarStrategy(this) {HeightBias = heightBias};
                     aStar.Add((0, 0), (width/2, depth/2));
                     return aStar;
+                case RoadStrategy.Lsystem:
+                    return new LSystemStrategy(this);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
