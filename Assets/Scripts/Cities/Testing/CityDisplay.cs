@@ -84,8 +84,8 @@ namespace Cities.Testing
         {
             ClearRoads();
             DisplayPlotBorders(city.Plots);
-            DisplayRoadNetworkParts(city.RoadNetwork);
-            // DrawRoads(city.RoadNetwork.GetRoads());
+            // DisplayRoadNetworkParts(city.RoadNetwork);
+            DrawRoads(city.RoadNetwork.GetRoads());
         }
         
         private void DisplayPlotBorders(IEnumerator<Plot> plots)
