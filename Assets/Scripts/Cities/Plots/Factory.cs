@@ -21,17 +21,17 @@ namespace Cities.Plots
         }
         
         /// <summary>
-        /// Creates a strategy for finding plots in cycles of the
-        /// road network at hand.
+        /// Creates a strategy for finding plots in minimal cycles of the
+        /// road network at hand. This strategy is relatively slow.
         /// </summary>
         /// <returns>The found plots.</returns>
-        public IGenerator<IEnumerable<Plot>> CreateCycleStrategy()
+        public IGenerator<IEnumerable<Plot>> CreateBruteMinimalCycleStrategy()
         {
-            return new CycleStrategy(_roadNetworkInjector);
+            return new BruteMinimalCycleStrategy(_roadNetworkInjector);
         }
         
         /// <summary>
-        /// Finds cyclic plots by always turning clockwise when searching the road network.
+        /// Finds all cyclic plots by always turning clockwise when searching the road network.
         /// </summary>
         /// <returns>The found plots.</returns>
         public IGenerator<IEnumerable<Plot>> CreateClockwiseCycleStrategy()
