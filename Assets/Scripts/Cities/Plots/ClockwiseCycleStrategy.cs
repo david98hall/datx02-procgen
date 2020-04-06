@@ -6,6 +6,7 @@ using Cities.Roads;
 using Extensions;
 using Interfaces;
 using UnityEngine;
+using Utils.Geometry;
 
 namespace Cities.Plots
 {
@@ -22,22 +23,39 @@ namespace Cities.Plots
         {
         }
 
-        public override IEnumerable<Plot> Generate()
-        {
-            // DebugStuff();
-            return GetMinimalCyclesXz().Select(cycle => new Plot(cycle));
-        }
+        public override IEnumerable<Plot> Generate() => GetMinimalCyclesXz().Select(cycle => new Plot(cycle));
 
-        private static void DebugStuff()
+        private IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCyclesXz()
         {
-            Debug.Log(Vector2.SignedAngle(new Vector2(1, 0), new Vector2(0, 1)));
-            Debug.Log(Vector2.SignedAngle(new Vector2(0, 1), new Vector2(1, -1)));
-            Debug.Log(Vector2.SignedAngle(new Vector2(-1, 0), new Vector2(1, 0)));
-            Debug.Log(Vector2.SignedAngle(new Vector2(1, 0), new Vector2(-1, 0)));
-            Debug.Log(Vector2.SignedAngle(Vector2.right, new Vector2(1, -1)));
+            var allCycles = new List<IReadOnlyCollection<Vector3>>(GetAllCyclesXz());
+            allCycles.Sort((cycle1, cycle2) =>
+            {
+                var area1 = Maths2D.CalculatePolygonArea(cycle1.Select(Vec3ToVec2));
+                var area2 = Maths2D.CalculatePolygonArea(cycle2.Select(Vec3ToVec2));
+                return area1 < area2 ? -1 : area1 > area2 ? 1 : 0;
+            });
+            
+            var minimalCycles = new HashSet<IReadOnlyCollection<Vector3>>();
+            for (var i = allCycles.Count - 1; i >= 0; i--)
+            {
+                var isMinimal = true;
+                var cycleXz = allCycles[i].Select(Vec3ToVec2).ToList();
+                for (var j = i - 1; j >= 0; j--)
+                {
+                    if (!Maths2D.AnyPolygonCenterOverlaps(allCycles[j].Select(Vec3ToVec2), cycleXz)) 
+                        continue;
+                    isMinimal = false;
+                    break;
+                }
+
+                if (isMinimal)
+                    minimalCycles.Add(allCycles[i]);
+            }
+
+            return minimalCycles;
         }
         
-        private IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCyclesXz()
+        private IEnumerable<IReadOnlyCollection<Vector3>> GetAllCyclesXz()
         {
             // XZ-projection of the undirected road network
             var roadNetwork = Injector.Get().GetXZProjection().GetAsUndirected();
@@ -51,13 +69,10 @@ namespace Cities.Plots
             var visitedEdges = new HashSet<(Vector3 Start, Vector3 End)>();
             foreach (var vertex in roadNetwork.RoadVertices)
             {
-                Debug.Log("New cycle search: ");
                 if (TryFindCycle(vertex, roadNetwork, visitedEdges, out var cycle))
                 {
                     cycles.Add(cycle);
-                    Debug.Log("Found the cycle!");
                 }
-                Debug.Log("---------------------------------------------------");
             }
             
             return cycles;
@@ -134,7 +149,6 @@ namespace Cities.Plots
                     maxAngle = angle;
                     clockwiseNeighbour = neighbour;
                 }
-                Debug.Log((vertexXz, direction, Vec3ToVec2(neighbour), angle, visitedEdges.Contains((vertex, neighbour))));
             }
 
             return !clockwiseNeighbour.Equals(Vector3.negativeInfinity);

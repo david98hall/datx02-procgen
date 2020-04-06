@@ -333,6 +333,19 @@ namespace Utils.Geometry
             // for each step when moving from minimum to maximum y
             return castCenters;
         }
+
+        /// <summary>
+        /// Returns true if the two polygons overlap.
+        /// </summary>
+        /// <param name="polygon1">The first polygon.</param>
+        /// <param name="polygon2">The second polygon.</param>
+        /// <returns>true if the two polygons overlap.</returns>
+        public static bool PolygonsOverlap(IEnumerable<Vector2> polygon1, IEnumerable<Vector2> polygon2)
+        {
+            var polygon1List = polygon1.ToList();
+            return polygon1List.Any(vertex => IsInsidePolygon(vertex, polygon2))
+                   || polygon2.Any(vertex => IsInsidePolygon(vertex, polygon1List));
+        }
         
         #endregion
         
