@@ -1,13 +1,14 @@
 ﻿using System;
 using Interfaces;
+using Terrain.Noise;
 using Terrain.Textures;
 using UnityEngine;
+using Factory = Terrain.Noise.Factory;
 
 namespace Terrain.Testing
 {
     internal class TerrainDisplay : MonoBehaviour
     {
-        
         public enum NoiseMapStrategy
         {
             PerlinNoise
@@ -72,8 +73,16 @@ namespace Terrain.Testing
             switch (noiseMapStrategy)
             {
                 case NoiseMapStrategy.PerlinNoise:
-                    return new Factory().CreatePerlinNoiseStrategy(
-                        width, height, seed, noiseScale, octaves, persistence, lacunarity, offset);
+                    var perlinNoise = new Factory().CreatePerlinNoiseStrategy() as PerlinNoiseStrategy;
+                    perlinNoise.Width = width;
+                    perlinNoise.Depth = height;
+                    perlinNoise.Seed = seed;
+                    perlinNoise.Scale = noiseScale;
+                    perlinNoise.NumOctaves = octaves;
+                    perlinNoise.Persistence = persistence;
+                    perlinNoise.Lacunarity = lacunarity;
+                    perlinNoise.NoiseOffset = offset;
+                    return perlinNoise;
                 default:
                     throw new Exception("There is no such noise map strategy!");
             }
@@ -85,7 +94,7 @@ namespace Terrain.Testing
             {
                 case TextureStrategy.Whittaker:
                     var whittakerGenerator = 
-                        (WhittakerGenerator) _terrainGenerator.TextureStrategyFactory.CreateWhittakerStrategy();
+                        (WhittakerStrategy) _terrainGenerator.TextureStrategyFactory.CreateWhittakerStrategy();
                     whittakerGenerator.PrecipitationScale = precipitationScale;
                     whittakerGenerator.TemperatureScale = temperatureScale;
                     return whittakerGenerator;
