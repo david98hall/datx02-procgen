@@ -84,7 +84,7 @@ namespace Cities.Plots
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges,
             out IReadOnlyCollection<Vector3> cycle)
         {
-            cycle = FindCycle(vertex, vertex, Vector3.zero, roadNetwork, visitedEdges);
+            cycle = FindCycle(vertex, vertex, vertex, roadNetwork, visitedEdges);
             return cycle != null;
         }
 
@@ -148,6 +148,10 @@ namespace Cities.Plots
                 {
                     maxAngle = angle;
                     clockwiseNeighbour = neighbour;
+                }
+                else
+                {
+                    Debug.Log((vertex, neighbour, angle));
                 }
             }
 
