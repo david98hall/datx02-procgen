@@ -20,7 +20,7 @@ namespace Cities.Roads
         {
             var roadNetwork = new RoadNetwork();
             roadNetwork.AddRoads(CreateTestExample1());
-            // roadNetwork.AddRoads(CreateTestExample2());
+            roadNetwork.AddRoads(CreateTestExample2());
             return roadNetwork;
         }
 
@@ -29,7 +29,7 @@ namespace Cities.Roads
         // Cycles within cycle
         private static IEnumerable<IEnumerable<Vector3>> CreateTestExample1()
         {
-            var roads = new HashSet<IEnumerable<Vector3>>(); // {CreateCircleRoad(7.5f, 0.5f)};
+            var roads = new HashSet<IEnumerable<Vector3>>{CreateCircleRoad(9, 0.5f)};
             roads.AddRange(CreatePyramid(5f));
             return roads;
         }
@@ -93,12 +93,12 @@ namespace Cities.Roads
             diagonalRoad2.AddLast(new Vector3(offsetX, 0, offsetZ));
             diagonalRoad2.AddLast(new Vector3(offsetX + size / 2, 2, offsetZ + size / 2));
             diagonalRoad2.AddLast(new Vector3(offsetX + size, 0, offsetZ + size));
-            // roads.Add(diagonalRoad2);
+            roads.Add(diagonalRoad2);
 
             var straightRoad = new LinkedList<Vector3>();
             straightRoad.AddLast(new Vector3(offsetX, 0, offsetZ + size / 4));
             straightRoad.AddLast(new Vector3(offsetX + size, 0, offsetZ + size / 4));
-            // roads.Add(straightRoad);
+            roads.Add(straightRoad);
 
             return roads;
         }

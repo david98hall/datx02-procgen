@@ -65,5 +65,19 @@ namespace Extensions
 
             return heightMap;
         }
+        
+        /// <summary>
+        /// Gets a perpendicular vector to the given one, going clockwise.
+        /// </summary>
+        /// <param name="vector">The vector to get the perpendicular vector from.</param>
+        /// <returns>The perpendicular vector.</returns>
+        public static Vector2 PerpendicularClockwise(this Vector2 vector) => new Vector2(vector.y, -vector.x);
+
+        /// <summary>
+        /// Gets a perpendicular vector to the given one, going counterclockwise.
+        /// </summary>
+        /// <param name="vector">The vector to get the perpendicular vector from.</param>
+        /// <returns>The perpendicular vector.</returns>
+        public static Vector2 PerpendicularCounterclockwise(this Vector2 vector) => new Vector2(-vector.y, vector.x);
     }
 }
