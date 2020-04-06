@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Factory
+    <title>Class TaskUtils
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Factory
+    <meta name="title" content="Class TaskUtils
    ">
     <meta name="generator" content="docfx 2.50.0.0">
     
@@ -68,18 +68,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Cities.Roads.Factory">
+            <article class="content wrap" id="_content" data-uid="Utils.TaskUtils">
   
   
-  <h1 id="Cities_Roads_Factory" data-uid="Cities.Roads.Factory" class="text-break">Class Factory
+  <h1 id="Utils_TaskUtils" data-uid="Utils.TaskUtils" class="text-break">Class TaskUtils
   </h1>
-  <div class="markdown level0 summary"><p>Creates strategies for generating road networks.</p>
+  <div class="markdown level0 summary"><p>Utility methods for tasks.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Factory</span></div>
+    <div class="level1"><span class="xref">TaskUtils</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -105,29 +105,29 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Cities.Roads.html">Cities.Roads</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Utils.html">Utils</a></h6>
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
-  <h5 id="Cities_Roads_Factory_syntax">Syntax</h5>
+  <h5 id="Utils_TaskUtils_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Factory</code></pre>
+    <pre><code class="lang-csharp hljs">public static class TaskUtils</code></pre>
   </div>
-  <h3 id="constructors">Constructors
+  <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory__ctor_Interfaces_IInjector_System_Single_0__0____.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory.%23ctor(Interfaces.IInjector%7BSystem.Single%5B0%3A%2C0%3A%5D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__.md&amp;value=---%0Auid%3A%20Utils.TaskUtils.RunActionInTasks%60%602(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L18">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/TaskUtils.cs/#L21">View Source</a>
   </span>
-  <a id="Cities_Roads_Factory__ctor_" data-uid="Cities.Roads.Factory.#ctor*"></a>
-  <h4 id="Cities_Roads_Factory__ctor_Interfaces_IInjector_System_Single_0__0____" data-uid="Cities.Roads.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})">Factory(IInjector&lt;Single[,]&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes this factory with a noise map injector.</p>
+  <a id="Utils_TaskUtils_RunActionInTasks_" data-uid="Utils.TaskUtils.RunActionInTasks*"></a>
+  <h4 id="Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__" data-uid="Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">RunActionInTasks&lt;TI, TO&gt;(IEnumerable&lt;TI&gt;, Func&lt;TI, TO&gt;)</h4>
+  <div class="markdown level1 summary"><p>Runs a task for each input item, executing the output action.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Factory(IInjector&lt;float[, ]&gt; terrainMeshNoiseMapInjector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;TO&gt; RunActionInTasks&lt;TI, TO&gt;(IEnumerable&lt;TI&gt; input, Func&lt;TI, TO&gt; outputAction)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -140,30 +140,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
-        <td><span class="parametername">terrainMeshNoiseMapInjector</span></td>
-        <td><p>The noise map injector.</p>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TI&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TI, TO&gt;</td>
+        <td><span class="parametername">outputAction</span></td>
+        <td><p>The action to apply on each input item.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory_CreateAStarStrategy.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory.CreateAStarStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L23">View Source</a>
-  </span>
-  <a id="Cities_Roads_Factory_CreateAStarStrategy_" data-uid="Cities.Roads.Factory.CreateAStarStrategy*"></a>
-  <h4 id="Cities_Roads_Factory_CreateAStarStrategy" data-uid="Cities.Roads.Factory.CreateAStarStrategy">CreateAStarStrategy()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IGenerator&lt;RoadNetwork&gt; CreateAStarStrategy()</code></pre>
-  </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -174,38 +163,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</td>
-        <td></td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TO&gt;</td>
+        <td><p>Each task's output.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory_CreateLSystemStrategy.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory.CreateLSystemStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L25">View Source</a>
-  </span>
-  <a id="Cities_Roads_Factory_CreateLSystemStrategy_" data-uid="Cities.Roads.Factory.CreateLSystemStrategy*"></a>
-  <h4 id="Cities_Roads_Factory_CreateLSystemStrategy" data-uid="Cities.Roads.Factory.CreateLSystemStrategy">CreateLSystemStrategy()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IGenerator&lt;RoadNetwork&gt; CreateLSystemStrategy()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
-        <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</td>
-        <td></td>
+        <td><span class="parametername">TI</span></td>
+        <td><p>The input type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TO</span></td>
+        <td><p>The output type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -217,10 +198,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_Factory.md&amp;value=---%0Auid%3A%20Cities.Roads.Factory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_TaskUtils.md&amp;value=---%0Auid%3A%20Utils.TaskUtils%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/Factory.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/TaskUtils.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
