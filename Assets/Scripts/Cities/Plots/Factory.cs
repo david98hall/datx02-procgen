@@ -38,6 +38,15 @@ namespace Cities.Plots
         {
             return new ClockwiseCycleStrategy(_roadNetworkInjector);
         }
-        
+
+        /// <summary>
+        /// Finds all minimal cycle plots in the road network.
+        /// </summary>
+        /// <returns>All minimal cycle plots in the road network.</returns>
+        public IGenerator<IEnumerable<Plot>> CreateMinimalCycleStrategy()
+        {
+            return new MinimalCycleStrategy(_roadNetworkInjector);
+        }
+
     }
 }

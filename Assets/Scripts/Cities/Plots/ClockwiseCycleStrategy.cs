@@ -23,39 +23,9 @@ namespace Cities.Plots
         {
         }
 
-        public override IEnumerable<Plot> Generate() => GetMinimalCyclesXz().Select(cycle => new Plot(cycle));
+        public override IEnumerable<Plot> Generate() => GetAllCyclesXz().Select(cycle => new Plot(cycle));
 
-        private IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCyclesXz()
-        {
-            var allCycles = new List<IReadOnlyCollection<Vector3>>(GetAllCyclesXz());
-            allCycles.Sort((cycle1, cycle2) =>
-            {
-                var area1 = Maths2D.CalculatePolygonArea(cycle1.Select(Vec3ToVec2));
-                var area2 = Maths2D.CalculatePolygonArea(cycle2.Select(Vec3ToVec2));
-                return area1 < area2 ? -1 : area1 > area2 ? 1 : 0;
-            });
-            
-            var minimalCycles = new HashSet<IReadOnlyCollection<Vector3>>();
-            for (var i = allCycles.Count - 1; i >= 0; i--)
-            {
-                var isMinimal = true;
-                var cycleXz = allCycles[i].Select(Vec3ToVec2).ToList();
-                for (var j = i - 1; j >= 0; j--)
-                {
-                    if (!Maths2D.AnyPolygonCenterOverlaps(allCycles[j].Select(Vec3ToVec2), cycleXz)) 
-                        continue;
-                    isMinimal = false;
-                    break;
-                }
-
-                if (isMinimal)
-                    minimalCycles.Add(allCycles[i]);
-            }
-
-            return minimalCycles;
-        }
-        
-        private IEnumerable<IReadOnlyCollection<Vector3>> GetAllCyclesXz()
+        protected IEnumerable<IReadOnlyCollection<Vector3>> GetAllCyclesXz()
         {
             // XZ-projection of the undirected road network
             var roadNetwork = Injector.Get().GetXZProjection().GetAsUndirected();
@@ -125,7 +95,6 @@ namespace Cities.Plots
             return null;
         }
 
-        private static Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
         
         private static bool TryGetClockwiseNeighbour(
             Vector3 vertex,
@@ -157,6 +126,8 @@ namespace Cities.Plots
 
             return !clockwiseNeighbour.Equals(Vector3.negativeInfinity);
         }
+        
+        protected static Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
         
     }
 }
