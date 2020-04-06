@@ -46,5 +46,45 @@ namespace Cities.Plots
         }
 
         public object Clone() => new Plot(this);
+
+        public Boolean collidesWith(Plot p) 
+        {
+            var axes = new LinkedList<Vector3>();
+            
+            throw new System.NotImplementedException();
+            /* Pseudocode
+            # project both shapes onto the axis
+            Projection p1 = shape1.project(axis);
+            Projection p2 = shape2.project(axis);
+             # do the projections overlap?
+            if (!p1.overlap(p2)) {
+                // then we can guarantee that the shapes do not overlap
+                return false;
+            }
+            */
+        }
+
+        // Find the normals of each edge of the plot        
+        private IEnumerable<Vector3> edgeNormals() 
+        {
+            var normals = new LinkedList<Vector3>();
+
+            // Iterate over the vertices to find each edge
+            using (var vertexEnum = Vertices.GetEnumerator())
+            {
+                
+            }
+            for (int i = 0; i < Vertices.Count - 1; i++)
+            {
+                Vector3 v1 = Vertices[i];
+                Vector3 v2 = Vertices[i + 1];
+
+                // Subtract the two vertices to get the edge vector
+                Vector3 ev = v1 - v2;
+                // The direction of the normal doesn't matter
+
+            }
+            return normals;
+        }
     }
 }

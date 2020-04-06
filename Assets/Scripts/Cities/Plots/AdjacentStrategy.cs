@@ -5,6 +5,7 @@ using UnityEngine;
 
 using Cities.Roads;
 using Interfaces;
+using Utils.Geometry;
 
 namespace Cities.Plots 
 {
@@ -26,7 +27,7 @@ namespace Cities.Plots
 
                 var roadVector = end - start;
                 var plotLength = Vector3.Magnitude(roadVector);
-                var v = PerpendicularClockwise(roadVector);
+                var v = Maths3D.PerpendicularClockwise(roadVector);
                 vertices.AddLast(end - v.normalized * plotLength);
                 vertices.AddLast(start - v.normalized * plotLength);
                 
@@ -36,16 +37,6 @@ namespace Cities.Plots
             }
 
             return plots;
-        }
-        
-        /// <summary>
-        /// Finds the perpendicular clockwise vector in the x-z plane.
-        /// </summary>
-        /// <param name="vector"></param>
-        /// <returns>The perpendicular clockwise vector to </returns>
-        private static Vector3 PerpendicularClockwise(Vector3 vector)
-        {
-            return new Vector3(vector.z, vector.y, -vector.x);
         }
     }
 }

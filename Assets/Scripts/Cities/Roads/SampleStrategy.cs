@@ -30,7 +30,7 @@ namespace Cities.Roads
         private static IEnumerable<IEnumerable<Vector3>> CreateTestExample1()
         {
             var roads = new HashSet<IEnumerable<Vector3>> {CreateCircleRoad(7.5f, 0.5f)};
-            roads.AddRange(CreatePyramid(5f, -2.5f, -2.5f));
+            //roads.AddRange(CreatePyramid(5f, -2.5f, -2.5f));
             return roads;
         }
         
@@ -43,7 +43,7 @@ namespace Cities.Roads
                 CreateCircleRoad(5, 0.5f, 22.5f),
                 CreateCircleRoad(2.5f, 0.5f, 22.5f)
             };
-            roads.AddRange(CreatePyramid(5f, 35, -3.75f));
+            //roads.AddRange(CreatePyramid(5f, 35, -3.75f));
             return roads;
         }
         #endregion
@@ -75,16 +75,6 @@ namespace Cities.Roads
             return circleRoad;
         }
 
-        private static IEnumerable<Vector3> CreateHighway()
-        {
-            var highway = new LinkedList<Vector3>();
-            highway.AddLast(new Vector3(0f, 0f, 0f));
-            highway.AddLast(new Vector3(7f, 0f, 4f));
-            highway.AddLast(new Vector3(10f, 0f, 10f));
-            highway.AddLast(new Vector3(11f, 0f, 17f));
-
-            return highway;
-        }
         #endregion
         
         #region Example road networks
@@ -112,6 +102,18 @@ namespace Cities.Roads
             roads.Add(straightRoad);
 
             return roads;
+        }
+
+
+        private static IEnumerable<Vector3> CreateHighway()
+        {
+            var highway = new LinkedList<Vector3>();
+            highway.AddLast(new Vector3(0f, 0f, 0f));
+            highway.AddLast(new Vector3(7f, 0f, 4f));
+            highway.AddLast(new Vector3(10f, 0f, 10f));
+            highway.AddLast(new Vector3(11f, 0f, 5f));
+
+            return highway;
         }
         #endregion
         

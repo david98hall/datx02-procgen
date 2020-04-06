@@ -25,17 +25,28 @@ namespace Cities.Plots
         {
             var plots = new HashSet<Plot>();
             
-            // A 1x1 square
+            // A square
             var vertices = new LinkedList<Vector3>();
-
             vertices.AddLast(new Vector3(0f, 0f, 0f));
             vertices.AddLast(new Vector3(5f, 0f, 0f));
             vertices.AddLast(new Vector3(5f, 0f, 5f));
             vertices.AddLast(new Vector3(0f, 0f, 5f));
             vertices.AddLast(new Vector3(0f, 0f, 0f));
-            
+            var p1 = new Plot(vertices);
+            plots.Add(p1);
 
-            plots.Add(new Plot(vertices));
+            // Another square
+            vertices = new LinkedList<Vector3>();
+            vertices.AddLast(new Vector3(1f, 1f, 1f));
+            vertices.AddLast(new Vector3(-4f, 1f, 1f));
+            vertices.AddLast(new Vector3(-4f, 1f, -4f));
+            vertices.AddLast(new Vector3(1f, 1f, -4f));
+            vertices.AddLast(new Vector3(1f, 1f, 1f));
+            var p2 = new Plot(vertices);
+            plots.Add(p2);
+
+            Debug.Log("Plots are colliding (t/f): " + p1.collidesWith(p2));
+
             return plots;
         }
     }
