@@ -14,18 +14,19 @@ public class LSystem
     public class State{
         public Vector3 pos;
         public double angle;
-
         
         public State(Vector3 pos, double angle)
         {
             this.pos = pos;
             this.angle = angle;
         }
+        
         public State(){
             pos = Vector3.zero;
             angle = 0;
         }
     }
+    
     // F -> The Road goes forward
     // S -> The Road splits
     // B -> The Road branches off in a particular shape
@@ -33,7 +34,7 @@ public class LSystem
     // - -> Turn right by some amount
     // [ -> Start working on the next state in the queue, saving the current one
     // ] -> Mark the current state as finished, and proceed to the next one in the queue
-
+    
     public IDictionary<char, string> ruleset = new Dictionary<char, string>();
     StringBuilder tree;
     public char axiom;
@@ -43,16 +44,12 @@ public class LSystem
     private float toRad = Mathf.Deg2Rad;
     private float pi = Mathf.PI;
 
-    /// <summary>
-    /// Creates a new Lsystem, with a specified axiom.
-    /// </summary>
-    /// <param name="c">The character to which the axiom is set</param>
     public LSystem(char c){
         
         axiom = c;
         state = new State(Vector3.zero, 0);
-        ruleset.Add('F',"F+S");
-        ruleset.Add('S', "G-FB[");
+        ruleset.Add('F',"FS+");
+        ruleset.Add('S', "-GFB[");
         ruleset.Add('B',"FS[F+]");
         ruleset.Add('G', "G-F");
         tree = new StringBuilder(c.ToString());
@@ -253,7 +250,8 @@ public class LSystem
         int n = 0;
         foreach (Vector3 sect in network.Intersections)
         {
-            if(Vector3.Distance(pos, sect) <= radius) n++;
+            if(Vector3.Distance(pos, sect) <= radius)
+            n++;
         }
         Debug.Log("intersections at position "+pos +"within radius "+radius+": " + n);
         return n;
