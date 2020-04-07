@@ -100,6 +100,7 @@ namespace App.ViewModel.Terrain
                 EditorGUI.indentLevel++;
                 noiseStrategy = (NoiseStrategy) EditorGUILayout.EnumPopup("Strategy", noiseStrategy);
 
+                EditorGUI.indentLevel++;
                 switch (noiseStrategy)
                 {
                     case NoiseStrategy.PerlinNoise:
@@ -110,6 +111,7 @@ namespace App.ViewModel.Terrain
                 }
 
                 EditorGUI.indentLevel--;
+                EditorGUI.indentLevel--;
             }
 
             _textureStrategyVisible = EditorGUILayout.Foldout(_textureStrategyVisible, "Texture Generation");
@@ -118,6 +120,7 @@ namespace App.ViewModel.Terrain
                 EditorGUI.indentLevel++;
                 textureStrategy = (TextureStrategy) EditorGUILayout.EnumPopup("Strategy", textureStrategy);
 
+                EditorGUI.indentLevel++;
                 switch (textureStrategy)
                 {
                     case TextureStrategy.GrayScale:
@@ -130,6 +133,7 @@ namespace App.ViewModel.Terrain
                         throw new ArgumentOutOfRangeException();
                 }
 
+                EditorGUI.indentLevel--;
                 EditorGUI.indentLevel--;
             }
             

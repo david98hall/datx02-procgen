@@ -13,15 +13,12 @@ namespace App
         
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
-
             if (!(target is App app)) return;
-            //app.Update();
-            app.Display();
+            app.DisplayEditor();
 
             if (GUILayout.Button("Update"))
             {
-                app.Update();
+                app.Generate();
             }
 
             if (!GUI.changed) return;

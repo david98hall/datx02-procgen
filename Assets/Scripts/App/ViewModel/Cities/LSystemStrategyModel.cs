@@ -1,14 +1,17 @@
+using System;
 using Cities.Roads;
 using Interfaces;
 
 namespace App.ViewModel.Cities
 {
-    public class LSystemModel : IViewAdapter<IGenerator<RoadNetwork>>
+    [Serializable]
+    public class LSystemStrategyModel : IViewAdapter<IGenerator<RoadNetwork>>
     {
         private LSystemStrategy _strategy;
 
         public IGenerator<RoadNetwork> Model
         {
+            // is used for generation
             get
             {
                 return _strategy;
@@ -21,7 +24,7 @@ namespace App.ViewModel.Cities
 
         public void Display()
         {
-            throw new System.NotImplementedException();
+            // Is used for displaying stuff
         }
     }
 }
