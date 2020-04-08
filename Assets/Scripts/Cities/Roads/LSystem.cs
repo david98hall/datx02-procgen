@@ -44,12 +44,16 @@ public class LSystem
     private float toRad = Mathf.Deg2Rad;
     private float pi = Mathf.PI;
 
+    /// <summary>
+    /// Creates a new Lsystem, with a specified axiom.
+    /// </summary>
+    /// <param name="c">The character to which the axiom is set</param>
     public LSystem(char c){
         
         axiom = c;
         state = new State(Vector3.zero, 0);
-        ruleset.Add('F',"FS+");
-        ruleset.Add('S', "-GFB[");
+        ruleset.Add('F',"F+S");
+        ruleset.Add('S', "G-FB[");
         ruleset.Add('B',"FS[F+]");
         ruleset.Add('G', "G-F");
         tree = new StringBuilder(c.ToString());
