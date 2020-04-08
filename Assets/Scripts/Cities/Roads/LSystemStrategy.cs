@@ -3,17 +3,23 @@
 namespace Cities.Roads{
     internal class LSystemStrategy : Strategy<float[,], RoadNetwork>
     {
-        bool start;
-        LSystem system;
+        public LSystem system;
+        int iterations;
         internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
         {
             system = new LSystem('F');
-            start = true;
+            iterations = 3;
+        }
+
+        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int i) : base(terrainNoiseMapInjector)
+        {
+            system = new LSystem('F');
+            iterations = i;
         }
         
         public override RoadNetwork Generate(){
             system = new LSystem(system.axiom);
-            for (var i = 0; i < 3; i++)
+            for (var i = 0; i < iterations; i++)
             {
                 system.Rewrite();
             }
