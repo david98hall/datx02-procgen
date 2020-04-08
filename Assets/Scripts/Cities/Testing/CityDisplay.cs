@@ -49,6 +49,9 @@ namespace Cities.Testing
         
         [Range(0,1)]
         public float heightBias;
+
+        [Range(1,10)]
+        public int lsystemIterations;
         
         public Material roadMaterial;
         public Material plotBorderMaterial;
@@ -188,7 +191,7 @@ namespace Cities.Testing
                     aStar.Add((0, 0), (width/2, depth/2));
                     return aStar;
                 case RoadStrategy.Lsystem:
-                    return new LSystemStrategy(this);
+                    return new LSystemStrategy(this, lsystemIterations);
                 default:
                     throw new ArgumentOutOfRangeException();
             }

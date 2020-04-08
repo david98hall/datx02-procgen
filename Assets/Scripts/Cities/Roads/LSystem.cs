@@ -43,12 +43,16 @@ public class LSystem
     private float toRad = Mathf.Deg2Rad;
     private float pi = Mathf.PI;
 
+    /// <summary>
+    /// Creates a new Lsystem, with a specified axiom.
+    /// </summary>
+    /// <param name="c">The character to which the axiom is set</param>
     public LSystem(char c){
         
         axiom = c;
         state = new State(Vector3.zero, 0);
-        ruleset.Add('F',"FS+");
-        ruleset.Add('S', "-GFB[");
+        ruleset.Add('F',"F+S");
+        ruleset.Add('S', "G-FB[");
         ruleset.Add('B',"FS[F+]");
         ruleset.Add('G', "G-F");
         tree = new StringBuilder(c.ToString());
@@ -73,6 +77,7 @@ public class LSystem
     {
         System.Random rdm = new System.Random();
         StringBuilder newTree = new StringBuilder();
+        float range = 4.0f;
         foreach (char c in tree.ToString())
         {
             try
@@ -105,7 +110,7 @@ public class LSystem
                         {
                             case 'S':{
                                 splitState = new State(state.pos + length * splitDir, splitAngle);
-                                intersects = noIntersects(splitState.pos, 2.0f);
+                                intersects = noIntersects(splitState.pos, range);
                                 if(intersects <= 1){
                                     states.Enqueue(splitState);
                                     splitRoad.AddLast(splitState.pos);
@@ -122,7 +127,7 @@ public class LSystem
                                     rotate90 = new Vector3(Mathf.Cos((float) splitAngle - 90*toRad), 0, Mathf.Sin((float) splitAngle - 90*toRad));
                                 }
                                 splitState = new State(state.pos + 2*length*splitDir + length*rotate90, splitAngle);
-                                intersects = noIntersects(splitState.pos, 2.0f);
+                                intersects = noIntersects(splitState.pos, range);
                                 if(intersects <= 1){
                                     splitRoad.AddLast(state.pos + 2 *length* splitDir);
                                     splitRoad.AddLast(splitState.pos);
@@ -144,7 +149,7 @@ public class LSystem
                             break;
                 }
                 Vector3 newPos = state.pos + length * direction;
-                if(noIntersects(newPos, 2.0f) <= 1){
+                if(noIntersects(newPos, range) <= 1){
                     road.AddLast(newPos);
                     network.AddRoad(road);
                     state.pos = newPos;
@@ -183,6 +188,7 @@ public class LSystem
         int grids = UnityEngine.Random.Range(3,10);
         Queue<State> workSites = new Queue<State>();
         workSites.Enqueue(s);
+        float range = 3.0f;
         State workSite = new State();
         for (int i = 0; i < grids; i++)
         {
@@ -212,7 +218,7 @@ public class LSystem
             for (int j = 0; j < 4; j++) // A square road is created
             {
                 workSite.pos += size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                if(noIntersects(workSite.pos, 2.0f) <= 1){
+                if(noIntersects(workSite.pos, range) <= 1){
                 road.AddLast(workSite.pos);
                 workSite.angle += 90*toRad;
                 }else{
@@ -222,15 +228,15 @@ public class LSystem
             network.AddRoad(road);
             Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
             if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
-                if(noIntersects(workSite.pos, 2.0f) <= 1)
+                if(noIntersects(workSite.pos, range) <= 1)
                     workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
-                if(noIntersects(newPos,2.0f) <= 1)
+                if(noIntersects(newPos, range) <= 1)
                     workSites.Enqueue(new State(newPos, workSite.angle));
 
             }else{
-                if(noIntersects(newPos,2.0f) <= 1)
+                if(noIntersects(newPos, range) <= 1)
                     workSites.Enqueue(new State(newPos, workSite.angle));
-                if(noIntersects(workSite.pos, 2.0f) <= 1)
+                if(noIntersects(workSite.pos, range) <= 1)
                     workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
             }
         }
@@ -250,6 +256,7 @@ public class LSystem
             if(Vector3.Distance(pos, sect) <= radius)
             n++;
         }
+        Debug.Log("intersections at position "+pos +"within radius "+radius+": " + n);
         return n;
     }
 }
