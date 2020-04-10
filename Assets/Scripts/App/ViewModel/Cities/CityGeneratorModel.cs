@@ -23,7 +23,7 @@ namespace App.ViewModel.Cities
 
         [SerializeField] 
         private LSystemStrategyModel lSystemStrategyModel;
-
+        
         public enum RoadNetworkStrategy
         {
             LSystem, AStar
@@ -47,7 +47,6 @@ namespace App.ViewModel.Cities
                 switch (roadNetworkStrategy)
                 {
                     case RoadNetworkStrategy.LSystem:
-                        _generator.RoadNetworkStrategy = lSystemStrategyModel.Model;
                         break;
                     case RoadNetworkStrategy.AStar:
                         _generator.RoadNetworkStrategy = aStarStrategyModel.Model;
@@ -73,7 +72,6 @@ namespace App.ViewModel.Cities
 
                 var roadNetworkStrategyFactory = _generator?.RoadNetworkFactory;
                 aStarStrategyModel.Model = roadNetworkStrategyFactory?.CreateAStarStrategy();
-                lSystemStrategyModel.HeightMapInjector = roadNetworkStrategyFactory?.MeshHeightMapInjector;
                 lSystemStrategyModel.Model = roadNetworkStrategyFactory?.CreateLSystemStrategy();
             }
         }
@@ -95,7 +93,6 @@ namespace App.ViewModel.Cities
                 switch (roadNetworkStrategy)
                 {
                     case RoadNetworkStrategy.LSystem:
-                        lSystemStrategyModel.Display();
                         break;
                     case RoadNetworkStrategy.AStar:
                         aStarStrategyModel.Display();

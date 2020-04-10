@@ -8,25 +8,26 @@ namespace Cities.Roads
     /// </summary>
     public class Factory
     {
-        public IInjector<float[,]> MeshHeightMapInjector { get; }
+
+        private readonly IInjector<float[,]> _terrainMeshNoiseMapInjector;
         
         /// <summary>
         /// Initializes this factory with a noise map injector.
         /// </summary>
-        /// <param name="meshHeightMapInjector">The noise map injector.</param>
-        public Factory(IInjector<float[,]> meshHeightMapInjector)
+        /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
+        public Factory(IInjector<float[,]> terrainMeshNoiseMapInjector)
         {
-            MeshHeightMapInjector = meshHeightMapInjector;
+            _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
         }
 
-        public IGenerator<RoadNetwork> CreateAStarStrategy() => new AStarStrategy(MeshHeightMapInjector);
+        public IGenerator<RoadNetwork> CreateAStarStrategy() => new AStarStrategy(_terrainMeshNoiseMapInjector);
 
-        public IGenerator<RoadNetwork> CreateLSystemStrategy() => new LSystemStrategy(MeshHeightMapInjector);
+        public IGenerator<RoadNetwork> CreateLSystemStrategy() => new LSystemStrategy(_terrainMeshNoiseMapInjector);
 
         /// <summary>
         /// Creates a sample strategy for testing.
         /// </summary>
         /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(MeshHeightMapInjector);
+        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshNoiseMapInjector);
     }
 }
