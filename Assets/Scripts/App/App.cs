@@ -92,7 +92,7 @@ namespace App
             lineRenderer.textureMode = LineTextureMode.Tile;
             lineRenderer.generateLightingData = true;
 
-            if (material != null) lineRenderer.sharedMaterial = null;
+            if (material != null) lineRenderer.sharedMaterial = material;
 
             var itemArray = item.ToArray();
             lineRenderer.positionCount = itemArray.Length;
