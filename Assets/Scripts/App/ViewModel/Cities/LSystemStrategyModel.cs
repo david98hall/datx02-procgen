@@ -1,6 +1,7 @@
 using System;
 using Cities.Roads;
 using Interfaces;
+using UnityEngine;
 
 namespace App.ViewModel.Cities
 {
@@ -9,6 +10,8 @@ namespace App.ViewModel.Cities
     {
         private LSystemStrategy _strategy;
 
+        internal IInjector<float[,]> HeightMapInjector { get; set; }
+        
         public IGenerator<RoadNetwork> Model
         {
             // is used for generation
