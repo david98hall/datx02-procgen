@@ -334,6 +334,109 @@ namespace Utils.Geometry
             return castCenters;
         }
         
+        /// <summary>
+        /// Returns true if two convex polygons are colliding using the separating axis theorem (SAT).
+        /// Based on http://www.dyn4j.org/2010/01/sat/#sat-convex.
+        /// </summary>
+        /// <remarks>
+        /// This method is implemented using Vector3 to avoid conversion where it was intended to be used (Plots).
+        /// </remarks>
+        /// <param name="poly1">The first polygon.</param>
+        /// <param name="poly2">The second polygon.</param>
+        /// <returns>True </returns>
+        public static bool AreColliding(IEnumerable<Vector3> poly1, IEnumerable<Vector3> poly2) 
+        {
+            // Using SAT, the axes you must test are the normals of each shape's edges.
+            var axes = EdgeNormals(poly1).Concat(EdgeNormals(poly2));
+
+            foreach (var axis in axes)
+            {
+                // Project both polygons onto the axis
+                var projection1 = ProjectPolygonOntoAxis(poly1, axis);
+                var projection2 = ProjectPolygonOntoAxis(poly2, axis);
+                if (!Overlap(projection1, projection2))
+                {
+                    // Based on SAT
+                    return false;
+                }
+            }
+            
+            // If we find that there is an overlap on every axis, we know the polygons are colliding.
+            return true;
+        }
+
+        /// <summary>
+        /// Project the x-z value of each vertex of a polygon onto a given axis (infnite line), returning the minimum and maximum value.
+        /// This can be seen as squashing a polygon (2D) onto a line (1D) returning an interval along the line.
+        /// </summary>
+        /// <remarks>
+        /// This method is implemented using Vector3 to avoid conversion where it was intended to be used (Plots).
+        /// </remarks>
+        /// <returns>The minimum and maximum value of the projection.</returns>
+        public static (float start, float end) ProjectPolygonOntoAxis(IEnumerable<Vector3> poly, Vector3 axis)
+        {
+            // Use the enumerator instead of foreach in order to only have to loop once.
+            using (var vertexEnum = poly.GetEnumerator())
+            {
+                if (!vertexEnum.MoveNext())
+                    throw new ApplicationException("Cannot project a polygon without vertices onto an axis.");
+                var min = Vector3.Dot(vertexEnum.Current, axis);
+                var max = min;
+
+                while (vertexEnum.MoveNext())
+                {
+                    // For the projection we use the dot product
+                    var dp = Vector3.Dot(vertexEnum.Current, axis);
+                    if (dp < min)
+                    {
+                        min = dp;
+                    } else if (dp > max)
+                    {
+                        max = dp;
+                    }
+                }
+                return (start: min, end: max);
+            }
+        }
+
+        // Check if two intervals are overlapping, or geometrically, if two line segments are overlapping.
+        private static bool Overlap(System.ValueTuple<float, float> p1, System.ValueTuple<float, float> p2)
+        {
+            // Easy to understand if you think of the intervals as time. The equation essentially answers the
+            // question: "could two people have met?", with: "yes, if both were born before the other died".
+            return p1.Item1 < p2.Item2 && p2.Item1 < p1.Item2;
+        }
+
+        /// <summary>
+        /// Finds the normals of each edge of a given polygon defined by its vertices.
+        /// The edges are determined by the order of the given vertices.
+        /// 
+        /// This method is implemented using Vector3 to avoid conversion.
+        /// </summary>
+        /// <returns>The normals of each edge in the polygon.</returns>
+        public static IEnumerable<Vector3> EdgeNormals(IEnumerable<Vector3> vertices) 
+        {
+            var normals = new LinkedList<Vector3>();
+
+            // Iterate over the vertices to find each edge vector
+            using (var vertexEnum = vertices.GetEnumerator())
+            {
+                if (!vertexEnum.MoveNext())
+                    throw new ApplicationException("Cannot find edge normals of a plot without vertices.");
+                
+                var v1 = vertexEnum.Current;
+                while (vertexEnum.MoveNext())
+                {
+                    var v2 = vertexEnum.Current;
+                    // The direction of the normal doesn't matter so the order of subtraction is arbitrarily chosen.
+                    var ev = v1 - vertexEnum.Current;
+                    normals.AddLast(Maths3D.PerpendicularClockwise(ev).normalized);
+                    v1 = v2;
+                }
+            }
+            return normals;
+        }
+        
         #endregion
         
     }

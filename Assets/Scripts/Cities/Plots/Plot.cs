@@ -56,77 +56,22 @@ namespace Cities.Plots
         /// <returns>A boolean that states whether or not the plots are colliding</returns>
         public bool CollidesWith(Plot p) 
         {
-            // The axes you must test are the normals of each shape's edges.
-            var axes = this.EdgeNormals().Concat(p.EdgeNormals());
+            // In SAT, the axes you must test are the normals of each shape's edges.
+            var axes = Maths2D.EdgeNormals(Vertices).Concat(Maths2D.EdgeNormals(p.Vertices));
 
             foreach (var axis in axes)
             {
-                var p1 = projectOnto(axis);
-                var p2 = p.projectOnto(axis);
+                var p1 = Maths2D.ProjectPolygonOntoAxis(Vertices, axis);
+                var p2 = Maths2D.ProjectPolygonOntoAxis(p.Vertices, axis);
                 if (!overlap(p1, p2))
                 {
                     // Based on SAT
+                    // If we found no overlap on any of the axes, we know there is no collision.
                     return false;
                 }
             }
             
-            // If we found no overlap on any of the axes, we know there is no collision.
             return true;
-        }
-
-        // Find the normals of each edge of the plot        
-        private IEnumerable<Vector3> EdgeNormals() 
-        {
-            var normals = new LinkedList<Vector3>();
-
-            // Iterate over the vertices to find each edge vector
-            using (var vertexEnum = Vertices.GetEnumerator())
-            {
-                if (!vertexEnum.MoveNext())
-                    throw new ApplicationException("Cannot find edge normals of a plot without vertices.");
-                
-                var v1 = vertexEnum.Current;
-                while (vertexEnum.MoveNext())
-                {
-                    var v2 = vertexEnum.Current;
-                    // The direction of the normal doesn't matter so the order of subtraction is arbitrarily chosen.
-                    var ev = v1 - vertexEnum.Current;
-                    normals.AddLast(Maths3D.PerpendicularClockwise(ev).normalized);
-                    v1 = v2;
-                }
-            }
-            return normals;
-        }
-
-        /// <summary>
-        /// Project each vertex of this plot onto a given axis, returning the minimum and maximum value.
-        /// This can be seen as squashing a polygon (2D) onto a line (1D) returning an interval along the line.
-        /// </summary>
-        /// <returns>The minimum and maximum value of the projection.</returns>
-        private (float start, float end) projectOnto(Vector3 axis)
-        {
-            // Use the enumerator instead of foreach in order to only have to loop once.
-            using (var vertexEnum = Vertices.GetEnumerator())
-            {
-                if (!vertexEnum.MoveNext())
-                    throw new ApplicationException("Cannot project a plot without vertices onto an axis.");
-                var min = Vector3.Dot(vertexEnum.Current, axis);
-                var max = min;
-
-                while (vertexEnum.MoveNext())
-                {
-                    // For the projection we use the dot product
-                    var dp = Vector3.Dot(vertexEnum.Current, axis);
-                    if (dp < min)
-                    {
-                        min = dp;
-                    } else if (dp > max)
-                    {
-                        max = dp;
-                    }
-                }
-                return (start: min, end: max);
-            }
         }
         
         // Tests if two projections on an axis are overlapping
