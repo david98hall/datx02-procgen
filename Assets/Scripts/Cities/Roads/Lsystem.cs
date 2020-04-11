@@ -62,7 +62,7 @@ namespace Cities.Roads
         /// <summary>
         /// Applies the injected noise map to the road network and returns the result.
         /// </summary>
-        internal RoadNetwork HeightMappedNetwork => ApplyNoiseMap();
+        internal RoadNetwork NoiseMappedNetwork => ApplyNoiseMap();
 
         // Applies the injected noise map on the road network.
         private RoadNetwork ApplyNoiseMap()

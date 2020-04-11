@@ -20,7 +20,7 @@ namespace Cities.Roads{
             {
                 system.Rewrite();
             }
-            return system.HeightMappedNetwork;
+            return system.NoiseMappedNetwork;
         }
     }
 }
