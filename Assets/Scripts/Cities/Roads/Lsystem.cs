@@ -10,7 +10,7 @@ namespace Cities.Roads
     /// <summary>
     /// A way of generating roads using a non-deterministic L-system.
     /// </summary>
-    public class LSystem
+    public class Lsystem
     {
         private class State
         {
