@@ -1,6 +1,8 @@
 using System;
 using Cities.Roads;
 using Interfaces;
+using UnityEditor;
+using UnityEngine;
 
 namespace App.ViewModel.Cities
 {
@@ -9,22 +11,25 @@ namespace App.ViewModel.Cities
     {
         private LSystemStrategy _strategy;
 
+        // The start point for the generation
+        [HideInInspector] 
+        public Vector2 origin;
+        
         public IGenerator<RoadNetwork> Model
         {
-            // is used for generation
             get
             {
+                // Update the origin
+                _strategy.Origin = origin;
                 return _strategy;
             }
-            set
-            {
-                _strategy = value as LSystemStrategy;
-            }
+            set => _strategy = value as LSystemStrategy;
         }
 
         public void Display()
         {
-            // Is used for displaying stuff
+            // Display a field for setting the start point of the L-system generation
+            origin = EditorGUILayout.Vector2Field("Origin", origin);
         }
     }
 }

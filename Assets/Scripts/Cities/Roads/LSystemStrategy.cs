@@ -1,23 +1,26 @@
 ﻿using Interfaces;
+using UnityEngine;
 
 namespace Cities.Roads{
     internal class LSystemStrategy : Strategy<float[,], RoadNetwork>
     {
-        bool start;
-        LSystem system;
+
+        /// <summary>
+        /// The start point of the L-system road network generation. 
+        /// </summary>
+        internal Vector2 Origin { get; set; }
+
         internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
         {
-            system = new LSystem(Injector, 'F');
-            start = true;
         }
-        
+
         public override RoadNetwork Generate(){
-            system = new LSystem(Injector, system.axiom);
-            for (var i = 0; i < 3; i++)
+            var system = new LSystem(Injector, 'F', Origin);
+            for (var i = 0; i < 5; i++)
             {
                 system.Rewrite();
             }
-            return system.network;
+            return system.HeightMappedNetwork;
         }
     }
 }

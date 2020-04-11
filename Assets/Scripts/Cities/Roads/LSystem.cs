@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using Interfaces;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Cities.Roads
 {
@@ -10,7 +12,7 @@ namespace Cities.Roads
     /// </summary>
     public class LSystem
     {
-        public class State
+        private class State
         {
             public Vector3 pos;
             public double angle;
@@ -21,7 +23,6 @@ namespace Cities.Roads
                 this.angle = angle;
             }
         }
-
 
         private readonly IInjector<float[,]> _noiseMapInjector;
         // F -> The Road goes forward
@@ -40,11 +41,42 @@ namespace Cities.Roads
         private float toRad = Mathf.Deg2Rad;
         private float pi = Mathf.PI;
 
-        public LSystem(IInjector<float[,]> noiseMapInjector, char c)
+        /// <summary>
+        /// Applies the injected height map to the road network and returns the result.
+        /// </summary>
+        internal RoadNetwork HeightMappedNetwork => ApplyHeightMapOnNetwork();
+
+        // Applies the injected height on the road network.
+        private RoadNetwork ApplyHeightMapOnNetwork()
+        {
+            var newNetwork = new RoadNetwork();
+            var noiseMap = _noiseMapInjector.Get();
+            foreach (var (roadStart, roadEnd) in network.GetRoadParts())
+            {
+                try
+                {
+                    var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];
+                    var roadEndY = noiseMap[(int) roadEnd.x, (int) roadEnd.z];
+                    const float yOffset = 0.5f;
+                    newNetwork.AddRoad(
+                        new Vector3(roadStart.x, roadStartY + yOffset, roadStart.z),
+                        new Vector3(roadEnd.x, roadEndY + yOffset, roadEnd.z)
+                    );
+                }
+                catch (Exception)
+                {
+                    // Ignored
+                }
+            }
+            
+            return newNetwork;
+        }
+        
+        public LSystem(IInjector<float[,]> noiseMapInjector, char c, Vector2 origin)
         {
             _noiseMapInjector = noiseMapInjector;
             axiom = c;
-            state = new State(Vector3.zero, 0);
+            state = new State(new Vector3(origin.x, 0, origin.y), 0);
             ruleset.Add('F',"F+FB]");
             ruleset.Add('S', "B-FB[");
             ruleset.Add('B',"FS[F+]");
