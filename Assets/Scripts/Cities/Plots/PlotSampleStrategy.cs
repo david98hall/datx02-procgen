@@ -38,7 +38,7 @@ namespace Cities.Plots
 
             // Another square, offset and rotated 45 degrees around the y-axis
             vertices = new LinkedList<Vector3>();
-            const int offsetX = 5;
+            const int offsetX = 0;
             const int offsetZ = 5;
             vertices.AddLast(new Vector3(offsetX, 0f, offsetZ));
             vertices.AddLast(new Vector3(offsetX + 5f, 0f, offsetZ));

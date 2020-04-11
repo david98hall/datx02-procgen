@@ -103,7 +103,7 @@ namespace Cities.Plots
         /// This can be seen as squashing a polygon (2D) onto a line (1D) returning an interval along the line.
         /// </summary>
         /// <returns>The minimum and maximum value of the projection.</returns>
-        private Tuple<float, float> projectOnto(Vector3 axis)
+        private (float start, float end) projectOnto(Vector3 axis)
         {
             // Use the enumerator instead of foreach in order to only have to loop once.
             using (var vertexEnum = Vertices.GetEnumerator())
@@ -125,12 +125,12 @@ namespace Cities.Plots
                         max = dp;
                     }
                 }
-                return new Tuple<float, float>(min, max);
+                return (start: min, end: max);
             }
         }
         
         // Tests if two projections on an axis are overlapping
-        private static bool overlap(Tuple<float, float> p1, Tuple<float, float> p2)
+        private static bool overlap(System.ValueTuple<float, float> p1, System.ValueTuple<float, float> p2)
         {
             // Easy to understand if you think of the intervals as time. The equation essentially answers the
             // question: "could two people have met?", with: "yes, if both were born before the other died".
