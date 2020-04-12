@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,7 +26,8 @@ namespace Cities.Plots
             {
                 var roadVector = end - start;
                 var maxSideLength = Vector3.Magnitude(roadVector);
-                var rectPlot = RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength);
+                const float roadOffset = 0.25f; // distance from each road part
+                var rectPlot = RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength, roadOffset);
 
                 // Only add the plot if it doesn't collide with any other
                 if (plots.Count == 0)
@@ -52,7 +54,7 @@ namespace Cities.Plots
         }
 
         // Returns a random (within given bounds) rectangular plot that lies alongside the road part defined by roadVector.
-        private static Plot RandomRectPlot(System.Random rand, Vector3 start, Vector3 roadVector, float maxWidth, float maxLength) 
+        private static Plot RandomRectPlot(System.Random rand, Vector3 start, Vector3 roadVector, float maxWidth, float maxLength, float roadOffset) 
         {            
             // width is the size of the side that lies alongside the road
             var width = (float) rand.NextDouble() * maxWidth + 1; // [1 .. maxWidth]
@@ -80,7 +82,7 @@ namespace Cities.Plots
             vertices.AddLast(start + dir * length);
             vertices.AddLast(start);
 
-            return new Plot(vertices);
+            return new Plot(vertices.Select(v => v + dir * roadOffset));
         }
     }
 }
