@@ -10,8 +10,10 @@ namespace Cities.Plots
     /// <summary>
     /// Finds all minimal cycles in a road network by searching it clockwise from each vertex.
     /// </summary>
-    internal class MinimalCycleStrategy : ClockwiseCycleStrategy
+    internal class MinimalCycleStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
     {
+
+        private readonly ClockwiseCycleStrategy _clockwiseCycleStrategy;
         
         /// <summary>
         /// Initializes the strategy with a RoadNetwork injector.
@@ -19,38 +21,37 @@ namespace Cities.Plots
         /// <param name="injector">The RoadNetwork injector.</param>
         public MinimalCycleStrategy(IInjector<RoadNetwork> injector) : base(injector)
         {
+            _clockwiseCycleStrategy = new ClockwiseCycleStrategy(injector);
         }
 
         /// <summary>
         /// Finds all minimal cycle plots in the road network.
         /// </summary>
         /// <returns>All minimal cycle plots found in the road network.</returns>
-        public override IEnumerable<Plot> Generate() => 
-            GetMinimalCyclesXz().Select(cycle => new Plot(cycle));
-
-        // Extracts only minimal cycles from the set of cycles found in the road network
-        private IEnumerable<IReadOnlyCollection<Vector3>> GetMinimalCyclesXz()
+        public override IEnumerable<Plot> Generate()
         {
+            Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
+            
             // Sort all cycles according to their areas (smallest first)
-            var allCycles = new List<IReadOnlyCollection<Vector3>>(GetAllCyclesXz());
-            allCycles.Sort((cycle1, cycle2) =>
+            var allPlots = new List<Plot>(_clockwiseCycleStrategy.Generate());
+            allPlots.Sort((plot1, plot2) =>
             {
-                var area1 = Maths2D.CalculatePolygonArea(cycle1.Select(Vec3ToVec2));
-                var area2 = Maths2D.CalculatePolygonArea(cycle2.Select(Vec3ToVec2));
+                var area1 = Maths2D.CalculatePolygonArea(plot1.Vertices.Select(Vec3ToVec2));
+                var area2 = Maths2D.CalculatePolygonArea(plot2.Vertices.Select(Vec3ToVec2));
                 return area1 < area2 ? -1 : area1 > area2 ? 1 : 0;
             });
             
             // Extract all cycles that do not overlap any smaller cycle, i.e., all minimal ones
-            var minimalCycles = new HashSet<IReadOnlyCollection<Vector3>>();
-            for (var i = allCycles.Count - 1; i >= 0; i--)
+            var minimalCyclePlots = new HashSet<Plot>();
+            for (var i = allPlots.Count - 1; i >= 0; i--)
             {
                 // Assume that the cycle is minimal before looking for overlaps
                 var isMinimal = true;
-                var cycleXz = allCycles[i].Select(Vec3ToVec2).ToList();
+                var cycleXz = allPlots[i].Vertices.Select(Vec3ToVec2).ToList();
                 for (var j = i - 1; j >= 0; j--)
                 {
                     // Check if the bigger cycle overlaps the smaller
-                    if (!Maths2D.AnyPolygonCenterOverlaps(allCycles[j].Select(Vec3ToVec2), cycleXz)) 
+                    if (!Maths2D.AnyPolygonCenterOverlaps(allPlots[j].Vertices.Select(Vec3ToVec2), cycleXz)) 
                         // Since the bigger cycle doesn't overlap the smaller,
                         // keep looking for overlaps with other, smaller, cycles
                         continue;
@@ -62,11 +63,11 @@ namespace Cities.Plots
 
                 if (isMinimal)
                     // The cycle is minimal, extract it
-                    minimalCycles.Add(allCycles[i]);
+                    minimalCyclePlots.Add(allPlots[i]);
             }
 
             // Return all minimal cycles found (a subset of all cycles)
-            return minimalCycles;
+            return minimalCyclePlots;
         }
 
     }

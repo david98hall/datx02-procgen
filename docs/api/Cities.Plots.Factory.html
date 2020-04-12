@@ -151,20 +151,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateCycleStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateCycleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateBruteMinimalCycleStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateBruteMinimalCycleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L28">View Source</a>
   </span>
-  <a id="Cities_Plots_Factory_CreateCycleStrategy_" data-uid="Cities.Plots.Factory.CreateCycleStrategy*"></a>
-  <h4 id="Cities_Plots_Factory_CreateCycleStrategy" data-uid="Cities.Plots.Factory.CreateCycleStrategy">CreateCycleStrategy()</h4>
-  <div class="markdown level1 summary"><p>Creates a strategy for finding plots in cycles of the
-road network at hand.</p>
+  <a id="Cities_Plots_Factory_CreateBruteMinimalCycleStrategy_" data-uid="Cities.Plots.Factory.CreateBruteMinimalCycleStrategy*"></a>
+  <h4 id="Cities_Plots_Factory_CreateBruteMinimalCycleStrategy" data-uid="Cities.Plots.Factory.CreateBruteMinimalCycleStrategy">CreateBruteMinimalCycleStrategy()</h4>
+  <div class="markdown level1 summary"><p>Creates a strategy for finding plots in minimal cycles of the
+road network at hand. This strategy is relatively slow.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IGenerator&lt;IEnumerable&lt;Plot&gt;&gt; CreateCycleStrategy()</code></pre>
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;IEnumerable&lt;Plot&gt;&gt; CreateBruteMinimalCycleStrategy()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -178,6 +178,70 @@ road network at hand.</p>
       <tr>
         <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</td>
         <td><p>The found plots.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateClockwiseCycleStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateClockwiseCycleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L37">View Source</a>
+  </span>
+  <a id="Cities_Plots_Factory_CreateClockwiseCycleStrategy_" data-uid="Cities.Plots.Factory.CreateClockwiseCycleStrategy*"></a>
+  <h4 id="Cities_Plots_Factory_CreateClockwiseCycleStrategy" data-uid="Cities.Plots.Factory.CreateClockwiseCycleStrategy">CreateClockwiseCycleStrategy()</h4>
+  <div class="markdown level1 summary"><p>Finds all cyclic plots by always turning clockwise when searching the road network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;IEnumerable&lt;Plot&gt;&gt; CreateClockwiseCycleStrategy()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</td>
+        <td><p>The found plots.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateMinimalCycleStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateMinimalCycleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L46">View Source</a>
+  </span>
+  <a id="Cities_Plots_Factory_CreateMinimalCycleStrategy_" data-uid="Cities.Plots.Factory.CreateMinimalCycleStrategy*"></a>
+  <h4 id="Cities_Plots_Factory_CreateMinimalCycleStrategy" data-uid="Cities.Plots.Factory.CreateMinimalCycleStrategy">CreateMinimalCycleStrategy()</h4>
+  <div class="markdown level1 summary"><p>Finds all minimal cycle plots in the road network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;IEnumerable&lt;Plot&gt;&gt; CreateMinimalCycleStrategy()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</td>
+        <td><p>All minimal cycle plots in the road network.</p>
 </td>
       </tr>
     </tbody>

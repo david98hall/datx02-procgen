@@ -151,19 +151,45 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.Factory.Factory
   nameWithType: Factory.Factory
-- uid: Cities.Plots.Factory.CreateCycleStrategy
-  name: CreateCycleStrategy()
-  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateCycleStrategy
-  commentId: M:Cities.Plots.Factory.CreateCycleStrategy
-  fullName: Cities.Plots.Factory.CreateCycleStrategy()
-  nameWithType: Factory.CreateCycleStrategy()
-- uid: Cities.Plots.Factory.CreateCycleStrategy*
-  name: CreateCycleStrategy
-  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateCycleStrategy_
-  commentId: Overload:Cities.Plots.Factory.CreateCycleStrategy
+- uid: Cities.Plots.Factory.CreateBruteMinimalCycleStrategy
+  name: CreateBruteMinimalCycleStrategy()
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateBruteMinimalCycleStrategy
+  commentId: M:Cities.Plots.Factory.CreateBruteMinimalCycleStrategy
+  fullName: Cities.Plots.Factory.CreateBruteMinimalCycleStrategy()
+  nameWithType: Factory.CreateBruteMinimalCycleStrategy()
+- uid: Cities.Plots.Factory.CreateBruteMinimalCycleStrategy*
+  name: CreateBruteMinimalCycleStrategy
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateBruteMinimalCycleStrategy_
+  commentId: Overload:Cities.Plots.Factory.CreateBruteMinimalCycleStrategy
   isSpec: "True"
-  fullName: Cities.Plots.Factory.CreateCycleStrategy
-  nameWithType: Factory.CreateCycleStrategy
+  fullName: Cities.Plots.Factory.CreateBruteMinimalCycleStrategy
+  nameWithType: Factory.CreateBruteMinimalCycleStrategy
+- uid: Cities.Plots.Factory.CreateClockwiseCycleStrategy
+  name: CreateClockwiseCycleStrategy()
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateClockwiseCycleStrategy
+  commentId: M:Cities.Plots.Factory.CreateClockwiseCycleStrategy
+  fullName: Cities.Plots.Factory.CreateClockwiseCycleStrategy()
+  nameWithType: Factory.CreateClockwiseCycleStrategy()
+- uid: Cities.Plots.Factory.CreateClockwiseCycleStrategy*
+  name: CreateClockwiseCycleStrategy
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateClockwiseCycleStrategy_
+  commentId: Overload:Cities.Plots.Factory.CreateClockwiseCycleStrategy
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.CreateClockwiseCycleStrategy
+  nameWithType: Factory.CreateClockwiseCycleStrategy
+- uid: Cities.Plots.Factory.CreateMinimalCycleStrategy
+  name: CreateMinimalCycleStrategy()
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateMinimalCycleStrategy
+  commentId: M:Cities.Plots.Factory.CreateMinimalCycleStrategy
+  fullName: Cities.Plots.Factory.CreateMinimalCycleStrategy()
+  nameWithType: Factory.CreateMinimalCycleStrategy()
+- uid: Cities.Plots.Factory.CreateMinimalCycleStrategy*
+  name: CreateMinimalCycleStrategy
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateMinimalCycleStrategy_
+  commentId: Overload:Cities.Plots.Factory.CreateMinimalCycleStrategy
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.CreateMinimalCycleStrategy
+  nameWithType: Factory.CreateMinimalCycleStrategy
 - uid: Cities.Plots.Plot
   name: Plot
   href: api/Cities.Plots.Plot.html
@@ -252,19 +278,6 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.Factory.Factory
   nameWithType: Factory.Factory
-- uid: Cities.Roads.Factory.CreateAgentStrategy
-  name: CreateAgentStrategy()
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAgentStrategy
-  commentId: M:Cities.Roads.Factory.CreateAgentStrategy
-  fullName: Cities.Roads.Factory.CreateAgentStrategy()
-  nameWithType: Factory.CreateAgentStrategy()
-- uid: Cities.Roads.Factory.CreateAgentStrategy*
-  name: CreateAgentStrategy
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAgentStrategy_
-  commentId: Overload:Cities.Roads.Factory.CreateAgentStrategy
-  isSpec: "True"
-  fullName: Cities.Roads.Factory.CreateAgentStrategy
-  nameWithType: Factory.CreateAgentStrategy
 - uid: Cities.Roads.Factory.CreateAStarStrategy
   name: CreateAStarStrategy()
   href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy
@@ -291,24 +304,118 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.Factory.CreateLSystemStrategy
   nameWithType: Factory.CreateLSystemStrategy
+- uid: Cities.Roads.LSystem
+  name: LSystem
+  href: api/Cities.Roads.LSystem.html
+  commentId: T:Cities.Roads.LSystem
+  fullName: Cities.Roads.LSystem
+  nameWithType: LSystem
+- uid: Cities.Roads.LSystem.#ctor(System.Char)
+  name: LSystem(Char)
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__ctor_System_Char_
+  commentId: M:Cities.Roads.LSystem.#ctor(System.Char)
+  fullName: Cities.Roads.LSystem.LSystem(System.Char)
+  nameWithType: LSystem.LSystem(Char)
+- uid: Cities.Roads.LSystem.#ctor*
+  name: LSystem
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__ctor_
+  commentId: Overload:Cities.Roads.LSystem.#ctor
+  isSpec: "True"
+  fullName: Cities.Roads.LSystem.LSystem
+  nameWithType: LSystem.LSystem
+- uid: Cities.Roads.LSystem.axiom
+  name: axiom
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_axiom
+  commentId: F:Cities.Roads.LSystem.axiom
+  fullName: Cities.Roads.LSystem.axiom
+  nameWithType: LSystem.axiom
+- uid: Cities.Roads.LSystem.network
+  name: network
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_network
+  commentId: F:Cities.Roads.LSystem.network
+  fullName: Cities.Roads.LSystem.network
+  nameWithType: LSystem.network
+- uid: Cities.Roads.LSystem.Rewrite
+  name: Rewrite()
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_Rewrite
+  commentId: M:Cities.Roads.LSystem.Rewrite
+  fullName: Cities.Roads.LSystem.Rewrite()
+  nameWithType: LSystem.Rewrite()
+- uid: Cities.Roads.LSystem.Rewrite*
+  name: Rewrite
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_Rewrite_
+  commentId: Overload:Cities.Roads.LSystem.Rewrite
+  isSpec: "True"
+  fullName: Cities.Roads.LSystem.Rewrite
+  nameWithType: LSystem.Rewrite
+- uid: Cities.Roads.LSystem.ruleset
+  name: ruleset
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ruleset
+  commentId: F:Cities.Roads.LSystem.ruleset
+  fullName: Cities.Roads.LSystem.ruleset
+  nameWithType: LSystem.ruleset
+- uid: Cities.Roads.LSystem.State
+  name: LSystem.State
+  href: api/Cities.Roads.LSystem.State.html
+  commentId: T:Cities.Roads.LSystem.State
+  fullName: Cities.Roads.LSystem.State
+  nameWithType: LSystem.State
+- uid: Cities.Roads.LSystem.State.#ctor(UnityEngine.Vector3,System.Double)
+  name: State(Vector3, Double)
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State__ctor_UnityEngine_Vector3_System_Double_
+  commentId: M:Cities.Roads.LSystem.State.#ctor(UnityEngine.Vector3,System.Double)
+  fullName: Cities.Roads.LSystem.State.State(UnityEngine.Vector3, System.Double)
+  nameWithType: LSystem.State.State(Vector3, Double)
+- uid: Cities.Roads.LSystem.State.#ctor*
+  name: State
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State__ctor_
+  commentId: Overload:Cities.Roads.LSystem.State.#ctor
+  isSpec: "True"
+  fullName: Cities.Roads.LSystem.State.State
+  nameWithType: LSystem.State.State
+- uid: Cities.Roads.LSystem.State.angle
+  name: angle
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State_angle
+  commentId: F:Cities.Roads.LSystem.State.angle
+  fullName: Cities.Roads.LSystem.State.angle
+  nameWithType: LSystem.State.angle
+- uid: Cities.Roads.LSystem.State.pos
+  name: pos
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State_pos
+  commentId: F:Cities.Roads.LSystem.State.pos
+  fullName: Cities.Roads.LSystem.State.pos
+  nameWithType: LSystem.State.pos
+- uid: Cities.Roads.LSystem.ToString
+  name: ToString()
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ToString
+  commentId: M:Cities.Roads.LSystem.ToString
+  fullName: Cities.Roads.LSystem.ToString()
+  nameWithType: LSystem.ToString()
+- uid: Cities.Roads.LSystem.ToString*
+  name: ToString
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ToString_
+  commentId: Overload:Cities.Roads.LSystem.ToString
+  isSpec: "True"
+  fullName: Cities.Roads.LSystem.ToString
+  nameWithType: LSystem.ToString
 - uid: Cities.Roads.RoadNetwork
   name: RoadNetwork
   href: api/Cities.Roads.RoadNetwork.html
   commentId: T:Cities.Roads.RoadNetwork
   fullName: Cities.Roads.RoadNetwork
   nameWithType: RoadNetwork
-- uid: Cities.Roads.RoadNetwork.#ctor
-  name: RoadNetwork()
-  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork__ctor
-  commentId: M:Cities.Roads.RoadNetwork.#ctor
-  fullName: Cities.Roads.RoadNetwork.RoadNetwork()
-  nameWithType: RoadNetwork.RoadNetwork()
 - uid: Cities.Roads.RoadNetwork.#ctor(Cities.Roads.RoadNetwork)
   name: RoadNetwork(RoadNetwork)
   href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork__ctor_Cities_Roads_RoadNetwork_
   commentId: M:Cities.Roads.RoadNetwork.#ctor(Cities.Roads.RoadNetwork)
   fullName: Cities.Roads.RoadNetwork.RoadNetwork(Cities.Roads.RoadNetwork)
   nameWithType: RoadNetwork.RoadNetwork(RoadNetwork)
+- uid: Cities.Roads.RoadNetwork.#ctor(System.Int32)
+  name: RoadNetwork(Int32)
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork__ctor_System_Int32_
+  commentId: M:Cities.Roads.RoadNetwork.#ctor(System.Int32)
+  fullName: Cities.Roads.RoadNetwork.RoadNetwork(System.Int32)
+  nameWithType: RoadNetwork.RoadNetwork(Int32)
 - uid: Cities.Roads.RoadNetwork.#ctor*
   name: RoadNetwork
   href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork__ctor_
@@ -410,6 +517,19 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.RoadNetwork.ConvertToUndirectedGraph
   nameWithType: RoadNetwork.ConvertToUndirectedGraph
+- uid: Cities.Roads.RoadNetwork.DecimalPlaces
+  name: DecimalPlaces
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_DecimalPlaces
+  commentId: P:Cities.Roads.RoadNetwork.DecimalPlaces
+  fullName: Cities.Roads.RoadNetwork.DecimalPlaces
+  nameWithType: RoadNetwork.DecimalPlaces
+- uid: Cities.Roads.RoadNetwork.DecimalPlaces*
+  name: DecimalPlaces
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_DecimalPlaces_
+  commentId: Overload:Cities.Roads.RoadNetwork.DecimalPlaces
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.DecimalPlaces
+  nameWithType: RoadNetwork.DecimalPlaces
 - uid: Cities.Roads.RoadNetwork.GetAdjacentVertices(UnityEngine.Vector3)
   name: GetAdjacentVertices(Vector3)
   href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_GetAdjacentVertices_UnityEngine_Vector3_
@@ -675,6 +795,12 @@ references:
   commentId: F:Cities.Testing.CityDisplay.RoadStrategy.AStar
   fullName: Cities.Testing.CityDisplay.RoadStrategy.AStar
   nameWithType: CityDisplay.RoadStrategy.AStar
+- uid: Cities.Testing.CityDisplay.RoadStrategy.Lsystem
+  name: Lsystem
+  href: api/Cities.Testing.CityDisplay.RoadStrategy.html#Cities_Testing_CityDisplay_RoadStrategy_Lsystem
+  commentId: F:Cities.Testing.CityDisplay.RoadStrategy.Lsystem
+  fullName: Cities.Testing.CityDisplay.RoadStrategy.Lsystem
+  nameWithType: CityDisplay.RoadStrategy.Lsystem
 - uid: Cities.Testing.CityDisplay.RoadStrategy.Sample
   name: Sample
   href: api/Cities.Testing.CityDisplay.RoadStrategy.html#Cities_Testing_CityDisplay_RoadStrategy_Sample
@@ -976,6 +1102,45 @@ references:
   isSpec: "True"
   fullName: Extensions.UnityExtensions.HeightMap
   nameWithType: UnityExtensions.HeightMap
+- uid: Extensions.UnityExtensions.PerpendicularClockwise(UnityEngine.Vector2)
+  name: PerpendicularClockwise(Vector2)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_PerpendicularClockwise_UnityEngine_Vector2_
+  commentId: M:Extensions.UnityExtensions.PerpendicularClockwise(UnityEngine.Vector2)
+  fullName: Extensions.UnityExtensions.PerpendicularClockwise(UnityEngine.Vector2)
+  nameWithType: UnityExtensions.PerpendicularClockwise(Vector2)
+- uid: Extensions.UnityExtensions.PerpendicularClockwise*
+  name: PerpendicularClockwise
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_PerpendicularClockwise_
+  commentId: Overload:Extensions.UnityExtensions.PerpendicularClockwise
+  isSpec: "True"
+  fullName: Extensions.UnityExtensions.PerpendicularClockwise
+  nameWithType: UnityExtensions.PerpendicularClockwise
+- uid: Extensions.UnityExtensions.PerpendicularCounterclockwise(UnityEngine.Vector2)
+  name: PerpendicularCounterclockwise(Vector2)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_PerpendicularCounterclockwise_UnityEngine_Vector2_
+  commentId: M:Extensions.UnityExtensions.PerpendicularCounterclockwise(UnityEngine.Vector2)
+  fullName: Extensions.UnityExtensions.PerpendicularCounterclockwise(UnityEngine.Vector2)
+  nameWithType: UnityExtensions.PerpendicularCounterclockwise(Vector2)
+- uid: Extensions.UnityExtensions.PerpendicularCounterclockwise*
+  name: PerpendicularCounterclockwise
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_PerpendicularCounterclockwise_
+  commentId: Overload:Extensions.UnityExtensions.PerpendicularCounterclockwise
+  isSpec: "True"
+  fullName: Extensions.UnityExtensions.PerpendicularCounterclockwise
+  nameWithType: UnityExtensions.PerpendicularCounterclockwise
+- uid: Extensions.UnityExtensions.Round(UnityEngine.Vector3,System.Int32)
+  name: Round(Vector3, Int32)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_Round_UnityEngine_Vector3_System_Int32_
+  commentId: M:Extensions.UnityExtensions.Round(UnityEngine.Vector3,System.Int32)
+  fullName: Extensions.UnityExtensions.Round(UnityEngine.Vector3, System.Int32)
+  nameWithType: UnityExtensions.Round(Vector3, Int32)
+- uid: Extensions.UnityExtensions.Round*
+  name: Round
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_Round_
+  commentId: Overload:Extensions.UnityExtensions.Round
+  isSpec: "True"
+  fullName: Extensions.UnityExtensions.Round
+  nameWithType: UnityExtensions.Round
 - uid: Interfaces
   name: Interfaces
   href: api/Interfaces.html
@@ -1888,6 +2053,38 @@ references:
   commentId: T:Utils.Geometry.Maths2D
   fullName: Utils.Geometry.Maths2D
   nameWithType: Maths2D
+- uid: Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps(System.Collections.Generic.IEnumerable{UnityEngine.Vector2},System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name: AnyPolygonCenterOverlaps(IEnumerable<Vector2>, IEnumerable<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_AnyPolygonCenterOverlaps_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps(System.Collections.Generic.IEnumerable{UnityEngine.Vector2},System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name.vb: AnyPolygonCenterOverlaps(IEnumerable(Of Vector2), IEnumerable(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps(System.Collections.Generic.IEnumerable<UnityEngine.Vector2>, System.Collections.Generic.IEnumerable<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2), System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.AnyPolygonCenterOverlaps(IEnumerable<Vector2>, IEnumerable<Vector2>)
+  nameWithType.vb: Maths2D.AnyPolygonCenterOverlaps(IEnumerable(Of Vector2), IEnumerable(Of Vector2))
+- uid: Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps*
+  name: AnyPolygonCenterOverlaps
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_AnyPolygonCenterOverlaps_
+  commentId: Overload:Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps
+  nameWithType: Maths2D.AnyPolygonCenterOverlaps
+- uid: Utils.Geometry.Maths2D.CalculatePolygonArea(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name: CalculatePolygonArea(IEnumerable<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_CalculatePolygonArea_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.CalculatePolygonArea(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name.vb: CalculatePolygonArea(IEnumerable(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.CalculatePolygonArea(System.Collections.Generic.IEnumerable<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.CalculatePolygonArea(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.CalculatePolygonArea(IEnumerable<Vector2>)
+  nameWithType.vb: Maths2D.CalculatePolygonArea(IEnumerable(Of Vector2))
+- uid: Utils.Geometry.Maths2D.CalculatePolygonArea*
+  name: CalculatePolygonArea
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_CalculatePolygonArea_
+  commentId: Overload:Utils.Geometry.Maths2D.CalculatePolygonArea
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.CalculatePolygonArea
+  nameWithType: Maths2D.CalculatePolygonArea
 - uid: Utils.Geometry.Maths2D.GetCenterPoint(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
   name: GetCenterPoint(IEnumerable<Vector2>)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetCenterPoint_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
@@ -2003,6 +2200,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.PointInTriangle
   nameWithType: Maths2D.PointInTriangle
+- uid: Utils.Geometry.Maths2D.PolygonsOverlap(System.Collections.Generic.IEnumerable{UnityEngine.Vector2},System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name: PolygonsOverlap(IEnumerable<Vector2>, IEnumerable<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PolygonsOverlap_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.PolygonsOverlap(System.Collections.Generic.IEnumerable{UnityEngine.Vector2},System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
+  name.vb: PolygonsOverlap(IEnumerable(Of Vector2), IEnumerable(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.PolygonsOverlap(System.Collections.Generic.IEnumerable<UnityEngine.Vector2>, System.Collections.Generic.IEnumerable<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.PolygonsOverlap(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2), System.Collections.Generic.IEnumerable(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.PolygonsOverlap(IEnumerable<Vector2>, IEnumerable<Vector2>)
+  nameWithType.vb: Maths2D.PolygonsOverlap(IEnumerable(Of Vector2), IEnumerable(Of Vector2))
+- uid: Utils.Geometry.Maths2D.PolygonsOverlap*
+  name: PolygonsOverlap
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PolygonsOverlap_
+  commentId: Overload:Utils.Geometry.Maths2D.PolygonsOverlap
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.PolygonsOverlap
+  nameWithType: Maths2D.PolygonsOverlap
 - uid: Utils.Geometry.Maths2D.PseudoDistanceFromPointToLine(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
   name: PseudoDistanceFromPointToLine(Vector2, Vector2, Vector2)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PseudoDistanceFromPointToLine_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_
@@ -2333,6 +2546,28 @@ references:
   commentId: F:Utils.Geometry.Triangulator.Vertex.position
   fullName: Utils.Geometry.Triangulator.Vertex.position
   nameWithType: Triangulator.Vertex.position
+- uid: Utils.TaskUtils
+  name: TaskUtils
+  href: api/Utils.TaskUtils.html
+  commentId: T:Utils.TaskUtils
+  fullName: Utils.TaskUtils
+  nameWithType: TaskUtils
+- uid: Utils.TaskUtils.RunActionInTasks*
+  name: RunActionInTasks
+  href: api/Utils.TaskUtils.html#Utils_TaskUtils_RunActionInTasks_
+  commentId: Overload:Utils.TaskUtils.RunActionInTasks
+  isSpec: "True"
+  fullName: Utils.TaskUtils.RunActionInTasks
+  nameWithType: TaskUtils.RunActionInTasks
+- uid: Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
+  href: api/Utils.TaskUtils.html#Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__
+  commentId: M:Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
+  fullName: Utils.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>)
+  fullName.vb: Utils.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO))
+  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
+  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
 - uid: Utils.TerrainUtil
   name: TerrainUtil
   href: api/Utils.TerrainUtil.html

@@ -32,10 +32,25 @@ namespace Cities.Roads
         /// </summary>
         public int VertexCount => _roadNetwork.Keys.Count;
         
+        /// <summary>
+        /// The number of decimal places for road vertices.
+        /// </summary>
+        public int DecimalPlaces { get; private set; }
+
         #region Constructors
         
-        public RoadNetwork()
+        /// <summary>
+        /// Initializes the road network.
+        /// </summary>
+        /// <param name="decimalPlaces">
+        /// The number of decimal places for road vertices. Default is 1.
+        /// Has to be in the range [0, 15].
+        /// </param>
+        public RoadNetwork(int decimalPlaces = 1)
         {
+            if (decimalPlaces < 0 || decimalPlaces > 15)
+                throw new ArgumentOutOfRangeException(nameof(decimalPlaces));
+            DecimalPlaces = decimalPlaces;
             _roadNetwork = new Dictionary<Vector3, ICollection<Vector3>>();
         }
 
@@ -99,7 +114,7 @@ namespace Cities.Roads
         {
             // Check that there is at least one vertex
             if (!roadVertices.MoveNext()) return;
-            var previousVertex = roadVertices.Current;
+            var previousVertex = roadVertices.Current.Round(DecimalPlaces);
             
             // Check that there is at least two vertices
             if (!roadVertices.MoveNext()) return;
@@ -107,8 +122,9 @@ namespace Cities.Roads
             // Add roads between the rest of the vertices along the full road
             do
             {
-                AddAndSplitRoads(previousVertex, roadVertices.Current);
-                previousVertex = roadVertices.Current;
+                var current = roadVertices.Current.Round(DecimalPlaces);
+                AddAndSplitRoads(previousVertex, current);
+                previousVertex = current;
             } while (roadVertices.MoveNext());
             
             // At the last the vertex of the road
@@ -235,7 +251,7 @@ namespace Cities.Roads
             
         }
         
-        private static IEnumerable<(Vector3 start, Vector3 intersection, Vector3 end)> GetIntersectionPoints(
+        private IEnumerable<(Vector3 start, Vector3 intersection, Vector3 end)> GetIntersectionPoints(
             Vector3 linePoint1, Vector3 linePoint2, IEnumerator<(Vector3, Vector3)> roadParts)
         {
             var intersectionPoints = new HashSet<(Vector3, Vector3, Vector3)>();
@@ -250,7 +266,7 @@ namespace Cities.Roads
                     linePoint1, linePoint2, 
                     partStart, partEnd))
                 {
-                    intersectionPoints.Add((partStart, intersectionPoint, partEnd));   
+                    intersectionPoints.Add((partStart, intersectionPoint.Round(DecimalPlaces), partEnd));   
                 }
             }
             
@@ -411,7 +427,10 @@ namespace Cities.Roads
         /// <returns>The adjacent vertices of the passed vertex.</returns>
         public IEnumerable<Vector3> GetAdjacentVertices(Vector3 vertex)
         {
-            return !_roadNetwork.ContainsKey(vertex) ? null : _roadNetwork[vertex].Select(v => v.Clone());
+            var roundedVertex = vertex.Round(DecimalPlaces);
+            return !_roadNetwork.ContainsKey(roundedVertex) 
+                ? null 
+                : _roadNetwork[roundedVertex].Select(v => v.Clone());
         }
 
         /// <summary>
@@ -421,7 +440,10 @@ namespace Cities.Roads
         /// <returns>The number of adjacent vertices.</returns>
         public int GetNumberOfAdjacentVertices(Vector3 vertex)
         {
-            return !_roadNetwork.ContainsKey(vertex) ? -1 : _roadNetwork[vertex].Count;
+            var roundedVertex = vertex.Round(DecimalPlaces);
+            return !_roadNetwork.ContainsKey(roundedVertex) 
+                ? -1 
+                : _roadNetwork[roundedVertex].Count;
         }
 
         /// <summary>
@@ -432,7 +454,8 @@ namespace Cities.Roads
         /// <returns>true if v2 is adjacent to v1.</returns>
         public bool IsAdjacent(Vector3 v1, Vector3 v2)
         {
-            return _roadNetwork.ContainsKey(v1) && _roadNetwork[v1].Contains(v2);
+            var roundedV1 = v1.Round(DecimalPlaces);
+            return _roadNetwork.ContainsKey(roundedV1) && _roadNetwork[roundedV1].Contains(v2.Round(DecimalPlaces));
         }
 
         #endregion
@@ -476,7 +499,8 @@ namespace Cities.Roads
         /// Creates an undirected clone of this road network.
         /// </summary>
         /// <returns>The undirected road network.</returns>
-        public RoadNetwork GetAsUndirected() => new RoadNetwork(ConvertToUndirectedGraph());
+        public RoadNetwork GetAsUndirected() => 
+            new RoadNetwork(ConvertToUndirectedGraph()) {DecimalPlaces = DecimalPlaces};
 
         /// <summary>
         /// Projects this road network to the xz plane at a specified y-value.
@@ -485,7 +509,7 @@ namespace Cities.Roads
         /// <returns>The projected road network.</returns>
         public RoadNetwork GetXZProjection(float y = 0)
         {
-            var projectionNetwork = new RoadNetwork();
+            var projectionNetwork = new RoadNetwork(DecimalPlaces);
             foreach (var (start, end) in GetRoadParts())
             {
                 projectionNetwork.AddRoad(new Vector3(start.x, y, start.z), new Vector3(end.x, y, end.z));
@@ -497,8 +521,8 @@ namespace Cities.Roads
 
         #region Cloning
         
-        public object Clone() => new RoadNetwork(this);
-        
+        public object Clone() => new RoadNetwork(this) {DecimalPlaces = DecimalPlaces};
+
         private static IDictionary<Vector3, ICollection<Vector3>> CloneRoadNetwork(
             IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
         {

@@ -9,14 +9,18 @@ namespace Cities.Roads{
         /// The start point of the L-system road network generation. 
         /// </summary>
         internal Vector2 Origin { get; set; }
+        
+        int iterations;
 
-        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
+        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int i = 5) 
+            : base(terrainNoiseMapInjector)
         {
+            iterations = i;
         }
 
         public override RoadNetwork Generate(){
             var system = new Lsystem('F', Origin, Injector);
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < iterations; i++)
             {
                 system.Rewrite();
             }

@@ -47,5 +47,6 @@ namespace Cities.Plots
         {
             return new MinimalCycleStrategy(_roadNetworkInjector);
         }
+
     }
 }
