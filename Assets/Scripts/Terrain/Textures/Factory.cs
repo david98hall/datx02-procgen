@@ -28,7 +28,7 @@ namespace Terrain.Textures
         /// Constructs and returns a whittaker texture generation from <see cref="_noiseMapInjector"/>
         /// </summary>
         /// <returns>A whittaker generator as its abstract super type</returns>
-        public IGenerator<Texture2D> CreateWhittakerStrategy() => new WhittakerGenerator(_noiseMapInjector);
+        public IGenerator<Texture2D> CreateWhittakerStrategy() => new WhittakerStrategy(_noiseMapInjector);
 
         /// <summary>
         /// Constructs and returns a grayscale texture generation from <see cref="_noiseMapInjector"/>

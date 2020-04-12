@@ -188,7 +188,7 @@ namespace Cities.Testing
                     return new Roads.SampleStrategy(this);
                 case RoadStrategy.AStar:
                     var aStar =  new AStarStrategy(this) {HeightBias = heightBias};
-                    aStar.Add((0, 0), (width/2, depth/2));
+                    aStar.Add(new Vector2Int(0, 0), new Vector2Int(width/2, depth/2));
                     return aStar;
                 case RoadStrategy.Lsystem:
                     return new LSystemStrategy(this, lsystemIterations);

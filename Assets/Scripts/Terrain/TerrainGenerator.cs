@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using Terrain.Noise;
 using UnityEngine;
 
 namespace Terrain

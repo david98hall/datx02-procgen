@@ -27,7 +27,7 @@ namespace Cities.Roads
         /// Since the height map in <see cref="Strategy{TI,TO}.Injector"/> may be changed externally, the nodes in the
         /// dictionary may be invalid. 
         /// </summary>
-        private readonly Dictionary<(int, int), ISet<(int, int)>> _paths;
+        private readonly Dictionary<Vector2Int, ISet<Vector2Int>> _paths;
 
         /// <summary>
         /// The height bias for finding the optimal path.
@@ -53,7 +53,7 @@ namespace Cities.Roads
         /// <param name="heightMapInjector">Non null height map injector object.</param>
         internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector) : base(heightMapInjector)
         {
-            _paths = new Dictionary<(int, int), ISet<(int, int)>>();
+            _paths = new Dictionary<Vector2Int, ISet<Vector2Int>>();
         }
         
         #endregion
@@ -71,12 +71,23 @@ namespace Cities.Roads
         {
             var heights = Injector.Get();
             var roadNetwork = new RoadNetwork();
-            foreach (var (xStart, zStart) in _paths.Keys)
+            foreach (var startVector in _paths.Keys)
             {
-                var start = new Node(xStart, heights[xStart, zStart], zStart);
-                foreach (var (xGoal, zGoal) in _paths[(xStart, zStart)])
+                if (!(0 <= startVector.x && startVector.x < heights.GetLength(0) && 0 <= startVector.y &&
+                    startVector.y < heights.GetLength(1)))
                 {
-                    var goal = new Node(xGoal, heights[xGoal, zGoal], zGoal);
+                    continue;
+                }
+                
+                var start = new Node(startVector.x, heights[startVector.x, startVector.y], startVector.y);
+                foreach (var goalVector in _paths[startVector])
+                {
+                    if (!(0 <= goalVector.x && goalVector.x < heights.GetLength(0) && 0 <= goalVector.y &&
+                          goalVector.y < heights.GetLength(1)))
+                    {
+                        continue;
+                    }
+                    var goal = new Node(goalVector.x, heights[goalVector.x, goalVector.y], goalVector.y);
                     roadNetwork.AddRoad(Path(start, goal, heights));
                 }
             }
@@ -92,9 +103,9 @@ namespace Cities.Roads
         /// </summary>
         /// <param name="start">The given start node.</param>
         /// <param name="goal">The given goal node.</param>
-        public void Add((int, int) start, (int, int) goal)
+        public void Add(Vector2Int start, Vector2Int goal)
         {
-            if (!_paths.ContainsKey(start)) _paths[start] = new HashSet<(int, int)>();
+            if (!_paths.ContainsKey(start)) _paths[start] = new HashSet<Vector2Int>();
             _paths[start].Add(goal);
         }
         

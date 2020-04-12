@@ -25,6 +25,5 @@ namespace Cities.Roads{
             }
             return system.network;
         }
-        
     }
 }
