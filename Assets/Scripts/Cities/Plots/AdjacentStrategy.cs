@@ -23,13 +23,11 @@ namespace Cities.Plots
 
             foreach (var (start, end) in roadNetwork.GetRoadParts())
             {
-                var vertices = new LinkedList<Vector3>();
-                vertices.AddLast(end);
-
                 var roadVector = end - start;
                 var maxSideLength = Vector3.Magnitude(roadVector);
-                var rectPlot = RandomRectPlot(rand, start, roadVector, maxSideLength / 2f, maxSideLength / 2f);
+                var rectPlot = RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength);
 
+                // Only add the plot if it doesn't collide with any other
                 if (plots.Count == 0)
                 {
                     plots.Add(rectPlot);
@@ -39,7 +37,7 @@ namespace Cities.Plots
                     bool collision = false;
                     foreach (var plot in plots)
                     {
-                        if (Maths2D.AreColliding(vertices, plot.Vertices)) 
+                        if (Maths2D.AreColliding(rectPlot.Vertices, plot.Vertices)) 
                         {
                             collision = true;
                             break;
