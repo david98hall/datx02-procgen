@@ -79,7 +79,7 @@ namespace Terrain.Testing
 
         private IGenerator<Texture2D> GetWhittakerStrategy()
         {
-            var whittakerGenerator = new WhittakerGenerator(this)
+            var whittakerGenerator = new WhittakerStrategy(this)
             {
                 PrecipitationScale = precipitationScale, 
                 TemperatureScale = temperatureScale

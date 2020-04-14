@@ -65,5 +65,35 @@ namespace Extensions
 
             return heightMap;
         }
+        
+        /// <summary>
+        /// Gets a perpendicular vector to the given one, going clockwise.
+        /// </summary>
+        /// <param name="vector">The vector to get the perpendicular vector from.</param>
+        /// <returns>The perpendicular vector.</returns>
+        public static Vector2 PerpendicularClockwise(this Vector2 vector) => new Vector2(vector.y, -vector.x);
+
+        /// <summary>
+        /// Gets a perpendicular vector to the given one, going counterclockwise.
+        /// </summary>
+        /// <param name="vector">The vector to get the perpendicular vector from.</param>
+        /// <returns>The perpendicular vector.</returns>
+        public static Vector2 PerpendicularCounterclockwise(this Vector2 vector) => new Vector2(-vector.y, vector.x);
+
+        /// <summary>
+        /// Rounds the vector's values to the given number of decimal places.
+        /// </summary>
+        /// <param name="vector">The vector to round.</param>
+        /// <param name="decimalPlaces">The number of decimal places to round to.</param>
+        /// <returns>The rounded vector.</returns>
+        public static Vector3 Round(this Vector3 vector, int decimalPlaces)
+        {
+            return new Vector3(
+                (float) Math.Round(vector.x, decimalPlaces),
+                (float) Math.Round(vector.y, decimalPlaces),
+                (float) Math.Round(vector.z, decimalPlaces)
+            );
+        }        
+        
     }
 }

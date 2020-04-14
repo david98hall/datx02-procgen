@@ -17,7 +17,6 @@ namespace Terrain.Testing
             script.width = EditorGUILayout.IntField("Width", script.width);
             script.depth = EditorGUILayout.IntField("Depth", script.depth);
             script.heightScale = EditorGUILayout.FloatField("Height scale", script.heightScale);
-            
             switch (script.strategy)
             {
                 case TextureDisplay.Strategy.GrayScale:

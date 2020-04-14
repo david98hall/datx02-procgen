@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Extensions;
 using Interfaces;
 using UnityEngine;
 
@@ -29,8 +30,8 @@ namespace Cities.Roads
         // Cycles within cycle
         private static IEnumerable<IEnumerable<Vector3>> CreateTestExample1()
         {
-            var roads = new HashSet<IEnumerable<Vector3>> {CreateCircleRoad(7.5f, 0.5f)};
-            //roads.AddRange(CreatePyramid(5f, -2.5f, -2.5f));
+            var roads = new HashSet<IEnumerable<Vector3>>{CreateCircleRoad(9, 0.5f)};
+            roads.AddRange(CreatePyramid(5f));
             return roads;
         }
         

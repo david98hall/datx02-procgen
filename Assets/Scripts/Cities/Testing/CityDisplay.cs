@@ -49,6 +49,9 @@ namespace Cities.Testing
         
         [Range(0,1)]
         public float heightBias;
+
+        [Range(1,10)]
+        public int lsystemIterations;
         
         public Material roadMaterial;
         public Material plotBorderMaterial;
@@ -58,7 +61,8 @@ namespace Cities.Testing
             _cityGenerator = new CityGenerator();
             // _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateCycleStrategy();
             // _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreatePlotSampleStrategy();
-            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateAdjacentStrategy();
+            //_cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateAdjacentStrategy();
+            _cityGenerator.PlotStrategy = new Plots.Factory(_cityGenerator).CreateMinimalCycleStrategy();
             _roadRenderers = new HashSet<GameObject>();
         }
         
@@ -187,10 +191,10 @@ namespace Cities.Testing
                     return new Roads.SampleStrategy(this);
                 case RoadStrategy.AStar:
                     var aStar =  new AStarStrategy(this) {HeightBias = heightBias};
-                    aStar.Add((0, 0), (width/2, depth/2));
+                    aStar.Add(new Vector2Int(0, 0), new Vector2Int(width/2, depth/2));
                     return aStar;
                 case RoadStrategy.Lsystem:
-                    return new LSystemStrategy(this);
+                    return new LSystemStrategy(this, lsystemIterations);
                 default:
                     throw new ArgumentOutOfRangeException();
             }

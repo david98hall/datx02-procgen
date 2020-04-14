@@ -5,7 +5,7 @@ Bachelor's thesis at Chalmers University of Technology (DATX02)
 
 ### Group members
 * Alma Eriksson
-* David Hall
+* David Hall (davuskus/david98hall)
 * Ludwig Hultqvist
 * David Hultsten
 * William Johnsson
