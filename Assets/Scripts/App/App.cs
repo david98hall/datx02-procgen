@@ -71,7 +71,7 @@ namespace App
             // Display roads
             var roadObjectGenerator = new RoadObjectGenerator(roadMaterial);
             gameObjects.Add(
-                roadObjectGenerator.GenerateRoads(_model.City.RoadNetwork.GetRoads(), _meshFilter, _meshCollider));
+                roadObjectGenerator.GenerateRoadNetwork(_model.City.RoadNetwork.GetRoads(), _meshFilter, _meshCollider));
         }
         
         private void Init()
