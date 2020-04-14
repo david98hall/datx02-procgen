@@ -71,20 +71,13 @@ namespace Cities.Roads
             var noiseMap = _noiseMapInjector.Get();
             foreach (var (roadStart, roadEnd) in network.GetRoadParts())
             {
-                try
-                {
-                    var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];
-                    var roadEndY = noiseMap[(int) roadEnd.x, (int) roadEnd.z];
-                    const float yOffset = 0.5f;
-                    newNetwork.AddRoad(
-                        new Vector3(roadStart.x, roadStartY + yOffset, roadStart.z),
-                        new Vector3(roadEnd.x, roadEndY + yOffset, roadEnd.z)
-                    );
-                }
-                catch (Exception)
-                {
-                    // Ignored
-                }
+                var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];
+                var roadEndY = noiseMap[(int) roadEnd.x, (int) roadEnd.z];
+                const float yOffset = 0;
+                newNetwork.AddRoad(
+                    new Vector3(roadStart.x, roadStartY + yOffset, roadStart.z),
+                    new Vector3(roadEnd.x, roadEndY + yOffset, roadEnd.z)
+                );
             }
             
             return newNetwork;

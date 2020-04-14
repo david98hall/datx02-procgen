@@ -12,7 +12,7 @@ namespace Cities.Roads{
         
         int iterations;
 
-        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int i = 5) 
+        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int i = 6) 
             : base(terrainNoiseMapInjector)
         {
             iterations = i;
