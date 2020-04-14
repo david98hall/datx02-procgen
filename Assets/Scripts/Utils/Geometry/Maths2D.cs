@@ -449,6 +449,41 @@ namespace Utils.Geometry
             }
             return normals;
         }
+
+        /// <summary>
+        /// Returns true if the line and polygon are colliding.
+        /// </summary>
+        /// <param name="a">Start point of the line.</param>
+        /// <param name="b">End point of the line.</param>
+        /// <param name="poly">The vertices of the polygon</param>
+        /// <returns>True if the line and polygon are colliding.</returns>
+        public static bool LinePolyCollision(Vector2 start, Vector2 end, IEnumerable<Vector2> poly)
+        {
+            if (IsInsidePolygon(start, poly) || IsInsidePolygon(end, poly))
+            {
+                return true;
+            }
+
+            // Iterate over the vertices to find each edge of the polygon
+            using (var vertexEnum = poly.GetEnumerator())
+            {
+                if (!vertexEnum.MoveNext())
+                    throw new ApplicationException("Cannot check for collision with a polygon without vertices.");
+                
+                var v1 = vertexEnum.Current;
+                while (vertexEnum.MoveNext())
+                {
+                    var v2 = vertexEnum.Current;
+                    if (LineSegmentsIntersect(start, end, v1, v2))
+                    {
+                        return true;
+                    }
+                    v1 = v2;
+                }
+            }
+
+            return false;
+        }
         
         #endregion
         
