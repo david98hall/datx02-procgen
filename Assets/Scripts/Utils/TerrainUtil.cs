@@ -57,7 +57,7 @@ namespace Utils
             {
                 for (var z = 0; z < depth; z++)
                 {
-                    heightMap[x, z] = -height(x, z);
+                    heightMap[x, z] = height(x, z);
                 }
             }
 
