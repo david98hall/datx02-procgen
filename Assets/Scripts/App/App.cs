@@ -58,7 +58,7 @@ namespace App
             
             // Display plot borders
             var plotSetObj = new GameObject("Plots");
-            plotSetObj.transform.SetParent(_meshFilter.transform);
+            gameObjects.Add(plotSetObj);
             var plots = _model.City.Plots;
             var count = 1;
             while (plots.MoveNext())

@@ -83,7 +83,6 @@ namespace Utils.Roads
             string roadNetworkName = "Road Network")
         {
             var roadNetworkObj = new GameObject(roadNetworkName);
-            roadNetworkObj.transform.SetParent(terrainMeshFilter.transform);  
             
             var count = 1;
             foreach (var road in roads)
