@@ -1,24 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Extensions;
 using UnityEngine;
 
 namespace Utils.Roads
 {
-    public class Roadifier
+    public class RoadObjectGenerator
     {
-        public float RoadWidth { get; set; } = 5.0f;
+        public float RoadWidth { get; set; } = 0.3f;
         public float SmoothingFactor { get; set; } = 0.2f;
         public int SmoothingIterations { get; set; } = 3;
         public Material Material { get; set; }
-        public float TerrainClearance { get; set; } = 0.05f;
+        public float OffsetY { get; set; } = 0.6f;
 
-        public Roadifier(Material material)
+        public RoadObjectGenerator(Material material)
         {
             Material = material;
         }
 
-        public GameObject GenerateRoad(IEnumerable<Vector3> points, UnityEngine.Terrain terrain = null)
+        public GameObject GenerateRoads(
+            IEnumerable<IEnumerable<Vector3>> roads, 
+            MeshFilter terrainMeshFilter, 
+            Collider terrainCollider,
+            string roadNetworkName = "Road Network")
+        {
+            var roadNetworkObj = new GameObject(roadNetworkName);
+            roadNetworkObj.transform.SetParent(terrainMeshFilter.transform);  
+            
+            var count = 1;
+            foreach (var road in roads)
+            {
+                var roadObj = GenerateRoad(road, terrainMeshFilter, terrainCollider, "Road " + count);
+                roadObj.transform.SetParent(roadNetworkObj.transform);                
+                count++;
+            }
+
+            return roadNetworkObj;
+        }
+        
+        public GameObject GenerateRoad(
+            IEnumerable<Vector3> points, MeshFilter terrainMeshFilter, Collider terrainCollider, string name = "Road")
         {
             var pointList = new List<Vector3>(points);
             
@@ -34,11 +56,13 @@ namespace Utils.Roads
                 }
             }
 
-            // if a terrain parameter was specified, replace the y-coordinate
-            // of every point with the height of the terrain (+ an offset)
-            if (terrain) {
-                AdaptPointsToTerrainHeight(pointList, terrain);
-            }
+            // Replace the y-coordinate of every point with the height of the terrain (+ an offset)
+            AdaptPointsToTerrainHeight(pointList, terrainMeshFilter);
+
+            var mesh = new Mesh {name = name + " Mesh"};
+
+            var vertices = new List<Vector3>();
+            var triangles = new List<int>();
 
             Vector3 perpendicularDirection;
             Vector3 nextPoint, nextNextPoint;
@@ -46,12 +70,7 @@ namespace Utils.Roads
             Vector3 cornerPoint1, cornerPoint2;
             Vector3 tangent;
             Vector3 cornerNormal;
-
-            var mesh = new Mesh {name = "Road Mesh"};
-
-            var vertices = new List<Vector3>();
-            var triangles = new List<int>();
-
+            
             var idx = 0;
             foreach (var currentPoint in pointList) {
                 if (idx == pointList.Count - 1) {
@@ -71,22 +90,18 @@ namespace Utils.Roads
                     nextNextPoint = pointList[idx + 2];
                 }
 
-                var terrainNormal1 = Vector3.up; // default normal: straight up
-                var terrainNormal2 = Vector3.up; // default normal: straight up
-                if (terrain) {
-                    // if there's a terrain, calculate the actual normals
-                    var ray = new Ray(currentPoint + Vector3.up, Vector3.down);
-                    terrain.GetComponent<Collider>().Raycast(ray, out var hit, 100.0f);
-                    terrainNormal1 = hit.normal;
+                // Calculate the actual normals
+                var ray = new Ray(currentPoint + Vector3.up, Vector3.down);
+                terrainCollider.Raycast(ray, out var hit1, 100.0f);
+                var terrainNormal1 = hit1.normal;
 
-                    ray = new Ray(nextPoint + Vector3.up, Vector3.down);
-                    terrain.GetComponent<Collider>().Raycast(ray, out hit, 100.0f);
-                    terrainNormal2 = hit.normal;
-                }
+                ray = new Ray(nextPoint + Vector3.up, Vector3.down);
+                terrainCollider.Raycast(ray, out var hit2, 100.0f);
+                var terrainNormal2 = hit2.normal;
 
                 // calculate the normal to the segment, so we can displace 'left' and 'right' of
                 // the point by half the road width and create our first vertices there
-                perpendicularDirection = (Vector3.Cross(terrainNormal1, nextPoint - currentPoint)).normalized;
+                perpendicularDirection = Vector3.Cross(terrainNormal1, nextPoint - currentPoint).normalized;
                 point1 = currentPoint + perpendicularDirection * (RoadWidth * 0.5f);
                 point2 = currentPoint - perpendicularDirection * (RoadWidth * 0.5f);
 
@@ -95,7 +110,7 @@ namespace Utils.Roads
                 tangent = ((nextNextPoint - nextPoint).normalized + (nextPoint - currentPoint).normalized).normalized;
                 cornerNormal = (Vector3.Cross(terrainNormal2, tangent)).normalized;
                 // project the normal line to the corner to obtain the correct length
-                var cornerWidth = (RoadWidth * 0.5f) / Vector3.Dot(cornerNormal, perpendicularDirection);
+                var cornerWidth = RoadWidth * 0.5f / Vector3.Dot(cornerNormal, perpendicularDirection);
                 cornerPoint1 = nextPoint + cornerWidth * cornerNormal;
                 cornerPoint2 = nextPoint - cornerWidth * cornerNormal;
 
@@ -127,17 +142,15 @@ namespace Utils.Roads
             mesh.triangles = triangles.ToArray();
             mesh.RecalculateNormals();
 
-            return CreateGameObject(mesh);
+            return CreateGameObject(mesh, name);
         }
 
-        private void AddSmoothingPoints(IEnumerable<Vector3> points)
+        private void AddSmoothingPoints(IList<Vector3> points)
         {
-            var pointList = new List<Vector3>(points);
-            
-            for (var i = 0; i < pointList.Count - 2; i++) {
-                var currentPoint = pointList[i];
-                var nextPoint = pointList[i + 1];
-                var nextNextPoint = pointList[i + 2];
+            for (var i = 0; i < points.Count - 2; i++) {
+                var currentPoint = points[i];
+                var nextPoint = points[i + 1];
+                var nextNextPoint = points[i + 2];
 
                 var distance1 = Vector3.Distance(currentPoint, nextPoint);
                 var distance2 = Vector3.Distance(nextPoint, nextNextPoint);
@@ -145,42 +158,40 @@ namespace Utils.Roads
                 var dir1 = (nextPoint - currentPoint).normalized;
                 var dir2 = (nextNextPoint - nextPoint).normalized;
 
-                pointList.RemoveAt(i + 1);
-                pointList.Insert(i + 1, currentPoint + dir1 * (distance1 * (1.0f - SmoothingFactor)));
-                pointList.Insert(i + 2, nextPoint + dir2 * (distance2 * SmoothingFactor));
+                points.RemoveAt(i + 1);
+                points.Insert(i + 1, currentPoint + dir1 * (distance1 * (1.0f - SmoothingFactor)));
+                points.Insert(i + 2, nextPoint + dir2 * (distance2 * SmoothingFactor));
                 i++;
             }
         }
 
-        private void AdaptPointsToTerrainHeight(IEnumerable<Vector3> points, UnityEngine.Terrain terrain)
+        private void AdaptPointsToTerrainHeight(IList<Vector3> points, MeshFilter terrainMeshFilter)
         {
-            var pointList = new List<Vector3>(points);
-            
-            for (var i = 0; i < pointList.Count; i++) {
-                var point = pointList[i];
-                var y = terrain.transform.position.y 
-                        + TerrainClearance 
-                        + terrain.SampleHeight(new Vector3(point.x, 0, point.z));
-                pointList[i] = new Vector3(point.x, y, point.z);
+            var heightMap = terrainMeshFilter.sharedMesh.HeightMap();
+            for (var i = 0; i < points.Count; i++) {
+                var point = points[i];
+                var y = terrainMeshFilter.transform.position.y
+                        + heightMap[(int)(0.5f + point.x), (int)(0.5f + point.z)]
+                        + OffsetY;
+                points[i] = new Vector3(point.x, y, point.z);
             }
         }
 
-        private GameObject CreateGameObject(Mesh mesh) {
-            var obj = new GameObject("Road", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+        private GameObject CreateGameObject(Mesh mesh, string name) {
+            var obj = new GameObject(name, typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
             obj.GetComponent<MeshFilter>().mesh = mesh;
-            // obj.transform.SetParent(transform);
 
             var renderer = obj.GetComponent<MeshRenderer>();
-            var materials = renderer.materials;
+            var materials = renderer.sharedMaterials;
             for (var i = 0; i < materials.Length; i++) {
                 materials[i] = Material;
             }
-            renderer.materials = materials;
+            renderer.sharedMaterials = materials;
 
             return obj;
         }
 
-        private List<Vector2> GenerateUVs(IEnumerable<Vector3> vertices) {
+        private static List<Vector2> GenerateUVs(IEnumerable<Vector3> vertices) {
             var uvs = new List<Vector2>();
 
             var vertexList = new List<Vector3>(vertices);
@@ -203,6 +214,7 @@ namespace Utils.Roads
                         break;
                 }
             }
+            
             return uvs;
         }
     }

@@ -24,7 +24,7 @@ namespace Cities.Roads{
             {
                 system.Rewrite();
             }
-            return system.NoiseMappedNetwork;
+            return system.network;
         }
     }
 }

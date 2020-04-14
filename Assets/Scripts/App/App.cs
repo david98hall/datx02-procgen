@@ -9,17 +9,19 @@ using Interfaces;
 using Terrain;
 using UnityEditor;
 using UnityEngine;
+using Utils.Roads;
 
 namespace App
 {
     [Serializable]
     [ExecuteInEditMode]
-    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
+    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider))]
     public class App : MonoBehaviour
     {
         private bool _initialized;
         private MeshFilter _meshFilter;
         private MeshRenderer _meshRenderer;
+        private MeshCollider _meshCollider;
         private Model _model;
         
         [SerializeField]
@@ -46,33 +48,37 @@ namespace App
             if (!_initialized) Init();
             (_model.Mesh, _model.Texture) = terrainGeneratorModel.Model.Generate();
             _model.City = cityGeneratorModel.Model.Generate();
-            
+
+            _meshCollider.sharedMesh = _model.Mesh;
             _meshFilter.sharedMesh = _model.Mesh;
             _meshRenderer.sharedMaterial.mainTexture = _model.Texture;
 
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
             
+            // Display plot borders
+            var plotSetObj = new GameObject("Plots");
+            plotSetObj.transform.SetParent(_meshFilter.transform);
             var plots = _model.City.Plots;
             var count = 1;
             while (plots.MoveNext())
             {
                 var plot = plots.Current;
                 if (plot == null) continue;
-                DisplayItem(plot.Vertices, "Plot Border " + count++, plotMaterial, 0.15f); 
+                DisplayItem(plot.Vertices, "Plot Border " + count++, plotMaterial, 0.15f, plotSetObj.transform); 
             }
 
-            count = 1;
-            foreach (var road in _model.City.RoadNetwork.GetRoads())
-            {
-                DisplayItem(road, "Road " + count++, roadMaterial, 0.3f);
-            }
+            // Display roads
+            var roadObjectGenerator = new RoadObjectGenerator(roadMaterial);
+            gameObjects.Add(
+                roadObjectGenerator.GenerateRoads(_model.City.RoadNetwork.GetRoads(), _meshFilter, _meshCollider));
         }
         
         private void Init()
         {
             _meshFilter = GetComponent<MeshFilter>();
             _meshRenderer = GetComponent<MeshRenderer>();
+            _meshCollider = GetComponent<MeshCollider>();
             if (gameObjects == null) gameObjects = new HashSet<GameObject>();
             _model = new Model();
             terrainGeneratorModel.Model = new TerrainGenerator();
@@ -80,11 +86,18 @@ namespace App
             _initialized = true;
         }
 
-        private void DisplayItem(IEnumerable<Vector3> item, string itemName, Material material, float width)
+        private void DisplayItem(
+            IEnumerable<Vector3> item, 
+            string itemName, 
+            Material material, 
+            float width, 
+            Transform parentTransform = null)
         {
             var itemObject = new GameObject(itemName);
             var lineRenderer = itemObject.AddComponent<LineRenderer>();
 
+            if (parentTransform) itemObject.transform.SetParent(parentTransform);
+            
             lineRenderer.startWidth = width;
             lineRenderer.endWidth = width;
             lineRenderer.numCornerVertices = 90;
