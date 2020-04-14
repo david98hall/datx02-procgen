@@ -136,12 +136,12 @@ namespace Utils.Geometry
             {
                 if (polygonVertex.x < minX)
                     minX = polygonVertex.x;
-                else if (polygonVertex.x > maxX)
+                if (polygonVertex.x > maxX)
                     maxX = polygonVertex.x;
                 
                 if (polygonVertex.y < minY)
                     minY = polygonVertex.y;
-                else if (polygonVertex.y > maxY)
+                if (polygonVertex.y > maxY)
                     maxY = polygonVertex.y;
             }
 
@@ -346,8 +346,50 @@ namespace Utils.Geometry
             return polygon1List.Any(vertex => IsInsidePolygon(vertex, polygon2))
                    || polygon2.Any(vertex => IsInsidePolygon(vertex, polygon1List));
         }
-        
+
+        /// <summary>
+        /// Gets the centroid (center of mass) of a polygon. Not necessarily inside concave polygon.
+        /// </summary>
+        /// <param name="vertices">The polygon to find centroid of.</param>
+        /// <returns>The centroid coordinates.</returns>
+        public static Vector2 GetConvexCenter(IList<Vector2> vertices)
+        {
+            float c1 = 0f;
+            float c2 = 0f;
+            float d = 0f;
+            float td = 0f;
+
+            for (int i = 1; i < vertices.Count; i++)
+            {
+                td = (vertices[i - 1].x * vertices[i].y) - (vertices[i].x * vertices[i - 1].y);
+                d += td;
+                c1 = (vertices[i - 1].x + vertices[i].x) * td;
+                c2 = (vertices[i - 1].y + vertices[i].y) * td;
+            }
+
+            c1 /= 3 * d;
+            c2 /= 3 * d;
+
+            return new Vector2(c1, c2);
+        }
+
+        /// <summary>
+        /// Determine winding order of polygon by checking if points are arranged in clockwise order or not.
+        /// </summary>
+        /// <param name="polygon">The polygon to check.</param>
+        /// <returns>Counter-clockwise or not</returns>
+        public static bool PointsAreCounterClockwise(IList<Vector2> polygon)
+        {
+            float signedArea = 0;
+            for (int i = 1; i < polygon.Count; i++)
+            {
+                signedArea += (polygon[i].x - polygon[i-1].x) * (polygon[i].y + polygon[i-1].y);
+            }
+
+            return signedArea < 0;
+        }
+
         #endregion
-        
+
     }
 }
