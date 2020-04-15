@@ -30,7 +30,7 @@ namespace Utils.Roads
                 _curveFactor = value;
             }
         }
-        private float _curveFactor = 0.2f;
+        private float _curveFactor = 0.1f;
         
         /// <summary>
         /// How many times smoothing points should be added to a road.
@@ -57,7 +57,7 @@ namespace Utils.Roads
         /// <summary>
         /// The y-coordinate offset between the terrain and the roads.
         /// </summary>
-        public float TerrainOffsetY { get; set; } = 0.05f;
+        public float TerrainOffsetY { get; set; } = 0.075f;
 
         /// <summary>
         /// Initializes this generator by setting the road material.
@@ -169,7 +169,7 @@ namespace Utils.Roads
                 // here comes the tricky part...
                 // we calculate the tangent to the corner between the current segment and the next
                 var tangent = ((nextNextPoint - nextPoint).normalized + (nextPoint - currentPoint).normalized).normalized;
-                var cornerNormal = (Vector3.Cross(terrainNormal2, tangent)).normalized;
+                var cornerNormal = Vector3.Cross(terrainNormal2, tangent).normalized;
                 // project the normal line to the corner to obtain the correct length
                 var cornerWidth = RoadWidth * 0.5f / Vector3.Dot(cornerNormal, perpendicularDirection);
                 var cornerPoint1 = nextPoint + cornerWidth * cornerNormal;
@@ -230,18 +230,26 @@ namespace Utils.Roads
         private void AdaptPointsToTerrainHeight(
             IList<Vector3> points, MeshFilter terrainMeshFilter, Collider terrainCollider)
         {
+            const float rayLength = 100;
+            var up = Vector3.up * rayLength / 2;
             var heightMap = terrainMeshFilter.sharedMesh.HeightMap();
             for (var i = 0; i < points.Count; i++)
             {
-                var roundedY = heightMap[(int) (0.5f + points[i].x), (int) (0.5f + points[i].z)];
-                var point = new Vector3(points[i].x, roundedY, points[i].z);
+                var closeY = heightMap[(int) (0.5f + points[i].x), (int) (0.5f + points[i].z)];
+                var point = new Vector3(points[i].x, closeY, points[i].z);
 
+                // Use ray casting to find the y-position of the xz-point on to the terrain mesh
                 var terrainY = float.NaN;
-                if (terrainCollider.Raycast(new Ray(point + Vector3.up, Vector3.down), out var hit1, 100))
+                if (terrainCollider.Raycast(new Ray(point + up, Vector3.down), out var hit1, rayLength))
                 {
                     terrainY = hit1.point.y;
+                } 
+                else if (terrainCollider.Raycast(new Ray(point - up, Vector3.up), out var hit2, rayLength))
+                {
+                    terrainY = hit2.point.y;
                 }
 
+                // If a y-value was found, update the point
                 if (!float.IsNaN(terrainY))
                 {
                     var y = terrainMeshFilter.transform.position.y
