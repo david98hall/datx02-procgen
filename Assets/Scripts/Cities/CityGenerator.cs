@@ -55,7 +55,7 @@ namespace Cities
             return new City
             {
                 RoadNetwork = _roadNetwork,
-                PlotsEnumerable = _plotsGenerator.Generate()
+                Plots = _plotsGenerator.Generate()
             };
         }
 

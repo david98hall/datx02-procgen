@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using Extensions;
 using UnityEngine;
 
-namespace Utils.Roads
+namespace Utils.Paths
 {
     /// <summary>
-    /// Generates road game objects based on road vertices and a terrain.
+    /// Generates path game objects based on path vertices and a terrain.
     /// </summary>
-    public class RoadObjectGenerator
+    public class PathObjectGenerator
     {
         /// <summary>
-        /// The width of the generated road objects.
+        /// The width of the generated path objects.
         /// </summary>
-        public float RoadWidth { get; set; } = 0.3f;
+        public float PathWidth { get; set; } = 0.3f;
 
         /// <summary>
-        /// Determines how curved a road is between two points.
+        /// Determines how curved a path is between two points.
         /// This value has to be in the range [0, 0.5]. 
         /// </summary>
         public float CurveFactor
@@ -33,8 +33,8 @@ namespace Utils.Roads
         private float _curveFactor = 0.1f;
         
         /// <summary>
-        /// How many times smoothing points should be added to a road.
-        /// Determines how smooth the road will be between to points.
+        /// How many times smoothing points should be added to a path.
+        /// Determines how smooth the path will be between to points.
         /// </summary>
         public int SmoothingIterations 
         { 
@@ -50,105 +50,143 @@ namespace Utils.Roads
         private int _smoothingIterations = 3;
         
         /// <summary>
-        /// The material of the roads this generator creates.
+        /// The material of the paths this generator creates.
         /// </summary>
-        public Material RoadMaterial { get; set; }
+        public Material PathMaterial { get; set; }
         
         /// <summary>
-        /// The y-coordinate offset between the terrain and the roads.
+        /// The y-coordinate offset between the terrain and the paths.
         /// </summary>
         public float TerrainOffsetY { get; set; } = 0.075f;
 
         /// <summary>
-        /// Initializes this generator by setting the road material.
+        /// Initializes this generator by setting the path material.
         /// </summary>
-        /// <param name="roadMaterial">The material to use when creating roads objects.</param>
-        public RoadObjectGenerator(Material roadMaterial = null)
+        /// <param name="pathMaterial">The material to use when creating paths objects.</param>
+        public PathObjectGenerator(Material pathMaterial = null)
         {
-            RoadMaterial = roadMaterial;
+            PathMaterial = pathMaterial;
+        }
+        
+        /// <summary>
+        /// Generates a path network GameObject.
+        /// </summary>
+        /// <param name="paths">All the paths in the network.</param>
+        /// <param name="terrainMeshFilter">The mesh filter of the terrain mesh.</param>
+        /// <param name="terrainCollider">The mesh collider of the terrain mesh.</param>
+        /// <param name="pathNetworkName">The name of the path network to generate.</param>
+        /// <param name="basePathName">
+        /// The base name of each path. The path index will be added at the end of each path.
+        /// </param>
+        /// <returns>The path network as a GameObject.</returns>
+        public GameObject GeneratePathNetwork(
+            IEnumerable<IEnumerable<Vector3>> paths,
+            MeshFilter terrainMeshFilter,
+            Collider terrainCollider,
+            string pathNetworkName = "Path Network",
+            string basePathName = "Path")
+        {
+            return GeneratePathNetwork(
+                paths.GetEnumerator(), 
+                terrainMeshFilter, terrainCollider, 
+                pathNetworkName,
+                basePathName);
         }
 
         /// <summary>
-        /// Generates a road network GameObject.
+        /// Generates a path network GameObject.
         /// </summary>
-        /// <param name="roads">All the roads in the network.</param>
+        /// <param name="paths">All the paths in the network.</param>
         /// <param name="terrainMeshFilter">The mesh filter of the terrain mesh.</param>
         /// <param name="terrainCollider">The mesh collider of the terrain mesh.</param>
-        /// <param name="roadNetworkName">The name of the road network to generate.</param>
-        /// <returns>The road network as a GameObject.</returns>
-        public GameObject GenerateRoadNetwork(
-            IEnumerable<IEnumerable<Vector3>> roads, 
+        /// <param name="pathNetworkName">The name of the path network to generate.</param>
+        /// <param name="basePathName">
+        /// The base name of each path. The path index will be added at the end of each path.
+        /// </param>
+        /// <returns>The path network as a GameObject.</returns>
+        public GameObject GeneratePathNetwork(
+            IEnumerator<IEnumerable<Vector3>> paths, 
             MeshFilter terrainMeshFilter, 
             Collider terrainCollider,
-            string roadNetworkName = "Road Network")
+            string pathNetworkName = "Path Network",
+            string basePathName = "Path")
         {
-            var roadNetworkObj = new GameObject(roadNetworkName);
+            var pathNetworkObj = new GameObject(pathNetworkName);
             
             var count = 1;
-            foreach (var road in roads)
+            while (paths.MoveNext())
             {
-                var roadObj = GenerateRoad(road, terrainMeshFilter, terrainCollider, "Road " + count);
-                roadObj.transform.SetParent(roadNetworkObj.transform);                
+                var pathName = basePathName + " " + count;
+                var pathObj = GeneratePath(paths.Current, terrainMeshFilter, terrainCollider, pathName);
+                pathObj.transform.SetParent(pathNetworkObj.transform);                
                 count++;
             }
 
-            return roadNetworkObj;
+            return pathNetworkObj;
         }
 
         /// <summary>
-        /// Generates a road GameObject.
+        /// Generates a path GameObject.
         /// </summary>
-        /// <param name="roadVertices">The vertices along the road.</param>
+        /// <param name="pathVertices">The vertices along the path.</param>
         /// <param name="terrainMeshFilter">The mesh filter of the terrain mesh.</param>
         /// <param name="terrainCollider">The mesh collider of the terrain mesh.</param>
-        /// <param name="name">The name of the road.</param>
-        /// <returns>A road as a GameObject.</returns>
+        /// <param name="name">The name of the path.</param>
+        /// <returns>A path as a GameObject.</returns>
         /// <exception cref="Exception">
         /// If there are less than 2 vertices or if the SmoothingFactor is not an element of [0, 0.5].
         /// </exception>
-        public GameObject GenerateRoad(
-            IEnumerable<Vector3> roadVertices, 
+        public GameObject GeneratePath(
+            IEnumerable<Vector3> pathVertices, 
             MeshFilter terrainMeshFilter, 
             Collider terrainCollider, 
-            string name = "Road")
+            string name = "Path")
         {
-            var roadVertexList = new List<Vector3>(roadVertices);
+            var pathVertexList = new List<Vector3>(pathVertices);
             
             // Validate parameters
-            if (roadVertexList.Count < 2)
-                throw new Exception("At least two points are required to make a road.");
+            if (pathVertexList.Count < 2)
+                throw new Exception("At least two points are required to make a path.");
 
             if (CurveFactor > 0.0f) {
                 for (var smoothingPass = 0; smoothingPass < SmoothingIterations; smoothingPass++) {
-                    AddSmoothingPoints(roadVertexList);
+                    AddSmoothingPoints(pathVertexList);
                 }
             }
 
             // Replace the y-coordinate of every point with the height of the terrain (+ an offset)
-            AdaptPointsToTerrainHeight(roadVertexList, terrainMeshFilter, terrainCollider);
+            AdaptPointsToTerrainHeight(pathVertexList, terrainMeshFilter, terrainCollider);
 
+            // Return the path game object
+            var mesh = CreatePathMesh(pathVertexList, terrainCollider, name);
+            return CreateGameObject(mesh, name);
+        }
+
+        // Creates a mesh along the given path vertices with an appearance based on certain properties
+        private Mesh CreatePathMesh(IList<Vector3> pathVertices, Collider terrainCollider, string name)
+        {
             var mesh = new Mesh {name = name + " Mesh"};
             var vertices = new List<Vector3>();
             var triangles = new List<int>();
             
-            for (var i = 0; i < roadVertexList.Count - 1; i++)
+            for (var i = 0; i < pathVertices.Count - 1; i++)
             {
-                var currentPoint = roadVertexList[i];
+                var currentPoint = pathVertices[i];
                 
                 Vector3 nextPoint;
                 Vector3 nextNextPoint;
-                if (i == roadVertexList.Count - 2) 
+                if (i == pathVertices.Count - 2) 
                 {
                     // second to last point, we need to make up a "next next point"
-                    nextPoint = roadVertexList[i + 1];
+                    nextPoint = pathVertices[i + 1];
                     // assuming the 'next next' imaginary segment has the same
                     // direction as the real last one
                     nextNextPoint = nextPoint + (nextPoint - currentPoint);
                 } 
                 else 
                 {
-                    nextPoint = roadVertexList[i + 1];
-                    nextNextPoint = roadVertexList[i + 2];
+                    nextPoint = pathVertices[i + 1];
+                    nextNextPoint = pathVertices[i + 2];
                 }
 
                 // Calculate the actual normals
@@ -161,17 +199,17 @@ namespace Utils.Roads
                 var terrainNormal2 = hit2.normal;
 
                 // Calculate the normal to the segment, so we can displace 'left' and 'right' of
-                // the point by half the road width and create our first vertices there
+                // the point by half the path width and create our first vertices there
                 var perpendicularDirection = Vector3.Cross(terrainNormal1, nextPoint - currentPoint).normalized;
-                var point1 = currentPoint + perpendicularDirection * (RoadWidth * 0.5f);
-                var point2 = currentPoint - perpendicularDirection * (RoadWidth * 0.5f);
+                var point1 = currentPoint + perpendicularDirection * (PathWidth * 0.5f);
+                var point2 = currentPoint - perpendicularDirection * (PathWidth * 0.5f);
 
                 // here comes the tricky part...
                 // we calculate the tangent to the corner between the current segment and the next
                 var tangent = ((nextNextPoint - nextPoint).normalized + (nextPoint - currentPoint).normalized).normalized;
                 var cornerNormal = Vector3.Cross(terrainNormal2, tangent).normalized;
                 // project the normal line to the corner to obtain the correct length
-                var cornerWidth = RoadWidth * 0.5f / Vector3.Dot(cornerNormal, perpendicularDirection);
+                var cornerWidth = PathWidth * 0.5f / Vector3.Dot(cornerNormal, perpendicularDirection);
                 var cornerPoint1 = nextPoint + cornerWidth * cornerNormal;
                 var cornerPoint2 = nextPoint - cornerWidth * cornerNormal;
 
@@ -201,9 +239,9 @@ namespace Utils.Roads
             mesh.triangles = triangles.ToArray();
             mesh.RecalculateNormals();
 
-            return CreateGameObject(mesh, name);
+            return mesh;
         }
-
+        
         // Adds points to make the path between the given points smoother
         private void AddSmoothingPoints(IList<Vector3> points)
         {
@@ -265,14 +303,14 @@ namespace Utils.Roads
             var obj = new GameObject(name, typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
             obj.GetComponent<MeshFilter>().mesh = mesh;
 
-            if (RoadMaterial == null) return obj;
+            if (PathMaterial == null) return obj;
                 
             // If there is a material, set it
             var renderer = obj.GetComponent<MeshRenderer>();
             var materials = renderer.sharedMaterials;
             for (var i = 0; i < materials.Length; i++) 
             {
-                materials[i] = RoadMaterial;
+                materials[i] = PathMaterial;
             }
             renderer.sharedMaterials = materials;
 

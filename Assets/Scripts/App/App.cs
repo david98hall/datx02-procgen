@@ -9,7 +9,7 @@ using Interfaces;
 using Terrain;
 using UnityEditor;
 using UnityEngine;
-using Utils.Roads;
+using Utils.Paths;
 
 namespace App
 {
@@ -55,23 +55,21 @@ namespace App
 
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
-            
+
             // Display plot borders
-            var plotSetObj = new GameObject("Plots");
-            gameObjects.Add(plotSetObj);
-            var plots = _model.City.Plots;
-            var count = 1;
-            while (plots.MoveNext())
-            {
-                var plot = plots.Current;
-                if (plot == null) continue;
-                DisplayItem(plot.Vertices, "Plot Border " + count++, plotMaterial, 0.15f, plotSetObj.transform); 
-            }
+            var pathObjectGenerator = new PathObjectGenerator(plotMaterial);
+            gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
+                _model.City.Plots.Select(p => p.Vertices),
+                _meshFilter, _meshCollider,
+                "Plot Borders", "Plot"));
+            
 
             // Display roads
-            var roadObjectGenerator = new RoadObjectGenerator(roadMaterial);
-            gameObjects.Add(
-                roadObjectGenerator.GenerateRoadNetwork(_model.City.RoadNetwork.GetRoads(), _meshFilter, _meshCollider));
+            pathObjectGenerator.PathMaterial = roadMaterial;
+            gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
+                _model.City.RoadNetwork.GetRoads(), 
+                _meshFilter, _meshCollider,
+                "Road Network", "Road"));
         }
         
         private void Init()
