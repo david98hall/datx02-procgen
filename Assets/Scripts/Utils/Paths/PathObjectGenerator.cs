@@ -266,7 +266,7 @@ namespace Utils.Paths
             }
         }
 
-        // Set the y-value of each given vertex to the y-value of the terrain height at same xz-position
+        // Sets the y-value of each given vertex to the y-value of the terrain height at same xz-position
         private void AdaptVerticesToTerrain(
             IList<Vector3> vertices, MeshFilter terrainMeshFilter, Collider terrainCollider)
         {
@@ -327,9 +327,9 @@ namespace Utils.Paths
 
             var vertexList = new List<Vector3>(vertices);
             
-            for (var vertIdx = 0; vertIdx < vertexList.Count; vertIdx++)
+            for (var i = 0; i < vertexList.Count; i++)
             {
-                switch (vertIdx % 4)
+                switch (i % 4)
                 {
                     case 0:
                         uvs.Add(new Vector2(0, 0));
