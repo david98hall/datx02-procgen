@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2857107792722119138}
   - component: {fileID: 2857107792722119136}
   - component: {fileID: 2857107792722119139}
-  - component: {fileID: 2857107792722119141}
   - component: {fileID: 844432082692193845}
+  - component: {fileID: 2857107792722119141}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -81,6 +81,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &844432082692193845
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2857107792722119140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!114 &2857107792722119141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,17 +168,3 @@ MonoBehaviour:
     plotStrategy: 0
   roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
   plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
---- !u!64 &844432082692193845
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2857107792722119140}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
