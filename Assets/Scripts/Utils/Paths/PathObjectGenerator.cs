@@ -113,6 +113,7 @@ namespace Utils.Paths
         {
             var pathNetworkObj = new GameObject(pathNetworkName);
             
+            // Create a path object for each set of vertices
             var count = 1;
             while (paths.MoveNext())
             {
@@ -204,11 +205,11 @@ namespace Utils.Paths
                 var point1 = currentPoint + perpendicularDirection * (PathWidth * 0.5f);
                 var point2 = currentPoint - perpendicularDirection * (PathWidth * 0.5f);
 
-                // here comes the tricky part...
-                // we calculate the tangent to the corner between the current segment and the next
+                // Calculate the tangent to the corner between the current segment and the next
                 var tangent = ((nextNextPoint - nextPoint).normalized + (nextPoint - currentPoint).normalized).normalized;
                 var cornerNormal = Vector3.Cross(terrainNormal2, tangent).normalized;
-                // project the normal line to the corner to obtain the correct length
+                
+                // Project the normal line to the corner to obtain the correct length
                 var cornerWidth = PathWidth * 0.5f / Vector3.Dot(cornerNormal, perpendicularDirection);
                 var cornerPoint1 = nextPoint + cornerWidth * cornerNormal;
                 var cornerPoint2 = nextPoint - cornerWidth * cornerNormal;
