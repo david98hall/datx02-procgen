@@ -191,9 +191,12 @@ namespace App.ViewModel.Cities
             {
                 EditorGUI.indentLevel++;
                 plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", plotStrategy);
-                plotMaterial = (Material) EditorGUILayout.ObjectField(
-                    "Plot Material", plotMaterial, typeof(Material), true);
                 displayPlots = EditorGUILayout.Toggle("Display Plots", displayPlots);
+                if (displayPlots)
+                {
+                    plotMaterial = (Material) EditorGUILayout.ObjectField(
+                        "Plot Material", plotMaterial, typeof(Material), true);   
+                }
                 EditorGUI.indentLevel--;
             }
         }
