@@ -57,7 +57,7 @@ namespace Utils.Roads
         /// <summary>
         /// The y-coordinate offset between the terrain and the roads.
         /// </summary>
-        public float TerrainOffsetY { get; set; } = 0.6f;
+        public float TerrainOffsetY { get; set; } = 0.05f;
 
         /// <summary>
         /// Initializes this generator by setting the road material.
@@ -116,7 +116,7 @@ namespace Utils.Roads
             
             // Validate parameters
             if (roadVertexList.Count < 2)
-                throw new Exception("At least two points are required to make a road");
+                throw new Exception("At least two points are required to make a road.");
 
             if (CurveFactor > 0.0f) {
                 for (var smoothingPass = 0; smoothingPass < SmoothingIterations; smoothingPass++) {
@@ -125,7 +125,7 @@ namespace Utils.Roads
             }
 
             // Replace the y-coordinate of every point with the height of the terrain (+ an offset)
-            AdaptPointsToTerrainHeight(roadVertexList, terrainMeshFilter);
+            AdaptPointsToTerrainHeight(roadVertexList, terrainMeshFilter, terrainCollider);
 
             var mesh = new Mesh {name = name + " Mesh"};
             var vertices = new List<Vector3>();
@@ -137,13 +137,16 @@ namespace Utils.Roads
                 
                 Vector3 nextPoint;
                 Vector3 nextNextPoint;
-                if (i == roadVertexList.Count - 2) {
+                if (i == roadVertexList.Count - 2) 
+                {
                     // second to last point, we need to make up a "next next point"
                     nextPoint = roadVertexList[i + 1];
                     // assuming the 'next next' imaginary segment has the same
                     // direction as the real last one
                     nextNextPoint = nextPoint + (nextPoint - currentPoint);
-                } else {
+                } 
+                else 
+                {
                     nextPoint = roadVertexList[i + 1];
                     nextNextPoint = roadVertexList[i + 2];
                 }
@@ -173,7 +176,8 @@ namespace Utils.Roads
                 var cornerPoint2 = nextPoint - cornerWidth * cornerNormal;
 
                 // The first point has no previous vertices set by past iterations
-                if (i == 0) {
+                if (i == 0) 
+                {
                     vertices.Add(point1);
                     vertices.Add(point2);
                 }
@@ -203,7 +207,8 @@ namespace Utils.Roads
         // Adds points to make the path between the given points smoother
         private void AddSmoothingPoints(IList<Vector3> points)
         {
-            for (var i = 0; i < points.Count - 2; i++) {
+            for (var i = 0; i < points.Count - 2; i++) 
+            {
                 var currentPoint = points[i];
                 var nextPoint = points[i + 1];
                 var nextNextPoint = points[i + 2];
@@ -222,15 +227,28 @@ namespace Utils.Roads
         }
 
         // Set the y-value of each given point to the y-value of the terrain height at same xz-position
-        private void AdaptPointsToTerrainHeight(IList<Vector3> points, MeshFilter terrainMeshFilter)
+        private void AdaptPointsToTerrainHeight(
+            IList<Vector3> points, MeshFilter terrainMeshFilter, Collider terrainCollider)
         {
             var heightMap = terrainMeshFilter.sharedMesh.HeightMap();
-            for (var i = 0; i < points.Count; i++) {
-                var point = points[i];
-                var y = terrainMeshFilter.transform.position.y
-                        + heightMap[(int)(0.5f + point.x), (int)(0.5f + point.z)]
-                        + TerrainOffsetY;
-                points[i] = new Vector3(point.x, y, point.z);
+            for (var i = 0; i < points.Count; i++)
+            {
+                var roundedY = heightMap[(int) (0.5f + points[i].x), (int) (0.5f + points[i].z)];
+                var point = new Vector3(points[i].x, roundedY, points[i].z);
+
+                var terrainY = float.NaN;
+                if (terrainCollider.Raycast(new Ray(point + Vector3.up, Vector3.down), out var hit1, 100))
+                {
+                    terrainY = hit1.point.y;
+                }
+
+                if (!float.IsNaN(terrainY))
+                {
+                    var y = terrainMeshFilter.transform.position.y
+                            + terrainY
+                            + TerrainOffsetY;
+                    points[i] = new Vector3(point.x, y, point.z);   
+                }
             }
         }
 
@@ -244,7 +262,8 @@ namespace Utils.Roads
             // If there is a material, set it
             var renderer = obj.GetComponent<MeshRenderer>();
             var materials = renderer.sharedMaterials;
-            for (var i = 0; i < materials.Length; i++) {
+            for (var i = 0; i < materials.Length; i++) 
+            {
                 materials[i] = RoadMaterial;
             }
             renderer.sharedMaterials = materials;
