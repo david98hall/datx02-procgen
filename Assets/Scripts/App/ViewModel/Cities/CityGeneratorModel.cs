@@ -49,6 +49,9 @@ namespace App.ViewModel.Cities
 
         [SerializeField] [HideInInspector] 
         public Material plotMaterial;
+
+        [HideInInspector] 
+        public bool displayPlots;
         
         #endregion
         
@@ -187,9 +190,10 @@ namespace App.ViewModel.Cities
             if (_plotStrategyVisible)
             {
                 EditorGUI.indentLevel++;
+                plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", plotStrategy);
                 plotMaterial = (Material) EditorGUILayout.ObjectField(
                     "Plot Material", plotMaterial, typeof(Material), true);
-                plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", plotStrategy);
+                displayPlots = EditorGUILayout.Toggle("Display Plots", displayPlots);
                 EditorGUI.indentLevel--;
             }
         }

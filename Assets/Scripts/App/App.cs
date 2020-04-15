@@ -48,19 +48,24 @@ namespace App
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
 
-            // Display plot borders
-            var pathObjectGenerator = new PathObjectGenerator(cityGeneratorModel.plotMaterial)
+            // Set the values of the path object generator according to the UI-values
+            var pathObjectGenerator = new PathObjectGenerator
             {
                 PathWidth = cityGeneratorModel.roadWidth,
                 CurveFactor = cityGeneratorModel.roadCurveFactor,
                 SmoothingIterations = cityGeneratorModel.roadSmoothingIterations,
                 TerrainOffsetY = cityGeneratorModel.roadTerrainOffsetY
             };
-            gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
-                _model.City.Plots.Select(p => p.Vertices),
-                _meshFilter, _meshCollider,
-                "Plot Borders", "Plot"));
             
+            if (cityGeneratorModel.displayPlots)
+            {
+                // Display plot borders
+                pathObjectGenerator.PathMaterial = cityGeneratorModel.plotMaterial;
+                gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
+                    _model.City.Plots.Select(p => p.Vertices),
+                    _meshFilter, _meshCollider,
+                    "Plot Borders", "Plot"));
+            }
 
             // Display roads
             pathObjectGenerator.PathMaterial = cityGeneratorModel.roadMaterial;
