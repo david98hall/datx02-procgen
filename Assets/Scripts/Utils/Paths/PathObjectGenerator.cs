@@ -16,7 +16,7 @@ namespace Utils.Paths
         public float PathWidth { get; set; } = 0.3f;
 
         /// <summary>
-        /// Determines how curved a path is between two points.
+        /// Determines how curved a path is between two vertices.
         /// This value has to be in the range [0, 0.5]. 
         /// </summary>
         public float CurveFactor
@@ -33,8 +33,8 @@ namespace Utils.Paths
         private float _curveFactor = 0.1f;
         
         /// <summary>
-        /// How many times smoothing points should be added to a path.
-        /// Determines how smooth the path will be between to points.
+        /// How many times smoothing vertices should be added to a path.
+        /// Determines how smooth the path will be between two vertices.
         /// </summary>
         public int SmoothingIterations 
         { 
@@ -147,16 +147,17 @@ namespace Utils.Paths
             
             // Validate parameters
             if (pathVertexList.Count < 2)
-                throw new Exception("At least two points are required to make a path.");
+                throw new Exception("At least two vertices are required to make a path!");
 
+            // If the curve factor is greater than zero, add new vertices between the
+            // existing vertices in order to make the path smoother looking
             if (CurveFactor > 0.0f) {
                 for (var smoothingPass = 0; smoothingPass < SmoothingIterations; smoothingPass++) {
-                    AddSmoothingPoints(pathVertexList);
+                    AddSmoothingVertices(pathVertexList);
                 }
             }
-
-            // Replace the y-coordinate of every point with the height of the terrain (+ an offset)
-            AdaptPointsToTerrainHeight(pathVertexList, terrainMeshFilter, terrainCollider);
+            
+            AdaptVerticesToTerrain(pathVertexList, terrainMeshFilter, terrainCollider);
 
             // Return the path game object
             var mesh = CreatePathMesh(pathVertexList, terrainCollider, name);
@@ -172,56 +173,56 @@ namespace Utils.Paths
             
             for (var i = 0; i < pathVertices.Count - 1; i++)
             {
-                var currentPoint = pathVertices[i];
+                var currentVertex = pathVertices[i];
                 
-                Vector3 nextPoint;
-                Vector3 nextNextPoint;
+                Vector3 nextVertex;
+                Vector3 nextNextVertex;
                 if (i == pathVertices.Count - 2) 
                 {
-                    // second to last point, we need to make up a "next next point"
-                    nextPoint = pathVertices[i + 1];
-                    // assuming the 'next next' imaginary segment has the same
-                    // direction as the real last one
-                    nextNextPoint = nextPoint + (nextPoint - currentPoint);
+                    // Second to last vertex, we need to make up a "next next vertex"
+                    nextVertex = pathVertices[i + 1];
+                    
+                    // Assuming the 'next next' imaginary segment has the same direction as the real last one
+                    nextNextVertex = nextVertex + (nextVertex - currentVertex);
                 } 
                 else 
                 {
-                    nextPoint = pathVertices[i + 1];
-                    nextNextPoint = pathVertices[i + 2];
+                    nextVertex = pathVertices[i + 1];
+                    nextNextVertex = pathVertices[i + 2];
                 }
 
                 // Calculate the actual normals
-                var ray = new Ray(currentPoint + Vector3.up, Vector3.down);
+                var ray = new Ray(currentVertex + Vector3.up, Vector3.down);
                 terrainCollider.Raycast(ray, out var hit1, 100.0f);
                 var terrainNormal1 = hit1.normal;
 
-                ray = new Ray(nextPoint + Vector3.up, Vector3.down);
+                ray = new Ray(nextVertex + Vector3.up, Vector3.down);
                 terrainCollider.Raycast(ray, out var hit2, 100.0f);
                 var terrainNormal2 = hit2.normal;
 
                 // Calculate the normal to the segment, so we can displace 'left' and 'right' of
-                // the point by half the path width and create our first vertices there
-                var perpendicularDirection = Vector3.Cross(terrainNormal1, nextPoint - currentPoint).normalized;
-                var point1 = currentPoint + perpendicularDirection * (PathWidth * 0.5f);
-                var point2 = currentPoint - perpendicularDirection * (PathWidth * 0.5f);
+                // the vertex by half the path width and create our first vertices there
+                var perpendicularDirection = Vector3.Cross(terrainNormal1, nextVertex - currentVertex).normalized;
+                var vertex1 = currentVertex + perpendicularDirection * (PathWidth * 0.5f);
+                var vertex2 = currentVertex - perpendicularDirection * (PathWidth * 0.5f);
 
                 // Calculate the tangent to the corner between the current segment and the next
-                var tangent = ((nextNextPoint - nextPoint).normalized + (nextPoint - currentPoint).normalized).normalized;
+                var tangent = ((nextNextVertex - nextVertex).normalized + (nextVertex - currentVertex).normalized).normalized;
                 var cornerNormal = Vector3.Cross(terrainNormal2, tangent).normalized;
                 
                 // Project the normal line to the corner to obtain the correct length
                 var cornerWidth = PathWidth * 0.5f / Vector3.Dot(cornerNormal, perpendicularDirection);
-                var cornerPoint1 = nextPoint + cornerWidth * cornerNormal;
-                var cornerPoint2 = nextPoint - cornerWidth * cornerNormal;
+                var cornerVertex1 = nextVertex + cornerWidth * cornerNormal;
+                var cornerVertex2 = nextVertex - cornerWidth * cornerNormal;
 
-                // The first point has no previous vertices set by past iterations
+                // The first vertex has no previous vertices set by past iterations
                 if (i == 0) 
                 {
-                    vertices.Add(point1);
-                    vertices.Add(point2);
+                    vertices.Add(vertex1);
+                    vertices.Add(vertex2);
                 }
-                vertices.Add(cornerPoint1);
-                vertices.Add(cornerPoint2);
+                vertices.Add(cornerVertex1);
+                vertices.Add(cornerVertex2);
 
                 // Add first triangle
                 var doubleI = i * 2;
@@ -243,58 +244,60 @@ namespace Utils.Paths
             return mesh;
         }
         
-        // Adds points to make the path between the given points smoother
-        private void AddSmoothingPoints(IList<Vector3> points)
+        // Adds new vertices to make the path between the given vertices smoother
+        private void AddSmoothingVertices(IList<Vector3> vertices)
         {
-            for (var i = 0; i < points.Count - 2; i++) 
+            for (var i = 0; i < vertices.Count - 2; i++) 
             {
-                var currentPoint = points[i];
-                var nextPoint = points[i + 1];
-                var nextNextPoint = points[i + 2];
+                var currentVertex = vertices[i];
+                var nextVertex = vertices[i + 1];
+                var nextNextVertex = vertices[i + 2];
 
-                var distance1 = Vector3.Distance(currentPoint, nextPoint);
-                var distance2 = Vector3.Distance(nextPoint, nextNextPoint);
+                var distance1 = Vector3.Distance(currentVertex, nextVertex);
+                var distance2 = Vector3.Distance(nextVertex, nextNextVertex);
 
-                var dir1 = (nextPoint - currentPoint).normalized;
-                var dir2 = (nextNextPoint - nextPoint).normalized;
+                var dir1 = (nextVertex - currentVertex).normalized;
+                var dir2 = (nextNextVertex - nextVertex).normalized;
 
-                points.RemoveAt(i + 1);
-                points.Insert(i + 1, currentPoint + dir1 * (distance1 * (1.0f - CurveFactor)));
-                points.Insert(i + 2, nextPoint + dir2 * (distance2 * CurveFactor));
+                vertices.RemoveAt(i + 1);
+                vertices.Insert(i + 1, currentVertex + dir1 * (distance1 * (1.0f - CurveFactor)));
+                vertices.Insert(i + 2, nextVertex + dir2 * (distance2 * CurveFactor));
                 i++;
             }
         }
 
-        // Set the y-value of each given point to the y-value of the terrain height at same xz-position
-        private void AdaptPointsToTerrainHeight(
-            IList<Vector3> points, MeshFilter terrainMeshFilter, Collider terrainCollider)
+        // Set the y-value of each given vertex to the y-value of the terrain height at same xz-position
+        private void AdaptVerticesToTerrain(
+            IList<Vector3> vertices, MeshFilter terrainMeshFilter, Collider terrainCollider)
         {
             const float rayLength = 100;
-            var up = Vector3.up * rayLength / 2;
+            const float halfRayLength = rayLength / 2;
+            var up = Vector3.up * halfRayLength;
             var heightMap = terrainMeshFilter.sharedMesh.HeightMap();
-            for (var i = 0; i < points.Count; i++)
+            for (var i = 0; i < vertices.Count; i++)
             {
-                var closeY = heightMap[(int) (0.5f + points[i].x), (int) (0.5f + points[i].z)];
-                var point = new Vector3(points[i].x, closeY, points[i].z);
+                // Get the vertex at an approximately correct y-level height
+                var closeY = heightMap[(int) (0.5f + vertices[i].x), (int) (0.5f + vertices[i].z)];
+                var vertex = new Vector3(vertices[i].x, closeY, vertices[i].z);
 
-                // Use ray casting to find the y-position of the xz-point on to the terrain mesh
+                // Use ray casting to find the y-position of the xz-vertex on to the terrain mesh
                 var terrainY = float.NaN;
-                if (terrainCollider.Raycast(new Ray(point + up, Vector3.down), out var hit1, rayLength))
+                if (terrainCollider.Raycast(new Ray(vertex + up, Vector3.down), out var hit1, rayLength))
                 {
                     terrainY = hit1.point.y;
                 } 
-                else if (terrainCollider.Raycast(new Ray(point - up, Vector3.up), out var hit2, rayLength))
+                else if (terrainCollider.Raycast(new Ray(vertex - up, Vector3.up), out var hit2, rayLength))
                 {
                     terrainY = hit2.point.y;
                 }
 
-                // If a y-value was found, update the point
+                // If a y-value was found, update the vertex
                 if (!float.IsNaN(terrainY))
                 {
                     var y = terrainMeshFilter.transform.position.y
                             + terrainY
                             + TerrainOffsetY;
-                    points[i] = new Vector3(point.x, y, point.z);   
+                    vertices[i] = new Vector3(vertex.x, y, vertex.z);   
                 }
             }
         }
