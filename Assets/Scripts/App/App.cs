@@ -84,34 +84,6 @@ namespace App
             _initialized = true;
         }
 
-        private void DisplayItem(
-            IEnumerable<Vector3> item, 
-            string itemName, 
-            Material material, 
-            float width, 
-            Transform parentTransform = null)
-        {
-            var itemObject = new GameObject(itemName);
-            var lineRenderer = itemObject.AddComponent<LineRenderer>();
-
-            if (parentTransform) itemObject.transform.SetParent(parentTransform);
-            
-            lineRenderer.startWidth = width;
-            lineRenderer.endWidth = width;
-            lineRenderer.numCornerVertices = 90;
-            lineRenderer.numCapVertices = 90;
-            lineRenderer.textureMode = LineTextureMode.Tile;
-            lineRenderer.generateLightingData = true;
-
-            if (material != null) lineRenderer.sharedMaterial = material;
-
-            var itemArray = item.ToArray();
-            lineRenderer.positionCount = itemArray.Length;
-            lineRenderer.SetPositions(itemArray);
-
-            gameObjects.Add(itemObject);
-        }
-
         public void DisplayEditor()
         {
             roadMaterial = (Material) EditorGUILayout.ObjectField("Road Material", 
