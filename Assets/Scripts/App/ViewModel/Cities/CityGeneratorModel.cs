@@ -12,12 +12,12 @@ namespace App.ViewModel.Cities
     public class CityGeneratorModel : IViewAdapter<IGenerator<City>>
     {
         private CityGenerator _generator;
-        private Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>> _plotStrategies;
-
         private bool _visible;
-        private bool _roadNetworkStrategyVisible;
-        private bool _plotStrategyVisible;
 
+        #region Road Network Strategy
+
+        private bool _roadNetworkStrategyVisible;
+        
         [SerializeField] 
         private AStarStrategyModel aStarStrategyModel;
 
@@ -28,18 +28,51 @@ namespace App.ViewModel.Cities
         {
             LSystem, AStar
         }
+
+        [HideInInspector]
+        public RoadNetworkStrategy roadNetworkStrategy;
+
+        #endregion
+        
+        #region Plot Strategy
+        
+        private bool _plotStrategyVisible;
+        private Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>> _plotStrategies;
         
         public enum PlotStrategy
         {
             MinimalCycle, ClockWiseCycle, BruteMinimalCycle
         }
 
-        [HideInInspector]
-        public RoadNetworkStrategy roadNetworkStrategy;
-
         [HideInInspector] 
         public PlotStrategy plotStrategy;
 
+        [SerializeField] [HideInInspector] 
+        public Material plotMaterial;
+        
+        #endregion
+        
+        #region Road Appearance fields
+        
+        private bool _roadAppearanceVisible;
+        
+        [HideInInspector]
+        public float roadWidth = 0.3f;
+        
+        [HideInInspector]
+        public float roadCurveFactor = 0.1f;
+        
+        [HideInInspector]
+        public int roadSmoothingIterations = 1;
+
+        [HideInInspector] [SerializeField]
+        public Material roadMaterial;
+
+        [HideInInspector]
+        public float roadTerrainOffsetY = 0.075f;
+        
+        #endregion
+        
         public IGenerator<City> Model
         {
             get
@@ -83,6 +116,45 @@ namespace App.ViewModel.Cities
             if (!_visible) return;
 
             EditorGUI.indentLevel++;
+            
+            DisplayRoadStrategy();
+            DisplayPlotStrategy();
+
+            EditorGUI.indentLevel--;
+        }
+
+        private void DisplayRoadAppearance()
+        {
+            _roadAppearanceVisible 
+                = EditorGUILayout.Foldout(_roadAppearanceVisible, "Road Appearance");
+            if (_roadAppearanceVisible)
+            {
+                EditorGUI.indentLevel++;
+                
+                // Road material
+                roadMaterial = (Material) EditorGUILayout.ObjectField(
+                    "Material", roadMaterial, typeof(Material), true);
+                
+                // Road width
+                roadWidth = EditorGUILayout.Slider("Width", roadWidth, 0.1f, 10);
+                
+                // Road/Terrain y-offset
+                roadTerrainOffsetY = EditorGUILayout.FloatField("Y-Offset", roadTerrainOffsetY);
+
+                // Road curvature and smoothing
+                roadCurveFactor = EditorGUILayout.Slider("Curvature", roadCurveFactor, 0, 0.5f);
+                if (roadCurveFactor > 0)
+                {
+                    roadSmoothingIterations = EditorGUILayout.IntSlider(
+                        "Smoothing Iterations", roadSmoothingIterations, 1, 10);   
+                }
+
+                EditorGUI.indentLevel--;
+            }
+        }
+        
+        private void DisplayRoadStrategy()
+        {
             _roadNetworkStrategyVisible 
                 = EditorGUILayout.Foldout(_roadNetworkStrategyVisible, "Road Network Generation");
             if (_roadNetworkStrategyVisible)
@@ -103,18 +175,24 @@ namespace App.ViewModel.Cities
                         throw new ArgumentOutOfRangeException();
                 }
                 EditorGUI.indentLevel--;
+                
+                DisplayRoadAppearance();
                 EditorGUI.indentLevel--;
             }
-            
+        }
+
+        private void DisplayPlotStrategy()
+        {
             _plotStrategyVisible = EditorGUILayout.Foldout(_plotStrategyVisible, "Plot Generation");
             if (_plotStrategyVisible)
             {
                 EditorGUI.indentLevel++;
+                plotMaterial = (Material) EditorGUILayout.ObjectField(
+                    "Plot Material", plotMaterial, typeof(Material), true);
                 plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", plotStrategy);
                 EditorGUI.indentLevel--;
             }
-
-            EditorGUI.indentLevel--;
         }
+        
     }
 }

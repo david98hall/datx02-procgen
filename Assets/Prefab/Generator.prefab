@@ -166,5 +166,9 @@ MonoBehaviour:
       origin: {x: 125, y: 125}
     roadNetworkStrategy: 0
     plotStrategy: 0
-  roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
-  plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
+    plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
+    roadWidth: 0.3
+    roadCurveFactor: 0.1
+    roadSmoothingIterations: 3
+    roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
+    roadTerrainOffsetY: 0.075
