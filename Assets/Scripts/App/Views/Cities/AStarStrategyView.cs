@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using Cities.Roads;
-using Interfaces;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModel.Cities
+namespace App.Views.Cities
 {
     [Serializable]
-    public class AStarStrategyModel : EditorStrategyView<float[,], RoadNetwork>
+    public class AStarStrategyView : EditorStrategyView<float[,], RoadNetwork>
     {
         [SerializeField]
         private float _heightBias;

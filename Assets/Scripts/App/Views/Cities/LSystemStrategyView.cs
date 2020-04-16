@@ -3,10 +3,10 @@ using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModel.Cities
+namespace App.Views.Cities
 {
     [Serializable]
-    public class LSystemStrategyModel : EditorStrategyView<float[,], RoadNetwork>
+    public class LSystemStrategyView : EditorStrategyView<float[,], RoadNetwork>
     {
         #region UI Fields
         /// <summary>

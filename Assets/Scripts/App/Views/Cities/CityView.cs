@@ -6,10 +6,10 @@ using Interfaces;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModel.Cities
+namespace App.Views.Cities
 {
     [Serializable]
-    public class CityGeneratorModel : EditorStrategyView<float[,], City>
+    public class CityView : EditorStrategyView<float[,], City>
     {
         private CityGenerator _generator;
         private bool _visible;
@@ -19,10 +19,10 @@ namespace App.ViewModel.Cities
         private bool _roadNetworkStrategyVisible;
         
         [SerializeField] 
-        private AStarStrategyModel _aStarStrategyModel;
+        private AStarStrategyView aStarStrategyView;
 
         [SerializeField] 
-        private LSystemStrategyModel _lSystemStrategyModel;
+        private LSystemStrategyView lSystemStrategyView;
         
         public enum RoadNetworkStrategy
         {
@@ -123,11 +123,11 @@ namespace App.ViewModel.Cities
         {
             _generator = new CityGenerator();
 
-            _aStarStrategyModel.Injector = Injector;
-            _lSystemStrategyModel.Injector = Injector;
+            aStarStrategyView.Injector = Injector;
+            lSystemStrategyView.Injector = Injector;
             
-            _aStarStrategyModel.Initialize();
-            _lSystemStrategyModel.Initialize();
+            aStarStrategyView.Initialize();
+            lSystemStrategyView.Initialize();
             
             // Plot strategies
             var plotStrategyFactory = new Factory(_generator);
@@ -195,10 +195,10 @@ namespace App.ViewModel.Cities
                 switch (_roadNetworkStrategy)
                 {
                     case RoadNetworkStrategy.LSystem:
-                        _lSystemStrategyModel.Display();
+                        lSystemStrategyView.Display();
                         break;
                     case RoadNetworkStrategy.AStar:
-                        _aStarStrategyModel.Display();
+                        aStarStrategyView.Display();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -233,10 +233,10 @@ namespace App.ViewModel.Cities
             switch (_roadNetworkStrategy)
             {
                 case RoadNetworkStrategy.LSystem:
-                    _generator.RoadNetworkStrategy = _lSystemStrategyModel;
+                    _generator.RoadNetworkStrategy = lSystemStrategyView;
                     break;
                 case RoadNetworkStrategy.AStar:
-                    _generator.RoadNetworkStrategy = _aStarStrategyModel;
+                    _generator.RoadNetworkStrategy = aStarStrategyView;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

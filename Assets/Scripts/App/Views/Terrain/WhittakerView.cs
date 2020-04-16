@@ -1,10 +1,9 @@
 using System;
-using Interfaces;
 using Terrain.Textures;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModel.Terrain
+namespace App.Views.Terrain
 {
     [Serializable]
     public class WhittakerStrategyModel : EditorStrategyView<float[,], Texture2D>

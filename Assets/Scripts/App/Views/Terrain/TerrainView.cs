@@ -3,10 +3,10 @@ using Terrain;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModel.Terrain
+namespace App.Views.Terrain
 {
     [Serializable]
-    public class TerrainGeneratorModel : EditorStrategyView<object, (Mesh, Texture2D)>
+    public class TerrainView : EditorStrategyView<object, (Mesh, Texture2D)>
     {
         private TerrainGenerator _generator;
         private bool _visible;
@@ -26,13 +26,13 @@ namespace App.ViewModel.Terrain
         #region UI Fields
 
         [SerializeField]
-        private PerlinNoiseStrategyModel _perlinNoiseStrategy;
+        private PerlinNoiseView _perlinNoiseStrategy;
 
         [SerializeField] 
         private WhittakerStrategyModel _whittakerStrategy;
 
         [SerializeField] 
-        private GrayScaleModel _grayScaleStrategy;
+        private GrayScaleView _grayScaleStrategy;
 
         [SerializeField] 
         private AnimationCurve _heightCurve;

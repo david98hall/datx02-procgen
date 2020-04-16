@@ -1,13 +1,12 @@
 using System;
-using Interfaces;
 using UnityEditor;
 using UnityEngine;
 using Factory = Terrain.Noise.Factory;
 
-namespace App.ViewModel.Terrain
+namespace App.Views.Terrain
 {
     [Serializable]
-    public class PerlinNoiseStrategyModel : EditorStrategyView<object, float[,]>
+    public class PerlinNoiseView : EditorStrategyView<object, float[,]>
     {
         #region UI Fields
         

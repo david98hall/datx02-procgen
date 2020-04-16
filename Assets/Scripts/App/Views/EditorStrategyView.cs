@@ -1,6 +1,6 @@
 ﻿using Interfaces;
 
-namespace App.ViewModel
+namespace App.Views
 {
     /// <summary>
     /// A view for a strategy to generate something based on an input.

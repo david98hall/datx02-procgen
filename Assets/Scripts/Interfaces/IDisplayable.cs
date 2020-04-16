@@ -1,4 +1,4 @@
-﻿namespace App.ViewModel
+﻿namespace Interfaces
 {
     /// <summary>
     /// Can be displayed.
