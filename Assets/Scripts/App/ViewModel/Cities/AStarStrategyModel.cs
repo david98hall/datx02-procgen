@@ -10,8 +10,12 @@ namespace App.ViewModel.Cities
     [Serializable]
     public class AStarStrategyModel : EditorStrategyView<float[,], RoadNetwork>
     {
+        [SerializeField]
         private float _heightBias;
+        
+        [SerializeField]
         private IList<(Vector2Int Start, Vector2Int Goal)> _paths;
+        
         private Factory _roadStrategyFactory;
 
         public override void Initialize()
@@ -52,7 +56,7 @@ namespace App.ViewModel.Cities
 
         public override RoadNetwork Generate()
         {
-            return _roadStrategyFactory.CreateAStarStrategy(_heightBias, _paths).Generate();
+            return _roadStrategyFactory?.CreateAStarStrategy(_heightBias, _paths).Generate();
         }
         
     }

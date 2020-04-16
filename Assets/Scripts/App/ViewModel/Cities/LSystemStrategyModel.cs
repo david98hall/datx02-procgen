@@ -1,6 +1,5 @@
 using System;
 using Cities.Roads;
-using Interfaces;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,12 +11,26 @@ namespace App.ViewModel.Cities
         /// <summary>
         /// The start point for the generation
         /// </summary>
-        public Vector2 Origin { get; private set; }
-        
+        public Vector2 Origin
+        {
+            get => _origin;
+            set => _origin = value;
+        }
+
+        [SerializeField]
+        private Vector2 _origin;
+
         /// <summary>
         /// How many times the L-system will be rewritten
         /// </summary>
-        public int RewritesCount { get; private set; } = 3;
+        public int RewritesCount
+        {
+            get => _rewritesCount;
+            set => _rewritesCount = value;
+        }
+
+        [SerializeField]
+        private int _rewritesCount;
         
         private Factory roadStrategyFactory;
 

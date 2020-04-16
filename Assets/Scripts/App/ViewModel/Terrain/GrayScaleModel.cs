@@ -10,18 +10,19 @@ namespace App.ViewModel.Terrain
     {
         private Factory _textureStrategyFactory;
 
-        public override Texture2D Generate()
-        {
-            return _textureStrategyFactory?.CreateGrayScaleStrategy().Generate();
-        }
-
-        public override void Display()
-        {
-        }
-
         public override void Initialize()
         {
             _textureStrategyFactory = new Factory(Injector);
         }
+        
+        public override void Display()
+        {
+        }
+
+        public override Texture2D Generate()
+        {
+            return _textureStrategyFactory?.CreateGrayScaleStrategy().Generate();
+        }
+        
     }
 }

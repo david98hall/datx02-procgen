@@ -10,28 +10,28 @@ namespace App.ViewModel.Terrain
     public class PerlinNoiseStrategyModel : EditorStrategyView<object, float[,]>
     {
         [SerializeField]
-        private int width;
+        private int _width;
         
         [SerializeField]
-        private int depth;
+        private int _depth;
         
         [SerializeField]
-        private int seed;
+        private int _seed;
         
         [SerializeField]
-        private float scale; 
+        private float _scale; 
         
         [SerializeField]
-        private int numOctaves;
+        private int _numOctaves;
         
         [SerializeField]
-        private float persistence;
+        private float _persistence;
         
         [SerializeField]
-        private float lacunarity;
+        private float _lacunarity;
         
         [SerializeField]
-        private Vector2 noiseOffset;
+        private Vector2 _noiseOffset;
 
         public override void Initialize()
         {
@@ -39,23 +39,23 @@ namespace App.ViewModel.Terrain
 
         public override void Display()
         {
-            width = EditorGUILayout.IntSlider("Width", width, 2, 250);
-            depth = EditorGUILayout.IntSlider("Depth", depth, 2, 250);
-            seed = EditorGUILayout.IntField("Seed", seed);
-            scale = EditorGUILayout.Slider("Scale", scale, 1, 100);
-            numOctaves = EditorGUILayout.IntSlider("Number of Octaves", numOctaves, 1, 10);
-            persistence = EditorGUILayout.Slider("Persistence", persistence, 0, 1);
-            lacunarity = EditorGUILayout.Slider("Lacunarity", lacunarity, 1, 10);
-            noiseOffset = EditorGUILayout.Vector2Field("Offset", noiseOffset);
+            _width = EditorGUILayout.IntSlider("Width", _width, 2, 250);
+            _depth = EditorGUILayout.IntSlider("Depth", _depth, 2, 250);
+            _seed = EditorGUILayout.IntField("Seed", _seed);
+            _scale = EditorGUILayout.Slider("Scale", _scale, 1, 100);
+            _numOctaves = EditorGUILayout.IntSlider("Number of Octaves", _numOctaves, 1, 10);
+            _persistence = EditorGUILayout.Slider("Persistence", _persistence, 0, 1);
+            _lacunarity = EditorGUILayout.Slider("Lacunarity", _lacunarity, 1, 10);
+            _noiseOffset = EditorGUILayout.Vector2Field("Offset", _noiseOffset);
         }
 
         public override float[,] Generate()
         {
             return Factory.CreatePerlinNoiseStrategy(
-                    width, depth, 
-                    seed, scale, 
-                    numOctaves, persistence, 
-                    lacunarity, noiseOffset)
+                    _width, _depth, 
+                    _seed, _scale, 
+                    _numOctaves, _persistence, 
+                    _lacunarity, _noiseOffset)
                 .Generate();
         }
     }

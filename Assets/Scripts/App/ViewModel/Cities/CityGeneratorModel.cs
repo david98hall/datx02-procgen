@@ -19,10 +19,10 @@ namespace App.ViewModel.Cities
         private bool _roadNetworkStrategyVisible;
         
         [SerializeField] 
-        private AStarStrategyModel aStarStrategyModel;
+        private AStarStrategyModel _aStarStrategyModel;
 
         [SerializeField] 
-        private LSystemStrategyModel lSystemStrategyModel;
+        private LSystemStrategyModel _lSystemStrategyModel;
         
         public enum RoadNetworkStrategy
         {
@@ -30,7 +30,7 @@ namespace App.ViewModel.Cities
         }
 
         [SerializeField]
-        private RoadNetworkStrategy roadNetworkStrategy;
+        private RoadNetworkStrategy _roadNetworkStrategy;
 
         #endregion
         
@@ -45,34 +45,77 @@ namespace App.ViewModel.Cities
         }
 
         [SerializeField] 
-        private PlotStrategy plotStrategy;
+        private PlotStrategy _plotStrategy;
 
+        public Material PlotMaterial
+        {
+            get => _plotMaterial;
+            set => _plotMaterial = value;
+        }
+        
         [SerializeField] 
-        private Material plotMaterial;
+        private Material _plotMaterial;
 
+        public bool DisplayPlots
+        {
+            get => _displayPlots;
+            set => _displayPlots = value;
+        }
+        
         [SerializeField] 
-        private bool displayPlots;
+        private bool _displayPlots;
         
         #endregion
         
         #region Road Appearance fields
         
         private bool _roadAppearanceVisible;
-        
-        [SerializeField]
-        private float roadWidth = 0.3f;
-        
-        [SerializeField]
-        private float roadCurveFactor = 0.1f;
-        
-        [SerializeField]
-        private int roadSmoothingIterations = 1;
 
+        public float RoadWidth
+        {
+            get => _roadWidth;
+            set => _roadWidth = value;
+        }
+        
         [SerializeField]
-        private Material roadMaterial;
+        private float _roadWidth = 0.3f;
+        
+        
+        public float RoadCurvature
+        {
+            get => _roadCurvature;
+            set => _roadCurvature = value;
+        }
+        
+        [SerializeField]
+        private float _roadCurvature = 0.1f;
+        
+        public int RoadSmoothingIterations
+        {
+            get => _roadSmoothingIterations;
+            set => _roadSmoothingIterations = value;
+        }
+        
+        [SerializeField]
+        private int _roadSmoothingIterations = 1;
 
+        public Material RoadMaterial
+        {
+            get => _roadMaterial;
+            set => _roadMaterial = value;
+        }
+        
         [SerializeField]
-        private float roadTerrainOffsetY = 0.075f;
+        private Material _roadMaterial;
+
+        public float RoadTerrainOffsetY
+        {
+            get => _roadTerrainOffsetY;
+            set => _roadTerrainOffsetY = value;
+        }
+        
+        [SerializeField]
+        private float _roadTerrainOffsetY = 0.075f;
         
         #endregion
 
@@ -81,8 +124,8 @@ namespace App.ViewModel.Cities
             _generator = new CityGenerator();
             
             // Road network strategies
-            aStarStrategyModel = new AStarStrategyModel();
-            lSystemStrategyModel = new LSystemStrategyModel();
+            _aStarStrategyModel = new AStarStrategyModel();
+            _lSystemStrategyModel = new LSystemStrategyModel();
             
             // Plot strategies
             var plotStrategyFactory = new Factory(_generator);
@@ -116,21 +159,21 @@ namespace App.ViewModel.Cities
                 EditorGUI.indentLevel++;
                 
                 // Road material
-                roadMaterial = (Material) EditorGUILayout.ObjectField(
-                    "Material", roadMaterial, typeof(Material), true);
+                _roadMaterial = (Material) EditorGUILayout.ObjectField(
+                    "Material", _roadMaterial, typeof(Material), true);
                 
                 // Road width
-                roadWidth = EditorGUILayout.Slider("Width", roadWidth, 0.1f, 10);
+                _roadWidth = EditorGUILayout.Slider("Width", _roadWidth, 0.1f, 10);
                 
                 // Road/Terrain y-offset
-                roadTerrainOffsetY = EditorGUILayout.FloatField("Y-Offset", roadTerrainOffsetY);
+                _roadTerrainOffsetY = EditorGUILayout.FloatField("Y-Offset", _roadTerrainOffsetY);
 
                 // Road curvature and smoothing
-                roadCurveFactor = EditorGUILayout.Slider("Curvature", roadCurveFactor, 0, 0.5f);
-                if (roadCurveFactor > 0)
+                _roadCurvature = EditorGUILayout.Slider("Curvature", _roadCurvature, 0, 0.5f);
+                if (_roadCurvature > 0)
                 {
-                    roadSmoothingIterations = EditorGUILayout.IntSlider(
-                        "Smoothing Iterations", roadSmoothingIterations, 1, 10);   
+                    _roadSmoothingIterations = EditorGUILayout.IntSlider(
+                        "Smoothing Iterations", _roadSmoothingIterations, 1, 10);   
                 }
 
                 EditorGUI.indentLevel--;
@@ -144,16 +187,16 @@ namespace App.ViewModel.Cities
             if (_roadNetworkStrategyVisible)
             {
                 EditorGUI.indentLevel++;
-                roadNetworkStrategy 
-                    = (RoadNetworkStrategy) EditorGUILayout.EnumPopup("Strategy", roadNetworkStrategy);
+                _roadNetworkStrategy 
+                    = (RoadNetworkStrategy) EditorGUILayout.EnumPopup("Strategy", _roadNetworkStrategy);
                 EditorGUI.indentLevel++;
-                switch (roadNetworkStrategy)
+                switch (_roadNetworkStrategy)
                 {
                     case RoadNetworkStrategy.LSystem:
-                        lSystemStrategyModel.Display();
+                        _lSystemStrategyModel.Display();
                         break;
                     case RoadNetworkStrategy.AStar:
-                        aStarStrategyModel.Display();
+                        _aStarStrategyModel.Display();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -171,12 +214,12 @@ namespace App.ViewModel.Cities
             if (_plotStrategyVisible)
             {
                 EditorGUI.indentLevel++;
-                plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", plotStrategy);
-                displayPlots = EditorGUILayout.Toggle("Display Plots", displayPlots);
-                if (displayPlots)
+                _plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", _plotStrategy);
+                _displayPlots = EditorGUILayout.Toggle("Display Plots", _displayPlots);
+                if (_displayPlots)
                 {
-                    plotMaterial = (Material) EditorGUILayout.ObjectField(
-                        "Plot Material", plotMaterial, typeof(Material), true);   
+                    _plotMaterial = (Material) EditorGUILayout.ObjectField(
+                        "Plot Material", _plotMaterial, typeof(Material), true);   
                 }
                 EditorGUI.indentLevel--;
             }
@@ -184,19 +227,19 @@ namespace App.ViewModel.Cities
 
         public override City Generate()
         {
-            switch (roadNetworkStrategy)
+            switch (_roadNetworkStrategy)
             {
                 case RoadNetworkStrategy.LSystem:
-                    _generator.RoadNetworkStrategy = lSystemStrategyModel;
+                    _generator.RoadNetworkStrategy = _lSystemStrategyModel;
                     break;
                 case RoadNetworkStrategy.AStar:
-                    _generator.RoadNetworkStrategy = aStarStrategyModel;
+                    _generator.RoadNetworkStrategy = _aStarStrategyModel;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
-            _generator.PlotStrategy = _plotStrategies[plotStrategy];
+            _generator.PlotStrategy = _plotStrategies[_plotStrategy];
             
             return _generator.Generate();
         }
