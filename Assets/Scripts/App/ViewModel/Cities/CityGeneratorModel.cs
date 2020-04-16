@@ -122,10 +122,12 @@ namespace App.ViewModel.Cities
         public override void Initialize()
         {
             _generator = new CityGenerator();
+
+            _aStarStrategyModel.Injector = Injector;
+            _lSystemStrategyModel.Injector = Injector;
             
-            // Road network strategies
-            _aStarStrategyModel = new AStarStrategyModel();
-            _lSystemStrategyModel = new LSystemStrategyModel();
+            _aStarStrategyModel.Initialize();
+            _lSystemStrategyModel.Initialize();
             
             // Plot strategies
             var plotStrategyFactory = new Factory(_generator);

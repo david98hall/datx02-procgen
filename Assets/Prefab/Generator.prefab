@@ -107,20 +107,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e871ea9684a47f487951c6d35ad71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainGeneratorModel:
-    perlinNoiseStrategy:
-      width: 250
-      depth: 250
-      seed: 0
-      scale: 61.7
-      numOctaves: 8
-      persistence: 0.566
-      lacunarity: 2.08
-      noiseOffset: {x: 12, y: 32}
-    whittakerStrategy:
-      precipitationScale: 60.4
-      temperatureScale: 23
-    heightCurve:
+  _terrainGeneratorModel:
+    _perlinNoiseStrategy:
+      _width: 250
+      _depth: 250
+      _seed: 0
+      _scale: 22.9
+      _numOctaves: 8
+      _persistence: 0.442
+      _lacunarity: 4.04
+      _noiseOffset: {x: 0, y: 0}
+    _whittakerStrategy:
+      _precipitationScale: 45.2
+      temperatureScale: 66.5
+    _heightCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
@@ -133,14 +133,14 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.40029085
-        value: 0.0031433906
-        inSlope: 0.027161926
-        outSlope: 0.027161926
+        time: 0.39964768
+        value: -0.0046410933
+        inSlope: 0.035778154
+        outSlope: 0.035778154
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.09660298
+        outWeight: 0.10626891
       - serializedVersion: 3
         time: 1
         value: 1
@@ -153,21 +153,21 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    heightScale: 56.1
-    noiseStrategy: 0
-    textureStrategy: 1
-  cityGeneratorModel:
-    aStarStrategyModel:
-      heightBias: 0.637
-      paths:
-      - start: {x: 0, y: 0}
-        goal: {x: 0, y: 0}
-    roadNetworkStrategy: 0
-    plotStrategy: 0
-    plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
-    displayPlots: 0
-    roadWidth: 0.3
-    roadCurveFactor: 0.1
-    roadSmoothingIterations: 1
-    roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
-    roadTerrainOffsetY: 0.075
+    _heightScale: 27.6
+    _noiseStrategy: 0
+    _textureStrategy: 1
+  _cityGeneratorModel:
+    _aStarStrategyModel:
+      _heightBias: 0
+    _lSystemStrategyModel:
+      _origin: {x: 125, y: 125}
+      _rewritesCount: 5
+    _roadNetworkStrategy: 0
+    _plotStrategy: 0
+    _plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
+    _displayPlots: 1
+    _roadWidth: 0.3
+    _roadCurvature: 0.1
+    _roadSmoothingIterations: 1
+    _roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
+    _roadTerrainOffsetY: 0.075

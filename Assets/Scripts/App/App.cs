@@ -78,12 +78,11 @@ namespace App
             _meshCollider = GetComponent<MeshCollider>();
             
             if (gameObjects == null) gameObjects = new HashSet<GameObject>();
-
-            _terrainGeneratorModel = new TerrainGeneratorModel();
+            
             _terrainGeneratorModel.Initialize();
             
             _model = new Model();
-            _cityGeneratorModel = new CityGeneratorModel {Injector = _model};
+            _cityGeneratorModel.Injector = _model;
             _cityGeneratorModel.Initialize();
             _initialized = true;
         }

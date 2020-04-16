@@ -47,9 +47,13 @@ namespace App.ViewModel.Terrain
         public override void Initialize()
         {
             _generator = new TerrainGenerator();
-            _perlinNoiseStrategy = new PerlinNoiseStrategyModel {Injector = _generator};
-            _whittakerStrategy = new WhittakerStrategyModel {Injector = _generator};
-            _grayScaleStrategy = new GrayScaleModel {Injector = _generator};
+            _perlinNoiseStrategy.Injector = _generator;
+            _whittakerStrategy.Injector = _generator;
+            _grayScaleStrategy.Injector = _generator;
+            
+            _perlinNoiseStrategy.Initialize();
+            _whittakerStrategy.Initialize();
+            _grayScaleStrategy.Initialize();
         }
 
         public override void Display()
@@ -111,7 +115,7 @@ namespace App.ViewModel.Terrain
         {
             _generator.HeightCurve = _heightCurve;
             _generator.HeightScale = _heightScale;
-
+            
             // Set the noise strategy
             switch (_noiseStrategy)
             {
