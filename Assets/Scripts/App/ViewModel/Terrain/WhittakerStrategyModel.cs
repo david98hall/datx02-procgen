@@ -15,7 +15,7 @@ namespace App.ViewModel.Terrain
         private float _precipitationScale;
 
         [SerializeField]
-        private float temperatureScale;
+        private float _temperatureScale;
 
         public override void Initialize()
         {
@@ -25,12 +25,12 @@ namespace App.ViewModel.Terrain
         public override void Display()
         {
             _precipitationScale = EditorGUILayout.Slider("Precipitation scale", _precipitationScale, 1, 100);
-            temperatureScale = EditorGUILayout.Slider("Temperature scale", temperatureScale, 1, 100);
+            _temperatureScale = EditorGUILayout.Slider("Temperature scale", _temperatureScale, 1, 100);
         }
 
         public override Texture2D Generate()
         {
-            return _textureStrategyFactory?.CreateWhittakerStrategy().Generate();
+            return _textureStrategyFactory?.CreateWhittakerStrategy(_precipitationScale, _temperatureScale).Generate();
         }
     }
 }
