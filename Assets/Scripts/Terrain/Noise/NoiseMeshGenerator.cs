@@ -50,7 +50,6 @@ namespace Terrain.Noise
 
             if (!(width > 0 && height > 0))
             {
-                Debug.Log("NoiseMeshGenerator.cs" + (width, height));
                 throw new IndexOutOfRangeException("Invalid width or height");
             }
 
