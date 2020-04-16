@@ -15,12 +15,17 @@ namespace App.ViewModel.Cities
         [HideInInspector] 
         public Vector2 origin;
         
+        // How many times the L-system will be rewritten
+        [HideInInspector] 
+        public int rewritesCount = 3;
+        
         public IGenerator<RoadNetwork> Model
         {
             get
             {
-                // Update the origin
+                // Update strategy parameters
                 _strategy.Origin = origin;
+                _strategy.RewritesCount = rewritesCount;
                 return _strategy;
             }
             set => _strategy = value as LSystemStrategy;
@@ -30,6 +35,10 @@ namespace App.ViewModel.Cities
         {
             // Display a field for setting the start point of the L-system generation
             origin = EditorGUILayout.Vector2Field("Origin", origin);
+            
+            // Display a slider for the number of rewrites the L-system
+            // will go through before returning the road network
+            rewritesCount = EditorGUILayout.IntSlider("Rewrite Count", rewritesCount, 3, 7);
         }
     }
 }

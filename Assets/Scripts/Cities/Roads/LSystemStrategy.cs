@@ -10,17 +10,21 @@ namespace Cities.Roads{
         /// </summary>
         internal Vector2 Origin { get; set; }
         
-        int iterations;
+        /// <summary>
+        /// The number of times this strategy will rewrite the
+        /// L-system before returning a road network based on it.
+        /// </summary>
+        internal int RewritesCount { get; set; }
 
-        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int i = 6) 
+        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int rewritesCount = 6) 
             : base(terrainNoiseMapInjector)
         {
-            iterations = i;
+            RewritesCount = rewritesCount;
         }
 
         public override RoadNetwork Generate(){
             var system = new Lsystem('F', Origin, Injector);
-            for (var i = 0; i < iterations; i++)
+            for (var i = 0; i < RewritesCount; i++)
             {
                 system.Rewrite();
             }
