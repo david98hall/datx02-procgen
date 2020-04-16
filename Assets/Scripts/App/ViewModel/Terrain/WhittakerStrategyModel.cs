@@ -7,31 +7,30 @@ using UnityEngine;
 namespace App.ViewModel.Terrain
 {
     [Serializable]
-    public class WhittakerStrategyModel : IViewAdapter<IGenerator<Texture2D>>
+    public class WhittakerStrategyModel : EditorStrategyView<float[,], Texture2D>
     {
-        private WhittakerStrategy _strategy;
-
-        [HideInInspector] 
-        public float precipitationScale;
-
-        [HideInInspector]
-        public float temperatureScale;
-
-        public IGenerator<Texture2D> Model 
-        {
-            get
-            {
-                _strategy.PrecipitationScale = precipitationScale;
-                _strategy.TemperatureScale = temperatureScale;
-                return _strategy;
-            }
-            set => _strategy = value as WhittakerStrategy; 
-        }
+        private Factory _textureStrategyFactory;
         
-        public void Display()
+        [SerializeField] 
+        private float precipitationScale;
+
+        [SerializeField]
+        private float temperatureScale;
+
+        public override void Initialize()
+        {
+            _textureStrategyFactory = new Factory(Injector);
+        }
+
+        public override void Display()
         {
             precipitationScale = EditorGUILayout.Slider("Precipitation scale", precipitationScale, 1, 100);
             temperatureScale = EditorGUILayout.Slider("Temperature scale", temperatureScale, 1, 100);
+        }
+
+        public override Texture2D Generate()
+        {
+            return new Factory(Injector).CreateWhittakerStrategy().Generate();
         }
     }
 }

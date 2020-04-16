@@ -162,8 +162,6 @@ MonoBehaviour:
       paths:
       - start: {x: 0, y: 0}
         goal: {x: 0, y: 0}
-    lSystemStrategyModel:
-      origin: {x: 125, y: 125}
     roadNetworkStrategy: 0
     plotStrategy: 0
     plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}

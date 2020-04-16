@@ -8,63 +8,52 @@ using UnityEngine;
 namespace App.ViewModel.Cities
 {
     [Serializable]
-    public class AStarStrategyModel : IViewAdapter<IGenerator<RoadNetwork>>
+    public class AStarStrategyModel : EditorStrategyView<float[,], RoadNetwork>
     {
-        private AStarStrategy _aStarStrategy;
+        private float _heightBias;
+        private IList<(Vector2Int Start, Vector2Int Goal)> _paths;
+        private Factory _roadStrategyFactory;
 
-        [HideInInspector] 
-        public float heightBias;
-        
-        [HideInInspector]
-        public List<Path> paths;
-
-        public IGenerator<RoadNetwork> Model
+        public override void Initialize()
         {
-            get
-            {
-                _aStarStrategy.HeightBias = heightBias;
-                foreach (var path in paths)
-                {
-                    _aStarStrategy.Add(path.start, path.goal);
-                }
-                return _aStarStrategy;
-            }
-            set => _aStarStrategy = value as AStarStrategy;
+            _roadStrategyFactory = new Factory(Injector);
+            _paths = new List<(Vector2Int Start, Vector2Int Goal)> {(Vector2Int.zero, Vector2Int.zero)};
         }
-
-        public void Display()
+        
+        public override void Display()
         {
-            heightBias = EditorGUILayout.Slider("Height Bias", heightBias, 0, 1);
+            _heightBias = EditorGUILayout.Slider("Height Bias", _heightBias, 0, 1);
             
             EditorGUILayout.LabelField("Paths");
             EditorGUI.indentLevel++;
-            foreach (var node in paths)
+            for (var i = 0; i < _paths.Count; i++)
             {
-                node.start = EditorGUILayout.Vector2IntField("Start", node.start);
-                node.goal = EditorGUILayout.Vector2IntField("Goal", node.goal);
+                var (start, goal) = _paths[i];
+                var newStart = EditorGUILayout.Vector2IntField("Start", start);
+                var newGoal = EditorGUILayout.Vector2IntField("Goal", goal);
+                _paths[i] = (newStart, newGoal);
                 EditorGUILayout.Space();
             }
             
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Add Path"))
             {
-                paths.Add(new Path());
+                _paths.Add((Vector2Int.zero, Vector2Int.zero));
             }
             
             if (GUILayout.Button("Clear Paths"))
             {
-                paths.Clear();
+                _paths.Clear();
             }
             
             GUILayout.EndHorizontal();
             EditorGUI.indentLevel--;
         }
-        
-        [Serializable]
-        public class Path
+
+        public override RoadNetwork Generate()
         {
-            public Vector2Int start;
-            public Vector2Int goal;
+            return _roadStrategyFactory.CreateAStarStrategy(_heightBias, _paths).Generate();
         }
+        
     }
 }

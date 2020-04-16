@@ -9,7 +9,7 @@ using UnityEngine;
 namespace App.ViewModel.Cities
 {
     [Serializable]
-    public class CityGeneratorModel : IViewAdapter<IGenerator<City>>
+    public class CityGeneratorModel : EditorStrategyView<float[,], City>
     {
         private CityGenerator _generator;
         private bool _visible;
@@ -29,8 +29,8 @@ namespace App.ViewModel.Cities
             LSystem, AStar
         }
 
-        [HideInInspector]
-        public RoadNetworkStrategy roadNetworkStrategy;
+        [SerializeField]
+        private RoadNetworkStrategy roadNetworkStrategy;
 
         #endregion
         
@@ -44,14 +44,14 @@ namespace App.ViewModel.Cities
             MinimalCycle, ClockWiseCycle, BruteMinimalCycle
         }
 
-        [HideInInspector] 
-        public PlotStrategy plotStrategy;
+        [SerializeField] 
+        private PlotStrategy plotStrategy;
 
-        [SerializeField] [HideInInspector] 
-        public Material plotMaterial;
+        [SerializeField] 
+        private Material plotMaterial;
 
-        [HideInInspector] 
-        public bool displayPlots;
+        [SerializeField] 
+        private bool displayPlots;
         
         #endregion
         
@@ -59,61 +59,42 @@ namespace App.ViewModel.Cities
         
         private bool _roadAppearanceVisible;
         
-        [HideInInspector]
-        public float roadWidth = 0.3f;
+        [SerializeField]
+        private float roadWidth = 0.3f;
         
-        [HideInInspector]
-        public float roadCurveFactor = 0.1f;
+        [SerializeField]
+        private float roadCurveFactor = 0.1f;
         
-        [HideInInspector]
-        public int roadSmoothingIterations = 1;
+        [SerializeField]
+        private int roadSmoothingIterations = 1;
 
-        [HideInInspector] [SerializeField]
-        public Material roadMaterial;
+        [SerializeField]
+        private Material roadMaterial;
 
-        [HideInInspector]
-        public float roadTerrainOffsetY = 0.075f;
+        [SerializeField]
+        private float roadTerrainOffsetY = 0.075f;
         
         #endregion
-        
-        public IGenerator<City> Model
+
+        public override void Initialize()
         {
-            get
+            _generator = new CityGenerator();
+            
+            // Road network strategies
+            aStarStrategyModel = new AStarStrategyModel();
+            lSystemStrategyModel = new LSystemStrategyModel();
+            
+            // Plot strategies
+            var plotStrategyFactory = new Factory(_generator);
+            _plotStrategies = new Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>>
             {
-                switch (roadNetworkStrategy)
-                {
-                    case RoadNetworkStrategy.LSystem:
-                        _generator.RoadNetworkStrategy = lSystemStrategyModel.Model;
-                        break;
-                    case RoadNetworkStrategy.AStar:
-                        _generator.RoadNetworkStrategy = aStarStrategyModel.Model;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-
-                _generator.PlotStrategy = _plotStrategies[plotStrategy];
-                return _generator;
-            }
-            set
-            {
-                _generator = value as CityGenerator;
-                var plotStrategyFactory = new Factory(_generator);
-
-                _plotStrategies = new Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>>
-                {
-                    [PlotStrategy.MinimalCycle] = plotStrategyFactory.CreateMinimalCycleStrategy(),
-                    [PlotStrategy.ClockWiseCycle] = plotStrategyFactory.CreateClockwiseCycleStrategy(),
-                    [PlotStrategy.BruteMinimalCycle] = plotStrategyFactory.CreateBruteMinimalCycleStrategy(),
-                };
-
-                var roadNetworkStrategyFactory = _generator?.RoadNetworkFactory;
-                aStarStrategyModel.Model = roadNetworkStrategyFactory?.CreateAStarStrategy();
-                lSystemStrategyModel.Model = roadNetworkStrategyFactory?.CreateLSystemStrategy();
-            }
+                [PlotStrategy.MinimalCycle] = plotStrategyFactory.CreateMinimalCycleStrategy(),
+                [PlotStrategy.ClockWiseCycle] = plotStrategyFactory.CreateClockwiseCycleStrategy(),
+                [PlotStrategy.BruteMinimalCycle] = plotStrategyFactory.CreateBruteMinimalCycleStrategy(),
+            };
         }
-
-        public void Display()
+        
+        public override void Display()
         {
             _visible = EditorGUILayout.Foldout(_visible,"City Generation");
             if (!_visible) return;
@@ -199,6 +180,25 @@ namespace App.ViewModel.Cities
                 }
                 EditorGUI.indentLevel--;
             }
+        }
+
+        public override City Generate()
+        {
+            switch (roadNetworkStrategy)
+            {
+                case RoadNetworkStrategy.LSystem:
+                    _generator.RoadNetworkStrategy = lSystemStrategyModel;
+                    break;
+                case RoadNetworkStrategy.AStar:
+                    _generator.RoadNetworkStrategy = aStarStrategyModel;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            _generator.PlotStrategy = _plotStrategies[plotStrategy];
+            
+            return _generator.Generate();
         }
         
     }

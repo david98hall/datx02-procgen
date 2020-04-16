@@ -1,14 +1,12 @@
 using System;
-using Interfaces;
 using Terrain;
 using UnityEditor;
 using UnityEngine;
-using Factory = Terrain.Noise.Factory;
 
 namespace App.ViewModel.Terrain
 {
     [Serializable]
-    public class TerrainGeneratorModel : IViewAdapter<IGenerator<(Mesh, Texture2D)>>
+    public class TerrainGeneratorModel : EditorStrategyView<object, (Mesh, Texture2D)>
     {
         private TerrainGenerator _generator;
         private bool _visible;
@@ -34,58 +32,27 @@ namespace App.ViewModel.Terrain
             GrayScale, Whittaker
         }
 
-        [HideInInspector] 
-        public AnimationCurve heightCurve;
+        [SerializeField] 
+        private AnimationCurve heightCurve;
         
-        [HideInInspector]
-        public float heightScale;
+        [SerializeField]
+        private float heightScale;
 
-        [HideInInspector]
-        public NoiseStrategy noiseStrategy;
+        [SerializeField]
+        private NoiseStrategy noiseStrategy;
 
-        [HideInInspector]
-        public TextureStrategy textureStrategy;
+        [SerializeField]
+        private TextureStrategy textureStrategy;
 
-        public IGenerator<(Mesh, Texture2D)> Model {
-            get
-            {
-                _generator.HeightCurve = heightCurve;
-                _generator.HeightScale = heightScale;
-
-                switch (noiseStrategy)
-                {
-                    case NoiseStrategy.PerlinNoise:
-                        _generator.NoiseStrategy = perlinNoiseStrategy.Model;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-                
-                switch (textureStrategy)
-                {
-                    case TextureStrategy.GrayScale:
-                        _generator.TextureStrategy = grayScaleStrategy.Model;
-                        break;
-                    case TextureStrategy.Whittaker:
-                        _generator.TextureStrategy = whittakerStrategy.Model;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-                return _generator;
-            }
-            set
-            {
-                _generator = value as TerrainGenerator;
-                perlinNoiseStrategy.Model = new Factory().CreatePerlinNoiseStrategy();
-                if (_generator is null) return;
-                var factory = _generator.TextureStrategyFactory;
-                grayScaleStrategy.Model = factory.CreateGrayScaleStrategy();
-                whittakerStrategy.Model = factory.CreateWhittakerStrategy();
-            }
+        public override void Initialize()
+        {
+            _generator = new TerrainGenerator();
+            perlinNoiseStrategy.Injector = _generator;
+            whittakerStrategy.Injector = _generator;
+            grayScaleStrategy.Injector = _generator;
         }
 
-        public void Display()
+        public override void Display()
         {
             _visible = EditorGUILayout.Foldout(_visible,"Terrain Generation");
             if (!_visible) return;
@@ -138,6 +105,37 @@ namespace App.ViewModel.Terrain
             }
             
             EditorGUI.indentLevel--;
+        }
+
+        public override (Mesh, Texture2D) Generate()
+        {
+            _generator.HeightCurve = heightCurve;
+            _generator.HeightScale = heightScale;
+
+            // Set the noise strategy
+            switch (noiseStrategy)
+            {
+                case NoiseStrategy.PerlinNoise:
+                    _generator.NoiseStrategy = perlinNoiseStrategy;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+                
+            // Set texture strategy
+            switch (textureStrategy)
+            {
+                case TextureStrategy.GrayScale:
+                    _generator.TextureStrategy = grayScaleStrategy;
+                    break;
+                case TextureStrategy.Whittaker:
+                    _generator.TextureStrategy = whittakerStrategy;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
+            return _generator.Generate();
         }
     }
 }

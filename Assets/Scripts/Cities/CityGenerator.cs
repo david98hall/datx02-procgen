@@ -35,20 +35,12 @@ namespace Cities
 
         private readonly IInjector<float[,]> _heightMapInjector;
 
-        public Cities.Roads.Factory RoadNetworkFactory { get; }
         public CityGenerator()
         {
             _roadNetworkGenerator = new Generator<RoadNetwork>();
             _plotsGenerator = new Generator<IEnumerable<Plot>>();
         }
-        
-        public CityGenerator(IInjector<float[,]> heightMapInjector)
-        {
-            _roadNetworkGenerator = new Generator<RoadNetwork>();
-            _plotsGenerator = new Generator<IEnumerable<Plot>>();
-            RoadNetworkFactory = new Roads.Factory(heightMapInjector);
-        }
-        
+
         public City Generate()
         {
             _roadNetwork = _roadNetworkGenerator.Generate();

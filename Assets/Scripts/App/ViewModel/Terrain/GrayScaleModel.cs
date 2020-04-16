@@ -6,18 +6,22 @@ using UnityEngine;
 namespace App.ViewModel.Terrain
 {
     [Serializable]
-    public class GrayScaleModel : IViewAdapter<IGenerator<Texture2D>>
+    public class GrayScaleModel : EditorStrategyView<float[,], Texture2D>
     {
-        private GrayScaleStrategy _strategy;
+        private Factory _textureStrategyFactory;
 
-        public IGenerator<Texture2D> Model
+        public override Texture2D Generate()
         {
-            get => _strategy;
-            set => _strategy = value as GrayScaleStrategy;
+            return _textureStrategyFactory?.CreateGrayScaleStrategy().Generate();
         }
 
-        public void Display()
+        public override void Display()
         {
+        }
+
+        public override void Initialize()
+        {
+            _textureStrategyFactory = new Factory(Injector);
         }
     }
 }

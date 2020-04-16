@@ -26,20 +26,18 @@ namespace App
         
         [SerializeField]
         private HashSet<GameObject> gameObjects;
-
+        
         [SerializeField]
-        [HideInInspector]
-        private TerrainGeneratorModel terrainGeneratorModel;
-
+        private TerrainGeneratorModel _terrainGeneratorModel;
+        
         [SerializeField]
-        [HideInInspector]
-        private CityGeneratorModel cityGeneratorModel;
+        private CityGeneratorModel _cityGeneratorModel;
 
         public void Generate()
         {
             if (!_initialized) Init();
-            (_model.Mesh, _model.Texture) = terrainGeneratorModel.Model.Generate();
-            _model.City = cityGeneratorModel.Model.Generate();
+            (_model.Mesh, _model.Texture) = _terrainGeneratorModel.Generate();
+            _model.City = _cityGeneratorModel.Generate();
 
             _meshCollider.sharedMesh = _model.Mesh;
             _meshFilter.sharedMesh = _model.Mesh;
@@ -51,16 +49,16 @@ namespace App
             // Set the values of the path object generator according to the UI-values
             var pathObjectGenerator = new PathObjectGenerator
             {
-                PathWidth = cityGeneratorModel.roadWidth,
-                CurveFactor = cityGeneratorModel.roadCurveFactor,
-                SmoothingIterations = cityGeneratorModel.roadSmoothingIterations,
-                TerrainOffsetY = cityGeneratorModel.roadTerrainOffsetY
+                PathWidth = _cityGeneratorModel.roadWidth,
+                CurveFactor = _cityGeneratorModel.roadCurveFactor,
+                SmoothingIterations = _cityGeneratorModel.roadSmoothingIterations,
+                TerrainOffsetY = _cityGeneratorModel.roadTerrainOffsetY
             };
             
-            if (cityGeneratorModel.displayPlots)
+            if (_cityGeneratorModel.displayPlots)
             {
                 // Display plot borders
-                pathObjectGenerator.PathMaterial = cityGeneratorModel.plotMaterial;
+                pathObjectGenerator.PathMaterial = _cityGeneratorModel.plotMaterial;
                 gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
                     _model.City.Plots.Select(p => p.Vertices),
                     _meshFilter, _meshCollider,
@@ -68,7 +66,7 @@ namespace App
             }
 
             // Display roads
-            pathObjectGenerator.PathMaterial = cityGeneratorModel.roadMaterial;
+            pathObjectGenerator.PathMaterial = _cityGeneratorModel.roadMaterial;
             gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
                 _model.City.RoadNetwork.GetRoads(), 
                 _meshFilter, _meshCollider,
@@ -82,15 +80,14 @@ namespace App
             _meshCollider = GetComponent<MeshCollider>();
             if (gameObjects == null) gameObjects = new HashSet<GameObject>();
             _model = new Model();
-            terrainGeneratorModel.Model = new TerrainGenerator();
-            cityGeneratorModel.Model = new CityGenerator(_model);
+            _cityGeneratorModel = new CityGeneratorModel(_model);
             _initialized = true;
         }
 
         public void DisplayEditor()
         {
-            terrainGeneratorModel.Display();
-            cityGeneratorModel.Display();
+            _terrainGeneratorModel.Display();
+            _cityGeneratorModel.Display();
         }
         
         private class Model : IInjector<float[,]>

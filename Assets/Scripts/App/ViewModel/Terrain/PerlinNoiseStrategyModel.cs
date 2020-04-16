@@ -1,56 +1,43 @@
 using System;
 using Interfaces;
-using Terrain.Noise;
 using UnityEditor;
 using UnityEngine;
+using Factory = Terrain.Noise.Factory;
 
 namespace App.ViewModel.Terrain
 {
     [Serializable]
-    public class PerlinNoiseStrategyModel : IViewAdapter<IGenerator<float[,]>>
+    public class PerlinNoiseStrategyModel : EditorStrategyView<object, float[,]>
     {
-        private PerlinNoiseStrategy _strategy;
+        [SerializeField]
+        private int width;
         
-        [HideInInspector]
-        public int width;
+        [SerializeField]
+        private int depth;
         
-        [HideInInspector]
-        public int depth;
+        [SerializeField]
+        private int seed;
         
-        [HideInInspector] 
-        public int seed;
+        [SerializeField]
+        private float scale; 
+        
+        [SerializeField]
+        private int numOctaves;
+        
+        [SerializeField]
+        private float persistence;
+        
+        [SerializeField]
+        private float lacunarity;
+        
+        [SerializeField]
+        private Vector2 noiseOffset;
 
-        [HideInInspector]
-        public float scale;
-
-        [HideInInspector] 
-        public int numOctaves;
-        
-        [HideInInspector] 
-        public float persistence;
-        
-        [HideInInspector] 
-        public float lacunarity;
-        
-        [HideInInspector] 
-        public Vector2 noiseOffset;
-
-        public IGenerator<float[,]> Model {
-            get
-            {
-                _strategy.Width = width;
-                _strategy.Depth = depth;
-                _strategy.Seed = seed;
-                _strategy.Scale = scale;
-                _strategy.NumOctaves = numOctaves;
-                _strategy.Lacunarity = lacunarity;
-                _strategy.NoiseOffset = noiseOffset;
-                return _strategy;
-            }
-            set => _strategy = value as PerlinNoiseStrategy;
+        public override void Initialize()
+        {
         }
 
-        public void Display()
+        public override void Display()
         {
             width = EditorGUILayout.IntSlider("Width", width, 2, 250);
             depth = EditorGUILayout.IntSlider("Depth", depth, 2, 250);
@@ -60,6 +47,16 @@ namespace App.ViewModel.Terrain
             persistence = EditorGUILayout.Slider("Persistence", persistence, 0, 1);
             lacunarity = EditorGUILayout.Slider("Lacunarity", lacunarity, 1, 10);
             noiseOffset = EditorGUILayout.Vector2Field("Offset", noiseOffset);
+        }
+
+        public override float[,] Generate()
+        {
+            return Factory.CreatePerlinNoiseStrategy(
+                    width, depth, 
+                    seed, scale, 
+                    numOctaves, persistence, 
+                    lacunarity, noiseOffset)
+                .Generate();
         }
     }
 }

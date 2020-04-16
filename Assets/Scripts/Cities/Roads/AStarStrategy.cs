@@ -51,9 +51,27 @@ namespace Cities.Roads
         /// Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.
         /// </summary>
         /// <param name="heightMapInjector">Non null height map injector object.</param>
-        internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector) : base(heightMapInjector)
+        internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector) 
+            : this(heightMapInjector, null)
+        {
+        }
+        
+        /// <summary>
+        /// Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.
+        /// </summary>
+        /// <param name="heightMapInjector">Non null height map injector object.</param>
+        internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector, 
+            IEnumerable<(Vector2Int Start, Vector2Int End)> paths) 
+            : base(heightMapInjector)
         {
             _paths = new Dictionary<Vector2Int, ISet<Vector2Int>>();
+
+            // Add any given paths
+            if (paths == null) return;
+            foreach (var (start, end) in paths)
+            {
+                Add(start, end);
+            }
         }
         
         #endregion
