@@ -112,14 +112,14 @@ MonoBehaviour:
       _width: 250
       _depth: 250
       _seed: 0
-      _scale: 22.9
+      _scale: 50
       _numOctaves: 8
-      _persistence: 0.442
-      _lacunarity: 4.04
+      _persistence: 0.075
+      _lacunarity: 7.5
       _noiseOffset: {x: 0, y: 0}
     _whittakerStrategy:
       _precipitationScale: 45.2
-      temperatureScale: 66.5
+      _temperatureScale: 18
     _heightCurve:
       serializedVersion: 2
       m_Curve:
@@ -153,7 +153,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _heightScale: 27.6
+    _heightScale: 20
     _noiseStrategy: 0
     _textureStrategy: 1
   _cityGeneratorModel:
@@ -161,13 +161,13 @@ MonoBehaviour:
       _heightBias: 0
     _lSystemStrategyModel:
       _origin: {x: 125, y: 125}
-      _rewritesCount: 5
+      _rewritesCount: 6
     _roadNetworkStrategy: 0
     _plotStrategy: 0
     _plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
     _displayPlots: 1
     _roadWidth: 0.3
     _roadCurvature: 0.1
-    _roadSmoothingIterations: 1
+    _roadSmoothingIterations: 3
     _roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
     _roadTerrainOffsetY: 0.075
