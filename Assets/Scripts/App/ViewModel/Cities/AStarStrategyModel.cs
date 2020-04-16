@@ -26,8 +26,10 @@ namespace App.ViewModel.Cities
         
         public override void Display()
         {
+            // Update the height bias
             _heightBias = EditorGUILayout.Slider("Height Bias", _heightBias, 0, 1);
             
+            // Update the paths
             EditorGUILayout.LabelField("Paths");
             EditorGUI.indentLevel++;
             for (var i = 0; i < _paths.Count; i++)
@@ -39,13 +41,15 @@ namespace App.ViewModel.Cities
                 EditorGUILayout.Space();
             }
             
+            // Control for adding a new path
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Add Path"))
             {
                 _paths.Add((Vector2Int.zero, Vector2Int.zero));
             }
             
-            if (GUILayout.Button("Clear Paths"))
+            // Control for discarding all paths
+            if (GUILayout.Button("Discard Paths"))
             {
                 _paths.Clear();
             }
@@ -53,11 +57,9 @@ namespace App.ViewModel.Cities
             GUILayout.EndHorizontal();
             EditorGUI.indentLevel--;
         }
-
-        public override RoadNetwork Generate()
-        {
-            return _roadStrategyFactory?.CreateAStarStrategy(_heightBias, _paths).Generate();
-        }
+        
+        public override RoadNetwork Generate() => 
+            _roadStrategyFactory?.CreateAStarStrategy(_heightBias, _paths).Generate();
         
     }
 }

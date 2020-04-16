@@ -226,9 +226,10 @@ namespace App.ViewModel.Cities
                 EditorGUI.indentLevel--;
             }
         }
-
+        
         public override City Generate()
         {
+            // Set the road network generation strategy
             switch (_roadNetworkStrategy)
             {
                 case RoadNetworkStrategy.LSystem:
@@ -241,8 +242,10 @@ namespace App.ViewModel.Cities
                     throw new ArgumentOutOfRangeException();
             }
 
+            // Set the plot generation strategy
             _generator.PlotStrategy = _plotStrategies[_plotStrategy];
             
+            // Generate a city
             return _generator.Generate();
         }
         

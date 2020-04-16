@@ -8,6 +8,7 @@ namespace App.ViewModel.Cities
     [Serializable]
     public class LSystemStrategyModel : EditorStrategyView<float[,], RoadNetwork>
     {
+        #region UI Fields
         /// <summary>
         /// The start point for the generation
         /// </summary>
@@ -31,13 +32,11 @@ namespace App.ViewModel.Cities
 
         [SerializeField]
         private int _rewritesCount;
+        #endregion
         
         private Factory roadStrategyFactory;
 
-        public override void Initialize()
-        {
-            roadStrategyFactory = new Factory(Injector);
-        }
+        public override void Initialize() => roadStrategyFactory = new Factory(Injector);
         
         public override void Display()
         {
@@ -48,10 +47,8 @@ namespace App.ViewModel.Cities
             // will go through before returning the road network
             RewritesCount = EditorGUILayout.IntSlider("Rewrite Count", RewritesCount, 3, 7);
         }
-
-        public override RoadNetwork Generate()
-        {
-            return roadStrategyFactory.CreateLSystemStrategy(Origin, RewritesCount).Generate();
-        }
+        
+        public override RoadNetwork Generate() => 
+            roadStrategyFactory.CreateLSystemStrategy(Origin, RewritesCount).Generate();
     }
 }

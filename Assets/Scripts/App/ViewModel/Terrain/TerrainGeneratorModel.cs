@@ -13,15 +13,6 @@ namespace App.ViewModel.Terrain
         private bool _noiseStrategyVisible;
         private bool _textureStrategyVisible;
 
-        [SerializeField]
-        private PerlinNoiseStrategyModel _perlinNoiseStrategy;
-
-        [SerializeField] 
-        private WhittakerStrategyModel _whittakerStrategy;
-
-        [SerializeField] 
-        private GrayScaleModel _grayScaleStrategy;
-
         public enum NoiseStrategy
         {
             PerlinNoise
@@ -31,6 +22,17 @@ namespace App.ViewModel.Terrain
         {
             GrayScale, Whittaker
         }
+
+        #region UI Fields
+
+        [SerializeField]
+        private PerlinNoiseStrategyModel _perlinNoiseStrategy;
+
+        [SerializeField] 
+        private WhittakerStrategyModel _whittakerStrategy;
+
+        [SerializeField] 
+        private GrayScaleModel _grayScaleStrategy;
 
         [SerializeField] 
         private AnimationCurve _heightCurve;
@@ -43,6 +45,8 @@ namespace App.ViewModel.Terrain
 
         [SerializeField]
         private TextureStrategy _textureStrategy;
+
+        #endregion
 
         public override void Initialize()
         {

@@ -17,10 +17,7 @@ namespace App.ViewModel.Terrain
         [SerializeField]
         private float _temperatureScale;
 
-        public override void Initialize()
-        {
-            _textureStrategyFactory = new Factory(Injector);
-        }
+        public override void Initialize() => _textureStrategyFactory = new Factory(Injector);
 
         public override void Display()
         {
@@ -28,9 +25,7 @@ namespace App.ViewModel.Terrain
             _temperatureScale = EditorGUILayout.Slider("Temperature scale", _temperatureScale, 1, 100);
         }
 
-        public override Texture2D Generate()
-        {
-            return _textureStrategyFactory?.CreateWhittakerStrategy(_precipitationScale, _temperatureScale).Generate();
-        }
+        public override Texture2D Generate() => 
+            _textureStrategyFactory?.CreateWhittakerStrategy(_precipitationScale, _temperatureScale).Generate();
     }
 }

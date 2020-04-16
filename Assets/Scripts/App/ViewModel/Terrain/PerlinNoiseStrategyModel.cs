@@ -9,6 +9,8 @@ namespace App.ViewModel.Terrain
     [Serializable]
     public class PerlinNoiseStrategyModel : EditorStrategyView<object, float[,]>
     {
+        #region UI Fields
+        
         [SerializeField]
         private int _width;
         
@@ -33,9 +35,7 @@ namespace App.ViewModel.Terrain
         [SerializeField]
         private Vector2 _noiseOffset;
 
-        public override void Initialize()
-        {
-        }
+        #endregion
 
         public override void Display()
         {
@@ -49,14 +49,12 @@ namespace App.ViewModel.Terrain
             _noiseOffset = EditorGUILayout.Vector2Field("Offset", _noiseOffset);
         }
 
-        public override float[,] Generate()
-        {
-            return Factory.CreatePerlinNoiseStrategy(
+        public override float[,] Generate() => 
+            Factory.CreatePerlinNoiseStrategy(
                     _width, _depth, 
                     _seed, _scale, 
                     _numOctaves, _persistence, 
                     _lacunarity, _noiseOffset)
                 .Generate();
-        }
     }
 }
