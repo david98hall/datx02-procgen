@@ -2,10 +2,10 @@ using System;
 using Terrain.Textures;
 using UnityEngine;
 
-namespace App.Views.Terrain
+namespace App.ViewModels.Terrain
 {
     [Serializable]
-    public class GrayScaleView : EditorStrategyView<float[,], Texture2D>
+    public class GrayScaleStrategy : ViewModelStrategy<float[,], Texture2D>
     {
         private Factory _textureStrategyFactory;
 

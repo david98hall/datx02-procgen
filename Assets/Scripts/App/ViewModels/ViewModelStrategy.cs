@@ -1,15 +1,15 @@
 ﻿using Interfaces;
 
-namespace App.Views
+namespace App.ViewModels
 {
     /// <summary>
     /// A view for a strategy to generate something based on an input.
     /// </summary>
     /// <typeparam name="TI">The input type of the generation.</typeparam>
     /// <typeparam name="TO">The output type of the generation.</typeparam>
-    public abstract class EditorStrategyView<TI, TO> : Strategy<TI, TO>, IDisplayable, IInitializable
+    public abstract class ViewModelStrategy<TI, TO> : Strategy<TI, TO>, IDisplayable, IInitializable
     {
-        protected EditorStrategyView() : base(null)
+        protected ViewModelStrategy() : base(null)
         {
         }
 

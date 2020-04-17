@@ -3,10 +3,10 @@ using Terrain;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.Views.Terrain
+namespace App.ViewModels.Terrain
 {
     [Serializable]
-    public class TerrainView : EditorStrategyView<object, (Mesh, Texture2D)>
+    public class TerrainViewModel : ViewModelStrategy<object, (Mesh, Texture2D)>
     {
         private TerrainGenerator _generator;
         private bool _visible;
@@ -26,38 +26,38 @@ namespace App.Views.Terrain
         #region UI Fields
 
         [SerializeField]
-        private PerlinNoiseView _perlinNoiseStrategy;
+        private PerlinNoiseStrategy perlinNoiseStrategy;
 
         [SerializeField] 
-        private WhittakerStrategyModel _whittakerStrategy;
+        private WhittakerStrategy whittakerStrategy;
 
         [SerializeField] 
-        private GrayScaleView _grayScaleStrategy;
+        private GrayScaleStrategy grayScaleStrategy;
 
         [SerializeField] 
-        private AnimationCurve _heightCurve;
+        private AnimationCurve heightCurve;
         
         [SerializeField]
-        private float _heightScale;
+        private float heightScale;
 
         [SerializeField]
-        private NoiseStrategy _noiseStrategy;
+        private NoiseStrategy noiseStrategy;
 
         [SerializeField]
-        private TextureStrategy _textureStrategy;
+        private TextureStrategy textureStrategy;
 
         #endregion
 
         public override void Initialize()
         {
             _generator = new TerrainGenerator();
-            _perlinNoiseStrategy.Injector = _generator;
-            _whittakerStrategy.Injector = _generator;
-            _grayScaleStrategy.Injector = _generator;
+            perlinNoiseStrategy.Injector = _generator;
+            whittakerStrategy.Injector = _generator;
+            grayScaleStrategy.Injector = _generator;
             
-            _perlinNoiseStrategy.Initialize();
-            _whittakerStrategy.Initialize();
-            _grayScaleStrategy.Initialize();
+            perlinNoiseStrategy.Initialize();
+            whittakerStrategy.Initialize();
+            grayScaleStrategy.Initialize();
         }
 
         public override void Display()
@@ -66,20 +66,20 @@ namespace App.Views.Terrain
             if (!_visible) return;
 
             EditorGUI.indentLevel++;
-            _heightCurve = EditorGUILayout.CurveField("Height Curve", _heightCurve ?? new AnimationCurve());
-            _heightScale = EditorGUILayout.Slider("Height Scale", _heightScale, 0, 100);
+            heightCurve = EditorGUILayout.CurveField("Height Curve", heightCurve ?? new AnimationCurve());
+            heightScale = EditorGUILayout.Slider("Height Scale", heightScale, 0, 100);
 
             _noiseStrategyVisible = EditorGUILayout.Foldout(_noiseStrategyVisible, "Noise Generation");
             if (_noiseStrategyVisible)
             {
                 EditorGUI.indentLevel++;
-                _noiseStrategy = (NoiseStrategy) EditorGUILayout.EnumPopup("Strategy", _noiseStrategy);
+                noiseStrategy = (NoiseStrategy) EditorGUILayout.EnumPopup("Strategy", noiseStrategy);
 
                 EditorGUI.indentLevel++;
-                switch (_noiseStrategy)
+                switch (noiseStrategy)
                 {
                     case NoiseStrategy.PerlinNoise:
-                        _perlinNoiseStrategy.Display();
+                        perlinNoiseStrategy.Display();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -93,16 +93,16 @@ namespace App.Views.Terrain
             if (_textureStrategyVisible)
             {
                 EditorGUI.indentLevel++;
-                _textureStrategy = (TextureStrategy) EditorGUILayout.EnumPopup("Strategy", _textureStrategy);
+                textureStrategy = (TextureStrategy) EditorGUILayout.EnumPopup("Strategy", textureStrategy);
 
                 EditorGUI.indentLevel++;
-                switch (_textureStrategy)
+                switch (textureStrategy)
                 {
                     case TextureStrategy.GrayScale:
-                        _grayScaleStrategy.Display();
+                        grayScaleStrategy.Display();
                         break;
                     case TextureStrategy.Whittaker:
-                        _whittakerStrategy.Display();
+                        whittakerStrategy.Display();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -117,27 +117,27 @@ namespace App.Views.Terrain
 
         public override (Mesh, Texture2D) Generate()
         {
-            _generator.HeightCurve = _heightCurve;
-            _generator.HeightScale = _heightScale;
+            _generator.HeightCurve = heightCurve;
+            _generator.HeightScale = heightScale;
             
             // Set the noise strategy
-            switch (_noiseStrategy)
+            switch (noiseStrategy)
             {
                 case NoiseStrategy.PerlinNoise:
-                    _generator.NoiseStrategy = _perlinNoiseStrategy;
+                    _generator.NoiseStrategy = perlinNoiseStrategy;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
                 
             // Set texture strategy
-            switch (_textureStrategy)
+            switch (textureStrategy)
             {
                 case TextureStrategy.GrayScale:
-                    _generator.TextureStrategy = _grayScaleStrategy;
+                    _generator.TextureStrategy = grayScaleStrategy;
                     break;
                 case TextureStrategy.Whittaker:
-                    _generator.TextureStrategy = _whittakerStrategy;
+                    _generator.TextureStrategy = whittakerStrategy;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using App.Views.Cities;
-using App.Views.Terrain;
+using App.ViewModels.Cities;
+using App.ViewModels.Terrain;
 using Cities;
 using Extensions;
 using Interfaces;
@@ -14,7 +14,7 @@ namespace App
     [Serializable]
     [ExecuteInEditMode]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider))]
-    public class App : MonoBehaviour, IInitializable
+    public class AppController : MonoBehaviour, IInitializable
     {
         private bool _initialized;
         private MeshFilter _meshFilter;
@@ -26,16 +26,16 @@ namespace App
         private HashSet<GameObject> gameObjects;
         
         [SerializeField]
-        private TerrainView terrainView;
+        private TerrainViewModel terrainViewModel;
         
         [SerializeField]
-        private CityView cityView;
+        private CityModel cityModel;
 
         public void Generate()
         {
             if (!_initialized) Initialize();
-            (_model.Mesh, _model.Texture) = terrainView.Generate();
-            _model.City = cityView.Generate();
+            (_model.Mesh, _model.Texture) = terrainViewModel.Generate();
+            _model.City = cityModel.Generate();
 
             _meshCollider.sharedMesh = _model.Mesh;
             _meshFilter.sharedMesh = _model.Mesh;
@@ -47,16 +47,16 @@ namespace App
             // Set the values of the path object generator according to the UI-values
             var pathObjectGenerator = new PathObjectGenerator
             {
-                PathWidth = cityView.RoadWidth,
-                CurveFactor = cityView.RoadCurvature,
-                SmoothingIterations = cityView.RoadSmoothingIterations,
-                TerrainOffsetY = cityView.RoadTerrainOffsetY
+                PathWidth = cityModel.RoadWidth,
+                CurveFactor = cityModel.RoadCurvature,
+                SmoothingIterations = cityModel.RoadSmoothingIterations,
+                TerrainOffsetY = cityModel.RoadTerrainOffsetY
             };
             
-            if (cityView.DisplayPlots)
+            if (cityModel.DisplayPlots)
             {
                 // Display plot borders
-                pathObjectGenerator.PathMaterial = cityView.PlotMaterial;
+                pathObjectGenerator.PathMaterial = cityModel.PlotMaterial;
                 gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
                     _model.City.Plots.Select(p => p.Vertices),
                     _meshFilter, _meshCollider,
@@ -64,7 +64,7 @@ namespace App
             }
 
             // Display roads
-            pathObjectGenerator.PathMaterial = cityView.RoadMaterial;
+            pathObjectGenerator.PathMaterial = cityModel.RoadMaterial;
             gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
                 _model.City.RoadNetwork.GetRoads(), 
                 _meshFilter, _meshCollider,
@@ -79,18 +79,18 @@ namespace App
             
             if (gameObjects == null) gameObjects = new HashSet<GameObject>();
             
-            terrainView.Initialize();
+            terrainViewModel.Initialize();
             
             _model = new Model();
-            cityView.Injector = _model;
-            cityView.Initialize();
+            cityModel.Injector = _model;
+            cityModel.Initialize();
             _initialized = true;
         }
 
         public void DisplayEditor()
         {
-            terrainView.Display();
-            cityView.Display();
+            terrainViewModel.Display();
+            cityModel.Display();
         }
         
         private class Model : IInjector<float[,]>

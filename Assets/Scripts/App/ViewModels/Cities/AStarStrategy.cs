@@ -4,39 +4,39 @@ using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.Views.Cities
+namespace App.ViewModels.Cities
 {
     [Serializable]
-    public class AStarStrategyView : EditorStrategyView<float[,], RoadNetwork>
+    public class AStarStrategy : ViewModelStrategy<float[,], RoadNetwork>
     {
         [SerializeField]
-        private float _heightBias;
+        private float heightBias;
         
         [SerializeField]
-        private IList<(Vector2Int Start, Vector2Int Goal)> _paths;
+        private IList<(Vector2Int, Vector2Int)> paths;
         
         private Factory _roadStrategyFactory;
 
         public override void Initialize()
         {
             _roadStrategyFactory = new Factory(Injector);
-            _paths = new List<(Vector2Int Start, Vector2Int Goal)> {(Vector2Int.zero, Vector2Int.zero)};
+            paths = new List<(Vector2Int, Vector2Int)> {(Vector2Int.zero, Vector2Int.zero)};
         }
         
         public override void Display()
         {
             // Update the height bias
-            _heightBias = EditorGUILayout.Slider("Height Bias", _heightBias, 0, 1);
+            heightBias = EditorGUILayout.Slider("Height Bias", heightBias, 0, 1);
             
             // Update the paths
             EditorGUILayout.LabelField("Paths");
             EditorGUI.indentLevel++;
-            for (var i = 0; i < _paths.Count; i++)
+            for (var i = 0; i < paths.Count; i++)
             {
-                var (start, goal) = _paths[i];
+                var (start, goal) = paths[i];
                 var newStart = EditorGUILayout.Vector2IntField("Start", start);
                 var newGoal = EditorGUILayout.Vector2IntField("Goal", goal);
-                _paths[i] = (newStart, newGoal);
+                paths[i] = (newStart, newGoal);
                 EditorGUILayout.Space();
             }
             
@@ -44,13 +44,13 @@ namespace App.Views.Cities
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Add Path"))
             {
-                _paths.Add((Vector2Int.zero, Vector2Int.zero));
+                paths.Add((Vector2Int.zero, Vector2Int.zero));
             }
             
             // Control for discarding all paths
             if (GUILayout.Button("Discard Paths"))
             {
-                _paths.Clear();
+                paths.Clear();
             }
             
             GUILayout.EndHorizontal();
@@ -58,7 +58,7 @@ namespace App.Views.Cities
         }
         
         public override RoadNetwork Generate() => 
-            _roadStrategyFactory?.CreateAStarStrategy(_heightBias, _paths).Generate();
+            _roadStrategyFactory?.CreateAStarStrategy(heightBias, paths).Generate();
         
     }
 }

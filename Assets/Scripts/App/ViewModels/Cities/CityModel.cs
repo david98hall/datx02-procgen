@@ -6,10 +6,10 @@ using Interfaces;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.Views.Cities
+namespace App.ViewModels.Cities
 {
     [Serializable]
-    public class CityView : EditorStrategyView<float[,], City>
+    public class CityModel : ViewModelStrategy<float[,], City>
     {
         private CityGenerator _generator;
         private bool _visible;
@@ -19,10 +19,10 @@ namespace App.Views.Cities
         private bool _roadNetworkStrategyVisible;
         
         [SerializeField] 
-        private AStarStrategyView aStarStrategyView;
+        private AStarStrategy aStarStrategy;
 
         [SerializeField] 
-        private LSystemStrategyView lSystemStrategyView;
+        private LSystemStrategy lSystemStrategy;
         
         public enum RoadNetworkStrategy
         {
@@ -30,7 +30,7 @@ namespace App.Views.Cities
         }
 
         [SerializeField]
-        private RoadNetworkStrategy _roadNetworkStrategy;
+        private RoadNetworkStrategy roadNetworkStrategy;
 
         #endregion
         
@@ -45,25 +45,25 @@ namespace App.Views.Cities
         }
 
         [SerializeField] 
-        private PlotStrategy _plotStrategy;
+        private PlotStrategy plotStrategy;
 
         public Material PlotMaterial
         {
-            get => _plotMaterial;
-            set => _plotMaterial = value;
+            get => plotMaterial;
+            set => plotMaterial = value;
         }
         
         [SerializeField] 
-        private Material _plotMaterial;
+        private Material plotMaterial;
 
         public bool DisplayPlots
         {
-            get => _displayPlots;
-            set => _displayPlots = value;
+            get => displayPlots;
+            set => displayPlots = value;
         }
         
         [SerializeField] 
-        private bool _displayPlots;
+        private bool displayPlots;
         
         #endregion
         
@@ -73,49 +73,49 @@ namespace App.Views.Cities
 
         public float RoadWidth
         {
-            get => _roadWidth;
-            set => _roadWidth = value;
+            get => roadWidth;
+            set => roadWidth = value;
         }
         
         [SerializeField]
-        private float _roadWidth = 0.3f;
+        private float roadWidth = 0.3f;
         
         
         public float RoadCurvature
         {
-            get => _roadCurvature;
-            set => _roadCurvature = value;
+            get => roadCurvature;
+            set => roadCurvature = value;
         }
         
         [SerializeField]
-        private float _roadCurvature = 0.1f;
+        private float roadCurvature = 0.1f;
         
         public int RoadSmoothingIterations
         {
-            get => _roadSmoothingIterations;
-            set => _roadSmoothingIterations = value;
+            get => roadSmoothingIterations;
+            set => roadSmoothingIterations = value;
         }
         
         [SerializeField]
-        private int _roadSmoothingIterations = 1;
+        private int roadSmoothingIterations = 1;
 
         public Material RoadMaterial
         {
-            get => _roadMaterial;
-            set => _roadMaterial = value;
+            get => roadMaterial;
+            set => roadMaterial = value;
         }
         
         [SerializeField]
-        private Material _roadMaterial;
+        private Material roadMaterial;
 
         public float RoadTerrainOffsetY
         {
-            get => _roadTerrainOffsetY;
-            set => _roadTerrainOffsetY = value;
+            get => roadTerrainOffsetY;
+            set => roadTerrainOffsetY = value;
         }
         
         [SerializeField]
-        private float _roadTerrainOffsetY = 0.075f;
+        private float roadTerrainOffsetY = 0.075f;
         
         #endregion
 
@@ -123,11 +123,11 @@ namespace App.Views.Cities
         {
             _generator = new CityGenerator();
 
-            aStarStrategyView.Injector = Injector;
-            lSystemStrategyView.Injector = Injector;
+            aStarStrategy.Injector = Injector;
+            lSystemStrategy.Injector = Injector;
             
-            aStarStrategyView.Initialize();
-            lSystemStrategyView.Initialize();
+            aStarStrategy.Initialize();
+            lSystemStrategy.Initialize();
             
             // Plot strategies
             var plotStrategyFactory = new Factory(_generator);
@@ -156,30 +156,28 @@ namespace App.Views.Cities
         {
             _roadAppearanceVisible 
                 = EditorGUILayout.Foldout(_roadAppearanceVisible, "Road Appearance");
-            if (_roadAppearanceVisible)
+            if (!_roadAppearanceVisible) return;
+            EditorGUI.indentLevel++;
+                
+            // Road material
+            roadMaterial = (Material) EditorGUILayout.ObjectField(
+                "Material", roadMaterial, typeof(Material), true);
+                
+            // Road width
+            roadWidth = EditorGUILayout.Slider("Width", roadWidth, 0.1f, 10);
+                
+            // Road/Terrain y-offset
+            roadTerrainOffsetY = EditorGUILayout.FloatField("Y-Offset", roadTerrainOffsetY);
+
+            // Road curvature and smoothing
+            roadCurvature = EditorGUILayout.Slider("Curvature", roadCurvature, 0, 0.5f);
+            if (roadCurvature > 0)
             {
-                EditorGUI.indentLevel++;
-                
-                // Road material
-                _roadMaterial = (Material) EditorGUILayout.ObjectField(
-                    "Material", _roadMaterial, typeof(Material), true);
-                
-                // Road width
-                _roadWidth = EditorGUILayout.Slider("Width", _roadWidth, 0.1f, 10);
-                
-                // Road/Terrain y-offset
-                _roadTerrainOffsetY = EditorGUILayout.FloatField("Y-Offset", _roadTerrainOffsetY);
-
-                // Road curvature and smoothing
-                _roadCurvature = EditorGUILayout.Slider("Curvature", _roadCurvature, 0, 0.5f);
-                if (_roadCurvature > 0)
-                {
-                    _roadSmoothingIterations = EditorGUILayout.IntSlider(
-                        "Smoothing Iterations", _roadSmoothingIterations, 1, 10);   
-                }
-
-                EditorGUI.indentLevel--;
+                roadSmoothingIterations = EditorGUILayout.IntSlider(
+                    "Smoothing Iterations", roadSmoothingIterations, 1, 10);   
             }
+
+            EditorGUI.indentLevel--;
         }
         
         private void DisplayRoadStrategy()
@@ -189,16 +187,16 @@ namespace App.Views.Cities
             if (_roadNetworkStrategyVisible)
             {
                 EditorGUI.indentLevel++;
-                _roadNetworkStrategy 
-                    = (RoadNetworkStrategy) EditorGUILayout.EnumPopup("Strategy", _roadNetworkStrategy);
+                roadNetworkStrategy 
+                    = (RoadNetworkStrategy) EditorGUILayout.EnumPopup("Strategy", roadNetworkStrategy);
                 EditorGUI.indentLevel++;
-                switch (_roadNetworkStrategy)
+                switch (roadNetworkStrategy)
                 {
                     case RoadNetworkStrategy.LSystem:
-                        lSystemStrategyView.Display();
+                        lSystemStrategy.Display();
                         break;
                     case RoadNetworkStrategy.AStar:
-                        aStarStrategyView.Display();
+                        aStarStrategy.Display();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -216,12 +214,12 @@ namespace App.Views.Cities
             if (_plotStrategyVisible)
             {
                 EditorGUI.indentLevel++;
-                _plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", _plotStrategy);
-                _displayPlots = EditorGUILayout.Toggle("Display Plots", _displayPlots);
-                if (_displayPlots)
+                plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", plotStrategy);
+                displayPlots = EditorGUILayout.Toggle("Display Plots", displayPlots);
+                if (displayPlots)
                 {
-                    _plotMaterial = (Material) EditorGUILayout.ObjectField(
-                        "Plot Material", _plotMaterial, typeof(Material), true);   
+                    plotMaterial = (Material) EditorGUILayout.ObjectField(
+                        "Plot Material", plotMaterial, typeof(Material), true);   
                 }
                 EditorGUI.indentLevel--;
             }
@@ -230,20 +228,20 @@ namespace App.Views.Cities
         public override City Generate()
         {
             // Set the road network generation strategy
-            switch (_roadNetworkStrategy)
+            switch (roadNetworkStrategy)
             {
                 case RoadNetworkStrategy.LSystem:
-                    _generator.RoadNetworkStrategy = lSystemStrategyView;
+                    _generator.RoadNetworkStrategy = lSystemStrategy;
                     break;
                 case RoadNetworkStrategy.AStar:
-                    _generator.RoadNetworkStrategy = aStarStrategyView;
+                    _generator.RoadNetworkStrategy = aStarStrategy;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
             // Set the plot generation strategy
-            _generator.PlotStrategy = _plotStrategies[_plotStrategy];
+            _generator.PlotStrategy = _plotStrategies[plotStrategy];
             
             // Generate a city
             return _generator.Generate();
