@@ -48,10 +48,11 @@ namespace Cities.Roads
         }
 
         /// <summary>
-        /// Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.
+        /// Constructs a new A* Generator with a given terrain mesh filter injector and an
+        /// empty set of start and goal nodes.
         /// </summary>
-        /// <param name="heightMapInjector">Non null height map injector object.</param>
-        internal AStarStrategy([NotNull] IInjector<MeshFilter> filterInjector) : base(filterInjector)
+        /// <param name="terrainMeshInjector">Non null terrain mesh filter injector object.</param>
+        internal AStarStrategy([NotNull] IInjector<MeshFilter> terrainMeshInjector) : base(terrainMeshInjector)
         {
             _paths = new Dictionary<Vector2Int, ISet<Vector2Int>>();
         }

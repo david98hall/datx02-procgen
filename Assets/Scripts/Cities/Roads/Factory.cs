@@ -9,31 +9,25 @@ namespace Cities.Roads
     /// </summary>
     public class Factory
     {
-
-        private readonly IInjector<float[,]> _terrainMeshNoiseMapInjector;
-        private readonly IInjector<MeshFilter> filterInjector;
+        private readonly IInjector<MeshFilter> _terrainMeshInjector;
         
         /// <summary>
-        /// Initializes this factory with a noise map injector.
+        /// Initializes this factory with a terrain mesh filter injector.
         /// </summary>
-        /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
-        public Factory(IInjector<float[,]> terrainMeshNoiseMapInjector)
+        /// <param name="terrainMeshInjector">The terrain mesh filter injector.</param>
+        public Factory(IInjector<MeshFilter> terrainMeshInjector)
         {
-            _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
-        }
-        public Factory(IInjector<MeshFilter> filterInjector)
-        {
-            this.filterInjector = filterInjector;
+            _terrainMeshInjector = terrainMeshInjector;
         }
 
-        public IGenerator<RoadNetwork> CreateAStarStrategy() => new AStarStrategy(filterInjector);
+        public IGenerator<RoadNetwork> CreateAStarStrategy() => new AStarStrategy(_terrainMeshInjector);
 
-        public IGenerator<RoadNetwork> CreateLSystemStrategy() => new LSystemStrategy(filterInjector);
+        public IGenerator<RoadNetwork> CreateLSystemStrategy() => new LSystemStrategy(_terrainMeshInjector);
 
         /// <summary>
         /// Creates a sample strategy for testing.
         /// </summary>
         /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(filterInjector);
+        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshInjector);
     }
 }

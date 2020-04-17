@@ -58,10 +58,11 @@ namespace Cities.Roads
             this.filterInjector = filterInjector;
             meshFilter = filterInjector.Get();
             mesh = meshFilter.sharedMesh;
-            minX = mesh.bounds.min.x + meshFilter.transform.localPosition.x;
-            minZ = mesh.bounds.min.z + meshFilter.transform.localPosition.z;
-            maxX = mesh.bounds.max.x + meshFilter.transform.localPosition.x;
-            maxZ = mesh.bounds.max.z + meshFilter.transform.localPosition.z;
+            var localPosition = meshFilter.transform.localPosition;
+            minX = mesh.bounds.min.x + localPosition.x;
+            minZ = mesh.bounds.min.z + localPosition.z;
+            maxX = mesh.bounds.max.x + localPosition.x;
+            maxZ = mesh.bounds.max.z + localPosition.z;
             axiom = c;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
             ruleset.Add('F',"F+FB-]");

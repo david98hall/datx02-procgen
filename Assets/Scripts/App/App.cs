@@ -4,10 +4,8 @@ using System.Linq;
 using App.ViewModel.Cities;
 using App.ViewModel.Terrain;
 using Cities;
-using Extensions;
 using Interfaces;
 using Terrain;
-using UnityEditor;
 using UnityEngine;
 using Utils.Paths;
 
@@ -38,11 +36,12 @@ namespace App
         public void Generate()
         {
             if (!_initialized) Init();
-            (_model.Mesh, _model.Texture) = terrainGeneratorModel.Model.Generate();
+            (_model.MeshFilter.sharedMesh, _model.Texture) = terrainGeneratorModel.Model.Generate();
             _model.City = cityGeneratorModel.Model.Generate();
 
-            _meshCollider.sharedMesh = _model.Mesh;
-            _meshFilter.sharedMesh = _model.Mesh;
+            var mesh = _model.MeshFilter.sharedMesh;
+            _meshCollider.sharedMesh = mesh;
+            _meshFilter.sharedMesh = mesh;
             _meshRenderer.sharedMaterial.mainTexture = _model.Texture;
 
             foreach (var obj in gameObjects) DestroyImmediate(obj);
@@ -81,7 +80,7 @@ namespace App
             _meshRenderer = GetComponent<MeshRenderer>();
             _meshCollider = GetComponent<MeshCollider>();
             if (gameObjects == null) gameObjects = new HashSet<GameObject>();
-            _model = new Model();
+            _model = new Model {MeshFilter = _meshFilter};
             terrainGeneratorModel.Model = new TerrainGenerator();
             cityGeneratorModel.Model = new CityGenerator(_model);
             _initialized = true;
@@ -93,14 +92,14 @@ namespace App
             cityGeneratorModel.Display();
         }
         
-        private class Model : IInjector<float[,]>
+        private class Model : IInjector<MeshFilter>
         {
-            internal Mesh Mesh;
+            internal MeshFilter MeshFilter { get; set; }
 
-            internal Texture Texture;
-            internal City City;
+            internal Texture Texture { get; set; }
+            internal City City { get; set; }
 
-            public float[,] Get() => Mesh.HeightMap();
+            public MeshFilter Get() => MeshFilter;
         }
     }
 }
