@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace App.ViewModels.Cities
 {
+    /// <summary>
+    /// A view model strategy for displaying settings for generating road networks with the L-system strategy. 
+    /// </summary>
     [Serializable]
     public class LSystemStrategy : ViewModelStrategy<float[,], RoadNetwork>
     {
