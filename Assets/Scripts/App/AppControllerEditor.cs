@@ -4,17 +4,20 @@ using UnityEngine;
 
 namespace App
 {
+    /// <summary>
+    /// Custom editor for the application controller.
+    /// Is required for displaying the custom views instead of the default editor.
+    /// </summary>
     [CustomEditor(typeof(AppController))]
     public class AppControllerEditor : Editor
     {
-        private bool _terrainGenerator;
-        private bool _noiseGenerator;
-        private bool _textureGenerator;
-        
+        /// <summary>
+        /// Overrides the default editor inspector and displays the custom editor.
+        /// </summary>
         public override void OnInspectorGUI()
         {
             if (!(target is AppController controller)) return;
-            controller.DisplayEditor();
+            controller.Display();
 
             if (GUILayout.Button("Update")) controller.Generate();
 

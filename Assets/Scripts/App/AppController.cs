@@ -11,31 +11,77 @@ using Utils.Paths;
 
 namespace App
 {
+    /// <summary>
+    /// View controller script for controlling the procedural generator from a Unity editor
+    /// 
+    /// </summary>
     [Serializable]
     [ExecuteInEditMode]
-    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider))]
-    public class AppController : MonoBehaviour, IInitializable
+    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), 
+        typeof(MeshCollider))]
+    public class AppController : MonoBehaviour, IInitializable, IDisplayable
     {
+        #region Models
+
+        /// <summary>
+        /// Boolean for if the run-time objects have been initialized.
+        /// Is required for performance to not perform expensive operations twice.
+        /// </summary>
         private bool _initialized;
-        private MeshFilter _meshFilter;
-        private MeshRenderer _meshRenderer;
-        private MeshCollider _meshCollider;
+        
+        /// <summary>
+        /// Model containing all generated content.
+        /// </summary>
         private Model _model;
         
-        [SerializeField]
-        private HashSet<GameObject> gameObjects;
-        
+        /// <summary>
+        /// Serialized view-model for <see cref="TerrainViewModel"/> view model.
+        /// </summary>
         [SerializeField]
         private TerrainViewModel terrainViewModel;
         
+        /// <summary>
+        /// Serialized view-model for <see cref="TerrainViewModel"/> view model.
+        /// </summary>
         [SerializeField]
-        private CityModel cityModel;
+        private CityViewModel cityViewModel;
 
+        #endregion
+
+        #region Unity objects
+
+        /// <summary>
+        /// Filter for displaying meshes and game objects
+        /// </summary>
+        private MeshFilter _meshFilter;
+        
+        /// <summary>
+        /// Renderer for display textures.
+        /// </summary>
+        private MeshRenderer _meshRenderer;
+        
+        /// <summary>
+        /// Collider for displaying game objects.
+        /// </summary>
+        private MeshCollider _meshCollider;
+        
+        /// <summary>
+        /// Serialized set of all created game objects.
+        /// </summary>
+        [SerializeField]
+        private HashSet<GameObject> gameObjects;
+
+        #endregion
+        
+        /// <summary>
+        /// Delegates the generation to the underlying view models.
+        /// Displays the generated content using the unity objects
+        /// </summary>
         public void Generate()
         {
             if (!_initialized) Initialize();
             (_model.Mesh, _model.Texture) = terrainViewModel.Generate();
-            _model.City = cityModel.Generate();
+            _model.City = cityViewModel.Generate();
 
             _meshCollider.sharedMesh = _model.Mesh;
             _meshFilter.sharedMesh = _model.Mesh;
@@ -47,16 +93,16 @@ namespace App
             // Set the values of the path object generator according to the UI-values
             var pathObjectGenerator = new PathObjectGenerator
             {
-                PathWidth = cityModel.RoadWidth,
-                CurveFactor = cityModel.RoadCurvature,
-                SmoothingIterations = cityModel.RoadSmoothingIterations,
-                TerrainOffsetY = cityModel.RoadTerrainOffsetY
+                PathWidth = cityViewModel.RoadWidth,
+                CurveFactor = cityViewModel.RoadCurvature,
+                SmoothingIterations = cityViewModel.RoadSmoothingIterations,
+                TerrainOffsetY = cityViewModel.RoadTerrainOffsetY
             };
             
-            if (cityModel.DisplayPlots)
+            if (cityViewModel.DisplayPlots)
             {
                 // Display plot borders
-                pathObjectGenerator.PathMaterial = cityModel.PlotMaterial;
+                pathObjectGenerator.PathMaterial = cityViewModel.PlotMaterial;
                 gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
                     _model.City.Plots.Select(p => p.Vertices),
                     _meshFilter, _meshCollider,
@@ -64,13 +110,17 @@ namespace App
             }
 
             // Display roads
-            pathObjectGenerator.PathMaterial = cityModel.RoadMaterial;
+            pathObjectGenerator.PathMaterial = cityViewModel.RoadMaterial;
             gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
                 _model.City.RoadNetwork.GetRoads(), 
                 _meshFilter, _meshCollider,
                 "Road Network", "Road"));
         }
         
+        /// <summary>
+        /// Is required for initializing the non-serializable properties of the view model.
+        /// Should only be called once due to expensive operations.
+        /// </summary>
         public void Initialize()
         {
             _meshFilter = GetComponent<MeshFilter>();
@@ -82,24 +132,44 @@ namespace App
             terrainViewModel.Initialize();
             
             _model = new Model();
-            cityModel.Injector = _model;
-            cityModel.Initialize();
+            cityViewModel.Injector = _model;
+            cityViewModel.Initialize();
             _initialized = true;
         }
 
-        public void DisplayEditor()
+        /// <summary>
+        /// Displays the editors of the underlying view models.
+        /// </summary>
+        public void Display()
         {
             terrainViewModel.Display();
-            cityModel.Display();
+            cityViewModel.Display();
         }
         
+        /// <summary>
+        /// The run-time model of all generated content.
+        /// </summary>
         private class Model : IInjector<float[,]>
         {
+            /// <summary>
+            /// Generated terrain mesh.
+            /// </summary>
             internal Mesh Mesh;
-
+            
+            /// <summary>
+            /// Generated texture.
+            /// </summary>
             internal Texture Texture;
+            
+            /// <summary>
+            /// Generated City
+            /// </summary>
             internal City City;
 
+            /// <summary>
+            /// Injector method used by the city view model.
+            /// </summary>
+            /// <returns>The height map of the terrain mesh.</returns>
             public float[,] Get() => Mesh.HeightMap();
         }
     }
