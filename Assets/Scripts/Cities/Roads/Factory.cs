@@ -1,5 +1,6 @@
 ﻿using System;
 using Interfaces;
+using UnityEngine;
 
 namespace Cities.Roads
 {
@@ -10,6 +11,7 @@ namespace Cities.Roads
     {
 
         private readonly IInjector<float[,]> _terrainMeshNoiseMapInjector;
+        private readonly IInjector<MeshFilter> filterInjector;
         
         /// <summary>
         /// Initializes this factory with a noise map injector.
@@ -19,15 +21,19 @@ namespace Cities.Roads
         {
             _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
         }
+        public Factory(IInjector<MeshFilter> filterInjector)
+        {
+            this.filterInjector = filterInjector;
+        }
 
-        public IGenerator<RoadNetwork> CreateAStarStrategy() => new AStarStrategy(_terrainMeshNoiseMapInjector);
+        public IGenerator<RoadNetwork> CreateAStarStrategy() => new AStarStrategy(filterInjector);
 
-        public IGenerator<RoadNetwork> CreateLSystemStrategy() => new LSystemStrategy(_terrainMeshNoiseMapInjector);
+        public IGenerator<RoadNetwork> CreateLSystemStrategy() => new LSystemStrategy(filterInjector);
 
         /// <summary>
         /// Creates a sample strategy for testing.
         /// </summary>
         /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshNoiseMapInjector);
+        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(filterInjector);
     }
 }

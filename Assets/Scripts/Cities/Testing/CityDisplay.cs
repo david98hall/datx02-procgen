@@ -13,7 +13,7 @@ namespace Cities.Testing
 {
     [Serializable]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-    public class CityDisplay : MonoBehaviour, IInjector<float[,]>
+    public class CityDisplay : MonoBehaviour, IInjector<MeshFilter>
     {
         private readonly CityGenerator _cityGenerator;
         private readonly HashSet<GameObject> _roadRenderers;
@@ -197,7 +197,10 @@ namespace Cities.Testing
             }
         }
 
-        public float[,] Get() => GetTerrainMesh().HeightMap();
+        //public float[,] Get() => GetTerrainMesh().HeightMap();
+        public MeshFilter Get(){
+            return meshFilter;
+        }
 
     }
 }
