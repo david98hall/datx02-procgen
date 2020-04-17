@@ -437,66 +437,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Cities.Testing.CityDisplay.MapType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Cities.Testing.CityDisplay.MapType.html",
-          "hash": "ORPQB/4Fq2C5+YG78Vqc/g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Cities.Testing.CityDisplay.RoadStrategy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Cities.Testing.CityDisplay.RoadStrategy.html",
-          "hash": "tt6QBhpKc+UONVH/T3H16w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Cities.Testing.CityDisplay.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Cities.Testing.CityDisplay.html",
-          "hash": "XIm+m+LNAzP3Ngfw7srP1g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Cities.Testing.CityGeneratorEditor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Cities.Testing.CityGeneratorEditor.html",
-          "hash": "gog4Sh+jjvB+ViA8520Qug=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Cities.Testing.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Cities.Testing.html",
-          "hash": "jy3XYu3D5omWHw38V2P80g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Cities.yml",
       "output": {
         ".html": {
@@ -742,114 +682,6 @@
         ".html": {
           "relative_path": "api/Terrain.TerrainGenerator.html",
           "hash": "5mdfvu0OEwNLtuHbew2qlQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.TerrainDisplay.NoiseMapStrategy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.TerrainDisplay.NoiseMapStrategy.html",
-          "hash": "44I4qQbzM0FjLygmqGAFWA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.TerrainDisplay.TextureStrategy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.TerrainDisplay.TextureStrategy.html",
-          "hash": "/nu/2thMozf7KHYyq7GaQw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.TerrainDisplay.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.TerrainDisplay.html",
-          "hash": "wO98ANg7zpfc76jQQqw67g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.TerrainDisplayEditor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.TerrainDisplayEditor.html",
-          "hash": "5PrjhSziJkA8Tm+otfMGTQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.TextureDisplay.Strategy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.TextureDisplay.Strategy.html",
-          "hash": "9bVEYcnbX410iGVBUICtXA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.TextureDisplay.WhittakerMap.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.TextureDisplay.WhittakerMap.html",
-          "hash": "uuD5VKr/077hvHD3skdjug=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.TextureDisplay.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.TextureDisplay.html",
-          "hash": "eRW6MWifdlMyLqPwBJvgeg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.TextureDisplayEditor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.TextureDisplayEditor.html",
-          "hash": "vS2V2gshE7418IPGcFyrjQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Testing.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Testing.html",
-          "hash": "bEZjGQYIaLCAMd6wCHtImA=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "qZbADCcFzK/u/6KVY/VeAw=="
+          "hash": "KntjfmKcicSVxJSWFseXRw=="
         }
       },
       "is_incremental": false,
@@ -1200,7 +1032,7 @@
           "hash": "XwLhWMmZnKDeuFl5q2LW4g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1224,7 +1056,7 @@
           "hash": "HesocA7sfIaxH6+7nrAnaA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1243,25 +1075,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 0
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 97,
-          "skipped_file_count": 0
+          "total_file_count": 83,
+          "skipped_file_count": 83
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -1274,8 +1104,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
