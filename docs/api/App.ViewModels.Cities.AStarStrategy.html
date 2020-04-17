@@ -73,7 +73,8 @@
   
   <h1 id="App_ViewModels_Cities_AStarStrategy" data-uid="App.ViewModels.Cities.AStarStrategy" class="text-break">Class AStarStrategy
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>View-model for displaying and generating road networks with the A* strategy.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -141,7 +142,8 @@ public class AStarStrategy : ViewModelStrategy&lt;float[, ], RoadNetwork&gt;, IG
     <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L18">View Source</a>
   </span>
   <h4 id="App_ViewModels_Cities_AStarStrategy__roadStrategyFactory" data-uid="App.ViewModels.Cities.AStarStrategy._roadStrategyFactory">_roadStrategyFactory</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Underlying <a class="xref" href="Cities.Roads.Factory.html">Factory</a> for creating the A* strategy object</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -167,10 +169,11 @@ public class AStarStrategy : ViewModelStrategy&lt;float[, ], RoadNetwork&gt;, IG
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_AStarStrategy_heightBias.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.AStarStrategy.heightBias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L13">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L26">View Source</a>
   </span>
   <h4 id="App_ViewModels_Cities_AStarStrategy_heightBias" data-uid="App.ViewModels.Cities.AStarStrategy.heightBias">heightBias</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Serialized height bias</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -197,10 +200,11 @@ float heightBias</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_AStarStrategy_paths.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.AStarStrategy.paths%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L16">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L32">View Source</a>
   </span>
   <h4 id="App_ViewModels_Cities_AStarStrategy_paths" data-uid="App.ViewModels.Cities.AStarStrategy.paths">paths</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Serialized start and goal paths</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -229,11 +233,12 @@ IList&lt;(Vector2Int, Vector2Int)&gt; paths</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_AStarStrategy_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.AStarStrategy.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L26">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L49">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_AStarStrategy_Display_" data-uid="App.ViewModels.Cities.AStarStrategy.Display*"></a>
   <h4 id="App_ViewModels_Cities_AStarStrategy_Display" data-uid="App.ViewModels.Cities.AStarStrategy.Display">Display()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Displays the editor of the view model.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -241,16 +246,34 @@ IList&lt;(Vector2Int, Vector2Int)&gt; paths</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Single[,], Cities.Roads.RoadNetwork&gt;.Display()</span></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>If no strategy is selected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_AStarStrategy_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.AStarStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L60">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L88">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_AStarStrategy_Generate_" data-uid="App.ViewModels.Cities.AStarStrategy.Generate*"></a>
   <h4 id="App_ViewModels_Cities_AStarStrategy_Generate" data-uid="App.ViewModels.Cities.AStarStrategy.Generate">Generate()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a generator with the serialized values from the editor.
+Delegates the generation to the created generator.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -267,7 +290,8 @@ IList&lt;(Vector2Int, Vector2Int)&gt; paths</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
-        <td></td>
+        <td><p>The result of the delegated generation call.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -278,11 +302,12 @@ IList&lt;(Vector2Int, Vector2Int)&gt; paths</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_AStarStrategy_Initialize.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.AStarStrategy.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L20">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L39">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_AStarStrategy_Initialize_" data-uid="App.ViewModels.Cities.AStarStrategy.Initialize*"></a>
   <h4 id="App_ViewModels_Cities_AStarStrategy_Initialize" data-uid="App.ViewModels.Cities.AStarStrategy.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Is required for initializing the non-serializable properties of the view model.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -311,7 +336,7 @@ IList&lt;(Vector2Int, Vector2Int)&gt; paths</code></pre>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_AStarStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.AStarStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/AStarStrategy.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

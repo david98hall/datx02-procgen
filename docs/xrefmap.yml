@@ -43,25 +43,25 @@ references:
   commentId: F:App.AppController._model
   fullName: App.AppController._model
   nameWithType: AppController._model
-- uid: App.AppController.cityModel
-  name: cityModel
-  href: api/App.AppController.html#App_AppController_cityModel
-  commentId: F:App.AppController.cityModel
-  fullName: App.AppController.cityModel
-  nameWithType: AppController.cityModel
-- uid: App.AppController.DisplayEditor
-  name: DisplayEditor()
-  href: api/App.AppController.html#App_AppController_DisplayEditor
-  commentId: M:App.AppController.DisplayEditor
-  fullName: App.AppController.DisplayEditor()
-  nameWithType: AppController.DisplayEditor()
-- uid: App.AppController.DisplayEditor*
-  name: DisplayEditor
-  href: api/App.AppController.html#App_AppController_DisplayEditor_
-  commentId: Overload:App.AppController.DisplayEditor
+- uid: App.AppController.cityViewModel
+  name: cityViewModel
+  href: api/App.AppController.html#App_AppController_cityViewModel
+  commentId: F:App.AppController.cityViewModel
+  fullName: App.AppController.cityViewModel
+  nameWithType: AppController.cityViewModel
+- uid: App.AppController.Display
+  name: Display()
+  href: api/App.AppController.html#App_AppController_Display
+  commentId: M:App.AppController.Display
+  fullName: App.AppController.Display()
+  nameWithType: AppController.Display()
+- uid: App.AppController.Display*
+  name: Display
+  href: api/App.AppController.html#App_AppController_Display_
+  commentId: Overload:App.AppController.Display
   isSpec: "True"
-  fullName: App.AppController.DisplayEditor
-  nameWithType: AppController.DisplayEditor
+  fullName: App.AppController.Display
+  nameWithType: AppController.Display
 - uid: App.AppController.gameObjects
   name: gameObjects
   href: api/App.AppController.html#App_AppController_gameObjects
@@ -143,24 +143,6 @@ references:
   commentId: T:App.AppControllerEditor
   fullName: App.AppControllerEditor
   nameWithType: AppControllerEditor
-- uid: App.AppControllerEditor._noiseGenerator
-  name: _noiseGenerator
-  href: api/App.AppControllerEditor.html#App_AppControllerEditor__noiseGenerator
-  commentId: F:App.AppControllerEditor._noiseGenerator
-  fullName: App.AppControllerEditor._noiseGenerator
-  nameWithType: AppControllerEditor._noiseGenerator
-- uid: App.AppControllerEditor._terrainGenerator
-  name: _terrainGenerator
-  href: api/App.AppControllerEditor.html#App_AppControllerEditor__terrainGenerator
-  commentId: F:App.AppControllerEditor._terrainGenerator
-  fullName: App.AppControllerEditor._terrainGenerator
-  nameWithType: AppControllerEditor._terrainGenerator
-- uid: App.AppControllerEditor._textureGenerator
-  name: _textureGenerator
-  href: api/App.AppControllerEditor.html#App_AppControllerEditor__textureGenerator
-  commentId: F:App.AppControllerEditor._textureGenerator
-  fullName: App.AppControllerEditor._textureGenerator
-  nameWithType: AppControllerEditor._textureGenerator
 - uid: App.AppControllerEditor.OnInspectorGUI
   name: OnInspectorGUI()
   href: api/App.AppControllerEditor.html#App_AppControllerEditor_OnInspectorGUI
@@ -249,325 +231,325 @@ references:
   commentId: F:App.ViewModels.Cities.AStarStrategy.paths
   fullName: App.ViewModels.Cities.AStarStrategy.paths
   nameWithType: AStarStrategy.paths
-- uid: App.ViewModels.Cities.CityModel
-  name: CityModel
-  href: api/App.ViewModels.Cities.CityModel.html
-  commentId: T:App.ViewModels.Cities.CityModel
-  fullName: App.ViewModels.Cities.CityModel
-  nameWithType: CityModel
-- uid: App.ViewModels.Cities.CityModel._generator
+- uid: App.ViewModels.Cities.CityViewModel
+  name: CityViewModel
+  href: api/App.ViewModels.Cities.CityViewModel.html
+  commentId: T:App.ViewModels.Cities.CityViewModel
+  fullName: App.ViewModels.Cities.CityViewModel
+  nameWithType: CityViewModel
+- uid: App.ViewModels.Cities.CityViewModel._generator
   name: _generator
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel__generator
-  commentId: F:App.ViewModels.Cities.CityModel._generator
-  fullName: App.ViewModels.Cities.CityModel._generator
-  nameWithType: CityModel._generator
-- uid: App.ViewModels.Cities.CityModel._plotStrategies
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__generator
+  commentId: F:App.ViewModels.Cities.CityViewModel._generator
+  fullName: App.ViewModels.Cities.CityViewModel._generator
+  nameWithType: CityViewModel._generator
+- uid: App.ViewModels.Cities.CityViewModel._plotStrategies
   name: _plotStrategies
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel__plotStrategies
-  commentId: F:App.ViewModels.Cities.CityModel._plotStrategies
-  fullName: App.ViewModels.Cities.CityModel._plotStrategies
-  nameWithType: CityModel._plotStrategies
-- uid: App.ViewModels.Cities.CityModel._plotStrategyVisible
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__plotStrategies
+  commentId: F:App.ViewModels.Cities.CityViewModel._plotStrategies
+  fullName: App.ViewModels.Cities.CityViewModel._plotStrategies
+  nameWithType: CityViewModel._plotStrategies
+- uid: App.ViewModels.Cities.CityViewModel._plotStrategyVisible
   name: _plotStrategyVisible
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel__plotStrategyVisible
-  commentId: F:App.ViewModels.Cities.CityModel._plotStrategyVisible
-  fullName: App.ViewModels.Cities.CityModel._plotStrategyVisible
-  nameWithType: CityModel._plotStrategyVisible
-- uid: App.ViewModels.Cities.CityModel._roadAppearanceVisible
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__plotStrategyVisible
+  commentId: F:App.ViewModels.Cities.CityViewModel._plotStrategyVisible
+  fullName: App.ViewModels.Cities.CityViewModel._plotStrategyVisible
+  nameWithType: CityViewModel._plotStrategyVisible
+- uid: App.ViewModels.Cities.CityViewModel._roadAppearanceVisible
   name: _roadAppearanceVisible
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel__roadAppearanceVisible
-  commentId: F:App.ViewModels.Cities.CityModel._roadAppearanceVisible
-  fullName: App.ViewModels.Cities.CityModel._roadAppearanceVisible
-  nameWithType: CityModel._roadAppearanceVisible
-- uid: App.ViewModels.Cities.CityModel._roadNetworkStrategyVisible
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__roadAppearanceVisible
+  commentId: F:App.ViewModels.Cities.CityViewModel._roadAppearanceVisible
+  fullName: App.ViewModels.Cities.CityViewModel._roadAppearanceVisible
+  nameWithType: CityViewModel._roadAppearanceVisible
+- uid: App.ViewModels.Cities.CityViewModel._roadNetworkStrategyVisible
   name: _roadNetworkStrategyVisible
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel__roadNetworkStrategyVisible
-  commentId: F:App.ViewModels.Cities.CityModel._roadNetworkStrategyVisible
-  fullName: App.ViewModels.Cities.CityModel._roadNetworkStrategyVisible
-  nameWithType: CityModel._roadNetworkStrategyVisible
-- uid: App.ViewModels.Cities.CityModel._visible
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__roadNetworkStrategyVisible
+  commentId: F:App.ViewModels.Cities.CityViewModel._roadNetworkStrategyVisible
+  fullName: App.ViewModels.Cities.CityViewModel._roadNetworkStrategyVisible
+  nameWithType: CityViewModel._roadNetworkStrategyVisible
+- uid: App.ViewModels.Cities.CityViewModel._visible
   name: _visible
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel__visible
-  commentId: F:App.ViewModels.Cities.CityModel._visible
-  fullName: App.ViewModels.Cities.CityModel._visible
-  nameWithType: CityModel._visible
-- uid: App.ViewModels.Cities.CityModel.aStarStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__visible
+  commentId: F:App.ViewModels.Cities.CityViewModel._visible
+  fullName: App.ViewModels.Cities.CityViewModel._visible
+  nameWithType: CityViewModel._visible
+- uid: App.ViewModels.Cities.CityViewModel.aStarStrategy
   name: aStarStrategy
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_aStarStrategy
-  commentId: F:App.ViewModels.Cities.CityModel.aStarStrategy
-  fullName: App.ViewModels.Cities.CityModel.aStarStrategy
-  nameWithType: CityModel.aStarStrategy
-- uid: App.ViewModels.Cities.CityModel.Display
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_aStarStrategy
+  commentId: F:App.ViewModels.Cities.CityViewModel.aStarStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.aStarStrategy
+  nameWithType: CityViewModel.aStarStrategy
+- uid: App.ViewModels.Cities.CityViewModel.Display
   name: Display()
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_Display
-  commentId: M:App.ViewModels.Cities.CityModel.Display
-  fullName: App.ViewModels.Cities.CityModel.Display()
-  nameWithType: CityModel.Display()
-- uid: App.ViewModels.Cities.CityModel.Display*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Display
+  commentId: M:App.ViewModels.Cities.CityViewModel.Display
+  fullName: App.ViewModels.Cities.CityViewModel.Display()
+  nameWithType: CityViewModel.Display()
+- uid: App.ViewModels.Cities.CityViewModel.Display*
   name: Display
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_Display_
-  commentId: Overload:App.ViewModels.Cities.CityModel.Display
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Display_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.Display
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.Display
-  nameWithType: CityModel.Display
-- uid: App.ViewModels.Cities.CityModel.displayPlots
+  fullName: App.ViewModels.Cities.CityViewModel.Display
+  nameWithType: CityViewModel.Display
+- uid: App.ViewModels.Cities.CityViewModel.displayPlots
   name: displayPlots
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_displayPlots
-  commentId: F:App.ViewModels.Cities.CityModel.displayPlots
-  fullName: App.ViewModels.Cities.CityModel.displayPlots
-  nameWithType: CityModel.displayPlots
-- uid: App.ViewModels.Cities.CityModel.DisplayPlots
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_displayPlots
+  commentId: F:App.ViewModels.Cities.CityViewModel.displayPlots
+  fullName: App.ViewModels.Cities.CityViewModel.displayPlots
+  nameWithType: CityViewModel.displayPlots
+- uid: App.ViewModels.Cities.CityViewModel.DisplayPlots
   name: DisplayPlots
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_DisplayPlots
-  commentId: P:App.ViewModels.Cities.CityModel.DisplayPlots
-  fullName: App.ViewModels.Cities.CityModel.DisplayPlots
-  nameWithType: CityModel.DisplayPlots
-- uid: App.ViewModels.Cities.CityModel.DisplayPlots*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayPlots
+  commentId: P:App.ViewModels.Cities.CityViewModel.DisplayPlots
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayPlots
+  nameWithType: CityViewModel.DisplayPlots
+- uid: App.ViewModels.Cities.CityViewModel.DisplayPlots*
   name: DisplayPlots
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_DisplayPlots_
-  commentId: Overload:App.ViewModels.Cities.CityModel.DisplayPlots
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayPlots_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.DisplayPlots
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.DisplayPlots
-  nameWithType: CityModel.DisplayPlots
-- uid: App.ViewModels.Cities.CityModel.DisplayPlotStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayPlots
+  nameWithType: CityViewModel.DisplayPlots
+- uid: App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy
   name: DisplayPlotStrategy()
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_DisplayPlotStrategy
-  commentId: M:App.ViewModels.Cities.CityModel.DisplayPlotStrategy
-  fullName: App.ViewModels.Cities.CityModel.DisplayPlotStrategy()
-  nameWithType: CityModel.DisplayPlotStrategy()
-- uid: App.ViewModels.Cities.CityModel.DisplayPlotStrategy*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayPlotStrategy
+  commentId: M:App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy()
+  nameWithType: CityViewModel.DisplayPlotStrategy()
+- uid: App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy*
   name: DisplayPlotStrategy
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_DisplayPlotStrategy_
-  commentId: Overload:App.ViewModels.Cities.CityModel.DisplayPlotStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayPlotStrategy_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.DisplayPlotStrategy
-  nameWithType: CityModel.DisplayPlotStrategy
-- uid: App.ViewModels.Cities.CityModel.DisplayRoadAppearance
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy
+  nameWithType: CityViewModel.DisplayPlotStrategy
+- uid: App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance
   name: DisplayRoadAppearance()
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_DisplayRoadAppearance
-  commentId: M:App.ViewModels.Cities.CityModel.DisplayRoadAppearance
-  fullName: App.ViewModels.Cities.CityModel.DisplayRoadAppearance()
-  nameWithType: CityModel.DisplayRoadAppearance()
-- uid: App.ViewModels.Cities.CityModel.DisplayRoadAppearance*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayRoadAppearance
+  commentId: M:App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance()
+  nameWithType: CityViewModel.DisplayRoadAppearance()
+- uid: App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance*
   name: DisplayRoadAppearance
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_DisplayRoadAppearance_
-  commentId: Overload:App.ViewModels.Cities.CityModel.DisplayRoadAppearance
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayRoadAppearance_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.DisplayRoadAppearance
-  nameWithType: CityModel.DisplayRoadAppearance
-- uid: App.ViewModels.Cities.CityModel.DisplayRoadStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance
+  nameWithType: CityViewModel.DisplayRoadAppearance
+- uid: App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy
   name: DisplayRoadStrategy()
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_DisplayRoadStrategy
-  commentId: M:App.ViewModels.Cities.CityModel.DisplayRoadStrategy
-  fullName: App.ViewModels.Cities.CityModel.DisplayRoadStrategy()
-  nameWithType: CityModel.DisplayRoadStrategy()
-- uid: App.ViewModels.Cities.CityModel.DisplayRoadStrategy*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayRoadStrategy
+  commentId: M:App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy()
+  nameWithType: CityViewModel.DisplayRoadStrategy()
+- uid: App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy*
   name: DisplayRoadStrategy
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_DisplayRoadStrategy_
-  commentId: Overload:App.ViewModels.Cities.CityModel.DisplayRoadStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayRoadStrategy_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.DisplayRoadStrategy
-  nameWithType: CityModel.DisplayRoadStrategy
-- uid: App.ViewModels.Cities.CityModel.Generate
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy
+  nameWithType: CityViewModel.DisplayRoadStrategy
+- uid: App.ViewModels.Cities.CityViewModel.Generate
   name: Generate()
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_Generate
-  commentId: M:App.ViewModels.Cities.CityModel.Generate
-  fullName: App.ViewModels.Cities.CityModel.Generate()
-  nameWithType: CityModel.Generate()
-- uid: App.ViewModels.Cities.CityModel.Generate*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Generate
+  commentId: M:App.ViewModels.Cities.CityViewModel.Generate
+  fullName: App.ViewModels.Cities.CityViewModel.Generate()
+  nameWithType: CityViewModel.Generate()
+- uid: App.ViewModels.Cities.CityViewModel.Generate*
   name: Generate
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_Generate_
-  commentId: Overload:App.ViewModels.Cities.CityModel.Generate
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Generate_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.Generate
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.Generate
-  nameWithType: CityModel.Generate
-- uid: App.ViewModels.Cities.CityModel.Initialize
+  fullName: App.ViewModels.Cities.CityViewModel.Generate
+  nameWithType: CityViewModel.Generate
+- uid: App.ViewModels.Cities.CityViewModel.Initialize
   name: Initialize()
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_Initialize
-  commentId: M:App.ViewModels.Cities.CityModel.Initialize
-  fullName: App.ViewModels.Cities.CityModel.Initialize()
-  nameWithType: CityModel.Initialize()
-- uid: App.ViewModels.Cities.CityModel.Initialize*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Initialize
+  commentId: M:App.ViewModels.Cities.CityViewModel.Initialize
+  fullName: App.ViewModels.Cities.CityViewModel.Initialize()
+  nameWithType: CityViewModel.Initialize()
+- uid: App.ViewModels.Cities.CityViewModel.Initialize*
   name: Initialize
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_Initialize_
-  commentId: Overload:App.ViewModels.Cities.CityModel.Initialize
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Initialize_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.Initialize
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.Initialize
-  nameWithType: CityModel.Initialize
-- uid: App.ViewModels.Cities.CityModel.lSystemStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.Initialize
+  nameWithType: CityViewModel.Initialize
+- uid: App.ViewModels.Cities.CityViewModel.lSystemStrategy
   name: lSystemStrategy
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_lSystemStrategy
-  commentId: F:App.ViewModels.Cities.CityModel.lSystemStrategy
-  fullName: App.ViewModels.Cities.CityModel.lSystemStrategy
-  nameWithType: CityModel.lSystemStrategy
-- uid: App.ViewModels.Cities.CityModel.plotMaterial
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_lSystemStrategy
+  commentId: F:App.ViewModels.Cities.CityViewModel.lSystemStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.lSystemStrategy
+  nameWithType: CityViewModel.lSystemStrategy
+- uid: App.ViewModels.Cities.CityViewModel.plotMaterial
   name: plotMaterial
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_plotMaterial
-  commentId: F:App.ViewModels.Cities.CityModel.plotMaterial
-  fullName: App.ViewModels.Cities.CityModel.plotMaterial
-  nameWithType: CityModel.plotMaterial
-- uid: App.ViewModels.Cities.CityModel.PlotMaterial
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_plotMaterial
+  commentId: F:App.ViewModels.Cities.CityViewModel.plotMaterial
+  fullName: App.ViewModels.Cities.CityViewModel.plotMaterial
+  nameWithType: CityViewModel.plotMaterial
+- uid: App.ViewModels.Cities.CityViewModel.PlotMaterial
   name: PlotMaterial
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_PlotMaterial
-  commentId: P:App.ViewModels.Cities.CityModel.PlotMaterial
-  fullName: App.ViewModels.Cities.CityModel.PlotMaterial
-  nameWithType: CityModel.PlotMaterial
-- uid: App.ViewModels.Cities.CityModel.PlotMaterial*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_PlotMaterial
+  commentId: P:App.ViewModels.Cities.CityViewModel.PlotMaterial
+  fullName: App.ViewModels.Cities.CityViewModel.PlotMaterial
+  nameWithType: CityViewModel.PlotMaterial
+- uid: App.ViewModels.Cities.CityViewModel.PlotMaterial*
   name: PlotMaterial
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_PlotMaterial_
-  commentId: Overload:App.ViewModels.Cities.CityModel.PlotMaterial
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_PlotMaterial_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.PlotMaterial
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.PlotMaterial
-  nameWithType: CityModel.PlotMaterial
-- uid: App.ViewModels.Cities.CityModel.plotStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.PlotMaterial
+  nameWithType: CityViewModel.PlotMaterial
+- uid: App.ViewModels.Cities.CityViewModel.plotStrategy
   name: plotStrategy
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_plotStrategy
-  commentId: F:App.ViewModels.Cities.CityModel.plotStrategy
-  fullName: App.ViewModels.Cities.CityModel.plotStrategy
-  nameWithType: CityModel.plotStrategy
-- uid: App.ViewModels.Cities.CityModel.PlotStrategy
-  name: CityModel.PlotStrategy
-  href: api/App.ViewModels.Cities.CityModel.PlotStrategy.html
-  commentId: T:App.ViewModels.Cities.CityModel.PlotStrategy
-  fullName: App.ViewModels.Cities.CityModel.PlotStrategy
-  nameWithType: CityModel.PlotStrategy
-- uid: App.ViewModels.Cities.CityModel.PlotStrategy.BruteMinimalCycle
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_plotStrategy
+  commentId: F:App.ViewModels.Cities.CityViewModel.plotStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.plotStrategy
+  nameWithType: CityViewModel.plotStrategy
+- uid: App.ViewModels.Cities.CityViewModel.PlotStrategy
+  name: CityViewModel.PlotStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.PlotStrategy.html
+  commentId: T:App.ViewModels.Cities.CityViewModel.PlotStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.PlotStrategy
+  nameWithType: CityViewModel.PlotStrategy
+- uid: App.ViewModels.Cities.CityViewModel.PlotStrategy.BruteMinimalCycle
   name: BruteMinimalCycle
-  href: api/App.ViewModels.Cities.CityModel.PlotStrategy.html#App_ViewModels_Cities_CityModel_PlotStrategy_BruteMinimalCycle
-  commentId: F:App.ViewModels.Cities.CityModel.PlotStrategy.BruteMinimalCycle
-  fullName: App.ViewModels.Cities.CityModel.PlotStrategy.BruteMinimalCycle
-  nameWithType: CityModel.PlotStrategy.BruteMinimalCycle
-- uid: App.ViewModels.Cities.CityModel.PlotStrategy.ClockWiseCycle
+  href: api/App.ViewModels.Cities.CityViewModel.PlotStrategy.html#App_ViewModels_Cities_CityViewModel_PlotStrategy_BruteMinimalCycle
+  commentId: F:App.ViewModels.Cities.CityViewModel.PlotStrategy.BruteMinimalCycle
+  fullName: App.ViewModels.Cities.CityViewModel.PlotStrategy.BruteMinimalCycle
+  nameWithType: CityViewModel.PlotStrategy.BruteMinimalCycle
+- uid: App.ViewModels.Cities.CityViewModel.PlotStrategy.ClockWiseCycle
   name: ClockWiseCycle
-  href: api/App.ViewModels.Cities.CityModel.PlotStrategy.html#App_ViewModels_Cities_CityModel_PlotStrategy_ClockWiseCycle
-  commentId: F:App.ViewModels.Cities.CityModel.PlotStrategy.ClockWiseCycle
-  fullName: App.ViewModels.Cities.CityModel.PlotStrategy.ClockWiseCycle
-  nameWithType: CityModel.PlotStrategy.ClockWiseCycle
-- uid: App.ViewModels.Cities.CityModel.PlotStrategy.MinimalCycle
+  href: api/App.ViewModels.Cities.CityViewModel.PlotStrategy.html#App_ViewModels_Cities_CityViewModel_PlotStrategy_ClockWiseCycle
+  commentId: F:App.ViewModels.Cities.CityViewModel.PlotStrategy.ClockWiseCycle
+  fullName: App.ViewModels.Cities.CityViewModel.PlotStrategy.ClockWiseCycle
+  nameWithType: CityViewModel.PlotStrategy.ClockWiseCycle
+- uid: App.ViewModels.Cities.CityViewModel.PlotStrategy.MinimalCycle
   name: MinimalCycle
-  href: api/App.ViewModels.Cities.CityModel.PlotStrategy.html#App_ViewModels_Cities_CityModel_PlotStrategy_MinimalCycle
-  commentId: F:App.ViewModels.Cities.CityModel.PlotStrategy.MinimalCycle
-  fullName: App.ViewModels.Cities.CityModel.PlotStrategy.MinimalCycle
-  nameWithType: CityModel.PlotStrategy.MinimalCycle
-- uid: App.ViewModels.Cities.CityModel.roadCurvature
+  href: api/App.ViewModels.Cities.CityViewModel.PlotStrategy.html#App_ViewModels_Cities_CityViewModel_PlotStrategy_MinimalCycle
+  commentId: F:App.ViewModels.Cities.CityViewModel.PlotStrategy.MinimalCycle
+  fullName: App.ViewModels.Cities.CityViewModel.PlotStrategy.MinimalCycle
+  nameWithType: CityViewModel.PlotStrategy.MinimalCycle
+- uid: App.ViewModels.Cities.CityViewModel.roadCurvature
   name: roadCurvature
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_roadCurvature
-  commentId: F:App.ViewModels.Cities.CityModel.roadCurvature
-  fullName: App.ViewModels.Cities.CityModel.roadCurvature
-  nameWithType: CityModel.roadCurvature
-- uid: App.ViewModels.Cities.CityModel.RoadCurvature
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadCurvature
+  commentId: F:App.ViewModels.Cities.CityViewModel.roadCurvature
+  fullName: App.ViewModels.Cities.CityViewModel.roadCurvature
+  nameWithType: CityViewModel.roadCurvature
+- uid: App.ViewModels.Cities.CityViewModel.RoadCurvature
   name: RoadCurvature
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadCurvature
-  commentId: P:App.ViewModels.Cities.CityModel.RoadCurvature
-  fullName: App.ViewModels.Cities.CityModel.RoadCurvature
-  nameWithType: CityModel.RoadCurvature
-- uid: App.ViewModels.Cities.CityModel.RoadCurvature*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadCurvature
+  commentId: P:App.ViewModels.Cities.CityViewModel.RoadCurvature
+  fullName: App.ViewModels.Cities.CityViewModel.RoadCurvature
+  nameWithType: CityViewModel.RoadCurvature
+- uid: App.ViewModels.Cities.CityViewModel.RoadCurvature*
   name: RoadCurvature
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadCurvature_
-  commentId: Overload:App.ViewModels.Cities.CityModel.RoadCurvature
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadCurvature_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.RoadCurvature
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.RoadCurvature
-  nameWithType: CityModel.RoadCurvature
-- uid: App.ViewModels.Cities.CityModel.roadMaterial
+  fullName: App.ViewModels.Cities.CityViewModel.RoadCurvature
+  nameWithType: CityViewModel.RoadCurvature
+- uid: App.ViewModels.Cities.CityViewModel.roadMaterial
   name: roadMaterial
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_roadMaterial
-  commentId: F:App.ViewModels.Cities.CityModel.roadMaterial
-  fullName: App.ViewModels.Cities.CityModel.roadMaterial
-  nameWithType: CityModel.roadMaterial
-- uid: App.ViewModels.Cities.CityModel.RoadMaterial
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadMaterial
+  commentId: F:App.ViewModels.Cities.CityViewModel.roadMaterial
+  fullName: App.ViewModels.Cities.CityViewModel.roadMaterial
+  nameWithType: CityViewModel.roadMaterial
+- uid: App.ViewModels.Cities.CityViewModel.RoadMaterial
   name: RoadMaterial
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadMaterial
-  commentId: P:App.ViewModels.Cities.CityModel.RoadMaterial
-  fullName: App.ViewModels.Cities.CityModel.RoadMaterial
-  nameWithType: CityModel.RoadMaterial
-- uid: App.ViewModels.Cities.CityModel.RoadMaterial*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadMaterial
+  commentId: P:App.ViewModels.Cities.CityViewModel.RoadMaterial
+  fullName: App.ViewModels.Cities.CityViewModel.RoadMaterial
+  nameWithType: CityViewModel.RoadMaterial
+- uid: App.ViewModels.Cities.CityViewModel.RoadMaterial*
   name: RoadMaterial
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadMaterial_
-  commentId: Overload:App.ViewModels.Cities.CityModel.RoadMaterial
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadMaterial_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.RoadMaterial
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.RoadMaterial
-  nameWithType: CityModel.RoadMaterial
-- uid: App.ViewModels.Cities.CityModel.roadNetworkStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.RoadMaterial
+  nameWithType: CityViewModel.RoadMaterial
+- uid: App.ViewModels.Cities.CityViewModel.roadNetworkStrategy
   name: roadNetworkStrategy
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_roadNetworkStrategy
-  commentId: F:App.ViewModels.Cities.CityModel.roadNetworkStrategy
-  fullName: App.ViewModels.Cities.CityModel.roadNetworkStrategy
-  nameWithType: CityModel.roadNetworkStrategy
-- uid: App.ViewModels.Cities.CityModel.RoadNetworkStrategy
-  name: CityModel.RoadNetworkStrategy
-  href: api/App.ViewModels.Cities.CityModel.RoadNetworkStrategy.html
-  commentId: T:App.ViewModels.Cities.CityModel.RoadNetworkStrategy
-  fullName: App.ViewModels.Cities.CityModel.RoadNetworkStrategy
-  nameWithType: CityModel.RoadNetworkStrategy
-- uid: App.ViewModels.Cities.CityModel.RoadNetworkStrategy.AStar
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadNetworkStrategy
+  commentId: F:App.ViewModels.Cities.CityViewModel.roadNetworkStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.roadNetworkStrategy
+  nameWithType: CityViewModel.roadNetworkStrategy
+- uid: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy
+  name: CityViewModel.RoadNetworkStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.html
+  commentId: T:App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy
+  nameWithType: CityViewModel.RoadNetworkStrategy
+- uid: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.AStar
   name: AStar
-  href: api/App.ViewModels.Cities.CityModel.RoadNetworkStrategy.html#App_ViewModels_Cities_CityModel_RoadNetworkStrategy_AStar
-  commentId: F:App.ViewModels.Cities.CityModel.RoadNetworkStrategy.AStar
-  fullName: App.ViewModels.Cities.CityModel.RoadNetworkStrategy.AStar
-  nameWithType: CityModel.RoadNetworkStrategy.AStar
-- uid: App.ViewModels.Cities.CityModel.RoadNetworkStrategy.LSystem
+  href: api/App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.html#App_ViewModels_Cities_CityViewModel_RoadNetworkStrategy_AStar
+  commentId: F:App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.AStar
+  fullName: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.AStar
+  nameWithType: CityViewModel.RoadNetworkStrategy.AStar
+- uid: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.LSystem
   name: LSystem
-  href: api/App.ViewModels.Cities.CityModel.RoadNetworkStrategy.html#App_ViewModels_Cities_CityModel_RoadNetworkStrategy_LSystem
-  commentId: F:App.ViewModels.Cities.CityModel.RoadNetworkStrategy.LSystem
-  fullName: App.ViewModels.Cities.CityModel.RoadNetworkStrategy.LSystem
-  nameWithType: CityModel.RoadNetworkStrategy.LSystem
-- uid: App.ViewModels.Cities.CityModel.roadSmoothingIterations
+  href: api/App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.html#App_ViewModels_Cities_CityViewModel_RoadNetworkStrategy_LSystem
+  commentId: F:App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.LSystem
+  fullName: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.LSystem
+  nameWithType: CityViewModel.RoadNetworkStrategy.LSystem
+- uid: App.ViewModels.Cities.CityViewModel.roadSmoothingIterations
   name: roadSmoothingIterations
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_roadSmoothingIterations
-  commentId: F:App.ViewModels.Cities.CityModel.roadSmoothingIterations
-  fullName: App.ViewModels.Cities.CityModel.roadSmoothingIterations
-  nameWithType: CityModel.roadSmoothingIterations
-- uid: App.ViewModels.Cities.CityModel.RoadSmoothingIterations
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadSmoothingIterations
+  commentId: F:App.ViewModels.Cities.CityViewModel.roadSmoothingIterations
+  fullName: App.ViewModels.Cities.CityViewModel.roadSmoothingIterations
+  nameWithType: CityViewModel.roadSmoothingIterations
+- uid: App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
   name: RoadSmoothingIterations
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadSmoothingIterations
-  commentId: P:App.ViewModels.Cities.CityModel.RoadSmoothingIterations
-  fullName: App.ViewModels.Cities.CityModel.RoadSmoothingIterations
-  nameWithType: CityModel.RoadSmoothingIterations
-- uid: App.ViewModels.Cities.CityModel.RoadSmoothingIterations*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadSmoothingIterations
+  commentId: P:App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
+  fullName: App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
+  nameWithType: CityViewModel.RoadSmoothingIterations
+- uid: App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations*
   name: RoadSmoothingIterations
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadSmoothingIterations_
-  commentId: Overload:App.ViewModels.Cities.CityModel.RoadSmoothingIterations
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadSmoothingIterations_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.RoadSmoothingIterations
-  nameWithType: CityModel.RoadSmoothingIterations
-- uid: App.ViewModels.Cities.CityModel.roadTerrainOffsetY
+  fullName: App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
+  nameWithType: CityViewModel.RoadSmoothingIterations
+- uid: App.ViewModels.Cities.CityViewModel.roadTerrainOffsetY
   name: roadTerrainOffsetY
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_roadTerrainOffsetY
-  commentId: F:App.ViewModels.Cities.CityModel.roadTerrainOffsetY
-  fullName: App.ViewModels.Cities.CityModel.roadTerrainOffsetY
-  nameWithType: CityModel.roadTerrainOffsetY
-- uid: App.ViewModels.Cities.CityModel.RoadTerrainOffsetY
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadTerrainOffsetY
+  commentId: F:App.ViewModels.Cities.CityViewModel.roadTerrainOffsetY
+  fullName: App.ViewModels.Cities.CityViewModel.roadTerrainOffsetY
+  nameWithType: CityViewModel.roadTerrainOffsetY
+- uid: App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY
   name: RoadTerrainOffsetY
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadTerrainOffsetY
-  commentId: P:App.ViewModels.Cities.CityModel.RoadTerrainOffsetY
-  fullName: App.ViewModels.Cities.CityModel.RoadTerrainOffsetY
-  nameWithType: CityModel.RoadTerrainOffsetY
-- uid: App.ViewModels.Cities.CityModel.RoadTerrainOffsetY*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadTerrainOffsetY
+  commentId: P:App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY
+  fullName: App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY
+  nameWithType: CityViewModel.RoadTerrainOffsetY
+- uid: App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY*
   name: RoadTerrainOffsetY
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadTerrainOffsetY_
-  commentId: Overload:App.ViewModels.Cities.CityModel.RoadTerrainOffsetY
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadTerrainOffsetY_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.RoadTerrainOffsetY
-  nameWithType: CityModel.RoadTerrainOffsetY
-- uid: App.ViewModels.Cities.CityModel.roadWidth
+  fullName: App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY
+  nameWithType: CityViewModel.RoadTerrainOffsetY
+- uid: App.ViewModels.Cities.CityViewModel.roadWidth
   name: roadWidth
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_roadWidth
-  commentId: F:App.ViewModels.Cities.CityModel.roadWidth
-  fullName: App.ViewModels.Cities.CityModel.roadWidth
-  nameWithType: CityModel.roadWidth
-- uid: App.ViewModels.Cities.CityModel.RoadWidth
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadWidth
+  commentId: F:App.ViewModels.Cities.CityViewModel.roadWidth
+  fullName: App.ViewModels.Cities.CityViewModel.roadWidth
+  nameWithType: CityViewModel.roadWidth
+- uid: App.ViewModels.Cities.CityViewModel.RoadWidth
   name: RoadWidth
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadWidth
-  commentId: P:App.ViewModels.Cities.CityModel.RoadWidth
-  fullName: App.ViewModels.Cities.CityModel.RoadWidth
-  nameWithType: CityModel.RoadWidth
-- uid: App.ViewModels.Cities.CityModel.RoadWidth*
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadWidth
+  commentId: P:App.ViewModels.Cities.CityViewModel.RoadWidth
+  fullName: App.ViewModels.Cities.CityViewModel.RoadWidth
+  nameWithType: CityViewModel.RoadWidth
+- uid: App.ViewModels.Cities.CityViewModel.RoadWidth*
   name: RoadWidth
-  href: api/App.ViewModels.Cities.CityModel.html#App_ViewModels_Cities_CityModel_RoadWidth_
-  commentId: Overload:App.ViewModels.Cities.CityModel.RoadWidth
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadWidth_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.RoadWidth
   isSpec: "True"
-  fullName: App.ViewModels.Cities.CityModel.RoadWidth
-  nameWithType: CityModel.RoadWidth
+  fullName: App.ViewModels.Cities.CityViewModel.RoadWidth
+  nameWithType: CityViewModel.RoadWidth
 - uid: App.ViewModels.Cities.LSystemStrategy
   name: LSystemStrategy
   href: api/App.ViewModels.Cities.LSystemStrategy.html
@@ -798,6 +780,32 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Terrain.TerrainViewModel.Display
   nameWithType: TerrainViewModel.Display
+- uid: App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy
+  name: DisplayNoiseStrategy()
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_DisplayNoiseStrategy
+  commentId: M:App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy
+  fullName: App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy()
+  nameWithType: TerrainViewModel.DisplayNoiseStrategy()
+- uid: App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy*
+  name: DisplayNoiseStrategy
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_DisplayNoiseStrategy_
+  commentId: Overload:App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy
+  nameWithType: TerrainViewModel.DisplayNoiseStrategy
+- uid: App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy
+  name: DisplayTextureStrategy()
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_DisplayTextureStrategy
+  commentId: M:App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy
+  fullName: App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy()
+  nameWithType: TerrainViewModel.DisplayTextureStrategy()
+- uid: App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy*
+  name: DisplayTextureStrategy
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_DisplayTextureStrategy_
+  commentId: Overload:App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy
+  nameWithType: TerrainViewModel.DisplayTextureStrategy
 - uid: App.ViewModels.Terrain.TerrainViewModel.Generate
   name: Generate()
   href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_Generate
@@ -3451,12 +3459,6 @@ references:
   commentId: T:Terrain.Noise.Factory
   fullName: Terrain.Noise.Factory
   nameWithType: Factory
-- uid: Terrain.Noise.Factory.CreatePerlinNoiseStrategy
-  name: CreatePerlinNoiseStrategy()
-  href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreatePerlinNoiseStrategy
-  commentId: M:Terrain.Noise.Factory.CreatePerlinNoiseStrategy
-  fullName: Terrain.Noise.Factory.CreatePerlinNoiseStrategy()
-  nameWithType: Factory.CreatePerlinNoiseStrategy()
 - uid: Terrain.Noise.Factory.CreatePerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
   name: CreatePerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
   href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreatePerlinNoiseStrategy_System_Int32_System_Int32_System_Int32_System_Single_System_Int32_System_Single_System_Single_UnityEngine_Vector2_
