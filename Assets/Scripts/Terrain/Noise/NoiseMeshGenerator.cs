@@ -30,6 +30,10 @@ namespace Terrain.Noise
         
         private readonly IInjector<float[,]> _noiseMapInjector;
         
+        /// <summary>
+        /// Initializes this generator with a noise map injector.
+        /// </summary>
+        /// <param name="noiseMapInjector">The noise map injector.</param>
         internal NoiseMeshGenerator([NotNull] IInjector<float[,]> noiseMapInjector)
         {
             _noiseMapInjector = noiseMapInjector;
