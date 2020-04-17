@@ -144,17 +144,18 @@ namespace Cities.Roads
                             {
                                 case 'S':{
                                     splitState = new State(state.pos + length * splitDir, splitAngle);
-                                    while(splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ){
-                                    if(condition >= 0.5)
+                                    for (int i = 0; i < 10 && (splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ); i++)
                                     {
-                                        splitAngle += UnityEngine.Random.Range(30*toRad,55*toRad);
-                                    }else
-                                    {
-                                        splitAngle -= UnityEngine.Random.Range(30*toRad,55*toRad);
+                                        if(condition >= 0.5)
+                                        {
+                                            splitAngle += UnityEngine.Random.Range(30*toRad,55*toRad);
+                                        }else
+                                        {
+                                            splitAngle -= UnityEngine.Random.Range(30*toRad,55*toRad);
+                                        }
+                                        splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
+                                        splitState = new State(state.pos + length * splitDir, splitAngle);
                                     }
-                                    splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
-                                    splitState = new State(state.pos + length * splitDir, splitAngle);
-                                }
                                     intersects = noIntersects(splitState.pos, range);
                                     if(intersects <= 1){
                                         states.Enqueue(splitState);
@@ -171,18 +172,18 @@ namespace Cities.Roads
                                     {
                                         rotate90 = new Vector3(Mathf.Cos((float) splitAngle - 90*toRad), 0, Mathf.Sin((float) splitAngle - 90*toRad));
                                     }
-                                    splitState = new State(state.pos + 2*splitDir + rotate90, splitAngle);
+                                    splitState = new State(state.pos + 2*length*splitDir + length*rotate90, splitAngle);
                                     if(splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ){
                                     break;
                                     }
                                     intersects = noIntersects(splitState.pos, range);
                                     if(intersects <= 1){
-                                        splitRoad.AddLast(state.pos + 2 * splitDir);
+                                        splitRoad.AddLast(state.pos + 2 * length * splitDir);
                                         splitRoad.AddLast(splitState.pos);
                                         states.Enqueue(splitState);
                                         LinkedList<Vector3> row2 = new LinkedList<Vector3>();
-                                        row2.AddLast(state.pos + 1 * splitDir);
-                                        row2.AddLast(state.pos + 1 * splitDir + rotate90);
+                                        row2.AddLast(state.pos + 1 * length * splitDir);
+                                        row2.AddLast(state.pos + 1 * length * (splitDir + rotate90));
                                         network.AddRoad(row2);
                                     }
                                     break;
@@ -194,7 +195,7 @@ namespace Cities.Roads
                         }
                     }
                     Vector3 newPos = state.pos + length * direction;
-                    while(newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ){
+                    for (int i = 0; i < 10 && (newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ); i++){
                     if(state.angle > 0){
                         state.angle += UnityEngine.Random.Range(30*toRad,55*toRad);
                     }else{
