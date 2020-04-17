@@ -113,6 +113,73 @@ dependent on an injector for noise maps.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class Factory</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Textures_Factory__ctor_Interfaces_IInjector_System_Single_0__0____.md&amp;value=---%0Auid%3A%20Terrain.Textures.Factory.%23ctor(Interfaces.IInjector%7BSystem.Single%5B0%3A%2C0%3A%5D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Textures/Factory.cs/#L22">View Source</a>
+  </span>
+  <a id="Terrain_Textures_Factory__ctor_" data-uid="Terrain.Textures.Factory.#ctor*"></a>
+  <h4 id="Terrain_Textures_Factory__ctor_Interfaces_IInjector_System_Single_0__0____" data-uid="Terrain.Textures.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})">Factory(IInjector&lt;Single[,]&gt;)</h4>
+  <div class="markdown level1 summary"><p>constructs the factory with a new noise map injector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Factory(IInjector&lt;float[, ]&gt; noiseMapInjector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
+        <td><span class="parametername">noiseMapInjector</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Textures_Factory__noiseMapInjector.md&amp;value=---%0Auid%3A%20Terrain.Textures.Factory._noiseMapInjector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Textures/Factory.cs/#L16">View Source</a>
+  </span>
+  <h4 id="Terrain_Textures_Factory__noiseMapInjector" data-uid="Terrain.Textures.Factory._noiseMapInjector">_noiseMapInjector</h4>
+  <div class="markdown level1 summary"><p>The dependency injection object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly IInjector&lt;float[, ]&gt; _noiseMapInjector</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -120,11 +187,11 @@ dependent on an injector for noise maps.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Textures_Factory_CreateGrayScaleStrategy.md&amp;value=---%0Auid%3A%20Terrain.Textures.Factory.CreateGrayScaleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Textures/Factory.cs/#L37">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Textures/Factory.cs/#L44">View Source</a>
   </span>
   <a id="Terrain_Textures_Factory_CreateGrayScaleStrategy_" data-uid="Terrain.Textures.Factory.CreateGrayScaleStrategy*"></a>
   <h4 id="Terrain_Textures_Factory_CreateGrayScaleStrategy" data-uid="Terrain.Textures.Factory.CreateGrayScaleStrategy">CreateGrayScaleStrategy()</h4>
-  <div class="markdown level1 summary"><p>Constructs and returns a grayscale texture generation from <span class="xref">Terrain.Textures.Factory._noiseMapInjector</span></p>
+  <div class="markdown level1 summary"><p>Constructs and returns a grayscale texture generation from <a class="xref" href="Terrain.Textures.Factory.html#Terrain_Textures_Factory__noiseMapInjector">_noiseMapInjector</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -149,20 +216,44 @@ dependent on an injector for noise maps.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Textures_Factory_CreateWhittakerStrategy.md&amp;value=---%0Auid%3A%20Terrain.Textures.Factory.CreateWhittakerStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Terrain_Textures_Factory_CreateWhittakerStrategy_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Terrain.Textures.Factory.CreateWhittakerStrategy(System.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Textures/Factory.cs/#L31">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Terrain/Textures/Factory.cs/#L33">View Source</a>
   </span>
   <a id="Terrain_Textures_Factory_CreateWhittakerStrategy_" data-uid="Terrain.Textures.Factory.CreateWhittakerStrategy*"></a>
-  <h4 id="Terrain_Textures_Factory_CreateWhittakerStrategy" data-uid="Terrain.Textures.Factory.CreateWhittakerStrategy">CreateWhittakerStrategy()</h4>
-  <div class="markdown level1 summary"><p>Constructs and returns a whittaker texture generation from <span class="xref">Terrain.Textures.Factory._noiseMapInjector</span></p>
+  <h4 id="Terrain_Textures_Factory_CreateWhittakerStrategy_System_Single_System_Single_" data-uid="Terrain.Textures.Factory.CreateWhittakerStrategy(System.Single,System.Single)">CreateWhittakerStrategy(Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Constructs and returns a whittaker texture generation from <a class="xref" href="Terrain.Textures.Factory.html#Terrain_Textures_Factory__noiseMapInjector">_noiseMapInjector</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IGenerator&lt;Texture2D&gt; CreateWhittakerStrategy()</code></pre>
+    <pre><code class="lang-csharp hljs">public IGenerator&lt;Texture2D&gt; CreateWhittakerStrategy(float precipitationScale = 50F, float temperatureScale = 50F)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">precipitationScale</span></td>
+        <td><p>The scale used for generating a precipitation map.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">temperatureScale</span></td>
+        <td><p>The scale used for generating a temperature map.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -174,7 +265,7 @@ dependent on an injector for noise maps.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">UnityEngine.Texture2D</span>&gt;</td>
-        <td><p>A whittaker generator as its abstract super type</p>
+        <td><p>A whittaker generator as its abstract super type.</p>
 </td>
       </tr>
     </tbody>
