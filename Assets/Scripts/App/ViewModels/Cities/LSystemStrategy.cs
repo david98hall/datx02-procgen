@@ -6,24 +6,41 @@ using UnityEngine;
 namespace App.ViewModels.Cities
 {
     /// <summary>
-    /// A view model strategy for displaying settings for generating road networks with the L-system strategy. 
+    /// View-model for displaying and generating road networks with the L-system strategy.
     /// </summary>
     [Serializable]
     public class LSystemStrategy : ViewModelStrategy<float[,], RoadNetwork>
     {
-        #region UI Fields
 
+        /// <summary>
+        /// Underlying <see cref="Factory"/> for creating the A* strategy object
+        /// </summary>
+        private Factory _roadStrategyFactory;
+
+        #region Editor Fields
+
+        /// <summary>
+        /// Serialized origin of the L-system.
+        /// </summary>
         [SerializeField]
         private Vector2 origin;
 
+        /// <summary>
+        /// Serialized number of rewrites of the L-system.
+        /// </summary>
         [SerializeField]
         private int rewritesCount;
+        
         #endregion
         
-        private Factory _roadStrategyFactory;
-
+        /// <summary>
+        /// Is required for initializing the non-serializable properties of the view model.
+        /// </summary>
         public override void Initialize() => _roadStrategyFactory = new Factory(Injector);
         
+        /// <summary>
+        /// Displays the editor of the view model.
+        /// </summary>
         public override void Display()
         {
             // Display a field for setting the start point of the L-system generation
@@ -34,6 +51,12 @@ namespace App.ViewModels.Cities
             rewritesCount = EditorGUILayout.IntSlider("Rewrite Count", rewritesCount, 3, 7);
         }
         
+        
+        /// <summary>
+        /// Creates a generator with the serialized values from the editor.
+        /// Delegates the generation to the created generator.
+        /// </summary>
+        /// <returns>The result of the delegated generation call.</returns>
         public override RoadNetwork Generate() => 
             _roadStrategyFactory.CreateLSystemStrategy(origin, rewritesCount).Generate();
     }

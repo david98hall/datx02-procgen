@@ -1,4 +1,5 @@
-﻿using Interfaces;
+﻿using System;
+using Interfaces;
 
 namespace App.ViewModels
 {
@@ -7,14 +8,18 @@ namespace App.ViewModels
     /// </summary>
     /// <typeparam name="TI">The input type of the generation.</typeparam>
     /// <typeparam name="TO">The output type of the generation.</typeparam>
+    [Serializable]
     public abstract class ViewModelStrategy<TI, TO> : Strategy<TI, TO>, IDisplayable, IInitializable
     {
+        /// <summary>
+        /// Required constructor for initializing the underlying injector.
+        /// </summary>
         protected ViewModelStrategy() : base(null)
         {
         }
 
         /// <summary>
-        /// Displays the view.
+        /// Displays the editor of the view model.
         /// </summary>
         public virtual void Display()
         {

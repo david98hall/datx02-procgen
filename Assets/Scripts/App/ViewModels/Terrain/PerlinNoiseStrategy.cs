@@ -5,37 +5,67 @@ using Factory = Terrain.Noise.Factory;
 
 namespace App.ViewModels.Terrain
 {
+    /// <summary>
+    /// View-model for displaying and generating noise with the Perlin noise strategy.
+    /// </summary>
     [Serializable]
     public class PerlinNoiseStrategy : ViewModelStrategy<object, float[,]>
     {
-        #region UI Fields
+        #region Editor Fields
         
+        /// <summary>
+        /// Serialized width.
+        /// </summary>
         [SerializeField]
         private int width;
         
+        /// <summary>
+        /// Serialized depth.
+        /// </summary>
         [SerializeField]
         private int depth;
         
+        /// <summary>
+        /// Serialized seed.
+        /// </summary>
         [SerializeField]
         private int seed;
         
+        /// <summary>
+        /// Serialized scale
+        /// </summary>
         [SerializeField]
         private float scale; 
         
+        /// <summary>
+        /// Serialized number of octaves.
+        /// </summary>
         [SerializeField]
         private int numOctaves;
         
+        /// <summary>
+        /// Serialized persistence.
+        /// </summary>
         [SerializeField]
         private float persistence;
         
+        /// <summary>
+        /// Serialized lacunarity.
+        /// </summary>
         [SerializeField]
         private float lacunarity;
         
+        /// <summary>
+        /// Serialized noise offset.
+        /// </summary>
         [SerializeField]
         private Vector2 noiseOffset;
 
         #endregion
 
+        /// <summary>
+        /// Displays the editor of the view model.
+        /// </summary>
         public override void Display()
         {
             width = EditorGUILayout.IntSlider("Width", width, 2, 250);
@@ -47,9 +77,13 @@ namespace App.ViewModels.Terrain
             lacunarity = EditorGUILayout.Slider("Lacunarity", lacunarity, 1, 10);
             noiseOffset = EditorGUILayout.Vector2Field("Offset", noiseOffset);
         }
-
+        /// <summary>
+        /// Creates a generator with the serialized values from the editor.
+        /// Delegates the generation to the created generator.
+        /// </summary>
+        /// <returns>The result of the delegated generation call.</returns>
         public override float[,] Generate() => 
-            Factory.CreatePerlinNoiseStrategy(
+            new Factory().CreatePerlinNoiseStrategy(
                     width, depth, 
                     seed, scale, 
                     numOctaves, persistence, 
