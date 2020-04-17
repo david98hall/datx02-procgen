@@ -76,7 +76,7 @@ namespace Terrain.Testing
             switch (noiseMapStrategy)
             {
                 case NoiseMapStrategy.PerlinNoise:
-                    var perlinNoise = new Factory().CreatePerlinNoiseStrategy() as PerlinNoiseStrategy;
+                    var perlinNoise = Factory.CreatePerlinNoiseStrategy() as PerlinNoiseStrategy;
                     perlinNoise.Width = width;
                     perlinNoise.Depth = height;
                     perlinNoise.Seed = seed;

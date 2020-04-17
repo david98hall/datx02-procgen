@@ -91,14 +91,14 @@ namespace Cities.Testing
             DrawRoads(city.RoadNetwork.GetRoads());
         }
         
-        private void DisplayPlotBorders(IEnumerator<Plot> plots)
+        private void DisplayPlotBorders(IEnumerable<Plot> plots)
         {
             var plotCount = 1;
-            while (plots.MoveNext())
+            foreach (var plot in plots)
             {
-                if (plots.Current != null)
+                if (plot != null)
                 {
-                    DrawRoad(plots.Current.Vertices, 
+                    DrawRoad(plot.Vertices, 
                         "Plot Border " + plotCount++, 
                         plotBorderMaterial, 
                         0.15f); 
