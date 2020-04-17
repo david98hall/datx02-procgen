@@ -3,7 +3,7 @@
 namespace App.ViewModels
 {
     /// <summary>
-    /// A view for a strategy to generate something based on an input.
+    /// A view model for a strategy to generate something based on an input.
     /// </summary>
     /// <typeparam name="TI">The input type of the generation.</typeparam>
     /// <typeparam name="TO">The output type of the generation.</typeparam>
@@ -21,7 +21,7 @@ namespace App.ViewModels
         }
 
         /// <summary>
-        /// Initializes the view.
+        /// Initializes the view model.
         /// </summary>
         public virtual void Initialize()
         {
