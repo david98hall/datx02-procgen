@@ -31,18 +31,11 @@ namespace Cities.Plots
 
             var p1 = new Plot(RandomRotatedRect(rand, new Vector3(0f, 0f, 0f), new Vector3(5f, 0f, 5f), 5f, 5f));
             plots.Add(p1);
-            var p2 = new Plot(RandomRotatedRect(rand, new Vector3(0f, 0f, 0f), new Vector3(5f, 0f, 5f), 5f, 5f));
-            plots.Add(p2);
-
-            Debug.Log("Plots are colliding (t/f): " + Maths2D.AreColliding(p1.Vertices, p2.Vertices));
 
             bool roadCollision = false;
             foreach (var (start, end) in roadNetwork.GetRoadParts())
             {
-                var s = new Vector2(start.x, start.z);
-                var e = new Vector2(start.x, start.z);
-                if (Maths2D.LinePolyCollision(s, e, p1.Vertices.Select(v => new Vector2(v.x, v.z))) 
-                || Maths2D.LinePolyCollision(s, e, p2.Vertices.Select(v => new Vector2(v.x, v.z))))
+                if (Maths2D.LinePolyCollision(start, end, p1.Vertices)) 
                 {
                     roadCollision = true;
                 }

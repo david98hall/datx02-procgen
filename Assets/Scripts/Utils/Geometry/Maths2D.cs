@@ -459,13 +459,8 @@ namespace Utils.Geometry
         /// <param name="b">End point of the line.</param>
         /// <param name="poly">The vertices of the polygon</param>
         /// <returns>True if the line and polygon are colliding.</returns>
-        public static bool LinePolyCollision(Vector2 start, Vector2 end, IEnumerable<Vector2> poly)
+        public static bool LinePolyCollision(Vector3 start, Vector3 end, IEnumerable<Vector3> poly)
         {
-            if (IsInsidePolygon(start, poly) || IsInsidePolygon(end, poly))
-            {
-                return true;
-            }
-
             // Iterate over the vertices to find each edge of the polygon
             using (var vertexEnum = poly.GetEnumerator())
             {
@@ -476,7 +471,7 @@ namespace Utils.Geometry
                 while (vertexEnum.MoveNext())
                 {
                     var v2 = vertexEnum.Current;
-                    if (LineSegmentsIntersect(start, end, v1, v2))
+                    if (Maths3D.LineSegmentIntersection(out _, start, end, v1, v2))
                     {
                         return true;
                     }
