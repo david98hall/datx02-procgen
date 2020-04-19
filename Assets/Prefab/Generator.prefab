@@ -160,8 +160,6 @@ MonoBehaviour:
     roadNetworkStrategy: 0
     aStarStrategy:
       heightBias: 1
-    lSystemStrategy:
-      rewritesCount: 6
     plotStrategy: 0
     plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
     displayPlots: 1

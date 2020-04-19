@@ -34,13 +34,15 @@ namespace App.ViewModels.Cities
 
         #endregion
 
+        private static readonly (Vector2Int Start, Vector2Int Goal) _defaultPath = (Vector2Int.zero, Vector2Int.zero);
+        
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
         public override void Initialize()
         {
             _roadStrategyFactory = new Factory(Injector);
-            paths = new List<(Vector2Int, Vector2Int)> {(Vector2Int.zero, Vector2Int.zero)};
+            paths = new List<(Vector2Int, Vector2Int)> {_defaultPath};
         }
         
         /// <summary>
@@ -57,19 +59,15 @@ namespace App.ViewModels.Cities
             
             EditorGUILayout.LabelField("Paths");
             
-            if (GUILayout.Button("Add"))
-            {
-                paths.Add((Vector2Int.zero, Vector2Int.zero));
-            }
+            // Clear
+            if (paths.Any() && GUILayout.Button("Clear")) paths.Clear();
             
-            // Control for discarding all paths
-            if (paths.Any() && GUILayout.Button("Discard All"))
-            {
-                paths.Clear();
-            }
-            
+            // Add
+            if (GUILayout.Button("+")) paths.Add(_defaultPath);
+
             GUILayout.EndHorizontal();
             
+            // Path list
             EditorGUI.indentLevel++;
             for (var i = 0; i < paths.Count; i++)
             {

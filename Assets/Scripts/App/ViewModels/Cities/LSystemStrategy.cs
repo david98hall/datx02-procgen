@@ -19,29 +19,25 @@ namespace App.ViewModels.Cities
         /// </summary>
         private Factory _roadStrategyFactory;
 
-        #region Editor Fields
-
         /// <summary>
-        /// Serialized origin of the L-system.
+        /// Serialized L-system generation input data.
         /// </summary>
         [SerializeField]
-        private IList<Vector2> origins;
+        private IList<(Vector2 Origin, int Rewrites)> inputs;
 
-        /// <summary>
-        /// Serialized number of rewrites of the L-system.
-        /// </summary>
-        [SerializeField]
-        private int rewritesCount;
+        private static readonly int _minRewrites = 3;
+        private static readonly int _maxRewrites = 7;
         
-        #endregion
-
+        private static readonly (Vector2 Origin, int Rewrites) _defaultInput = 
+            (Vector2.zero, (_maxRewrites - _minRewrites) / 2 + _minRewrites);
+        
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
         public override void Initialize()
         {
             _roadStrategyFactory = new Factory(Injector);
-            origins = new List<Vector2>{Vector2.zero};
+            inputs = new List<(Vector2 Origin, int Rewrites)>{_defaultInput};
         }
         
         /// <summary>
@@ -49,47 +45,44 @@ namespace App.ViewModels.Cities
         /// </summary>
         public override void Display()
         {
-            // Display a slider for the number of rewrites the L-system
-            // will go through before returning the road network
-            rewritesCount = EditorGUILayout.IntSlider("Rewrite Count", rewritesCount, 3, 7);
-            
-            // Control for adding a new origin point
             GUILayout.BeginHorizontal();
+            // Label
+            EditorGUILayout.LabelField("L-systems");
             
-            EditorGUILayout.LabelField("Origins");
+            // Clearing
+            if (inputs.Any() && GUILayout.Button("Clear")) inputs.Clear();
             
-            if (GUILayout.Button("Add"))
-            {
-                origins.Add(Vector2.zero);
-            }
-            
-            // Control for discarding all origin points
-            if (origins.Any() && GUILayout.Button("Discard All"))
-            {
-                origins.Clear();
-            }
+            // Adding
+            if (GUILayout.Button("+")) inputs.Add(_defaultInput);
             
             GUILayout.EndHorizontal();
-
-            EditorGUI.indentLevel++;
             
-            for (var i = 0; i < origins.Count; i++)
+            // Input list
+            EditorGUI.indentLevel++;
+            for (var i = 0; i < inputs.Count; i++)
             {
                 GUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField($"Origin {i + 1}");
+                EditorGUILayout.LabelField($"L-system {i + 1}");
                 
                 // Origin remove button
                 var removed = GUILayout.Button("X");
                 GUILayout.EndHorizontal();
                 if (removed)
                 {
-                    origins.RemoveAt(i);
+                    inputs.RemoveAt(i);
                     continue;
                 }
+
+                var (origin, rewrites) = inputs[i];
                 
                 // Origin vector field
-                origins[i] = EditorGUILayout.Vector2Field("", origins[i]);
+                var newOrigin = EditorGUILayout.Vector2Field("Origin", origin);
                 
+                // Rewrites Count field
+                var newRewrites = EditorGUILayout.IntSlider("Rewrites", rewrites, _minRewrites, _maxRewrites);
+                
+                inputs[i] = (newOrigin, newRewrites);
+
                 EditorGUILayout.Space();
             }
             
@@ -104,9 +97,9 @@ namespace App.ViewModels.Cities
         public override RoadNetwork Generate()
         {
             RoadNetwork roadNetwork = null;
-            foreach (var origin in origins)
+            foreach (var (origin, rewrites) in inputs)
             {
-                var tmpRoadNetwork = _roadStrategyFactory.CreateLSystemStrategy(origin, rewritesCount).Generate();
+                var tmpRoadNetwork = _roadStrategyFactory.CreateLSystemStrategy(origin, rewrites).Generate();
                 if (roadNetwork == null)
                 {
                     roadNetwork = tmpRoadNetwork;
