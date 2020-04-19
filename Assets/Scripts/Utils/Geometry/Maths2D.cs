@@ -453,14 +453,19 @@ namespace Utils.Geometry
         }
 
         /// <summary>
-        /// Returns true if the line and polygon are colliding.
+        /// Returns true if the line and polygon are colliding. They collide if either the line
+        /// intersects one of the polygon's edges or the line lies inside the polygon.
         /// </summary>
-        /// <param name="a">Start point of the line.</param>
-        /// <param name="b">End point of the line.</param>
+        /// <param name="start">Start point of the line.</param>
+        /// <param name="end">End point of the line.</param>
         /// <param name="poly">The vertices of the polygon</param>
         /// <returns>True if the line and polygon are colliding.</returns>
         public static bool LinePolyCollision(Vector3 start, Vector3 end, IEnumerable<Vector3> poly)
         {
+            var startInside = IsInsidePolygon(new Vector2(start.x, start.z), poly.Select(v => new Vector2(v.x, v.z)));
+            var endInside = IsInsidePolygon(new Vector2(end.x, end.z), poly.Select(v => new Vector2(v.x, v.z)));
+            if (startInside || endInside)
+                return true;
             // Iterate over the vertices to find each edge of the polygon
             using (var vertexEnum = poly.GetEnumerator())
             {
