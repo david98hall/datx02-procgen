@@ -57,9 +57,23 @@ namespace App.ViewModels.Cities
             for (var i = 0; i < paths.Count; i++)
             {
                 var (start, goal) = paths[i];
+                
+                // Path start vector field
                 var newStart = EditorGUILayout.Vector2IntField("Start", start);
+                
+                GUILayout.BeginHorizontal();
+                
+                // Path end vector field
                 var newGoal = EditorGUILayout.Vector2IntField("Goal", goal);
                 paths[i] = (newStart, newGoal);
+
+                // Path remove button
+                if (GUILayout.Button("X"))
+                {
+                    paths.RemoveAt(i);
+                }
+                GUILayout.EndHorizontal();
+                
                 EditorGUILayout.Space();
             }
             

@@ -72,14 +72,18 @@ namespace App
         private HashSet<GameObject> gameObjects;
 
         #endregion
-        
+
+        public void OnEnable()
+        {
+            if (!_initialized) Initialize();
+        }
+
         /// <summary>
         /// Delegates the generation to the underlying view models.
         /// Displays the generated content using the unity objects
         /// </summary>
         public void Generate()
         {
-            if (!_initialized) Initialize();
             (_model.Mesh, _model.Texture) = terrainViewModel.Generate();
             _model.City = cityViewModel.Generate();
 

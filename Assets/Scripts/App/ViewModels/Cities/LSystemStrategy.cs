@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
@@ -23,7 +24,7 @@ namespace App.ViewModels.Cities
         /// Serialized origin of the L-system.
         /// </summary>
         [SerializeField]
-        private Vector2 origin;
+        private IList<Vector2> origins;
 
         /// <summary>
         /// Serialized number of rewrites of the L-system.
@@ -32,23 +33,60 @@ namespace App.ViewModels.Cities
         private int rewritesCount;
         
         #endregion
-        
+
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
-        public override void Initialize() => _roadStrategyFactory = new Factory(Injector);
+        public override void Initialize()
+        {
+            _roadStrategyFactory = new Factory(Injector);
+            origins = new List<Vector2>{Vector2.zero};
+        }
         
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
         public override void Display()
         {
-            // Display a field for setting the start point of the L-system generation
-            origin = EditorGUILayout.Vector2Field("Origin", origin);
-            
             // Display a slider for the number of rewrites the L-system
             // will go through before returning the road network
             rewritesCount = EditorGUILayout.IntSlider("Rewrite Count", rewritesCount, 3, 7);
+            
+            // Update the origin points
+            EditorGUILayout.LabelField("Origins");
+            EditorGUI.indentLevel++;
+            
+            for (var i = 0; i < origins.Count; i++)
+            {
+                GUILayout.BeginHorizontal();
+                
+                // Origin vector field
+                origins[i] = EditorGUILayout.Vector2Field($"Origin {i + 1}:", origins[i]);
+                
+                // Origin remove button
+                if (GUILayout.Button("X"))
+                {
+                    origins.RemoveAt(i);
+                }
+                
+                GUILayout.EndHorizontal();
+                EditorGUILayout.Space();
+            }
+            
+            // Control for adding a new origin point
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Add Origin"))
+            {
+                origins.Add(Vector2.zero);
+            }
+            
+            // Control for discarding all origin points
+            if (GUILayout.Button("Discard Origins"))
+            {
+                origins.Clear();
+            }
+            
+            GUILayout.EndHorizontal();
         }
         
         
@@ -57,7 +95,23 @@ namespace App.ViewModels.Cities
         /// Delegates the generation to the created generator.
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
-        public override RoadNetwork Generate() => 
-            _roadStrategyFactory.CreateLSystemStrategy(origin, rewritesCount).Generate();
+        public override RoadNetwork Generate()
+        {
+            RoadNetwork roadNetwork = null;
+            foreach (var origin in origins)
+            {
+                var tmpRoadNetwork = _roadStrategyFactory.CreateLSystemStrategy(origin, rewritesCount).Generate();
+                if (roadNetwork == null)
+                {
+                    roadNetwork = tmpRoadNetwork;
+                }
+                else
+                {
+                    roadNetwork.Merge(tmpRoadNetwork);
+                }
+            }
+
+            return roadNetwork;
+        }
     }
 }
