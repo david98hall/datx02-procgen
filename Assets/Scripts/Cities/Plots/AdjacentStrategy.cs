@@ -27,27 +27,32 @@ namespace Cities.Plots
                 var roadVector = end - start;
                 var maxSideLength = Vector3.Magnitude(roadVector);
                 const float roadOffset = 0.25f; // distance from each road part
-                var rectPlot = RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength, roadOffset);
+                var randomPlot = RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength, roadOffset);
 
-                // Only add the plot if it doesn't collide with any other
-                if (plots.Count == 0)
+                bool collision = false;
+
+                // Check if new plot collides with any other plot
+                foreach (var plot in plots)
                 {
-                    plots.Add(rectPlot);
-                }
-                else
-                {
-                    bool collision = false;
-                    foreach (var plot in plots)
+                    if (Maths2D.AreColliding(randomPlot.Vertices, plot.Vertices))
                     {
-                        if (Maths2D.AreColliding(rectPlot.Vertices, plot.Vertices)) 
-                        {
-                            collision = true;
-                            break;
-                        }
+                        collision = true;
+                        break;
                     }
-                    if (!collision)
-                        plots.Add(rectPlot);
                 }
+
+                // Check if new plot collides with any road part
+                foreach (var (s, e) in roadNetwork.GetRoadParts())
+                {
+                    if (Maths2D.LinePolyCollision(s, e, randomPlot.Vertices))
+                    {
+                        collision = true;
+                        break;
+                    }
+                }
+                if (!collision)
+                    plots.Add(randomPlot);
+
             }
 
             return plots;
@@ -56,14 +61,14 @@ namespace Cities.Plots
         // Returns a random (within given bounds) rectangular plot that lies alongside the road part defined by roadVector.
         private static Plot RandomRectPlot(System.Random rand, Vector3 start, Vector3 roadVector, float maxWidth, float maxLength, float roadOffset) 
         {            
-            // width is the size of the side that lies alongside the road
+            // The size of the side that lies alongside the road
             var width = (float) rand.NextDouble() * maxWidth + 1; // [1 .. maxWidth]
 
-            // length is the size of the side that lies perpendicular to the road
+            // The size of the side that lies perpendicular to the road
             var length = (float) rand.NextDouble() * maxLength + 1; // [1 .. maxLength]
 
             var vertices = new LinkedList<Vector3>();
-            // dir determines which side of the road the plot ends up on
+            // Determines which side of the road the plot ends up on
             var dir = Maths3D.PerpendicularClockwise(roadVector).normalized;
 
             // 50% chance to change side to make it more random
