@@ -159,7 +159,7 @@ MonoBehaviour:
   cityViewModel:
     roadNetworkStrategy: 0
     aStarStrategy:
-      heightBias: 0
+      heightBias: 1
     lSystemStrategy:
       rewritesCount: 6
     plotStrategy: 0

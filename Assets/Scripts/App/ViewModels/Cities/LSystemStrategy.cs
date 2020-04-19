@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
@@ -52,41 +53,46 @@ namespace App.ViewModels.Cities
             // will go through before returning the road network
             rewritesCount = EditorGUILayout.IntSlider("Rewrite Count", rewritesCount, 3, 7);
             
-            // Update the origin points
-            EditorGUILayout.LabelField("Origins");
-            EditorGUI.indentLevel++;
-            
-            for (var i = 0; i < origins.Count; i++)
-            {
-                GUILayout.BeginHorizontal();
-                
-                // Origin vector field
-                origins[i] = EditorGUILayout.Vector2Field($"Origin {i + 1}:", origins[i]);
-                
-                // Origin remove button
-                if (GUILayout.Button("X"))
-                {
-                    origins.RemoveAt(i);
-                }
-                
-                GUILayout.EndHorizontal();
-                EditorGUILayout.Space();
-            }
-            
             // Control for adding a new origin point
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Add Origin"))
+            
+            EditorGUILayout.LabelField("Origins");
+            
+            if (GUILayout.Button("Add"))
             {
                 origins.Add(Vector2.zero);
             }
             
             // Control for discarding all origin points
-            if (GUILayout.Button("Discard Origins"))
+            if (origins.Any() && GUILayout.Button("Discard All"))
             {
                 origins.Clear();
             }
             
             GUILayout.EndHorizontal();
+
+            EditorGUI.indentLevel++;
+            
+            for (var i = 0; i < origins.Count; i++)
+            {
+                GUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField($"Origin {i + 1}");
+                
+                // Origin remove button
+                var removed = GUILayout.Button("X");
+                GUILayout.EndHorizontal();
+                if (removed)
+                {
+                    origins.RemoveAt(i);
+                    continue;
+                }
+                
+                // Origin vector field
+                origins[i] = EditorGUILayout.Vector2Field("", origins[i]);
+                
+                EditorGUILayout.Space();
+            }
+            
         }
         
         

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
@@ -51,46 +52,51 @@ namespace App.ViewModels.Cities
             // Update the height bias
             heightBias = EditorGUILayout.Slider("Height Bias", heightBias, 0, 1);
             
-            // Update the paths
-            EditorGUILayout.LabelField("Paths");
-            EditorGUI.indentLevel++;
-            for (var i = 0; i < paths.Count; i++)
-            {
-                var (start, goal) = paths[i];
-                
-                // Path start vector field
-                var newStart = EditorGUILayout.Vector2IntField("Start", start);
-                
-                GUILayout.BeginHorizontal();
-                
-                // Path end vector field
-                var newGoal = EditorGUILayout.Vector2IntField("Goal", goal);
-                paths[i] = (newStart, newGoal);
-
-                // Path remove button
-                if (GUILayout.Button("X"))
-                {
-                    paths.RemoveAt(i);
-                }
-                GUILayout.EndHorizontal();
-                
-                EditorGUILayout.Space();
-            }
-            
             // Control for adding a new path
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Add Path"))
+            
+            EditorGUILayout.LabelField("Paths");
+            
+            if (GUILayout.Button("Add"))
             {
                 paths.Add((Vector2Int.zero, Vector2Int.zero));
             }
             
             // Control for discarding all paths
-            if (GUILayout.Button("Discard Paths"))
+            if (paths.Any() && GUILayout.Button("Discard All"))
             {
                 paths.Clear();
             }
             
             GUILayout.EndHorizontal();
+            
+            EditorGUI.indentLevel++;
+            for (var i = 0; i < paths.Count; i++)
+            {
+                GUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField($"Path {i + 1}");
+                
+                // Path remove button
+                var removed = GUILayout.Button("X");
+                GUILayout.EndHorizontal();
+                if (removed)
+                {
+                    paths.RemoveAt(i);
+                    continue;
+                }
+
+                var (start, goal) = paths[i];
+                
+                // Path start vector field
+                var newStart = EditorGUILayout.Vector2IntField("Start", start);
+
+                // Path end vector field
+                var newGoal = EditorGUILayout.Vector2IntField("Goal", goal);
+                paths[i] = (newStart, newGoal);
+
+                EditorGUILayout.Space();
+            }
+            
             EditorGUI.indentLevel--;
         }
         
