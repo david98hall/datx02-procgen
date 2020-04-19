@@ -62,6 +62,7 @@ namespace Cities.Roads
         {
         }
         
+        // Clones the given road network adjacency set into this road network
         private RoadNetwork(IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
         {
             _roadNetwork = CloneRoadNetwork(roadNetwork);
@@ -192,6 +193,8 @@ namespace Cities.Roads
             AddAndSplitRoadsAtIntersections(lineStart, lineEnd);
         }
 
+        // Adds a road between lineStart and lineEnd, but splits it and any intersecting roads
+        // if there are any intersections
         private void AddAndSplitRoadsAtIntersections(Vector3 lineStart, Vector3 lineEnd)
         {
             AddRoadVertex(lineStart);
@@ -251,6 +254,7 @@ namespace Cities.Roads
             
         }
         
+        // Gets all intersection points on the given road and other roads
         private IEnumerable<(Vector3 start, Vector3 intersection, Vector3 end)> GetIntersectionPoints(
             Vector3 linePoint1, Vector3 linePoint2, IEnumerator<(Vector3, Vector3)> roadParts)
         {
@@ -293,6 +297,7 @@ namespace Cities.Roads
         
         private void AddRoadVertex(Vector3 vertex)
         {
+            // Only adds the vertex if it has not already been added
             if (!_roadNetwork.ContainsKey(vertex))
             {
                 _roadNetwork.Add(vertex, new HashSet<Vector3>());
@@ -311,11 +316,13 @@ namespace Cities.Roads
 
         private IEnumerable<(Vector3, Vector3)> GetRoadParts(IDictionary<Vector3, ICollection<Vector3>> roadNetwork)
         {
+            // Get all road parts in the entire road network
             return roadNetwork.Keys.SelectMany(GetRoadParts);
         }
 
         private IEnumerable<(Vector3, Vector3)> GetRoadParts(Vector3 startVertex)
         {
+            // Get all road parts starting from the start vertex
             return _roadNetwork[startVertex].Select(endVertex => (startVertex, endVertex));
         }
 

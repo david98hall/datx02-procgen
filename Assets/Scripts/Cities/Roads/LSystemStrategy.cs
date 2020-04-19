@@ -1,25 +1,30 @@
 ﻿using Interfaces;
+using UnityEngine;
 
 namespace Cities.Roads{
     internal class LSystemStrategy : Strategy<float[,], RoadNetwork>
     {
-        public LSystem system;
-        int iterations;
-        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
+
+        /// <summary>
+        /// The start point of the L-system road network generation. 
+        /// </summary>
+        internal Vector2 Origin { get; set; }
+        
+        /// <summary>
+        /// The number of times this strategy will rewrite the
+        /// L-system before returning a road network based on it.
+        /// </summary>
+        internal int RewritesCount { get; set; }
+
+        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int rewritesCount = 6) 
+            : base(terrainNoiseMapInjector)
         {
-            system = new LSystem('F');
-            iterations = 3;
+            RewritesCount = rewritesCount;
         }
 
-        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int i) : base(terrainNoiseMapInjector)
-        {
-            system = new LSystem('F');
-            iterations = i;
-        }
-        
         public override RoadNetwork Generate(){
-            system = new LSystem(system.axiom);
-            for (var i = 0; i < iterations; i++)
+            var system = new LSystem('F', Origin, Injector);
+            for (var i = 0; i < RewritesCount; i++)
             {
                 system.Rewrite();
             }

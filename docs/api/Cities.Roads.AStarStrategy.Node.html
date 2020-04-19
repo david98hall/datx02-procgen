@@ -1,0 +1,737 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AStarStrategy.Node
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AStarStrategy.Node
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Cities.Roads.AStarStrategy.Node">
+  
+  
+  <h1 id="Cities_Roads_AStarStrategy_Node" data-uid="Cities.Roads.AStarStrategy.Node" class="text-break">Class AStarStrategy.Node
+  </h1>
+  <div class="markdown level0 summary"><p>Private class representing a node in a path.
+Is used by <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_Path">Path()</a> for finding the optimal node between two points.
+Implements the <span class="xref">System.IComparable&lt;T&gt;</span> interface for a custom sorting order in sorted set.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">AStarStrategy.Node</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cities.Roads.html">Cities.Roads</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="Cities_Roads_AStarStrategy_Node_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class Node : IComparable&lt;AStarStrategy.Node&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node__ctor_System_Int32_System_Single_System_Int32_.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.%23ctor(System.Int32%2CSystem.Single%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L220">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node__ctor_" data-uid="Cities.Roads.AStarStrategy.Node.#ctor*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node__ctor_System_Int32_System_Single_System_Int32_" data-uid="Cities.Roads.AStarStrategy.Node.#ctor(System.Int32,System.Single,System.Int32)">Node(Int32, Single, Int32)</h4>
+  <div class="markdown level1 summary"><p>Constructs a node object of a given location with no cost.
+Is used by <a class="xref" href="Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy_Generate">Generate()</a> to construct the start and goal nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Node(int x, float y, int z)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>x coordinate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>y coordinate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">z</span></td>
+        <td><p>x coordinate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node__ctor_System_Int32_System_Single_System_Int32_Cities_Roads_AStarStrategy_Node_Cities_Roads_AStarStrategy_Node_System_Single_.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.%23ctor(System.Int32%2CSystem.Single%2CSystem.Int32%2CCities.Roads.AStarStrategy.Node%2CCities.Roads.AStarStrategy.Node%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L237">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node__ctor_" data-uid="Cities.Roads.AStarStrategy.Node.#ctor*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node__ctor_System_Int32_System_Single_System_Int32_Cities_Roads_AStarStrategy_Node_Cities_Roads_AStarStrategy_Node_System_Single_" data-uid="Cities.Roads.AStarStrategy.Node.#ctor(System.Int32,System.Single,System.Int32,Cities.Roads.AStarStrategy.Node,Cities.Roads.AStarStrategy.Node,System.Single)">Node(Int32, Single, Int32, AStarStrategy.Node, AStarStrategy.Node, Single)</h4>
+  <div class="markdown level1 summary"><p>Constructs a node object if a given location and calculates the cost and heuristics from given
+predecessor and goal nodes with a given height bias using <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_Cost_Cities_Roads_AStarStrategy_Node_System_Single_">Cost(AStarStrategy.Node, Single)</a>.
+Is only used by <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_Adjacent_System_Single_0__0___System_Collections_Generic_ICollection_Cities_Roads_AStarStrategy_Node__Cities_Roads_AStarStrategy_Node_System_Single_">Adjacent(Single[,], ICollection&lt;AStarStrategy.Node&gt;, AStarStrategy.Node, Single)</a> to construct the adjacent nodes of the current node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Node(int x, float y, int z, AStarStrategy.Node predecessor, AStarStrategy.Node goal, float heightBias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>x coordinate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>y coordinate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">z</span></td>
+        <td><p>x coordinate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a></td>
+        <td><span class="parametername">predecessor</span></td>
+        <td><p>Previous node in the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>Goal node of the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">heightBias</span></td>
+        <td><p>The bias of height. Is used by <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_Cost_Cities_Roads_AStarStrategy_Node_System_Single_">Cost(AStarStrategy.Node, Single)</a> to compute the cost
+between two nodes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node__cost.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node._cost%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L205">View Source</a>
+  </span>
+  <h4 id="Cities_Roads_AStarStrategy_Node__cost" data-uid="Cities.Roads.AStarStrategy.Node._cost">_cost</h4>
+  <div class="markdown level1 summary"><p>The accumulated cost from the previous node to this node.
+Is calculated with <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_Cost_Cities_Roads_AStarStrategy_Node_System_Single_">Cost(AStarStrategy.Node, Single)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly float _cost</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node__heuristic.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node._heuristic%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L211">View Source</a>
+  </span>
+  <h4 id="Cities_Roads_AStarStrategy_Node__heuristic" data-uid="Cities.Roads.AStarStrategy.Node._heuristic">_heuristic</h4>
+  <div class="markdown level1 summary"><p>Estimated cost between the node and the goal node.
+Is calculated with <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_Cost_Cities_Roads_AStarStrategy_Node_System_Single_">Cost(AStarStrategy.Node, Single)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly float _heuristic</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node__location.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node._location%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L194">View Source</a>
+  </span>
+  <h4 id="Cities_Roads_AStarStrategy_Node__location" data-uid="Cities.Roads.AStarStrategy.Node._location">_location</h4>
+  <div class="markdown level1 summary"><p>3D location of the node in the height map from <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Injector</a>.
+x and z values are defined as the indices in the height map, while the y is defined as the value
+of the indices in the height map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly Vector3 _location</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node__predecessor.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node._predecessor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L199">View Source</a>
+  </span>
+  <h4 id="Cities_Roads_AStarStrategy_Node__predecessor" data-uid="Cities.Roads.AStarStrategy.Node._predecessor">_predecessor</h4>
+  <div class="markdown level1 summary"><p>The previous node in the path to this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly AStarStrategy.Node _predecessor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node_Adjacent_System_Single_0__0___System_Collections_Generic_ICollection_Cities_Roads_AStarStrategy_Node__Cities_Roads_AStarStrategy_Node_System_Single_.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.Adjacent(System.Single%5B0%3A%2C0%3A%5D%2CSystem.Collections.Generic.ICollection%7BCities.Roads.AStarStrategy.Node%7D%2CCities.Roads.AStarStrategy.Node%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L259">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node_Adjacent_" data-uid="Cities.Roads.AStarStrategy.Node.Adjacent*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node_Adjacent_System_Single_0__0___System_Collections_Generic_ICollection_Cities_Roads_AStarStrategy_Node__Cities_Roads_AStarStrategy_Node_System_Single_" data-uid="Cities.Roads.AStarStrategy.Node.Adjacent(System.Single[0:,0:],System.Collections.Generic.ICollection{Cities.Roads.AStarStrategy.Node},Cities.Roads.AStarStrategy.Node,System.Single)">Adjacent(Single[,], ICollection&lt;AStarStrategy.Node&gt;, AStarStrategy.Node, Single)</h4>
+  <div class="markdown level1 summary"><p>Computes adjacent nodes of the current node from a given height map and returns
+the not already visited nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;AStarStrategy.Node&gt; Adjacent(float[, ] heights, ICollection&lt;AStarStrategy.Node&gt; visited, AStarStrategy.Node goal, float heightBias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span>[,]</td>
+        <td><span class="parametername">heights</span></td>
+        <td><p>Height map of which the nodes are located in.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a>&gt;</td>
+        <td><span class="parametername">visited</span></td>
+        <td><p>Set of the already visited node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal node. Is used by the constructor and implicitly by <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_Cost_Cities_Roads_AStarStrategy_Node_System_Single_">Cost(AStarStrategy.Node, Single)</a> to
+compute the heuristics of the node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">heightBias</span></td>
+        <td><p>Is implicitly used by <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_Cost_Cities_Roads_AStarStrategy_Node_System_Single_">Cost(AStarStrategy.Node, Single)</a> to compute the cost
+between two nodes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node_CompareTo_Cities_Roads_AStarStrategy_Node_.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.CompareTo(Cities.Roads.AStarStrategy.Node)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L307">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node_CompareTo_" data-uid="Cities.Roads.AStarStrategy.Node.CompareTo*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node_CompareTo_Cities_Roads_AStarStrategy_Node_" data-uid="Cities.Roads.AStarStrategy.Node.CompareTo(Cities.Roads.AStarStrategy.Node)">CompareTo(AStarStrategy.Node)</h4>
+  <div class="markdown level1 summary"><p>Custom <span class="xref">System.IComparable&lt;T&gt;.CompareTo(T)</span> method for defining the sorting order between nodes.
+Sorting order is defined by the lowest sum of <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node__cost">_cost</a> and <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node__heuristic">_heuristic</a>.
+Equality is defined as equal locations, to avoid duplicate nodes with the same location in a
+<span class="xref">System.Collections.Generic.SortedSet`1</span>.
+Equal costs is defined as one being lower, to allow nodes with equal cost in a
+<span class="xref">System.Collections.Generic.SortedSet`1</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(AStarStrategy.Node other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The node to compare with.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The value of the comparison defined by <span class="xref">System.IComparable&lt;T&gt;</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node_Cost_Cities_Roads_AStarStrategy_Node_System_Single_.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.Cost(Cities.Roads.AStarStrategy.Node%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L352">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node_Cost_" data-uid="Cities.Roads.AStarStrategy.Node.Cost*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node_Cost_Cities_Roads_AStarStrategy_Node_System_Single_" data-uid="Cities.Roads.AStarStrategy.Node.Cost(Cities.Roads.AStarStrategy.Node,System.Single)">Cost(AStarStrategy.Node, Single)</h4>
+  <div class="markdown level1 summary"><p>Calculates cost between two nodes.
+The cost is defined as the sum of the 3D distance between the node and the 3D distance times the height
+difference between the nodes.
+A height bias defined by <a class="xref" href="Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__heightBias">_heightBias</a> determines the impacts of the
+height difference.
+When the height bias is zero, the height has no impact.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float Cost(AStarStrategy.Node other, float heightBias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">heightBias</span></td>
+        <td><p>The bias of height.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L319">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node_Equals_" data-uid="Cities.Roads.AStarStrategy.Node.Equals*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node_Equals_System_Object_" data-uid="Cities.Roads.AStarStrategy.Node.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Redefine equality as equal locations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the location of the objects are equal, else false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.Equals(System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node_GetHashCode.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L326">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node_GetHashCode_" data-uid="Cities.Roads.AStarStrategy.Node.GetHashCode*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node_GetHashCode" data-uid="Cities.Roads.AStarStrategy.Node.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Redefine hashcode as the hashcode of only the location</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The hashcode of the location</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.GetHashCode()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node_Path.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.Path%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L289">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node_Path_" data-uid="Cities.Roads.AStarStrategy.Node.Path*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node_Path" data-uid="Cities.Roads.AStarStrategy.Node.Path">Path()</h4>
+  <div class="markdown level1 summary"><p>Iterate the path from the current backwards to the starting node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Vector3&gt; Path()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><p>An iterable object of the reversed path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node_ToString.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L333">View Source</a>
+  </span>
+  <a id="Cities_Roads_AStarStrategy_Node_ToString_" data-uid="Cities.Roads.AStarStrategy.Node.ToString*"></a>
+  <h4 id="Cities_Roads_AStarStrategy_Node_ToString" data-uid="Cities.Roads.AStarStrategy.Node.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Redefine the conversion to a string to return the location, location of predecessor and the cost used
+in <a class="xref" href="Cities.Roads.AStarStrategy.Node.html#Cities_Roads_AStarStrategy_Node_CompareTo_Cities_Roads_AStarStrategy_Node_">CompareTo(AStarStrategy.Node)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A string of the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Node.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Node%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L185" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
