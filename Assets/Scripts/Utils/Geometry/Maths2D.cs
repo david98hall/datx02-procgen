@@ -413,12 +413,12 @@ namespace Utils.Geometry
         }
 
         // Check if two intervals are overlapping. Or geometrically: if two line segments are overlapping.
-        private static bool Overlap(ValueTuple<float, float> p1, ValueTuple<float, float> p2)
+        private static bool Overlap(ValueTuple<float, float> firstInterval, ValueTuple<float, float> secondInterval)
         {
             // Easy to understand if you think of the intervals as time. The equation essentially answers the
             // question: "could two people have met?", with: "yes, if both were born before the other died".
-            var (start1, end1) = p1;
-            var (start2, end2) = p2;
+            var (start1, end1) = firstInterval;
+            var (start2, end2) = secondInterval;
             return start1 < end2 && start2 < end1;
         }
 
