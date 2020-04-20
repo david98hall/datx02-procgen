@@ -2,6 +2,8 @@
 using System.Linq;
 using Cities.Roads;
 using Interfaces;
+using UnityEngine;
+using Utils.Geometry;
 
 namespace Cities.Plots
 {
@@ -28,6 +30,17 @@ namespace Cities.Plots
         public override IEnumerable<Plot> Generate()
         {
             var cyclicPlots = _minimalCycleStrategy.Generate().ToList();
+
+            // What area is big enough?
+            const float bigEnoughArea = 2f;
+            var bigEnoughPlots = new HashSet<Plot>();
+            foreach (var plot in cyclicPlots)
+            {
+                var vertices2D = plot.Vertices.Select(v => new Vector2(v.x, v.z));
+                if (Maths2D.CalculatePolygonArea(vertices2D) > bigEnoughArea)
+                    bigEnoughPlots.Add(plot);
+            }
+
             _adjacentStrategy.AddExistingPlots(cyclicPlots);
             return _adjacentStrategy.Generate().Concat(cyclicPlots);
         }
