@@ -81,8 +81,8 @@ namespace App.ViewModels.Terrain
         {
             var oldWidth = width;
             var oldDepth = depth;
-            width = EditorGUILayout.IntSlider("Width", width, 2, 250);
-            depth = EditorGUILayout.IntSlider("Depth", depth, 2, 250);
+            width = EditorGUILayout.IntSlider("Width", width, 25, 250);
+            depth = EditorGUILayout.IntSlider("Depth", depth, 25, 250);
 
             if (oldWidth != width || oldDepth != depth)
             {

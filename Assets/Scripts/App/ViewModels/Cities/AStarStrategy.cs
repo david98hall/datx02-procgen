@@ -64,7 +64,11 @@ namespace App.ViewModels.Cities
             if (paths.Any() && GUILayout.Button("Clear")) paths.Clear();
             
             // Add
-            if (GUILayout.Button("+")) paths.Add(new Path(Vector2Int.zero, Vector2Int.zero));
+            var initialGoal = new Vector2Int(
+                _terrainSize.Width - 1,
+                _terrainSize.Depth - 1
+            );
+            if (GUILayout.Button("+")) paths.Add(new Path(Vector2Int.zero, initialGoal));
 
             GUILayout.EndHorizontal();
             
@@ -97,7 +101,7 @@ namespace App.ViewModels.Cities
             
             EditorGUI.indentLevel--;
         }
-        
+
         /// <summary>
         /// Creates a generator with the serialized values from the editor.
         /// Delegates the generation to the created generator.

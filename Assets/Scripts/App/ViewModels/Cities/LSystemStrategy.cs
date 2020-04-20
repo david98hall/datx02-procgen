@@ -69,7 +69,8 @@ namespace App.ViewModels.Cities
             if (inputs.Any() && GUILayout.Button("Clear")) inputs.Clear();
             
             // Adding
-            if (GUILayout.Button("+")) inputs.Add(new Input(Vector2.zero, _defaultRewrites));
+            var initialOrigin = GetTerrainCenter().ToTerrainVertex(_terrainSize.Width, _terrainSize.Depth);
+            if (GUILayout.Button("+")) inputs.Add(new Input(initialOrigin, _defaultRewrites));
             
             GUILayout.EndHorizontal();
 
@@ -102,6 +103,8 @@ namespace App.ViewModels.Cities
             }
             
         }
+
+        private Vector2 GetTerrainCenter() => new Vector2(_terrainSize.Width / 2f, _terrainSize.Depth / 2f);
 
         /// <summary>
         /// Creates a generator with the serialized values from the editor.
