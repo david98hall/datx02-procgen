@@ -1,4 +1,4 @@
-﻿namespace Utils.Events
+﻿namespace Services
 {
     /// <summary>
     /// A service that can be subscribed to.

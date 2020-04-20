@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Utils.Events
+namespace Services
 {
     /// <summary>
     /// An event bus that can notify its subscribers of various events.

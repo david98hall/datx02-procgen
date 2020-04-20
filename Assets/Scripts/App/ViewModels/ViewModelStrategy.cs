@@ -1,6 +1,6 @@
 ﻿using System;
 using Interfaces;
-using Utils.Events;
+using Services;
 
 namespace App.ViewModels
 {

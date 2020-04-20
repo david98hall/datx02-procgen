@@ -1,16 +1,17 @@
-﻿namespace Utils.Events
+﻿namespace Services
 {
     /// <summary>
-    /// Listens to events created by its subscriptions.
+    /// An event bus that can notify its subscribers of various events.
     /// </summary>
     /// <typeparam name="T">The event id type.</typeparam>
-    public interface ISubscriber<in T>
+    public interface IEventBus<T> : IService<T>
     {
         /// <summary>
-        /// Reacts to an event created by a subscription.
+        /// Creates an event and notifies all subscribers of it.
         /// </summary>
         /// <param name="eventId">The id of the event.</param>
         /// <param name="eventData">The data of the event.</param>
-        void OnEvent(T eventId, object eventData);
+        void CreateEvent(T eventId, object eventData);
+
     }
 }
