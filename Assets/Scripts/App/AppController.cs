@@ -74,6 +74,7 @@ namespace App
 
         #endregion
 
+        // Used for view model communications
         private EventBus<AppEvent> _eventBus;
         
         public void OnEnable()
@@ -81,6 +82,31 @@ namespace App
             if (!_initialized) Initialize();
         }
 
+        /// <summary>
+        /// Is required for initializing the non-serializable properties of the view model.
+        /// Should only be called once due to expensive operations.
+        /// </summary>
+        public void Initialize()
+        {
+            _eventBus = new EventBus<AppEvent>();
+            
+            _meshFilter = GetComponent<MeshFilter>();
+            _meshRenderer = GetComponent<MeshRenderer>();
+            _meshCollider = GetComponent<MeshCollider>();
+            
+            if (gameObjects == null) gameObjects = new HashSet<GameObject>();
+
+            terrainViewModel.EventBus = _eventBus;
+            terrainViewModel.Initialize();
+
+            _model = new Model();
+            cityViewModel.EventBus = _eventBus;
+            cityViewModel.Injector = _model;
+            cityViewModel.Initialize();
+
+            _initialized = true;
+        }
+        
         /// <summary>
         /// Delegates the generation to the underlying view models.
         /// Displays the generated content using the unity objects
@@ -122,31 +148,6 @@ namespace App
                 _model.City.RoadNetwork.GetRoads(), 
                 _meshFilter, _meshCollider,
                 "Road Network", "Road"));
-        }
-        
-        /// <summary>
-        /// Is required for initializing the non-serializable properties of the view model.
-        /// Should only be called once due to expensive operations.
-        /// </summary>
-        public void Initialize()
-        {
-            _eventBus = new EventBus<AppEvent>();
-            
-            _meshFilter = GetComponent<MeshFilter>();
-            _meshRenderer = GetComponent<MeshRenderer>();
-            _meshCollider = GetComponent<MeshCollider>();
-            
-            if (gameObjects == null) gameObjects = new HashSet<GameObject>();
-
-            terrainViewModel.EventBus = _eventBus;
-            terrainViewModel.Initialize();
-
-            _model = new Model();
-            cityViewModel.EventBus = _eventBus;
-            cityViewModel.Injector = _model;
-            cityViewModel.Initialize();
-
-            _initialized = true;
         }
 
         /// <summary>
