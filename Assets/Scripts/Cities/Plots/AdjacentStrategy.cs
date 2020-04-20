@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Collections;
 using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,10 +11,34 @@ namespace Cities.Plots
 {
     internal class AdjacentStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
     {
+        /// <summary>
+        /// The already existing plots that will be taken into account when generating the adjacent plots.
+        /// </summary>
+        private IEnumerable<Plot> _prevPlots;
+        
+        /// <summary>
+        /// Initializes the strategy with a RoadNetwork injector.
+        /// </summary>
+        /// <param name="injector">The RoadNetwork injector.</param>
         public AdjacentStrategy(IInjector<RoadNetwork> injector) : base(injector)
         {
+            _prevPlots = new HashSet<Plot>();
         }
 
+        /// <summary>
+        /// Adds plots to the previously existing plots that will be taken into account in generation.
+        /// </summary>
+        /// <param name="plots">The already existing plots to add.</param>
+        public void AddExistingPlots(IEnumerable<Plot> plots)
+        {
+            _prevPlots = _prevPlots.Concat(plots);
+        }
+
+        /// <summary>
+        /// Generates differently sized rectangular plots along the road network parts. The plots that are intersecting
+        /// with road parts or previous plots are discarded.
+        /// </summary>
+        /// <returns>The plots that lie along the parts of the road network.</returns>
         public override IEnumerable<Plot> Generate()
         {
             var plots = new HashSet<Plot>();
@@ -29,10 +52,10 @@ namespace Cities.Plots
                 const float roadOffset = 0.25f; // distance from each road part
                 var randomPlot = RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength, roadOffset);
 
-                bool collision = false;
+                var collision = false;
 
                 // Check if new plot collides with any other plot
-                foreach (var plot in plots)
+                foreach (var plot in plots.Concat(_prevPlots))
                 {
                     if (Maths2D.AreColliding(randomPlot.Vertices, plot.Vertices))
                     {
@@ -77,7 +100,7 @@ namespace Cities.Plots
             
             // We want the plot to lie somewhere along the road, and not always have a corner at the start of the road part.
             var startOffset = (float) rand.NextDouble() * (roadVector.magnitude - width);
-            start = start + roadVector.normalized * startOffset;
+            start += roadVector.normalized * startOffset;
 
             // Add all the vertices to form the rectangle
             vertices.AddLast(start);
