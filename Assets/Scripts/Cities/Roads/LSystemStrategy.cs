@@ -23,7 +23,7 @@ namespace Cities.Roads{
         }
 
         public override RoadNetwork Generate(){
-            var system = new Lsystem('F', Origin, Injector);
+            var system = new LSystem('F', Origin, Injector);
             for (var i = 0; i < RewritesCount; i++)
             {
                 system.Rewrite();

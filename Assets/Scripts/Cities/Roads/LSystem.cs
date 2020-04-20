@@ -10,7 +10,7 @@ namespace Cities.Roads
     /// <summary>
     /// A way of generating roads using a non-deterministic L-system.
     /// </summary>
-    public class Lsystem
+    public class LSystem
     {
         public class State{
             public Vector3 pos;
@@ -44,7 +44,7 @@ namespace Cities.Roads
         private float toRad = Mathf.Deg2Rad;
         private float pi = Mathf.PI;
 
-        public Lsystem(char c, Vector2 origin, IInjector<float[,]> noiseMapInjector)
+        public LSystem(char c, Vector2 origin, IInjector<float[,]> noiseMapInjector)
         {
             _noiseMapInjector = noiseMapInjector;
             axiom = c;
@@ -85,7 +85,7 @@ namespace Cities.Roads
 
         #endregion
 
-        /*public Lsystem(char c, State state){
+        /*public LSystem(char c, State state){
             axiom = c;
             this.state = state;
             ruleset.Add('F',"F+B-S-");

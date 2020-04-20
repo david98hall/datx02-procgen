@@ -1,0 +1,48 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using Cities.Roads;
+using Interfaces;
+using UnityEngine;
+using Utils.Geometry;
+
+namespace Cities.Plots
+{
+    internal class CombinedStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
+    {
+        private readonly AdjacentStrategy _adjacentStrategy;
+        private readonly MinimalCycleStrategy _minimalCycleStrategy;
+        
+        /// <summary>
+        /// Initializes the strategy with a RoadNetwork injector.
+        /// </summary>
+        /// <param name="injector">The RoadNetwork injector.</param>
+        public CombinedStrategy(IInjector<RoadNetwork> injector) : base(injector)
+        {
+            _adjacentStrategy = new AdjacentStrategy(injector);
+            _minimalCycleStrategy = new MinimalCycleStrategy(injector);
+        }
+
+        /// <summary>
+        /// Combines the adjacent and minimal cycle strategies to generates plots both within cycles of the road network
+        /// and along road parts.
+        /// </summary>
+        /// <returns>The plots created by combining the strategies.</returns>
+        public override IEnumerable<Plot> Generate()
+        {
+            var cyclicPlots = _minimalCycleStrategy.Generate().ToList();
+
+            // What area is big enough?
+            const float bigEnoughArea = 2f;
+            var bigEnoughPlots = new HashSet<Plot>();
+            foreach (var plot in cyclicPlots)
+            {
+                var vertices2D = plot.Vertices.Select(v => new Vector2(v.x, v.z));
+                if (Maths2D.CalculatePolygonArea(vertices2D) > bigEnoughArea)
+                    bigEnoughPlots.Add(plot);
+            }
+
+            _adjacentStrategy.AddExistingPlots(cyclicPlots);
+            return _adjacentStrategy.Generate().Concat(cyclicPlots);
+        }
+    }
+}
