@@ -11,21 +11,50 @@ using Interfaces;
 /// Generator for buildings. 
 /// Will use strategy to construct building according to lot shape and population density (NYI).
 /// Some plots are suitable for multiple buildings; these should be split into street-bordering 
-/// buildings and a central green area. This is done by a Lot generator.
+/// buildings and a central green area. This can be done by a Lot generator.
 /// </summary>
 public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumerable<Building>>
 {
+    #region Fields
+
+    /// <summary>
+    /// The plots to generate buildings on.
+    /// </summary>
     private IEnumerable plots;
 
-    //private float[,] heatMap;
-    private float[,] heightMap;
-
-    private float minArea;
-    private float maxArea;
-
+    /// <summary>
+    /// The generated buildings.
+    /// </summary>
     private ICollection<Building> buildings;
 
+    /// <summary>
+    /// Population heat map for determining building types and height.
+    /// </summary>
+    private float[,] heatMap;
 
+    /// <summary>
+    /// The injected height map for the terrain heights.
+    /// </summary>
+    private float[,] heightMap;
+
+    /// <summary>
+    /// Minimal lot area for a building to be placed on it.
+    /// </summary>
+    private readonly float minArea;
+
+    /// <summary>
+    /// Maximal lot area for a building to be placed on it.
+    /// </summary>
+    private readonly float maxArea;
+
+    #endregion
+
+    /// <summary>
+    /// Construct a building extrusion strategy, using injector inputs.
+    /// </summary>
+    /// <param name="injector">The injector for height map and plots.</param>
+    /// <param name="minArea">The minimal area of lot.</param>
+    /// <param name="maxArea">The maximal area of lot.</param>
     public ExtrusionStrategy(IInjector<(float[,], IEnumerable<Plot>)> injector, float minArea, float maxArea) : base(injector)
     {
         this.minArea = minArea;
@@ -38,9 +67,10 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
     }
 
     /// <summary>
-    /// Generate all buildings in all the supplied plots.
+    /// Generate all buildings in all the supplied plots. Can be used with a lot generator
+    /// or just a single plot.
     /// </summary>
-    /// <returns>The set of all buildings.</returns>
+    /// <returns>The set of all generated buildings.</returns>
     public override IEnumerable<Building> Generate()
     {
 
@@ -51,10 +81,9 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
 
             var vertices = p.Vertices;
 
+            // Necessary for non-counter-clockwise plots
             if (!Maths2D.PointsAreCounterClockwise(vertices.ToList()))
-            {
                 vertices = vertices.Reverse();
-            }
 
             Lot lot = new Lot(vertices);
 
@@ -66,13 +95,12 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
 
 
     /// <summary>
-    /// Generate all buildings in a set of lots.
+    /// Generate all buildings in a set of lots. Will only generate one building per lot.
+    /// These may be convex or concave shapes, and the building appearance will be based on it.
     /// </summary>
     /// <param name="lots">The lots to generate a building in.</param>
     public void GetBuildings(ICollection<Lot> lots)
     {
-        //IList<Building> buildings = new List<Building>();
-
         foreach (Lot lot in lots)
         {
             // Only generate building if suitable lot
@@ -96,14 +124,14 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
         }
     }
 
+    /// <summary>
+    /// Check the parameters to determine whether a building can be placed inside the lot.
+    /// </summary>
+    /// <param name="lot">The lot to potentially place the building in.</param>
+    /// <returns>Can be placed or not.</returns>
     private bool ValidLot(Lot lot)
     {
-        bool valid = false;
-
-        if (lot.area >= minArea && lot.area < maxArea)
-            valid = true;
-
-        return valid;
+        return lot.area >= minArea && lot.area < maxArea;
     }
 
     /// <summary>
@@ -135,6 +163,12 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
         return (poly, max);
     }
 
+    /// <summary>
+    /// Get the minimum height in the bounding box of the building, ensuring it is below
+    /// terrain height.
+    /// </summary>
+    /// <param name="poly">The polygonal shape.</param>
+    /// <returns>The minimum value.</returns>
     private float MinimumHeightInBounds(IList<Vector3> poly)
     {
         var (minX, minY, maxX, maxY) = Maths2D.GetExtremeBounds(ToXZ(poly));
@@ -195,12 +229,14 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
     }
 
     /// <summary>
-    /// Constructs a simple face of 4 vertices for each edge, connecting the extruded polygon to the base one.
+    /// Constructs a simple face of 4 vertices for each edge, connecting the extruded polygon 
+    /// to the base one.
     /// </summary>
     /// <param name="verts">The full list of vertices.</param>
     /// <param name="tris">The full list of triangles.</param>
     /// <returns>The provided vertices and triangles with added sides.</returns>
-    private (ICollection<Vector3>, ICollection<int>) ConstructSideFaces(IList<Vector3> verts, ICollection<int> tris)
+    private (ICollection<Vector3>, ICollection<int>) ConstructSideFaces(
+        IList<Vector3> verts, ICollection<int> tris)
     {
         int n = (verts.Count / 2);
         int j = verts.Count;

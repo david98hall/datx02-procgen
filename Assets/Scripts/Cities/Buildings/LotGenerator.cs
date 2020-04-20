@@ -13,19 +13,53 @@ using Extensions;
 /// 
 public class LotGenerator
 {
-    internal float splitOffset;
+    #region Fields
+
+    //internal float splitOffset;
+
     internal float minSize = 10f;
+
+    /// <summary>
+    /// The max ratio of sides in a polygon.
+    /// </summary>
     internal float maxRatio = 2f;
+
+    /// <summary>
+    /// The minimal length of a polygon edge in a lot.
+    /// </summary>
     internal float maxSide;
+
+    /// <summary>
+    /// The maximal length of a polygon edge in a lot.
+    /// </summary>
     internal float minSide;
 
+    /// <summary>
+    /// Factor for crossing line segment vectors.
+    /// </summary>
     private readonly float boundsFactor;
+
+    /// <summary>
+    /// The winding order of the plot vertices.
+    /// </summary>
     private readonly bool clockwise;
 
+    /// <summary>
+    /// The plot to split into lots.
+    /// </summary>
     private readonly Plot plot;
+
+    /// <summary>
+    /// The resulting lots from subdivision.
+    /// </summary>
     private readonly ICollection<Lot> lots = new List<Lot>();
 
+    #endregion
 
+    /// <summary>
+    /// Construct a generator of lots with given parameters.
+    /// </summary>
+    /// <param name="plot">The plot to generate lots inside.</param>
     public LotGenerator(Plot plot)
     {
         this.plot = plot;
@@ -38,7 +72,7 @@ public class LotGenerator
     }
 
     /// <summary>
-    /// Generates lots from plots, depending on chosen method.
+    /// Generates lots (subplots) from plots.
     /// </summary>
     /// <returns>A collection of the lots obtained from subdivision.</returns>
     public ICollection<Lot> Generate()

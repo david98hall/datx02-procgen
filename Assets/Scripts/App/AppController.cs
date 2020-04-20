@@ -114,14 +114,16 @@ namespace App
             // Display buildings
             if (cityViewModel.DisplayBuildings)
             {
+                var container = new GameObject("Buildings", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
                 foreach (var b in _model.City.Buildings)
                 {
                     var obj = new GameObject("Building", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
                     obj.GetComponent<MeshFilter>().mesh = b.mesh;
                     obj.GetComponent<MeshRenderer>().sharedMaterial = cityViewModel.BuildingMaterial;
 
-                    gameObjects.Add(obj);
+                    obj.transform.parent = container.transform;
                 }
+                gameObjects.Add(container);
             }
 
             // Display roads
