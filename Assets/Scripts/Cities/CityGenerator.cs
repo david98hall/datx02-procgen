@@ -2,7 +2,6 @@
 using Cities.Plots;
 using Cities.Roads;
 using Interfaces;
-using Factory = Cities.Plots.Factory;
 
 namespace Cities
 {

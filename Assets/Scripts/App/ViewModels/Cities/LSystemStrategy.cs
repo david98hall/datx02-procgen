@@ -14,6 +14,19 @@ namespace App.ViewModels.Cities
     public class LSystemStrategy : ViewModelStrategy<float[,], RoadNetwork>
     {
 
+        [Serializable]
+        private class Input
+        {
+            public Vector2 origin;
+            public int rewrites;
+
+            public Input(Vector2 origin, int rewrites)
+            {
+                this.origin = origin;
+                this.rewrites = rewrites;
+            }
+        }
+        
         /// <summary>
         /// Underlying <see cref="Factory"/> for creating the A* strategy object
         /// </summary>
@@ -23,13 +36,11 @@ namespace App.ViewModels.Cities
         /// Serialized L-system generation input data.
         /// </summary>
         [SerializeField]
-        private IList<(Vector2 Origin, int Rewrites)> inputs;
+        private IList<Input> inputs;
 
         private static readonly int _minRewrites = 3;
         private static readonly int _maxRewrites = 7;
-        
-        private static readonly (Vector2 Origin, int Rewrites) _defaultInput = 
-            (Vector2.zero, (_maxRewrites - _minRewrites) / 2 + _minRewrites);
+        private static readonly int _defaultRewrites = (_maxRewrites - _minRewrites) / 2 + _minRewrites;
         
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
@@ -37,7 +48,7 @@ namespace App.ViewModels.Cities
         public override void Initialize()
         {
             _roadStrategyFactory = new Factory(Injector);
-            inputs = new List<(Vector2 Origin, int Rewrites)>{_defaultInput};
+            inputs = new List<Input>{new Input(Vector2.zero, _defaultRewrites)};
         }
         
         /// <summary>
@@ -53,7 +64,7 @@ namespace App.ViewModels.Cities
             if (inputs.Any() && GUILayout.Button("Clear")) inputs.Clear();
             
             // Adding
-            if (GUILayout.Button("+")) inputs.Add(_defaultInput);
+            if (GUILayout.Button("+")) inputs.Add(new Input(Vector2.zero, _defaultRewrites));
             
             GUILayout.EndHorizontal();
             
@@ -69,19 +80,17 @@ namespace App.ViewModels.Cities
                 GUILayout.EndHorizontal();
                 if (removed)
                 {
-                    inputs.RemoveAt(i);
+                    inputs.RemoveAt(i--);
                     continue;
                 }
 
-                var (origin, rewrites) = inputs[i];
-                
                 // Origin vector field
-                var newOrigin = EditorGUILayout.Vector2Field("Origin", origin);
+                var newOrigin = EditorGUILayout.Vector2Field("Origin", inputs[i].origin);
                 
                 // Rewrites Count field
-                var newRewrites = EditorGUILayout.IntSlider("Rewrites", rewrites, _minRewrites, _maxRewrites);
+                var newRewrites = EditorGUILayout.IntSlider("Rewrites", inputs[i].rewrites, _minRewrites, _maxRewrites);
                 
-                inputs[i] = (newOrigin, newRewrites);
+                inputs[i] = new Input(newOrigin, newRewrites);
 
                 EditorGUILayout.Space();
             }
@@ -97,16 +106,16 @@ namespace App.ViewModels.Cities
         public override RoadNetwork Generate()
         {
             RoadNetwork roadNetwork = null;
-            foreach (var (origin, rewrites) in inputs)
+            foreach (var input in inputs)
             {
-                var tmpRoadNetwork = _roadStrategyFactory.CreateLSystemStrategy(origin, rewrites).Generate();
+                var tmpNetwork = _roadStrategyFactory.CreateLSystemStrategy(input.origin, input.rewrites).Generate();
                 if (roadNetwork == null)
                 {
-                    roadNetwork = tmpRoadNetwork;
+                    roadNetwork = tmpNetwork;
                 }
                 else
                 {
-                    roadNetwork.Merge(tmpRoadNetwork);
+                    roadNetwork.Merge(tmpNetwork);
                 }
             }
 

@@ -30,19 +30,17 @@ namespace App.ViewModels.Cities
         /// Serialized start and goal paths
         /// </summary>
         [SerializeField]
-        private IList<(Vector2Int, Vector2Int)> paths;
+        private IList<Path> paths;
 
         #endregion
 
-        private static readonly (Vector2Int Start, Vector2Int Goal) _defaultPath = (Vector2Int.zero, Vector2Int.zero);
-        
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
         public override void Initialize()
         {
             _roadStrategyFactory = new Factory(Injector);
-            paths = new List<(Vector2Int, Vector2Int)> {_defaultPath};
+            paths = new List<Path> {new Path(Vector2Int.zero, Vector2Int.zero)};
         }
         
         /// <summary>
@@ -63,7 +61,7 @@ namespace App.ViewModels.Cities
             if (paths.Any() && GUILayout.Button("Clear")) paths.Clear();
             
             // Add
-            if (GUILayout.Button("+")) paths.Add(_defaultPath);
+            if (GUILayout.Button("+")) paths.Add(new Path(Vector2Int.zero, Vector2Int.zero));
 
             GUILayout.EndHorizontal();
             
@@ -79,18 +77,15 @@ namespace App.ViewModels.Cities
                 GUILayout.EndHorizontal();
                 if (removed)
                 {
-                    paths.RemoveAt(i);
+                    paths.RemoveAt(i--);
                     continue;
                 }
 
-                var (start, goal) = paths[i];
-                
                 // Path start vector field
-                var newStart = EditorGUILayout.Vector2IntField("Start", start);
+                paths[i].start = EditorGUILayout.Vector2IntField("Start", paths[i].start);
 
                 // Path end vector field
-                var newGoal = EditorGUILayout.Vector2IntField("Goal", goal);
-                paths[i] = (newStart, newGoal);
+                paths[i].goal = EditorGUILayout.Vector2IntField("Goal", paths[i].goal);
 
                 EditorGUILayout.Space();
             }
@@ -104,6 +99,22 @@ namespace App.ViewModels.Cities
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
         public override RoadNetwork Generate() => 
-            _roadStrategyFactory?.CreateAStarStrategy(heightBias, paths).Generate();
+            _roadStrategyFactory?.CreateAStarStrategy(heightBias, paths.Select(p => p.ToValueTuple())).Generate();
+
+        [Serializable]
+        private class Path
+        {
+            public Vector2Int start;
+            public Vector2Int goal;
+
+            public Path(Vector2Int start, Vector2Int goal)
+            {
+                this.start = start;
+                this.goal = goal;
+            }
+
+            public (Vector2Int Start, Vector2Int Goal) ToValueTuple() => (start, goal);
+        }
+        
     }
 }
