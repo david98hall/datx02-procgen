@@ -181,6 +181,9 @@ namespace App.ViewModels.Cities
         {
             _generator = new CityGenerator();
 
+            aStarStrategy.EventBus = EventBus;
+            lSystemStrategy.EventBus = EventBus;
+            
             aStarStrategy.Injector = Injector;
             lSystemStrategy.Injector = Injector;
             

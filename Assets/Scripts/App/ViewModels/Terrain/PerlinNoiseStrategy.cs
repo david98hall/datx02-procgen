@@ -68,8 +68,7 @@ namespace App.ViewModels.Terrain
         /// </summary>
         public override void Display()
         {
-            width = EditorGUILayout.IntSlider("Width", width, 2, 250);
-            depth = EditorGUILayout.IntSlider("Depth", depth, 2, 250);
+            DisplaySizeControls();
             seed = EditorGUILayout.IntField("Seed", seed);
             scale = EditorGUILayout.Slider("Scale", scale, 1, 100);
             numOctaves = EditorGUILayout.IntSlider("Number of Octaves", numOctaves, 1, 10);
@@ -77,6 +76,20 @@ namespace App.ViewModels.Terrain
             lacunarity = EditorGUILayout.Slider("Lacunarity", lacunarity, 1, 10);
             noiseOffset = EditorGUILayout.Vector2Field("Offset", noiseOffset);
         }
+
+        private void DisplaySizeControls()
+        {
+            var oldWidth = width;
+            var oldDepth = depth;
+            width = EditorGUILayout.IntSlider("Width", width, 2, 250);
+            depth = EditorGUILayout.IntSlider("Depth", depth, 2, 250);
+
+            if (oldWidth != width || oldDepth != depth)
+            {
+                EventBus.Notify(AppEvent.UPDATE_NOISE_MAP_SIZE, (width, depth));
+            }
+        }
+        
         /// <summary>
         /// Creates a generator with the serialized values from the editor.
         /// Delegates the generation to the created generator.

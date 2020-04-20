@@ -4,6 +4,7 @@ using System.Linq;
 using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
+using Utils;
 
 namespace App.ViewModels.Cities
 {
@@ -31,6 +32,8 @@ namespace App.ViewModels.Cities
         /// </summary>
         [SerializeField]
         private IList<Path> paths;
+
+        private (int Width, int Depth) _terrainSize;
 
         #endregion
 
@@ -82,10 +85,12 @@ namespace App.ViewModels.Cities
                 }
 
                 // Path start vector field
-                paths[i].start = EditorGUILayout.Vector2IntField("Start", paths[i].start);
+                paths[i].start = EditorGUILayout.Vector2IntField("Start", paths[i].start)
+                    .ToTerrainVertex(_terrainSize.Width, _terrainSize.Depth);
 
                 // Path end vector field
-                paths[i].goal = EditorGUILayout.Vector2IntField("Goal", paths[i].goal);
+                paths[i].goal = EditorGUILayout.Vector2IntField("Goal", paths[i].goal)
+                    .ToTerrainVertex(_terrainSize.Width, _terrainSize.Depth);
 
                 EditorGUILayout.Space();
             }
@@ -101,6 +106,14 @@ namespace App.ViewModels.Cities
         public override RoadNetwork Generate() => 
             _roadStrategyFactory?.CreateAStarStrategy(heightBias, paths.Select(p => p.ToValueTuple())).Generate();
 
+        public override void OnNotification(AppEvent eventId, object eventData)
+        {
+            if (eventId.Equals(AppEvent.UPDATE_NOISE_MAP_SIZE))
+            {
+                _terrainSize = ((int, int)) eventData;
+            }
+        }
+        
         [Serializable]
         private class Path
         {

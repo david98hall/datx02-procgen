@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
+using Interfaces;
 using UnityEditor;
 using UnityEngine;
+using Utils;
 
 namespace App.ViewModels.Cities
 {
@@ -41,7 +43,10 @@ namespace App.ViewModels.Cities
         private static readonly int _minRewrites = 3;
         private static readonly int _maxRewrites = 7;
         private static readonly int _defaultRewrites = (_maxRewrites - _minRewrites) / 2 + _minRewrites;
-        
+
+        // Fields based on events
+        private (int Width, int Depth) _terrainSize;
+
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
@@ -67,7 +72,7 @@ namespace App.ViewModels.Cities
             if (GUILayout.Button("+")) inputs.Add(new Input(Vector2.zero, _defaultRewrites));
             
             GUILayout.EndHorizontal();
-            
+
             // Input list
             EditorGUI.indentLevel++;
             for (var i = 0; i < inputs.Count; i++)
@@ -85,7 +90,8 @@ namespace App.ViewModels.Cities
                 }
 
                 // Origin vector field
-                var newOrigin = EditorGUILayout.Vector2Field("Origin", inputs[i].origin);
+                var editorOrigin = EditorGUILayout.Vector2Field("Origin", inputs[i].origin);
+                var newOrigin = editorOrigin.ToTerrainVertex(_terrainSize.Width, _terrainSize.Depth);
                 
                 // Rewrites Count field
                 var newRewrites = EditorGUILayout.IntSlider("Rewrites", inputs[i].rewrites, _minRewrites, _maxRewrites);
@@ -96,8 +102,7 @@ namespace App.ViewModels.Cities
             }
             
         }
-        
-        
+
         /// <summary>
         /// Creates a generator with the serialized values from the editor.
         /// Delegates the generation to the created generator.
@@ -120,6 +125,14 @@ namespace App.ViewModels.Cities
             }
 
             return roadNetwork;
+        }
+
+        public override void OnNotification(AppEvent eventId, object eventData)
+        {
+            if (eventId.Equals(AppEvent.UPDATE_NOISE_MAP_SIZE))
+            {
+                _terrainSize = ((int, int)) eventData;
+            }
         }
     }
 }
