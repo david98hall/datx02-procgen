@@ -13,59 +13,59 @@ using Interfaces;
 /// Some plots are suitable for multiple buildings; these should be split into street-bordering 
 /// buildings and a central green area. This is done by a Lot generator.
 /// </summary>
-public class ExtrusionStrategy : Strategy<float[,], ICollection<Building>>
+public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumerable<Building>>
 {
-    private IEnumerator plots;
+    private IEnumerable plots;
 
-    private float[,] heatMap;
+    //private float[,] heatMap;
     private float[,] heightMap;
 
     private float minArea;
+    private float maxArea;
 
     private ICollection<Building> buildings;
 
 
-    internal ExtrusionStrategy(IInjector<float[,]> heightmapInjector, float minArea) : base(heightmapInjector)
+    public ExtrusionStrategy(IInjector<(float[,], IEnumerable<Plot>)> injector, float minArea, float maxArea) : base(injector)
     {
         this.minArea = minArea;
-        heightMap = heightmapInjector.Get();
+        this.maxArea = maxArea;
+
+        heightMap = injector.Get().Item1;
+        plots = injector.Get().Item2;
+
         buildings = new List<Building>();
     }
 
-    internal void AddPlots(IEnumerator plots)
-    {
-        this.plots = plots;
-    }
-
     /// <summary>
-    /// Generate all buildings in the given set of plots.
+    /// Generate all buildings in all the supplied plots.
     /// </summary>
-    /// <returns>The generated buildings.</returns>
-    public override ICollection<Building> Generate()
+    /// <returns>The set of all buildings.</returns>
+    public override IEnumerable<Building> Generate()
     {
 
-        while (plots.MoveNext())
+        foreach (Plot p in plots)
         {
-            if (plots.Current != null)
-            {
-                LotGenerator lg = new LotGenerator( (Plot) plots.Current, 0);
-                ICollection<Lot> lots = lg.Generate();
+            //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
+            //ICollection<Lot> lots = lg.Generate();
 
-                buildings = GetBuildings((IList<Lot>)lots);
-            }
+
+            Lot lot = new Lot(p.Vertices, Maths2D.GetCenterPoint(ToXZ(p.Vertices)).ToXYZ(0));
+
+            GetBuildings(new List<Lot> { lot });
         }
 
         return buildings;
     }
 
+
     /// <summary>
     /// Generate all buildings in a set of lots.
     /// </summary>
     /// <param name="lots">The lots to generate a building in.</param>
-    /// <returns></returns>
-    public ICollection<Building> GetBuildings(ICollection<Lot> lots)
+    public void GetBuildings(ICollection<Lot> lots)
     {
-        IList<Building> buildings = new List<Building>();
+        //IList<Building> buildings = new List<Building>();
 
         foreach (Lot lot in lots)
         {
@@ -74,13 +74,14 @@ public class ExtrusionStrategy : Strategy<float[,], ICollection<Building>>
             {
                 //float y = heightMap[Mathf.RoundToInt(lot.center.x), Mathf.RoundToInt(lot.center.z)];
                 float y = Random.Range(1f, 5.5f);
-                float marginSize = 0.5f;
 
-                IList<Vector3> vertices = (IList<Vector3>) PolyOps.ShrinkPoly(lot.Vertices.ToList(), marginSize);
+                //float marginSize = 0.5f;
+                //IList<Vector3> vertices = (IList<Vector3>) PolyOps.ShrinkPoly(lot.Vertices.ToList(), marginSize);
+
+                IList<Vector3> vertices = lot.Vertices.ToList();
 
                 // Polygon centroid
                 Vector2 c = Maths2D.GetConvexCenter(ToXZ(vertices));
-                Vector3 center = new Vector3(c.x, 0, c.y);
 
                 vertices.RemoveAt(vertices.Count - 1);
                 var tup = SetBaseHeight(vertices);
@@ -88,26 +89,24 @@ public class ExtrusionStrategy : Strategy<float[,], ICollection<Building>>
                 var (verts, tris) = ExtrudePolygon(vertices, tup.max + y);
                 Mesh m = BuildMesh(verts, tris);
 
-                buildings.Add(new Building(center, Vector2.zero, m));
+                buildings.Add(new Building(c.ToXYZ(0f), Vector2.zero, m));
             }
         }
-
-        return buildings;
     }
 
     private bool ValidLot(Lot lot)
     {
         bool valid = false;
 
-        if (lot.area >= minArea)
+        if (lot.area >= minArea && lot.area < maxArea)
             valid = true;
 
         return valid;
     }
 
     /// <summary>
-    /// Finds the height of the terrain for each building base vertex, as well as the maximum height for 
-    /// extruding the top into a flat shape suitable for more floors. (May be unnecessary with min height)
+    /// Finds the height of the terrain for each building base vertex, as well as the minimum 
+    /// height for any points under the shape so that it is always under the mesh.
     /// </summary>
     /// <param name="poly">The polygonal 2D shape of the building.</param>
     /// <returns>The y-translated shape and the maximum height.</returns>
@@ -136,8 +135,8 @@ public class ExtrusionStrategy : Strategy<float[,], ICollection<Building>>
 
     private float MinimumHeightInBounds(IList<Vector3> poly)
     {
-        foreach (var p in poly)
-            Debug.Log(p.x + ", " + p.z);
+        //foreach (var p in poly)
+        //    Debug.Log(p.x + ", " + p.z);
         var (minX, minY, maxX, maxY) = Maths2D.GetExtremeBounds(ToXZ(poly));
 
         int MinX = Mathf.FloorToInt(minX);
@@ -159,7 +158,7 @@ public class ExtrusionStrategy : Strategy<float[,], ICollection<Building>>
     }
 
     /// <summary>
-    ///  Uniformly extends a polygon upwards and connects the vertices on the sides.
+    ///  Extends a polygon upwards and connects the vertices on the sides.
     /// </summary>
     /// <param name="vertices">The points of the original 2D shape.</param>
     /// <param name="distance">The distance to extend the polygon.</param>
@@ -172,6 +171,13 @@ public class ExtrusionStrategy : Strategy<float[,], ICollection<Building>>
         // Prepare a shape for extrusion (using triangulator to get tris)
         Triangulator t = new Triangulator(new Polygon(ToXZ(vertices).ToArray(), new Vector2[0][]));
         int[] bottomTris = t.Triangulate();
+
+        if (bottomTris == null)
+        {
+            Debug.Log("Polygon: ");
+            foreach (var v in vertices)
+                Debug.Log(v);
+        }
 
         ICollection<int> tris = new List<int>();
         tris.AddRange(bottomTris);

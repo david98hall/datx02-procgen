@@ -7,33 +7,32 @@ using Interfaces;
 namespace Cities.Buildings
 {
     /// <summary>
-    /// Creates strategies for generating plot contents.
+    /// Creates strategies for generating buildings.
     /// </summary>
     public class Factory
     {
-        private readonly IInjector<IEnumerable<Plot>> _plotsInjector;
-        private readonly IInjector<float[,]> _heightMapInjector;
+
+        private readonly IInjector<(float[,], IEnumerable<Plot>)> _injector;
 
         /// <summary>
-        /// Creates a Factory with an injector for Plots and a height map.
+        /// Initializes this factory with a noise map injector and plot collection injector.
         /// </summary>
-        /// <param name="plotsInjector">Provides the plots.</param>
-        /// <param name="heightMapInjector">Provides the height map.</param>
-        public Factory(IInjector<IEnumerable<Plot>> plotsInjector, IInjector<float[,]> heightMapInjector)
+        /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
+        public Factory(IInjector<(float[,], IEnumerable<Plot>)> injector)
         {
-            _plotsInjector = plotsInjector;
-            _heightMapInjector = heightMapInjector;
+            _injector = injector;
         }
 
         /// <summary>
-        /// Creates a strategy for constructing buildings using the extrusion method.
+        /// Creates an extrusion strategy for generating buildings.
         /// </summary>
-        /// <returns>The generated buildings.</returns>
-        public IGenerator<IEnumerable<Plot>> CreateExtrusionStrategy()
-        {
-            return new ExtrusionStrategy(_plotsInjector, _heightMapInjector);
-        }
+        /// <param name="minArea">The minimal area that a building can be generated in.</param>
+        /// <returns>A collection of the generated buildings.</returns>
+        public IGenerator<IEnumerable<Building>> CreateExtrusionStrategy(float minArea = 2, float maxArea = 100) =>
+            new ExtrusionStrategy(_injector, minArea, maxArea)
+            {
+                
+            };
     }
-    
 }
 
