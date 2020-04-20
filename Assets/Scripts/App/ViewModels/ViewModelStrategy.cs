@@ -1,5 +1,6 @@
 ﻿using System;
 using Interfaces;
+using Utils.Events;
 
 namespace App.ViewModels
 {
@@ -10,10 +11,10 @@ namespace App.ViewModels
     /// <typeparam name="TO">The output type of the generation.</typeparam>
     [Serializable]
     public abstract class ViewModelStrategy<TI, TO> 
-        : Strategy<TI, TO>, IDisplayable, IInitializable, IEventSubscriber<AppEvent>
+        : Strategy<TI, TO>, IDisplayable, IInitializable, ISubscriber<AppEvent>
     {
 
-        public IEventBus<AppEvent> EventBus
+        public EventBus<AppEvent> EventBus
         {
             get => _eventBus;
             set
@@ -23,7 +24,7 @@ namespace App.ViewModels
                 _eventBus.Subscribe(this);
             }
         }
-        private IEventBus<AppEvent> _eventBus;
+        private EventBus<AppEvent> _eventBus;
         
         /// <summary>
         /// Required constructor for initializing the underlying injector.
@@ -53,7 +54,7 @@ namespace App.ViewModels
         /// <returns>The output based on the UI</returns>
         public abstract override TO Generate();
 
-        public virtual void OnNotification(AppEvent eventId, object eventData)
+        public virtual void OnEvent(AppEvent eventId, object eventData)
         {
         }
 

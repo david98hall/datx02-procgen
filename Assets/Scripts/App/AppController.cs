@@ -7,6 +7,7 @@ using Cities;
 using Extensions;
 using Interfaces;
 using UnityEngine;
+using Utils.Events;
 using Utils.Paths;
 
 namespace App
@@ -19,7 +20,7 @@ namespace App
     [ExecuteInEditMode]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), 
         typeof(MeshCollider))]
-    public class AppController : MonoBehaviour, IInitializable, IDisplayable, IEventBus<AppEvent>
+    public class AppController : MonoBehaviour, IInitializable, IDisplayable
     {
         #region Models
 
@@ -73,10 +74,7 @@ namespace App
 
         #endregion
 
-        #region Event bus fields
-
-        private ICollection<IEventSubscriber<AppEvent>> _eventSubscribers;
-        #endregion
+        private EventBus<AppEvent> _eventBus;
         
         public void OnEnable()
         {
@@ -132,7 +130,7 @@ namespace App
         /// </summary>
         public void Initialize()
         {
-            _eventSubscribers = new HashSet<IEventSubscriber<AppEvent>>();
+            _eventBus = new EventBus<AppEvent>();
             
             _meshFilter = GetComponent<MeshFilter>();
             _meshRenderer = GetComponent<MeshRenderer>();
@@ -140,11 +138,11 @@ namespace App
             
             if (gameObjects == null) gameObjects = new HashSet<GameObject>();
 
-            terrainViewModel.EventBus = this;
+            terrainViewModel.EventBus = _eventBus;
             terrainViewModel.Initialize();
 
             _model = new Model();
-            cityViewModel.EventBus = this;
+            cityViewModel.EventBus = _eventBus;
             cityViewModel.Injector = _model;
             cityViewModel.Initialize();
 
@@ -187,24 +185,6 @@ namespace App
             /// </summary>
             /// <returns>The height map of the terrain mesh.</returns>
             public float[,] Get() => Mesh.HeightMap();
-        }
-
-        public void Subscribe(IEventSubscriber<AppEvent> eventSubscriber)
-        {
-            _eventSubscribers.Add(eventSubscriber);
-        }
-
-        public void Unsubscribe(IEventSubscriber<AppEvent> eventSubscriber)
-        {
-            _eventSubscribers.Remove(eventSubscriber);
-        }
-
-        public void Notify(AppEvent eventId, object eventData)
-        {
-            foreach (var eventSubscriber in _eventSubscribers)
-            {
-                eventSubscriber.OnNotification(eventId, eventData);
-            }
         }
     }
 }

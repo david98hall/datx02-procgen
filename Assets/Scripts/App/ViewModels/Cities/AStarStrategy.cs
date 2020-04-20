@@ -106,7 +106,7 @@ namespace App.ViewModels.Cities
         public override RoadNetwork Generate() => 
             _roadStrategyFactory?.CreateAStarStrategy(heightBias, paths.Select(p => p.ToValueTuple())).Generate();
 
-        public override void OnNotification(AppEvent eventId, object eventData)
+        public override void OnEvent(AppEvent eventId, object eventData)
         {
             if (eventId.Equals(AppEvent.UPDATE_NOISE_MAP_SIZE))
             {
