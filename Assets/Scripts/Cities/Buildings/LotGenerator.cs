@@ -21,14 +21,12 @@ public class LotGenerator
 
     private readonly float boundsFactor;
     private readonly bool clockwise;
-    private int mode;
 
     private readonly Plot plot;
     private readonly ICollection<Lot> lots = new List<Lot>();
-    //private HashSet<Vector3> accessPoints;
 
 
-    public LotGenerator(Plot plot, int mode)
+    public LotGenerator(Plot plot)
     {
         this.plot = plot;
 
@@ -37,9 +35,6 @@ public class LotGenerator
 
         var bounds = Maths2D.GetExtremeBounds(ToXZ(verts));
         boundsFactor = new Vector2(bounds.MaxX - bounds.MinX, bounds.MaxY - bounds.MinY).sqrMagnitude;
-
-        //accessPoints = new HashSet<Vector3>(verts);
-        this.mode = mode;
     }
 
     /// <summary>
@@ -54,77 +49,10 @@ public class LotGenerator
         var poly = new List<Vector3>();
         poly.AddRange(verts);
 
-        switch (mode)
-        {
-            case 0: BisectorDivide(poly); break;
-            case 1: OffsetDivide(poly, 2f); break;
-        }
+        BisectorDivide(poly);
 
         return lots;
     }
-
-    #region Offset lot division
-
-    /// <summary>
-    /// Subdivides a plot by shrinking its borders and then splitting margin according to given parameters.
-    /// </summary>
-    /// <param name="mainLot"></param> The main lot.
-    /// <param name="offset"></param> The amount to offset inwards.
-    private void OffsetDivide(List<Vector3> mainLot, float offset)
-    {
-        var center = Maths2D.GetCenterPoint(ToXZ(mainLot));
-
-        //// Old for reference
-        //lots.Add(new Lot(poly, new Vector3(center.x, 0, center.y)));
-
-        IList<Vector3> innerBorder = (IList<Vector3>) PolyOps.ShrinkPoly(mainLot, offset);
-
-        SplitMargin(mainLot, innerBorder);
-    }
-
-    // TODO: not working
-    private void SplitMargin(IList<Vector3> outerBorder, IList<Vector3> innerBorder)
-    {
-        float length = 1f;
-        IList<Vector3> pairs = new List<Vector3>();
-
-        for (int i = 1; i < innerBorder.Count; i++)
-        {
-            var inner1 = innerBorder[i - 1];
-            var inner2 = innerBorder[i];
-            var outer1 = outerBorder[i - 1];
-            var outer2 = outerBorder[i];
-            var dir = inner2 - inner1;
-
-            var c = Vector3.Cross(Vector3.up, dir.normalized) * 10;
-
-            var line1 = (dir * (0.5f) + inner1) - c; // point j * length units along inner border
-            var line2 = line1 + (c*2); // orthogonal line from inner border outwards
-
-            if (Maths3D.LineSegmentIntersection(out var intersectionIn, inner1, inner2, line1, line2))
-                pairs.Add(intersectionIn);
-            else if (Maths3D.LineSegmentIntersection(out var intersectionOut, outer1, outer2, line1, line2))
-                pairs.Add(intersectionOut);
-
-                //for (int j = 1; j < Mathf.RoundToInt(dir.magnitude); j++)
-                //{
-                //    var line1 = dir.normalized * (length * j) + inner1; // point j * length units along inner border
-                //    var line2 = line1 + c; // orthogonal line from inner border outwards
-
-                //    if (Maths3D.LineSegmentIntersection(out var intersectionIn, inner1, inner2, line1, line2))
-                //        pairs.Add(intersectionIn);
-                //    else if (Maths3D.LineSegmentIntersection(out var intersectionOut, outer1, outer2, line1, line2))
-                //        pairs.Add(intersectionOut);
-                //}
-        }
-
-        for (int i = 3; i < pairs.Count; i+=2)
-        {
-            lots.Add(new Lot(new List<Vector3> {pairs[i-3], pairs[i-2], pairs[i], pairs[i-1], pairs[i-3]}));
-        }
-    }
-
-    #endregion
 
     #region Bisector lot division
 
