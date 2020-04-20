@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using System.Linq;
 using System;
-using Extensions;
 using Interfaces;
 using UnityEngine;
-
 
 namespace Cities.Roads
 {
     /// <summary>
     /// A way of generating roads using a non-deterministic L-system.
     /// </summary>
-    public class LSystem
+    public class Lsystem
     {
         public class State{
             public Vector3 pos;
@@ -41,28 +38,15 @@ namespace Cities.Roads
         public IDictionary<char, string> ruleset = new Dictionary<char, string>();
         StringBuilder tree;
         public char axiom;
-        public MeshFilter meshFilter;
-        public Mesh mesh;
-        private float minX;
-        private float minZ;
-        private float maxX;
-        private float maxZ;
         public RoadNetwork network = new RoadNetwork();
         State state;
         Queue<State> states = new Queue<State>();
         private float toRad = Mathf.Deg2Rad;
         private float pi = Mathf.PI;
 
-        public LSystem(char c, Vector2 origin, IInjector<MeshFilter> filterInjector)
+        public Lsystem(char c, Vector2 origin, IInjector<float[,]> noiseMapInjector)
         {
-            this.filterInjector = filterInjector;
-            meshFilter = filterInjector.Get();
-            mesh = meshFilter.sharedMesh;
-            var localPosition = meshFilter.transform.localPosition;
-            minX = mesh.bounds.min.x + localPosition.x;
-            minZ = mesh.bounds.min.z + localPosition.z;
-            maxX = mesh.bounds.max.x + localPosition.x;
-            maxZ = mesh.bounds.max.z + localPosition.z;
+            _noiseMapInjector = noiseMapInjector;
             axiom = c;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
             ruleset.Add('F',"F+FB-]");
@@ -73,7 +57,7 @@ namespace Cities.Roads
         
         #region Noise map
 
-        private readonly IInjector<MeshFilter> filterInjector;
+        private readonly IInjector<float[,]> _noiseMapInjector;
         
         /// <summary>
         /// Applies the injected noise map to the road network and returns the result.
@@ -84,7 +68,7 @@ namespace Cities.Roads
         private RoadNetwork ApplyNoiseMap()
         {
             var newNetwork = new RoadNetwork();
-            var noiseMap = mesh.HeightMap();
+            var noiseMap = _noiseMapInjector.Get();
             foreach (var (roadStart, roadEnd) in network.GetRoadParts())
             {
                 var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];
@@ -101,6 +85,15 @@ namespace Cities.Roads
 
         #endregion
 
+        /*public Lsystem(char c, State state){
+            axiom = c;
+            this.state = state;
+            ruleset.Add('F',"F+B-S-");
+            ruleset.Add('S', "-F+B");
+            ruleset.Add('B',"FF+");
+            tree = new StringBuilder(c.ToString());
+        }*/
+
         public override string ToString(){
             return tree.ToString();
         }
@@ -111,7 +104,6 @@ namespace Cities.Roads
         {
             System.Random rdm = new System.Random();
             StringBuilder newTree = new StringBuilder();
-            float range = 4.0f;
             foreach (char c in tree.ToString())
             {
                 try
@@ -121,7 +113,7 @@ namespace Cities.Roads
                     LinkedList<Vector3> road = new LinkedList<Vector3>();
                     Vector3 direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                     road.AddLast(state.pos);
-                    float length = UnityEngine.Random.Range(3,6);
+                    float length = UnityEngine.Random.Range(1,3);
                     int intersects = 0;
                     switch(c)
                     {
@@ -144,19 +136,7 @@ namespace Cities.Roads
                             {
                                 case 'S':{
                                     splitState = new State(state.pos + length * splitDir, splitAngle);
-                                    for (int i = 0; i < 10 && (splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ); i++)
-                                    {
-                                        if(condition >= 0.5)
-                                        {
-                                            splitAngle += UnityEngine.Random.Range(30*toRad,55*toRad);
-                                        }else
-                                        {
-                                            splitAngle -= UnityEngine.Random.Range(30*toRad,55*toRad);
-                                        }
-                                        splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
-                                        splitState = new State(state.pos + length * splitDir, splitAngle);
-                                    }
-                                    intersects = noIntersects(splitState.pos, range);
+                                    intersects = noIntersects(splitState.pos, 2.0f);
                                     if(intersects <= 1){
                                         states.Enqueue(splitState);
                                         splitRoad.AddLast(splitState.pos);
@@ -172,18 +152,15 @@ namespace Cities.Roads
                                     {
                                         rotate90 = new Vector3(Mathf.Cos((float) splitAngle - 90*toRad), 0, Mathf.Sin((float) splitAngle - 90*toRad));
                                     }
-                                    splitState = new State(state.pos + 2*length*splitDir + length*rotate90, splitAngle);
-                                    if(splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ){
-                                    break;
-                                    }
-                                    intersects = noIntersects(splitState.pos, range);
+                                    splitState = new State(state.pos + 2*splitDir + rotate90, splitAngle);
+                                    intersects = noIntersects(splitState.pos, 2.0f);
                                     if(intersects <= 1){
-                                        splitRoad.AddLast(state.pos + 2 * length * splitDir);
+                                        splitRoad.AddLast(state.pos + 2 * splitDir);
                                         splitRoad.AddLast(splitState.pos);
                                         states.Enqueue(splitState);
                                         LinkedList<Vector3> row2 = new LinkedList<Vector3>();
-                                        row2.AddLast(state.pos + 1 * length * splitDir);
-                                        row2.AddLast(state.pos + 1 * length * (splitDir + rotate90));
+                                        row2.AddLast(state.pos + 1 * splitDir);
+                                        row2.AddLast(state.pos + 1 * splitDir + rotate90);
                                         network.AddRoad(row2);
                                     }
                                     break;
@@ -195,16 +172,7 @@ namespace Cities.Roads
                         }
                     }
                     Vector3 newPos = state.pos + length * direction;
-                    for (int i = 0; i < 10 && (newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ); i++){
-                    if(state.angle > 0){
-                        state.angle += UnityEngine.Random.Range(30*toRad,55*toRad);
-                    }else{
-                        state.angle -= UnityEngine.Random.Range(30*toRad,55*toRad);
-                    }
-                    direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
-                    newPos = state.pos + length * direction;
-                    }
-                    if(noIntersects(newPos, range) <= 1){
+                    if(noIntersects(newPos, 2.0f) <= 1){
                         road.AddLast(newPos);
                         network.AddRoad(road);
                         state.pos = newPos;
@@ -246,7 +214,6 @@ namespace Cities.Roads
             LinkedList<Vector3> road = new LinkedList<Vector3>();
             road.AddLast(state.pos);
             workSites.Enqueue(state);
-            float range = 3.0f;
             State workSite = new State();
             for (int i = 0; i < grids; i++)
             {
@@ -259,39 +226,39 @@ namespace Cities.Roads
                 switch(type)
                 { //Some randomness in square size
                     case 1:
-                        size = 3f;
+                        size = 1.5f;
                         break;
                     case 2: 
-                        size = 4;
+                        size = 2;
                         break;
                     case 3:
-                        size = 5f;
+                        size = 2.5f;
                         break;
                     default:
-                        size = 2;
+                        size = 1;
                         break;
                 }
                 for (int j = 0; j < 4; j++) // A square road is created
                 {
                     workSite.pos += size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                    if(workSite.pos.x < maxX && workSite.pos.x > minX && workSite.pos.z < maxZ && workSite.pos.z > minZ){
-                        if(noIntersects(workSite.pos, range) < 2){
+                    if(noIntersects(workSite.pos, 2.0f) <= 1){
                         road.AddLast(workSite.pos);
                         workSite.angle += 90*toRad;
-                        }else{break;}
-                    }else{break;}
+                    }else{
+                        break;
+                    }
                 }
                 Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
                 if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order of which worksites are added to the queue
-                    if(noIntersects(workSite.pos, range) <= 1)
+                    if(noIntersects(workSite.pos, 2.0f) <= 1)
                         workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
-                    if(noIntersects(newPos, range) <= 1)
+                    if(noIntersects(newPos,2.0f) <= 1)
                         workSites.Enqueue(new State(newPos, workSite.angle));
 
                 }else{
-                    if(noIntersects(newPos, range) <= 1)
+                    if(noIntersects(newPos,2.0f) <= 1)
                         workSites.Enqueue(new State(newPos, workSite.angle));
-                    if(noIntersects(workSite.pos, range) <= 1)
+                    if(noIntersects(workSite.pos, 2.0f) <= 1)
                         workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
                 }
             }
