@@ -11,7 +11,7 @@ using Cities.Plots;
 public class Lot
 {
     public readonly float area;
-    public readonly Vector3 center;
+    //public readonly Vector3 center;
     public readonly Vector2 facing;
 
     /// <summary>
