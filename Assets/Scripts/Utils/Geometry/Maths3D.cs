@@ -130,6 +130,16 @@ namespace Utils.Geometry
             intersection = Vector3.negativeInfinity;
             return false;
         }
-        
+
+        /// <summary>
+        /// Finds the perpendicular clockwise vector (normal) to a given vector in the x-z plane.
+        /// </summary>
+        /// <param name="vector">The vector from which to calculate the normal.</param>
+        /// <returns>The normal in the x-z plane to the given vector.</returns>
+        public static Vector3 PerpendicularClockwise(Vector3 vector)
+        {
+            return new Vector3(vector.z, vector.y, -vector.x);
+        }
+
     }
 }

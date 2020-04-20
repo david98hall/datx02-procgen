@@ -48,5 +48,10 @@ namespace Cities.Plots
             return new MinimalCycleStrategy(_roadNetworkInjector);
         }
 
+        public IGenerator<IEnumerable<Plot>> CreateAdjacentStrategy()
+        {
+            return new AdjacentStrategy(_roadNetworkInjector);
+        }
+
     }
 }
