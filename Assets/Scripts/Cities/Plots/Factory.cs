@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Cities.Roads;
 using Interfaces;
 
@@ -29,7 +30,25 @@ namespace Cities.Plots
         {
             return new BruteMinimalCycleStrategy(_roadNetworkInjector);
         }
-        
+
+        /// <summary>
+        /// Creates a strategy for plots adjacent to the road network.
+        /// </summary>
+        /// <returns>The plots adjacent to the roads.</returns>
+        public IGenerator<IEnumerable<Plot>> CreateAdjacentStrategy()
+        {
+            return new AdjacentStrategy(_roadNetworkInjector);
+        }
+
+        /// <summary>
+        /// Creates a strategy for manually created sample plots for testing.
+        /// </summary>
+        /// <returns>The sample plots.</returns>
+        public IGenerator<IEnumerable<Plot>> CreatePlotSampleStrategy()
+        {
+            return new PlotSampleStrategy(_roadNetworkInjector);
+        }
+
         /// <summary>
         /// Finds all cyclic plots by always turning clockwise when searching the road network.
         /// </summary>
@@ -48,9 +67,9 @@ namespace Cities.Plots
             return new MinimalCycleStrategy(_roadNetworkInjector);
         }
 
-        public IGenerator<IEnumerable<Plot>> CreateAdjacentStrategy()
+        public IGenerator<IEnumerable<Plot>> CreateCombinedStrategy()
         {
-            return new AdjacentStrategy(_roadNetworkInjector);
+            return new CombinedStrategy(_roadNetworkInjector);
         }
 
     }

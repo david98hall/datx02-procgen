@@ -391,6 +391,7 @@ namespace Utils.Geometry
             return signedArea < 0;
         }
 
+
         /// <summary>
         /// Returns true if two convex polygons are colliding using the separating axis theorem (SAT).
         /// Based on http://www.dyn4j.org/2010/01/sat/#sat-convex.
@@ -458,12 +459,12 @@ namespace Utils.Geometry
         }
 
         // Check if two intervals are overlapping. Or geometrically: if two line segments are overlapping.
-        private static bool Overlap(ValueTuple<float, float> p1, ValueTuple<float, float> p2)
+        private static bool Overlap(ValueTuple<float, float> firstInterval, ValueTuple<float, float> secondInterval)
         {
             // Easy to understand if you think of the intervals as time. The equation essentially answers the
             // question: "could two people have met?", with: "yes, if both were born before the other died".
-            var (start1, end1) = p1;
-            var (start2, end2) = p2;
+            var (start1, end1) = firstInterval;
+            var (start2, end2) = secondInterval;
             return start1 < end2 && start2 < end1;
         }
 
@@ -495,6 +496,41 @@ namespace Utils.Geometry
                 }
             }
             return normals;
+        }
+
+        /// <summary>
+        /// Returns true if the line and polygon are colliding. They collide if either the line
+        /// intersects one of the polygon's edges or the line lies inside the polygon.
+        /// </summary>
+        /// <param name="start">Start point of the line.</param>
+        /// <param name="end">End point of the line.</param>
+        /// <param name="poly">The vertices of the polygon</param>
+        /// <returns>True if the line and polygon are colliding.</returns>
+        public static bool LinePolyCollision(Vector3 start, Vector3 end, IEnumerable<Vector3> poly)
+        {
+            var startInside = IsInsidePolygon(new Vector2(start.x, start.z), poly.Select(v => new Vector2(v.x, v.z)));
+            var endInside = IsInsidePolygon(new Vector2(end.x, end.z), poly.Select(v => new Vector2(v.x, v.z)));
+            if (startInside || endInside)
+                return true;
+            // Iterate over the vertices to find each edge of the polygon
+            using (var vertexEnum = poly.GetEnumerator())
+            {
+                if (!vertexEnum.MoveNext())
+                    throw new ApplicationException("Cannot check for collision with a polygon without vertices.");
+
+                var v1 = vertexEnum.Current;
+                while (vertexEnum.MoveNext())
+                {
+                    var v2 = vertexEnum.Current;
+                    if (Maths3D.LineSegmentIntersection(out _, start, end, v1, v2))
+                    {
+                        return true;
+                    }
+                    v1 = v2;
+                }
+            }
+
+            return false;
         }
 
         #endregion

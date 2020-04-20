@@ -210,7 +210,7 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
                 Debug.Log(v);
         }
 
-        ICollection<int> tris = new List<int>();
+        IList<int> tris = new List<int>();
         tris.AddRange(bottomTris);
 
         // Add indices and points for the additional vertex array (which has same relative indices as bottom)
@@ -236,13 +236,14 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
     /// <param name="tris">The full list of triangles.</param>
     /// <returns>The provided vertices and triangles with added sides.</returns>
     private (ICollection<Vector3>, ICollection<int>) ConstructSideFaces(
-        IList<Vector3> verts, ICollection<int> tris)
+        IList<Vector3> verts, IList<int> tris)
     {
         int n = (verts.Count / 2);
         int j = verts.Count;
         int i11 = n - 1;
         int i21 = j - 1;
         int i22 = n;
+
 
         for (int i12 = 0; i12 < n; i11 = i12++)
         {
@@ -285,7 +286,6 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
         return mesh;
     }
 
-    #region Utility methods
 
     private List<Vector2> ToXZ(IEnumerable<Vector3> vecs)
     {
@@ -297,6 +297,4 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
         }
         return vecsXZ;
     }
-
-    #endregion
 }
