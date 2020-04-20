@@ -7,8 +7,8 @@ using UnityEngine;
 /// </summary>
 public class Building
 {
-    internal float width;
-    internal float height;
+    private float width;
+    private float height;
     internal Vector3 position;
     internal Vector2 facing;
     internal  Mesh mesh;

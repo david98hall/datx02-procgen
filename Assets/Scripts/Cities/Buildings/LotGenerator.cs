@@ -32,12 +32,10 @@ public class LotGenerator
     {
         this.plot = plot;
 
-        var verts = plot.Vertices;
-        var vertsXZ = ToXZ(verts);
+        var verts = (List<Vector3>) plot.Vertices;
+        clockwise = Maths2D.PointsAreCounterClockwise(verts);
 
-        clockwise = Maths2D.PointsAreCounterClockwise(vertsXZ);
-
-        var bounds = Maths2D.GetExtremeBounds(vertsXZ);
+        var bounds = Maths2D.GetExtremeBounds(ToXZ(verts));
         boundsFactor = new Vector2(bounds.MaxX - bounds.MinX, bounds.MaxY - bounds.MinY).sqrMagnitude;
 
         //accessPoints = new HashSet<Vector3>(verts);
@@ -122,7 +120,7 @@ public class LotGenerator
 
         for (int i = 3; i < pairs.Count; i+=2)
         {
-            lots.Add(new Lot(new List<Vector3> {pairs[i-3], pairs[i-2], pairs[i], pairs[i-1], pairs[i-3]}, Vector3.zero));
+            lots.Add(new Lot(new List<Vector3> {pairs[i-3], pairs[i-2], pairs[i], pairs[i-1], pairs[i-3]}));
         }
     }
 
@@ -141,7 +139,7 @@ public class LotGenerator
         if (TerminationConditions(baseVars.area, baseVars.ratio))
         {
             var center = Maths2D.GetCenterPoint(ToXZ(poly));
-            lots.Add(new Lot(poly, new Vector3(center.x, 0, center.y)));
+            lots.Add(new Lot(poly));
         }
         else
         {
@@ -181,10 +179,7 @@ public class LotGenerator
         var next = poly[(index + 1) % poly.Count];
         var nextDir = (next - prev);
 
-        // Random halfway point along the edge (should be multiplied by a block type factor; smaller interval yields more rectangular shapes)
-        // TODO: RANDOM NUMBER OFFSETS POSITIONS FOR SOME REASON
-        Random.InitState(123);
-        float f = Random.Range(0.25f, 0.75f);
+        // Halfway point along the edge
         var splitPoint = (nextDir * 0.5f ) + prev;
 
         // Perpendicular line direction, scaled outside bounds

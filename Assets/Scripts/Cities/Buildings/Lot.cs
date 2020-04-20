@@ -19,7 +19,7 @@ public class Lot
     /// </summary>
     internal IEnumerable<Vector3> Vertices { get; }
 
-    public Lot(IEnumerable<Vector3> vertices, Vector3 center)
+    public Lot(IEnumerable<Vector3> vertices)
     {
         Vertices = vertices;
 
@@ -34,7 +34,7 @@ public class Lot
         }
         this.area = Mathf.Abs(area / 2);
 
-        this.center = center;
+        //this.center = center;
         //this.facing = facing;
     }
 }

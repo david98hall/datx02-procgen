@@ -49,8 +49,14 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
             //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
             //ICollection<Lot> lots = lg.Generate();
 
+            var vertices = p.Vertices;
 
-            Lot lot = new Lot(p.Vertices, Maths2D.GetCenterPoint(ToXZ(p.Vertices)).ToXYZ(0));
+            if (!Maths2D.PointsAreCounterClockwise(vertices.ToList()))
+            {
+                vertices = vertices.Reverse();
+            }
+
+            Lot lot = new Lot(vertices);
 
             GetBuildings(new List<Lot> { lot });
         }
@@ -72,11 +78,7 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
             // Only generate building if suitable lot
             if (ValidLot(lot))
             {
-                //float y = heightMap[Mathf.RoundToInt(lot.center.x), Mathf.RoundToInt(lot.center.z)];
                 float y = Random.Range(1f, 5.5f);
-
-                //float marginSize = 0.5f;
-                //IList<Vector3> vertices = (IList<Vector3>) PolyOps.ShrinkPoly(lot.Vertices.ToList(), marginSize);
 
                 IList<Vector3> vertices = lot.Vertices.ToList();
 
@@ -135,8 +137,6 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
 
     private float MinimumHeightInBounds(IList<Vector3> poly)
     {
-        //foreach (var p in poly)
-        //    Debug.Log(p.x + ", " + p.z);
         var (minX, minY, maxX, maxY) = Maths2D.GetExtremeBounds(ToXZ(poly));
 
         int MinX = Mathf.FloorToInt(minX);
@@ -144,7 +144,7 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
         int MinY = Mathf.FloorToInt(minY);
         int MaxY = Mathf.CeilToInt(maxY);
 
-        float min = 0f;
+        float min = float.MaxValue;
 
         for (int y = MinY; y <= MaxY; y++)
         {
@@ -165,9 +165,6 @@ public class ExtrusionStrategy : Strategy<(float[,], IEnumerable<Plot>), IEnumer
     /// <returns>A tuple of the new vertex and index list.</returns>
     private (ICollection<Vector3>, ICollection<int>) ExtrudePolygon(IList<Vector3> vertices, float distance)
     {
-        //// determine winding order
-        //bool ccw = Maths2D.PointsAreCounterClockwise(ToXZ(vertices));
-
         // Prepare a shape for extrusion (using triangulator to get tris)
         Triangulator t = new Triangulator(new Polygon(ToXZ(vertices).ToArray(), new Vector2[0][]));
         int[] bottomTris = t.Triangulate();
