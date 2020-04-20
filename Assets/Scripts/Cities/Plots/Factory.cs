@@ -65,5 +65,10 @@ namespace Cities.Plots
         {
             return new MinimalCycleStrategy(_roadNetworkInjector);
         }
+
+        public IGenerator<IEnumerable<Plot>> CreateCombinedStrategy()
+        {
+            return new CombinedStrategy(_roadNetworkInjector);
+        }
     }
 }
