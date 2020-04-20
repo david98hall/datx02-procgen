@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cities.Roads;
 using Interfaces;
 
@@ -18,6 +19,15 @@ namespace Cities.Plots
         public Factory(IInjector<RoadNetwork> roadNetworkInjector)
         {
             _roadNetworkInjector = roadNetworkInjector;
+        }
+        
+        /// <summary>
+        /// Initializes this factory with a RoadNetwork injector.
+        /// </summary>
+        /// <param name="roadNetworkInjector">The RoadNetwork injector.</param>
+        public Factory(Func<RoadNetwork> roadNetworkInjector)
+        {
+            _roadNetworkInjector = new RoadNetworkInjector(roadNetworkInjector);
         }
         
         /// <summary>
@@ -48,5 +58,18 @@ namespace Cities.Plots
             return new MinimalCycleStrategy(_roadNetworkInjector);
         }
 
+        // Converts a Func with the return type RoadNetwork to an injector of the same type
+        private class RoadNetworkInjector : IInjector<RoadNetwork>
+        {
+            private readonly Func<RoadNetwork> _roadNetworkInjector;
+            
+            public RoadNetworkInjector(Func<RoadNetwork> roadNetworkInjector)
+            {
+                _roadNetworkInjector = roadNetworkInjector;
+            }
+            
+            public RoadNetwork Get() => _roadNetworkInjector();
+        }
+        
     }
 }

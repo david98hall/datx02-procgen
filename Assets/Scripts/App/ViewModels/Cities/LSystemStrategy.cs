@@ -63,7 +63,7 @@ namespace App.ViewModels.Cities
         {
             GUILayout.BeginHorizontal();
             // Label
-            EditorGUILayout.LabelField("L-systems");
+            EditorGUILayout.LabelField("Entries");
             
             // Clearing
             if (inputs.Any() && GUILayout.Button("Clear")) inputs.Clear();

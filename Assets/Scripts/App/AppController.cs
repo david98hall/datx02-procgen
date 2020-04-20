@@ -113,16 +113,17 @@ namespace App
         /// </summary>
         public void Generate()
         {
-            (_model.Mesh, _model.Texture) = terrainViewModel.Generate();
-            _model.City = cityViewModel.Generate();
-
-            _meshCollider.sharedMesh = _model.Mesh;
-            _meshFilter.sharedMesh = _model.Mesh;
-            _meshRenderer.sharedMaterial.mainTexture = _model.Texture;
-
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
+            
+            (_model.TerrainMesh, _model.TerrainTexture) = terrainViewModel.Generate();
+            _meshCollider.sharedMesh = _model.TerrainMesh;
+            _meshFilter.sharedMesh = _model.TerrainMesh;
+            _meshRenderer.sharedMaterial.mainTexture = _model.TerrainTexture;
 
+            _model.City = cityViewModel.Generate();
+            if (_model.City == null) return;
+            
             // Set the values of the path object generator according to the UI-values
             var pathObjectGenerator = new PathObjectGenerator
             {
@@ -167,12 +168,12 @@ namespace App
             /// <summary>
             /// Generated terrain mesh.
             /// </summary>
-            internal Mesh Mesh;
+            internal Mesh TerrainMesh;
             
             /// <summary>
             /// Generated texture.
             /// </summary>
-            internal Texture Texture;
+            internal Texture TerrainTexture;
             
             /// <summary>
             /// Generated City
@@ -183,7 +184,7 @@ namespace App
             /// Injector method used by the city view model.
             /// </summary>
             /// <returns>The height map of the terrain mesh.</returns>
-            public float[,] Get() => Mesh.HeightMap();
+            public float[,] Get() => TerrainMesh.HeightMap();
         }
     }
 }
