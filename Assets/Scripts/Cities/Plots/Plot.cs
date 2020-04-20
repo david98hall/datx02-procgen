@@ -47,15 +47,5 @@ namespace Cities.Plots
         }
 
         public object Clone() => new Plot(this);
-
-        // Tests if two projections on an axis are overlapping
-        private static bool overlap(System.ValueTuple<float, float> p1, System.ValueTuple<float, float> p2)
-        {
-            // Easy to understand if you think of the intervals as time. The equation essentially answers the
-            // question: "could two people have met?", with: "yes, if both were born before the other died".
-            return p1.Item1 < p2.Item2 && p2.Item1 < p1.Item2;
-        }
     }
-    
-    
 }
