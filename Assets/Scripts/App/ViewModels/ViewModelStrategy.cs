@@ -14,6 +14,13 @@ namespace App.ViewModels
         : Strategy<TI, TO>, IDisplayable, IInitializable, ISubscriber<AppEvent>
     {
 
+        /// <summary>
+        /// The event bus that this view model can create events on and
+        /// where it can listen for events from other view models.
+        /// 
+        /// When set, this view model is automatically unsubscribed
+        /// from the previous one and subscribed to the new one.
+        /// </summary>
         public EventBus<AppEvent> EventBus
         {
             get => _eventBus;
