@@ -16,12 +16,6 @@ namespace App.ViewModels.Cities
     public class CityViewModel : ViewModelStrategy<float[,], City>
     {
         /// <summary>
-        /// Underlying <see cref="CityGenerator"/> model.
-        /// Is required to be set explicitly in run-time.
-        /// </summary>
-        // private CityGenerator _generator;
-        
-        /// <summary>
         /// Visibility of the editor.
         /// </summary>
         private bool _visible;
@@ -52,19 +46,12 @@ namespace App.ViewModels.Cities
         #endregion
         
         #region Plot Strategy
-        
+
         /// <summary>
         /// Visibility of the plot strategy editor.
         /// </summary>
         private bool _plotStrategyVisible;
-        
-        /// <summary>
-        /// All plot strategy models.
-        /// No editor is required for plot strategies so no view models are required either.
-        /// Is required to be set explicitly in run-time.
-        /// </summary>
-        // private Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>> _plotStrategies;
-        
+
         /// <summary>
         /// Enum for plot strategies.
         /// Is used for displaying the possible strategies in the editor.
@@ -167,8 +154,6 @@ namespace App.ViewModels.Cities
         /// </summary>
         public override void Initialize()
         {
-            // _generator = new CityGenerator();
-
             aStarStrategy.EventBus = EventBus;
             lSystemStrategy.EventBus = EventBus;
             
@@ -177,19 +162,6 @@ namespace App.ViewModels.Cities
             
             aStarStrategy.Initialize();
             lSystemStrategy.Initialize();
-            
-            /*
-            // Plot strategies
-            var plotStrategyFactory = new Factory(_generator);
-            _plotStrategies = new Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>>
-            {
-                [PlotStrategy.MinimalCycle] = plotStrategyFactory.CreateMinimalCycleStrategy(),
-                [PlotStrategy.ClockWiseCycle] = plotStrategyFactory.CreateClockwiseCycleStrategy(),
-                [PlotStrategy.BruteMinimalCycle] = plotStrategyFactory.CreateBruteMinimalCycleStrategy(),
-                [PlotStrategy.Adjacent] = plotStrategyFactory.CreateAdjacentStrategy(),
-                [PlotStrategy.Combined] = plotStrategyFactory.CreateCombinedStrategy(),
-            };
-            */
         }
         
         /// <summary>
@@ -237,10 +209,7 @@ namespace App.ViewModels.Cities
                 EditorGUI.indentLevel--;
             }
             
-            EditorGUI.indentLevel--;
-                
             DisplayRoadAppearance();
-            
             EditorGUI.indentLevel--;
         }
         

@@ -1,5 +1,6 @@
 using System;
-using Terrain;
+using Interfaces;
+using Terrain.Noise;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,10 +13,9 @@ namespace App.ViewModels.Terrain
     public class TerrainViewModel : ViewModelStrategy<object, (Mesh, Texture2D)>
     {
         /// <summary>
-        /// Underlying <see cref="TerrainGenerator"/> model.
-        /// Is required to be set explicitly in run-time.
+        /// Injector used for storing a valid noise map generated in run-time
         /// </summary>
-        private TerrainGenerator _generator;
+        private Injector _noiseMapInjector;
         
         /// <summary>
         /// Visibility of the editor.
@@ -108,16 +108,15 @@ namespace App.ViewModels.Terrain
         /// </summary>
         public override void Initialize()
         {
-            _generator = new TerrainGenerator();
+            _noiseMapInjector = new Injector();
 
+            whittakerStrategy.Injector = _noiseMapInjector;
+            grayScaleStrategy.Injector = _noiseMapInjector;
+            
             perlinNoiseStrategy.EventBus = EventBus;
             whittakerStrategy.EventBus = EventBus;
             grayScaleStrategy.EventBus = EventBus;
-            
-            perlinNoiseStrategy.Injector = _generator;
-            whittakerStrategy.Injector = _generator;
-            grayScaleStrategy.Injector = _generator;
-            
+
             perlinNoiseStrategy.Initialize();
             whittakerStrategy.Initialize();
             grayScaleStrategy.Initialize();
@@ -197,39 +196,57 @@ namespace App.ViewModels.Terrain
         }
 
         /// <summary>
-        /// Updates the underlying generator with the serialized values from the editor.
-        /// Delegates the generation to the underlying generator.
+        /// Generates a terrain mesh and terrain texture with the selected strategies.
         /// </summary>
-        /// <returns>The result of the delegated generation call.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
+        /// <returns>A tuple of a mesh and a texture</returns>
+        public override (Mesh, Texture2D) Generate() => (GenerateMesh(), GenerateTexture());
 
-        public override (Mesh, Texture2D) Generate()
+        /// <summary>
+        /// Generates a mesh with the selected strategy.
+        /// </summary>
+        /// <returns>A mesh object</returns>
+        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected</exception>
+        private Mesh GenerateMesh()
         {
-            _generator.HeightCurve = heightCurve;
-            _generator.HeightScale = heightScale;
-            
             switch (noiseStrategy)
             {
                 case NoiseStrategy.PerlinNoise:
-                    _generator.NoiseStrategy = perlinNoiseStrategy;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-                
-            switch (textureStrategy)
-            {
-                case TextureStrategy.GrayScale:
-                    _generator.TextureStrategy = grayScaleStrategy;
-                    break;
-                case TextureStrategy.Whittaker:
-                    _generator.TextureStrategy = whittakerStrategy;
+                    _noiseMapInjector.NoiseMap = perlinNoiseStrategy.Generate();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
             
-            return _generator.Generate();
+            return new Factory().CreateMeshGenerator(_noiseMapInjector, heightCurve, heightScale).Generate();
+        }
+
+        /// <summary>
+        /// Generates a texture with the selected strategy.
+        /// </summary>
+        /// <returns>A texture object.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
+        private Texture2D GenerateTexture()
+        {
+            switch (textureStrategy)
+            {
+                case TextureStrategy.GrayScale:
+                    return grayScaleStrategy.Generate();
+                case TextureStrategy.Whittaker:
+                    return whittakerStrategy.Generate();
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        /// <summary>
+        /// Injector class used in run-time for storing a generated height map.
+        /// Is used by texture strategies.
+        /// </summary>
+        private new class Injector : IInjector<float[,]>
+        {
+            internal float[,] NoiseMap;
+
+            public float[,] Get() => NoiseMap;
         }
     }
 }
