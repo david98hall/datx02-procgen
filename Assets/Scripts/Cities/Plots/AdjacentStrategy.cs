@@ -1,13 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
-
 using Cities.Roads;
 using Interfaces;
 using Utils.Geometry;
 
-namespace Cities.Plots 
+namespace Cities.Plots
 {
     internal class AdjacentStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
     {
@@ -15,7 +14,7 @@ namespace Cities.Plots
         /// The already existing plots that will be taken into account when generating the adjacent plots.
         /// </summary>
         private IEnumerable<Plot> _prevPlots;
-        
+
         /// <summary>
         /// Initializes the strategy with a RoadNetwork injector.
         /// </summary>
@@ -82,13 +81,13 @@ namespace Cities.Plots
         }
 
         // Returns a random (within given bounds) rectangular plot that lies alongside the road part defined by roadVector.
-        private static Plot RandomRectPlot(System.Random rand, Vector3 start, Vector3 roadVector, float maxWidth, float maxLength, float roadOffset) 
-        {            
+        private static Plot RandomRectPlot(System.Random rand, Vector3 start, Vector3 roadVector, float maxWidth, float maxLength, float roadOffset)
+        {
             // The size of the side that lies alongside the road
-            var width = (float) rand.NextDouble() * maxWidth + 1; // [1 .. maxWidth]
+            var width = (float)rand.NextDouble() * maxWidth + 1; // [1 .. maxWidth]
 
             // The size of the side that lies perpendicular to the road
-            var length = (float) rand.NextDouble() * maxLength + 1; // [1 .. maxLength]
+            var length = (float)rand.NextDouble() * maxLength + 1; // [1 .. maxLength]
 
             var vertices = new LinkedList<Vector3>();
             // Determines which side of the road the plot ends up on
@@ -97,9 +96,10 @@ namespace Cities.Plots
             // 50% chance to change side to make it more random
             if (rand.NextDouble() >= 0.5)
                 dir *= -1f;
-            
+
             // We want the plot to lie somewhere along the road, and not always have a corner at the start of the road part.
-            var startOffset = (float) rand.NextDouble() * (roadVector.magnitude - width);
+            var startOffset = (float)rand.NextDouble() * (roadVector.magnitude - width);
+
             start += roadVector.normalized * startOffset;
 
             // Add all the vertices to form the rectangle

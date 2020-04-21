@@ -94,6 +94,20 @@ namespace Extensions
                 (float) Math.Round(vector.z, decimalPlaces)
             );
         }        
-        
+
+        public static Vector2 ToXZ(this Vector3 v)
+        {
+            return new Vector3(v.x, v.z);
+        }
+
+        public static Vector3 ToXYZ(this Vector2 v, float y)
+        {
+            return new Vector3(v.x, y, v.y);
+        }
+
+        public static Vector3 ToXYZ(this Vector2 v, int y)
+        {
+            return new Vector3(v.x, y, v.y);
+        }
     }
 }

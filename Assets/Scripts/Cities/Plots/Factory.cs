@@ -30,7 +30,7 @@ namespace Cities.Plots
         {
             return new BruteMinimalCycleStrategy(_roadNetworkInjector);
         }
-        
+
         /// <summary>
         /// Creates a strategy for plots adjacent to the road network.
         /// </summary>
