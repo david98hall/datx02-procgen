@@ -9,7 +9,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating road networks with the L-system strategy.
     /// </summary>
     [Serializable]
-    public class LSystemStrategy : ViewModelStrategy<float[,], RoadNetwork>
+    public class LSystemStrategy : ViewModelStrategy<MeshFilter, RoadNetwork>
     {
 
         /// <summary>

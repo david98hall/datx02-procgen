@@ -54,7 +54,7 @@ namespace Cities.Roads
 
 
         /// <param name="terrainMeshInjector">Non null terrain mesh filter injector object.</param>
-        internal AStarStrategy([NotNull] IInjector<MeshFilter> terrainMeshInjector) : base(terrainMeshInjector)
+        internal AStarStrategy([NotNull] IInjector<MeshFilter> terrainMeshInjector, IEnumerable<(Vector2Int Start, Vector2Int End)> paths) : base(terrainMeshInjector)
         {
             _paths = new Dictionary<Vector2Int, ISet<Vector2Int>>();
 

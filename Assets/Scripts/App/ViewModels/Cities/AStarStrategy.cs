@@ -10,7 +10,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating road networks with the A* strategy.
     /// </summary>
     [Serializable]
-    public class AStarStrategy : ViewModelStrategy<float[,], RoadNetwork>
+    public class AStarStrategy : ViewModelStrategy<MeshFilter, RoadNetwork>
     {
         /// <summary>
         /// Underlying <see cref="Factory"/> for creating the A* strategy object

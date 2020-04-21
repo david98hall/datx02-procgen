@@ -43,6 +43,12 @@ namespace Cities
             _plotsGenerator = new Generator<IEnumerable<Plot>>();
             RoadNetworkFactory = new Roads.Factory(terrainMeshInjector);
         }
+
+        public CityGenerator()
+        {
+            _roadNetworkGenerator = new Generator<RoadNetwork>();
+            _plotsGenerator = new Generator<IEnumerable<Plot>>();
+        }
         
         public City Generate()
         {

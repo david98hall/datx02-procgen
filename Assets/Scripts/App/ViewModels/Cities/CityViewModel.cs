@@ -12,7 +12,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<float[,], City>
+    public class CityViewModel : ViewModelStrategy<MeshFilter, City>
     {
         /// <summary>
         /// Underlying <see cref="CityGenerator"/> model.
