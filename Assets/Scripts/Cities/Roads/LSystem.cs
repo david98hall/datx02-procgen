@@ -194,6 +194,9 @@ namespace Cities.Roads
                                 network.AddRoad(splitRoad);
                             break;
                         }
+                        case 'G':
+                        state = Grid(state);
+                        break;
                     }
                     Vector3 newPos = state.pos + length * direction;
                     for (int i = 0; i < 10 && (newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ); i++){
