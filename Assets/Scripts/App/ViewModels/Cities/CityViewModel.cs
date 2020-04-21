@@ -328,6 +328,8 @@ namespace App.ViewModels.Cities
                     return plotStrategyFactory.CreateClockwiseCycleStrategy().Generate();
                 case PlotStrategy.BruteMinimalCycle:
                     return plotStrategyFactory.CreateBruteMinimalCycleStrategy().Generate();
+                case PlotStrategy.Combined:
+                    return plotStrategyFactory.CreateCombinedStrategy().Generate();
                 default:
                     throw new ArgumentOutOfRangeException();
             }
