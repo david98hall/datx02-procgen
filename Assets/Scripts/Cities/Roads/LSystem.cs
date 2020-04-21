@@ -122,7 +122,7 @@ namespace Cities.Roads
                     LinkedList<Vector3> road = new LinkedList<Vector3>();
                     Vector3 direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                     road.AddLast(state.pos);
-                    float length = UnityEngine.Random.Range(3,6);
+                    float length = UnityEngine.Random.Range(1,3);
                     int intersects = 0;
                     switch(c)
                     {
