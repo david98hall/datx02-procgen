@@ -71,7 +71,7 @@ namespace App.ViewModels.Cities
         /// </summary>
         public enum PlotStrategy
         {
-            MinimalCycle, ClockWiseCycle, BruteMinimalCycle
+            MinimalCycle, ClockWiseCycle, BruteMinimalCycle, Adjacent, Combined
         }
 
         /// <summary>
@@ -186,6 +186,8 @@ namespace App.ViewModels.Cities
                 [PlotStrategy.MinimalCycle] = plotStrategyFactory.CreateMinimalCycleStrategy(),
                 [PlotStrategy.ClockWiseCycle] = plotStrategyFactory.CreateClockwiseCycleStrategy(),
                 [PlotStrategy.BruteMinimalCycle] = plotStrategyFactory.CreateBruteMinimalCycleStrategy(),
+                [PlotStrategy.Adjacent] = plotStrategyFactory.CreateAdjacentStrategy(),
+                [PlotStrategy.Combined] = plotStrategyFactory.CreateCombinedStrategy(),
             };
             */
         }
