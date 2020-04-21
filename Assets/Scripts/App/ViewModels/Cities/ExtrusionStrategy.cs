@@ -35,11 +35,6 @@ namespace App.ViewModels.Cities
         #endregion
 
         /// <summary>
-        /// Is required for initializing the non-serializable properties of the view model.
-        /// </summary>
-        public override void Initialize() => _buildingStrategyFactory = new Factory(Injector);
-
-        /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
         public override void Display()
@@ -58,6 +53,6 @@ namespace App.ViewModels.Cities
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
         public override IEnumerable<Building> Generate() =>
-            _buildingStrategyFactory.CreateExtrusionStrategy(minArea, maxArea).Generate();
+            new Factory(Injector).CreateExtrusionStrategy(minArea, maxArea).Generate();
     }
 }
