@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Cities.Roads{
-    internal class LSystemStrategy : Strategy<MeshFilter, RoadNetwork>
+    internal class LSystemStrategy : Strategy<float[,], RoadNetwork>
     {
 
         /// <summary>
@@ -16,8 +16,8 @@ namespace Cities.Roads{
         /// </summary>
         internal int RewritesCount { get; set; }
 
-        internal LSystemStrategy(IInjector<MeshFilter> filterInjector, int rewritesCount = 6) 
-            : base(filterInjector)
+        internal LSystemStrategy(IInjector<float[,]> terrainNoiseMapInjector, int rewritesCount = 6) 
+            : base(terrainNoiseMapInjector)
         {
             RewritesCount = rewritesCount;
         }
