@@ -95,7 +95,7 @@ namespace App.ViewModels.Cities
 
         public override void OnEvent(AppEvent eventId, object eventData)
         {
-            if (eventId.Equals(AppEvent.UPDATE_NOISE_MAP_SIZE))
+            if (eventId.Equals(AppEvent.UpdateNoiseMapSize))
             {
                 _terrainSize = ((int, int)) eventData;
             }

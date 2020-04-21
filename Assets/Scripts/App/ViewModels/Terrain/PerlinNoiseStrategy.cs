@@ -86,7 +86,7 @@ namespace App.ViewModels.Terrain
 
             if (oldWidth != width || oldDepth != depth)
             {
-                EventBus.CreateEvent(AppEvent.UPDATE_NOISE_MAP_SIZE, (width, depth));
+                EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth));
             }
         }
         
