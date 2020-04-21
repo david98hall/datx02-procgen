@@ -12,7 +12,7 @@ namespace Cities.Roads
     /// Generates the optimal roads between a set of start and goal nodes with a given height bias.
     /// Extends the <see cref="Strategy{TI,TO}"/> class.
     /// </summary>
-    internal class AStarStrategy : Strategy<float[,], RoadNetwork>
+    internal class AStarStrategy : Strategy<MeshFilter, RoadNetwork>
     {
 
         #region Properties and constructors
@@ -48,21 +48,13 @@ namespace Cities.Roads
         }
 
         /// <summary>
-        /// Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.
+        /// Constructs a new A* Generator with a given terrain mesh filter injector and an
+        /// empty set of start and goal nodes.
         /// </summary>
-        /// <param name="heightMapInjector">Non null height map injector object.</param>
-        internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector) 
-            : this(heightMapInjector, null)
-        {
-        }
-        
-        /// <summary>
-        /// Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.
-        /// </summary>
-        /// <param name="heightMapInjector">Non null height map injector object.</param>
-        internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector, 
-            IEnumerable<(Vector2Int Start, Vector2Int End)> paths) 
-            : base(heightMapInjector)
+
+
+        /// <param name="terrainMeshInjector">Non null terrain mesh filter injector object.</param>
+        internal AStarStrategy([NotNull] IInjector<MeshFilter> terrainMeshInjector) : base(terrainMeshInjector)
         {
             _paths = new Dictionary<Vector2Int, ISet<Vector2Int>>();
 
@@ -87,7 +79,7 @@ namespace Cities.Roads
         /// <returns>The generated <see cref="RoadNetwork"/> object.</returns>
         public override RoadNetwork Generate()
         {
-            var heights = Injector.Get();
+            var heights = Injector.Get().mesh.HeightMap();
             var roadNetwork = new RoadNetwork();
             foreach (var startVector in _paths.Keys)
             {

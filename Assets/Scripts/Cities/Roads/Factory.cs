@@ -10,16 +10,15 @@ namespace Cities.Roads
     /// </summary>
     public class Factory
     {
-
-        private readonly IInjector<float[,]> _terrainMeshNoiseMapInjector;
+        private readonly IInjector<MeshFilter> _terrainMeshInjector;
         
         /// <summary>
-        /// Initializes this factory with a noise map injector.
+        /// Initializes this factory with a terrain mesh filter injector.
         /// </summary>
-        /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
-        public Factory(IInjector<float[,]> terrainMeshNoiseMapInjector)
+        /// <param name="terrainMeshInjector">The terrain mesh filter injector.</param>
+        public Factory(IInjector<MeshFilter> terrainMeshInjector)
         {
-            _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
+            _terrainMeshInjector = terrainMeshInjector;
         }
 
         /// <summary>
@@ -61,10 +60,11 @@ namespace Cities.Roads
             };
         }
 
+
         /// <summary>
         /// Creates a sample strategy for testing.
         /// </summary>
         /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshNoiseMapInjector);
+        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshInjector);
     }
 }
