@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System;
+using Extensions;
 using Interfaces;
 using UnityEngine;
 
@@ -44,20 +45,21 @@ namespace Cities.Roads
         private float toRad = Mathf.Deg2Rad;
         private float pi = Mathf.PI;
 
-        public LSystem(char c, Vector2 origin, IInjector<float[,]> noiseMapInjector)
+        public LSystem(char c, Vector2 origin, IInjector<MeshFilter> filterInjector)
         {
-            _noiseMapInjector = noiseMapInjector;
+            _terrainFilterInjector = filterInjector;
             axiom = c;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
             ruleset.Add('F',"F+FB-]");
             ruleset.Add('S', "B-FB[");
             ruleset.Add('B',"FS[F+]");
+            ruleset.Add('G',"GF-");
             tree = new StringBuilder(c.ToString());
         }
         
         #region Noise map
 
-        private readonly IInjector<float[,]> _noiseMapInjector;
+        private readonly IInjector<MeshFilter> _terrainFilterInjector;
         
         /// <summary>
         /// Applies the injected noise map to the road network and returns the result.
@@ -68,7 +70,7 @@ namespace Cities.Roads
         private RoadNetwork ApplyNoiseMap()
         {
             var newNetwork = new RoadNetwork();
-            var noiseMap = _noiseMapInjector.Get();
+            var noiseMap = _terrainFilterInjector.Get().sharedMesh.HeightMap();
             foreach (var (roadStart, roadEnd) in network.GetRoadParts())
             {
                 var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];
@@ -85,18 +87,10 @@ namespace Cities.Roads
 
         #endregion
 
-        /*public LSystem(char c, State state){
-            axiom = c;
-            this.state = state;
-            ruleset.Add('F',"F+B-S-");
-            ruleset.Add('S', "-F+B");
-            ruleset.Add('B',"FF+");
-            tree = new StringBuilder(c.ToString());
-        }*/
-
         public override string ToString(){
             return tree.ToString();
         }
+        
         /// <summary>
         /// Rewrites the String within the L-system according to the ruleset, and generates roads.
         /// </summary>
@@ -170,6 +164,9 @@ namespace Cities.Roads
                                 network.AddRoad(splitRoad);
                             break;
                         }
+                        case 'G':
+                        state = Grid(state);
+                        break;
                     }
                     Vector3 newPos = state.pos + length * direction;
                     if(noIntersects(newPos, 2.0f) <= 1){

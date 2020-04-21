@@ -306,6 +306,15 @@ namespace Cities.Roads
         
         #endregion
 
+        /// <summary>
+        /// Merges the passed road network into this one.
+        /// </summary>
+        /// <param name="roadNetwork">The road network to merge into this.</param>
+        public void Merge(RoadNetwork roadNetwork)
+        {
+            AddRoads(roadNetwork.GetRoads());
+        }
+        
         #region Get road parts
 
         /// <summary>

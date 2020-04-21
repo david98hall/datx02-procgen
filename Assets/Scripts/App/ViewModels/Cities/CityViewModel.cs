@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using Cities;
 using Cities.Plots;
-using Interfaces;
+using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
+using Factory = Cities.Plots.Factory;
 
 namespace App.ViewModels.Cities
 {
@@ -12,40 +13,27 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<float[,], City>
+    public class CityViewModel : ViewModelStrategy<MeshFilter, City>
     {
         /// <summary>
         /// Underlying <see cref="CityGenerator"/> model.
         /// Is required to be set explicitly in run-time.
         /// </summary>
-        private CityGenerator _generator;
+        // private CityGenerator _generator;
         
         /// <summary>
         /// Visibility of the editor.
         /// </summary>
         private bool _visible;
-
+        private bool _aStarVisible;
+        private bool _lSystemVisible;
+        
         #region Road Network Strategy
 
         /// <summary>
         /// Visibility of the road network strategy editor.
         /// </summary>
         private bool _roadNetworkStrategyVisible;
-
-        /// <summary>
-        /// Enum for road network strategies.
-        /// Is used for displaying the possible strategies in the editor.
-        /// </summary>
-        public enum RoadNetworkStrategy
-        {
-            LSystem, AStar
-        }
-
-        /// <summary>
-        /// Serialized road network strategy that is currently selected.
-        /// </summary>
-        [SerializeField]
-        private RoadNetworkStrategy roadNetworkStrategy;
 
         /// <summary>
         /// Serialized view-model for <see cref="AStarStrategy"/> view model.
@@ -75,7 +63,7 @@ namespace App.ViewModels.Cities
         /// No editor is required for plot strategies so no view models are required either.
         /// Is required to be set explicitly in run-time.
         /// </summary>
-        private Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>> _plotStrategies;
+        // private Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>> _plotStrategies;
         
         /// <summary>
         /// Enum for plot strategies.
@@ -239,10 +227,10 @@ namespace App.ViewModels.Cities
         /// </summary>
         public override void Initialize()
         {
-            _generator = new CityGenerator();
+            // _generator = new CityGenerator();
 
-
-            _generator._heightMapInjector = Injector;
+            aStarStrategy.EventBus = EventBus;
+            lSystemStrategy.EventBus = EventBus;
 
             aStarStrategy.Injector = Injector;
             lSystemStrategy.Injector = Injector;
@@ -250,6 +238,7 @@ namespace App.ViewModels.Cities
             aStarStrategy.Initialize();
             lSystemStrategy.Initialize();
             
+            /*
             // Plot strategies
             var plotStrategyFactory = new Factory(_generator);
             _plotStrategies = new Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>>
@@ -260,10 +249,7 @@ namespace App.ViewModels.Cities
                 [PlotStrategy.Adjacent] = plotStrategyFactory.CreateAdjacentStrategy(),
                 [PlotStrategy.Combined] = plotStrategyFactory.CreateCombinedStrategy(),
             };
-
-            // Building strategy
-            extrusionStrategy.Injector = _generator;
-            extrusionStrategy.Initialize();
+            */
         }
         
         /// <summary>
@@ -292,25 +278,30 @@ namespace App.ViewModels.Cities
             _roadNetworkStrategyVisible 
                 = EditorGUILayout.Foldout(_roadNetworkStrategyVisible, "Road Network Generation");
             if (!_roadNetworkStrategyVisible) return;
-            
             EditorGUI.indentLevel++;
-            roadNetworkStrategy 
-                = (RoadNetworkStrategy) EditorGUILayout.EnumPopup("Strategy", roadNetworkStrategy);
-            EditorGUI.indentLevel++;
-            switch (roadNetworkStrategy)
+
+            // A* Strategy
+            _aStarVisible = EditorGUILayout.Toggle("A*", _aStarVisible);
+            if (_aStarVisible)
             {
-                case RoadNetworkStrategy.LSystem:
-                    lSystemStrategy.Display();
-                    break;
-                case RoadNetworkStrategy.AStar:
-                    aStarStrategy.Display();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                EditorGUI.indentLevel++;
+                aStarStrategy.Display();
+                EditorGUI.indentLevel--;
             }
+
+            // L-system Strategy
+            _lSystemVisible = EditorGUILayout.Toggle("L-system", _lSystemVisible);
+            if (_lSystemVisible)
+            {
+                EditorGUI.indentLevel++;
+                lSystemStrategy.Display();
+                EditorGUI.indentLevel--;
+            }
+            
             EditorGUI.indentLevel--;
                 
             DisplayRoadAppearance();
+            
             EditorGUI.indentLevel--;
         }
         
@@ -423,30 +414,58 @@ namespace App.ViewModels.Cities
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         public override City Generate()
         {
-            switch (roadNetworkStrategy)
+            var roadNetwork = GenerateRoadNetwork();
+            if (roadNetwork != null)
             {
-                case RoadNetworkStrategy.LSystem:
-                    _generator.RoadNetworkStrategy = lSystemStrategy;
-                    break;
-                case RoadNetworkStrategy.AStar:
-                    _generator.RoadNetworkStrategy = aStarStrategy;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                return new City
+                {
+                    RoadNetwork = roadNetwork,
+                    Plots = GeneratePlots(roadNetwork)
+                };
             }
 
-            _generator.PlotStrategy = _plotStrategies[plotStrategy];
-
-            switch (buildingStrategy)
-            {
-                case BuildingStrategy.Extrusion:
-                    _generator.BuildingStrategy = extrusionStrategy;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            return _generator.Generate();
+            return null;
         }
+
+        private IEnumerable<Plot> GeneratePlots(RoadNetwork roadNetwork)
+        {
+            var plotStrategyFactory = new Factory(() => roadNetwork);
+
+            switch (plotStrategy)
+            {
+                case PlotStrategy.MinimalCycle:
+                    return plotStrategyFactory.CreateMinimalCycleStrategy().Generate();
+                case PlotStrategy.ClockWiseCycle:
+                    return plotStrategyFactory.CreateClockwiseCycleStrategy().Generate();
+                case PlotStrategy.BruteMinimalCycle:
+                    return plotStrategyFactory.CreateBruteMinimalCycleStrategy().Generate();
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+        
+        private RoadNetwork GenerateRoadNetwork()
+        {
+            var aStarRoadNetwork = _aStarVisible ? aStarStrategy.Generate() : null;
+            var lSystemRoadNetwork = _lSystemVisible ? lSystemStrategy.Generate() : null;
+
+            RoadNetwork mergedRoadNetwork;
+            if (aStarRoadNetwork == null)
+            {
+                mergedRoadNetwork = lSystemRoadNetwork;
+            } 
+            else if (lSystemRoadNetwork == null)
+            {
+                mergedRoadNetwork = aStarRoadNetwork;
+            }
+            else
+            {
+                aStarRoadNetwork.Merge(lSystemRoadNetwork);
+                mergedRoadNetwork = aStarRoadNetwork;
+            }
+
+            return mergedRoadNetwork;
+        }
+        
     }
 }

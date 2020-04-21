@@ -108,18 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainViewModel:
-    perlinNoiseStrategy:
-      width: 250
-      depth: 250
-      seed: 0
-      scale: 50
-      numOctaves: 8
-      persistence: 0.075
-      lacunarity: 7.5
-      noiseOffset: {x: 0, y: 0}
-    whittakerStrategy:
-      precipitationScale: 50
-      temperatureScale: 40
     heightCurve:
       serializedVersion: 2
       m_Curve:
@@ -155,14 +143,23 @@ MonoBehaviour:
       m_RotationOrder: 4
     heightScale: 20
     noiseStrategy: 0
+    perlinNoiseStrategy:
+      width: 250
+      depth: 250
+      seed: 0
+      scale: 50
+      numOctaves: 8
+      persistence: 0.075
+      lacunarity: 7.5
+      noiseOffset: {x: 0, y: 0}
     textureStrategy: 1
-  cityModel:
-    aStarStrategy:
-      heightBias: 0
-    lSystemStrategy:
-      origin: {x: 125, y: 125}
-      rewritesCount: 6
+    whittakerStrategy:
+      precipitationScale: 50
+      temperatureScale: 40
+  cityViewModel:
     roadNetworkStrategy: 0
+    aStarStrategy:
+      heightBias: 1
     plotStrategy: 0
     plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
     displayPlots: 1

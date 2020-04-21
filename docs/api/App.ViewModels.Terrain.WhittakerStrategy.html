@@ -88,9 +88,16 @@
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">UnityEngine.Texture2D</span>&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
+    <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;Single[,], Texture2D&gt;.EventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;Single[,], Texture2D&gt;._eventBus</a>
+    </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Single[,], Texture2D&gt;.Display()</a>
     </div>
@@ -99,6 +106,9 @@
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;Single[,], Texture2D&gt;.Generate()</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;Single[,], Texture2D&gt;.OnEvent(AppEvent, Object)</a>
     </div>
     <div>
       <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Single[,], Texture2D&gt;.Injector</a>
@@ -130,7 +140,7 @@
   <h5 id="App_ViewModels_Terrain_WhittakerStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class WhittakerStrategy : ViewModelStrategy&lt;float[, ], Texture2D&gt;, IGenerator&lt;Texture2D&gt;, IDisplayable, IInitializable</code></pre>
+public class WhittakerStrategy : ViewModelStrategy&lt;float[, ], Texture2D&gt;, IGenerator&lt;Texture2D&gt;, IDisplayable, IInitializable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -308,6 +318,9 @@ Delegates the generation to the created generator.</p>
   </div>
   <div>
       <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
+  </div>
+  <div>
+      <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
   </div>
 </article>
           </div>

@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
+using Utils;
 
 namespace App.ViewModels.Cities
 {
@@ -10,7 +12,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating road networks with the A* strategy.
     /// </summary>
     [Serializable]
-    public class AStarStrategy : ViewModelStrategy<float[,], RoadNetwork>
+    public class AStarStrategy : ViewModelStrategy<MeshFilter, RoadNetwork>
     {
         /// <summary>
         /// Underlying <see cref="Factory"/> for creating the A* strategy object
@@ -29,7 +31,9 @@ namespace App.ViewModels.Cities
         /// Serialized start and goal paths
         /// </summary>
         [SerializeField]
-        private IList<(Vector2Int, Vector2Int)> paths;
+        private IList<Path> paths;
+
+        private (int Width, int Depth) _terrainSize;
 
         #endregion
 
@@ -39,7 +43,7 @@ namespace App.ViewModels.Cities
         public override void Initialize()
         {
             _roadStrategyFactory = new Factory(Injector);
-            paths = new List<(Vector2Int, Vector2Int)> {(Vector2Int.zero, Vector2Int.zero)};
+            paths = new List<Path> {new Path(Vector2Int.zero, Vector2Int.zero)};
         }
         
         /// <summary>
@@ -51,41 +55,83 @@ namespace App.ViewModels.Cities
             // Update the height bias
             heightBias = EditorGUILayout.Slider("Height Bias", heightBias, 0, 1);
             
-            // Update the paths
+            // Control for adding a new path
+            GUILayout.BeginHorizontal();
+            
             EditorGUILayout.LabelField("Paths");
+            
+            // Clear
+            if (paths.Any() && GUILayout.Button("Clear")) paths.Clear();
+            
+            // Add
+            var initialGoal = new Vector2Int(
+                _terrainSize.Width - 1,
+                _terrainSize.Depth - 1
+            );
+            if (GUILayout.Button("+")) paths.Add(new Path(Vector2Int.zero, initialGoal));
+
+            GUILayout.EndHorizontal();
+            
+            // Path list
             EditorGUI.indentLevel++;
             for (var i = 0; i < paths.Count; i++)
             {
-                var (start, goal) = paths[i];
-                var newStart = EditorGUILayout.Vector2IntField("Start", start);
-                var newGoal = EditorGUILayout.Vector2IntField("Goal", goal);
-                paths[i] = (newStart, newGoal);
+                GUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField($"Path {i + 1}");
+                
+                // Path remove button
+                var removed = GUILayout.Button("X");
+                GUILayout.EndHorizontal();
+                if (removed)
+                {
+                    paths.RemoveAt(i--);
+                    continue;
+                }
+
+                // Path start vector field
+                paths[i].start = EditorGUILayout.Vector2IntField("Start", paths[i].start)
+                    .ToTerrainVertex(_terrainSize.Width, _terrainSize.Depth);
+
+                // Path end vector field
+                paths[i].goal = EditorGUILayout.Vector2IntField("Goal", paths[i].goal)
+                    .ToTerrainVertex(_terrainSize.Width, _terrainSize.Depth);
+
                 EditorGUILayout.Space();
             }
             
-            // Control for adding a new path
-            GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Add Path"))
-            {
-                paths.Add((Vector2Int.zero, Vector2Int.zero));
-            }
-            
-            // Control for discarding all paths
-            if (GUILayout.Button("Discard Paths"))
-            {
-                paths.Clear();
-            }
-            
-            GUILayout.EndHorizontal();
             EditorGUI.indentLevel--;
         }
-        
+
         /// <summary>
         /// Creates a generator with the serialized values from the editor.
         /// Delegates the generation to the created generator.
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
         public override RoadNetwork Generate() => 
-            _roadStrategyFactory?.CreateAStarStrategy(heightBias, paths).Generate();
+            _roadStrategyFactory?.CreateAStarStrategy(heightBias, paths.Select(p => p.ToValueTuple())).Generate();
+
+        public override void OnEvent(AppEvent eventId, object eventData)
+        {
+            if (eventId.Equals(AppEvent.UPDATE_NOISE_MAP_SIZE))
+            {
+                _terrainSize = ((int, int)) eventData;
+            }
+        }
+        
+        [Serializable]
+        private class Path
+        {
+            public Vector2Int start;
+            public Vector2Int goal;
+
+            public Path(Vector2Int start, Vector2Int goal)
+            {
+                this.start = start;
+                this.goal = goal;
+            }
+
+            public (Vector2Int Start, Vector2Int Goal) ToValueTuple() => (start, goal);
+        }
+        
     }
 }

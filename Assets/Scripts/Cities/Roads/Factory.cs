@@ -11,24 +11,26 @@ namespace Cities.Roads
     public class Factory
     {
 
-        private readonly IInjector<float[,]> _terrainMeshNoiseMapInjector;
+        private readonly IInjector<MeshFilter> _terrainFilterInjector;
         
         /// <summary>
         /// Initializes this factory with a noise map injector.
         /// </summary>
-        /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
-        public Factory(IInjector<float[,]> terrainMeshNoiseMapInjector)
+        /// <param name="terrainFilterInjector">The noise map injector.</param>
+        public Factory(IInjector<MeshFilter> terrainFilterInjector)
         {
-            _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
+            _terrainFilterInjector = terrainFilterInjector;
         }
 
         /// <summary>
         /// Creates an A* strategy for generating a road network.
         /// </summary>
+        /// <param name="heightBias">The height bias for finding the optimal path.</param>
         /// <param name="paths">Paths consisting of a start and goal node to generate a road between.</param>
         /// <returns>The A* road network generator.</returns>
-        public IGenerator<RoadNetwork> CreateAStarStrategy(float heightBias = 0.5f, IEnumerable<(Vector2Int Start, Vector2Int End)> paths = null) => 
-            new AStarStrategy(_terrainMeshNoiseMapInjector, paths)
+        public IGenerator<RoadNetwork> CreateAStarStrategy(
+            float heightBias = 0.5f, IEnumerable<(Vector2Int Start, Vector2Int End)> paths = null) => 
+            new AStarStrategy(_terrainFilterInjector, paths)
             {
                 HeightBias = heightBias
             };
@@ -55,7 +57,7 @@ namespace Cities.Roads
         /// <returns>An L-system generator for road networks.</returns>
         public IGenerator<RoadNetwork> CreateLSystemStrategy(Vector2 origin, int rewriteCount = 6)
         {
-            return new LSystemStrategy(_terrainMeshNoiseMapInjector, rewriteCount)
+            return new LSystemStrategy(_terrainFilterInjector, rewriteCount)
             {
                 Origin = origin
             };
@@ -65,6 +67,6 @@ namespace Cities.Roads
         /// Creates a sample strategy for testing.
         /// </summary>
         /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshNoiseMapInjector);
+        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainFilterInjector);
     }
 }
