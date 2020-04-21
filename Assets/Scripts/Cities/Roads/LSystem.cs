@@ -44,7 +44,7 @@ namespace Cities.Roads
         private float toRad = Mathf.Deg2Rad;
         private float pi = Mathf.PI;
 
-        public LSystem(char c, Vector2 origin, IInjector<float[,]> noiseMapInjector)
+        public LSystem(char c, Vector2 origin, IInjector<MeshFilter> filterInjector)
         {
             _noiseMapInjector = noiseMapInjector;
             axiom = c;
@@ -52,6 +52,7 @@ namespace Cities.Roads
             ruleset.Add('F',"F+FB-]");
             ruleset.Add('S', "B-FB[");
             ruleset.Add('B',"FS[F+]");
+            ruleset.Add('G',"GF-");
             tree = new StringBuilder(c.ToString());
         }
         
@@ -85,18 +86,10 @@ namespace Cities.Roads
 
         #endregion
 
-        /*public LSystem(char c, State state){
-            axiom = c;
-            this.state = state;
-            ruleset.Add('F',"F+B-S-");
-            ruleset.Add('S', "-F+B");
-            ruleset.Add('B',"FF+");
-            tree = new StringBuilder(c.ToString());
-        }*/
-
         public override string ToString(){
             return tree.ToString();
         }
+        
         /// <summary>
         /// Rewrites the String within the L-system according to the ruleset, and generates roads.
         /// </summary>
@@ -170,6 +163,9 @@ namespace Cities.Roads
                                 network.AddRoad(splitRoad);
                             break;
                         }
+                        case 'G':
+                        state = Grid(state);
+                        break;
                     }
                     Vector3 newPos = state.pos + length * direction;
                     if(noIntersects(newPos, 2.0f) <= 1){

@@ -30,7 +30,7 @@ namespace Cities.Roads
         /// <returns>The A* road network generator.</returns>
         public IGenerator<RoadNetwork> CreateAStarStrategy(
             float heightBias = 0.5f, IEnumerable<(Vector2Int Start, Vector2Int End)> paths = null) => 
-            new AStarStrategy(_terrainMeshNoiseMapInjector, paths)
+            new AStarStrategy(_terrainMeshInjector, paths)
             {
                 HeightBias = heightBias
             };
@@ -57,7 +57,7 @@ namespace Cities.Roads
         /// <returns>An L-system generator for road networks.</returns>
         public IGenerator<RoadNetwork> CreateLSystemStrategy(Vector2 origin, int rewriteCount = 6)
         {
-            return new LSystemStrategy(_terrainMeshNoiseMapInjector, rewriteCount)
+            return new LSystemStrategy(_terrainMeshInjector, rewriteCount)
             {
                 Origin = origin
             };
