@@ -356,7 +356,7 @@ namespace App.ViewModels.Cities
         }
 
         /// <summary>
-        /// Displays the editor of the road network appearance.
+        /// Displays the editor of the building appearance.
         /// </summary>
         private void DisplayBuildingAppearance()
         {

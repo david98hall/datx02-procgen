@@ -16,18 +16,18 @@ namespace Cities.Buildings
         private readonly IInjector<(MeshFilter, IEnumerable<Plot>)> _injector;
 
         /// <summary>
-        /// Initializes this factory with a noise map injector and plot collection injector.
+        /// Initializes this factory with a MeshFilter and plot collection injector.
         /// </summary>
-        /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
+        /// <param name="injector">The "Noise map" and Plot collection injector.</param>
         public Factory(IInjector<(MeshFilter, IEnumerable<Plot>)> injector)
         {
             _injector = injector;
         }
 
         /// <summary>
-        /// Initializes this factory with a Plots injector.
+        /// Initializes this factory with a MeshFilter and Plot collection injector.
         /// </summary>
-        /// <param name="roadNetworkInjector">The Plots injector.</param>
+        /// <param name="injector">The MeshFilter and Plot collection injector.</param>
         public Factory(Func<(MeshFilter, IEnumerable<Plot>)> injector)
         {
             _injector = new Injector(injector);
@@ -37,6 +37,7 @@ namespace Cities.Buildings
         /// Creates an extrusion strategy for generating buildings.
         /// </summary>
         /// <param name="minArea">The minimal area that a building can be generated in.</param>
+        /// <param name="maxArea">The maximal area that a building can be generated in.</param>
         /// <returns>A collection of the generated buildings.</returns>
         public IGenerator<IEnumerable<Building>> CreateExtrusionStrategy(float minArea = 2, float maxArea = 100) =>
             new ExtrusionStrategy(_injector, minArea, maxArea)
@@ -45,7 +46,9 @@ namespace Cities.Buildings
             };
 
 
-        // Converts a Func with the return type (float[,], IEnumerable<Plot>) to an injector of the same type
+        /// <summary>
+        /// Converts a Func with the return type (MeshFilter, IEnumerable<Plot>) to an injector of the same type
+        /// </summary>
         private class Injector : IInjector<(MeshFilter, IEnumerable<Plot>)>
         {
             private readonly Func<(MeshFilter, IEnumerable<Plot>)> _injector;
