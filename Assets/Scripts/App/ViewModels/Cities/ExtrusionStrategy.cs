@@ -13,11 +13,6 @@ namespace App.ViewModels.Cities
     public class ExtrusionStrategy : ViewModelStrategy<(MeshFilter, IEnumerable<Plot>), IEnumerable<Building>>
     {
 
-        /// <summary>
-        /// Underlying <see cref="Factory"/> for creating the Extrusion strategy object
-        /// </summary>
-        private Factory _buildingStrategyFactory;
-
         #region Editor Fields
 
         /// <summary>
