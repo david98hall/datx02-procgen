@@ -88,9 +88,16 @@
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Mesh</span>, <span class="xref">UnityEngine.Texture2D</span>&gt;&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
+    <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.EventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;._eventBus</a>
+    </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.Display()</a>
     </div>
@@ -99,6 +106,9 @@
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.Generate()</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.OnEvent(AppEvent, Object)</a>
     </div>
     <div>
       <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Object, (Mesh, Texture2D)&gt;.Injector</a>
@@ -130,7 +140,7 @@
   <h5 id="App_ViewModels_Terrain_TerrainViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class TerrainViewModel : ViewModelStrategy&lt;object, (Mesh, Texture2D)&gt;, IGenerator&lt;(Mesh, Texture2D)&gt;, IDisplayable, IInitializable</code></pre>
+public class TerrainViewModel : ViewModelStrategy&lt;object, (Mesh, Texture2D)&gt;, IGenerator&lt;(Mesh, Texture2D)&gt;, IDisplayable, IInitializable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -482,7 +492,7 @@ WhittakerStrategy whittakerStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L124">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L129">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_TerrainViewModel_Display_" data-uid="App.ViewModels.Terrain.TerrainViewModel.Display*"></a>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel_Display" data-uid="App.ViewModels.Terrain.TerrainViewModel.Display">Display()</h4>
@@ -500,7 +510,7 @@ WhittakerStrategy whittakerStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_DisplayNoiseStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L143">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L148">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_TerrainViewModel_DisplayNoiseStrategy_" data-uid="App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy*"></a>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel_DisplayNoiseStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy">DisplayNoiseStrategy()</h4>
@@ -532,7 +542,7 @@ WhittakerStrategy whittakerStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_DisplayTextureStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L169">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L174">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_TerrainViewModel_DisplayTextureStrategy_" data-uid="App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy*"></a>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel_DisplayTextureStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy">DisplayTextureStrategy()</h4>
@@ -564,7 +574,7 @@ WhittakerStrategy whittakerStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L201">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L206">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_TerrainViewModel_Generate_" data-uid="App.ViewModels.Terrain.TerrainViewModel.Generate*"></a>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel_Generate" data-uid="App.ViewModels.Terrain.TerrainViewModel.Generate">Generate()</h4>
@@ -637,6 +647,9 @@ Delegates the generation to the underlying generator.</p>
   </div>
   <div>
       <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
+  </div>
+  <div>
+      <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
   </div>
 </article>
           </div>

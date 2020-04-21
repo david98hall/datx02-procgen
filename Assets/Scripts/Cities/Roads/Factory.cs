@@ -10,15 +10,15 @@ namespace Cities.Roads
     /// </summary>
     public class Factory
     {
-        private readonly IInjector<float[,]> _terrainMeshNoiseMapInjector;
+        private readonly IInjector<MeshFilter> _terrainFilterInjector;
         
         /// <summary>
         /// Initializes this factory with a noise map injector.
         /// </summary>
-        /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
-        public Factory(IInjector<float[,]> terrainMeshNoiseMapInjector)
+        /// <param name="terrainFilterInjector">The noise map injector.</param>
+        public Factory(IInjector<MeshFilter> terrainFilterInjector)
         {
-            _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
+            _terrainFilterInjector = terrainFilterInjector;
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Cities.Roads
         /// <returns>An L-system generator for road networks.</returns>
         public IGenerator<RoadNetwork> CreateLSystemStrategy(Vector2 origin, int rewriteCount = 6)
         {
-            return new LSystemStrategy(_terrainMeshNoiseMapInjector, rewriteCount)
+            return new LSystemStrategy(_terrainFilterInjector, rewriteCount)
             {
                 Origin = origin
             };
@@ -71,6 +71,6 @@ namespace Cities.Roads
         /// Creates a sample strategy for testing.
         /// </summary>
         /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshNoiseMapInjector);
+        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainFilterInjector);
     }
 }

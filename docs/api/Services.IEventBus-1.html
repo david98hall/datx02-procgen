@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum CityViewModel.PlotStrategy
+    <title>Interface IEventBus&lt;T&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum CityViewModel.PlotStrategy
+    <meta name="title" content="Interface IEventBus&lt;T&gt;
    ">
     <meta name="generator" content="docfx 2.50.0.0">
     
@@ -68,53 +68,87 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="App.ViewModels.Cities.CityViewModel.PlotStrategy">
+            <article class="content wrap" id="_content" data-uid="Services.IEventBus`1">
   
   
-  <h1 id="App_ViewModels_Cities_CityViewModel_PlotStrategy" data-uid="App.ViewModels.Cities.CityViewModel.PlotStrategy" class="text-break">Enum CityViewModel.PlotStrategy
+  <h1 id="Services_IEventBus_1" data-uid="Services.IEventBus`1" class="text-break">Interface IEventBus&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Enum for plot strategies.
-Is used for displaying the possible strategies in the editor.</p>
+  <div class="markdown level0 summary"><p>An event bus that can notify its subscribers of various events.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="App.ViewModels.Cities.html">App.ViewModels.Cities</a></h6>
-  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
-  <h5 id="App_ViewModels_Cities_CityViewModel_PlotStrategy_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum PlotStrategy</code></pre>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Services.IService-1.html#Services_IService_1_Subscribe_Services_ISubscriber__0__">IService&lt;T&gt;.Subscribe(ISubscriber&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Services.IService-1.html#Services_IService_1_Unsubscribe_Services_ISubscriber__0__">IService&lt;T&gt;.Unsubscribe(ISubscriber&lt;T&gt;)</a>
+    </div>
   </div>
-  <h3 id="fields">Fields
-  </h3>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Services.html">Services</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="Services_IEventBus_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IEventBus&lt;T&gt; : IService&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Name</th>
         <th>Description</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
-        <td id="App_ViewModels_Cities_CityViewModel_PlotStrategy_Adjacent">Adjacent</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="App_ViewModels_Cities_CityViewModel_PlotStrategy_BruteMinimalCycle">BruteMinimalCycle</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="App_ViewModels_Cities_CityViewModel_PlotStrategy_ClockWiseCycle">ClockWiseCycle</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="App_ViewModels_Cities_CityViewModel_PlotStrategy_Combined">Combined</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="App_ViewModels_Cities_CityViewModel_PlotStrategy_MinimalCycle">MinimalCycle</td>
-        <td></td>
+        <td><span class="parametername">T</span></td>
+        <td><p>The event id type.</p>
+</td>
       </tr>
     </tbody>
-  </thead></thead></table>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Services_IEventBus_1_CreateEvent__0_System_Object_.md&amp;value=---%0Auid%3A%20Services.IEventBus%601.CreateEvent(%600%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Services/IEventBus.cs/#L14">View Source</a>
+  </span>
+  <a id="Services_IEventBus_1_CreateEvent_" data-uid="Services.IEventBus`1.CreateEvent*"></a>
+  <h4 id="Services_IEventBus_1_CreateEvent__0_System_Object_" data-uid="Services.IEventBus`1.CreateEvent(`0,System.Object)">CreateEvent(T, Object)</h4>
+  <div class="markdown level1 summary"><p>Creates an event and notifies all subscribers of it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateEvent(T eventId, object eventData)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">eventId</span></td>
+        <td><p>The id of the event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">eventData</span></td>
+        <td><p>The data of the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -123,10 +157,10 @@ Is used for displaying the possible strategies in the editor.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_PlotStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.PlotStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Services_IEventBus_1.md&amp;value=---%0Auid%3A%20Services.IEventBus%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L72" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Services/IEventBus.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

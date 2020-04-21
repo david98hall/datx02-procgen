@@ -59,6 +59,7 @@ namespace Cities.Plots
             return new PlotSampleStrategy(_roadNetworkInjector);
         }
         
+        /// <summary>
         /// Finds all cyclic plots by always turning clockwise when searching the road network.
         /// </summary>
         /// <returns>The found plots.</returns>

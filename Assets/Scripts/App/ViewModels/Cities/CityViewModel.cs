@@ -14,7 +14,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<float[,], City>, IInitializable
+    public class CityViewModel : ViewModelStrategy<MeshFilter, City>, IInitializable
     {
         /// <summary>
         /// Visibility of the editor.

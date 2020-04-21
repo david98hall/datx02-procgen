@@ -115,10 +115,12 @@ namespace App
         {
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
-            
-            (_model.TerrainMesh, _model.TerrainTexture) = terrainViewModel.Generate();
-            _meshCollider.sharedMesh = _model.TerrainMesh;
-            _meshFilter.sharedMesh = _model.TerrainMesh;
+
+            _model.MeshFilter = _meshFilter;
+            (_model.MeshFilter.sharedMesh, _model.TerrainTexture) = terrainViewModel.Generate();
+            var terrainMesh = _model.MeshFilter.sharedMesh;
+            _meshCollider.sharedMesh = terrainMesh;
+            _meshFilter.sharedMesh = terrainMesh;
             _meshRenderer.sharedMaterial.mainTexture = _model.TerrainTexture;
 
             _model.City = cityViewModel.Generate();
@@ -163,12 +165,12 @@ namespace App
         /// <summary>
         /// The run-time model of all generated content.
         /// </summary>
-        private class Model : IInjector<float[,]>
+        private class Model : IInjector<MeshFilter>
         {
             /// <summary>
             /// Generated terrain mesh.
             /// </summary>
-            internal Mesh TerrainMesh;
+            internal MeshFilter MeshFilter;
             
             /// <summary>
             /// Generated texture.
@@ -184,7 +186,7 @@ namespace App
             /// Injector method used by the city view model.
             /// </summary>
             /// <returns>The height map of the terrain mesh.</returns>
-            public float[,] Get() => TerrainMesh.HeightMap();
+            public MeshFilter Get() => MeshFilter;
         }
     }
 }

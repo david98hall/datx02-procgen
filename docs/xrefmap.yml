@@ -13,6 +13,12 @@ references:
   commentId: T:App.AppController
   fullName: App.AppController
   nameWithType: AppController
+- uid: App.AppController._eventBus
+  name: _eventBus
+  href: api/App.AppController.html#App_AppController__eventBus
+  commentId: F:App.AppController._eventBus
+  fullName: App.AppController._eventBus
+  nameWithType: AppController._eventBus
 - uid: App.AppController._initialized
   name: _initialized
   href: api/App.AppController.html#App_AppController__initialized
@@ -119,18 +125,31 @@ references:
   isSpec: "True"
   fullName: App.AppController.Model.Get
   nameWithType: AppController.Model.Get
-- uid: App.AppController.Model.Mesh
-  name: Mesh
-  href: api/App.AppController.Model.html#App_AppController_Model_Mesh
-  commentId: F:App.AppController.Model.Mesh
-  fullName: App.AppController.Model.Mesh
-  nameWithType: AppController.Model.Mesh
-- uid: App.AppController.Model.Texture
-  name: Texture
-  href: api/App.AppController.Model.html#App_AppController_Model_Texture
-  commentId: F:App.AppController.Model.Texture
-  fullName: App.AppController.Model.Texture
-  nameWithType: AppController.Model.Texture
+- uid: App.AppController.Model.MeshFilter
+  name: MeshFilter
+  href: api/App.AppController.Model.html#App_AppController_Model_MeshFilter
+  commentId: F:App.AppController.Model.MeshFilter
+  fullName: App.AppController.Model.MeshFilter
+  nameWithType: AppController.Model.MeshFilter
+- uid: App.AppController.Model.TerrainTexture
+  name: TerrainTexture
+  href: api/App.AppController.Model.html#App_AppController_Model_TerrainTexture
+  commentId: F:App.AppController.Model.TerrainTexture
+  fullName: App.AppController.Model.TerrainTexture
+  nameWithType: AppController.Model.TerrainTexture
+- uid: App.AppController.OnEnable
+  name: OnEnable()
+  href: api/App.AppController.html#App_AppController_OnEnable
+  commentId: M:App.AppController.OnEnable
+  fullName: App.AppController.OnEnable()
+  nameWithType: AppController.OnEnable()
+- uid: App.AppController.OnEnable*
+  name: OnEnable
+  href: api/App.AppController.html#App_AppController_OnEnable_
+  commentId: Overload:App.AppController.OnEnable
+  isSpec: "True"
+  fullName: App.AppController.OnEnable
+  nameWithType: AppController.OnEnable
 - uid: App.AppController.terrainViewModel
   name: terrainViewModel
   href: api/App.AppController.html#App_AppController_terrainViewModel
@@ -156,6 +175,18 @@ references:
   isSpec: "True"
   fullName: App.AppControllerEditor.OnInspectorGUI
   nameWithType: AppControllerEditor.OnInspectorGUI
+- uid: App.AppEvent
+  name: AppEvent
+  href: api/App.AppEvent.html
+  commentId: T:App.AppEvent
+  fullName: App.AppEvent
+  nameWithType: AppEvent
+- uid: App.AppEvent.UPDATE_NOISE_MAP_SIZE
+  name: UPDATE_NOISE_MAP_SIZE
+  href: api/App.AppEvent.html#App_AppEvent_UPDATE_NOISE_MAP_SIZE
+  commentId: F:App.AppEvent.UPDATE_NOISE_MAP_SIZE
+  fullName: App.AppEvent.UPDATE_NOISE_MAP_SIZE
+  nameWithType: AppEvent.UPDATE_NOISE_MAP_SIZE
 - uid: App.ViewModels
   name: App.ViewModels
   href: api/App.ViewModels.html
@@ -180,6 +211,12 @@ references:
   commentId: F:App.ViewModels.Cities.AStarStrategy._roadStrategyFactory
   fullName: App.ViewModels.Cities.AStarStrategy._roadStrategyFactory
   nameWithType: AStarStrategy._roadStrategyFactory
+- uid: App.ViewModels.Cities.AStarStrategy._terrainSize
+  name: _terrainSize
+  href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy__terrainSize
+  commentId: F:App.ViewModels.Cities.AStarStrategy._terrainSize
+  fullName: App.ViewModels.Cities.AStarStrategy._terrainSize
+  nameWithType: AStarStrategy._terrainSize
 - uid: App.ViewModels.Cities.AStarStrategy.Display
   name: Display()
   href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy_Display
@@ -225,6 +262,63 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.AStarStrategy.Initialize
   nameWithType: AStarStrategy.Initialize
+- uid: App.ViewModels.Cities.AStarStrategy.OnEvent(App.AppEvent,System.Object)
+  name: OnEvent(AppEvent, Object)
+  href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy_OnEvent_App_AppEvent_System_Object_
+  commentId: M:App.ViewModels.Cities.AStarStrategy.OnEvent(App.AppEvent,System.Object)
+  fullName: App.ViewModels.Cities.AStarStrategy.OnEvent(App.AppEvent, System.Object)
+  nameWithType: AStarStrategy.OnEvent(AppEvent, Object)
+- uid: App.ViewModels.Cities.AStarStrategy.OnEvent*
+  name: OnEvent
+  href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy_OnEvent_
+  commentId: Overload:App.ViewModels.Cities.AStarStrategy.OnEvent
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.AStarStrategy.OnEvent
+  nameWithType: AStarStrategy.OnEvent
+- uid: App.ViewModels.Cities.AStarStrategy.Path
+  name: AStarStrategy.Path
+  href: api/App.ViewModels.Cities.AStarStrategy.Path.html
+  commentId: T:App.ViewModels.Cities.AStarStrategy.Path
+  fullName: App.ViewModels.Cities.AStarStrategy.Path
+  nameWithType: AStarStrategy.Path
+- uid: App.ViewModels.Cities.AStarStrategy.Path.#ctor(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
+  name: Path(Vector2Int, Vector2Int)
+  href: api/App.ViewModels.Cities.AStarStrategy.Path.html#App_ViewModels_Cities_AStarStrategy_Path__ctor_UnityEngine_Vector2Int_UnityEngine_Vector2Int_
+  commentId: M:App.ViewModels.Cities.AStarStrategy.Path.#ctor(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
+  fullName: App.ViewModels.Cities.AStarStrategy.Path.Path(UnityEngine.Vector2Int, UnityEngine.Vector2Int)
+  nameWithType: AStarStrategy.Path.Path(Vector2Int, Vector2Int)
+- uid: App.ViewModels.Cities.AStarStrategy.Path.#ctor*
+  name: Path
+  href: api/App.ViewModels.Cities.AStarStrategy.Path.html#App_ViewModels_Cities_AStarStrategy_Path__ctor_
+  commentId: Overload:App.ViewModels.Cities.AStarStrategy.Path.#ctor
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.AStarStrategy.Path.Path
+  nameWithType: AStarStrategy.Path.Path
+- uid: App.ViewModels.Cities.AStarStrategy.Path.goal
+  name: goal
+  href: api/App.ViewModels.Cities.AStarStrategy.Path.html#App_ViewModels_Cities_AStarStrategy_Path_goal
+  commentId: F:App.ViewModels.Cities.AStarStrategy.Path.goal
+  fullName: App.ViewModels.Cities.AStarStrategy.Path.goal
+  nameWithType: AStarStrategy.Path.goal
+- uid: App.ViewModels.Cities.AStarStrategy.Path.start
+  name: start
+  href: api/App.ViewModels.Cities.AStarStrategy.Path.html#App_ViewModels_Cities_AStarStrategy_Path_start
+  commentId: F:App.ViewModels.Cities.AStarStrategy.Path.start
+  fullName: App.ViewModels.Cities.AStarStrategy.Path.start
+  nameWithType: AStarStrategy.Path.start
+- uid: App.ViewModels.Cities.AStarStrategy.Path.ToValueTuple
+  name: ToValueTuple()
+  href: api/App.ViewModels.Cities.AStarStrategy.Path.html#App_ViewModels_Cities_AStarStrategy_Path_ToValueTuple
+  commentId: M:App.ViewModels.Cities.AStarStrategy.Path.ToValueTuple
+  fullName: App.ViewModels.Cities.AStarStrategy.Path.ToValueTuple()
+  nameWithType: AStarStrategy.Path.ToValueTuple()
+- uid: App.ViewModels.Cities.AStarStrategy.Path.ToValueTuple*
+  name: ToValueTuple
+  href: api/App.ViewModels.Cities.AStarStrategy.Path.html#App_ViewModels_Cities_AStarStrategy_Path_ToValueTuple_
+  commentId: Overload:App.ViewModels.Cities.AStarStrategy.Path.ToValueTuple
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.AStarStrategy.Path.ToValueTuple
+  nameWithType: AStarStrategy.Path.ToValueTuple
 - uid: App.ViewModels.Cities.AStarStrategy.paths
   name: paths
   href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy_paths
@@ -237,18 +331,18 @@ references:
   commentId: T:App.ViewModels.Cities.CityViewModel
   fullName: App.ViewModels.Cities.CityViewModel
   nameWithType: CityViewModel
-- uid: App.ViewModels.Cities.CityViewModel._generator
-  name: _generator
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__generator
-  commentId: F:App.ViewModels.Cities.CityViewModel._generator
-  fullName: App.ViewModels.Cities.CityViewModel._generator
-  nameWithType: CityViewModel._generator
-- uid: App.ViewModels.Cities.CityViewModel._plotStrategies
-  name: _plotStrategies
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__plotStrategies
-  commentId: F:App.ViewModels.Cities.CityViewModel._plotStrategies
-  fullName: App.ViewModels.Cities.CityViewModel._plotStrategies
-  nameWithType: CityViewModel._plotStrategies
+- uid: App.ViewModels.Cities.CityViewModel._aStarVisible
+  name: _aStarVisible
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__aStarVisible
+  commentId: F:App.ViewModels.Cities.CityViewModel._aStarVisible
+  fullName: App.ViewModels.Cities.CityViewModel._aStarVisible
+  nameWithType: CityViewModel._aStarVisible
+- uid: App.ViewModels.Cities.CityViewModel._lSystemVisible
+  name: _lSystemVisible
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__lSystemVisible
+  commentId: F:App.ViewModels.Cities.CityViewModel._lSystemVisible
+  fullName: App.ViewModels.Cities.CityViewModel._lSystemVisible
+  nameWithType: CityViewModel._lSystemVisible
 - uid: App.ViewModels.Cities.CityViewModel._plotStrategyVisible
   name: _plotStrategyVisible
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__plotStrategyVisible
@@ -363,6 +457,32 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.Generate
   nameWithType: CityViewModel.Generate
+- uid: App.ViewModels.Cities.CityViewModel.GeneratePlots(Cities.Roads.RoadNetwork)
+  name: GeneratePlots(RoadNetwork)
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GeneratePlots_Cities_Roads_RoadNetwork_
+  commentId: M:App.ViewModels.Cities.CityViewModel.GeneratePlots(Cities.Roads.RoadNetwork)
+  fullName: App.ViewModels.Cities.CityViewModel.GeneratePlots(Cities.Roads.RoadNetwork)
+  nameWithType: CityViewModel.GeneratePlots(RoadNetwork)
+- uid: App.ViewModels.Cities.CityViewModel.GeneratePlots*
+  name: GeneratePlots
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GeneratePlots_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.GeneratePlots
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.CityViewModel.GeneratePlots
+  nameWithType: CityViewModel.GeneratePlots
+- uid: App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork
+  name: GenerateRoadNetwork()
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GenerateRoadNetwork
+  commentId: M:App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork
+  fullName: App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork()
+  nameWithType: CityViewModel.GenerateRoadNetwork()
+- uid: App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork*
+  name: GenerateRoadNetwork
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GenerateRoadNetwork_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork
+  nameWithType: CityViewModel.GenerateRoadNetwork
 - uid: App.ViewModels.Cities.CityViewModel.Initialize
   name: Initialize()
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Initialize
@@ -413,6 +533,12 @@ references:
   commentId: T:App.ViewModels.Cities.CityViewModel.PlotStrategy
   fullName: App.ViewModels.Cities.CityViewModel.PlotStrategy
   nameWithType: CityViewModel.PlotStrategy
+- uid: App.ViewModels.Cities.CityViewModel.PlotStrategy.Adjacent
+  name: Adjacent
+  href: api/App.ViewModels.Cities.CityViewModel.PlotStrategy.html#App_ViewModels_Cities_CityViewModel_PlotStrategy_Adjacent
+  commentId: F:App.ViewModels.Cities.CityViewModel.PlotStrategy.Adjacent
+  fullName: App.ViewModels.Cities.CityViewModel.PlotStrategy.Adjacent
+  nameWithType: CityViewModel.PlotStrategy.Adjacent
 - uid: App.ViewModels.Cities.CityViewModel.PlotStrategy.BruteMinimalCycle
   name: BruteMinimalCycle
   href: api/App.ViewModels.Cities.CityViewModel.PlotStrategy.html#App_ViewModels_Cities_CityViewModel_PlotStrategy_BruteMinimalCycle
@@ -425,6 +551,12 @@ references:
   commentId: F:App.ViewModels.Cities.CityViewModel.PlotStrategy.ClockWiseCycle
   fullName: App.ViewModels.Cities.CityViewModel.PlotStrategy.ClockWiseCycle
   nameWithType: CityViewModel.PlotStrategy.ClockWiseCycle
+- uid: App.ViewModels.Cities.CityViewModel.PlotStrategy.Combined
+  name: Combined
+  href: api/App.ViewModels.Cities.CityViewModel.PlotStrategy.html#App_ViewModels_Cities_CityViewModel_PlotStrategy_Combined
+  commentId: F:App.ViewModels.Cities.CityViewModel.PlotStrategy.Combined
+  fullName: App.ViewModels.Cities.CityViewModel.PlotStrategy.Combined
+  nameWithType: CityViewModel.PlotStrategy.Combined
 - uid: App.ViewModels.Cities.CityViewModel.PlotStrategy.MinimalCycle
   name: MinimalCycle
   href: api/App.ViewModels.Cities.CityViewModel.PlotStrategy.html#App_ViewModels_Cities_CityViewModel_PlotStrategy_MinimalCycle
@@ -469,30 +601,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.RoadMaterial
   nameWithType: CityViewModel.RoadMaterial
-- uid: App.ViewModels.Cities.CityViewModel.roadNetworkStrategy
-  name: roadNetworkStrategy
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadNetworkStrategy
-  commentId: F:App.ViewModels.Cities.CityViewModel.roadNetworkStrategy
-  fullName: App.ViewModels.Cities.CityViewModel.roadNetworkStrategy
-  nameWithType: CityViewModel.roadNetworkStrategy
-- uid: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy
-  name: CityViewModel.RoadNetworkStrategy
-  href: api/App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.html
-  commentId: T:App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy
-  fullName: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy
-  nameWithType: CityViewModel.RoadNetworkStrategy
-- uid: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.AStar
-  name: AStar
-  href: api/App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.html#App_ViewModels_Cities_CityViewModel_RoadNetworkStrategy_AStar
-  commentId: F:App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.AStar
-  fullName: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.AStar
-  nameWithType: CityViewModel.RoadNetworkStrategy.AStar
-- uid: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.LSystem
-  name: LSystem
-  href: api/App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.html#App_ViewModels_Cities_CityViewModel_RoadNetworkStrategy_LSystem
-  commentId: F:App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.LSystem
-  fullName: App.ViewModels.Cities.CityViewModel.RoadNetworkStrategy.LSystem
-  nameWithType: CityViewModel.RoadNetworkStrategy.LSystem
 - uid: App.ViewModels.Cities.CityViewModel.roadSmoothingIterations
   name: roadSmoothingIterations
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadSmoothingIterations
@@ -556,12 +664,36 @@ references:
   commentId: T:App.ViewModels.Cities.LSystemStrategy
   fullName: App.ViewModels.Cities.LSystemStrategy
   nameWithType: LSystemStrategy
+- uid: App.ViewModels.Cities.LSystemStrategy._defaultRewrites
+  name: _defaultRewrites
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__defaultRewrites
+  commentId: F:App.ViewModels.Cities.LSystemStrategy._defaultRewrites
+  fullName: App.ViewModels.Cities.LSystemStrategy._defaultRewrites
+  nameWithType: LSystemStrategy._defaultRewrites
+- uid: App.ViewModels.Cities.LSystemStrategy._maxRewrites
+  name: _maxRewrites
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__maxRewrites
+  commentId: F:App.ViewModels.Cities.LSystemStrategy._maxRewrites
+  fullName: App.ViewModels.Cities.LSystemStrategy._maxRewrites
+  nameWithType: LSystemStrategy._maxRewrites
+- uid: App.ViewModels.Cities.LSystemStrategy._minRewrites
+  name: _minRewrites
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__minRewrites
+  commentId: F:App.ViewModels.Cities.LSystemStrategy._minRewrites
+  fullName: App.ViewModels.Cities.LSystemStrategy._minRewrites
+  nameWithType: LSystemStrategy._minRewrites
 - uid: App.ViewModels.Cities.LSystemStrategy._roadStrategyFactory
   name: _roadStrategyFactory
   href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__roadStrategyFactory
   commentId: F:App.ViewModels.Cities.LSystemStrategy._roadStrategyFactory
   fullName: App.ViewModels.Cities.LSystemStrategy._roadStrategyFactory
   nameWithType: LSystemStrategy._roadStrategyFactory
+- uid: App.ViewModels.Cities.LSystemStrategy._terrainSize
+  name: _terrainSize
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__terrainSize
+  commentId: F:App.ViewModels.Cities.LSystemStrategy._terrainSize
+  fullName: App.ViewModels.Cities.LSystemStrategy._terrainSize
+  nameWithType: LSystemStrategy._terrainSize
 - uid: App.ViewModels.Cities.LSystemStrategy.Display
   name: Display()
   href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_Display
@@ -588,6 +720,19 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.LSystemStrategy.Generate
   nameWithType: LSystemStrategy.Generate
+- uid: App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter
+  name: GetTerrainCenter()
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_GetTerrainCenter
+  commentId: M:App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter
+  fullName: App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter()
+  nameWithType: LSystemStrategy.GetTerrainCenter()
+- uid: App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter*
+  name: GetTerrainCenter
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_GetTerrainCenter_
+  commentId: Overload:App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter
+  nameWithType: LSystemStrategy.GetTerrainCenter
 - uid: App.ViewModels.Cities.LSystemStrategy.Initialize
   name: Initialize()
   href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_Initialize
@@ -601,18 +746,56 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.LSystemStrategy.Initialize
   nameWithType: LSystemStrategy.Initialize
-- uid: App.ViewModels.Cities.LSystemStrategy.origin
+- uid: App.ViewModels.Cities.LSystemStrategy.Input
+  name: LSystemStrategy.Input
+  href: api/App.ViewModels.Cities.LSystemStrategy.Input.html
+  commentId: T:App.ViewModels.Cities.LSystemStrategy.Input
+  fullName: App.ViewModels.Cities.LSystemStrategy.Input
+  nameWithType: LSystemStrategy.Input
+- uid: App.ViewModels.Cities.LSystemStrategy.Input.#ctor(UnityEngine.Vector2,System.Int32)
+  name: Input(Vector2, Int32)
+  href: api/App.ViewModels.Cities.LSystemStrategy.Input.html#App_ViewModels_Cities_LSystemStrategy_Input__ctor_UnityEngine_Vector2_System_Int32_
+  commentId: M:App.ViewModels.Cities.LSystemStrategy.Input.#ctor(UnityEngine.Vector2,System.Int32)
+  fullName: App.ViewModels.Cities.LSystemStrategy.Input.Input(UnityEngine.Vector2, System.Int32)
+  nameWithType: LSystemStrategy.Input.Input(Vector2, Int32)
+- uid: App.ViewModels.Cities.LSystemStrategy.Input.#ctor*
+  name: Input
+  href: api/App.ViewModels.Cities.LSystemStrategy.Input.html#App_ViewModels_Cities_LSystemStrategy_Input__ctor_
+  commentId: Overload:App.ViewModels.Cities.LSystemStrategy.Input.#ctor
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.LSystemStrategy.Input.Input
+  nameWithType: LSystemStrategy.Input.Input
+- uid: App.ViewModels.Cities.LSystemStrategy.Input.origin
   name: origin
-  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_origin
-  commentId: F:App.ViewModels.Cities.LSystemStrategy.origin
-  fullName: App.ViewModels.Cities.LSystemStrategy.origin
-  nameWithType: LSystemStrategy.origin
-- uid: App.ViewModels.Cities.LSystemStrategy.rewritesCount
-  name: rewritesCount
-  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_rewritesCount
-  commentId: F:App.ViewModels.Cities.LSystemStrategy.rewritesCount
-  fullName: App.ViewModels.Cities.LSystemStrategy.rewritesCount
-  nameWithType: LSystemStrategy.rewritesCount
+  href: api/App.ViewModels.Cities.LSystemStrategy.Input.html#App_ViewModels_Cities_LSystemStrategy_Input_origin
+  commentId: F:App.ViewModels.Cities.LSystemStrategy.Input.origin
+  fullName: App.ViewModels.Cities.LSystemStrategy.Input.origin
+  nameWithType: LSystemStrategy.Input.origin
+- uid: App.ViewModels.Cities.LSystemStrategy.Input.rewrites
+  name: rewrites
+  href: api/App.ViewModels.Cities.LSystemStrategy.Input.html#App_ViewModels_Cities_LSystemStrategy_Input_rewrites
+  commentId: F:App.ViewModels.Cities.LSystemStrategy.Input.rewrites
+  fullName: App.ViewModels.Cities.LSystemStrategy.Input.rewrites
+  nameWithType: LSystemStrategy.Input.rewrites
+- uid: App.ViewModels.Cities.LSystemStrategy.inputs
+  name: inputs
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_inputs
+  commentId: F:App.ViewModels.Cities.LSystemStrategy.inputs
+  fullName: App.ViewModels.Cities.LSystemStrategy.inputs
+  nameWithType: LSystemStrategy.inputs
+- uid: App.ViewModels.Cities.LSystemStrategy.OnEvent(App.AppEvent,System.Object)
+  name: OnEvent(AppEvent, Object)
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_OnEvent_App_AppEvent_System_Object_
+  commentId: M:App.ViewModels.Cities.LSystemStrategy.OnEvent(App.AppEvent,System.Object)
+  fullName: App.ViewModels.Cities.LSystemStrategy.OnEvent(App.AppEvent, System.Object)
+  nameWithType: LSystemStrategy.OnEvent(AppEvent, Object)
+- uid: App.ViewModels.Cities.LSystemStrategy.OnEvent*
+  name: OnEvent
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_OnEvent_
+  commentId: Overload:App.ViewModels.Cities.LSystemStrategy.OnEvent
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.LSystemStrategy.OnEvent
+  nameWithType: LSystemStrategy.OnEvent
 - uid: App.ViewModels.Terrain
   name: App.ViewModels.Terrain
   href: api/App.ViewModels.Terrain.html
@@ -682,6 +865,19 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Terrain.PerlinNoiseStrategy.Display
   nameWithType: PerlinNoiseStrategy.Display
+- uid: App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls
+  name: DisplaySizeControls()
+  href: api/App.ViewModels.Terrain.PerlinNoiseStrategy.html#App_ViewModels_Terrain_PerlinNoiseStrategy_DisplaySizeControls
+  commentId: M:App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls
+  fullName: App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls()
+  nameWithType: PerlinNoiseStrategy.DisplaySizeControls()
+- uid: App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls*
+  name: DisplaySizeControls
+  href: api/App.ViewModels.Terrain.PerlinNoiseStrategy.html#App_ViewModels_Terrain_PerlinNoiseStrategy_DisplaySizeControls_
+  commentId: Overload:App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls
+  nameWithType: PerlinNoiseStrategy.DisplaySizeControls
 - uid: App.ViewModels.Terrain.PerlinNoiseStrategy.Generate
   name: Generate()
   href: api/App.ViewModels.Terrain.PerlinNoiseStrategy.html#App_ViewModels_Terrain_PerlinNoiseStrategy_Generate
@@ -993,6 +1189,14 @@ references:
   fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).ViewModelStrategy
   nameWithType: ViewModelStrategy<TI, TO>.ViewModelStrategy
   nameWithType.vb: ViewModelStrategy(Of TI, TO).ViewModelStrategy
+- uid: App.ViewModels.ViewModelStrategy`2._eventBus
+  name: _eventBus
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus
+  commentId: F:App.ViewModels.ViewModelStrategy`2._eventBus
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>._eventBus
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO)._eventBus
+  nameWithType: ViewModelStrategy<TI, TO>._eventBus
+  nameWithType.vb: ViewModelStrategy(Of TI, TO)._eventBus
 - uid: App.ViewModels.ViewModelStrategy`2.Display
   name: Display()
   href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display
@@ -1010,6 +1214,23 @@ references:
   fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Display
   nameWithType: ViewModelStrategy<TI, TO>.Display
   nameWithType.vb: ViewModelStrategy(Of TI, TO).Display
+- uid: App.ViewModels.ViewModelStrategy`2.EventBus
+  name: EventBus
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus
+  commentId: P:App.ViewModels.ViewModelStrategy`2.EventBus
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.EventBus
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).EventBus
+  nameWithType: ViewModelStrategy<TI, TO>.EventBus
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).EventBus
+- uid: App.ViewModels.ViewModelStrategy`2.EventBus*
+  name: EventBus
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus_
+  commentId: Overload:App.ViewModels.ViewModelStrategy`2.EventBus
+  isSpec: "True"
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.EventBus
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).EventBus
+  nameWithType: ViewModelStrategy<TI, TO>.EventBus
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).EventBus
 - uid: App.ViewModels.ViewModelStrategy`2.Generate
   name: Generate()
   href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate
@@ -1044,6 +1265,23 @@ references:
   fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Initialize
   nameWithType: ViewModelStrategy<TI, TO>.Initialize
   nameWithType.vb: ViewModelStrategy(Of TI, TO).Initialize
+- uid: App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object)
+  name: OnEvent(AppEvent, Object)
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_
+  commentId: M:App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object)
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.OnEvent(App.AppEvent, System.Object)
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).OnEvent(App.AppEvent, System.Object)
+  nameWithType: ViewModelStrategy<TI, TO>.OnEvent(AppEvent, Object)
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).OnEvent(AppEvent, Object)
+- uid: App.ViewModels.ViewModelStrategy`2.OnEvent*
+  name: OnEvent
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_
+  commentId: Overload:App.ViewModels.ViewModelStrategy`2.OnEvent
+  isSpec: "True"
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.OnEvent
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).OnEvent
+  nameWithType: ViewModelStrategy<TI, TO>.OnEvent
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).OnEvent
 - uid: Cities
   name: Cities
   href: api/Cities.html
@@ -1101,107 +1339,82 @@ references:
   isSpec: "True"
   fullName: Cities.City.RoadNetwork
   nameWithType: City.RoadNetwork
-- uid: Cities.CityGenerator
-  name: CityGenerator
-  href: api/Cities.CityGenerator.html
-  commentId: T:Cities.CityGenerator
-  fullName: Cities.CityGenerator
-  nameWithType: CityGenerator
-- uid: Cities.CityGenerator.#ctor
-  name: CityGenerator()
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator__ctor
-  commentId: M:Cities.CityGenerator.#ctor
-  fullName: Cities.CityGenerator.CityGenerator()
-  nameWithType: CityGenerator.CityGenerator()
-- uid: Cities.CityGenerator.#ctor*
-  name: CityGenerator
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator__ctor_
-  commentId: Overload:Cities.CityGenerator.#ctor
-  isSpec: "True"
-  fullName: Cities.CityGenerator.CityGenerator
-  nameWithType: CityGenerator.CityGenerator
-- uid: Cities.CityGenerator._heightMapInjector
-  name: _heightMapInjector
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator__heightMapInjector
-  commentId: F:Cities.CityGenerator._heightMapInjector
-  fullName: Cities.CityGenerator._heightMapInjector
-  nameWithType: CityGenerator._heightMapInjector
-- uid: Cities.CityGenerator._plotsGenerator
-  name: _plotsGenerator
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator__plotsGenerator
-  commentId: F:Cities.CityGenerator._plotsGenerator
-  fullName: Cities.CityGenerator._plotsGenerator
-  nameWithType: CityGenerator._plotsGenerator
-- uid: Cities.CityGenerator._roadNetwork
-  name: _roadNetwork
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator__roadNetwork
-  commentId: F:Cities.CityGenerator._roadNetwork
-  fullName: Cities.CityGenerator._roadNetwork
-  nameWithType: CityGenerator._roadNetwork
-- uid: Cities.CityGenerator._roadNetworkGenerator
-  name: _roadNetworkGenerator
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator__roadNetworkGenerator
-  commentId: F:Cities.CityGenerator._roadNetworkGenerator
-  fullName: Cities.CityGenerator._roadNetworkGenerator
-  nameWithType: CityGenerator._roadNetworkGenerator
-- uid: Cities.CityGenerator.Generate
-  name: Generate()
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_Generate
-  commentId: M:Cities.CityGenerator.Generate
-  fullName: Cities.CityGenerator.Generate()
-  nameWithType: CityGenerator.Generate()
-- uid: Cities.CityGenerator.Generate*
-  name: Generate
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_Generate_
-  commentId: Overload:Cities.CityGenerator.Generate
-  isSpec: "True"
-  fullName: Cities.CityGenerator.Generate
-  nameWithType: CityGenerator.Generate
-- uid: Cities.CityGenerator.Get
-  name: Get()
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_Get
-  commentId: M:Cities.CityGenerator.Get
-  fullName: Cities.CityGenerator.Get()
-  nameWithType: CityGenerator.Get()
-- uid: Cities.CityGenerator.Get*
-  name: Get
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_Get_
-  commentId: Overload:Cities.CityGenerator.Get
-  isSpec: "True"
-  fullName: Cities.CityGenerator.Get
-  nameWithType: CityGenerator.Get
-- uid: Cities.CityGenerator.PlotStrategy
-  name: PlotStrategy
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_PlotStrategy
-  commentId: P:Cities.CityGenerator.PlotStrategy
-  fullName: Cities.CityGenerator.PlotStrategy
-  nameWithType: CityGenerator.PlotStrategy
-- uid: Cities.CityGenerator.PlotStrategy*
-  name: PlotStrategy
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_PlotStrategy_
-  commentId: Overload:Cities.CityGenerator.PlotStrategy
-  isSpec: "True"
-  fullName: Cities.CityGenerator.PlotStrategy
-  nameWithType: CityGenerator.PlotStrategy
-- uid: Cities.CityGenerator.RoadNetworkStrategy
-  name: RoadNetworkStrategy
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_RoadNetworkStrategy
-  commentId: P:Cities.CityGenerator.RoadNetworkStrategy
-  fullName: Cities.CityGenerator.RoadNetworkStrategy
-  nameWithType: CityGenerator.RoadNetworkStrategy
-- uid: Cities.CityGenerator.RoadNetworkStrategy*
-  name: RoadNetworkStrategy
-  href: api/Cities.CityGenerator.html#Cities_CityGenerator_RoadNetworkStrategy_
-  commentId: Overload:Cities.CityGenerator.RoadNetworkStrategy
-  isSpec: "True"
-  fullName: Cities.CityGenerator.RoadNetworkStrategy
-  nameWithType: CityGenerator.RoadNetworkStrategy
 - uid: Cities.Plots
   name: Cities.Plots
   href: api/Cities.Plots.html
   commentId: N:Cities.Plots
   fullName: Cities.Plots
   nameWithType: Cities.Plots
+- uid: Cities.Plots.AdjacentStrategy
+  name: AdjacentStrategy
+  href: api/Cities.Plots.AdjacentStrategy.html
+  commentId: T:Cities.Plots.AdjacentStrategy
+  fullName: Cities.Plots.AdjacentStrategy
+  nameWithType: AdjacentStrategy
+- uid: Cities.Plots.AdjacentStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
+  name: AdjacentStrategy(IInjector<RoadNetwork>)
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
+  commentId: M:Cities.Plots.AdjacentStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
+  name.vb: AdjacentStrategy(IInjector(Of RoadNetwork))
+  fullName: Cities.Plots.AdjacentStrategy.AdjacentStrategy(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
+  fullName.vb: Cities.Plots.AdjacentStrategy.AdjacentStrategy(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
+  nameWithType: AdjacentStrategy.AdjacentStrategy(IInjector<RoadNetwork>)
+  nameWithType.vb: AdjacentStrategy.AdjacentStrategy(IInjector(Of RoadNetwork))
+- uid: Cities.Plots.AdjacentStrategy.#ctor*
+  name: AdjacentStrategy
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy__ctor_
+  commentId: Overload:Cities.Plots.AdjacentStrategy.#ctor
+  isSpec: "True"
+  fullName: Cities.Plots.AdjacentStrategy.AdjacentStrategy
+  nameWithType: AdjacentStrategy.AdjacentStrategy
+- uid: Cities.Plots.AdjacentStrategy._prevPlots
+  name: _prevPlots
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy__prevPlots
+  commentId: F:Cities.Plots.AdjacentStrategy._prevPlots
+  fullName: Cities.Plots.AdjacentStrategy._prevPlots
+  nameWithType: AdjacentStrategy._prevPlots
+- uid: Cities.Plots.AdjacentStrategy.AddExistingPlots(System.Collections.Generic.IEnumerable{Cities.Plots.Plot})
+  name: AddExistingPlots(IEnumerable<Plot>)
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_AddExistingPlots_System_Collections_Generic_IEnumerable_Cities_Plots_Plot__
+  commentId: M:Cities.Plots.AdjacentStrategy.AddExistingPlots(System.Collections.Generic.IEnumerable{Cities.Plots.Plot})
+  name.vb: AddExistingPlots(IEnumerable(Of Plot))
+  fullName: Cities.Plots.AdjacentStrategy.AddExistingPlots(System.Collections.Generic.IEnumerable<Cities.Plots.Plot>)
+  fullName.vb: Cities.Plots.AdjacentStrategy.AddExistingPlots(System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))
+  nameWithType: AdjacentStrategy.AddExistingPlots(IEnumerable<Plot>)
+  nameWithType.vb: AdjacentStrategy.AddExistingPlots(IEnumerable(Of Plot))
+- uid: Cities.Plots.AdjacentStrategy.AddExistingPlots*
+  name: AddExistingPlots
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_AddExistingPlots_
+  commentId: Overload:Cities.Plots.AdjacentStrategy.AddExistingPlots
+  isSpec: "True"
+  fullName: Cities.Plots.AdjacentStrategy.AddExistingPlots
+  nameWithType: AdjacentStrategy.AddExistingPlots
+- uid: Cities.Plots.AdjacentStrategy.Generate
+  name: Generate()
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_Generate
+  commentId: M:Cities.Plots.AdjacentStrategy.Generate
+  fullName: Cities.Plots.AdjacentStrategy.Generate()
+  nameWithType: AdjacentStrategy.Generate()
+- uid: Cities.Plots.AdjacentStrategy.Generate*
+  name: Generate
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_Generate_
+  commentId: Overload:Cities.Plots.AdjacentStrategy.Generate
+  isSpec: "True"
+  fullName: Cities.Plots.AdjacentStrategy.Generate
+  nameWithType: AdjacentStrategy.Generate
+- uid: Cities.Plots.AdjacentStrategy.RandomRectPlot(System.Random,UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single,System.Single)
+  name: RandomRectPlot(Random, Vector3, Vector3, Single, Single, Single)
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_RandomRectPlot_System_Random_UnityEngine_Vector3_UnityEngine_Vector3_System_Single_System_Single_System_Single_
+  commentId: M:Cities.Plots.AdjacentStrategy.RandomRectPlot(System.Random,UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single,System.Single)
+  fullName: Cities.Plots.AdjacentStrategy.RandomRectPlot(System.Random, UnityEngine.Vector3, UnityEngine.Vector3, System.Single, System.Single, System.Single)
+  nameWithType: AdjacentStrategy.RandomRectPlot(Random, Vector3, Vector3, Single, Single, Single)
+- uid: Cities.Plots.AdjacentStrategy.RandomRectPlot*
+  name: RandomRectPlot
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_RandomRectPlot_
+  commentId: Overload:Cities.Plots.AdjacentStrategy.RandomRectPlot
+  isSpec: "True"
+  fullName: Cities.Plots.AdjacentStrategy.RandomRectPlot
+  nameWithType: AdjacentStrategy.RandomRectPlot
 - uid: Cities.Plots.BruteMinimalCycleStrategy
   name: BruteMinimalCycleStrategy
   href: api/Cities.Plots.BruteMinimalCycleStrategy.html
@@ -1449,6 +1662,53 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.ClockwiseCycleStrategy.Vec3ToVec2
   nameWithType: ClockwiseCycleStrategy.Vec3ToVec2
+- uid: Cities.Plots.CombinedStrategy
+  name: CombinedStrategy
+  href: api/Cities.Plots.CombinedStrategy.html
+  commentId: T:Cities.Plots.CombinedStrategy
+  fullName: Cities.Plots.CombinedStrategy
+  nameWithType: CombinedStrategy
+- uid: Cities.Plots.CombinedStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
+  name: CombinedStrategy(IInjector<RoadNetwork>)
+  href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
+  commentId: M:Cities.Plots.CombinedStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
+  name.vb: CombinedStrategy(IInjector(Of RoadNetwork))
+  fullName: Cities.Plots.CombinedStrategy.CombinedStrategy(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
+  fullName.vb: Cities.Plots.CombinedStrategy.CombinedStrategy(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
+  nameWithType: CombinedStrategy.CombinedStrategy(IInjector<RoadNetwork>)
+  nameWithType.vb: CombinedStrategy.CombinedStrategy(IInjector(Of RoadNetwork))
+- uid: Cities.Plots.CombinedStrategy.#ctor*
+  name: CombinedStrategy
+  href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy__ctor_
+  commentId: Overload:Cities.Plots.CombinedStrategy.#ctor
+  isSpec: "True"
+  fullName: Cities.Plots.CombinedStrategy.CombinedStrategy
+  nameWithType: CombinedStrategy.CombinedStrategy
+- uid: Cities.Plots.CombinedStrategy._adjacentStrategy
+  name: _adjacentStrategy
+  href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy__adjacentStrategy
+  commentId: F:Cities.Plots.CombinedStrategy._adjacentStrategy
+  fullName: Cities.Plots.CombinedStrategy._adjacentStrategy
+  nameWithType: CombinedStrategy._adjacentStrategy
+- uid: Cities.Plots.CombinedStrategy._minimalCycleStrategy
+  name: _minimalCycleStrategy
+  href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy__minimalCycleStrategy
+  commentId: F:Cities.Plots.CombinedStrategy._minimalCycleStrategy
+  fullName: Cities.Plots.CombinedStrategy._minimalCycleStrategy
+  nameWithType: CombinedStrategy._minimalCycleStrategy
+- uid: Cities.Plots.CombinedStrategy.Generate
+  name: Generate()
+  href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy_Generate
+  commentId: M:Cities.Plots.CombinedStrategy.Generate
+  fullName: Cities.Plots.CombinedStrategy.Generate()
+  nameWithType: CombinedStrategy.Generate()
+- uid: Cities.Plots.CombinedStrategy.Generate*
+  name: Generate
+  href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy_Generate_
+  commentId: Overload:Cities.Plots.CombinedStrategy.Generate
+  isSpec: "True"
+  fullName: Cities.Plots.CombinedStrategy.Generate
+  nameWithType: CombinedStrategy.Generate
 - uid: Cities.Plots.Factory
   name: Factory
   href: api/Cities.Plots.Factory.html
@@ -1464,6 +1724,15 @@ references:
   fullName.vb: Cities.Plots.Factory.Factory(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
   nameWithType: Factory.Factory(IInjector<RoadNetwork>)
   nameWithType.vb: Factory.Factory(IInjector(Of RoadNetwork))
+- uid: Cities.Plots.Factory.#ctor(System.Func{Cities.Roads.RoadNetwork})
+  name: Factory(Func<RoadNetwork>)
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__ctor_System_Func_Cities_Roads_RoadNetwork__
+  commentId: M:Cities.Plots.Factory.#ctor(System.Func{Cities.Roads.RoadNetwork})
+  name.vb: Factory(Func(Of RoadNetwork))
+  fullName: Cities.Plots.Factory.Factory(System.Func<Cities.Roads.RoadNetwork>)
+  fullName.vb: Cities.Plots.Factory.Factory(System.Func(Of Cities.Roads.RoadNetwork))
+  nameWithType: Factory.Factory(Func<RoadNetwork>)
+  nameWithType.vb: Factory.Factory(Func(Of RoadNetwork))
 - uid: Cities.Plots.Factory.#ctor*
   name: Factory
   href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__ctor_
@@ -1477,6 +1746,19 @@ references:
   commentId: F:Cities.Plots.Factory._roadNetworkInjector
   fullName: Cities.Plots.Factory._roadNetworkInjector
   nameWithType: Factory._roadNetworkInjector
+- uid: Cities.Plots.Factory.CreateAdjacentStrategy
+  name: CreateAdjacentStrategy()
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateAdjacentStrategy
+  commentId: M:Cities.Plots.Factory.CreateAdjacentStrategy
+  fullName: Cities.Plots.Factory.CreateAdjacentStrategy()
+  nameWithType: Factory.CreateAdjacentStrategy()
+- uid: Cities.Plots.Factory.CreateAdjacentStrategy*
+  name: CreateAdjacentStrategy
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateAdjacentStrategy_
+  commentId: Overload:Cities.Plots.Factory.CreateAdjacentStrategy
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.CreateAdjacentStrategy
+  nameWithType: Factory.CreateAdjacentStrategy
 - uid: Cities.Plots.Factory.CreateBruteMinimalCycleStrategy
   name: CreateBruteMinimalCycleStrategy()
   href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateBruteMinimalCycleStrategy
@@ -1503,6 +1785,19 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.Factory.CreateClockwiseCycleStrategy
   nameWithType: Factory.CreateClockwiseCycleStrategy
+- uid: Cities.Plots.Factory.CreateCombinedStrategy
+  name: CreateCombinedStrategy()
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateCombinedStrategy
+  commentId: M:Cities.Plots.Factory.CreateCombinedStrategy
+  fullName: Cities.Plots.Factory.CreateCombinedStrategy()
+  nameWithType: Factory.CreateCombinedStrategy()
+- uid: Cities.Plots.Factory.CreateCombinedStrategy*
+  name: CreateCombinedStrategy
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateCombinedStrategy_
+  commentId: Overload:Cities.Plots.Factory.CreateCombinedStrategy
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.CreateCombinedStrategy
+  nameWithType: Factory.CreateCombinedStrategy
 - uid: Cities.Plots.Factory.CreateMinimalCycleStrategy
   name: CreateMinimalCycleStrategy()
   href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateMinimalCycleStrategy
@@ -1516,6 +1811,60 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.Factory.CreateMinimalCycleStrategy
   nameWithType: Factory.CreateMinimalCycleStrategy
+- uid: Cities.Plots.Factory.CreatePlotSampleStrategy
+  name: CreatePlotSampleStrategy()
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreatePlotSampleStrategy
+  commentId: M:Cities.Plots.Factory.CreatePlotSampleStrategy
+  fullName: Cities.Plots.Factory.CreatePlotSampleStrategy()
+  nameWithType: Factory.CreatePlotSampleStrategy()
+- uid: Cities.Plots.Factory.CreatePlotSampleStrategy*
+  name: CreatePlotSampleStrategy
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreatePlotSampleStrategy_
+  commentId: Overload:Cities.Plots.Factory.CreatePlotSampleStrategy
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.CreatePlotSampleStrategy
+  nameWithType: Factory.CreatePlotSampleStrategy
+- uid: Cities.Plots.Factory.RoadNetworkInjector
+  name: Factory.RoadNetworkInjector
+  href: api/Cities.Plots.Factory.RoadNetworkInjector.html
+  commentId: T:Cities.Plots.Factory.RoadNetworkInjector
+  fullName: Cities.Plots.Factory.RoadNetworkInjector
+  nameWithType: Factory.RoadNetworkInjector
+- uid: Cities.Plots.Factory.RoadNetworkInjector.#ctor(System.Func{Cities.Roads.RoadNetwork})
+  name: RoadNetworkInjector(Func<RoadNetwork>)
+  href: api/Cities.Plots.Factory.RoadNetworkInjector.html#Cities_Plots_Factory_RoadNetworkInjector__ctor_System_Func_Cities_Roads_RoadNetwork__
+  commentId: M:Cities.Plots.Factory.RoadNetworkInjector.#ctor(System.Func{Cities.Roads.RoadNetwork})
+  name.vb: RoadNetworkInjector(Func(Of RoadNetwork))
+  fullName: Cities.Plots.Factory.RoadNetworkInjector.RoadNetworkInjector(System.Func<Cities.Roads.RoadNetwork>)
+  fullName.vb: Cities.Plots.Factory.RoadNetworkInjector.RoadNetworkInjector(System.Func(Of Cities.Roads.RoadNetwork))
+  nameWithType: Factory.RoadNetworkInjector.RoadNetworkInjector(Func<RoadNetwork>)
+  nameWithType.vb: Factory.RoadNetworkInjector.RoadNetworkInjector(Func(Of RoadNetwork))
+- uid: Cities.Plots.Factory.RoadNetworkInjector.#ctor*
+  name: RoadNetworkInjector
+  href: api/Cities.Plots.Factory.RoadNetworkInjector.html#Cities_Plots_Factory_RoadNetworkInjector__ctor_
+  commentId: Overload:Cities.Plots.Factory.RoadNetworkInjector.#ctor
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.RoadNetworkInjector.RoadNetworkInjector
+  nameWithType: Factory.RoadNetworkInjector.RoadNetworkInjector
+- uid: Cities.Plots.Factory.RoadNetworkInjector._roadNetworkInjector
+  name: _roadNetworkInjector
+  href: api/Cities.Plots.Factory.RoadNetworkInjector.html#Cities_Plots_Factory_RoadNetworkInjector__roadNetworkInjector
+  commentId: F:Cities.Plots.Factory.RoadNetworkInjector._roadNetworkInjector
+  fullName: Cities.Plots.Factory.RoadNetworkInjector._roadNetworkInjector
+  nameWithType: Factory.RoadNetworkInjector._roadNetworkInjector
+- uid: Cities.Plots.Factory.RoadNetworkInjector.Get
+  name: Get()
+  href: api/Cities.Plots.Factory.RoadNetworkInjector.html#Cities_Plots_Factory_RoadNetworkInjector_Get
+  commentId: M:Cities.Plots.Factory.RoadNetworkInjector.Get
+  fullName: Cities.Plots.Factory.RoadNetworkInjector.Get()
+  nameWithType: Factory.RoadNetworkInjector.Get()
+- uid: Cities.Plots.Factory.RoadNetworkInjector.Get*
+  name: Get
+  href: api/Cities.Plots.Factory.RoadNetworkInjector.html#Cities_Plots_Factory_RoadNetworkInjector_Get_
+  commentId: Overload:Cities.Plots.Factory.RoadNetworkInjector.Get
+  isSpec: "True"
+  fullName: Cities.Plots.Factory.RoadNetworkInjector.Get
+  nameWithType: Factory.RoadNetworkInjector.Get
 - uid: Cities.Plots.MinimalCycleStrategy
   name: MinimalCycleStrategy
   href: api/Cities.Plots.MinimalCycleStrategy.html
@@ -1639,6 +1988,54 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.Plot.Vertices
   nameWithType: Plot.Vertices
+- uid: Cities.Plots.PlotSampleStrategy
+  name: PlotSampleStrategy
+  href: api/Cities.Plots.PlotSampleStrategy.html
+  commentId: T:Cities.Plots.PlotSampleStrategy
+  fullName: Cities.Plots.PlotSampleStrategy
+  nameWithType: PlotSampleStrategy
+- uid: Cities.Plots.PlotSampleStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
+  name: PlotSampleStrategy(IInjector<RoadNetwork>)
+  href: api/Cities.Plots.PlotSampleStrategy.html#Cities_Plots_PlotSampleStrategy__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
+  commentId: M:Cities.Plots.PlotSampleStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
+  name.vb: PlotSampleStrategy(IInjector(Of RoadNetwork))
+  fullName: Cities.Plots.PlotSampleStrategy.PlotSampleStrategy(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
+  fullName.vb: Cities.Plots.PlotSampleStrategy.PlotSampleStrategy(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
+  nameWithType: PlotSampleStrategy.PlotSampleStrategy(IInjector<RoadNetwork>)
+  nameWithType.vb: PlotSampleStrategy.PlotSampleStrategy(IInjector(Of RoadNetwork))
+- uid: Cities.Plots.PlotSampleStrategy.#ctor*
+  name: PlotSampleStrategy
+  href: api/Cities.Plots.PlotSampleStrategy.html#Cities_Plots_PlotSampleStrategy__ctor_
+  commentId: Overload:Cities.Plots.PlotSampleStrategy.#ctor
+  isSpec: "True"
+  fullName: Cities.Plots.PlotSampleStrategy.PlotSampleStrategy
+  nameWithType: PlotSampleStrategy.PlotSampleStrategy
+- uid: Cities.Plots.PlotSampleStrategy.Generate
+  name: Generate()
+  href: api/Cities.Plots.PlotSampleStrategy.html#Cities_Plots_PlotSampleStrategy_Generate
+  commentId: M:Cities.Plots.PlotSampleStrategy.Generate
+  fullName: Cities.Plots.PlotSampleStrategy.Generate()
+  nameWithType: PlotSampleStrategy.Generate()
+- uid: Cities.Plots.PlotSampleStrategy.Generate*
+  name: Generate
+  href: api/Cities.Plots.PlotSampleStrategy.html#Cities_Plots_PlotSampleStrategy_Generate_
+  commentId: Overload:Cities.Plots.PlotSampleStrategy.Generate
+  isSpec: "True"
+  fullName: Cities.Plots.PlotSampleStrategy.Generate
+  nameWithType: PlotSampleStrategy.Generate
+- uid: Cities.Plots.PlotSampleStrategy.RandomRotatedRect(System.Random,UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single)
+  name: RandomRotatedRect(Random, Vector3, Vector3, Single, Single)
+  href: api/Cities.Plots.PlotSampleStrategy.html#Cities_Plots_PlotSampleStrategy_RandomRotatedRect_System_Random_UnityEngine_Vector3_UnityEngine_Vector3_System_Single_System_Single_
+  commentId: M:Cities.Plots.PlotSampleStrategy.RandomRotatedRect(System.Random,UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single)
+  fullName: Cities.Plots.PlotSampleStrategy.RandomRotatedRect(System.Random, UnityEngine.Vector3, UnityEngine.Vector3, System.Single, System.Single)
+  nameWithType: PlotSampleStrategy.RandomRotatedRect(Random, Vector3, Vector3, Single, Single)
+- uid: Cities.Plots.PlotSampleStrategy.RandomRotatedRect*
+  name: RandomRotatedRect
+  href: api/Cities.Plots.PlotSampleStrategy.html#Cities_Plots_PlotSampleStrategy_RandomRotatedRect_
+  commentId: Overload:Cities.Plots.PlotSampleStrategy.RandomRotatedRect
+  isSpec: "True"
+  fullName: Cities.Plots.PlotSampleStrategy.RandomRotatedRect
+  nameWithType: PlotSampleStrategy.RandomRotatedRect
 - uid: Cities.Roads
   name: Cities.Roads
   href: api/Cities.Roads.html
@@ -1651,24 +2048,15 @@ references:
   commentId: T:Cities.Roads.AStarStrategy
   fullName: Cities.Roads.AStarStrategy
   nameWithType: AStarStrategy
-- uid: Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name: AStarStrategy(IInjector<Single[,]>)
-  href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name.vb: AStarStrategy(IInjector(Of Single(,)))
-  fullName: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector(Of System.Single(,)))
-  nameWithType: AStarStrategy.AStarStrategy(IInjector<Single[,]>)
-  nameWithType.vb: AStarStrategy.AStarStrategy(IInjector(Of Single(,)))
-- uid: Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]},System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
-  name: AStarStrategy(IInjector<Single[,]>, IEnumerable<(Vector2Int Start, Vector2Int End)>)
-  href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_System_Single_0__0____System_Collections_Generic_IEnumerable_System_ValueTuple_UnityEngine_Vector2Int_UnityEngine_Vector2Int___
-  commentId: M:Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]},System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
-  name.vb: AStarStrategy(IInjector(Of Single(,)), IEnumerable(Of (Start As Vector2Int, End As Vector2Int)))
-  fullName: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector<System.Single[,]>, System.Collections.Generic.IEnumerable<System.ValueTuple<UnityEngine.Vector2Int, UnityEngine.Vector2Int>>)
-  fullName.vb: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector(Of System.Single(,)), System.Collections.Generic.IEnumerable(Of System.ValueTuple(Of UnityEngine.Vector2Int, UnityEngine.Vector2Int)))
-  nameWithType: AStarStrategy.AStarStrategy(IInjector<Single[,]>, IEnumerable<(Vector2Int Start, Vector2Int End)>)
-  nameWithType.vb: AStarStrategy.AStarStrategy(IInjector(Of Single(,)), IEnumerable(Of (Start As Vector2Int, End As Vector2Int)))
+- uid: Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter},System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
+  name: AStarStrategy(IInjector<MeshFilter>, IEnumerable<(Vector2Int Start, Vector2Int End)>)
+  href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__System_Collections_Generic_IEnumerable_System_ValueTuple_UnityEngine_Vector2Int_UnityEngine_Vector2Int___
+  commentId: M:Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter},System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
+  name.vb: AStarStrategy(IInjector(Of MeshFilter), IEnumerable(Of (Start As Vector2Int, End As Vector2Int)))
+  fullName: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector<UnityEngine.MeshFilter>, System.Collections.Generic.IEnumerable<System.ValueTuple<UnityEngine.Vector2Int, UnityEngine.Vector2Int>>)
+  fullName.vb: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector(Of UnityEngine.MeshFilter), System.Collections.Generic.IEnumerable(Of System.ValueTuple(Of UnityEngine.Vector2Int, UnityEngine.Vector2Int)))
+  nameWithType: AStarStrategy.AStarStrategy(IInjector<MeshFilter>, IEnumerable<(Vector2Int Start, Vector2Int End)>)
+  nameWithType.vb: AStarStrategy.AStarStrategy(IInjector(Of MeshFilter), IEnumerable(Of (Start As Vector2Int, End As Vector2Int)))
 - uid: Cities.Roads.AStarStrategy.#ctor*
   name: AStarStrategy
   href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_
@@ -1905,15 +2293,15 @@ references:
   commentId: T:Cities.Roads.Factory
   fullName: Cities.Roads.Factory
   nameWithType: Factory
-- uid: Cities.Roads.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name: Factory(IInjector<Single[,]>)
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Cities.Roads.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name.vb: Factory(IInjector(Of Single(,)))
-  fullName: Cities.Roads.Factory.Factory(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Cities.Roads.Factory.Factory(Interfaces.IInjector(Of System.Single(,)))
-  nameWithType: Factory.Factory(IInjector<Single[,]>)
-  nameWithType.vb: Factory.Factory(IInjector(Of Single(,)))
+- uid: Cities.Roads.Factory.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
+  name: Factory(IInjector<MeshFilter>)
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__
+  commentId: M:Cities.Roads.Factory.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
+  name.vb: Factory(IInjector(Of MeshFilter))
+  fullName: Cities.Roads.Factory.Factory(Interfaces.IInjector<UnityEngine.MeshFilter>)
+  fullName.vb: Cities.Roads.Factory.Factory(Interfaces.IInjector(Of UnityEngine.MeshFilter))
+  nameWithType: Factory.Factory(IInjector<MeshFilter>)
+  nameWithType.vb: Factory.Factory(IInjector(Of MeshFilter))
 - uid: Cities.Roads.Factory.#ctor*
   name: Factory
   href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__ctor_
@@ -1921,12 +2309,12 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.Factory.Factory
   nameWithType: Factory.Factory
-- uid: Cities.Roads.Factory._terrainMeshNoiseMapInjector
-  name: _terrainMeshNoiseMapInjector
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__terrainMeshNoiseMapInjector
-  commentId: F:Cities.Roads.Factory._terrainMeshNoiseMapInjector
-  fullName: Cities.Roads.Factory._terrainMeshNoiseMapInjector
-  nameWithType: Factory._terrainMeshNoiseMapInjector
+- uid: Cities.Roads.Factory._terrainFilterInjector
+  name: _terrainFilterInjector
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__terrainFilterInjector
+  commentId: F:Cities.Roads.Factory._terrainFilterInjector
+  fullName: Cities.Roads.Factory._terrainFilterInjector
+  nameWithType: Factory._terrainFilterInjector
 - uid: Cities.Roads.Factory.CreateAStarStrategy(System.Single,System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
   name: CreateAStarStrategy(Single, IEnumerable<(Vector2Int Start, Vector2Int End)>)
   href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy_System_Single_System_Collections_Generic_IEnumerable_System_ValueTuple_UnityEngine_Vector2Int_UnityEngine_Vector2Int___
@@ -1975,212 +2363,212 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.Factory.CreateSampleStrategy
   nameWithType: Factory.CreateSampleStrategy
-- uid: Cities.Roads.Lsystem
-  name: Lsystem
-  href: api/Cities.Roads.Lsystem.html
-  commentId: T:Cities.Roads.Lsystem
-  fullName: Cities.Roads.Lsystem
-  nameWithType: Lsystem
-- uid: Cities.Roads.Lsystem.#ctor(System.Char,UnityEngine.Vector2,Interfaces.IInjector{System.Single[0:,0:]})
-  name: Lsystem(Char, Vector2, IInjector<Single[,]>)
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem__ctor_System_Char_UnityEngine_Vector2_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Cities.Roads.Lsystem.#ctor(System.Char,UnityEngine.Vector2,Interfaces.IInjector{System.Single[0:,0:]})
-  name.vb: Lsystem(Char, Vector2, IInjector(Of Single(,)))
-  fullName: Cities.Roads.Lsystem.Lsystem(System.Char, UnityEngine.Vector2, Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Cities.Roads.Lsystem.Lsystem(System.Char, UnityEngine.Vector2, Interfaces.IInjector(Of System.Single(,)))
-  nameWithType: Lsystem.Lsystem(Char, Vector2, IInjector<Single[,]>)
-  nameWithType.vb: Lsystem.Lsystem(Char, Vector2, IInjector(Of Single(,)))
-- uid: Cities.Roads.Lsystem.#ctor*
-  name: Lsystem
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem__ctor_
-  commentId: Overload:Cities.Roads.Lsystem.#ctor
+- uid: Cities.Roads.LSystem
+  name: LSystem
+  href: api/Cities.Roads.LSystem.html
+  commentId: T:Cities.Roads.LSystem
+  fullName: Cities.Roads.LSystem
+  nameWithType: LSystem
+- uid: Cities.Roads.LSystem.#ctor(System.Char,UnityEngine.Vector2,Interfaces.IInjector{UnityEngine.MeshFilter})
+  name: LSystem(Char, Vector2, IInjector<MeshFilter>)
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__ctor_System_Char_UnityEngine_Vector2_Interfaces_IInjector_UnityEngine_MeshFilter__
+  commentId: M:Cities.Roads.LSystem.#ctor(System.Char,UnityEngine.Vector2,Interfaces.IInjector{UnityEngine.MeshFilter})
+  name.vb: LSystem(Char, Vector2, IInjector(Of MeshFilter))
+  fullName: Cities.Roads.LSystem.LSystem(System.Char, UnityEngine.Vector2, Interfaces.IInjector<UnityEngine.MeshFilter>)
+  fullName.vb: Cities.Roads.LSystem.LSystem(System.Char, UnityEngine.Vector2, Interfaces.IInjector(Of UnityEngine.MeshFilter))
+  nameWithType: LSystem.LSystem(Char, Vector2, IInjector<MeshFilter>)
+  nameWithType.vb: LSystem.LSystem(Char, Vector2, IInjector(Of MeshFilter))
+- uid: Cities.Roads.LSystem.#ctor*
+  name: LSystem
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__ctor_
+  commentId: Overload:Cities.Roads.LSystem.#ctor
   isSpec: "True"
-  fullName: Cities.Roads.Lsystem.Lsystem
-  nameWithType: Lsystem.Lsystem
-- uid: Cities.Roads.Lsystem._noiseMapInjector
-  name: _noiseMapInjector
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem__noiseMapInjector
-  commentId: F:Cities.Roads.Lsystem._noiseMapInjector
-  fullName: Cities.Roads.Lsystem._noiseMapInjector
-  nameWithType: Lsystem._noiseMapInjector
-- uid: Cities.Roads.Lsystem.ApplyNoiseMap
+  fullName: Cities.Roads.LSystem.LSystem
+  nameWithType: LSystem.LSystem
+- uid: Cities.Roads.LSystem._terrainFilterInjector
+  name: _terrainFilterInjector
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__terrainFilterInjector
+  commentId: F:Cities.Roads.LSystem._terrainFilterInjector
+  fullName: Cities.Roads.LSystem._terrainFilterInjector
+  nameWithType: LSystem._terrainFilterInjector
+- uid: Cities.Roads.LSystem.ApplyNoiseMap
   name: ApplyNoiseMap()
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_ApplyNoiseMap
-  commentId: M:Cities.Roads.Lsystem.ApplyNoiseMap
-  fullName: Cities.Roads.Lsystem.ApplyNoiseMap()
-  nameWithType: Lsystem.ApplyNoiseMap()
-- uid: Cities.Roads.Lsystem.ApplyNoiseMap*
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ApplyNoiseMap
+  commentId: M:Cities.Roads.LSystem.ApplyNoiseMap
+  fullName: Cities.Roads.LSystem.ApplyNoiseMap()
+  nameWithType: LSystem.ApplyNoiseMap()
+- uid: Cities.Roads.LSystem.ApplyNoiseMap*
   name: ApplyNoiseMap
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_ApplyNoiseMap_
-  commentId: Overload:Cities.Roads.Lsystem.ApplyNoiseMap
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ApplyNoiseMap_
+  commentId: Overload:Cities.Roads.LSystem.ApplyNoiseMap
   isSpec: "True"
-  fullName: Cities.Roads.Lsystem.ApplyNoiseMap
-  nameWithType: Lsystem.ApplyNoiseMap
-- uid: Cities.Roads.Lsystem.axiom
+  fullName: Cities.Roads.LSystem.ApplyNoiseMap
+  nameWithType: LSystem.ApplyNoiseMap
+- uid: Cities.Roads.LSystem.axiom
   name: axiom
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_axiom
-  commentId: F:Cities.Roads.Lsystem.axiom
-  fullName: Cities.Roads.Lsystem.axiom
-  nameWithType: Lsystem.axiom
-- uid: Cities.Roads.Lsystem.Grid(Cities.Roads.Lsystem.State)
-  name: Grid(Lsystem.State)
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_Grid_Cities_Roads_Lsystem_State_
-  commentId: M:Cities.Roads.Lsystem.Grid(Cities.Roads.Lsystem.State)
-  fullName: Cities.Roads.Lsystem.Grid(Cities.Roads.Lsystem.State)
-  nameWithType: Lsystem.Grid(Lsystem.State)
-- uid: Cities.Roads.Lsystem.Grid*
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_axiom
+  commentId: F:Cities.Roads.LSystem.axiom
+  fullName: Cities.Roads.LSystem.axiom
+  nameWithType: LSystem.axiom
+- uid: Cities.Roads.LSystem.Grid(Cities.Roads.LSystem.State)
+  name: Grid(LSystem.State)
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_Grid_Cities_Roads_LSystem_State_
+  commentId: M:Cities.Roads.LSystem.Grid(Cities.Roads.LSystem.State)
+  fullName: Cities.Roads.LSystem.Grid(Cities.Roads.LSystem.State)
+  nameWithType: LSystem.Grid(LSystem.State)
+- uid: Cities.Roads.LSystem.Grid*
   name: Grid
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_Grid_
-  commentId: Overload:Cities.Roads.Lsystem.Grid
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_Grid_
+  commentId: Overload:Cities.Roads.LSystem.Grid
   isSpec: "True"
-  fullName: Cities.Roads.Lsystem.Grid
-  nameWithType: Lsystem.Grid
-- uid: Cities.Roads.Lsystem.network
+  fullName: Cities.Roads.LSystem.Grid
+  nameWithType: LSystem.Grid
+- uid: Cities.Roads.LSystem.network
   name: network
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_network
-  commentId: F:Cities.Roads.Lsystem.network
-  fullName: Cities.Roads.Lsystem.network
-  nameWithType: Lsystem.network
-- uid: Cities.Roads.Lsystem.noIntersects(UnityEngine.Vector3,System.Single)
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_network
+  commentId: F:Cities.Roads.LSystem.network
+  fullName: Cities.Roads.LSystem.network
+  nameWithType: LSystem.network
+- uid: Cities.Roads.LSystem.noIntersects(UnityEngine.Vector3,System.Single)
   name: noIntersects(Vector3, Single)
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_noIntersects_UnityEngine_Vector3_System_Single_
-  commentId: M:Cities.Roads.Lsystem.noIntersects(UnityEngine.Vector3,System.Single)
-  fullName: Cities.Roads.Lsystem.noIntersects(UnityEngine.Vector3, System.Single)
-  nameWithType: Lsystem.noIntersects(Vector3, Single)
-- uid: Cities.Roads.Lsystem.noIntersects*
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_noIntersects_UnityEngine_Vector3_System_Single_
+  commentId: M:Cities.Roads.LSystem.noIntersects(UnityEngine.Vector3,System.Single)
+  fullName: Cities.Roads.LSystem.noIntersects(UnityEngine.Vector3, System.Single)
+  nameWithType: LSystem.noIntersects(Vector3, Single)
+- uid: Cities.Roads.LSystem.noIntersects*
   name: noIntersects
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_noIntersects_
-  commentId: Overload:Cities.Roads.Lsystem.noIntersects
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_noIntersects_
+  commentId: Overload:Cities.Roads.LSystem.noIntersects
   isSpec: "True"
-  fullName: Cities.Roads.Lsystem.noIntersects
-  nameWithType: Lsystem.noIntersects
-- uid: Cities.Roads.Lsystem.NoiseMappedNetwork
+  fullName: Cities.Roads.LSystem.noIntersects
+  nameWithType: LSystem.noIntersects
+- uid: Cities.Roads.LSystem.NoiseMappedNetwork
   name: NoiseMappedNetwork
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_NoiseMappedNetwork
-  commentId: P:Cities.Roads.Lsystem.NoiseMappedNetwork
-  fullName: Cities.Roads.Lsystem.NoiseMappedNetwork
-  nameWithType: Lsystem.NoiseMappedNetwork
-- uid: Cities.Roads.Lsystem.NoiseMappedNetwork*
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_NoiseMappedNetwork
+  commentId: P:Cities.Roads.LSystem.NoiseMappedNetwork
+  fullName: Cities.Roads.LSystem.NoiseMappedNetwork
+  nameWithType: LSystem.NoiseMappedNetwork
+- uid: Cities.Roads.LSystem.NoiseMappedNetwork*
   name: NoiseMappedNetwork
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_NoiseMappedNetwork_
-  commentId: Overload:Cities.Roads.Lsystem.NoiseMappedNetwork
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_NoiseMappedNetwork_
+  commentId: Overload:Cities.Roads.LSystem.NoiseMappedNetwork
   isSpec: "True"
-  fullName: Cities.Roads.Lsystem.NoiseMappedNetwork
-  nameWithType: Lsystem.NoiseMappedNetwork
-- uid: Cities.Roads.Lsystem.pi
+  fullName: Cities.Roads.LSystem.NoiseMappedNetwork
+  nameWithType: LSystem.NoiseMappedNetwork
+- uid: Cities.Roads.LSystem.pi
   name: pi
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_pi
-  commentId: F:Cities.Roads.Lsystem.pi
-  fullName: Cities.Roads.Lsystem.pi
-  nameWithType: Lsystem.pi
-- uid: Cities.Roads.Lsystem.Rewrite
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_pi
+  commentId: F:Cities.Roads.LSystem.pi
+  fullName: Cities.Roads.LSystem.pi
+  nameWithType: LSystem.pi
+- uid: Cities.Roads.LSystem.Rewrite
   name: Rewrite()
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_Rewrite
-  commentId: M:Cities.Roads.Lsystem.Rewrite
-  fullName: Cities.Roads.Lsystem.Rewrite()
-  nameWithType: Lsystem.Rewrite()
-- uid: Cities.Roads.Lsystem.Rewrite*
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_Rewrite
+  commentId: M:Cities.Roads.LSystem.Rewrite
+  fullName: Cities.Roads.LSystem.Rewrite()
+  nameWithType: LSystem.Rewrite()
+- uid: Cities.Roads.LSystem.Rewrite*
   name: Rewrite
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_Rewrite_
-  commentId: Overload:Cities.Roads.Lsystem.Rewrite
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_Rewrite_
+  commentId: Overload:Cities.Roads.LSystem.Rewrite
   isSpec: "True"
-  fullName: Cities.Roads.Lsystem.Rewrite
-  nameWithType: Lsystem.Rewrite
-- uid: Cities.Roads.Lsystem.ruleset
+  fullName: Cities.Roads.LSystem.Rewrite
+  nameWithType: LSystem.Rewrite
+- uid: Cities.Roads.LSystem.ruleset
   name: ruleset
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_ruleset
-  commentId: F:Cities.Roads.Lsystem.ruleset
-  fullName: Cities.Roads.Lsystem.ruleset
-  nameWithType: Lsystem.ruleset
-- uid: Cities.Roads.Lsystem.state
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ruleset
+  commentId: F:Cities.Roads.LSystem.ruleset
+  fullName: Cities.Roads.LSystem.ruleset
+  nameWithType: LSystem.ruleset
+- uid: Cities.Roads.LSystem.state
   name: state
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_state
-  commentId: F:Cities.Roads.Lsystem.state
-  fullName: Cities.Roads.Lsystem.state
-  nameWithType: Lsystem.state
-- uid: Cities.Roads.Lsystem.State
-  name: Lsystem.State
-  href: api/Cities.Roads.Lsystem.State.html
-  commentId: T:Cities.Roads.Lsystem.State
-  fullName: Cities.Roads.Lsystem.State
-  nameWithType: Lsystem.State
-- uid: Cities.Roads.Lsystem.State.#ctor
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_state
+  commentId: F:Cities.Roads.LSystem.state
+  fullName: Cities.Roads.LSystem.state
+  nameWithType: LSystem.state
+- uid: Cities.Roads.LSystem.State
+  name: LSystem.State
+  href: api/Cities.Roads.LSystem.State.html
+  commentId: T:Cities.Roads.LSystem.State
+  fullName: Cities.Roads.LSystem.State
+  nameWithType: LSystem.State
+- uid: Cities.Roads.LSystem.State.#ctor
   name: State()
-  href: api/Cities.Roads.Lsystem.State.html#Cities_Roads_Lsystem_State__ctor
-  commentId: M:Cities.Roads.Lsystem.State.#ctor
-  fullName: Cities.Roads.Lsystem.State.State()
-  nameWithType: Lsystem.State.State()
-- uid: Cities.Roads.Lsystem.State.#ctor(UnityEngine.Vector3,System.Double)
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State__ctor
+  commentId: M:Cities.Roads.LSystem.State.#ctor
+  fullName: Cities.Roads.LSystem.State.State()
+  nameWithType: LSystem.State.State()
+- uid: Cities.Roads.LSystem.State.#ctor(UnityEngine.Vector3,System.Double)
   name: State(Vector3, Double)
-  href: api/Cities.Roads.Lsystem.State.html#Cities_Roads_Lsystem_State__ctor_UnityEngine_Vector3_System_Double_
-  commentId: M:Cities.Roads.Lsystem.State.#ctor(UnityEngine.Vector3,System.Double)
-  fullName: Cities.Roads.Lsystem.State.State(UnityEngine.Vector3, System.Double)
-  nameWithType: Lsystem.State.State(Vector3, Double)
-- uid: Cities.Roads.Lsystem.State.#ctor*
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State__ctor_UnityEngine_Vector3_System_Double_
+  commentId: M:Cities.Roads.LSystem.State.#ctor(UnityEngine.Vector3,System.Double)
+  fullName: Cities.Roads.LSystem.State.State(UnityEngine.Vector3, System.Double)
+  nameWithType: LSystem.State.State(Vector3, Double)
+- uid: Cities.Roads.LSystem.State.#ctor*
   name: State
-  href: api/Cities.Roads.Lsystem.State.html#Cities_Roads_Lsystem_State__ctor_
-  commentId: Overload:Cities.Roads.Lsystem.State.#ctor
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State__ctor_
+  commentId: Overload:Cities.Roads.LSystem.State.#ctor
   isSpec: "True"
-  fullName: Cities.Roads.Lsystem.State.State
-  nameWithType: Lsystem.State.State
-- uid: Cities.Roads.Lsystem.State.angle
+  fullName: Cities.Roads.LSystem.State.State
+  nameWithType: LSystem.State.State
+- uid: Cities.Roads.LSystem.State.angle
   name: angle
-  href: api/Cities.Roads.Lsystem.State.html#Cities_Roads_Lsystem_State_angle
-  commentId: F:Cities.Roads.Lsystem.State.angle
-  fullName: Cities.Roads.Lsystem.State.angle
-  nameWithType: Lsystem.State.angle
-- uid: Cities.Roads.Lsystem.State.pos
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State_angle
+  commentId: F:Cities.Roads.LSystem.State.angle
+  fullName: Cities.Roads.LSystem.State.angle
+  nameWithType: LSystem.State.angle
+- uid: Cities.Roads.LSystem.State.pos
   name: pos
-  href: api/Cities.Roads.Lsystem.State.html#Cities_Roads_Lsystem_State_pos
-  commentId: F:Cities.Roads.Lsystem.State.pos
-  fullName: Cities.Roads.Lsystem.State.pos
-  nameWithType: Lsystem.State.pos
-- uid: Cities.Roads.Lsystem.states
+  href: api/Cities.Roads.LSystem.State.html#Cities_Roads_LSystem_State_pos
+  commentId: F:Cities.Roads.LSystem.State.pos
+  fullName: Cities.Roads.LSystem.State.pos
+  nameWithType: LSystem.State.pos
+- uid: Cities.Roads.LSystem.states
   name: states
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_states
-  commentId: F:Cities.Roads.Lsystem.states
-  fullName: Cities.Roads.Lsystem.states
-  nameWithType: Lsystem.states
-- uid: Cities.Roads.Lsystem.toRad
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_states
+  commentId: F:Cities.Roads.LSystem.states
+  fullName: Cities.Roads.LSystem.states
+  nameWithType: LSystem.states
+- uid: Cities.Roads.LSystem.toRad
   name: toRad
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_toRad
-  commentId: F:Cities.Roads.Lsystem.toRad
-  fullName: Cities.Roads.Lsystem.toRad
-  nameWithType: Lsystem.toRad
-- uid: Cities.Roads.Lsystem.ToString
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_toRad
+  commentId: F:Cities.Roads.LSystem.toRad
+  fullName: Cities.Roads.LSystem.toRad
+  nameWithType: LSystem.toRad
+- uid: Cities.Roads.LSystem.ToString
   name: ToString()
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_ToString
-  commentId: M:Cities.Roads.Lsystem.ToString
-  fullName: Cities.Roads.Lsystem.ToString()
-  nameWithType: Lsystem.ToString()
-- uid: Cities.Roads.Lsystem.ToString*
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ToString
+  commentId: M:Cities.Roads.LSystem.ToString
+  fullName: Cities.Roads.LSystem.ToString()
+  nameWithType: LSystem.ToString()
+- uid: Cities.Roads.LSystem.ToString*
   name: ToString
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_ToString_
-  commentId: Overload:Cities.Roads.Lsystem.ToString
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ToString_
+  commentId: Overload:Cities.Roads.LSystem.ToString
   isSpec: "True"
-  fullName: Cities.Roads.Lsystem.ToString
-  nameWithType: Lsystem.ToString
-- uid: Cities.Roads.Lsystem.tree
+  fullName: Cities.Roads.LSystem.ToString
+  nameWithType: LSystem.ToString
+- uid: Cities.Roads.LSystem.tree
   name: tree
-  href: api/Cities.Roads.Lsystem.html#Cities_Roads_Lsystem_tree
-  commentId: F:Cities.Roads.Lsystem.tree
-  fullName: Cities.Roads.Lsystem.tree
-  nameWithType: Lsystem.tree
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_tree
+  commentId: F:Cities.Roads.LSystem.tree
+  fullName: Cities.Roads.LSystem.tree
+  nameWithType: LSystem.tree
 - uid: Cities.Roads.LSystemStrategy
   name: LSystemStrategy
   href: api/Cities.Roads.LSystemStrategy.html
   commentId: T:Cities.Roads.LSystemStrategy
   fullName: Cities.Roads.LSystemStrategy
   nameWithType: LSystemStrategy
-- uid: Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]},System.Int32)
-  name: LSystemStrategy(IInjector<Single[,]>, Int32)
-  href: api/Cities.Roads.LSystemStrategy.html#Cities_Roads_LSystemStrategy__ctor_Interfaces_IInjector_System_Single_0__0____System_Int32_
-  commentId: M:Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]},System.Int32)
-  name.vb: LSystemStrategy(IInjector(Of Single(,)), Int32)
-  fullName: Cities.Roads.LSystemStrategy.LSystemStrategy(Interfaces.IInjector<System.Single[,]>, System.Int32)
-  fullName.vb: Cities.Roads.LSystemStrategy.LSystemStrategy(Interfaces.IInjector(Of System.Single(,)), System.Int32)
-  nameWithType: LSystemStrategy.LSystemStrategy(IInjector<Single[,]>, Int32)
-  nameWithType.vb: LSystemStrategy.LSystemStrategy(IInjector(Of Single(,)), Int32)
+- uid: Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter},System.Int32)
+  name: LSystemStrategy(IInjector<MeshFilter>, Int32)
+  href: api/Cities.Roads.LSystemStrategy.html#Cities_Roads_LSystemStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__System_Int32_
+  commentId: M:Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter},System.Int32)
+  name.vb: LSystemStrategy(IInjector(Of MeshFilter), Int32)
+  fullName: Cities.Roads.LSystemStrategy.LSystemStrategy(Interfaces.IInjector<UnityEngine.MeshFilter>, System.Int32)
+  fullName.vb: Cities.Roads.LSystemStrategy.LSystemStrategy(Interfaces.IInjector(Of UnityEngine.MeshFilter), System.Int32)
+  nameWithType: LSystemStrategy.LSystemStrategy(IInjector<MeshFilter>, Int32)
+  nameWithType.vb: LSystemStrategy.LSystemStrategy(IInjector(Of MeshFilter), Int32)
 - uid: Cities.Roads.LSystemStrategy.#ctor*
   name: LSystemStrategy
   href: api/Cities.Roads.LSystemStrategy.html#Cities_Roads_LSystemStrategy__ctor_
@@ -2573,6 +2961,19 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.RoadNetwork.IsAdjacent
   nameWithType: RoadNetwork.IsAdjacent
+- uid: Cities.Roads.RoadNetwork.Merge(Cities.Roads.RoadNetwork)
+  name: Merge(RoadNetwork)
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_Merge_Cities_Roads_RoadNetwork_
+  commentId: M:Cities.Roads.RoadNetwork.Merge(Cities.Roads.RoadNetwork)
+  fullName: Cities.Roads.RoadNetwork.Merge(Cities.Roads.RoadNetwork)
+  nameWithType: RoadNetwork.Merge(RoadNetwork)
+- uid: Cities.Roads.RoadNetwork.Merge*
+  name: Merge
+  href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_Merge_
+  commentId: Overload:Cities.Roads.RoadNetwork.Merge
+  isSpec: "True"
+  fullName: Cities.Roads.RoadNetwork.Merge
+  nameWithType: RoadNetwork.Merge
 - uid: Cities.Roads.RoadNetwork.RoadVertices
   name: RoadVertices
   href: api/Cities.Roads.RoadNetwork.html#Cities_Roads_RoadNetwork_RoadVertices
@@ -2605,15 +3006,15 @@ references:
   commentId: T:Cities.Roads.SampleStrategy
   fullName: Cities.Roads.SampleStrategy
   nameWithType: SampleStrategy
-- uid: Cities.Roads.SampleStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name: SampleStrategy(IInjector<Single[,]>)
-  href: api/Cities.Roads.SampleStrategy.html#Cities_Roads_SampleStrategy__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Cities.Roads.SampleStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name.vb: SampleStrategy(IInjector(Of Single(,)))
-  fullName: Cities.Roads.SampleStrategy.SampleStrategy(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Cities.Roads.SampleStrategy.SampleStrategy(Interfaces.IInjector(Of System.Single(,)))
-  nameWithType: SampleStrategy.SampleStrategy(IInjector<Single[,]>)
-  nameWithType.vb: SampleStrategy.SampleStrategy(IInjector(Of Single(,)))
+- uid: Cities.Roads.SampleStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
+  name: SampleStrategy(IInjector<MeshFilter>)
+  href: api/Cities.Roads.SampleStrategy.html#Cities_Roads_SampleStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__
+  commentId: M:Cities.Roads.SampleStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
+  name.vb: SampleStrategy(IInjector(Of MeshFilter))
+  fullName: Cities.Roads.SampleStrategy.SampleStrategy(Interfaces.IInjector<UnityEngine.MeshFilter>)
+  fullName.vb: Cities.Roads.SampleStrategy.SampleStrategy(Interfaces.IInjector(Of UnityEngine.MeshFilter))
+  nameWithType: SampleStrategy.SampleStrategy(IInjector<MeshFilter>)
+  nameWithType.vb: SampleStrategy.SampleStrategy(IInjector(Of MeshFilter))
 - uid: Cities.Roads.SampleStrategy.#ctor*
   name: SampleStrategy
   href: api/Cities.Roads.SampleStrategy.html#Cities_Roads_SampleStrategy__ctor_
@@ -2634,6 +3035,19 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.SampleStrategy.CreateCircleRoad
   nameWithType: SampleStrategy.CreateCircleRoad
+- uid: Cities.Roads.SampleStrategy.CreateHighway
+  name: CreateHighway()
+  href: api/Cities.Roads.SampleStrategy.html#Cities_Roads_SampleStrategy_CreateHighway
+  commentId: M:Cities.Roads.SampleStrategy.CreateHighway
+  fullName: Cities.Roads.SampleStrategy.CreateHighway()
+  nameWithType: SampleStrategy.CreateHighway()
+- uid: Cities.Roads.SampleStrategy.CreateHighway*
+  name: CreateHighway
+  href: api/Cities.Roads.SampleStrategy.html#Cities_Roads_SampleStrategy_CreateHighway_
+  commentId: Overload:Cities.Roads.SampleStrategy.CreateHighway
+  isSpec: "True"
+  fullName: Cities.Roads.SampleStrategy.CreateHighway
+  nameWithType: SampleStrategy.CreateHighway
 - uid: Cities.Roads.SampleStrategy.CreatePyramid(System.Single,System.Single,System.Single)
   name: CreatePyramid(Single, Single, Single)
   href: api/Cities.Roads.SampleStrategy.html#Cities_Roads_SampleStrategy_CreatePyramid_System_Single_System_Single_System_Single_
@@ -3441,6 +3855,179 @@ references:
   fullName.vb: Interfaces.Strategy(Of TI, TO).Injector
   nameWithType: Strategy<TI, TO>.Injector
   nameWithType.vb: Strategy(Of TI, TO).Injector
+- uid: Services
+  name: Services
+  href: api/Services.html
+  commentId: N:Services
+  fullName: Services
+  nameWithType: Services
+- uid: Services.EventBus`1
+  name: EventBus<T>
+  href: api/Services.EventBus-1.html
+  commentId: T:Services.EventBus`1
+  name.vb: EventBus(Of T)
+  fullName: Services.EventBus<T>
+  fullName.vb: Services.EventBus(Of T)
+  nameWithType: EventBus<T>
+  nameWithType.vb: EventBus(Of T)
+- uid: Services.EventBus`1._subscribers
+  name: _subscribers
+  href: api/Services.EventBus-1.html#Services_EventBus_1__subscribers
+  commentId: F:Services.EventBus`1._subscribers
+  fullName: Services.EventBus<T>._subscribers
+  fullName.vb: Services.EventBus(Of T)._subscribers
+  nameWithType: EventBus<T>._subscribers
+  nameWithType.vb: EventBus(Of T)._subscribers
+- uid: Services.EventBus`1.CreateEvent(`0,System.Object)
+  name: CreateEvent(T, Object)
+  href: api/Services.EventBus-1.html#Services_EventBus_1_CreateEvent__0_System_Object_
+  commentId: M:Services.EventBus`1.CreateEvent(`0,System.Object)
+  fullName: Services.EventBus<T>.CreateEvent(T, System.Object)
+  fullName.vb: Services.EventBus(Of T).CreateEvent(T, System.Object)
+  nameWithType: EventBus<T>.CreateEvent(T, Object)
+  nameWithType.vb: EventBus(Of T).CreateEvent(T, Object)
+- uid: Services.EventBus`1.CreateEvent*
+  name: CreateEvent
+  href: api/Services.EventBus-1.html#Services_EventBus_1_CreateEvent_
+  commentId: Overload:Services.EventBus`1.CreateEvent
+  isSpec: "True"
+  fullName: Services.EventBus<T>.CreateEvent
+  fullName.vb: Services.EventBus(Of T).CreateEvent
+  nameWithType: EventBus<T>.CreateEvent
+  nameWithType.vb: EventBus(Of T).CreateEvent
+- uid: Services.EventBus`1.Subscribe(Services.ISubscriber{`0})
+  name: Subscribe(ISubscriber<T>)
+  href: api/Services.EventBus-1.html#Services_EventBus_1_Subscribe_Services_ISubscriber__0__
+  commentId: M:Services.EventBus`1.Subscribe(Services.ISubscriber{`0})
+  name.vb: Subscribe(ISubscriber(Of T))
+  fullName: Services.EventBus<T>.Subscribe(Services.ISubscriber<T>)
+  fullName.vb: Services.EventBus(Of T).Subscribe(Services.ISubscriber(Of T))
+  nameWithType: EventBus<T>.Subscribe(ISubscriber<T>)
+  nameWithType.vb: EventBus(Of T).Subscribe(ISubscriber(Of T))
+- uid: Services.EventBus`1.Subscribe*
+  name: Subscribe
+  href: api/Services.EventBus-1.html#Services_EventBus_1_Subscribe_
+  commentId: Overload:Services.EventBus`1.Subscribe
+  isSpec: "True"
+  fullName: Services.EventBus<T>.Subscribe
+  fullName.vb: Services.EventBus(Of T).Subscribe
+  nameWithType: EventBus<T>.Subscribe
+  nameWithType.vb: EventBus(Of T).Subscribe
+- uid: Services.EventBus`1.Unsubscribe(Services.ISubscriber{`0})
+  name: Unsubscribe(ISubscriber<T>)
+  href: api/Services.EventBus-1.html#Services_EventBus_1_Unsubscribe_Services_ISubscriber__0__
+  commentId: M:Services.EventBus`1.Unsubscribe(Services.ISubscriber{`0})
+  name.vb: Unsubscribe(ISubscriber(Of T))
+  fullName: Services.EventBus<T>.Unsubscribe(Services.ISubscriber<T>)
+  fullName.vb: Services.EventBus(Of T).Unsubscribe(Services.ISubscriber(Of T))
+  nameWithType: EventBus<T>.Unsubscribe(ISubscriber<T>)
+  nameWithType.vb: EventBus(Of T).Unsubscribe(ISubscriber(Of T))
+- uid: Services.EventBus`1.Unsubscribe*
+  name: Unsubscribe
+  href: api/Services.EventBus-1.html#Services_EventBus_1_Unsubscribe_
+  commentId: Overload:Services.EventBus`1.Unsubscribe
+  isSpec: "True"
+  fullName: Services.EventBus<T>.Unsubscribe
+  fullName.vb: Services.EventBus(Of T).Unsubscribe
+  nameWithType: EventBus<T>.Unsubscribe
+  nameWithType.vb: EventBus(Of T).Unsubscribe
+- uid: Services.IEventBus`1
+  name: IEventBus<T>
+  href: api/Services.IEventBus-1.html
+  commentId: T:Services.IEventBus`1
+  name.vb: IEventBus(Of T)
+  fullName: Services.IEventBus<T>
+  fullName.vb: Services.IEventBus(Of T)
+  nameWithType: IEventBus<T>
+  nameWithType.vb: IEventBus(Of T)
+- uid: Services.IEventBus`1.CreateEvent(`0,System.Object)
+  name: CreateEvent(T, Object)
+  href: api/Services.IEventBus-1.html#Services_IEventBus_1_CreateEvent__0_System_Object_
+  commentId: M:Services.IEventBus`1.CreateEvent(`0,System.Object)
+  fullName: Services.IEventBus<T>.CreateEvent(T, System.Object)
+  fullName.vb: Services.IEventBus(Of T).CreateEvent(T, System.Object)
+  nameWithType: IEventBus<T>.CreateEvent(T, Object)
+  nameWithType.vb: IEventBus(Of T).CreateEvent(T, Object)
+- uid: Services.IEventBus`1.CreateEvent*
+  name: CreateEvent
+  href: api/Services.IEventBus-1.html#Services_IEventBus_1_CreateEvent_
+  commentId: Overload:Services.IEventBus`1.CreateEvent
+  isSpec: "True"
+  fullName: Services.IEventBus<T>.CreateEvent
+  fullName.vb: Services.IEventBus(Of T).CreateEvent
+  nameWithType: IEventBus<T>.CreateEvent
+  nameWithType.vb: IEventBus(Of T).CreateEvent
+- uid: Services.IService`1
+  name: IService<T>
+  href: api/Services.IService-1.html
+  commentId: T:Services.IService`1
+  name.vb: IService(Of T)
+  fullName: Services.IService<T>
+  fullName.vb: Services.IService(Of T)
+  nameWithType: IService<T>
+  nameWithType.vb: IService(Of T)
+- uid: Services.IService`1.Subscribe(Services.ISubscriber{`0})
+  name: Subscribe(ISubscriber<T>)
+  href: api/Services.IService-1.html#Services_IService_1_Subscribe_Services_ISubscriber__0__
+  commentId: M:Services.IService`1.Subscribe(Services.ISubscriber{`0})
+  name.vb: Subscribe(ISubscriber(Of T))
+  fullName: Services.IService<T>.Subscribe(Services.ISubscriber<T>)
+  fullName.vb: Services.IService(Of T).Subscribe(Services.ISubscriber(Of T))
+  nameWithType: IService<T>.Subscribe(ISubscriber<T>)
+  nameWithType.vb: IService(Of T).Subscribe(ISubscriber(Of T))
+- uid: Services.IService`1.Subscribe*
+  name: Subscribe
+  href: api/Services.IService-1.html#Services_IService_1_Subscribe_
+  commentId: Overload:Services.IService`1.Subscribe
+  isSpec: "True"
+  fullName: Services.IService<T>.Subscribe
+  fullName.vb: Services.IService(Of T).Subscribe
+  nameWithType: IService<T>.Subscribe
+  nameWithType.vb: IService(Of T).Subscribe
+- uid: Services.IService`1.Unsubscribe(Services.ISubscriber{`0})
+  name: Unsubscribe(ISubscriber<T>)
+  href: api/Services.IService-1.html#Services_IService_1_Unsubscribe_Services_ISubscriber__0__
+  commentId: M:Services.IService`1.Unsubscribe(Services.ISubscriber{`0})
+  name.vb: Unsubscribe(ISubscriber(Of T))
+  fullName: Services.IService<T>.Unsubscribe(Services.ISubscriber<T>)
+  fullName.vb: Services.IService(Of T).Unsubscribe(Services.ISubscriber(Of T))
+  nameWithType: IService<T>.Unsubscribe(ISubscriber<T>)
+  nameWithType.vb: IService(Of T).Unsubscribe(ISubscriber(Of T))
+- uid: Services.IService`1.Unsubscribe*
+  name: Unsubscribe
+  href: api/Services.IService-1.html#Services_IService_1_Unsubscribe_
+  commentId: Overload:Services.IService`1.Unsubscribe
+  isSpec: "True"
+  fullName: Services.IService<T>.Unsubscribe
+  fullName.vb: Services.IService(Of T).Unsubscribe
+  nameWithType: IService<T>.Unsubscribe
+  nameWithType.vb: IService(Of T).Unsubscribe
+- uid: Services.ISubscriber`1
+  name: ISubscriber<T>
+  href: api/Services.ISubscriber-1.html
+  commentId: T:Services.ISubscriber`1
+  name.vb: ISubscriber(Of T)
+  fullName: Services.ISubscriber<T>
+  fullName.vb: Services.ISubscriber(Of T)
+  nameWithType: ISubscriber<T>
+  nameWithType.vb: ISubscriber(Of T)
+- uid: Services.ISubscriber`1.OnEvent(`0,System.Object)
+  name: OnEvent(T, Object)
+  href: api/Services.ISubscriber-1.html#Services_ISubscriber_1_OnEvent__0_System_Object_
+  commentId: M:Services.ISubscriber`1.OnEvent(`0,System.Object)
+  fullName: Services.ISubscriber<T>.OnEvent(T, System.Object)
+  fullName.vb: Services.ISubscriber(Of T).OnEvent(T, System.Object)
+  nameWithType: ISubscriber<T>.OnEvent(T, Object)
+  nameWithType.vb: ISubscriber(Of T).OnEvent(T, Object)
+- uid: Services.ISubscriber`1.OnEvent*
+  name: OnEvent
+  href: api/Services.ISubscriber-1.html#Services_ISubscriber_1_OnEvent_
+  commentId: Overload:Services.ISubscriber`1.OnEvent
+  isSpec: "True"
+  fullName: Services.ISubscriber<T>.OnEvent
+  fullName.vb: Services.ISubscriber(Of T).OnEvent
+  nameWithType: ISubscriber<T>.OnEvent
+  nameWithType.vb: ISubscriber(Of T).OnEvent
 - uid: Terrain
   name: Terrain
   href: api/Terrain.html
@@ -4526,6 +5113,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps
   nameWithType: Maths2D.AnyPolygonCenterOverlaps
+- uid: Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name: AreColliding(IEnumerable<Vector3>, IEnumerable<Vector3>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_AreColliding_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name.vb: AreColliding(IEnumerable(Of Vector3), IEnumerable(Of Vector3))
+  fullName: Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>, System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3), System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  nameWithType: Maths2D.AreColliding(IEnumerable<Vector3>, IEnumerable<Vector3>)
+  nameWithType.vb: Maths2D.AreColliding(IEnumerable(Of Vector3), IEnumerable(Of Vector3))
+- uid: Utils.Geometry.Maths2D.AreColliding*
+  name: AreColliding
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_AreColliding_
+  commentId: Overload:Utils.Geometry.Maths2D.AreColliding
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.AreColliding
+  nameWithType: Maths2D.AreColliding
 - uid: Utils.Geometry.Maths2D.CalculatePolygonArea(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
   name: CalculatePolygonArea(IEnumerable<Vector2>)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_CalculatePolygonArea_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
@@ -4542,6 +5145,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.CalculatePolygonArea
   nameWithType: Maths2D.CalculatePolygonArea
+- uid: Utils.Geometry.Maths2D.EdgeNormals(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name: EdgeNormals(IEnumerable<Vector3>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_EdgeNormals_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Utils.Geometry.Maths2D.EdgeNormals(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name.vb: EdgeNormals(IEnumerable(Of Vector3))
+  fullName: Utils.Geometry.Maths2D.EdgeNormals(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Utils.Geometry.Maths2D.EdgeNormals(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  nameWithType: Maths2D.EdgeNormals(IEnumerable<Vector3>)
+  nameWithType.vb: Maths2D.EdgeNormals(IEnumerable(Of Vector3))
+- uid: Utils.Geometry.Maths2D.EdgeNormals*
+  name: EdgeNormals
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_EdgeNormals_
+  commentId: Overload:Utils.Geometry.Maths2D.EdgeNormals
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.EdgeNormals
+  nameWithType: Maths2D.EdgeNormals
 - uid: Utils.Geometry.Maths2D.GetCenterPoint(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
   name: GetCenterPoint(IEnumerable<Vector2>)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetCenterPoint_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
@@ -4631,6 +5250,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.IsInsidePolygon
   nameWithType: Maths2D.IsInsidePolygon
+- uid: Utils.Geometry.Maths2D.LinePolyCollision(UnityEngine.Vector3,UnityEngine.Vector3,System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name: LinePolyCollision(Vector3, Vector3, IEnumerable<Vector3>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LinePolyCollision_UnityEngine_Vector3_UnityEngine_Vector3_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Utils.Geometry.Maths2D.LinePolyCollision(UnityEngine.Vector3,UnityEngine.Vector3,System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name.vb: LinePolyCollision(Vector3, Vector3, IEnumerable(Of Vector3))
+  fullName: Utils.Geometry.Maths2D.LinePolyCollision(UnityEngine.Vector3, UnityEngine.Vector3, System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Utils.Geometry.Maths2D.LinePolyCollision(UnityEngine.Vector3, UnityEngine.Vector3, System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  nameWithType: Maths2D.LinePolyCollision(Vector3, Vector3, IEnumerable<Vector3>)
+  nameWithType.vb: Maths2D.LinePolyCollision(Vector3, Vector3, IEnumerable(Of Vector3))
+- uid: Utils.Geometry.Maths2D.LinePolyCollision*
+  name: LinePolyCollision
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LinePolyCollision_
+  commentId: Overload:Utils.Geometry.Maths2D.LinePolyCollision
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.LinePolyCollision
+  nameWithType: Maths2D.LinePolyCollision
 - uid: Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Boolean)
   name: LineSegmentsIntersect(Vector2, Vector2, Vector2, Vector2, Boolean)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_LineSegmentsIntersect_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_System_Boolean_
@@ -4644,6 +5279,20 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.LineSegmentsIntersect
   nameWithType: Maths2D.LineSegmentsIntersect
+- uid: Utils.Geometry.Maths2D.Overlap(System.ValueTuple{System.Single,System.Single},System.ValueTuple{System.Single,System.Single})
+  name: Overlap((Single, Single), (Single, Single))
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_Overlap_System_ValueTuple_System_Single_System_Single__System_ValueTuple_System_Single_System_Single__
+  commentId: M:Utils.Geometry.Maths2D.Overlap(System.ValueTuple{System.Single,System.Single},System.ValueTuple{System.Single,System.Single})
+  fullName: Utils.Geometry.Maths2D.Overlap(System.ValueTuple<System.Single, System.Single>, System.ValueTuple<System.Single, System.Single>)
+  fullName.vb: Utils.Geometry.Maths2D.Overlap(System.ValueTuple(Of System.Single, System.Single), System.ValueTuple(Of System.Single, System.Single))
+  nameWithType: Maths2D.Overlap((Single, Single), (Single, Single))
+- uid: Utils.Geometry.Maths2D.Overlap*
+  name: Overlap
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_Overlap_
+  commentId: Overload:Utils.Geometry.Maths2D.Overlap
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.Overlap
+  nameWithType: Maths2D.Overlap
 - uid: Utils.Geometry.Maths2D.PointInTriangle(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
   name: PointInTriangle(Vector2, Vector2, Vector2, Vector2)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PointInTriangle_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_
@@ -4673,6 +5322,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.PolygonsOverlap
   nameWithType: Maths2D.PolygonsOverlap
+- uid: Utils.Geometry.Maths2D.ProjectPolygonOntoAxis(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},UnityEngine.Vector3)
+  name: ProjectPolygonOntoAxis(IEnumerable<Vector3>, Vector3)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_ProjectPolygonOntoAxis_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.Maths2D.ProjectPolygonOntoAxis(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},UnityEngine.Vector3)
+  name.vb: ProjectPolygonOntoAxis(IEnumerable(Of Vector3), Vector3)
+  fullName: Utils.Geometry.Maths2D.ProjectPolygonOntoAxis(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>, UnityEngine.Vector3)
+  fullName.vb: Utils.Geometry.Maths2D.ProjectPolygonOntoAxis(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3), UnityEngine.Vector3)
+  nameWithType: Maths2D.ProjectPolygonOntoAxis(IEnumerable<Vector3>, Vector3)
+  nameWithType.vb: Maths2D.ProjectPolygonOntoAxis(IEnumerable(Of Vector3), Vector3)
+- uid: Utils.Geometry.Maths2D.ProjectPolygonOntoAxis*
+  name: ProjectPolygonOntoAxis
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_ProjectPolygonOntoAxis_
+  commentId: Overload:Utils.Geometry.Maths2D.ProjectPolygonOntoAxis
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.ProjectPolygonOntoAxis
+  nameWithType: Maths2D.ProjectPolygonOntoAxis
 - uid: Utils.Geometry.Maths2D.PseudoDistanceFromPointToLine(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
   name: PseudoDistanceFromPointToLine(Vector2, Vector2, Vector2)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PseudoDistanceFromPointToLine_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_
@@ -4810,6 +5475,19 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths3D.OnLineSegment
   nameWithType: Maths3D.OnLineSegment
+- uid: Utils.Geometry.Maths3D.PerpendicularClockwise(UnityEngine.Vector3)
+  name: PerpendicularClockwise(Vector3)
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_PerpendicularClockwise_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.Maths3D.PerpendicularClockwise(UnityEngine.Vector3)
+  fullName: Utils.Geometry.Maths3D.PerpendicularClockwise(UnityEngine.Vector3)
+  nameWithType: Maths3D.PerpendicularClockwise(Vector3)
+- uid: Utils.Geometry.Maths3D.PerpendicularClockwise*
+  name: PerpendicularClockwise
+  href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_PerpendicularClockwise_
+  commentId: Overload:Utils.Geometry.Maths3D.PerpendicularClockwise
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths3D.PerpendicularClockwise
+  nameWithType: Maths3D.PerpendicularClockwise
 - uid: Utils.Geometry.Maths3D.tolerance
   name: tolerance
   href: api/Utils.Geometry.Maths3D.html#Utils_Geometry_Maths3D_tolerance
@@ -5432,6 +6110,25 @@ references:
   isSpec: "True"
   fullName: Utils.TerrainUtil.Slope
   nameWithType: TerrainUtil.Slope
+- uid: Utils.TerrainUtil.ToTerrainVertex(UnityEngine.Vector2,System.Int32,System.Int32)
+  name: ToTerrainVertex(Vector2, Int32, Int32)
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_ToTerrainVertex_UnityEngine_Vector2_System_Int32_System_Int32_
+  commentId: M:Utils.TerrainUtil.ToTerrainVertex(UnityEngine.Vector2,System.Int32,System.Int32)
+  fullName: Utils.TerrainUtil.ToTerrainVertex(UnityEngine.Vector2, System.Int32, System.Int32)
+  nameWithType: TerrainUtil.ToTerrainVertex(Vector2, Int32, Int32)
+- uid: Utils.TerrainUtil.ToTerrainVertex(UnityEngine.Vector2Int,System.Int32,System.Int32)
+  name: ToTerrainVertex(Vector2Int, Int32, Int32)
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_ToTerrainVertex_UnityEngine_Vector2Int_System_Int32_System_Int32_
+  commentId: M:Utils.TerrainUtil.ToTerrainVertex(UnityEngine.Vector2Int,System.Int32,System.Int32)
+  fullName: Utils.TerrainUtil.ToTerrainVertex(UnityEngine.Vector2Int, System.Int32, System.Int32)
+  nameWithType: TerrainUtil.ToTerrainVertex(Vector2Int, Int32, Int32)
+- uid: Utils.TerrainUtil.ToTerrainVertex*
+  name: ToTerrainVertex
+  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_ToTerrainVertex_
+  commentId: Overload:Utils.TerrainUtil.ToTerrainVertex
+  isSpec: "True"
+  fullName: Utils.TerrainUtil.ToTerrainVertex
+  nameWithType: TerrainUtil.ToTerrainVertex
 - uid: Utils.Tuples
   name: Utils.Tuples
   href: api/Utils.Tuples.html
