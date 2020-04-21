@@ -69,6 +69,7 @@ namespace Cities.Roads
             ruleset.Add('F',"F+FB-]");
             ruleset.Add('S', "B-FB[");
             ruleset.Add('B',"FS[F+]");
+            ruleset.Add('G',"GF-");
             tree = new StringBuilder(c.ToString());
         }
         
