@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System;
+using Extensions;
 using Interfaces;
 using UnityEngine;
 
@@ -46,7 +47,7 @@ namespace Cities.Roads
 
         public LSystem(char c, Vector2 origin, IInjector<MeshFilter> filterInjector)
         {
-            _noiseMapInjector = noiseMapInjector;
+            _terrainFilterInjector = filterInjector;
             axiom = c;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
             ruleset.Add('F',"F+FB-]");
@@ -58,7 +59,7 @@ namespace Cities.Roads
         
         #region Noise map
 
-        private readonly IInjector<float[,]> _noiseMapInjector;
+        private readonly IInjector<MeshFilter> _terrainFilterInjector;
         
         /// <summary>
         /// Applies the injected noise map to the road network and returns the result.
@@ -69,7 +70,7 @@ namespace Cities.Roads
         private RoadNetwork ApplyNoiseMap()
         {
             var newNetwork = new RoadNetwork();
-            var noiseMap = _noiseMapInjector.Get();
+            var noiseMap = _terrainFilterInjector.Get().sharedMesh.HeightMap();
             foreach (var (roadStart, roadEnd) in network.GetRoadParts())
             {
                 var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];

@@ -115,10 +115,12 @@ namespace App
         {
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
-            
-            (_model.TerrainMesh, _model.TerrainTexture) = terrainViewModel.Generate();
-            _meshCollider.sharedMesh = _model.TerrainMesh;
-            _meshFilter.sharedMesh = _model.TerrainMesh;
+
+            _model.MeshFilter = _meshFilter;
+            (_model.MeshFilter.sharedMesh, _model.TerrainTexture) = terrainViewModel.Generate();
+            var terrainMesh = _model.MeshFilter.sharedMesh;
+            _meshCollider.sharedMesh = terrainMesh;
+            _meshFilter.sharedMesh = terrainMesh;
             _meshRenderer.sharedMaterial.mainTexture = _model.TerrainTexture;
 
             _model.City = cityViewModel.Generate();
