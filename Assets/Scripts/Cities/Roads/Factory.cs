@@ -30,7 +30,7 @@ namespace Cities.Roads
         public IGenerator<RoadNetwork> CreateAStarStrategy(
             float heightBias = 0.5f, IEnumerable<(Vector2Int Start, Vector2Int Goal)> paths = null)
         {
-            var strategy = new AStarStrategy(_terrainMeshNoiseMapInjector) {HeightBias = heightBias};
+            var strategy = new AStarStrategy(_terrainFilterInjector) {HeightBias = heightBias};
             foreach (var (start, goal) in paths)
             {
                 strategy.Add(start, goal);
