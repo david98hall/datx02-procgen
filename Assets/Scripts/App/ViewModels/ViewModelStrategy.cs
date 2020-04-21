@@ -11,7 +11,7 @@ namespace App.ViewModels
     /// <typeparam name="TO">The output type of the generation.</typeparam>
     [Serializable]
     public abstract class ViewModelStrategy<TI, TO> 
-        : Strategy<TI, TO>, IDisplayable, IInitializable, ISubscriber<AppEvent>
+        : Strategy<TI, TO>, IDisplayable, ISubscriber<AppEvent>
     {
 
         /// <summary>
@@ -31,6 +31,7 @@ namespace App.ViewModels
                 _eventBus.Subscribe(this);
             }
         }
+        
         private EventBus<AppEvent> _eventBus;
         
         /// <summary>
@@ -44,13 +45,6 @@ namespace App.ViewModels
         /// Displays the editor of the view model.
         /// </summary>
         public virtual void Display()
-        {
-        }
-
-        /// <summary>
-        /// Initializes the view model.
-        /// </summary>
-        public virtual void Initialize()
         {
         }
 

@@ -10,7 +10,7 @@ namespace Interfaces
         /// <summary>
         /// The injector of the input.
         /// </summary>
-        public IInjector<TI> Injector { get; set; }
+        internal IInjector<TI> Injector { get; set; }
 
         /// <summary>
         /// Initializes the strategy by setting the input injector.

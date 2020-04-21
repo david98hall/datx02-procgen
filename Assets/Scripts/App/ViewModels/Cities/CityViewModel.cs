@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cities;
 using Cities.Plots;
 using Cities.Roads;
+using Interfaces;
 using UnityEditor;
 using UnityEngine;
 using Factory = Cities.Plots.Factory;
@@ -13,14 +14,8 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<MeshFilter, City>
+    public class CityViewModel : ViewModelStrategy<MeshFilter, City>, IInitializable
     {
-        /// <summary>
-        /// Underlying <see cref="CityGenerator"/> model.
-        /// Is required to be set explicitly in run-time.
-        /// </summary>
-        // private CityGenerator _generator;
-        
         /// <summary>
         /// Visibility of the editor.
         /// </summary>
@@ -52,19 +47,12 @@ namespace App.ViewModels.Cities
         #endregion
         
         #region Plot Strategy
-        
+
         /// <summary>
         /// Visibility of the plot strategy editor.
         /// </summary>
         private bool _plotStrategyVisible;
-        
-        /// <summary>
-        /// All plot strategy models.
-        /// No editor is required for plot strategies so no view models are required either.
-        /// Is required to be set explicitly in run-time.
-        /// </summary>
-        // private Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>> _plotStrategies;
-        
+
         /// <summary>
         /// Enum for plot strategies.
         /// Is used for displaying the possible strategies in the editor.
@@ -165,31 +153,13 @@ namespace App.ViewModels.Cities
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
-        public override void Initialize()
+        public void Initialize()
         {
-            // _generator = new CityGenerator();
-
             aStarStrategy.EventBus = EventBus;
             lSystemStrategy.EventBus = EventBus;
             
             aStarStrategy.Injector = Injector;
             lSystemStrategy.Injector = Injector;
-            
-            aStarStrategy.Initialize();
-            lSystemStrategy.Initialize();
-            
-            /*
-            // Plot strategies
-            var plotStrategyFactory = new Factory(_generator);
-            _plotStrategies = new Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>>
-            {
-                [PlotStrategy.MinimalCycle] = plotStrategyFactory.CreateMinimalCycleStrategy(),
-                [PlotStrategy.ClockWiseCycle] = plotStrategyFactory.CreateClockwiseCycleStrategy(),
-                [PlotStrategy.BruteMinimalCycle] = plotStrategyFactory.CreateBruteMinimalCycleStrategy(),
-                [PlotStrategy.Adjacent] = plotStrategyFactory.CreateAdjacentStrategy(),
-                [PlotStrategy.Combined] = plotStrategyFactory.CreateCombinedStrategy(),
-            };
-            */
         }
         
         /// <summary>
@@ -237,10 +207,7 @@ namespace App.ViewModels.Cities
                 EditorGUI.indentLevel--;
             }
             
-            EditorGUI.indentLevel--;
-                
             DisplayRoadAppearance();
-            
             EditorGUI.indentLevel--;
         }
         
