@@ -10,7 +10,6 @@ namespace Cities.Roads
     /// </summary>
     public class Factory
     {
-
         private readonly IInjector<MeshFilter> _terrainFilterInjector;
         
         /// <summary>
@@ -29,12 +28,17 @@ namespace Cities.Roads
         /// <param name="paths">Paths consisting of a start and goal node to generate a road between.</param>
         /// <returns>The A* road network generator.</returns>
         public IGenerator<RoadNetwork> CreateAStarStrategy(
-            float heightBias = 0.5f, IEnumerable<(Vector2Int Start, Vector2Int End)> paths = null) => 
-            new AStarStrategy(_terrainFilterInjector, paths)
+            float heightBias = 0.5f, IEnumerable<(Vector2Int Start, Vector2Int Goal)> paths = null)
+        {
+            var strategy = new AStarStrategy(_terrainFilterInjector) {HeightBias = heightBias};
+            foreach (var (start, goal) in paths)
             {
-                HeightBias = heightBias
-            };
-        
+                strategy.Add(start, goal);
+            }
+
+            return strategy;
+        }
+
         /// <summary>
         /// Creates a L-system strategy for generating a road network. The origin is (0, 0).
         /// </summary>
