@@ -181,12 +181,12 @@ references:
   commentId: T:App.AppEvent
   fullName: App.AppEvent
   nameWithType: AppEvent
-- uid: App.AppEvent.UPDATE_NOISE_MAP_SIZE
-  name: UPDATE_NOISE_MAP_SIZE
-  href: api/App.AppEvent.html#App_AppEvent_UPDATE_NOISE_MAP_SIZE
-  commentId: F:App.AppEvent.UPDATE_NOISE_MAP_SIZE
-  fullName: App.AppEvent.UPDATE_NOISE_MAP_SIZE
-  nameWithType: AppEvent.UPDATE_NOISE_MAP_SIZE
+- uid: App.AppEvent.UpdateNoiseMapSize
+  name: UpdateNoiseMapSize
+  href: api/App.AppEvent.html#App_AppEvent_UpdateNoiseMapSize
+  commentId: F:App.AppEvent.UpdateNoiseMapSize
+  fullName: App.AppEvent.UpdateNoiseMapSize
+  nameWithType: AppEvent.UpdateNoiseMapSize
 - uid: App.ViewModels
   name: App.ViewModels
   href: api/App.ViewModels.html
@@ -205,12 +205,6 @@ references:
   commentId: T:App.ViewModels.Cities.AStarStrategy
   fullName: App.ViewModels.Cities.AStarStrategy
   nameWithType: AStarStrategy
-- uid: App.ViewModels.Cities.AStarStrategy._roadStrategyFactory
-  name: _roadStrategyFactory
-  href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy__roadStrategyFactory
-  commentId: F:App.ViewModels.Cities.AStarStrategy._roadStrategyFactory
-  fullName: App.ViewModels.Cities.AStarStrategy._roadStrategyFactory
-  nameWithType: AStarStrategy._roadStrategyFactory
 - uid: App.ViewModels.Cities.AStarStrategy._terrainSize
   name: _terrainSize
   href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy__terrainSize
@@ -249,19 +243,6 @@ references:
   commentId: F:App.ViewModels.Cities.AStarStrategy.heightBias
   fullName: App.ViewModels.Cities.AStarStrategy.heightBias
   nameWithType: AStarStrategy.heightBias
-- uid: App.ViewModels.Cities.AStarStrategy.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy_Initialize
-  commentId: M:App.ViewModels.Cities.AStarStrategy.Initialize
-  fullName: App.ViewModels.Cities.AStarStrategy.Initialize()
-  nameWithType: AStarStrategy.Initialize()
-- uid: App.ViewModels.Cities.AStarStrategy.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy_Initialize_
-  commentId: Overload:App.ViewModels.Cities.AStarStrategy.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.AStarStrategy.Initialize
-  nameWithType: AStarStrategy.Initialize
 - uid: App.ViewModels.Cities.AStarStrategy.OnEvent(App.AppEvent,System.Object)
   name: OnEvent(AppEvent, Object)
   href: api/App.ViewModels.Cities.AStarStrategy.html#App_ViewModels_Cities_AStarStrategy_OnEvent_App_AppEvent_System_Object_
@@ -337,6 +318,18 @@ references:
   commentId: F:App.ViewModels.Cities.CityViewModel._aStarVisible
   fullName: App.ViewModels.Cities.CityViewModel._aStarVisible
   nameWithType: CityViewModel._aStarVisible
+- uid: App.ViewModels.Cities.CityViewModel._buildingAppearanceVisible
+  name: _buildingAppearanceVisible
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__buildingAppearanceVisible
+  commentId: F:App.ViewModels.Cities.CityViewModel._buildingAppearanceVisible
+  fullName: App.ViewModels.Cities.CityViewModel._buildingAppearanceVisible
+  nameWithType: CityViewModel._buildingAppearanceVisible
+- uid: App.ViewModels.Cities.CityViewModel._buildingStrategyVisible
+  name: _buildingStrategyVisible
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__buildingStrategyVisible
+  commentId: F:App.ViewModels.Cities.CityViewModel._buildingStrategyVisible
+  fullName: App.ViewModels.Cities.CityViewModel._buildingStrategyVisible
+  nameWithType: CityViewModel._buildingStrategyVisible
 - uid: App.ViewModels.Cities.CityViewModel._lSystemVisible
   name: _lSystemVisible
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__lSystemVisible
@@ -373,6 +366,43 @@ references:
   commentId: F:App.ViewModels.Cities.CityViewModel.aStarStrategy
   fullName: App.ViewModels.Cities.CityViewModel.aStarStrategy
   nameWithType: CityViewModel.aStarStrategy
+- uid: App.ViewModels.Cities.CityViewModel.buildingMaterial
+  name: buildingMaterial
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_buildingMaterial
+  commentId: F:App.ViewModels.Cities.CityViewModel.buildingMaterial
+  fullName: App.ViewModels.Cities.CityViewModel.buildingMaterial
+  nameWithType: CityViewModel.buildingMaterial
+- uid: App.ViewModels.Cities.CityViewModel.BuildingMaterial
+  name: BuildingMaterial
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_BuildingMaterial
+  commentId: P:App.ViewModels.Cities.CityViewModel.BuildingMaterial
+  fullName: App.ViewModels.Cities.CityViewModel.BuildingMaterial
+  nameWithType: CityViewModel.BuildingMaterial
+- uid: App.ViewModels.Cities.CityViewModel.BuildingMaterial*
+  name: BuildingMaterial
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_BuildingMaterial_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.BuildingMaterial
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.CityViewModel.BuildingMaterial
+  nameWithType: CityViewModel.BuildingMaterial
+- uid: App.ViewModels.Cities.CityViewModel.buildingStrategy
+  name: buildingStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_buildingStrategy
+  commentId: F:App.ViewModels.Cities.CityViewModel.buildingStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.buildingStrategy
+  nameWithType: CityViewModel.buildingStrategy
+- uid: App.ViewModels.Cities.CityViewModel.BuildingStrategy
+  name: CityViewModel.BuildingStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.BuildingStrategy.html
+  commentId: T:App.ViewModels.Cities.CityViewModel.BuildingStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.BuildingStrategy
+  nameWithType: CityViewModel.BuildingStrategy
+- uid: App.ViewModels.Cities.CityViewModel.BuildingStrategy.Extrusion
+  name: Extrusion
+  href: api/App.ViewModels.Cities.CityViewModel.BuildingStrategy.html#App_ViewModels_Cities_CityViewModel_BuildingStrategy_Extrusion
+  commentId: F:App.ViewModels.Cities.CityViewModel.BuildingStrategy.Extrusion
+  fullName: App.ViewModels.Cities.CityViewModel.BuildingStrategy.Extrusion
+  nameWithType: CityViewModel.BuildingStrategy.Extrusion
 - uid: App.ViewModels.Cities.CityViewModel.Display
   name: Display()
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Display
@@ -386,6 +416,51 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.Display
   nameWithType: CityViewModel.Display
+- uid: App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance
+  name: DisplayBuildingAppearance()
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayBuildingAppearance
+  commentId: M:App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance()
+  nameWithType: CityViewModel.DisplayBuildingAppearance()
+- uid: App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance*
+  name: DisplayBuildingAppearance
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayBuildingAppearance_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance
+  nameWithType: CityViewModel.DisplayBuildingAppearance
+- uid: App.ViewModels.Cities.CityViewModel.displayBuildings
+  name: displayBuildings
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_displayBuildings
+  commentId: F:App.ViewModels.Cities.CityViewModel.displayBuildings
+  fullName: App.ViewModels.Cities.CityViewModel.displayBuildings
+  nameWithType: CityViewModel.displayBuildings
+- uid: App.ViewModels.Cities.CityViewModel.DisplayBuildings
+  name: DisplayBuildings
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayBuildings
+  commentId: P:App.ViewModels.Cities.CityViewModel.DisplayBuildings
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayBuildings
+  nameWithType: CityViewModel.DisplayBuildings
+- uid: App.ViewModels.Cities.CityViewModel.DisplayBuildings*
+  name: DisplayBuildings
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayBuildings_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.DisplayBuildings
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayBuildings
+  nameWithType: CityViewModel.DisplayBuildings
+- uid: App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy
+  name: DisplayBuildingStrategy()
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayBuildingStrategy
+  commentId: M:App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy()
+  nameWithType: CityViewModel.DisplayBuildingStrategy()
+- uid: App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy*
+  name: DisplayBuildingStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_DisplayBuildingStrategy_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy
+  nameWithType: CityViewModel.DisplayBuildingStrategy
 - uid: App.ViewModels.Cities.CityViewModel.displayPlots
   name: displayPlots
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_displayPlots
@@ -444,6 +519,12 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy
   nameWithType: CityViewModel.DisplayRoadStrategy
+- uid: App.ViewModels.Cities.CityViewModel.extrusionStrategy
+  name: extrusionStrategy
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_extrusionStrategy
+  commentId: F:App.ViewModels.Cities.CityViewModel.extrusionStrategy
+  fullName: App.ViewModels.Cities.CityViewModel.extrusionStrategy
+  nameWithType: CityViewModel.extrusionStrategy
 - uid: App.ViewModels.Cities.CityViewModel.Generate
   name: Generate()
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Generate
@@ -457,6 +538,22 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.Generate
   nameWithType: CityViewModel.Generate
+- uid: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}})
+  name: GenerateBuildings((MeshFilter, IEnumerable<Plot>))
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GenerateBuildings_System_ValueTuple_UnityEngine_MeshFilter_System_Collections_Generic_IEnumerable_Cities_Plots_Plot___
+  commentId: M:App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}})
+  name.vb: GenerateBuildings((MeshFilter, IEnumerable(Of Plot)))
+  fullName: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple<UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>)
+  fullName.vb: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple(Of UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot)))
+  nameWithType: CityViewModel.GenerateBuildings((MeshFilter, IEnumerable<Plot>))
+  nameWithType.vb: CityViewModel.GenerateBuildings((MeshFilter, IEnumerable(Of Plot)))
+- uid: App.ViewModels.Cities.CityViewModel.GenerateBuildings*
+  name: GenerateBuildings
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GenerateBuildings_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.GenerateBuildings
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.CityViewModel.GenerateBuildings
+  nameWithType: CityViewModel.GenerateBuildings
 - uid: App.ViewModels.Cities.CityViewModel.GeneratePlots(Cities.Roads.RoadNetwork)
   name: GeneratePlots(RoadNetwork)
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GeneratePlots_Cities_Roads_RoadNetwork_
@@ -664,36 +761,18 @@ references:
   commentId: T:App.ViewModels.Cities.LSystemStrategy
   fullName: App.ViewModels.Cities.LSystemStrategy
   nameWithType: LSystemStrategy
-- uid: App.ViewModels.Cities.LSystemStrategy._defaultRewrites
-  name: _defaultRewrites
-  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__defaultRewrites
-  commentId: F:App.ViewModels.Cities.LSystemStrategy._defaultRewrites
-  fullName: App.ViewModels.Cities.LSystemStrategy._defaultRewrites
-  nameWithType: LSystemStrategy._defaultRewrites
-- uid: App.ViewModels.Cities.LSystemStrategy._maxRewrites
-  name: _maxRewrites
-  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__maxRewrites
-  commentId: F:App.ViewModels.Cities.LSystemStrategy._maxRewrites
-  fullName: App.ViewModels.Cities.LSystemStrategy._maxRewrites
-  nameWithType: LSystemStrategy._maxRewrites
-- uid: App.ViewModels.Cities.LSystemStrategy._minRewrites
-  name: _minRewrites
-  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__minRewrites
-  commentId: F:App.ViewModels.Cities.LSystemStrategy._minRewrites
-  fullName: App.ViewModels.Cities.LSystemStrategy._minRewrites
-  nameWithType: LSystemStrategy._minRewrites
-- uid: App.ViewModels.Cities.LSystemStrategy._roadStrategyFactory
-  name: _roadStrategyFactory
-  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__roadStrategyFactory
-  commentId: F:App.ViewModels.Cities.LSystemStrategy._roadStrategyFactory
-  fullName: App.ViewModels.Cities.LSystemStrategy._roadStrategyFactory
-  nameWithType: LSystemStrategy._roadStrategyFactory
 - uid: App.ViewModels.Cities.LSystemStrategy._terrainSize
   name: _terrainSize
   href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy__terrainSize
   commentId: F:App.ViewModels.Cities.LSystemStrategy._terrainSize
   fullName: App.ViewModels.Cities.LSystemStrategy._terrainSize
   nameWithType: LSystemStrategy._terrainSize
+- uid: App.ViewModels.Cities.LSystemStrategy.DefaultRewrites
+  name: DefaultRewrites
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_DefaultRewrites
+  commentId: F:App.ViewModels.Cities.LSystemStrategy.DefaultRewrites
+  fullName: App.ViewModels.Cities.LSystemStrategy.DefaultRewrites
+  nameWithType: LSystemStrategy.DefaultRewrites
 - uid: App.ViewModels.Cities.LSystemStrategy.Display
   name: Display()
   href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_Display
@@ -733,19 +812,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter
   nameWithType: LSystemStrategy.GetTerrainCenter
-- uid: App.ViewModels.Cities.LSystemStrategy.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_Initialize
-  commentId: M:App.ViewModels.Cities.LSystemStrategy.Initialize
-  fullName: App.ViewModels.Cities.LSystemStrategy.Initialize()
-  nameWithType: LSystemStrategy.Initialize()
-- uid: App.ViewModels.Cities.LSystemStrategy.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_Initialize_
-  commentId: Overload:App.ViewModels.Cities.LSystemStrategy.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.LSystemStrategy.Initialize
-  nameWithType: LSystemStrategy.Initialize
 - uid: App.ViewModels.Cities.LSystemStrategy.Input
   name: LSystemStrategy.Input
   href: api/App.ViewModels.Cities.LSystemStrategy.Input.html
@@ -783,6 +849,18 @@ references:
   commentId: F:App.ViewModels.Cities.LSystemStrategy.inputs
   fullName: App.ViewModels.Cities.LSystemStrategy.inputs
   nameWithType: LSystemStrategy.inputs
+- uid: App.ViewModels.Cities.LSystemStrategy.MaxRewrites
+  name: MaxRewrites
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_MaxRewrites
+  commentId: F:App.ViewModels.Cities.LSystemStrategy.MaxRewrites
+  fullName: App.ViewModels.Cities.LSystemStrategy.MaxRewrites
+  nameWithType: LSystemStrategy.MaxRewrites
+- uid: App.ViewModels.Cities.LSystemStrategy.MinRewrites
+  name: MinRewrites
+  href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_MinRewrites
+  commentId: F:App.ViewModels.Cities.LSystemStrategy.MinRewrites
+  fullName: App.ViewModels.Cities.LSystemStrategy.MinRewrites
+  nameWithType: LSystemStrategy.MinRewrites
 - uid: App.ViewModels.Cities.LSystemStrategy.OnEvent(App.AppEvent,System.Object)
   name: OnEvent(AppEvent, Object)
   href: api/App.ViewModels.Cities.LSystemStrategy.html#App_ViewModels_Cities_LSystemStrategy_OnEvent_App_AppEvent_System_Object_
@@ -808,12 +886,6 @@ references:
   commentId: T:App.ViewModels.Terrain.GrayScaleStrategy
   fullName: App.ViewModels.Terrain.GrayScaleStrategy
   nameWithType: GrayScaleStrategy
-- uid: App.ViewModels.Terrain.GrayScaleStrategy._textureStrategyFactory
-  name: _textureStrategyFactory
-  href: api/App.ViewModels.Terrain.GrayScaleStrategy.html#App_ViewModels_Terrain_GrayScaleStrategy__textureStrategyFactory
-  commentId: F:App.ViewModels.Terrain.GrayScaleStrategy._textureStrategyFactory
-  fullName: App.ViewModels.Terrain.GrayScaleStrategy._textureStrategyFactory
-  nameWithType: GrayScaleStrategy._textureStrategyFactory
 - uid: App.ViewModels.Terrain.GrayScaleStrategy.Generate
   name: Generate()
   href: api/App.ViewModels.Terrain.GrayScaleStrategy.html#App_ViewModels_Terrain_GrayScaleStrategy_Generate
@@ -827,19 +899,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Terrain.GrayScaleStrategy.Generate
   nameWithType: GrayScaleStrategy.Generate
-- uid: App.ViewModels.Terrain.GrayScaleStrategy.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Terrain.GrayScaleStrategy.html#App_ViewModels_Terrain_GrayScaleStrategy_Initialize
-  commentId: M:App.ViewModels.Terrain.GrayScaleStrategy.Initialize
-  fullName: App.ViewModels.Terrain.GrayScaleStrategy.Initialize()
-  nameWithType: GrayScaleStrategy.Initialize()
-- uid: App.ViewModels.Terrain.GrayScaleStrategy.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Terrain.GrayScaleStrategy.html#App_ViewModels_Terrain_GrayScaleStrategy_Initialize_
-  commentId: Overload:App.ViewModels.Terrain.GrayScaleStrategy.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.GrayScaleStrategy.Initialize
-  nameWithType: GrayScaleStrategy.Initialize
 - uid: App.ViewModels.Terrain.PerlinNoiseStrategy
   name: PerlinNoiseStrategy
   href: api/App.ViewModels.Terrain.PerlinNoiseStrategy.html
@@ -939,12 +998,12 @@ references:
   commentId: T:App.ViewModels.Terrain.TerrainViewModel
   fullName: App.ViewModels.Terrain.TerrainViewModel
   nameWithType: TerrainViewModel
-- uid: App.ViewModels.Terrain.TerrainViewModel._generator
-  name: _generator
-  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__generator
-  commentId: F:App.ViewModels.Terrain.TerrainViewModel._generator
-  fullName: App.ViewModels.Terrain.TerrainViewModel._generator
-  nameWithType: TerrainViewModel._generator
+- uid: App.ViewModels.Terrain.TerrainViewModel._noiseMapInjector
+  name: _noiseMapInjector
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__noiseMapInjector
+  commentId: F:App.ViewModels.Terrain.TerrainViewModel._noiseMapInjector
+  fullName: App.ViewModels.Terrain.TerrainViewModel._noiseMapInjector
+  nameWithType: TerrainViewModel._noiseMapInjector
 - uid: App.ViewModels.Terrain.TerrainViewModel._noiseStrategyVisible
   name: _noiseStrategyVisible
   href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__noiseStrategyVisible
@@ -1015,6 +1074,32 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Terrain.TerrainViewModel.Generate
   nameWithType: TerrainViewModel.Generate
+- uid: App.ViewModels.Terrain.TerrainViewModel.GenerateMesh
+  name: GenerateMesh()
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_GenerateMesh
+  commentId: M:App.ViewModels.Terrain.TerrainViewModel.GenerateMesh
+  fullName: App.ViewModels.Terrain.TerrainViewModel.GenerateMesh()
+  nameWithType: TerrainViewModel.GenerateMesh()
+- uid: App.ViewModels.Terrain.TerrainViewModel.GenerateMesh*
+  name: GenerateMesh
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_GenerateMesh_
+  commentId: Overload:App.ViewModels.Terrain.TerrainViewModel.GenerateMesh
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.TerrainViewModel.GenerateMesh
+  nameWithType: TerrainViewModel.GenerateMesh
+- uid: App.ViewModels.Terrain.TerrainViewModel.GenerateTexture
+  name: GenerateTexture()
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_GenerateTexture
+  commentId: M:App.ViewModels.Terrain.TerrainViewModel.GenerateTexture
+  fullName: App.ViewModels.Terrain.TerrainViewModel.GenerateTexture()
+  nameWithType: TerrainViewModel.GenerateTexture()
+- uid: App.ViewModels.Terrain.TerrainViewModel.GenerateTexture*
+  name: GenerateTexture
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_GenerateTexture_
+  commentId: Overload:App.ViewModels.Terrain.TerrainViewModel.GenerateTexture
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.TerrainViewModel.GenerateTexture
+  nameWithType: TerrainViewModel.GenerateTexture
 - uid: App.ViewModels.Terrain.TerrainViewModel.grayScaleStrategy
   name: grayScaleStrategy
   href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_grayScaleStrategy
@@ -1046,6 +1131,31 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Terrain.TerrainViewModel.Initialize
   nameWithType: TerrainViewModel.Initialize
+- uid: App.ViewModels.Terrain.TerrainViewModel.Injector
+  name: TerrainViewModel.Injector
+  href: api/App.ViewModels.Terrain.TerrainViewModel.Injector.html
+  commentId: T:App.ViewModels.Terrain.TerrainViewModel.Injector
+  fullName: App.ViewModels.Terrain.TerrainViewModel.Injector
+  nameWithType: TerrainViewModel.Injector
+- uid: App.ViewModels.Terrain.TerrainViewModel.Injector.Get
+  name: Get()
+  href: api/App.ViewModels.Terrain.TerrainViewModel.Injector.html#App_ViewModels_Terrain_TerrainViewModel_Injector_Get
+  commentId: M:App.ViewModels.Terrain.TerrainViewModel.Injector.Get
+  fullName: App.ViewModels.Terrain.TerrainViewModel.Injector.Get()
+  nameWithType: TerrainViewModel.Injector.Get()
+- uid: App.ViewModels.Terrain.TerrainViewModel.Injector.Get*
+  name: Get
+  href: api/App.ViewModels.Terrain.TerrainViewModel.Injector.html#App_ViewModels_Terrain_TerrainViewModel_Injector_Get_
+  commentId: Overload:App.ViewModels.Terrain.TerrainViewModel.Injector.Get
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.TerrainViewModel.Injector.Get
+  nameWithType: TerrainViewModel.Injector.Get
+- uid: App.ViewModels.Terrain.TerrainViewModel.Injector.NoiseMap
+  name: NoiseMap
+  href: api/App.ViewModels.Terrain.TerrainViewModel.Injector.html#App_ViewModels_Terrain_TerrainViewModel_Injector_NoiseMap
+  commentId: F:App.ViewModels.Terrain.TerrainViewModel.Injector.NoiseMap
+  fullName: App.ViewModels.Terrain.TerrainViewModel.Injector.NoiseMap
+  nameWithType: TerrainViewModel.Injector.NoiseMap
 - uid: App.ViewModels.Terrain.TerrainViewModel.noiseStrategy
   name: noiseStrategy
   href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_noiseStrategy
@@ -1106,12 +1216,6 @@ references:
   commentId: T:App.ViewModels.Terrain.WhittakerStrategy
   fullName: App.ViewModels.Terrain.WhittakerStrategy
   nameWithType: WhittakerStrategy
-- uid: App.ViewModels.Terrain.WhittakerStrategy._textureStrategyFactory
-  name: _textureStrategyFactory
-  href: api/App.ViewModels.Terrain.WhittakerStrategy.html#App_ViewModels_Terrain_WhittakerStrategy__textureStrategyFactory
-  commentId: F:App.ViewModels.Terrain.WhittakerStrategy._textureStrategyFactory
-  fullName: App.ViewModels.Terrain.WhittakerStrategy._textureStrategyFactory
-  nameWithType: WhittakerStrategy._textureStrategyFactory
 - uid: App.ViewModels.Terrain.WhittakerStrategy.Display
   name: Display()
   href: api/App.ViewModels.Terrain.WhittakerStrategy.html#App_ViewModels_Terrain_WhittakerStrategy_Display
@@ -1138,19 +1242,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Terrain.WhittakerStrategy.Generate
   nameWithType: WhittakerStrategy.Generate
-- uid: App.ViewModels.Terrain.WhittakerStrategy.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Terrain.WhittakerStrategy.html#App_ViewModels_Terrain_WhittakerStrategy_Initialize
-  commentId: M:App.ViewModels.Terrain.WhittakerStrategy.Initialize
-  fullName: App.ViewModels.Terrain.WhittakerStrategy.Initialize()
-  nameWithType: WhittakerStrategy.Initialize()
-- uid: App.ViewModels.Terrain.WhittakerStrategy.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Terrain.WhittakerStrategy.html#App_ViewModels_Terrain_WhittakerStrategy_Initialize_
-  commentId: Overload:App.ViewModels.Terrain.WhittakerStrategy.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.WhittakerStrategy.Initialize
-  nameWithType: WhittakerStrategy.Initialize
 - uid: App.ViewModels.Terrain.WhittakerStrategy.precipitationScale
   name: precipitationScale
   href: api/App.ViewModels.Terrain.WhittakerStrategy.html#App_ViewModels_Terrain_WhittakerStrategy_precipitationScale
@@ -1248,23 +1339,6 @@ references:
   fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Generate
   nameWithType: ViewModelStrategy<TI, TO>.Generate
   nameWithType.vb: ViewModelStrategy(Of TI, TO).Generate
-- uid: App.ViewModels.ViewModelStrategy`2.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize
-  commentId: M:App.ViewModels.ViewModelStrategy`2.Initialize
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Initialize()
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Initialize()
-  nameWithType: ViewModelStrategy<TI, TO>.Initialize()
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Initialize()
-- uid: App.ViewModels.ViewModelStrategy`2.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Initialize
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Initialize
-  nameWithType: ViewModelStrategy<TI, TO>.Initialize
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Initialize
 - uid: App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object)
   name: OnEvent(AppEvent, Object)
   href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_
@@ -1300,6 +1374,19 @@ references:
   commentId: F:Cities.City._plots
   fullName: Cities.City._plots
   nameWithType: City._plots
+- uid: Cities.City.Buildings
+  name: Buildings
+  href: api/Cities.City.html#Cities_City_Buildings
+  commentId: P:Cities.City.Buildings
+  fullName: Cities.City.Buildings
+  nameWithType: City.Buildings
+- uid: Cities.City.Buildings*
+  name: Buildings
+  href: api/Cities.City.html#Cities_City_Buildings_
+  commentId: Overload:Cities.City.Buildings
+  isSpec: "True"
+  fullName: Cities.City.Buildings
+  nameWithType: City.Buildings
 - uid: Cities.City.Plots
   name: Plots
   href: api/Cities.City.html#Cities_City_Plots
@@ -2048,15 +2135,15 @@ references:
   commentId: T:Cities.Roads.AStarStrategy
   fullName: Cities.Roads.AStarStrategy
   nameWithType: AStarStrategy
-- uid: Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter},System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
-  name: AStarStrategy(IInjector<MeshFilter>, IEnumerable<(Vector2Int Start, Vector2Int End)>)
-  href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__System_Collections_Generic_IEnumerable_System_ValueTuple_UnityEngine_Vector2Int_UnityEngine_Vector2Int___
-  commentId: M:Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter},System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
-  name.vb: AStarStrategy(IInjector(Of MeshFilter), IEnumerable(Of (Start As Vector2Int, End As Vector2Int)))
-  fullName: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector<UnityEngine.MeshFilter>, System.Collections.Generic.IEnumerable<System.ValueTuple<UnityEngine.Vector2Int, UnityEngine.Vector2Int>>)
-  fullName.vb: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector(Of UnityEngine.MeshFilter), System.Collections.Generic.IEnumerable(Of System.ValueTuple(Of UnityEngine.Vector2Int, UnityEngine.Vector2Int)))
-  nameWithType: AStarStrategy.AStarStrategy(IInjector<MeshFilter>, IEnumerable<(Vector2Int Start, Vector2Int End)>)
-  nameWithType.vb: AStarStrategy.AStarStrategy(IInjector(Of MeshFilter), IEnumerable(Of (Start As Vector2Int, End As Vector2Int)))
+- uid: Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
+  name: AStarStrategy(IInjector<MeshFilter>)
+  href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__
+  commentId: M:Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
+  name.vb: AStarStrategy(IInjector(Of MeshFilter))
+  fullName: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector<UnityEngine.MeshFilter>)
+  fullName.vb: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector(Of UnityEngine.MeshFilter))
+  nameWithType: AStarStrategy.AStarStrategy(IInjector<MeshFilter>)
+  nameWithType.vb: AStarStrategy.AStarStrategy(IInjector(Of MeshFilter))
 - uid: Cities.Roads.AStarStrategy.#ctor*
   name: AStarStrategy
   href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_
@@ -2316,14 +2403,14 @@ references:
   fullName: Cities.Roads.Factory._terrainFilterInjector
   nameWithType: Factory._terrainFilterInjector
 - uid: Cities.Roads.Factory.CreateAStarStrategy(System.Single,System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
-  name: CreateAStarStrategy(Single, IEnumerable<(Vector2Int Start, Vector2Int End)>)
+  name: CreateAStarStrategy(Single, IEnumerable<(Vector2Int Start, Vector2Int Goal)>)
   href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy_System_Single_System_Collections_Generic_IEnumerable_System_ValueTuple_UnityEngine_Vector2Int_UnityEngine_Vector2Int___
   commentId: M:Cities.Roads.Factory.CreateAStarStrategy(System.Single,System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
-  name.vb: CreateAStarStrategy(Single, IEnumerable(Of (Start As Vector2Int, End As Vector2Int)))
+  name.vb: CreateAStarStrategy(Single, IEnumerable(Of (Start As Vector2Int, Goal As Vector2Int)))
   fullName: Cities.Roads.Factory.CreateAStarStrategy(System.Single, System.Collections.Generic.IEnumerable<System.ValueTuple<UnityEngine.Vector2Int, UnityEngine.Vector2Int>>)
   fullName.vb: Cities.Roads.Factory.CreateAStarStrategy(System.Single, System.Collections.Generic.IEnumerable(Of System.ValueTuple(Of UnityEngine.Vector2Int, UnityEngine.Vector2Int)))
-  nameWithType: Factory.CreateAStarStrategy(Single, IEnumerable<(Vector2Int Start, Vector2Int End)>)
-  nameWithType.vb: Factory.CreateAStarStrategy(Single, IEnumerable(Of (Start As Vector2Int, End As Vector2Int)))
+  nameWithType: Factory.CreateAStarStrategy(Single, IEnumerable<(Vector2Int Start, Vector2Int Goal)>)
+  nameWithType.vb: Factory.CreateAStarStrategy(Single, IEnumerable(Of (Start As Vector2Int, Goal As Vector2Int)))
 - uid: Cities.Roads.Factory.CreateAStarStrategy*
   name: CreateAStarStrategy
   href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy_
@@ -3655,6 +3742,38 @@ references:
   isSpec: "True"
   fullName: Extensions.UnityExtensions.Round
   nameWithType: UnityExtensions.Round
+- uid: Extensions.UnityExtensions.ToXYZ(UnityEngine.Vector2,System.Int32)
+  name: ToXYZ(Vector2, Int32)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_ToXYZ_UnityEngine_Vector2_System_Int32_
+  commentId: M:Extensions.UnityExtensions.ToXYZ(UnityEngine.Vector2,System.Int32)
+  fullName: Extensions.UnityExtensions.ToXYZ(UnityEngine.Vector2, System.Int32)
+  nameWithType: UnityExtensions.ToXYZ(Vector2, Int32)
+- uid: Extensions.UnityExtensions.ToXYZ(UnityEngine.Vector2,System.Single)
+  name: ToXYZ(Vector2, Single)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_ToXYZ_UnityEngine_Vector2_System_Single_
+  commentId: M:Extensions.UnityExtensions.ToXYZ(UnityEngine.Vector2,System.Single)
+  fullName: Extensions.UnityExtensions.ToXYZ(UnityEngine.Vector2, System.Single)
+  nameWithType: UnityExtensions.ToXYZ(Vector2, Single)
+- uid: Extensions.UnityExtensions.ToXYZ*
+  name: ToXYZ
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_ToXYZ_
+  commentId: Overload:Extensions.UnityExtensions.ToXYZ
+  isSpec: "True"
+  fullName: Extensions.UnityExtensions.ToXYZ
+  nameWithType: UnityExtensions.ToXYZ
+- uid: Extensions.UnityExtensions.ToXZ(UnityEngine.Vector3)
+  name: ToXZ(Vector3)
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_ToXZ_UnityEngine_Vector3_
+  commentId: M:Extensions.UnityExtensions.ToXZ(UnityEngine.Vector3)
+  fullName: Extensions.UnityExtensions.ToXZ(UnityEngine.Vector3)
+  nameWithType: UnityExtensions.ToXZ(Vector3)
+- uid: Extensions.UnityExtensions.ToXZ*
+  name: ToXZ
+  href: api/Extensions.UnityExtensions.html#Extensions_UnityExtensions_ToXZ_
+  commentId: Overload:Extensions.UnityExtensions.ToXZ
+  isSpec: "True"
+  fullName: Extensions.UnityExtensions.ToXZ
+  nameWithType: UnityExtensions.ToXZ
 - uid: Interfaces
   name: Interfaces
   href: api/Interfaces.html
@@ -4028,12 +4147,6 @@ references:
   fullName.vb: Services.ISubscriber(Of T).OnEvent
   nameWithType: ISubscriber<T>.OnEvent
   nameWithType.vb: ISubscriber(Of T).OnEvent
-- uid: Terrain
-  name: Terrain
-  href: api/Terrain.html
-  commentId: N:Terrain
-  fullName: Terrain
-  nameWithType: Terrain
 - uid: Terrain.Noise
   name: Terrain.Noise
   href: api/Terrain.Noise.html
@@ -4046,6 +4159,22 @@ references:
   commentId: T:Terrain.Noise.Factory
   fullName: Terrain.Noise.Factory
   nameWithType: Factory
+- uid: Terrain.Noise.Factory.CreateMeshGenerator(Interfaces.IInjector{System.Single[0:,0:]},UnityEngine.AnimationCurve,System.Single)
+  name: CreateMeshGenerator(IInjector<Single[,]>, AnimationCurve, Single)
+  href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreateMeshGenerator_Interfaces_IInjector_System_Single_0__0____UnityEngine_AnimationCurve_System_Single_
+  commentId: M:Terrain.Noise.Factory.CreateMeshGenerator(Interfaces.IInjector{System.Single[0:,0:]},UnityEngine.AnimationCurve,System.Single)
+  name.vb: CreateMeshGenerator(IInjector(Of Single(,)), AnimationCurve, Single)
+  fullName: Terrain.Noise.Factory.CreateMeshGenerator(Interfaces.IInjector<System.Single[,]>, UnityEngine.AnimationCurve, System.Single)
+  fullName.vb: Terrain.Noise.Factory.CreateMeshGenerator(Interfaces.IInjector(Of System.Single(,)), UnityEngine.AnimationCurve, System.Single)
+  nameWithType: Factory.CreateMeshGenerator(IInjector<Single[,]>, AnimationCurve, Single)
+  nameWithType.vb: Factory.CreateMeshGenerator(IInjector(Of Single(,)), AnimationCurve, Single)
+- uid: Terrain.Noise.Factory.CreateMeshGenerator*
+  name: CreateMeshGenerator
+  href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreateMeshGenerator_
+  commentId: Overload:Terrain.Noise.Factory.CreateMeshGenerator
+  isSpec: "True"
+  fullName: Terrain.Noise.Factory.CreateMeshGenerator
+  nameWithType: Factory.CreateMeshGenerator
 - uid: Terrain.Noise.Factory.CreatePerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
   name: CreatePerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
   href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreatePerlinNoiseStrategy_System_Int32_System_Int32_System_Int32_System_Single_System_Int32_System_Single_System_Single_UnityEngine_Vector2_
@@ -4268,133 +4397,6 @@ references:
   isSpec: "True"
   fullName: Terrain.Noise.PerlinNoiseStrategy.Width
   nameWithType: PerlinNoiseStrategy.Width
-- uid: Terrain.TerrainGenerator
-  name: TerrainGenerator
-  href: api/Terrain.TerrainGenerator.html
-  commentId: T:Terrain.TerrainGenerator
-  fullName: Terrain.TerrainGenerator
-  nameWithType: TerrainGenerator
-- uid: Terrain.TerrainGenerator.#ctor
-  name: TerrainGenerator()
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__ctor
-  commentId: M:Terrain.TerrainGenerator.#ctor
-  fullName: Terrain.TerrainGenerator.TerrainGenerator()
-  nameWithType: TerrainGenerator.TerrainGenerator()
-- uid: Terrain.TerrainGenerator.#ctor*
-  name: TerrainGenerator
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__ctor_
-  commentId: Overload:Terrain.TerrainGenerator.#ctor
-  isSpec: "True"
-  fullName: Terrain.TerrainGenerator.TerrainGenerator
-  nameWithType: TerrainGenerator.TerrainGenerator
-- uid: Terrain.TerrainGenerator._noiseGenerator
-  name: _noiseGenerator
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__noiseGenerator
-  commentId: F:Terrain.TerrainGenerator._noiseGenerator
-  fullName: Terrain.TerrainGenerator._noiseGenerator
-  nameWithType: TerrainGenerator._noiseGenerator
-- uid: Terrain.TerrainGenerator._noiseMap
-  name: _noiseMap
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__noiseMap
-  commentId: F:Terrain.TerrainGenerator._noiseMap
-  fullName: Terrain.TerrainGenerator._noiseMap
-  nameWithType: TerrainGenerator._noiseMap
-- uid: Terrain.TerrainGenerator._noiseMeshGenerator
-  name: _noiseMeshGenerator
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__noiseMeshGenerator
-  commentId: F:Terrain.TerrainGenerator._noiseMeshGenerator
-  fullName: Terrain.TerrainGenerator._noiseMeshGenerator
-  nameWithType: TerrainGenerator._noiseMeshGenerator
-- uid: Terrain.TerrainGenerator._textureGenerator
-  name: _textureGenerator
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator__textureGenerator
-  commentId: F:Terrain.TerrainGenerator._textureGenerator
-  fullName: Terrain.TerrainGenerator._textureGenerator
-  nameWithType: TerrainGenerator._textureGenerator
-- uid: Terrain.TerrainGenerator.Generate
-  name: Generate()
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_Generate
-  commentId: M:Terrain.TerrainGenerator.Generate
-  fullName: Terrain.TerrainGenerator.Generate()
-  nameWithType: TerrainGenerator.Generate()
-- uid: Terrain.TerrainGenerator.Generate*
-  name: Generate
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_Generate_
-  commentId: Overload:Terrain.TerrainGenerator.Generate
-  isSpec: "True"
-  fullName: Terrain.TerrainGenerator.Generate
-  nameWithType: TerrainGenerator.Generate
-- uid: Terrain.TerrainGenerator.Get
-  name: Get()
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_Get
-  commentId: M:Terrain.TerrainGenerator.Get
-  fullName: Terrain.TerrainGenerator.Get()
-  nameWithType: TerrainGenerator.Get()
-- uid: Terrain.TerrainGenerator.Get*
-  name: Get
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_Get_
-  commentId: Overload:Terrain.TerrainGenerator.Get
-  isSpec: "True"
-  fullName: Terrain.TerrainGenerator.Get
-  nameWithType: TerrainGenerator.Get
-- uid: Terrain.TerrainGenerator.HeightCurve
-  name: HeightCurve
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_HeightCurve
-  commentId: P:Terrain.TerrainGenerator.HeightCurve
-  fullName: Terrain.TerrainGenerator.HeightCurve
-  nameWithType: TerrainGenerator.HeightCurve
-- uid: Terrain.TerrainGenerator.HeightCurve*
-  name: HeightCurve
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_HeightCurve_
-  commentId: Overload:Terrain.TerrainGenerator.HeightCurve
-  isSpec: "True"
-  fullName: Terrain.TerrainGenerator.HeightCurve
-  nameWithType: TerrainGenerator.HeightCurve
-- uid: Terrain.TerrainGenerator.HeightScale
-  name: HeightScale
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_HeightScale
-  commentId: P:Terrain.TerrainGenerator.HeightScale
-  fullName: Terrain.TerrainGenerator.HeightScale
-  nameWithType: TerrainGenerator.HeightScale
-- uid: Terrain.TerrainGenerator.HeightScale*
-  name: HeightScale
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_HeightScale_
-  commentId: Overload:Terrain.TerrainGenerator.HeightScale
-  isSpec: "True"
-  fullName: Terrain.TerrainGenerator.HeightScale
-  nameWithType: TerrainGenerator.HeightScale
-- uid: Terrain.TerrainGenerator.NoiseStrategy
-  name: NoiseStrategy
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_NoiseStrategy
-  commentId: P:Terrain.TerrainGenerator.NoiseStrategy
-  fullName: Terrain.TerrainGenerator.NoiseStrategy
-  nameWithType: TerrainGenerator.NoiseStrategy
-- uid: Terrain.TerrainGenerator.NoiseStrategy*
-  name: NoiseStrategy
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_NoiseStrategy_
-  commentId: Overload:Terrain.TerrainGenerator.NoiseStrategy
-  isSpec: "True"
-  fullName: Terrain.TerrainGenerator.NoiseStrategy
-  nameWithType: TerrainGenerator.NoiseStrategy
-- uid: Terrain.TerrainGenerator.TextureStrategy
-  name: TextureStrategy
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_TextureStrategy
-  commentId: P:Terrain.TerrainGenerator.TextureStrategy
-  fullName: Terrain.TerrainGenerator.TextureStrategy
-  nameWithType: TerrainGenerator.TextureStrategy
-- uid: Terrain.TerrainGenerator.TextureStrategy*
-  name: TextureStrategy
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_TextureStrategy_
-  commentId: Overload:Terrain.TerrainGenerator.TextureStrategy
-  isSpec: "True"
-  fullName: Terrain.TerrainGenerator.TextureStrategy
-  nameWithType: TerrainGenerator.TextureStrategy
-- uid: Terrain.TerrainGenerator.TextureStrategyFactory
-  name: TextureStrategyFactory
-  href: api/Terrain.TerrainGenerator.html#Terrain_TerrainGenerator_TextureStrategyFactory
-  commentId: F:Terrain.TerrainGenerator.TextureStrategyFactory
-  fullName: Terrain.TerrainGenerator.TextureStrategyFactory
-  nameWithType: TerrainGenerator.TextureStrategyFactory
 - uid: Terrain.Textures
   name: Terrain.Textures
   href: api/Terrain.Textures.html
@@ -5177,6 +5179,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.GetCenterPoint
   nameWithType: Maths2D.GetCenterPoint
+- uid: Utils.Geometry.Maths2D.GetConvexCenter(System.Collections.Generic.IList{UnityEngine.Vector2})
+  name: GetConvexCenter(IList<Vector2>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetConvexCenter_System_Collections_Generic_IList_UnityEngine_Vector2__
+  commentId: M:Utils.Geometry.Maths2D.GetConvexCenter(System.Collections.Generic.IList{UnityEngine.Vector2})
+  name.vb: GetConvexCenter(IList(Of Vector2))
+  fullName: Utils.Geometry.Maths2D.GetConvexCenter(System.Collections.Generic.IList<UnityEngine.Vector2>)
+  fullName.vb: Utils.Geometry.Maths2D.GetConvexCenter(System.Collections.Generic.IList(Of UnityEngine.Vector2))
+  nameWithType: Maths2D.GetConvexCenter(IList<Vector2>)
+  nameWithType.vb: Maths2D.GetConvexCenter(IList(Of Vector2))
+- uid: Utils.Geometry.Maths2D.GetConvexCenter*
+  name: GetConvexCenter
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetConvexCenter_
+  commentId: Overload:Utils.Geometry.Maths2D.GetConvexCenter
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.GetConvexCenter
+  nameWithType: Maths2D.GetConvexCenter
 - uid: Utils.Geometry.Maths2D.GetExtremeBounds(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
   name: GetExtremeBounds(IEnumerable<Vector2>)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_GetExtremeBounds_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
@@ -5306,6 +5324,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.PointInTriangle
   nameWithType: Maths2D.PointInTriangle
+- uid: Utils.Geometry.Maths2D.PointsAreCounterClockwise(System.Collections.Generic.IList{UnityEngine.Vector3})
+  name: PointsAreCounterClockwise(IList<Vector3>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PointsAreCounterClockwise_System_Collections_Generic_IList_UnityEngine_Vector3__
+  commentId: M:Utils.Geometry.Maths2D.PointsAreCounterClockwise(System.Collections.Generic.IList{UnityEngine.Vector3})
+  name.vb: PointsAreCounterClockwise(IList(Of Vector3))
+  fullName: Utils.Geometry.Maths2D.PointsAreCounterClockwise(System.Collections.Generic.IList<UnityEngine.Vector3>)
+  fullName.vb: Utils.Geometry.Maths2D.PointsAreCounterClockwise(System.Collections.Generic.IList(Of UnityEngine.Vector3))
+  nameWithType: Maths2D.PointsAreCounterClockwise(IList<Vector3>)
+  nameWithType.vb: Maths2D.PointsAreCounterClockwise(IList(Of Vector3))
+- uid: Utils.Geometry.Maths2D.PointsAreCounterClockwise*
+  name: PointsAreCounterClockwise
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PointsAreCounterClockwise_
+  commentId: Overload:Utils.Geometry.Maths2D.PointsAreCounterClockwise
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.PointsAreCounterClockwise
+  nameWithType: Maths2D.PointsAreCounterClockwise
 - uid: Utils.Geometry.Maths2D.PolygonsOverlap(System.Collections.Generic.IEnumerable{UnityEngine.Vector2},System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
   name: PolygonsOverlap(IEnumerable<Vector2>, IEnumerable<Vector2>)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PolygonsOverlap_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
@@ -6039,77 +6073,6 @@ references:
   commentId: T:Utils.TerrainUtil
   fullName: Utils.TerrainUtil
   nameWithType: TerrainUtil
-- uid: Utils.TerrainUtil.Flat(System.Int32,System.Int32)
-  name: Flat(Int32, Int32)
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Flat_System_Int32_System_Int32_
-  commentId: M:Utils.TerrainUtil.Flat(System.Int32,System.Int32)
-  fullName: Utils.TerrainUtil.Flat(System.Int32, System.Int32)
-  nameWithType: TerrainUtil.Flat(Int32, Int32)
-- uid: Utils.TerrainUtil.Flat*
-  name: Flat
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Flat_
-  commentId: Overload:Utils.TerrainUtil.Flat
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.Flat
-  nameWithType: TerrainUtil.Flat
-- uid: Utils.TerrainUtil.HeightMap(System.Int32,System.Int32,System.Func{System.Int32,System.Int32,System.Single})
-  name: HeightMap(Int32, Int32, Func<Int32, Int32, Single>)
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_HeightMap_System_Int32_System_Int32_System_Func_System_Int32_System_Int32_System_Single__
-  commentId: M:Utils.TerrainUtil.HeightMap(System.Int32,System.Int32,System.Func{System.Int32,System.Int32,System.Single})
-  name.vb: HeightMap(Int32, Int32, Func(Of Int32, Int32, Single))
-  fullName: Utils.TerrainUtil.HeightMap(System.Int32, System.Int32, System.Func<System.Int32, System.Int32, System.Single>)
-  fullName.vb: Utils.TerrainUtil.HeightMap(System.Int32, System.Int32, System.Func(Of System.Int32, System.Int32, System.Single))
-  nameWithType: TerrainUtil.HeightMap(Int32, Int32, Func<Int32, Int32, Single>)
-  nameWithType.vb: TerrainUtil.HeightMap(Int32, Int32, Func(Of Int32, Int32, Single))
-- uid: Utils.TerrainUtil.HeightMap*
-  name: HeightMap
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_HeightMap_
-  commentId: Overload:Utils.TerrainUtil.HeightMap
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.HeightMap
-  nameWithType: TerrainUtil.HeightMap
-- uid: Utils.TerrainUtil.Mesh(System.Single[0:,0:],System.Single)
-  name: Mesh(Single[,], Single)
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Mesh_System_Single_0__0___System_Single_
-  commentId: M:Utils.TerrainUtil.Mesh(System.Single[0:,0:],System.Single)
-  name.vb: Mesh(Single(,), Single)
-  fullName: Utils.TerrainUtil.Mesh(System.Single[,], System.Single)
-  fullName.vb: Utils.TerrainUtil.Mesh(System.Single(,), System.Single)
-  nameWithType: TerrainUtil.Mesh(Single[,], Single)
-  nameWithType.vb: TerrainUtil.Mesh(Single(,), Single)
-- uid: Utils.TerrainUtil.Mesh*
-  name: Mesh
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Mesh_
-  commentId: Overload:Utils.TerrainUtil.Mesh
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.Mesh
-  nameWithType: TerrainUtil.Mesh
-- uid: Utils.TerrainUtil.Pyramid(System.Int32,System.Int32)
-  name: Pyramid(Int32, Int32)
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Pyramid_System_Int32_System_Int32_
-  commentId: M:Utils.TerrainUtil.Pyramid(System.Int32,System.Int32)
-  fullName: Utils.TerrainUtil.Pyramid(System.Int32, System.Int32)
-  nameWithType: TerrainUtil.Pyramid(Int32, Int32)
-- uid: Utils.TerrainUtil.Pyramid*
-  name: Pyramid
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Pyramid_
-  commentId: Overload:Utils.TerrainUtil.Pyramid
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.Pyramid
-  nameWithType: TerrainUtil.Pyramid
-- uid: Utils.TerrainUtil.Slope(System.Int32,System.Int32)
-  name: Slope(Int32, Int32)
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Slope_System_Int32_System_Int32_
-  commentId: M:Utils.TerrainUtil.Slope(System.Int32,System.Int32)
-  fullName: Utils.TerrainUtil.Slope(System.Int32, System.Int32)
-  nameWithType: TerrainUtil.Slope(Int32, Int32)
-- uid: Utils.TerrainUtil.Slope*
-  name: Slope
-  href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_Slope_
-  commentId: Overload:Utils.TerrainUtil.Slope
-  isSpec: "True"
-  fullName: Utils.TerrainUtil.Slope
-  nameWithType: TerrainUtil.Slope
 - uid: Utils.TerrainUtil.ToTerrainVertex(UnityEngine.Vector2,System.Int32,System.Int32)
   name: ToTerrainVertex(Vector2, Int32, Int32)
   href: api/Utils.TerrainUtil.html#Utils_TerrainUtil_ToTerrainVertex_UnityEngine_Vector2_System_Int32_System_Int32_

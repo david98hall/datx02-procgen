@@ -87,7 +87,6 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Single</span>[,]&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
     <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
@@ -100,9 +99,6 @@
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Object, Single[,]&gt;.Display()</a>
-    </div>
-    <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;Object, Single[,]&gt;.Initialize()</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;Object, Single[,]&gt;.Generate()</a>
@@ -140,7 +136,7 @@
   <h5 id="App_ViewModels_Terrain_PerlinNoiseStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class PerlinNoiseStrategy : ViewModelStrategy&lt;object, float[, ]&gt;, IGenerator&lt;float[, ]&gt;, IDisplayable, IInitializable, ISubscriber&lt;AppEvent&gt;</code></pre>
+public class PerlinNoiseStrategy : ViewModelStrategy&lt;object, float[, ]&gt;, IGenerator&lt;float[, ]&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -468,9 +464,6 @@ Delegates the generation to the created generator.</p>
   </div>
   <div>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
   </div>
   <div>
       <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
