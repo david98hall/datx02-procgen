@@ -14,11 +14,6 @@ namespace App.ViewModels.Cities
     [Serializable]
     public class AStarStrategy : ViewModelStrategy<float[,], RoadNetwork>
     {
-        /// <summary>
-        /// Underlying <see cref="Factory"/> for creating the A* strategy object
-        /// </summary>
-        private Factory _roadStrategyFactory;
-
         #region Editor fields
 
         /// <summary>
@@ -31,21 +26,12 @@ namespace App.ViewModels.Cities
         /// Serialized start and goal paths
         /// </summary>
         [SerializeField]
-        private IList<Path> paths;
+        private List<Path> paths;
 
         private (int Width, int Depth) _terrainSize;
 
         #endregion
 
-        /// <summary>
-        /// Is required for initializing the non-serializable properties of the view model.
-        /// </summary>
-        public override void Initialize()
-        {
-            _roadStrategyFactory = new Factory(Injector);
-            paths = new List<Path> {new Path(Vector2Int.zero, Vector2Int.zero)};
-        }
-        
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
@@ -64,10 +50,7 @@ namespace App.ViewModels.Cities
             if (paths.Any() && GUILayout.Button("Clear")) paths.Clear();
             
             // Add
-            var initialGoal = new Vector2Int(
-                _terrainSize.Width - 1,
-                _terrainSize.Depth - 1
-            );
+            var initialGoal = new Vector2Int(_terrainSize.Width - 1, _terrainSize.Depth - 1);
             if (GUILayout.Button("+")) paths.Add(new Path(Vector2Int.zero, initialGoal));
 
             GUILayout.EndHorizontal();
@@ -108,7 +91,7 @@ namespace App.ViewModels.Cities
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
         public override RoadNetwork Generate() => 
-            _roadStrategyFactory?.CreateAStarStrategy(heightBias, paths.Select(p => p.ToValueTuple())).Generate();
+            new Factory(Injector).CreateAStarStrategy(heightBias, paths.Select(p => p.ToValueTuple())).Generate();
 
         public override void OnEvent(AppEvent eventId, object eventData)
         {

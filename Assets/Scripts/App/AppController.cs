@@ -159,7 +159,7 @@ namespace App
             terrainViewModel.Display();
             cityViewModel.Display();
         }
-
+        
         /// <summary>
         /// The run-time model of all generated content.
         /// </summary>

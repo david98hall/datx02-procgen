@@ -43,7 +43,6 @@ namespace Cities.Roads
         /// </summary>
         internal float HeightBias
         {
-            get => _heightBias;
             set => _heightBias = Math.Max(0, Math.Min(1, value)); 
         }
 
@@ -122,7 +121,7 @@ namespace Cities.Roads
         /// </summary>
         /// <param name="start">The given start node.</param>
         /// <param name="goal">The given goal node.</param>
-        public void Add(Vector2Int start, Vector2Int goal)
+        internal void Add(Vector2Int start, Vector2Int goal)
         {
             if (!_paths.ContainsKey(start)) _paths[start] = new HashSet<Vector2Int>();
             _paths[start].Add(goal);

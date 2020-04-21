@@ -28,34 +28,20 @@ namespace App.ViewModels.Cities
                 this.rewrites = rewrites;
             }
         }
-        
-        /// <summary>
-        /// Underlying <see cref="Factory"/> for creating the A* strategy object
-        /// </summary>
-        private Factory _roadStrategyFactory;
 
         /// <summary>
         /// Serialized L-system generation input data.
         /// </summary>
         [SerializeField]
-        private IList<Input> inputs;
+        private List<Input> inputs;
 
-        private static readonly int _minRewrites = 3;
-        private static readonly int _maxRewrites = 7;
-        private static readonly int _defaultRewrites = (_maxRewrites - _minRewrites) / 2 + _minRewrites;
+        private static readonly int MinRewrites = 3;
+        private static readonly int MaxRewrites = 7;
+        private static readonly int DefaultRewrites = (MaxRewrites - MinRewrites) / 2 + MinRewrites;
 
         // Fields based on events
         private (int Width, int Depth) _terrainSize;
 
-        /// <summary>
-        /// Is required for initializing the non-serializable properties of the view model.
-        /// </summary>
-        public override void Initialize()
-        {
-            _roadStrategyFactory = new Factory(Injector);
-            inputs = new List<Input>{new Input(Vector2.zero, _defaultRewrites)};
-        }
-        
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
@@ -70,7 +56,7 @@ namespace App.ViewModels.Cities
             
             // Adding
             var initialOrigin = GetTerrainCenter().ToTerrainVertex(_terrainSize.Width, _terrainSize.Depth);
-            if (GUILayout.Button("+")) inputs.Add(new Input(initialOrigin, _defaultRewrites));
+            if (GUILayout.Button("+")) inputs.Add(new Input(initialOrigin, DefaultRewrites));
             
             GUILayout.EndHorizontal();
 
@@ -95,7 +81,7 @@ namespace App.ViewModels.Cities
                 var newOrigin = editorOrigin.ToTerrainVertex(_terrainSize.Width, _terrainSize.Depth);
                 
                 // Rewrites Count field
-                var newRewrites = EditorGUILayout.IntSlider("Rewrites", inputs[i].rewrites, _minRewrites, _maxRewrites);
+                var newRewrites = EditorGUILayout.IntSlider("Rewrites", inputs[i].rewrites, MinRewrites, MaxRewrites);
                 
                 inputs[i] = new Input(newOrigin, newRewrites);
 
@@ -116,7 +102,7 @@ namespace App.ViewModels.Cities
             RoadNetwork roadNetwork = null;
             foreach (var input in inputs)
             {
-                var tmpNetwork = _roadStrategyFactory.CreateLSystemStrategy(input.origin, input.rewrites).Generate();
+                var tmpNetwork = new Factory(Injector).CreateLSystemStrategy(input.origin, input.rewrites).Generate();
                 if (roadNetwork == null)
                 {
                     roadNetwork = tmpNetwork;

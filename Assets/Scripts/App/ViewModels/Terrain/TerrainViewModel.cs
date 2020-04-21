@@ -10,7 +10,7 @@ namespace App.ViewModels.Terrain
     /// View-model for displaying and generating terrain
     /// </summary>
     [Serializable]
-    public class TerrainViewModel : ViewModelStrategy<object, (Mesh, Texture2D)>
+    public class TerrainViewModel : ViewModelStrategy<object, (Mesh, Texture2D)>, IInitializable
     {
         /// <summary>
         /// Injector used for storing a valid noise map generated in run-time
@@ -106,7 +106,7 @@ namespace App.ViewModels.Terrain
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
-        public override void Initialize()
+        public void Initialize()
         {
             _noiseMapInjector = new Injector();
 
@@ -116,10 +116,6 @@ namespace App.ViewModels.Terrain
             perlinNoiseStrategy.EventBus = EventBus;
             whittakerStrategy.EventBus = EventBus;
             grayScaleStrategy.EventBus = EventBus;
-
-            perlinNoiseStrategy.Initialize();
-            whittakerStrategy.Initialize();
-            grayScaleStrategy.Initialize();
         }
 
         /// <summary>
@@ -244,8 +240,15 @@ namespace App.ViewModels.Terrain
         /// </summary>
         private new class Injector : IInjector<float[,]>
         {
+            /// <summary>
+            /// The noise map to inject.
+            /// </summary>
             internal float[,] NoiseMap;
 
+            /// <summary>
+            /// The injector method
+            /// </summary>
+            /// <returns>A noise map object</returns>
             public float[,] Get() => NoiseMap;
         }
     }

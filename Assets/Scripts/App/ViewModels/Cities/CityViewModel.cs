@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cities;
 using Cities.Plots;
 using Cities.Roads;
+using Interfaces;
 using UnityEditor;
 using UnityEngine;
 using Factory = Cities.Plots.Factory;
@@ -13,7 +14,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<float[,], City>
+    public class CityViewModel : ViewModelStrategy<float[,], City>, IInitializable
     {
         /// <summary>
         /// Visibility of the editor.
@@ -152,16 +153,13 @@ namespace App.ViewModels.Cities
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
-        public override void Initialize()
+        public void Initialize()
         {
             aStarStrategy.EventBus = EventBus;
             lSystemStrategy.EventBus = EventBus;
             
             aStarStrategy.Injector = Injector;
             lSystemStrategy.Injector = Injector;
-            
-            aStarStrategy.Initialize();
-            lSystemStrategy.Initialize();
         }
         
         /// <summary>
