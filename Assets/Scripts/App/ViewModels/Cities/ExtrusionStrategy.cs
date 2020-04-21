@@ -10,7 +10,7 @@ namespace App.ViewModels.Cities
 {
 
     [Serializable]
-    public class ExtrusionStrategy : ViewModelStrategy<(float[,], IEnumerable<Plot>), IEnumerable<Building>>
+    public class ExtrusionStrategy : ViewModelStrategy<(MeshFilter, IEnumerable<Plot>), IEnumerable<Building>>
     {
 
         /// <summary>
@@ -39,10 +39,10 @@ namespace App.ViewModels.Cities
         /// </summary>
         public override void Initialize() => _buildingStrategyFactory = new Factory(Injector);
 
-    /// <summary>
-    /// Displays the editor of the view model.
-    /// </summary>
-    public override void Display()
+        /// <summary>
+        /// Displays the editor of the view model.
+        /// </summary>
+        public override void Display()
         {
             // Display a field for minimal building size
             minArea = EditorGUILayout.FloatField("Min Size", minArea);

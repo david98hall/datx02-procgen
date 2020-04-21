@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Cities.Plots;
 using Interfaces;
@@ -12,15 +13,24 @@ namespace Cities.Buildings
     public class Factory
     {
 
-        private readonly IInjector<(float[,], IEnumerable<Plot>)> _injector;
+        private readonly IInjector<(MeshFilter, IEnumerable<Plot>)> _injector;
 
         /// <summary>
         /// Initializes this factory with a noise map injector and plot collection injector.
         /// </summary>
         /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
-        public Factory(IInjector<(float[,], IEnumerable<Plot>)> injector)
+        public Factory(IInjector<(MeshFilter, IEnumerable<Plot>)> injector)
         {
             _injector = injector;
+        }
+
+        /// <summary>
+        /// Initializes this factory with a Plots injector.
+        /// </summary>
+        /// <param name="roadNetworkInjector">The Plots injector.</param>
+        public Factory(Func<(MeshFilter, IEnumerable<Plot>)> injector)
+        {
+            _injector = new Injector(injector);
         }
 
         /// <summary>
@@ -33,6 +43,22 @@ namespace Cities.Buildings
             {
                 
             };
+
+
+        // Converts a Func with the return type (float[,], IEnumerable<Plot>) to an injector of the same type
+        private class Injector : IInjector<(MeshFilter, IEnumerable<Plot>)>
+        {
+            private readonly Func<(MeshFilter, IEnumerable<Plot>)> _injector;
+
+            public Injector(Func<(MeshFilter, IEnumerable<Plot>)> injector)
+            {
+                _injector = injector;
+            }
+
+            public (MeshFilter, IEnumerable<Plot>) Get() => _injector();
+        }
     }
+
+
 }
 

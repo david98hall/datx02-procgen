@@ -6,6 +6,7 @@ using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
 using Factory = Cities.Plots.Factory;
+using BuildingFactory = Cities.Buildings.Factory;
 
 namespace App.ViewModels.Cities
 {
@@ -237,7 +238,7 @@ namespace App.ViewModels.Cities
             
             aStarStrategy.Initialize();
             lSystemStrategy.Initialize();
-            
+
             /*
             // Plot strategies
             var plotStrategyFactory = new Factory(_generator);
@@ -415,12 +416,14 @@ namespace App.ViewModels.Cities
         public override City Generate()
         {
             var roadNetwork = GenerateRoadNetwork();
+            var plots = GeneratePlots(roadNetwork);
             if (roadNetwork != null)
             {
                 return new City
                 {
                     RoadNetwork = roadNetwork,
-                    Plots = GeneratePlots(roadNetwork)
+                    Plots = plots,
+                    Buildings = GenerateBuildings((Injector.Get(), plots))
                 };
             }
 
@@ -439,11 +442,29 @@ namespace App.ViewModels.Cities
                     return plotStrategyFactory.CreateClockwiseCycleStrategy().Generate();
                 case PlotStrategy.BruteMinimalCycle:
                     return plotStrategyFactory.CreateBruteMinimalCycleStrategy().Generate();
+                case PlotStrategy.Adjacent:
+                    return plotStrategyFactory.CreateAdjacentStrategy().Generate();
+                case PlotStrategy.Combined:
+                    return plotStrategyFactory.CreateCombinedStrategy().Generate();
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
-        
+
+        private IEnumerable<Building> GenerateBuildings((MeshFilter, IEnumerable<Plot>) dependencies)
+        {
+            var buildingStrategyFactory = new BuildingFactory(() => dependencies);
+
+            switch (buildingStrategy)
+            {
+                case BuildingStrategy.Extrusion:
+                    return buildingStrategyFactory.CreateExtrusionStrategy().Generate();
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+
         private RoadNetwork GenerateRoadNetwork()
         {
             var aStarRoadNetwork = _aStarVisible ? aStarStrategy.Generate() : null;
