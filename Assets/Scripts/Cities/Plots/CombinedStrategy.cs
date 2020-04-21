@@ -41,8 +41,8 @@ namespace Cities.Plots
                     bigEnoughPlots.Add(plot);
             }
 
-            _adjacentStrategy.AddExistingPlots(cyclicPlots);
-            return _adjacentStrategy.Generate().Concat(cyclicPlots);
+            _adjacentStrategy.AddExistingPlots(bigEnoughPlots);
+            return _adjacentStrategy.Generate().Concat(bigEnoughPlots);
         }
     }
 }
