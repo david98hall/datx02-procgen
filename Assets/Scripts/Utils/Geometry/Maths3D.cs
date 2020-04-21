@@ -130,7 +130,7 @@ namespace Utils.Geometry
             intersection = Vector3.negativeInfinity;
             return false;
         }
-        
+
         /// <summary>
         /// Finds the perpendicular clockwise vector (normal) to a given vector in the x-z plane.
         /// </summary>

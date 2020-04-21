@@ -4,6 +4,7 @@ using System.Linq;
 using App.ViewModels.Cities;
 using App.ViewModels.Terrain;
 using Cities;
+using Cities.Plots;
 using Extensions;
 using Interfaces;
 using Services;
@@ -113,6 +114,7 @@ namespace App
         /// </summary>
         public void Generate()
         {
+
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
 
@@ -143,6 +145,21 @@ namespace App
                     _model.City.Plots.Select(p => p.Vertices),
                     _meshFilter, _meshCollider,
                     "Plot Borders", "Plot"));
+            }
+
+            // Display buildings
+            if (cityViewModel.DisplayBuildings)
+            {
+                var container = new GameObject("Buildings", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+                foreach (var b in _model.City.Buildings)
+                {
+                    var obj = new GameObject("Building", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+                    obj.GetComponent<MeshFilter>().mesh = b.mesh;
+                    obj.GetComponent<MeshRenderer>().sharedMaterial = cityViewModel.BuildingMaterial;
+
+                    obj.transform.parent = container.transform;
+                }
+                gameObjects.Add(container);
             }
 
             // Display roads

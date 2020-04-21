@@ -7,6 +7,7 @@ using Interfaces;
 using UnityEditor;
 using UnityEngine;
 using Factory = Cities.Plots.Factory;
+using BuildingFactory = Cities.Buildings.Factory;
 
 namespace App.ViewModels.Cities
 {
@@ -91,9 +92,69 @@ namespace App.ViewModels.Cities
         public bool DisplayPlots => displayPlots;
 
         #endregion
-        
+
+        #region Building Strategy
+
+        /// <summary>
+        /// Visibility of the building strategy editor.
+        /// </summary>
+        private bool _buildingStrategyVisible;
+
+        /// <summary>
+        /// Enum for building strategies.
+        /// Is used for displaying the possible strategies in the editor.
+        /// </summary>
+        public enum BuildingStrategy
+        {
+            Extrusion
+        }
+
+        /// <summary>
+        /// Serialized building strategy that is currently selected.
+        /// </summary>
+        [SerializeField]
+        private BuildingStrategy buildingStrategy;
+
+        /// <summary>
+        /// Serialized view-model for <see cref="ExtrusionStrategy"/> view model.
+        /// Is required to be explicitly defined to be serializable.
+        /// </summary>
+        [SerializeField]
+        private ExtrusionStrategy extrusionStrategy;
+
+        /// <summary>
+        /// Boolean to set building visibility.
+        /// </summary>
+        [SerializeField]
+        private bool displayBuildings;
+
+        /// <summary>
+        /// Getter for building visibility.
+        /// </summary>
+        public bool DisplayBuildings => displayBuildings;
+
+        #endregion
+
+        #region Building Appearance Fields
+
+        private bool _buildingAppearanceVisible;
+
+        /// <summary>
+        /// Building material.
+        /// </summary>
+        [SerializeField]
+        private Material buildingMaterial;
+
+
+        /// <summary>
+        /// Building material getter.
+        /// </summary>
+        public Material BuildingMaterial => buildingMaterial;
+
+        #endregion
+
         #region Road Appearance fields
-        
+
         /// <summary>
         /// Visibility of the plot strategy editor.
         /// </summary>
@@ -157,7 +218,7 @@ namespace App.ViewModels.Cities
         {
             aStarStrategy.EventBus = EventBus;
             lSystemStrategy.EventBus = EventBus;
-            
+
             aStarStrategy.Injector = Injector;
             lSystemStrategy.Injector = Injector;
         }
@@ -174,6 +235,7 @@ namespace App.ViewModels.Cities
             
             DisplayRoadStrategy();
             DisplayPlotStrategy();
+            DisplayBuildingStrategy();
 
             EditorGUI.indentLevel--;
         }
@@ -261,7 +323,57 @@ namespace App.ViewModels.Cities
             }
             EditorGUI.indentLevel--;
         }
-        
+
+        /// <summary>
+        /// Displays the editor of buildings and the view model of the currently selected building strategy.
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
+        private void DisplayBuildingStrategy()
+        {
+            _buildingStrategyVisible = EditorGUILayout.Foldout(_buildingStrategyVisible, "Building Generation");
+
+            if (!_buildingStrategyVisible)
+                return;
+
+            EditorGUI.indentLevel++;
+            buildingStrategy = (BuildingStrategy)EditorGUILayout.EnumPopup("Strategy", buildingStrategy);
+
+            EditorGUI.indentLevel++;
+            switch (buildingStrategy)
+            {
+                case BuildingStrategy.Extrusion:
+                    extrusionStrategy.Display();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            EditorGUI.indentLevel--;
+
+            displayBuildings = EditorGUILayout.Toggle("Display Buildings", displayBuildings);
+
+            DisplayBuildingAppearance();
+            EditorGUI.indentLevel--;
+        }
+
+        /// <summary>
+        /// Displays the editor of the building appearance.
+        /// </summary>
+        private void DisplayBuildingAppearance()
+        {
+            _buildingAppearanceVisible = EditorGUILayout.Foldout(_buildingAppearanceVisible, "Building Appearance");
+
+            if (!_buildingAppearanceVisible)
+                return;
+
+            EditorGUI.indentLevel++;
+
+            // Material
+            buildingMaterial = (Material)EditorGUILayout.ObjectField(
+                "Building Material", buildingMaterial, typeof(Material), true);
+
+            EditorGUI.indentLevel--;
+        }
+
         /// <summary>
         /// Updates the underlying generator with the serialized values from the editor.
         /// Delegates the generation to the underlying generator.
@@ -271,12 +383,14 @@ namespace App.ViewModels.Cities
         public override City Generate()
         {
             var roadNetwork = GenerateRoadNetwork();
+            var plots = GeneratePlots(roadNetwork);
             if (roadNetwork != null)
             {
                 return new City
                 {
                     RoadNetwork = roadNetwork,
-                    Plots = GeneratePlots(roadNetwork)
+                    Plots = plots,
+                    Buildings = GenerateBuildings((Injector.Get(), plots))
                 };
             }
 
@@ -295,11 +409,29 @@ namespace App.ViewModels.Cities
                     return plotStrategyFactory.CreateClockwiseCycleStrategy().Generate();
                 case PlotStrategy.BruteMinimalCycle:
                     return plotStrategyFactory.CreateBruteMinimalCycleStrategy().Generate();
+                case PlotStrategy.Adjacent:
+                    return plotStrategyFactory.CreateAdjacentStrategy().Generate();
+                case PlotStrategy.Combined:
+                    return plotStrategyFactory.CreateCombinedStrategy().Generate();
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
-        
+
+        private IEnumerable<Building> GenerateBuildings((MeshFilter, IEnumerable<Plot>) dependencies)
+        {
+            var buildingStrategyFactory = new BuildingFactory(() => dependencies);
+
+            switch (buildingStrategy)
+            {
+                case BuildingStrategy.Extrusion:
+                    return buildingStrategyFactory.CreateExtrusionStrategy().Generate();
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+
         private RoadNetwork GenerateRoadNetwork()
         {
             var aStarRoadNetwork = _aStarVisible ? aStarStrategy.Generate() : null;
