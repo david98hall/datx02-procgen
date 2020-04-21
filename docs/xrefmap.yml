@@ -755,6 +755,50 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.RoadWidth
   nameWithType: CityViewModel.RoadWidth
+- uid: App.ViewModels.Cities.ExtrusionStrategy
+  name: ExtrusionStrategy
+  href: api/App.ViewModels.Cities.ExtrusionStrategy.html
+  commentId: T:App.ViewModels.Cities.ExtrusionStrategy
+  fullName: App.ViewModels.Cities.ExtrusionStrategy
+  nameWithType: ExtrusionStrategy
+- uid: App.ViewModels.Cities.ExtrusionStrategy.Display
+  name: Display()
+  href: api/App.ViewModels.Cities.ExtrusionStrategy.html#App_ViewModels_Cities_ExtrusionStrategy_Display
+  commentId: M:App.ViewModels.Cities.ExtrusionStrategy.Display
+  fullName: App.ViewModels.Cities.ExtrusionStrategy.Display()
+  nameWithType: ExtrusionStrategy.Display()
+- uid: App.ViewModels.Cities.ExtrusionStrategy.Display*
+  name: Display
+  href: api/App.ViewModels.Cities.ExtrusionStrategy.html#App_ViewModels_Cities_ExtrusionStrategy_Display_
+  commentId: Overload:App.ViewModels.Cities.ExtrusionStrategy.Display
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.ExtrusionStrategy.Display
+  nameWithType: ExtrusionStrategy.Display
+- uid: App.ViewModels.Cities.ExtrusionStrategy.Generate
+  name: Generate()
+  href: api/App.ViewModels.Cities.ExtrusionStrategy.html#App_ViewModels_Cities_ExtrusionStrategy_Generate
+  commentId: M:App.ViewModels.Cities.ExtrusionStrategy.Generate
+  fullName: App.ViewModels.Cities.ExtrusionStrategy.Generate()
+  nameWithType: ExtrusionStrategy.Generate()
+- uid: App.ViewModels.Cities.ExtrusionStrategy.Generate*
+  name: Generate
+  href: api/App.ViewModels.Cities.ExtrusionStrategy.html#App_ViewModels_Cities_ExtrusionStrategy_Generate_
+  commentId: Overload:App.ViewModels.Cities.ExtrusionStrategy.Generate
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.ExtrusionStrategy.Generate
+  nameWithType: ExtrusionStrategy.Generate
+- uid: App.ViewModels.Cities.ExtrusionStrategy.maxArea
+  name: maxArea
+  href: api/App.ViewModels.Cities.ExtrusionStrategy.html#App_ViewModels_Cities_ExtrusionStrategy_maxArea
+  commentId: F:App.ViewModels.Cities.ExtrusionStrategy.maxArea
+  fullName: App.ViewModels.Cities.ExtrusionStrategy.maxArea
+  nameWithType: ExtrusionStrategy.maxArea
+- uid: App.ViewModels.Cities.ExtrusionStrategy.minArea
+  name: minArea
+  href: api/App.ViewModels.Cities.ExtrusionStrategy.html#App_ViewModels_Cities_ExtrusionStrategy_minArea
+  commentId: F:App.ViewModels.Cities.ExtrusionStrategy.minArea
+  fullName: App.ViewModels.Cities.ExtrusionStrategy.minArea
+  nameWithType: ExtrusionStrategy.minArea
 - uid: App.ViewModels.Cities.LSystemStrategy
   name: LSystemStrategy
   href: api/App.ViewModels.Cities.LSystemStrategy.html
@@ -1362,6 +1406,103 @@ references:
   commentId: N:Cities
   fullName: Cities
   nameWithType: Cities
+- uid: Cities.Buildings
+  name: Cities.Buildings
+  href: api/Cities.Buildings.html
+  commentId: N:Cities.Buildings
+  fullName: Cities.Buildings
+  nameWithType: Cities.Buildings
+- uid: Cities.Buildings.Factory
+  name: Factory
+  href: api/Cities.Buildings.Factory.html
+  commentId: T:Cities.Buildings.Factory
+  fullName: Cities.Buildings.Factory
+  nameWithType: Factory
+- uid: Cities.Buildings.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name: Factory(IInjector<(MeshFilter, IEnumerable<Plot>)>)
+  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__ctor_Interfaces_IInjector_System_ValueTuple_UnityEngine_MeshFilter_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____
+  commentId: M:Cities.Buildings.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name.vb: Factory(IInjector(Of (MeshFilter, IEnumerable(Of Plot))))
+  fullName: Cities.Buildings.Factory.Factory(Interfaces.IInjector<System.ValueTuple<UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>)
+  fullName.vb: Cities.Buildings.Factory.Factory(Interfaces.IInjector(Of System.ValueTuple(Of UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))))
+  nameWithType: Factory.Factory(IInjector<(MeshFilter, IEnumerable<Plot>)>)
+  nameWithType.vb: Factory.Factory(IInjector(Of (MeshFilter, IEnumerable(Of Plot))))
+- uid: Cities.Buildings.Factory.#ctor(System.Func{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name: Factory(Func<(MeshFilter, IEnumerable<Plot>)>)
+  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__ctor_System_Func_System_ValueTuple_UnityEngine_MeshFilter_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____
+  commentId: M:Cities.Buildings.Factory.#ctor(System.Func{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name.vb: Factory(Func(Of (MeshFilter, IEnumerable(Of Plot))))
+  fullName: Cities.Buildings.Factory.Factory(System.Func<System.ValueTuple<UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>)
+  fullName.vb: Cities.Buildings.Factory.Factory(System.Func(Of System.ValueTuple(Of UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))))
+  nameWithType: Factory.Factory(Func<(MeshFilter, IEnumerable<Plot>)>)
+  nameWithType.vb: Factory.Factory(Func(Of (MeshFilter, IEnumerable(Of Plot))))
+- uid: Cities.Buildings.Factory.#ctor*
+  name: Factory
+  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__ctor_
+  commentId: Overload:Cities.Buildings.Factory.#ctor
+  isSpec: "True"
+  fullName: Cities.Buildings.Factory.Factory
+  nameWithType: Factory.Factory
+- uid: Cities.Buildings.Factory._injector
+  name: _injector
+  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__injector
+  commentId: F:Cities.Buildings.Factory._injector
+  fullName: Cities.Buildings.Factory._injector
+  nameWithType: Factory._injector
+- uid: Cities.Buildings.Factory.CreateExtrusionStrategy(System.Single,System.Single)
+  name: CreateExtrusionStrategy(Single, Single)
+  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory_CreateExtrusionStrategy_System_Single_System_Single_
+  commentId: M:Cities.Buildings.Factory.CreateExtrusionStrategy(System.Single,System.Single)
+  fullName: Cities.Buildings.Factory.CreateExtrusionStrategy(System.Single, System.Single)
+  nameWithType: Factory.CreateExtrusionStrategy(Single, Single)
+- uid: Cities.Buildings.Factory.CreateExtrusionStrategy*
+  name: CreateExtrusionStrategy
+  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory_CreateExtrusionStrategy_
+  commentId: Overload:Cities.Buildings.Factory.CreateExtrusionStrategy
+  isSpec: "True"
+  fullName: Cities.Buildings.Factory.CreateExtrusionStrategy
+  nameWithType: Factory.CreateExtrusionStrategy
+- uid: Cities.Buildings.Factory.Injector
+  name: Factory.Injector
+  href: api/Cities.Buildings.Factory.Injector.html
+  commentId: T:Cities.Buildings.Factory.Injector
+  fullName: Cities.Buildings.Factory.Injector
+  nameWithType: Factory.Injector
+- uid: Cities.Buildings.Factory.Injector.#ctor(System.Func{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name: Injector(Func<(MeshFilter, IEnumerable<Plot>)>)
+  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector__ctor_System_Func_System_ValueTuple_UnityEngine_MeshFilter_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____
+  commentId: M:Cities.Buildings.Factory.Injector.#ctor(System.Func{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name.vb: Injector(Func(Of (MeshFilter, IEnumerable(Of Plot))))
+  fullName: Cities.Buildings.Factory.Injector.Injector(System.Func<System.ValueTuple<UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>)
+  fullName.vb: Cities.Buildings.Factory.Injector.Injector(System.Func(Of System.ValueTuple(Of UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))))
+  nameWithType: Factory.Injector.Injector(Func<(MeshFilter, IEnumerable<Plot>)>)
+  nameWithType.vb: Factory.Injector.Injector(Func(Of (MeshFilter, IEnumerable(Of Plot))))
+- uid: Cities.Buildings.Factory.Injector.#ctor*
+  name: Injector
+  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector__ctor_
+  commentId: Overload:Cities.Buildings.Factory.Injector.#ctor
+  isSpec: "True"
+  fullName: Cities.Buildings.Factory.Injector.Injector
+  nameWithType: Factory.Injector.Injector
+- uid: Cities.Buildings.Factory.Injector._injector
+  name: _injector
+  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector__injector
+  commentId: F:Cities.Buildings.Factory.Injector._injector
+  fullName: Cities.Buildings.Factory.Injector._injector
+  nameWithType: Factory.Injector._injector
+- uid: Cities.Buildings.Factory.Injector.Get
+  name: Get()
+  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector_Get
+  commentId: M:Cities.Buildings.Factory.Injector.Get
+  fullName: Cities.Buildings.Factory.Injector.Get()
+  nameWithType: Factory.Injector.Get()
+- uid: Cities.Buildings.Factory.Injector.Get*
+  name: Get
+  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector_Get_
+  commentId: Overload:Cities.Buildings.Factory.Injector.Get
+  isSpec: "True"
+  fullName: Cities.Buildings.Factory.Injector.Get
+  nameWithType: Factory.Injector.Get
 - uid: Cities.City
   name: City
   href: api/Cities.City.html
