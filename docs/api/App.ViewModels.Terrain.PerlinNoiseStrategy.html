@@ -88,9 +88,16 @@
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Single</span>[,]&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
+    <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;Object, Single[,]&gt;.EventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;Object, Single[,]&gt;._eventBus</a>
+    </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Object, Single[,]&gt;.Display()</a>
     </div>
@@ -99,6 +106,9 @@
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;Object, Single[,]&gt;.Generate()</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;Object, Single[,]&gt;.OnEvent(AppEvent, Object)</a>
     </div>
     <div>
       <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Object, Single[,]&gt;.Injector</a>
@@ -130,7 +140,7 @@
   <h5 id="App_ViewModels_Terrain_PerlinNoiseStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class PerlinNoiseStrategy : ViewModelStrategy&lt;object, float[, ]&gt;, IGenerator&lt;float[, ]&gt;, IDisplayable, IInitializable</code></pre>
+public class PerlinNoiseStrategy : ViewModelStrategy&lt;object, float[, ]&gt;, IGenerator&lt;float[, ]&gt;, IDisplayable, IInitializable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -404,10 +414,25 @@ int width</code></pre>
   <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Object, System.Single[,]&gt;.Display()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_PerlinNoiseStrategy_DisplaySizeControls.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/PerlinNoiseStrategy.cs/#L80">View Source</a>
+  </span>
+  <a id="App_ViewModels_Terrain_PerlinNoiseStrategy_DisplaySizeControls_" data-uid="App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls*"></a>
+  <h4 id="App_ViewModels_Terrain_PerlinNoiseStrategy_DisplaySizeControls" data-uid="App.ViewModels.Terrain.PerlinNoiseStrategy.DisplaySizeControls">DisplaySizeControls()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DisplaySizeControls()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_PerlinNoiseStrategy_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.PerlinNoiseStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/PerlinNoiseStrategy.cs/#L85">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/PerlinNoiseStrategy.cs/#L98">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_PerlinNoiseStrategy_Generate_" data-uid="App.ViewModels.Terrain.PerlinNoiseStrategy.Generate*"></a>
   <h4 id="App_ViewModels_Terrain_PerlinNoiseStrategy_Generate" data-uid="App.ViewModels.Terrain.PerlinNoiseStrategy.Generate">Generate()</h4>
@@ -446,6 +471,9 @@ Delegates the generation to the created generator.</p>
   </div>
   <div>
       <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
+  </div>
+  <div>
+      <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
   </div>
 </article>
           </div>
