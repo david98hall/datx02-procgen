@@ -67,7 +67,7 @@ namespace Cities.Roads
             axiom = c;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
             ruleset.Add('F',"F+FB-]");
-            ruleset.Add('S', "B-FB[");
+            ruleset.Add('S', "GB-FB[");
             ruleset.Add('B',"FS[F+]");
             ruleset.Add('G',"GF-");
             tree = new StringBuilder(c.ToString());
@@ -195,9 +195,10 @@ namespace Cities.Roads
                                 network.AddRoad(splitRoad);
                             break;
                         }
-                        case 'G':
-                        state = Grid(state);
-                        break;
+                        case 'G': //Create a grid
+                            state = Grid(state);
+                            break;
+                        
                     }
                     Vector3 newPos = state.pos + length * direction;
                     for (int i = 0; i < 10 && (newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ); i++){
@@ -286,6 +287,7 @@ namespace Cities.Roads
                         }else{break;}
                     }else{break;}
                 }
+                network.AddRoad(road);
                 Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
                 if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order of which worksites are added to the queue
                     if(noIntersects(workSite.pos, range) <= 1)
