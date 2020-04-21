@@ -2,6 +2,7 @@
 using Cities.Plots;
 using Cities.Roads;
 using Interfaces;
+using UnityEngine;
 using Factory = Cities.Plots.Factory;
 
 namespace Cities
@@ -33,6 +34,7 @@ namespace Cities
         }
         private readonly Generator<IEnumerable<Plot>> _plotsGenerator;
 
+<<<<<<< HEAD
         private readonly IInjector<float[,]> _heightMapInjector;
 
         public CityGenerator()
@@ -41,6 +43,17 @@ namespace Cities
             _plotsGenerator = new Generator<IEnumerable<Plot>>();
         }
 
+=======
+        public Cities.Roads.Factory RoadNetworkFactory { get; }
+
+        public CityGenerator(IInjector<MeshFilter> terrainMeshInjector)
+        {
+            _roadNetworkGenerator = new Generator<RoadNetwork>();
+            _plotsGenerator = new Generator<IEnumerable<Plot>>();
+            RoadNetworkFactory = new Roads.Factory(terrainMeshInjector);
+        }
+        
+>>>>>>> roadperimeter
         public City Generate()
         {
             _roadNetwork = _roadNetworkGenerator.Generate();
