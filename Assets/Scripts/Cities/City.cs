@@ -9,7 +9,7 @@ namespace Cities
     /// <summary>
     /// Represents a city with road networks, blocks and plots for buildings, et cetera.
     /// </summary>
-    public struct City
+    public class City
     {
         /// <summary>
         /// The relative position of the city.

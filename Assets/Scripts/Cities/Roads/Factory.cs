@@ -25,9 +25,11 @@ namespace Cities.Roads
         /// <summary>
         /// Creates an A* strategy for generating a road network.
         /// </summary>
+        /// <param name="heightBias">The height bias for finding the optimal path.</param>
         /// <param name="paths">Paths consisting of a start and goal node to generate a road between.</param>
         /// <returns>The A* road network generator.</returns>
-        public IGenerator<RoadNetwork> CreateAStarStrategy(float heightBias = 0.5f, IEnumerable<(Vector2Int Start, Vector2Int End)> paths = null) => 
+        public IGenerator<RoadNetwork> CreateAStarStrategy(
+            float heightBias = 0.5f, IEnumerable<(Vector2Int Start, Vector2Int End)> paths = null) => 
             new AStarStrategy(_terrainMeshNoiseMapInjector, paths)
             {
                 HeightBias = heightBias

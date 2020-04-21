@@ -6,6 +6,7 @@ using App.ViewModels.Terrain;
 using Cities;
 using Extensions;
 using Interfaces;
+using Services;
 using UnityEngine;
 using Utils.Paths;
 
@@ -72,6 +73,39 @@ namespace App
         private HashSet<GameObject> gameObjects;
 
         #endregion
+
+        // Used for view model communications
+        private EventBus<AppEvent> _eventBus;
+        
+        public void OnEnable()
+        {
+            if (!_initialized) Initialize();
+        }
+
+        /// <summary>
+        /// Is required for initializing the non-serializable properties of the view model.
+        /// Should only be called once due to expensive operations.
+        /// </summary>
+        public void Initialize()
+        {
+            _eventBus = new EventBus<AppEvent>();
+            
+            _meshFilter = GetComponent<MeshFilter>();
+            _meshRenderer = GetComponent<MeshRenderer>();
+            _meshCollider = GetComponent<MeshCollider>();
+            
+            if (gameObjects == null) gameObjects = new HashSet<GameObject>();
+
+            terrainViewModel.EventBus = _eventBus;
+            terrainViewModel.Initialize();
+
+            _model = new Model();
+            cityViewModel.EventBus = _eventBus;
+            cityViewModel.Injector = _model;
+            cityViewModel.Initialize();
+
+            _initialized = true;
+        }
         
         /// <summary>
         /// Delegates the generation to the underlying view models.
@@ -79,17 +113,17 @@ namespace App
         /// </summary>
         public void Generate()
         {
-            if (!_initialized) Initialize();
-            (_model.Mesh, _model.Texture) = terrainViewModel.Generate();
-            _model.City = cityViewModel.Generate();
-
-            _meshCollider.sharedMesh = _model.Mesh;
-            _meshFilter.sharedMesh = _model.Mesh;
-            _meshRenderer.sharedMaterial.mainTexture = _model.Texture;
-
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
+            
+            (_model.TerrainMesh, _model.TerrainTexture) = terrainViewModel.Generate();
+            _meshCollider.sharedMesh = _model.TerrainMesh;
+            _meshFilter.sharedMesh = _model.TerrainMesh;
+            _meshRenderer.sharedMaterial.mainTexture = _model.TerrainTexture;
 
+            _model.City = cityViewModel.Generate();
+            if (_model.City == null) return;
+            
             // Set the values of the path object generator according to the UI-values
             var pathObjectGenerator = new PathObjectGenerator
             {
@@ -116,26 +150,6 @@ namespace App
                 _meshFilter, _meshCollider,
                 "Road Network", "Road"));
         }
-        
-        /// <summary>
-        /// Is required for initializing the non-serializable properties of the view model.
-        /// Should only be called once due to expensive operations.
-        /// </summary>
-        public void Initialize()
-        {
-            _meshFilter = GetComponent<MeshFilter>();
-            _meshRenderer = GetComponent<MeshRenderer>();
-            _meshCollider = GetComponent<MeshCollider>();
-            
-            if (gameObjects == null) gameObjects = new HashSet<GameObject>();
-            
-            terrainViewModel.Initialize();
-            
-            _model = new Model();
-            cityViewModel.Injector = _model;
-            cityViewModel.Initialize();
-            _initialized = true;
-        }
 
         /// <summary>
         /// Displays the editors of the underlying view models.
@@ -145,7 +159,7 @@ namespace App
             terrainViewModel.Display();
             cityViewModel.Display();
         }
-        
+
         /// <summary>
         /// The run-time model of all generated content.
         /// </summary>
@@ -154,12 +168,12 @@ namespace App
             /// <summary>
             /// Generated terrain mesh.
             /// </summary>
-            internal Mesh Mesh;
+            internal Mesh TerrainMesh;
             
             /// <summary>
             /// Generated texture.
             /// </summary>
-            internal Texture Texture;
+            internal Texture TerrainTexture;
             
             /// <summary>
             /// Generated City
@@ -170,7 +184,7 @@ namespace App
             /// Injector method used by the city view model.
             /// </summary>
             /// <returns>The height map of the terrain mesh.</returns>
-            public float[,] Get() => Mesh.HeightMap();
+            public float[,] Get() => TerrainMesh.HeightMap();
         }
     }
 }

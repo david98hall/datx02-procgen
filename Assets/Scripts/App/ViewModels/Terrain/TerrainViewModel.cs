@@ -109,6 +109,11 @@ namespace App.ViewModels.Terrain
         public override void Initialize()
         {
             _generator = new TerrainGenerator();
+
+            perlinNoiseStrategy.EventBus = EventBus;
+            whittakerStrategy.EventBus = EventBus;
+            grayScaleStrategy.EventBus = EventBus;
+            
             perlinNoiseStrategy.Injector = _generator;
             whittakerStrategy.Injector = _generator;
             grayScaleStrategy.Injector = _generator;
