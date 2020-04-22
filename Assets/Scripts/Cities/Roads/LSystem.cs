@@ -69,34 +69,6 @@ namespace Cities.Roads
             ruleset.Add('G',"GF-");
             tree = new StringBuilder(c.ToString());
         }
-        
-        #region Noise map
-
-        /// <summary>
-        /// Applies the injected noise map to the road network and returns the result.
-        /// </summary>
-        internal RoadNetwork NoiseMappedNetwork => ApplyNoiseMap();
-
-        // Applies the injected noise map on the road network.
-        private RoadNetwork ApplyNoiseMap()
-        {
-            var newNetwork = new RoadNetwork();
-            var noiseMap = _terrainInjector.Get().HeightMap;
-            foreach (var (roadStart, roadEnd) in network.GetRoadParts())
-            {
-                var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];
-                var roadEndY = noiseMap[(int) roadEnd.x, (int) roadEnd.z];
-                const float yOffset = 0;
-                newNetwork.AddRoad(
-                    new Vector3(roadStart.x, roadStartY + yOffset, roadStart.z),
-                    new Vector3(roadEnd.x, roadEndY + yOffset, roadEnd.z)
-                );
-            }
-            
-            return newNetwork;
-        }
-
-        #endregion
 
         public override string ToString(){
             return tree.ToString();
