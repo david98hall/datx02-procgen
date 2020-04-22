@@ -13,6 +13,9 @@ namespace Cities.Roads
     /// </summary>
     public class LSystem
     {
+        /// <summary>
+        /// Describes the position and direction of the L-system
+        /// </summary>
         public class State{
             public Vector3 pos;
             public double angle;
