@@ -1,7 +1,7 @@
 ﻿using Interfaces;
 using UnityEngine;
 
-namespace Terrain.Noise
+namespace Noise
 {
     /// <summary>
     /// Creates different types of noise map generation strategies.

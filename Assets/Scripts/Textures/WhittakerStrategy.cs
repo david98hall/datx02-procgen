@@ -3,7 +3,7 @@ using Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Terrain.Textures
+namespace Textures
 {
     /// <summary>
     /// Generates 2D textures from a given height map with a simple version of a Whittaker diagram.
