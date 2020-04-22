@@ -399,6 +399,12 @@ namespace App.ViewModels.Cities
 
         }
 
+        /// <summary>
+        /// Generates plots with the current strategy from a given road network.
+        /// </summary>
+        /// <param name="roadNetwork">The given road network.</param>
+        /// <returns>An enumerable object of plots.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         private IEnumerable<Plot> GeneratePlots(RoadNetwork roadNetwork)
         {
             if (roadNetwork == null) return null;
@@ -421,6 +427,13 @@ namespace App.ViewModels.Cities
                     throw new ArgumentOutOfRangeException();
             }
         }
+        
+        /// <summary>
+        /// Generates buildings with the current strategy from a enumerable of plots
+        /// </summary>
+        /// <param name="dependencies">The mesh filter and enumerable of plots.</param>
+        /// <returns>An enumerable object of buildings.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
 
         private IEnumerable<Building> GenerateBuildings((MeshFilter, IEnumerable<Plot>) dependencies)
         {
@@ -435,6 +448,10 @@ namespace App.ViewModels.Cities
             }
         }
 
+        /// <summary>
+        /// Generates road networks with the current strategy.
+        /// </summary>
+        /// <returns>A road network object</returns>
         private RoadNetwork GenerateRoadNetwork()
         {
             var aStarRoadNetwork = _aStarVisible ? aStarStrategy.Generate() : null;
