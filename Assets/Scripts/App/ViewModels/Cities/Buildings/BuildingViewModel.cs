@@ -82,7 +82,6 @@ namespace App.ViewModels.Cities.Buildings
             get => base.Injector;
             set
             {
-                base.Injector = value;
                 try
                 {
                     extrusionStrategy.Injector = value;
@@ -100,14 +99,7 @@ namespace App.ViewModels.Cities.Buildings
             set
             {
                 base.EventBus = value;
-                try
-                {
-                    extrusionStrategy.EventBus = value;
-                }
-                catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                if (extrusionStrategy.EventBus != null) extrusionStrategy.EventBus = value;
             }
         }
         
@@ -115,8 +107,7 @@ namespace App.ViewModels.Cities.Buildings
         {
             _buildingStrategyVisible = EditorGUILayout.Foldout(_buildingStrategyVisible, "Building Generation");
 
-            if (!_buildingStrategyVisible)
-                return;
+            if (!_buildingStrategyVisible) return;
 
             EditorGUI.indentLevel++;
             buildingStrategy = (BuildingStrategy)EditorGUILayout.EnumPopup("Strategy", buildingStrategy);
@@ -145,8 +136,7 @@ namespace App.ViewModels.Cities.Buildings
         {
             _buildingAppearanceVisible = EditorGUILayout.Foldout(_buildingAppearanceVisible, "Building Appearance");
 
-            if (!_buildingAppearanceVisible)
-                return;
+            if (!_buildingAppearanceVisible) return;
 
             EditorGUI.indentLevel++;
 

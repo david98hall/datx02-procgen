@@ -59,11 +59,6 @@ namespace App.ViewModels.Noise
                 }
             }
         }
-        
-        public override void Initialize()
-        {
-            perlinNoiseStrategy.Initialize();
-        }
 
         /// <summary>
         /// Displays the editor of noise and the view model of the currently selected noise strategy.

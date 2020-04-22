@@ -20,7 +20,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<TerrainInfo, City>, IInitializable
+    public class CityViewModel : ViewModelStrategy<TerrainInfo, City>
     {
         /// <summary>
         /// Visibility of the editor.
@@ -28,59 +28,59 @@ namespace App.ViewModels.Cities
         private bool _visible;
 
         [SerializeField]
-        private RoadViewModel _roadViewModel;
+        private RoadViewModel roadViewModel;
         
         [SerializeField]
-        private PlotViewModel _plotViewModel;
+        private PlotViewModel plotViewModel;
         
         [SerializeField]
-        private BuildingViewModel _buildingViewModel;
+        private BuildingViewModel buildingViewModel;
 
         #region View Model Properties
         /// <summary>
         /// <see cref="RoadViewModel.RoadWidth"/>
         /// </summary>
-        public float RoadWidth => _roadViewModel.RoadWidth;
+        public float RoadWidth => roadViewModel.RoadWidth;
         
         /// <summary>
         /// <see cref="RoadViewModel.RoadCurvature"/>
         /// </summary>
-        public float RoadCurvature => _roadViewModel.RoadCurvature;
+        public float RoadCurvature => roadViewModel.RoadCurvature;
         
         /// <summary>
         /// <see cref="RoadViewModel.RoadSmoothingIterations"/>
         /// </summary>
-        public int RoadSmoothingIterations => _roadViewModel.RoadSmoothingIterations;
+        public int RoadSmoothingIterations => roadViewModel.RoadSmoothingIterations;
         
         /// <summary>
         /// <see cref="RoadViewModel.RoadTerrainOffsetY"/>
         /// </summary>
-        public float RoadTerrainOffsetY => _roadViewModel.RoadTerrainOffsetY;
+        public float RoadTerrainOffsetY => roadViewModel.RoadTerrainOffsetY;
         
         /// <summary>
         /// <see cref="RoadViewModel.RoadMaterial"/>
         /// </summary>
-        public Material RoadMaterial => _roadViewModel.RoadMaterial;
+        public Material RoadMaterial => roadViewModel.RoadMaterial;
         
         /// <summary>
         /// <see cref="PlotViewModel.DisplayPlots"/>
         /// </summary>
-        public bool DisplayPlots => _plotViewModel.DisplayPlots;
+        public bool DisplayPlots => plotViewModel.DisplayPlots;
         
         /// <summary>
         /// <see cref="PlotViewModel.PlotMaterial"/>
         /// </summary>
-        public Material PlotMaterial => _plotViewModel.PlotMaterial;
+        public Material PlotMaterial => plotViewModel.PlotMaterial;
                 
         /// <summary>
         /// <see cref="BuildingViewModel.DisplayBuildings"/>
         /// </summary>
-        public bool DisplayBuildings => _buildingViewModel.DisplayBuildings;
+        public bool DisplayBuildings => buildingViewModel.DisplayBuildings;
         
         /// <summary>
         /// <see cref="BuildingViewModel.BuildingMaterial"/>
         /// </summary>
-        public Material BuildingMaterial => _buildingViewModel.BuildingMaterial;
+        public Material BuildingMaterial => buildingViewModel.BuildingMaterial;
         #endregion
         
         internal override IInjector<TerrainInfo> Injector
@@ -91,10 +91,10 @@ namespace App.ViewModels.Cities
                 base.Injector = value;
                 try
                 {   
-                    _roadViewModel.Injector = value;
-                    _plotViewModel.Injector = _roadViewModel;
-                    _buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() =>
-                        (InjectedValue, _plotViewModel.Generate()));
+                    roadViewModel.Injector = value;
+                    plotViewModel.Injector = roadViewModel;
+                    buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() =>
+                        (InjectedValue, plotViewModel.Generate()));
                 }
                 catch (NullReferenceException)
                 {
@@ -111,9 +111,9 @@ namespace App.ViewModels.Cities
                 base.EventBus = value;
                 try
                 {   
-                    _roadViewModel.EventBus = value;
-                    _plotViewModel.EventBus = value;
-                    _buildingViewModel.EventBus = value;
+                    roadViewModel.EventBus = value;
+                    plotViewModel.EventBus = value;
+                    buildingViewModel.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {
@@ -121,17 +121,7 @@ namespace App.ViewModels.Cities
                 }
             }
         }
-        
-        /// <summary>
-        /// Is required for initializing the non-serializable properties of the view model.
-        /// </summary>
-        public override void Initialize()
-        {
-            _roadViewModel.Initialize();
-            _plotViewModel.Initialize();
-            _buildingViewModel.Initialize();
-        }
-        
+
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
@@ -142,9 +132,9 @@ namespace App.ViewModels.Cities
 
             EditorGUI.indentLevel++;
             
-            _roadViewModel.Display();
-            _plotViewModel.Display();
-            _buildingViewModel.Display();
+            roadViewModel.Display();
+            plotViewModel.Display();
+            buildingViewModel.Display();
 
             EditorGUI.indentLevel--;
         }
@@ -158,24 +148,24 @@ namespace App.ViewModels.Cities
         public override City Generate()
         {
             // Road network
-            _roadViewModel.Injector = Injector;
-            var roadNetwork = _roadViewModel.Generate();
+            roadViewModel.Injector = Injector;
+            var roadNetwork = roadViewModel.Generate();
             if (roadNetwork == null) return null;
             
             // Plots
-            _plotViewModel.Injector = new Injector<RoadNetwork>(() => roadNetwork);
-            var plots = _plotViewModel.Generate();
+            plotViewModel.Injector = new Injector<RoadNetwork>(() => roadNetwork);
+            var plots = plotViewModel.Generate();
             var enumerable = plots as Plot[] ?? plots.ToArray();
             
             // Buildings
-            _buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() => 
+            buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() => 
                 (InjectedValue, enumerable));
             
             return new City
             {
                 RoadNetwork = roadNetwork,
                 Plots = enumerable,
-                Buildings = _buildingViewModel.Generate()
+                Buildings = buildingViewModel.Generate()
             };
         }
 

@@ -17,7 +17,6 @@ namespace App.ViewModels.Cities.Roads
     [Serializable]
     public class LSystemStrategy : ViewModelStrategy<TerrainInfo, RoadNetwork>
     {
-
         [Serializable]
         private class Input
         {

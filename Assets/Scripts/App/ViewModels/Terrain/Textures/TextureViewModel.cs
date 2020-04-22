@@ -86,12 +86,6 @@ namespace App.ViewModels.Noise.Textures
             }
         }
 
-        public override void Initialize()
-        {
-            whittakerStrategy.Initialize();
-            grayScaleStrategy.Initialize();
-        }
-
         /// <summary>
         /// Displays the editor of texture and the view model of the currently selected texture strategy.
         /// </summary>
