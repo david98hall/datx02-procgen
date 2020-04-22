@@ -5,7 +5,7 @@ using Terrain;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModels.Cities
+namespace App.ViewModels.Cities.Roads
 {
     /// <summary>
     /// The view model for road network related generators.

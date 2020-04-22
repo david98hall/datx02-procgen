@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using Utils;
 
-namespace App.ViewModels.Cities
+namespace App.ViewModels.Cities.Roads
 {
     /// <summary>
     /// View-model for displaying and generating road networks with the A* strategy.

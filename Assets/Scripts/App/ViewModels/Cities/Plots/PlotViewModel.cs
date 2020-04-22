@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using Factory = Cities.Plots.Factory;
 
-namespace App.ViewModels.Cities
+namespace App.ViewModels.Cities.Plots
 {
     /// <summary>
     /// The view model for plot related generators.

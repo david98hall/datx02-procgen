@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using App.ViewModels.Cities.Buildings;
+using App.ViewModels.Cities.Plots;
+using App.ViewModels.Cities.Roads;
 using Cities;
 using Cities.Plots;
 using Cities.Roads;

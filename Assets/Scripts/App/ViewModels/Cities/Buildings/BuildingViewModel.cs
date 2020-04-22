@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using Factory = Cities.Buildings.Factory;
 
-namespace App.ViewModels.Cities
+namespace App.ViewModels.Cities.Buildings
 {
     /// <summary>
     /// The view model for building related generators.
