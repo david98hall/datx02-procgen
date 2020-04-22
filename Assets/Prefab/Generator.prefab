@@ -157,12 +157,22 @@ MonoBehaviour:
       precipitationScale: 50
       temperatureScale: 40
   cityViewModel:
-    roadNetworkStrategy: 0
     aStarStrategy:
       heightBias: 1
+      paths: []
+    lSystemStrategy:
+      inputs:
+      - origin: {x: 125, y: 125}
+        rewrites: 5
     plotStrategy: 0
     plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
     displayPlots: 1
+    buildingStrategy: 0
+    extrusionStrategy:
+      minArea: 0
+      maxArea: 0
+    displayBuildings: 0
+    buildingMaterial: {fileID: 2100000, guid: 27fe3768c12178d4ebc58c5bebf21be0, type: 2}
     roadWidth: 0.3
     roadCurvature: 0.1
     roadSmoothingIterations: 3
