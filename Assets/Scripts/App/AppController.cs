@@ -114,12 +114,12 @@ namespace App
         /// </summary>
         public void Generate()
         {
-
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
-
+            
             _model.MeshFilter = _meshFilter;
             (_model.MeshFilter.sharedMesh, _model.TerrainTexture) = terrainViewModel.Generate();
+            
             var terrainMesh = _model.MeshFilter.sharedMesh;
             _meshCollider.sharedMesh = terrainMesh;
             _meshFilter.sharedMesh = terrainMesh;

@@ -12,10 +12,7 @@ namespace App.ViewModels.Terrain
     [Serializable]
     public class TerrainViewModel : ViewModelStrategy<object, (Mesh, Texture2D)>, IInitializable
     {
-        /// <summary>
-        /// Injector used for storing a valid noise map generated in run-time
-        /// </summary>
-        private Injector _noiseMapInjector;
+        private float[,] _noiseMap;
         
         /// <summary>
         /// Visibility of the editor.
@@ -108,10 +105,10 @@ namespace App.ViewModels.Terrain
         /// </summary>
         public void Initialize()
         {
-            _noiseMapInjector = new Injector();
-
-            whittakerStrategy.Injector = _noiseMapInjector;
-            grayScaleStrategy.Injector = _noiseMapInjector;
+            var injector = new Injector<float[,]>(() => _noiseMap);
+            
+            whittakerStrategy.Injector = injector;
+            grayScaleStrategy.Injector = injector;
             
             perlinNoiseStrategy.EventBus = EventBus;
             whittakerStrategy.EventBus = EventBus;
@@ -207,13 +204,14 @@ namespace App.ViewModels.Terrain
             switch (noiseStrategy)
             {
                 case NoiseStrategy.PerlinNoise:
-                    _noiseMapInjector.NoiseMap = perlinNoiseStrategy.Generate();
+                    _noiseMap = perlinNoiseStrategy.Generate();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
             
-            return new Factory().CreateMeshGenerator(_noiseMapInjector, heightCurve, heightScale).Generate();
+            return new Factory().CreateMeshGenerator(
+                new Injector<float[,]>(() => _noiseMap), heightCurve, heightScale).Generate();
         }
 
         /// <summary>
@@ -232,24 +230,6 @@ namespace App.ViewModels.Terrain
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        }
-
-        /// <summary>
-        /// Injector class used in run-time for storing a generated height map.
-        /// Is used by texture strategies.
-        /// </summary>
-        private new class Injector : IInjector<float[,]>
-        {
-            /// <summary>
-            /// The noise map to inject.
-            /// </summary>
-            internal float[,] NoiseMap;
-
-            /// <summary>
-            /// The injector method
-            /// </summary>
-            /// <returns>A noise map object</returns>
-            public float[,] Get() => NoiseMap;
         }
     }
 }

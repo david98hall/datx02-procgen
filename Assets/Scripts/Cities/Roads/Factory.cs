@@ -10,13 +10,13 @@ namespace Cities.Roads
     /// </summary>
     public class Factory
     {
-        private readonly IInjector<MeshFilter> _terrainFilterInjector;
+        private readonly IInjector<float[,]> _terrainFilterInjector;
         
         /// <summary>
         /// Initializes this factory with a noise map injector.
         /// </summary>
         /// <param name="terrainFilterInjector">The noise map injector.</param>
-        public Factory(IInjector<MeshFilter> terrainFilterInjector)
+        public Factory(IInjector<float[,]> terrainFilterInjector)
         {
             _terrainFilterInjector = terrainFilterInjector;
         }
@@ -40,17 +40,6 @@ namespace Cities.Roads
         }
 
         /// <summary>
-        /// Creates a L-system strategy for generating a road network. The origin is (0, 0).
-        /// </summary>
-        /// <param name="rewriteCount">
-        /// The number of times the L-system should be rewritten,
-        /// before returning the road network.
-        /// </param>
-        /// <returns>An L-system generator for road networks.</returns>
-        public IGenerator<RoadNetwork> CreateLSystemStrategy(int rewriteCount = 6) =>
-            CreateLSystemStrategy(Vector2.zero, rewriteCount);
-
-        /// <summary>
         /// Creates a L-system strategy for generating a road network.
         /// </summary>
         /// <param name="origin">The start point of the road network generation.</param>
@@ -66,11 +55,5 @@ namespace Cities.Roads
                 Origin = origin
             };
         }
-
-        /// <summary>
-        /// Creates a sample strategy for testing.
-        /// </summary>
-        /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainFilterInjector);
     }
 }
