@@ -113,7 +113,7 @@ namespace Terrain.Noise
             }
 
             // Return a mesh based on the calculated data
-            var mesh = new Mesh()
+            var mesh = new Mesh
             {
                 vertices = vertices,
                 triangles = triangles,
@@ -122,5 +122,7 @@ namespace Terrain.Noise
             mesh.RecalculateNormals();
             return mesh;
         }
+
+        public Mesh Get() => Generate();
     }
 }

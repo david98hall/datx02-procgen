@@ -9,6 +9,9 @@ using Factory = Cities.Buildings.Factory;
 namespace App.ViewModels.Cities
 {
 
+    /// <summary>
+    /// The view model for using the extrusion algorithm for generating buildings.
+    /// </summary>
     [Serializable]
     public class ExtrusionStrategy : ViewModelStrategy<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
     {

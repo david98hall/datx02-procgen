@@ -31,5 +31,7 @@ namespace Interfaces
         /// </summary>
         /// <returns>The generated output.</returns>
         public abstract TO Generate();
+
+        public TO Get() => Generate();
     }
 }

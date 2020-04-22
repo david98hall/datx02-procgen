@@ -11,7 +11,7 @@ namespace App.ViewModels
     /// <typeparam name="TO">The output type of the generation.</typeparam>
     [Serializable]
     public abstract class ViewModelStrategy<TI, TO> 
-        : Strategy<TI, TO>, IDisplayable, ISubscriber<AppEvent>
+        : Strategy<TI, TO>, IDisplayable, ISubscriber<AppEvent>, IInitializable
     {
 
         /// <summary>
@@ -42,6 +42,13 @@ namespace App.ViewModels
         }
 
         /// <summary>
+        /// Is required for initializing the non-serializable properties of the view model.
+        /// </summary>
+        public virtual void Initialize()
+        {
+        }
+        
+        /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
         public virtual void Display()
@@ -58,6 +65,5 @@ namespace App.ViewModels
         public virtual void OnEvent(AppEvent eventId, object eventData)
         {
         }
-
     }
 }
