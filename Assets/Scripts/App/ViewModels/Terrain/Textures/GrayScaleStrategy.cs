@@ -2,7 +2,7 @@ using System;
 using Terrain.Textures;
 using UnityEngine;
 
-namespace App.ViewModels.Noise.Textures
+namespace App.ViewModels.Terrain.Textures
 {
     /// <summary>
     /// View-model for displaying and generating textures with the gray scale strategy.
@@ -10,6 +10,10 @@ namespace App.ViewModels.Noise.Textures
     [Serializable]
     public class GrayScaleStrategy : ViewModelStrategy<float[,], Texture2D>
     {
+        public override void Display()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Creates a generator with the serialized values from the editor.

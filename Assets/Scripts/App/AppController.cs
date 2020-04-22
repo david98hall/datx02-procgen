@@ -21,7 +21,7 @@ namespace App
     [ExecuteInEditMode]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), 
         typeof(MeshCollider))]
-    public class AppController : MonoBehaviour, IInitializable, IDisplayable
+    public class AppController : MonoBehaviour, IDisplayable
     {
         #region Models
 
@@ -98,12 +98,10 @@ namespace App
             if (gameObjects == null) gameObjects = new HashSet<GameObject>();
 
             terrainViewModel.EventBus = _eventBus;
-            terrainViewModel.Initialize();
 
             _model = new Model();
             cityViewModel.EventBus = _eventBus;
             cityViewModel.Injector = _model;
-            cityViewModel.Initialize();
 
             _initialized = true;
         }

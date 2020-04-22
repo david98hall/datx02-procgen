@@ -10,13 +10,8 @@ namespace Interfaces
         /// <summary>
         /// The injector of the input.
         /// </summary>
-        internal virtual IInjector<TI> Injector { get; set; }
+        protected IInjector<TI> Injector;
 
-        /// <summary>
-        /// The value, gotten from the Injector.
-        /// </summary>
-        internal TI InjectedValue => Injector.Get();
-        
         /// <summary>
         /// Initializes the strategy by setting the input injector.
         /// </summary>
@@ -31,7 +26,5 @@ namespace Interfaces
         /// </summary>
         /// <returns>The generated output.</returns>
         public abstract TO Generate();
-
-        public TO Get() => Generate();
     }
 }

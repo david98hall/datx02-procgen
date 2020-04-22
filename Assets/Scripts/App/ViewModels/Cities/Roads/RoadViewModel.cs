@@ -15,6 +15,7 @@ namespace App.ViewModels.Cities.Roads
     public class RoadViewModel : ViewModelStrategy<TerrainInfo, RoadNetwork>
     {
         #region Road Generation Fields
+        
         // Visibility of the road network strategy editor.
         private bool _roadNetworkStrategyVisible;
 
@@ -27,10 +28,10 @@ namespace App.ViewModels.Cities.Roads
         private LSystemStrategy lSystemStrategy;
         
         [SerializeField]
-        private bool _aStarEnabled;
+        private bool aStarEnabled;
         
         [SerializeField]
-        private bool _lSystemEnabled;
+        private bool lSystemEnabled;
         #endregion
         
         #region Road Appearance fields
@@ -126,12 +127,6 @@ namespace App.ViewModels.Cities.Roads
                 }
             }
         }
-        
-        public override void Initialize()
-        {
-            aStarStrategy.Initialize();
-            lSystemStrategy.Initialize();
-        }
 
         public override void Display()
         {
@@ -141,8 +136,8 @@ namespace App.ViewModels.Cities.Roads
             EditorGUI.indentLevel++;
 
             // A* Strategy
-            _aStarEnabled = EditorGUILayout.Toggle("A*", _aStarEnabled);
-            if (_aStarEnabled)
+            aStarEnabled = EditorGUILayout.Toggle("A*", aStarEnabled);
+            if (aStarEnabled)
             {
                 EditorGUI.indentLevel++;
                 aStarStrategy.Display();
@@ -150,8 +145,8 @@ namespace App.ViewModels.Cities.Roads
             }
 
             // L-system Strategy
-            _lSystemEnabled = EditorGUILayout.Toggle("L-system", _lSystemEnabled);
-            if (_lSystemEnabled)
+            lSystemEnabled = EditorGUILayout.Toggle("L-system", lSystemEnabled);
+            if (lSystemEnabled)
             {
                 EditorGUI.indentLevel++;
                 lSystemStrategy.Display();
@@ -192,8 +187,8 @@ namespace App.ViewModels.Cities.Roads
         
         public override RoadNetwork Generate()
         {
-            var aStarRoadNetwork = _aStarEnabled ? aStarStrategy.Generate() : null;
-            var lSystemRoadNetwork = _lSystemEnabled ? lSystemStrategy.Generate() : null;
+            var aStarRoadNetwork = aStarEnabled ? aStarStrategy.Generate() : null;
+            var lSystemRoadNetwork = lSystemEnabled ? lSystemStrategy.Generate() : null;
 
             RoadNetwork mergedRoadNetwork;
             if (aStarRoadNetwork == null)

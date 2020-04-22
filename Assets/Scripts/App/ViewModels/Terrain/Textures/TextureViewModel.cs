@@ -1,10 +1,12 @@
 ﻿using System;
 using Interfaces;
 using Services;
+using Terrain.Textures;
 using UnityEditor;
 using UnityEngine;
+using WhittakerStrategy = App.ViewModels.Terrain.Textures.WhittakerStrategy;
 
-namespace App.ViewModels.Noise.Textures
+namespace App.ViewModels.Terrain.Textures
 {
     /// <summary>
     /// The view model for terrain texture generation.
@@ -45,8 +47,8 @@ namespace App.ViewModels.Noise.Textures
         /// Serialized view-model for <see cref="GrayScaleStrategy"/> view model.
         /// Is required to be explicitly defined to be serializable.
         /// </summary>
-        [SerializeField] 
-        private GrayScaleStrategy grayScaleStrategy;
+        //[SerializeField] 
+        //private GrayScaleStrategy grayScaleStrategy;
 
         #endregion
 
@@ -59,7 +61,7 @@ namespace App.ViewModels.Noise.Textures
                 try
                 {   
                     whittakerStrategy.Injector = value;
-                    grayScaleStrategy.Injector = value;
+                    //grayScaleStrategy.Injector = value;
                 }
                 catch (NullReferenceException)
                 {
@@ -77,19 +79,13 @@ namespace App.ViewModels.Noise.Textures
                 try
                 {   
                     whittakerStrategy.EventBus = value;
-                    grayScaleStrategy.EventBus = value;
+                    //grayScaleStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {
                     // Ignore
                 }
             }
-        }
-
-        public override void Initialize()
-        {
-            whittakerStrategy.Initialize();
-            grayScaleStrategy.Initialize();
         }
 
         /// <summary>
@@ -108,7 +104,6 @@ namespace App.ViewModels.Noise.Textures
             switch (textureStrategy)
             {
                 case TextureStrategy.GrayScale:
-                    grayScaleStrategy.Display();
                     break;
                 case TextureStrategy.Whittaker:
                     whittakerStrategy.Display();
@@ -131,7 +126,7 @@ namespace App.ViewModels.Noise.Textures
             switch (textureStrategy)
             {
                 case TextureStrategy.GrayScale:
-                    return grayScaleStrategy.Generate();
+                    return new Factory(Injector).CreateGrayScaleStrategy().Generate();
                 case TextureStrategy.Whittaker:
                     return whittakerStrategy.Generate();
                 default:

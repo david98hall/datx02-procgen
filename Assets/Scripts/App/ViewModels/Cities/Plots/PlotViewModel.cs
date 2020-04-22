@@ -51,12 +51,12 @@ namespace App.ViewModels.Cities.Plots
         /// Boolean if plots are visible.
         /// </summary>
         [SerializeField] 
-        private bool _displayPlots;
+        private bool displayPlots;
         
         /// <summary>
         /// Getter for the boolean if plots are visible.
         /// </summary>
-        public bool DisplayPlots => _displayPlots;
+        public bool DisplayPlots => displayPlots;
 
         #endregion
 
@@ -71,8 +71,8 @@ namespace App.ViewModels.Cities.Plots
             
             EditorGUI.indentLevel++;
             plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", plotStrategy);
-            _displayPlots = EditorGUILayout.Toggle("Display Plots", _displayPlots);
-            if (_displayPlots)
+            displayPlots = EditorGUILayout.Toggle("Display Plots", displayPlots);
+            if (displayPlots)
             {
                 plotMaterial = (Material) EditorGUILayout.ObjectField(
                     "Plot Material", plotMaterial, typeof(Material), true);   
@@ -82,7 +82,7 @@ namespace App.ViewModels.Cities.Plots
 
         public override IEnumerable<Plot> Generate()
         {
-            if (InjectedValue == null) return null;
+            if (Injector.Get() == null) return null;
             
             var plotStrategyFactory = new Factory(Injector);
 

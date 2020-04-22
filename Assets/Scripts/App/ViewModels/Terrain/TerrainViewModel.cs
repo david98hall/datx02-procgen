@@ -1,6 +1,6 @@
 using System;
-using App.ViewModels.Noise;
-using App.ViewModels.Noise.Textures;
+using App.ViewModels.Terrain.Noise;
+using App.ViewModels.Terrain.Textures;
 using Interfaces;
 using Services;
 using Terrain.Noise;
@@ -33,10 +33,10 @@ namespace App.ViewModels.Terrain
         private float heightScale;
 
         [SerializeField]
-        private NoiseViewModel _noiseViewModel;
+        private NoiseViewModel noiseViewModel;
         
         [SerializeField]
-        private TextureViewModel _textureViewModel;
+        private TextureViewModel textureViewModel;
 
         public override EventBus<AppEvent> EventBus
         {
@@ -46,8 +46,8 @@ namespace App.ViewModels.Terrain
                 base.EventBus = value;
                 try
                 {   
-                    _noiseViewModel.EventBus = value;
-                    _textureViewModel.EventBus = value;
+                    noiseViewModel.EventBus = value;
+                    textureViewModel.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {
@@ -56,17 +56,6 @@ namespace App.ViewModels.Terrain
             }
         }
         
-        /// <summary>
-        /// Is required for initializing the non-serializable properties of the view model.
-        /// </summary>
-        public override void Initialize()
-        {
-            _textureViewModel.Injector = _noiseViewModel;
-
-            _noiseViewModel.Initialize();
-            _textureViewModel.Initialize();
-        }
-
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
@@ -79,8 +68,8 @@ namespace App.ViewModels.Terrain
             heightCurve = EditorGUILayout.CurveField("Height Curve", heightCurve ?? new AnimationCurve());
             heightScale = EditorGUILayout.Slider("Height Scale", heightScale, 0, 100);
 
-            _noiseViewModel.Display();
-            _textureViewModel.Display();
+            noiseViewModel.Display();
+            textureViewModel.Display();
 
             EditorGUI.indentLevel--;
         }
@@ -91,13 +80,14 @@ namespace App.ViewModels.Terrain
         /// <returns>A tuple of a mesh and a texture</returns>
         public override (Mesh, Texture2D) Generate()
         {
-            var heightMap = _noiseViewModel.Generate();
-            _textureViewModel.Injector = new Injector<float[,]>(() => heightMap);
+            var heightMap = noiseViewModel.Generate();
+            //textureViewModel.Injector = noiseViewModel;
+            textureViewModel.Injector = new Injector<float[,]>(() => heightMap);
             
             var mesh = new Factory().CreateMeshGenerator(
                 new Injector<float[,]>(() => heightMap), heightCurve, heightScale).Generate();
 
-            return (mesh, _textureViewModel.Generate());
+            return (mesh, textureViewModel.Generate());
         }
 
     }

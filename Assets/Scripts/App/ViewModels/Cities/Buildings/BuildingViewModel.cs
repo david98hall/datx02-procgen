@@ -82,7 +82,6 @@ namespace App.ViewModels.Cities.Buildings
             get => base.Injector;
             set
             {
-                base.Injector = value;
                 try
                 {
                     extrusionStrategy.Injector = value;
@@ -115,8 +114,7 @@ namespace App.ViewModels.Cities.Buildings
         {
             _buildingStrategyVisible = EditorGUILayout.Foldout(_buildingStrategyVisible, "Building Generation");
 
-            if (!_buildingStrategyVisible)
-                return;
+            if (!_buildingStrategyVisible) return;
 
             EditorGUI.indentLevel++;
             buildingStrategy = (BuildingStrategy)EditorGUILayout.EnumPopup("Strategy", buildingStrategy);
@@ -145,8 +143,7 @@ namespace App.ViewModels.Cities.Buildings
         {
             _buildingAppearanceVisible = EditorGUILayout.Foldout(_buildingAppearanceVisible, "Building Appearance");
 
-            if (!_buildingAppearanceVisible)
-                return;
+            if (!_buildingAppearanceVisible) return;
 
             EditorGUI.indentLevel++;
 
@@ -164,12 +161,10 @@ namespace App.ViewModels.Cities.Buildings
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         public override IEnumerable<Building> Generate()
         {
-            var buildingStrategyFactory = new Factory(Injector);
-
             switch (buildingStrategy)
             {
                 case BuildingStrategy.Extrusion:
-                    return buildingStrategyFactory.CreateExtrusionStrategy().Generate();
+                    return extrusionStrategy.Generate();
                 default:
                     throw new ArgumentOutOfRangeException();
             }

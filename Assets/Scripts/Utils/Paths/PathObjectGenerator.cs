@@ -277,7 +277,9 @@ namespace Utils.Paths
             for (var i = 0; i < vertices.Count; i++)
             {
                 // Get the vertex at an approximately correct y-level height
-                var closeY = heightMap[(int) (0.5f + vertices[i].x), (int) (0.5f + vertices[i].z)];
+                var x = (int) Math.Min(0.5f + vertices[i].x, heightMap.GetLength(0) - 1);
+                var z = (int) Math.Min(0.5f + vertices[i].z, heightMap.GetLength(1) - 1);
+                var closeY = heightMap[x, z];
                 var vertex = new Vector3(vertices[i].x, closeY, vertices[i].z);
 
                 // Use ray casting to find the y-position of the xz-vertex on to the terrain mesh

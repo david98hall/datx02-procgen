@@ -91,7 +91,8 @@ namespace App.ViewModels.Cities.Roads
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
         public override RoadNetwork Generate() => 
-            new Factory().CreateAStarStrategy(Injector, heightBias, paths.Select(p => p.ToValueTuple())).Generate();
+            new Factory().CreateAStarStrategy(Injector, heightBias, 
+                paths.Select(p => (p.start, p.goal))).Generate();
 
         public override void OnEvent(AppEvent eventId, object eventData)
         {
@@ -112,9 +113,6 @@ namespace App.ViewModels.Cities.Roads
                 this.start = start;
                 this.goal = goal;
             }
-
-            public (Vector2Int Start, Vector2Int Goal) ToValueTuple() => (start, goal);
         }
-        
     }
 }
