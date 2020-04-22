@@ -30,7 +30,7 @@ namespace Cities.Buildings
         /// <param name="injector">The MeshFilter and Plot collection injector.</param>
         public Factory(Func<(MeshFilter, IEnumerable<Plot>)> injector)
         {
-            _injector = new Injector(injector);
+            _injector = new Injector<(MeshFilter, IEnumerable<Plot>)>(injector);
         }
 
         /// <summary>
@@ -40,26 +40,7 @@ namespace Cities.Buildings
         /// <param name="maxArea">The maximal area that a building can be generated in.</param>
         /// <returns>A collection of the generated buildings.</returns>
         public IGenerator<IEnumerable<Building>> CreateExtrusionStrategy(float minArea = 2, float maxArea = 100) =>
-            new ExtrusionStrategy(_injector, minArea, maxArea)
-            {
-                
-            };
-
-
-        /// <summary>
-        /// Converts a Func with the return type (MeshFilter, IEnumerable<Plot>) to an injector of the same type
-        /// </summary>
-        private class Injector : IInjector<(MeshFilter, IEnumerable<Plot>)>
-        {
-            private readonly Func<(MeshFilter, IEnumerable<Plot>)> _injector;
-
-            public Injector(Func<(MeshFilter, IEnumerable<Plot>)> injector)
-            {
-                _injector = injector;
-            }
-
-            public (MeshFilter, IEnumerable<Plot>) Get() => _injector();
-        }
+            new ExtrusionStrategy(_injector, minArea, maxArea);
     }
 
 

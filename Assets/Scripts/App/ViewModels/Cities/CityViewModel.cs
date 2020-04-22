@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cities;
 using Cities.Plots;
 using Cities.Roads;
+using Extensions;
 using Interfaces;
 using UnityEditor;
 using UnityEngine;
@@ -219,8 +221,9 @@ namespace App.ViewModels.Cities
             aStarStrategy.EventBus = EventBus;
             lSystemStrategy.EventBus = EventBus;
 
-            aStarStrategy.Injector = Injector;
-            lSystemStrategy.Injector = Injector;
+            var injector = new Injector<float[,]>(() => Injector.Get().sharedMesh.HeightMap());
+            aStarStrategy.Injector = injector;
+            lSystemStrategy.Injector = injector;
         }
         
         /// <summary>
@@ -384,21 +387,22 @@ namespace App.ViewModels.Cities
         {
             var roadNetwork = GenerateRoadNetwork();
             var plots = GeneratePlots(roadNetwork);
-            if (roadNetwork != null)
+            if (roadNetwork == null) return null;
+            
+            var enumerable = plots as Plot[] ?? plots.ToArray();
+            return new City
             {
-                return new City
-                {
-                    RoadNetwork = roadNetwork,
-                    Plots = plots,
-                    Buildings = GenerateBuildings((Injector.Get(), plots))
-                };
-            }
+                RoadNetwork = roadNetwork,
+                Plots = enumerable,
+                Buildings = GenerateBuildings((Injector.Get(), enumerable))
+            };
 
-            return null;
         }
 
         private IEnumerable<Plot> GeneratePlots(RoadNetwork roadNetwork)
         {
+            if (roadNetwork == null) return null;
+            
             var plotStrategyFactory = new Factory(() => roadNetwork);
 
             switch (plotStrategy)
@@ -430,7 +434,6 @@ namespace App.ViewModels.Cities
                     throw new ArgumentOutOfRangeException();
             }
         }
-
 
         private RoadNetwork GenerateRoadNetwork()
         {

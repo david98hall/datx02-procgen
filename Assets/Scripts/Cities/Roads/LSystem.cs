@@ -45,7 +45,7 @@ namespace Cities.Roads
         private float toRad = Mathf.Deg2Rad;
         private float pi = Mathf.PI;
 
-        public LSystem(char c, Vector2 origin, IInjector<MeshFilter> filterInjector)
+        public LSystem(char c, Vector2 origin, IInjector<float[,]> filterInjector)
         {
             _terrainFilterInjector = filterInjector;
             axiom = c;
@@ -59,7 +59,7 @@ namespace Cities.Roads
         
         #region Noise map
 
-        private readonly IInjector<MeshFilter> _terrainFilterInjector;
+        private readonly IInjector<float[,]> _terrainFilterInjector;
         
         /// <summary>
         /// Applies the injected noise map to the road network and returns the result.
@@ -70,7 +70,7 @@ namespace Cities.Roads
         private RoadNetwork ApplyNoiseMap()
         {
             var newNetwork = new RoadNetwork();
-            var noiseMap = _terrainFilterInjector.Get().sharedMesh.HeightMap();
+            var noiseMap = _terrainFilterInjector.Get();
             foreach (var (roadStart, roadEnd) in network.GetRoadParts())
             {
                 var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];
