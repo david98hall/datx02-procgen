@@ -4,10 +4,10 @@ using System.Linq;
 using App.ViewModels.Cities;
 using App.ViewModels.Terrain;
 using Cities;
-using Cities.Plots;
 using Extensions;
 using Interfaces;
 using Services;
+using Terrain;
 using UnityEngine;
 using Utils.Paths;
 
@@ -117,14 +117,14 @@ namespace App
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
             
-            _model.MeshFilter = _meshFilter;
-            (_model.MeshFilter.sharedMesh, _model.TerrainTexture) = terrainViewModel.Generate();
-            
-            var terrainMesh = _model.MeshFilter.sharedMesh;
-            _meshCollider.sharedMesh = terrainMesh;
-            _meshFilter.sharedMesh = terrainMesh;
+            (_meshFilter.sharedMesh, _model.TerrainTexture) = terrainViewModel.Generate();
+            _meshCollider.sharedMesh = _meshFilter.sharedMesh;
             _meshRenderer.sharedMaterial.mainTexture = _model.TerrainTexture;
 
+            // Update the model's terrain data
+            _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
+            _model.TerrainTransform = _meshFilter.transform;
+            
             _model.City = cityViewModel.Generate();
             if (_model.City == null) return;
             
@@ -182,28 +182,34 @@ namespace App
         /// <summary>
         /// The run-time model of all generated content.
         /// </summary>
-        private class Model : IInjector<MeshFilter>
+        private class Model : IInjector<TerrainInfo>
         {
             /// <summary>
             /// Generated terrain mesh.
             /// </summary>
-            internal MeshFilter MeshFilter;
+            internal float[,] TerrainHeightMap { get; set; }
+
+            internal Transform TerrainTransform { get; set; }
             
             /// <summary>
             /// Generated texture.
             /// </summary>
-            internal Texture TerrainTexture;
+            internal Texture TerrainTexture { get; set; }
             
             /// <summary>
             /// Generated City
             /// </summary>
-            internal City City;
+            internal City City { get; set; }
 
             /// <summary>
             /// Injector method used by the city view model.
             /// </summary>
             /// <returns>The height map of the terrain mesh.</returns>
-            public MeshFilter Get() => MeshFilter;
+            public TerrainInfo Get() => new TerrainInfo
+            {
+                HeightMap = TerrainHeightMap,
+                Offset = TerrainTransform.localPosition
+            };
         }
     }
 }

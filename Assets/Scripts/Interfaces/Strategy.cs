@@ -13,6 +13,11 @@ namespace Interfaces
         internal IInjector<TI> Injector { get; set; }
 
         /// <summary>
+        /// The value, gotten from the Injector.
+        /// </summary>
+        internal TI InjectedValue => Injector.Get();
+        
+        /// <summary>
         /// Initializes the strategy by setting the input injector.
         /// </summary>
         /// <param name="injector">The input injector</param>

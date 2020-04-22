@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Extensions;
+﻿using System.Collections.Generic;
 using Interfaces;
+using Terrain;
 using UnityEngine;
 
 namespace Cities.Roads
@@ -36,7 +35,7 @@ namespace Cities.Roads
         /// <summary>
         /// Creates a L-system strategy for generating a road network.
         /// </summary>
-        /// <param name="terrainFilterInjector">The terrain mesh filter injector.</param>
+        /// <param name="terrainInjector">The terrain mesh filter injector.</param>
         /// <param name="origin">The start point of the road network generation.</param>
         /// <param name="rewriteCount">
         /// The number of times the L-system should be rewritten,
@@ -44,9 +43,11 @@ namespace Cities.Roads
         /// </param>
         /// <returns>An L-system generator for road networks.</returns>
         public IGenerator<RoadNetwork> CreateLSystemStrategy(
-            IInjector<MeshFilter> terrainFilterInjector, Vector2 origin, int rewriteCount = 6)
+            IInjector<TerrainInfo> terrainInjector, 
+            Vector2 origin, 
+            int rewriteCount = 6)
         {
-            return new LSystemStrategy(terrainFilterInjector, rewriteCount)
+            return new LSystemStrategy(terrainInjector, rewriteCount)
             {
                 Origin = origin
             };

@@ -6,6 +6,7 @@ using System.Linq;
 using Cities.Plots;
 using Utils.Geometry;
 using Interfaces;
+using Terrain;
 
 /// <summary>
 /// Generator for buildings. 
@@ -13,7 +14,7 @@ using Interfaces;
 /// Some plots are suitable for multiple buildings; these should be split into street-bordering 
 /// buildings and a central green area. This can be done by a Lot generator.
 /// </summary>
-public class ExtrusionStrategy : Strategy<(MeshFilter, IEnumerable<Plot>), IEnumerable<Building>>
+public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
 {
     #region Fields
 
@@ -55,12 +56,16 @@ public class ExtrusionStrategy : Strategy<(MeshFilter, IEnumerable<Plot>), IEnum
     /// <param name="injector">The injector for height map and plots.</param>
     /// <param name="minArea">The minimal area of lot.</param>
     /// <param name="maxArea">The maximal area of lot.</param>
-    public ExtrusionStrategy(IInjector<(MeshFilter, IEnumerable<Plot>)> injector, float minArea, float maxArea) : base(injector)
+    public ExtrusionStrategy(
+        IInjector<(TerrainInfo TerrainInfo, IEnumerable<Plot> Plots)> injector, 
+        float minArea, 
+        float maxArea) 
+        : base(injector)
     {
         this.minArea = minArea;
         this.maxArea = maxArea;
 
-        heightMap = injector.Get().Item1.sharedMesh.HeightMap();
+        heightMap = injector.Get().TerrainInfo.HeightMap;
         plots = injector.Get().Item2;
 
         buildings = new List<Building>();

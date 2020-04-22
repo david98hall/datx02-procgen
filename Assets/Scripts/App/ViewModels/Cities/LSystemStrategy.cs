@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cities.Roads;
-using Interfaces;
+using Terrain;
 using UnityEditor;
 using UnityEngine;
 using Utils;
@@ -11,9 +11,11 @@ namespace App.ViewModels.Cities
 {
     /// <summary>
     /// View-model for displaying and generating road networks with the L-system strategy.
+    /// It is injected with a tuple of terrain data: its offset in the scene, and its height map.
+    /// This data is used to generate road networks with an L-system algorithm.
     /// </summary>
     [Serializable]
-    public class LSystemStrategy : ViewModelStrategy<MeshFilter, RoadNetwork>
+    public class LSystemStrategy : ViewModelStrategy<TerrainInfo, RoadNetwork>
     {
 
         [Serializable]

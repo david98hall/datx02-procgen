@@ -1,16 +1,16 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System;
-using UnityEngine;
-using UnityEditor;
 using Cities.Plots;
+using Terrain;
+using UnityEditor;
+using UnityEngine;
 using Factory = Cities.Buildings.Factory;
 
 namespace App.ViewModels.Cities
 {
 
     [Serializable]
-    public class ExtrusionStrategy : ViewModelStrategy<(MeshFilter, IEnumerable<Plot>), IEnumerable<Building>>
+    public class ExtrusionStrategy : ViewModelStrategy<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
     {
 
         #region Editor Fields

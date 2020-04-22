@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System;
-using UnityEngine;
 using Cities.Plots;
 using Interfaces;
+using Terrain;
 
 namespace Cities.Buildings
 {
@@ -13,24 +12,24 @@ namespace Cities.Buildings
     public class Factory
     {
 
-        private readonly IInjector<(MeshFilter, IEnumerable<Plot>)> _injector;
+        private readonly IInjector<(TerrainInfo, IEnumerable<Plot>)> _injector;
 
         /// <summary>
         /// Initializes this factory with a MeshFilter and plot collection injector.
         /// </summary>
         /// <param name="injector">The "Noise map" and Plot collection injector.</param>
-        public Factory(IInjector<(MeshFilter, IEnumerable<Plot>)> injector)
+        public Factory(IInjector<(TerrainInfo, IEnumerable<Plot>)> injector)
         {
             _injector = injector;
         }
 
         /// <summary>
-        /// Initializes this factory with a MeshFilter and Plot collection injector.
+        /// Initializes this factory with a TerrainInfo and Plot collection injector.
         /// </summary>
         /// <param name="injector">The MeshFilter and Plot collection injector.</param>
-        public Factory(Func<(MeshFilter, IEnumerable<Plot>)> injector)
+        public Factory(Func<(TerrainInfo, IEnumerable<Plot>)> injector)
         {
-            _injector = new Injector<(MeshFilter, IEnumerable<Plot>)>(injector);
+            _injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(injector);
         }
 
         /// <summary>

@@ -4,12 +4,12 @@ using System.Linq;
 using Cities;
 using Cities.Plots;
 using Cities.Roads;
-using Extensions;
 using Interfaces;
+using Terrain;
 using UnityEditor;
 using UnityEngine;
-using Factory = Cities.Plots.Factory;
 using BuildingFactory = Cities.Buildings.Factory;
+using Factory = Cities.Plots.Factory;
 
 namespace App.ViewModels.Cities
 {
@@ -17,7 +17,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<MeshFilter, City>, IInitializable
+    public class CityViewModel : ViewModelStrategy<TerrainInfo, City>, IInitializable
     {
         /// <summary>
         /// Visibility of the editor.
@@ -221,7 +221,7 @@ namespace App.ViewModels.Cities
             aStarStrategy.EventBus = EventBus;
             lSystemStrategy.EventBus = EventBus;
             
-            aStarStrategy.Injector = new Injector<float[,]>(() => Injector.Get().sharedMesh.HeightMap());
+            aStarStrategy.Injector = new Injector<float[,]>(() => InjectedValue.HeightMap);
             lSystemStrategy.Injector = Injector;
         }
         
@@ -393,7 +393,7 @@ namespace App.ViewModels.Cities
             {
                 RoadNetwork = roadNetwork,
                 Plots = enumerable,
-                Buildings = GenerateBuildings((Injector.Get(), enumerable))
+                Buildings = GenerateBuildings((InjectedValue, enumerable))
             };
 
         }
@@ -434,7 +434,7 @@ namespace App.ViewModels.Cities
         /// <returns>An enumerable object of buildings.</returns>
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
 
-        private IEnumerable<Building> GenerateBuildings((MeshFilter, IEnumerable<Plot>) dependencies)
+        private IEnumerable<Building> GenerateBuildings((TerrainInfo, IEnumerable<Plot>) dependencies)
         {
             var buildingStrategyFactory = new BuildingFactory(() => dependencies);
 

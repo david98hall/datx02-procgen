@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
-using System;
-using Extensions;
 using Interfaces;
+using Terrain;
 using UnityEngine;
-
+using Random = System.Random;
 
 namespace Cities.Roads
 {
@@ -38,9 +38,6 @@ namespace Cities.Roads
 
         public IDictionary<char, string> ruleset = new Dictionary<char, string>();
         StringBuilder tree;
-        public char axiom;
-        public MeshFilter meshFilter;
-        public Mesh mesh;
         private float minX;
         private float minZ;
         private float maxX;
@@ -51,18 +48,17 @@ namespace Cities.Roads
         private float toRad = Mathf.Deg2Rad;
         private float pi = Mathf.PI;
 
+        private readonly IInjector<TerrainInfo> _terrainInjector;
+        private TerrainInfo TerrainInfo => _terrainInjector.Get();
 
-        public LSystem(char c, Vector2 origin, IInjector<MeshFilter> filterInjector)
+        public LSystem(char c, Vector2 origin, IInjector<TerrainInfo> terrainInjector)
         {
-            this.filterInjector = filterInjector;
-            meshFilter = filterInjector.Get();
-            mesh = meshFilter.sharedMesh;
-            var localPosition = meshFilter.transform.localPosition;
-            minX = mesh.bounds.min.x + localPosition.x;
-            minZ = mesh.bounds.min.z + localPosition.z;
-            maxX = mesh.bounds.max.x + localPosition.x;
-            maxZ = mesh.bounds.max.z + localPosition.z;
-            axiom = c;
+            _terrainInjector = terrainInjector;
+            var heightMap = TerrainInfo.HeightMap;
+            minX = TerrainInfo.Offset.x;
+            minZ = TerrainInfo.Offset.z;
+            maxX = heightMap.GetLength(0) + TerrainInfo.Offset.x;
+            maxZ = heightMap.GetLength(1) + TerrainInfo.Offset.z;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
             ruleset.Add('F',"F+FB-]");
             ruleset.Add('S', "GB-FB[");
@@ -73,8 +69,6 @@ namespace Cities.Roads
         
         #region Noise map
 
-        private readonly IInjector<MeshFilter> filterInjector;
-        
         /// <summary>
         /// Applies the injected noise map to the road network and returns the result.
         /// </summary>
@@ -84,7 +78,7 @@ namespace Cities.Roads
         private RoadNetwork ApplyNoiseMap()
         {
             var newNetwork = new RoadNetwork();
-            var noiseMap = mesh.HeightMap();
+            var noiseMap = _terrainInjector.Get().HeightMap;
             foreach (var (roadStart, roadEnd) in network.GetRoadParts())
             {
                 var roadStartY = noiseMap[(int) roadStart.x, (int) roadStart.z];
@@ -109,7 +103,7 @@ namespace Cities.Roads
         /// </summary>
         public void Rewrite()
         {
-            System.Random rdm = new System.Random();
+            Random rdm = new Random();
             StringBuilder newTree = new StringBuilder();
             float range = 4.0f;
             foreach (char c in tree.ToString())

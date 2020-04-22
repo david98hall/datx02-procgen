@@ -1,8 +1,14 @@
 ﻿using Interfaces;
+using Terrain;
 using UnityEngine;
 
 namespace Cities.Roads{
-    internal class LSystemStrategy : Strategy<MeshFilter, RoadNetwork>
+    
+    /// <summary>
+    /// A strategy which is injected with a tuple of terrain data: its offset in the scene, and its height map.
+    /// Based on this data, a road network can be generated with an L-system algorithm.
+    /// </summary>
+    internal class LSystemStrategy : Strategy<TerrainInfo, RoadNetwork>
     {
 
         /// <summary>
@@ -16,8 +22,7 @@ namespace Cities.Roads{
         /// </summary>
         internal int RewritesCount { get; set; }
 
-        internal LSystemStrategy(IInjector<MeshFilter> terrainFilterInjector, int rewritesCount = 6) 
-            : base(terrainFilterInjector)
+        internal LSystemStrategy(IInjector<TerrainInfo> terrainInjector, int rewritesCount = 6) : base(terrainInjector)
         {
             RewritesCount = rewritesCount;
         }
