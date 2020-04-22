@@ -220,10 +220,9 @@ namespace App.ViewModels.Cities
         {
             aStarStrategy.EventBus = EventBus;
             lSystemStrategy.EventBus = EventBus;
-
-            var injector = new Injector<float[,]>(() => Injector.Get().sharedMesh.HeightMap());
-            aStarStrategy.Injector = injector;
-            lSystemStrategy.Injector = injector;
+            
+            aStarStrategy.Injector = new Injector<float[,]>(() => Injector.Get().sharedMesh.HeightMap());
+            lSystemStrategy.Injector = Injector;
         }
         
         /// <summary>

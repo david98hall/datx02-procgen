@@ -91,7 +91,7 @@ namespace App.ViewModels.Cities
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
         public override RoadNetwork Generate() => 
-            new Factory(Injector).CreateAStarStrategy(heightBias, paths.Select(p => p.ToValueTuple())).Generate();
+            new Factory().CreateAStarStrategy(Injector, heightBias, paths.Select(p => p.ToValueTuple())).Generate();
 
         public override void OnEvent(AppEvent eventId, object eventData)
         {
