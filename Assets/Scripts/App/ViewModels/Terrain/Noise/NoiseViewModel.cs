@@ -3,7 +3,7 @@ using Services;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModels.Noise
+namespace App.ViewModels.Terrain.Noise
 {
     /// <summary>
     /// The view model for noise generation.

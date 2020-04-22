@@ -1,6 +1,6 @@
 using System;
-using App.ViewModels.Noise;
-using App.ViewModels.Noise.Textures;
+using App.ViewModels.Terrain.Noise;
+using App.ViewModels.Terrain.Textures;
 using Interfaces;
 using Services;
 using Terrain.Noise;

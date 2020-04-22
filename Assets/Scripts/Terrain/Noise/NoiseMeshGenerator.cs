@@ -122,7 +122,5 @@ namespace Terrain.Noise
             mesh.RecalculateNormals();
             return mesh;
         }
-
-        public Mesh Get() => Generate();
     }
 }

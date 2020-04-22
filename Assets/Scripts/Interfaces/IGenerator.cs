@@ -4,7 +4,7 @@
     /// Can generate things.
     /// </summary>
     /// <typeparam name="T">The type of what can be generated.</typeparam>
-    public interface IGenerator<out T> : IInjector<T>
+    public interface IGenerator<out T>
     {
         /// <summary>
         /// Generates things.
@@ -12,6 +12,6 @@
         /// <returns>What has been generated.</returns>
         T Generate();
         
-        T Get();
+        //T Get();
     }
 }

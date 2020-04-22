@@ -15,6 +15,7 @@ namespace App.ViewModels.Cities.Roads
     public class RoadViewModel : ViewModelStrategy<TerrainInfo, RoadNetwork>
     {
         #region Road Generation Fields
+        
         // Visibility of the road network strategy editor.
         private bool _roadNetworkStrategyVisible;
 

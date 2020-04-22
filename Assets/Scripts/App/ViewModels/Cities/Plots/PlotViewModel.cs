@@ -82,7 +82,7 @@ namespace App.ViewModels.Cities.Plots
 
         public override IEnumerable<Plot> Generate()
         {
-            if (InjectedValue == null) return null;
+            if (Injector.Get() == null) return null;
             
             var plotStrategyFactory = new Factory(Injector);
 

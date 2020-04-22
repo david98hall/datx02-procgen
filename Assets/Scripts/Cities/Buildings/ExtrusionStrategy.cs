@@ -36,7 +36,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     /// <summary>
     /// The injected height map for the terrain heights.
     /// </summary>
-    private float[,] heightMap;
+    //private float[,] heightMap;
 
     /// <summary>
     /// Minimal lot area for a building to be placed on it.
@@ -65,8 +65,8 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
         this.minArea = minArea;
         this.maxArea = maxArea;
 
-        heightMap = injector.Get().TerrainInfo.HeightMap;
-        plots = injector.Get().Item2;
+        //heightMap = injector.Get().TerrainInfo.HeightMap;
+        //plots = injector.Get().Item2;
 
         buildings = new List<Building>();
     }
@@ -78,8 +78,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     /// <returns>The set of all generated buildings.</returns>
     public override IEnumerable<Building> Generate()
     {
-
-        foreach (Plot p in plots)
+        foreach (var p in Injector.Get().Item2)
         {
             //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
             //ICollection<Lot> lots = lg.Generate();
@@ -150,6 +149,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
         float max = float.MinValue;
         float min = MinimumHeightInBounds(poly);
 
+        var heightMap = Injector.Get().Item1.HeightMap;
         for (int i = 0; i < poly.Count; i++)
         {
             int x = Mathf.FloorToInt(poly[i].x);
@@ -185,6 +185,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
 
         float min = float.MaxValue;
 
+        var heightMap = Injector.Get().Item1.HeightMap;
         for (int y = MinY; y <= MaxY; y++)
         {
             for (int x = MinX; x <= MaxX; x++)

@@ -92,9 +92,8 @@ namespace App.ViewModels.Cities
                 try
                 {   
                     roadViewModel.Injector = value;
-                    plotViewModel.Injector = roadViewModel;
                     buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() =>
-                        (InjectedValue, plotViewModel.Generate()));
+                        (Injector.Get(), plotViewModel.Generate()));
                 }
                 catch (NullReferenceException)
                 {
@@ -148,7 +147,6 @@ namespace App.ViewModels.Cities
         public override City Generate()
         {
             // Road network
-            roadViewModel.Injector = Injector;
             var roadNetwork = roadViewModel.Generate();
             if (roadNetwork == null) return null;
             
@@ -159,7 +157,7 @@ namespace App.ViewModels.Cities
             
             // Buildings
             buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() => 
-                (InjectedValue, enumerable));
+                (Injector.Get(), enumerable));
             
             return new City
             {

@@ -99,7 +99,14 @@ namespace App.ViewModels.Cities.Buildings
             set
             {
                 base.EventBus = value;
-                if (extrusionStrategy.EventBus != null) extrusionStrategy.EventBus = value;
+                try
+                {
+                    extrusionStrategy.EventBus = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
             }
         }
         
@@ -154,12 +161,10 @@ namespace App.ViewModels.Cities.Buildings
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         public override IEnumerable<Building> Generate()
         {
-            var buildingStrategyFactory = new Factory(Injector);
-
             switch (buildingStrategy)
             {
                 case BuildingStrategy.Extrusion:
-                    return buildingStrategyFactory.CreateExtrusionStrategy().Generate();
+                    return extrusionStrategy.Generate();
                 default:
                     throw new ArgumentOutOfRangeException();
             }

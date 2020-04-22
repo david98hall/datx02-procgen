@@ -10,10 +10,10 @@ namespace App.ViewModels
     /// <typeparam name="TI">The input type of the generation.</typeparam>
     /// <typeparam name="TO">The output type of the generation.</typeparam>
     [Serializable]
-    public abstract class ViewModelStrategy<TI, TO> 
-        : Strategy<TI, TO>, IDisplayable, ISubscriber<AppEvent>
+    public abstract class ViewModelStrategy<TI, TO> : IGenerator<TO>, IDisplayable, ISubscriber<AppEvent>
     {
-
+        internal virtual IInjector<TI> Injector { get; set; }
+        
         /// <summary>
         /// The event bus that this view model can create events on and
         /// where it can listen for events from other view models.
@@ -33,28 +33,20 @@ namespace App.ViewModels
         }
         
         private EventBus<AppEvent> _eventBus;
-        
-        /// <summary>
-        /// Required constructor for initializing the underlying injector.
-        /// </summary>
-        protected ViewModelStrategy() : base(null)
-        {
-        }
 
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
-        public virtual void Display()
-        {
-        }
+        public abstract void Display();
 
         /// <summary>
         /// Generates an instance of the output type based
         /// on the values in the UI and on the input.
         /// </summary>
         /// <returns>The output based on the UI</returns>
-        public abstract override TO Generate();
+        public abstract TO Generate();
 
+        
         public virtual void OnEvent(AppEvent eventId, object eventData)
         {
         }
