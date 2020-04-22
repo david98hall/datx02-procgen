@@ -86,6 +86,7 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="Cities.City.html">City</a>&gt;</div>
+    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="Cities.City.html">City</a>&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
     <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
@@ -97,6 +98,9 @@
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;TerrainInfo, City&gt;._eventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;TerrainInfo, City&gt;.Initialize()</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;TerrainInfo, City&gt;.Display()</a>
@@ -112,6 +116,9 @@
     </div>
     <div>
       <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;TerrainInfo, City&gt;.InjectedValue</a>
+    </div>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Get">Strategy&lt;TerrainInfo, City&gt;.Get()</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -140,23 +147,24 @@
   <h5 id="App_ViewModels_Cities_CityViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class CityViewModel : ViewModelStrategy&lt;TerrainInfo, City&gt;, IGenerator&lt;City&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;, IInitializable</code></pre>
+public class CityViewModel : ViewModelStrategy&lt;TerrainInfo, City&gt;, IGenerator&lt;City&gt;, IInjector&lt;City&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;, IInitializable</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__aStarVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._aStarVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__buildingViewModel.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._buildingViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L26">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L37">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel__aStarVisible" data-uid="App.ViewModels.Cities.CityViewModel._aStarVisible">_aStarVisible</h4>
+  <h4 id="App_ViewModels_Cities_CityViewModel__buildingViewModel" data-uid="App.ViewModels.Cities.CityViewModel._buildingViewModel">_buildingViewModel</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _aStarVisible</code></pre>
+    <pre><code class="lang-csharp hljs">[SerializeField]
+BuildingViewModel _buildingViewModel</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -168,173 +176,25 @@ public class CityViewModel : ViewModelStrategy&lt;TerrainInfo, City&gt;, IGenera
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="App.ViewModels.Cities.Buildings.BuildingViewModel.html">BuildingViewModel</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__buildingAppearanceVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._buildingAppearanceVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L142">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel__buildingAppearanceVisible" data-uid="App.ViewModels.Cities.CityViewModel._buildingAppearanceVisible">_buildingAppearanceVisible</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _buildingAppearanceVisible</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__buildingStrategyVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._buildingStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L103">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel__buildingStrategyVisible" data-uid="App.ViewModels.Cities.CityViewModel._buildingStrategyVisible">_buildingStrategyVisible</h4>
-  <div class="markdown level1 summary"><p>Visibility of the building strategy editor.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _buildingStrategyVisible</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__lSystemVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._lSystemVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L27">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel__lSystemVisible" data-uid="App.ViewModels.Cities.CityViewModel._lSystemVisible">_lSystemVisible</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _lSystemVisible</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__plotStrategyVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._plotStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L57">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel__plotStrategyVisible" data-uid="App.ViewModels.Cities.CityViewModel._plotStrategyVisible">_plotStrategyVisible</h4>
-  <div class="markdown level1 summary"><p>Visibility of the plot strategy editor.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _plotStrategyVisible</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__roadAppearanceVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._roadAppearanceVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L163">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel__roadAppearanceVisible" data-uid="App.ViewModels.Cities.CityViewModel._roadAppearanceVisible">_roadAppearanceVisible</h4>
-  <div class="markdown level1 summary"><p>Visibility of the plot strategy editor.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _roadAppearanceVisible</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__roadNetworkStrategyVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._roadNetworkStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__plotViewModel.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._plotViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L34">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel__roadNetworkStrategyVisible" data-uid="App.ViewModels.Cities.CityViewModel._roadNetworkStrategyVisible">_roadNetworkStrategyVisible</h4>
-  <div class="markdown level1 summary"><p>Visibility of the road network strategy editor.</p>
-</div>
+  <h4 id="App_ViewModels_Cities_CityViewModel__plotViewModel" data-uid="App.ViewModels.Cities.CityViewModel._plotViewModel">_plotViewModel</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _roadNetworkStrategyVisible</code></pre>
+    <pre><code class="lang-csharp hljs">[SerializeField]
+PlotViewModel _plotViewModel</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -346,7 +206,37 @@ public class CityViewModel : ViewModelStrategy&lt;TerrainInfo, City&gt;, IGenera
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="App.ViewModels.Cities.Plots.PlotViewModel.html">PlotViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__roadViewModel.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._roadViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L31">View Source</a>
+  </span>
+  <h4 id="App_ViewModels_Cities_CityViewModel__roadViewModel" data-uid="App.ViewModels.Cities.CityViewModel._roadViewModel">_roadViewModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+RoadViewModel _roadViewModel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html">RoadViewModel</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -356,7 +246,7 @@ public class CityViewModel : ViewModelStrategy&lt;TerrainInfo, City&gt;, IGenera
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel__visible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel._visible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L25">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L28">View Source</a>
   </span>
   <h4 id="App_ViewModels_Cities_CityViewModel__visible" data-uid="App.ViewModels.Cities.CityViewModel._visible">_visible</h4>
   <div class="markdown level1 summary"><p>Visibility of the editor.</p>
@@ -381,441 +271,6 @@ public class CityViewModel : ViewModelStrategy&lt;TerrainInfo, City&gt;, IGenera
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_aStarStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.aStarStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L41">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_aStarStrategy" data-uid="App.ViewModels.Cities.CityViewModel.aStarStrategy">aStarStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Cities.AStarStrategy.html">AStarStrategy</a> view model.
-Is required to be explicitly defined to be serializable.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-AStarStrategy aStarStrategy</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="App.ViewModels.Cities.AStarStrategy.html">AStarStrategy</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_buildingMaterial.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.buildingMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L148">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_buildingMaterial" data-uid="App.ViewModels.Cities.CityViewModel.buildingMaterial">buildingMaterial</h4>
-  <div class="markdown level1 summary"><p>Building material.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-Material buildingMaterial</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEngine.Material</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_buildingStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.buildingStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L118">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_buildingStrategy" data-uid="App.ViewModels.Cities.CityViewModel.buildingStrategy">buildingStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized building strategy that is currently selected.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-CityViewModel.BuildingStrategy buildingStrategy</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="App.ViewModels.Cities.CityViewModel.BuildingStrategy.html">CityViewModel.BuildingStrategy</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_displayBuildings.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.displayBuildings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L131">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_displayBuildings" data-uid="App.ViewModels.Cities.CityViewModel.displayBuildings">displayBuildings</h4>
-  <div class="markdown level1 summary"><p>Boolean to set building visibility.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-bool displayBuildings</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_displayPlots.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.displayPlots%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L89">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_displayPlots" data-uid="App.ViewModels.Cities.CityViewModel.displayPlots">displayPlots</h4>
-  <div class="markdown level1 summary"><p>Boolean if plots are visible.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-bool displayPlots</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_extrusionStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.extrusionStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L125">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_extrusionStrategy" data-uid="App.ViewModels.Cities.CityViewModel.extrusionStrategy">extrusionStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Cities.ExtrusionStrategy.html">ExtrusionStrategy</a> view model.
-Is required to be explicitly defined to be serializable.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-ExtrusionStrategy extrusionStrategy</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="App.ViewModels.Cities.ExtrusionStrategy.html">ExtrusionStrategy</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_lSystemStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.lSystemStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L48">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_lSystemStrategy" data-uid="App.ViewModels.Cities.CityViewModel.lSystemStrategy">lSystemStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Cities.LSystemStrategy.html">LSystemStrategy</a> view model.
-Is required to be explicitly defined to be serializable.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-LSystemStrategy lSystemStrategy</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="App.ViewModels.Cities.LSystemStrategy.html">LSystemStrategy</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_plotMaterial.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.plotMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L78">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_plotMaterial" data-uid="App.ViewModels.Cities.CityViewModel.plotMaterial">plotMaterial</h4>
-  <div class="markdown level1 summary"><p>Material used for the generated plots.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-Material plotMaterial</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEngine.Material</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_plotStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.plotStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L72">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_plotStrategy" data-uid="App.ViewModels.Cities.CityViewModel.plotStrategy">plotStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized road network strategy that is currently selected.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-CityViewModel.PlotStrategy plotStrategy</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="App.ViewModels.Cities.CityViewModel.PlotStrategy.html">CityViewModel.PlotStrategy</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_roadCurvature.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.roadCurvature%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L180">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_roadCurvature" data-uid="App.ViewModels.Cities.CityViewModel.roadCurvature">roadCurvature</h4>
-  <div class="markdown level1 summary"><p>Toad curvature of the generated road network.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-float roadCurvature</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Single</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_roadMaterial.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.roadMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L199">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_roadMaterial" data-uid="App.ViewModels.Cities.CityViewModel.roadMaterial">roadMaterial</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-Material roadMaterial</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEngine.Material</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_roadSmoothingIterations.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.roadSmoothingIterations%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L191">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_roadSmoothingIterations" data-uid="App.ViewModels.Cities.CityViewModel.roadSmoothingIterations">roadSmoothingIterations</h4>
-  <div class="markdown level1 summary"><p>Road smoothing iterations of the generated road network.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-int roadSmoothingIterations</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_roadTerrainOffsetY.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.roadTerrainOffsetY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L212">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_roadTerrainOffsetY" data-uid="App.ViewModels.Cities.CityViewModel.roadTerrainOffsetY">roadTerrainOffsetY</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-float roadTerrainOffsetY</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Single</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_roadWidth.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.roadWidth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L169">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_CityViewModel_roadWidth" data-uid="App.ViewModels.Cities.CityViewModel.roadWidth">roadWidth</h4>
-  <div class="markdown level1 summary"><p>Toad width of the generated road network.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-float roadWidth</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Single</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
@@ -823,11 +278,11 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_BuildingMaterial.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.BuildingMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L154">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L83">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_BuildingMaterial_" data-uid="App.ViewModels.Cities.CityViewModel.BuildingMaterial*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_BuildingMaterial" data-uid="App.ViewModels.Cities.CityViewModel.BuildingMaterial">BuildingMaterial</h4>
-  <div class="markdown level1 summary"><p>Building material getter.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Buildings.BuildingViewModel.html#App_ViewModels_Cities_Buildings_BuildingViewModel_BuildingMaterial">BuildingMaterial</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -854,11 +309,11 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_DisplayBuildings.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.DisplayBuildings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L136">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L78">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_DisplayBuildings_" data-uid="App.ViewModels.Cities.CityViewModel.DisplayBuildings*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_DisplayBuildings" data-uid="App.ViewModels.Cities.CityViewModel.DisplayBuildings">DisplayBuildings</h4>
-  <div class="markdown level1 summary"><p>Getter for building visibility.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Buildings.BuildingViewModel.html#App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildings">DisplayBuildings</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -885,11 +340,11 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_DisplayPlots.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.DisplayPlots%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L94">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L68">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_DisplayPlots_" data-uid="App.ViewModels.Cities.CityViewModel.DisplayPlots*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_DisplayPlots" data-uid="App.ViewModels.Cities.CityViewModel.DisplayPlots">DisplayPlots</h4>
-  <div class="markdown level1 summary"><p>Getter for the boolean if plots are visible.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Plots.PlotViewModel.html#App_ViewModels_Cities_Plots_PlotViewModel_DisplayPlots">DisplayPlots</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -913,14 +368,80 @@ float roadWidth</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_EventBus.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.EventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L106">View Source</a>
+  </span>
+  <a id="App_ViewModels_Cities_CityViewModel_EventBus_" data-uid="App.ViewModels.Cities.CityViewModel.EventBus*"></a>
+  <h4 id="App_ViewModels_Cities_CityViewModel_EventBus" data-uid="App.ViewModels.Cities.CityViewModel.EventBus">EventBus</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override EventBus&lt;AppEvent&gt; EventBus { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Services.EventBus-1.html">EventBus</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.City&gt;.EventBus</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_Injector.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.Injector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L86">View Source</a>
+  </span>
+  <a id="App_ViewModels_Cities_CityViewModel_Injector_" data-uid="App.ViewModels.Cities.CityViewModel.Injector*"></a>
+  <h4 id="App_ViewModels_Cities_CityViewModel_Injector" data-uid="App.ViewModels.Cities.CityViewModel.Injector">Injector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">override IInjector&lt;TerrainInfo&gt; Injector
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Interfaces.Strategy&lt;Terrain.TerrainInfo, Cities.City&gt;.Injector</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_PlotMaterial.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.PlotMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L83">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L73">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_PlotMaterial_" data-uid="App.ViewModels.Cities.CityViewModel.PlotMaterial*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_PlotMaterial" data-uid="App.ViewModels.Cities.CityViewModel.PlotMaterial">PlotMaterial</h4>
-  <div class="markdown level1 summary"><p>Getter for the material used for the generated plots.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Plots.PlotViewModel.html#App_ViewModels_Cities_Plots_PlotViewModel_PlotMaterial">PlotMaterial</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -947,11 +468,11 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_RoadCurvature.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.RoadCurvature%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L185">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L48">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_RoadCurvature_" data-uid="App.ViewModels.Cities.CityViewModel.RoadCurvature*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_RoadCurvature" data-uid="App.ViewModels.Cities.CityViewModel.RoadCurvature">RoadCurvature</h4>
-  <div class="markdown level1 summary"><p>Getter for the road curvature of the generated road network.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadCurvature">RoadCurvature</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -978,11 +499,11 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_RoadMaterial.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.RoadMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L204">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L63">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_RoadMaterial_" data-uid="App.ViewModels.Cities.CityViewModel.RoadMaterial*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_RoadMaterial" data-uid="App.ViewModels.Cities.CityViewModel.RoadMaterial">RoadMaterial</h4>
-  <div class="markdown level1 summary"><p>Road material of the generated road network.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadMaterial">RoadMaterial</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1009,11 +530,11 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_RoadSmoothingIterations.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L196">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L53">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_RoadSmoothingIterations_" data-uid="App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_RoadSmoothingIterations" data-uid="App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations">RoadSmoothingIterations</h4>
-  <div class="markdown level1 summary"><p>Getter for the road smoothing iterations of the generated road network.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadSmoothingIterations">RoadSmoothingIterations</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1040,11 +561,11 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_RoadTerrainOffsetY.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L209">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L58">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_RoadTerrainOffsetY_" data-uid="App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_RoadTerrainOffsetY" data-uid="App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY">RoadTerrainOffsetY</h4>
-  <div class="markdown level1 summary"><p>Getter for the road material of the generated road network.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadTerrainOffsetY">RoadTerrainOffsetY</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1071,11 +592,11 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_RoadWidth.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.RoadWidth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L174">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L43">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_RoadWidth_" data-uid="App.ViewModels.Cities.CityViewModel.RoadWidth*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_RoadWidth" data-uid="App.ViewModels.Cities.CityViewModel.RoadWidth">RoadWidth</h4>
-  <div class="markdown level1 summary"><p>Getter for the road width of the generated road network.</p>
+  <div class="markdown level1 summary"><p><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadWidth">RoadWidth</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1104,7 +625,7 @@ float roadWidth</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L231">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L138">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_Display_" data-uid="App.ViewModels.Cities.CityViewModel.Display*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_Display" data-uid="App.ViewModels.Cities.CityViewModel.Display">Display()</h4>
@@ -1119,138 +640,10 @@ float roadWidth</code></pre>
   <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.City&gt;.Display()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_DisplayBuildingAppearance.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L363">View Source</a>
-  </span>
-  <a id="App_ViewModels_Cities_CityViewModel_DisplayBuildingAppearance_" data-uid="App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance*"></a>
-  <h4 id="App_ViewModels_Cities_CityViewModel_DisplayBuildingAppearance" data-uid="App.ViewModels.Cities.CityViewModel.DisplayBuildingAppearance">DisplayBuildingAppearance()</h4>
-  <div class="markdown level1 summary"><p>Displays the editor of the building appearance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DisplayBuildingAppearance()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_DisplayBuildingStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L333">View Source</a>
-  </span>
-  <a id="App_ViewModels_Cities_CityViewModel_DisplayBuildingStrategy_" data-uid="App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy*"></a>
-  <h4 id="App_ViewModels_Cities_CityViewModel_DisplayBuildingStrategy" data-uid="App.ViewModels.Cities.CityViewModel.DisplayBuildingStrategy">DisplayBuildingStrategy()</h4>
-  <div class="markdown level1 summary"><p>Displays the editor of buildings and the view model of the currently selected building strategy.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DisplayBuildingStrategy()</code></pre>
-  </div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>If no strategy is selected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_DisplayPlotStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L313">View Source</a>
-  </span>
-  <a id="App_ViewModels_Cities_CityViewModel_DisplayPlotStrategy_" data-uid="App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy*"></a>
-  <h4 id="App_ViewModels_Cities_CityViewModel_DisplayPlotStrategy" data-uid="App.ViewModels.Cities.CityViewModel.DisplayPlotStrategy">DisplayPlotStrategy()</h4>
-  <div class="markdown level1 summary"><p>Displays the editor of plots and the view model of the currently selected plot strategy.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DisplayPlotStrategy()</code></pre>
-  </div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>If no strategy is selected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_DisplayRoadAppearance.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L281">View Source</a>
-  </span>
-  <a id="App_ViewModels_Cities_CityViewModel_DisplayRoadAppearance_" data-uid="App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance*"></a>
-  <h4 id="App_ViewModels_Cities_CityViewModel_DisplayRoadAppearance" data-uid="App.ViewModels.Cities.CityViewModel.DisplayRoadAppearance">DisplayRoadAppearance()</h4>
-  <div class="markdown level1 summary"><p>Displays the editor of the road network appearance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DisplayRoadAppearance()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_DisplayRoadStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L249">View Source</a>
-  </span>
-  <a id="App_ViewModels_Cities_CityViewModel_DisplayRoadStrategy_" data-uid="App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy*"></a>
-  <h4 id="App_ViewModels_Cities_CityViewModel_DisplayRoadStrategy" data-uid="App.ViewModels.Cities.CityViewModel.DisplayRoadStrategy">DisplayRoadStrategy()</h4>
-  <div class="markdown level1 summary"><p>Displays the editor of road networks and the view model of the currently selected road network strategy.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DisplayRoadStrategy()</code></pre>
-  </div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>If no strategy is selected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L385">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L158">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_Generate_" data-uid="App.ViewModels.Cities.CityViewModel.Generate*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_Generate" data-uid="App.ViewModels.Cities.CityViewModel.Generate">Generate()</h4>
@@ -1298,174 +691,10 @@ Delegates the generation to the underlying generator.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_GenerateBuildings_System_ValueTuple_Terrain_TerrainInfo_System_Collections_Generic_IEnumerable_Cities_Plots_Plot___.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple%7BTerrain.TerrainInfo%2CSystem.Collections.Generic.IEnumerable%7BCities.Plots.Plot%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L437">View Source</a>
-  </span>
-  <a id="App_ViewModels_Cities_CityViewModel_GenerateBuildings_" data-uid="App.ViewModels.Cities.CityViewModel.GenerateBuildings*"></a>
-  <h4 id="App_ViewModels_Cities_CityViewModel_GenerateBuildings_System_ValueTuple_Terrain_TerrainInfo_System_Collections_Generic_IEnumerable_Cities_Plots_Plot___" data-uid="App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}})">GenerateBuildings((TerrainInfo, IEnumerable&lt;Plot&gt;))</h4>
-  <div class="markdown level1 summary"><p>Generates buildings with the current strategy from a enumerable of plots</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IEnumerable&lt;Building&gt; GenerateBuildings((TerrainInfo, IEnumerable&lt;Plot&gt;) dependencies)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</td>
-        <td><span class="parametername">dependencies</span></td>
-        <td><p>The mesh filter and enumerable of plots.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;</td>
-        <td><p>An enumerable object of buildings.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>If no strategy is selected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_GeneratePlots_Cities_Roads_RoadNetwork_.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.GeneratePlots(Cities.Roads.RoadNetwork)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L407">View Source</a>
-  </span>
-  <a id="App_ViewModels_Cities_CityViewModel_GeneratePlots_" data-uid="App.ViewModels.Cities.CityViewModel.GeneratePlots*"></a>
-  <h4 id="App_ViewModels_Cities_CityViewModel_GeneratePlots_Cities_Roads_RoadNetwork_" data-uid="App.ViewModels.Cities.CityViewModel.GeneratePlots(Cities.Roads.RoadNetwork)">GeneratePlots(RoadNetwork)</h4>
-  <div class="markdown level1 summary"><p>Generates plots with the current strategy from a given road network.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IEnumerable&lt;Plot&gt; GeneratePlots(RoadNetwork roadNetwork)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
-        <td><span class="parametername">roadNetwork</span></td>
-        <td><p>The given road network.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;</td>
-        <td><p>An enumerable object of plots.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>If no strategy is selected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_GenerateRoadNetwork.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L454">View Source</a>
-  </span>
-  <a id="App_ViewModels_Cities_CityViewModel_GenerateRoadNetwork_" data-uid="App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork*"></a>
-  <h4 id="App_ViewModels_Cities_CityViewModel_GenerateRoadNetwork" data-uid="App.ViewModels.Cities.CityViewModel.GenerateRoadNetwork">GenerateRoadNetwork()</h4>
-  <div class="markdown level1 summary"><p>Generates road networks with the current strategy.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">RoadNetwork GenerateRoadNetwork()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
-        <td><p>A road network object</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_Initialize.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L219">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L128">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_CityViewModel_Initialize_" data-uid="App.ViewModels.Cities.CityViewModel.Initialize*"></a>
   <h4 id="App_ViewModels_Cities_CityViewModel_Initialize" data-uid="App.ViewModels.Cities.CityViewModel.Initialize">Initialize()</h4>
@@ -1474,11 +703,16 @@ Delegates the generation to the underlying generator.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Initialize()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.City&gt;.Initialize()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
   </div>
   <div>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
@@ -1500,7 +734,7 @@ Delegates the generation to the underlying generator.</p>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L19" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/CityViewModel.cs/#L22" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

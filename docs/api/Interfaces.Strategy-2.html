@@ -96,6 +96,7 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;TO&gt;</div>
+    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;TO&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -125,7 +126,7 @@
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
   <h5 id="Interfaces_Strategy_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Strategy&lt;TI, TO&gt; : IGenerator&lt;TO&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Strategy&lt;TI, TO&gt; : IGenerator&lt;TO&gt;, IInjector&lt;TO&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -233,7 +234,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IInjector&lt;TI&gt; Injector
+    <pre><code class="lang-csharp hljs">virtual IInjector&lt;TI&gt; Injector
 {
 }</code></pre>
   </div>
@@ -286,9 +287,42 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Strategy_2_Get.md&amp;value=---%0Auid%3A%20Interfaces.Strategy%602.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L35">View Source</a>
+  </span>
+  <a id="Interfaces_Strategy_2_Get_" data-uid="Interfaces.Strategy`2.Get*"></a>
+  <h4 id="Interfaces_Strategy_2_Get" data-uid="Interfaces.Strategy`2.Get">Get()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TO Get()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TO</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
   </div>
 </article>
           </div>
