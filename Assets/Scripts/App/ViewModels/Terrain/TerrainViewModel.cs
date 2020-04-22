@@ -1,5 +1,8 @@
 using System;
+using App.ViewModels.Noise;
+using App.ViewModels.Noise.Textures;
 using Interfaces;
+using Services;
 using Terrain.Noise;
 using UnityEditor;
 using UnityEngine;
@@ -10,10 +13,8 @@ namespace App.ViewModels.Terrain
     /// View-model for displaying and generating terrain
     /// </summary>
     [Serializable]
-    public class TerrainViewModel : ViewModelStrategy<object, (Mesh, Texture2D)>, IInitializable
+    public class TerrainViewModel : ViewModelStrategy<object, (Mesh, Texture2D)>
     {
-        private float[,] _noiseMap;
-        
         /// <summary>
         /// Visibility of the editor.
         /// </summary>
@@ -31,88 +32,39 @@ namespace App.ViewModels.Terrain
         [SerializeField]
         private float heightScale;
 
-        #region Noise Strategy
-
-        /// <summary>
-        /// Visibility of the noise strategy editor.
-        /// </summary>
-        private bool _noiseStrategyVisible;
+        [SerializeField]
+        private NoiseViewModel _noiseViewModel;
         
-        /// <summary>
-        /// Enum for noise strategies.
-        /// Is used for displaying the possible strategies in the editor.
-        /// </summary>
-        public enum NoiseStrategy
+        [SerializeField]
+        private TextureViewModel _textureViewModel;
+
+        public override EventBus<AppEvent> EventBus
         {
-            PerlinNoise
+            get => base.EventBus;
+            set
+            {
+                base.EventBus = value;
+                try
+                {   
+                    _noiseViewModel.EventBus = value;
+                    _textureViewModel.EventBus = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
         }
-        
-        /// <summary>
-        /// Serialized noise strategy that is currently selected.
-        /// </summary>
-        [SerializeField]
-        private NoiseStrategy noiseStrategy;
-
-        /// <summary>
-        /// Serialized view-model for <see cref="PerlinNoiseStrategy"/> view model.
-        /// Is required to be explicitly defined to be serializable.
-        /// </summary>
-        [SerializeField]
-        private PerlinNoiseStrategy perlinNoiseStrategy;
-
-        #endregion
-
-        #region Texture Strategy 
-
-        /// <summary>
-        /// Visibility of the texture strategy editor.
-        /// </summary>
-        private bool _textureStrategyVisible;
-        
-        /// <summary>
-        /// Enum for texture strategies.
-        /// Is used for displaying the possible strategies in the editor.
-        /// </summary>
-        public enum TextureStrategy
-        {
-            GrayScale, Whittaker
-        }
-
-        /// <summary>
-        /// Serialized texture strategy that is currently selected.
-        /// </summary>
-        [SerializeField]
-        private TextureStrategy textureStrategy;
-        
-        /// <summary>
-        /// Serialized view-model for <see cref="WhittakerStrategy"/> view model.
-        /// Is required to be explicitly defined to be serializable.
-        /// </summary>
-        [SerializeField] 
-        private WhittakerStrategy whittakerStrategy;
-
-        /// <summary>
-        /// Serialized view-model for <see cref="GrayScaleStrategy"/> view model.
-        /// Is required to be explicitly defined to be serializable.
-        /// </summary>
-        [SerializeField] 
-        private GrayScaleStrategy grayScaleStrategy;
-
-        #endregion
         
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
-        public void Initialize()
+        public override void Initialize()
         {
-            var injector = new Injector<float[,]>(() => _noiseMap);
-            
-            whittakerStrategy.Injector = injector;
-            grayScaleStrategy.Injector = injector;
-            
-            perlinNoiseStrategy.EventBus = EventBus;
-            whittakerStrategy.EventBus = EventBus;
-            grayScaleStrategy.EventBus = EventBus;
+            _textureViewModel.Injector = _noiseViewModel;
+
+            _noiseViewModel.Initialize();
+            _textureViewModel.Initialize();
         }
 
         /// <summary>
@@ -127,64 +79,9 @@ namespace App.ViewModels.Terrain
             heightCurve = EditorGUILayout.CurveField("Height Curve", heightCurve ?? new AnimationCurve());
             heightScale = EditorGUILayout.Slider("Height Scale", heightScale, 0, 100);
 
-            DisplayNoiseStrategy();
-            DisplayTextureStrategy();
+            _noiseViewModel.Display();
+            _textureViewModel.Display();
 
-            EditorGUI.indentLevel--;
-        }
-
-        /// <summary>
-        /// Displays the editor of noise and the view model of the currently selected noise strategy.
-        /// </summary>
-        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
-        private void DisplayNoiseStrategy()
-        {
-            _noiseStrategyVisible = EditorGUILayout.Foldout(_noiseStrategyVisible, "Noise Generation");
-            if (!_noiseStrategyVisible) return;
-            
-            EditorGUI.indentLevel++;
-            noiseStrategy = (NoiseStrategy) EditorGUILayout.EnumPopup("Strategy", noiseStrategy);
-
-            EditorGUI.indentLevel++;
-            switch (noiseStrategy)
-            {
-                case NoiseStrategy.PerlinNoise:
-                    perlinNoiseStrategy.Display();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            EditorGUI.indentLevel--;
-            EditorGUI.indentLevel--;
-        }
-
-        /// <summary>
-        /// Displays the editor of texture and the view model of the currently selected texture strategy.
-        /// </summary>
-        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
-        private void DisplayTextureStrategy()
-        {
-            _textureStrategyVisible = EditorGUILayout.Foldout(_textureStrategyVisible, "Texture Generation");
-            if (!_textureStrategyVisible) return;
-            
-            EditorGUI.indentLevel++;
-            textureStrategy = (TextureStrategy) EditorGUILayout.EnumPopup("Strategy", textureStrategy);
-
-            EditorGUI.indentLevel++;
-            switch (textureStrategy)
-            {
-                case TextureStrategy.GrayScale:
-                    grayScaleStrategy.Display();
-                    break;
-                case TextureStrategy.Whittaker:
-                    whittakerStrategy.Display();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            EditorGUI.indentLevel--;
             EditorGUI.indentLevel--;
         }
 
@@ -192,44 +89,16 @@ namespace App.ViewModels.Terrain
         /// Generates a terrain mesh and terrain texture with the selected strategies.
         /// </summary>
         /// <returns>A tuple of a mesh and a texture</returns>
-        public override (Mesh, Texture2D) Generate() => (GenerateMesh(), GenerateTexture());
-
-        /// <summary>
-        /// Generates a mesh with the selected strategy.
-        /// </summary>
-        /// <returns>A mesh object</returns>
-        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected</exception>
-        private Mesh GenerateMesh()
+        public override (Mesh, Texture2D) Generate()
         {
-            switch (noiseStrategy)
-            {
-                case NoiseStrategy.PerlinNoise:
-                    _noiseMap = perlinNoiseStrategy.Generate();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            var heightMap = _noiseViewModel.Generate();
+            _textureViewModel.Injector = new Injector<float[,]>(() => heightMap);
             
-            return new Factory().CreateMeshGenerator(
-                new Injector<float[,]>(() => _noiseMap), heightCurve, heightScale).Generate();
+            var mesh = new Factory().CreateMeshGenerator(
+                new Injector<float[,]>(() => heightMap), heightCurve, heightScale).Generate();
+
+            return (mesh, _textureViewModel.Generate());
         }
 
-        /// <summary>
-        /// Generates a texture with the selected strategy.
-        /// </summary>
-        /// <returns>A texture object.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
-        private Texture2D GenerateTexture()
-        {
-            switch (textureStrategy)
-            {
-                case TextureStrategy.GrayScale:
-                    return grayScaleStrategy.Generate();
-                case TextureStrategy.Whittaker:
-                    return whittakerStrategy.Generate();
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
     }
 }

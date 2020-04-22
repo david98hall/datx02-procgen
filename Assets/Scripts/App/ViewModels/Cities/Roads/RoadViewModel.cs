@@ -1,6 +1,7 @@
 ﻿using System;
 using Cities.Roads;
 using Interfaces;
+using Services;
 using Terrain;
 using UnityEditor;
 using UnityEngine;
@@ -90,13 +91,46 @@ namespace App.ViewModels.Cities.Roads
         
         #endregion
         
+        internal override IInjector<TerrainInfo> Injector
+        {
+            get => base.Injector;
+            set
+            {
+                base.Injector = value;
+                try
+                {   
+                    aStarStrategy.Injector = new Injector<float[,]>(() => value.Get().HeightMap);
+                    lSystemStrategy.Injector = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+
+        public override EventBus<AppEvent> EventBus
+        {
+            get => base.EventBus;
+            set
+            {
+                base.EventBus = value;
+                try
+                {   
+                    aStarStrategy.EventBus = value;
+                    lSystemStrategy.EventBus = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+        
         public override void Initialize()
         {
-            aStarStrategy.EventBus = EventBus;
-            lSystemStrategy.EventBus = EventBus;
-            
-            aStarStrategy.Injector = new Injector<float[,]>(() => InjectedValue.HeightMap);
-            lSystemStrategy.Injector = Injector;
+            aStarStrategy.Initialize();
+            lSystemStrategy.Initialize();
         }
 
         public override void Display()

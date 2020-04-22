@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cities.Plots;
+using Interfaces;
+using Services;
 using Terrain;
 using UnityEditor;
 using UnityEngine;
@@ -75,6 +77,40 @@ namespace App.ViewModels.Cities.Buildings
 
         #endregion
 
+        internal override IInjector<(TerrainInfo, IEnumerable<Plot>)> Injector
+        {
+            get => base.Injector;
+            set
+            {
+                base.Injector = value;
+                try
+                {
+                    extrusionStrategy.Injector = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+
+        public override EventBus<AppEvent> EventBus
+        {
+            get => base.EventBus;
+            set
+            {
+                base.EventBus = value;
+                try
+                {
+                    extrusionStrategy.EventBus = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+        
         public override void Display()
         {
             _buildingStrategyVisible = EditorGUILayout.Foldout(_buildingStrategyVisible, "Building Generation");

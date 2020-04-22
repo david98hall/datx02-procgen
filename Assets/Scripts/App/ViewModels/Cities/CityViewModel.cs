@@ -8,6 +8,7 @@ using Cities;
 using Cities.Plots;
 using Cities.Roads;
 using Interfaces;
+using Services;
 using Terrain;
 using UnityEditor;
 using UnityEngine;
@@ -82,20 +83,50 @@ namespace App.ViewModels.Cities
         public Material BuildingMaterial => _buildingViewModel.BuildingMaterial;
         #endregion
         
+        internal override IInjector<TerrainInfo> Injector
+        {
+            get => base.Injector;
+            set
+            {
+                base.Injector = value;
+                try
+                {   
+                    _roadViewModel.Injector = value;
+                    _plotViewModel.Injector = _roadViewModel;
+                    _buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() =>
+                        (InjectedValue, _plotViewModel.Generate()));
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+
+        public override EventBus<AppEvent> EventBus
+        {
+            get => base.EventBus;
+            set
+            {
+                base.EventBus = value;
+                try
+                {   
+                    _roadViewModel.EventBus = value;
+                    _plotViewModel.EventBus = value;
+                    _buildingViewModel.EventBus = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+        
         /// <summary>
         /// Is required for initializing the non-serializable properties of the view model.
         /// </summary>
         public override void Initialize()
         {
-            _roadViewModel.Injector = Injector;
-            _plotViewModel.Injector = _roadViewModel;
-            _buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() =>
-                (InjectedValue, _plotViewModel.Generate()));
-            
-            _roadViewModel.EventBus = EventBus;
-            _plotViewModel.EventBus = EventBus;
-            _buildingViewModel.EventBus = EventBus;
-            
             _roadViewModel.Initialize();
             _plotViewModel.Initialize();
             _buildingViewModel.Initialize();

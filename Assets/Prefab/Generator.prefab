@@ -142,20 +142,22 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     heightScale: 20
-    noiseStrategy: 0
-    perlinNoiseStrategy:
-      width: 250
-      depth: 250
-      seed: 0
-      scale: 50
-      numOctaves: 8
-      persistence: 0.075
-      lacunarity: 7.5
-      noiseOffset: {x: 0, y: 0}
-    textureStrategy: 1
-    whittakerStrategy:
-      precipitationScale: 50
-      temperatureScale: 40
+    _noiseViewModel:
+      noiseStrategy: 0
+      perlinNoiseStrategy:
+        width: 250
+        depth: 250
+        seed: 0
+        scale: 50
+        numOctaves: 8
+        persistence: 0.075
+        lacunarity: 7.5
+        noiseOffset: {x: 0, y: 0}
+    _textureViewModel:
+      textureStrategy: 1
+      whittakerStrategy:
+        precipitationScale: 50
+        temperatureScale: 40
   cityViewModel:
     _roadViewModel:
       aStarStrategy:
@@ -166,7 +168,7 @@ MonoBehaviour:
       lSystemStrategy:
         inputs:
         - origin: {x: 125, y: 125}
-          rewrites: 5
+          rewrites: 6
       _aStarEnabled: 1
       _lSystemEnabled: 1
       roadWidth: 0.3

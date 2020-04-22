@@ -21,7 +21,7 @@ namespace App.ViewModels
         /// When set, this view model is automatically unsubscribed
         /// from the previous one and subscribed to the new one.
         /// </summary>
-        public EventBus<AppEvent> EventBus
+        public virtual EventBus<AppEvent> EventBus
         {
             get => _eventBus;
             set

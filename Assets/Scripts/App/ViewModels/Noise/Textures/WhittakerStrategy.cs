@@ -3,7 +3,7 @@ using Terrain.Textures;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModels.Terrain
+namespace App.ViewModels.Noise.Textures
 {
     /// <summary>
     /// View-model for displaying and generating textures with the Whittaker strategy.

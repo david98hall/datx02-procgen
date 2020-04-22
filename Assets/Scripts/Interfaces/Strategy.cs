@@ -10,7 +10,7 @@ namespace Interfaces
         /// <summary>
         /// The injector of the input.
         /// </summary>
-        internal IInjector<TI> Injector { get; set; }
+        internal virtual IInjector<TI> Injector { get; set; }
 
         /// <summary>
         /// The value, gotten from the Injector.
