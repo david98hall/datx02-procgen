@@ -177,7 +177,7 @@ MonoBehaviour:
       roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
       roadTerrainOffsetY: 0.075
     _plotViewModel:
-      plotStrategy: 0
+      plotStrategy: 4
       plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
       _displayPlots: 1
     _buildingViewModel:

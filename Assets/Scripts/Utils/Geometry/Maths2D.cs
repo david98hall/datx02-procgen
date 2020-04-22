@@ -128,22 +128,20 @@ namespace Utils.Geometry
         /// <returns>The extreme bounds.</returns>
         public static (float MinX, float MinY, float MaxX, float MaxY) GetExtremeBounds(IEnumerable<Vector2> vertices)
         {
-            var v = vertices.First();
-
-            var minX = v.x;
-            var minY = v.y;
-            var maxX = v.x;
-            var maxY = v.y;
+            var minX = float.MaxValue;
+            var minY = float.MaxValue;
+            var maxX = float.MinValue;
+            var maxY = float.MinValue;
             foreach (var polygonVertex in vertices)
             {
                 if (polygonVertex.x < minX)
                     minX = polygonVertex.x;
-                if (polygonVertex.x > maxX)
+                else if (polygonVertex.x > maxX)
                     maxX = polygonVertex.x;
                 
                 if (polygonVertex.y < minY)
                     minY = polygonVertex.y;
-                if (polygonVertex.y > maxY)
+                else if (polygonVertex.y > maxY)
                     maxY = polygonVertex.y;
             }
 
