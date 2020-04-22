@@ -80,7 +80,7 @@ Extends the <a class="xref" href="Interfaces.Strategy-2.html">Strategy&lt;TI, TO
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">UnityEngine.MeshFilter</span>, <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
     <div class="level2"><span class="xref">AStarStrategy</span></div>
   </div>
   <div classs="implements">
@@ -90,10 +90,13 @@ Extends the <a class="xref" href="Interfaces.Strategy-2.html">Strategy&lt;TI, TO
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;MeshFilter, RoadNetwork&gt;.Injector</a>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Single[,], RoadNetwork&gt;.Injector</a>
     </div>
     <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate">Strategy&lt;MeshFilter, RoadNetwork&gt;.Generate()</a>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;Single[,], RoadNetwork&gt;.InjectedValue</a>
+    </div>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate">Strategy&lt;Single[,], RoadNetwork&gt;.Generate()</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -121,25 +124,25 @@ Extends the <a class="xref" href="Interfaces.Strategy-2.html">Strategy&lt;TI, TO
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
   <h5 id="Cities_Roads_AStarStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">class AStarStrategy : Strategy&lt;MeshFilter, RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">class AStarStrategy : Strategy&lt;float[, ], RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.%23ctor(Interfaces.IInjector%7BUnityEngine.MeshFilter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_System_Single_0__0____.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.%23ctor(Interfaces.IInjector%7BSystem.Single%5B0%3A%2C0%3A%5D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L53">View Source</a>
   </span>
   <a id="Cities_Roads_AStarStrategy__ctor_" data-uid="Cities.Roads.AStarStrategy.#ctor*"></a>
-  <h4 id="Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__" data-uid="Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})">AStarStrategy(IInjector&lt;MeshFilter&gt;)</h4>
+  <h4 id="Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_System_Single_0__0____" data-uid="Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})">AStarStrategy(IInjector&lt;Single[,]&gt;)</h4>
   <div class="markdown level1 summary"><p>Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">AStarStrategy([NotNull] IInjector&lt;MeshFilter&gt; terrainMeshInjector)</code></pre>
+    <pre><code class="lang-csharp hljs">AStarStrategy([NotNull] IInjector&lt;float[, ]&gt; terrainMeshInjector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -152,7 +155,7 @@ Extends the <a class="xref" href="Interfaces.Strategy-2.html">Strategy&lt;TI, TO
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">UnityEngine.MeshFilter</span>&gt;</td>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
         <td><span class="parametername">terrainMeshInjector</span></td>
         <td><p>Non null terrain mesh filter injector object.</p>
 </td>
@@ -274,7 +277,7 @@ Assures that the height bias is between zero and one.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Add_UnityEngine_Vector2Int_UnityEngine_Vector2Int_.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Add(UnityEngine.Vector2Int%2CUnityEngine.Vector2Int)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L107">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L105">View Source</a>
   </span>
   <a id="Cities_Roads_AStarStrategy_Add_" data-uid="Cities.Roads.AStarStrategy.Add*"></a>
   <h4 id="Cities_Roads_AStarStrategy_Add_UnityEngine_Vector2Int_UnityEngine_Vector2Int_" data-uid="Cities.Roads.AStarStrategy.Add(UnityEngine.Vector2Int,UnityEngine.Vector2Int)">Add(Vector2Int, Vector2Int)</h4>
@@ -317,7 +320,7 @@ The validity of the start and goal node is not checked, since the height map in
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Clear.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L116">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L114">View Source</a>
   </span>
   <a id="Cities_Roads_AStarStrategy_Clear_" data-uid="Cities.Roads.AStarStrategy.Clear*"></a>
   <h4 id="Cities_Roads_AStarStrategy_Clear" data-uid="Cities.Roads.AStarStrategy.Clear">Clear()</h4>
@@ -333,7 +336,7 @@ The validity of the start and goal node is not checked, since the height map in
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Generate.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L71">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L69">View Source</a>
   </span>
   <a id="Cities_Roads_AStarStrategy_Generate_" data-uid="Cities.Roads.AStarStrategy.Generate*"></a>
   <h4 id="Cities_Roads_AStarStrategy_Generate" data-uid="Cities.Roads.AStarStrategy.Generate">Generate()</h4>
@@ -364,13 +367,13 @@ Iterates each pair of nodes in <a class="xref" href="Cities.Roads.AStarStrategy.
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Interfaces.Strategy&lt;UnityEngine.MeshFilter, Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
+  <div><span class="xref">Interfaces.Strategy&lt;System.Single[,], Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_AStarStrategy_Path_Cities_Roads_AStarStrategy_Node_Cities_Roads_AStarStrategy_Node_System_Single_0__0___.md&amp;value=---%0Auid%3A%20Cities.Roads.AStarStrategy.Path(Cities.Roads.AStarStrategy.Node%2CCities.Roads.AStarStrategy.Node%2CSystem.Single%5B0%3A%2C0%3A%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L136">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/AStarStrategy.cs/#L134">View Source</a>
   </span>
   <a id="Cities_Roads_AStarStrategy_Path_" data-uid="Cities.Roads.AStarStrategy.Path*"></a>
   <h4 id="Cities_Roads_AStarStrategy_Path_Cities_Roads_AStarStrategy_Node_Cities_Roads_AStarStrategy_Node_System_Single_0__0___" data-uid="Cities.Roads.AStarStrategy.Path(Cities.Roads.AStarStrategy.Node,Cities.Roads.AStarStrategy.Node,System.Single[0:,0:])">Path(AStarStrategy.Node, AStarStrategy.Node, Single[,])</h4>

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class LSystemStrategy.Input
+    <title>Class Injector&lt;T&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class LSystemStrategy.Input
+    <meta name="title" content="Class Injector&lt;T&gt;
    ">
     <meta name="generator" content="docfx 2.50.0.0">
     
@@ -68,17 +68,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="App.ViewModels.Cities.LSystemStrategy.Input">
+            <article class="content wrap" id="_content" data-uid="Interfaces.Injector`1">
   
   
-  <h1 id="App_ViewModels_Cities_LSystemStrategy_Input" data-uid="App.ViewModels.Cities.LSystemStrategy.Input" class="text-break">Class LSystemStrategy.Input
+  <h1 id="Interfaces_Injector_1" data-uid="Interfaces.Injector`1" class="text-break">Class Injector&lt;T&gt;
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">LSystemStrategy.Input</span></div>
+    <div class="level1"><span class="xref">Injector&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;T&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -104,29 +108,43 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="App.ViewModels.Cities.html">App.ViewModels.Cities</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Interfaces.html">Interfaces</a></h6>
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
-  <h5 id="App_ViewModels_Cities_LSystemStrategy_Input_syntax">Syntax</h5>
+  <h5 id="Interfaces_Injector_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Serializable]
-class Input</code></pre>
+    <pre><code class="lang-csharp hljs">public class Injector&lt;T&gt; : IInjector&lt;T&gt;</code></pre>
   </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_Input__ctor_UnityEngine_Vector2_System_Int32_.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.Input.%23ctor(UnityEngine.Vector2%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Injector_1__ctor_System_Func__0__.md&amp;value=---%0Auid%3A%20Interfaces.Injector%601.%23ctor(System.Func%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L27">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Injector.cs/#L9">View Source</a>
   </span>
-  <a id="App_ViewModels_Cities_LSystemStrategy_Input__ctor_" data-uid="App.ViewModels.Cities.LSystemStrategy.Input.#ctor*"></a>
-  <h4 id="App_ViewModels_Cities_LSystemStrategy_Input__ctor_UnityEngine_Vector2_System_Int32_" data-uid="App.ViewModels.Cities.LSystemStrategy.Input.#ctor(UnityEngine.Vector2,System.Int32)">Input(Vector2, Int32)</h4>
+  <a id="Interfaces_Injector_1__ctor_" data-uid="Interfaces.Injector`1.#ctor*"></a>
+  <h4 id="Interfaces_Injector_1__ctor_System_Func__0__" data-uid="Interfaces.Injector`1.#ctor(System.Func{`0})">Injector(Func&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Input(Vector2 origin, int rewrites)</code></pre>
+    <pre><code class="lang-csharp hljs">public Injector(Func&lt;T&gt; injector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -139,13 +157,8 @@ class Input</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector2</span></td>
-        <td><span class="parametername">origin</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">rewrites</span></td>
+        <td><span class="xref">System.Func</span>&lt;T&gt;</td>
+        <td><span class="parametername">injector</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -154,17 +167,17 @@ class Input</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_Input_origin.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.Input.origin%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Injector_1__injector.md&amp;value=---%0Auid%3A%20Interfaces.Injector%601._injector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L24">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Injector.cs/#L7">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_LSystemStrategy_Input_origin" data-uid="App.ViewModels.Cities.LSystemStrategy.Input.origin">origin</h4>
+  <h4 id="Interfaces_Injector_1__injector" data-uid="Interfaces.Injector`1._injector">_injector</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2 origin</code></pre>
+    <pre><code class="lang-csharp hljs">readonly Func&lt;T&gt; _injector</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -176,26 +189,29 @@ class Input</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector2</span></td>
+        <td><span class="xref">System.Func</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_Input_rewrites.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.Input.rewrites%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Injector_1_Get.md&amp;value=---%0Auid%3A%20Interfaces.Injector%601.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L25">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Injector.cs/#L11">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_LSystemStrategy_Input_rewrites" data-uid="App.ViewModels.Cities.LSystemStrategy.Input.rewrites">rewrites</h4>
+  <a id="Interfaces_Injector_1_Get_" data-uid="Interfaces.Injector`1.Get*"></a>
+  <h4 id="Interfaces_Injector_1_Get" data-uid="Interfaces.Injector`1.Get">Get()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int rewrites</code></pre>
+    <pre><code class="lang-csharp hljs">public T Get()</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -205,11 +221,15 @@ class Input</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">T</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
+  </div>
 </article>
           </div>
           
@@ -218,10 +238,10 @@ class Input</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_Input.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.Input%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Injector_1.md&amp;value=---%0Auid%3A%20Interfaces.Injector%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L21" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Injector.cs/#L5" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

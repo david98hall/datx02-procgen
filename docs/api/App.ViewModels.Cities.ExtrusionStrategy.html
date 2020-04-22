@@ -78,8 +78,8 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.MeshFilter</span>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
-    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.MeshFilter</span>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
+    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
+    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
     <div class="level3"><span class="xref">ExtrusionStrategy</span></div>
   </div>
   <div classs="implements">
@@ -91,22 +91,25 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;(MeshFilter, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.EventBus</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.EventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;(MeshFilter, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;._eventBus</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;._eventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;(MeshFilter, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Display()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Display()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;(MeshFilter, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Generate()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Generate()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;(MeshFilter, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.OnEvent(AppEvent, Object)</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.OnEvent(AppEvent, Object)</a>
     </div>
     <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;(MeshFilter, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Injector</a>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.InjectedValue</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -135,7 +138,7 @@
   <h5 id="App_ViewModels_Cities_ExtrusionStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class ExtrusionStrategy : ViewModelStrategy&lt;(MeshFilter, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;, IGenerator&lt;IEnumerable&lt;Building&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
+public class ExtrusionStrategy : ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;, IGenerator&lt;IEnumerable&lt;Building&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -220,7 +223,7 @@ float minArea</code></pre>
     <pre><code class="lang-csharp hljs">public override void Display()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.ValueTuple&lt;UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Building&gt;&gt;.Display()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.ValueTuple&lt;Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Building&gt;&gt;.Display()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_ExtrusionStrategy_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.ExtrusionStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -255,7 +258,7 @@ Delegates the generation to the created generator.</p>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.ValueTuple&lt;UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Building&gt;&gt;.Generate()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.ValueTuple&lt;Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Building&gt;&gt;.Generate()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>

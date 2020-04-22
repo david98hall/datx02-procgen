@@ -109,7 +109,14 @@ references:
 - uid: App.AppController.Model.City
   name: City
   href: api/App.AppController.Model.html#App_AppController_Model_City
-  commentId: F:App.AppController.Model.City
+  commentId: P:App.AppController.Model.City
+  fullName: App.AppController.Model.City
+  nameWithType: AppController.Model.City
+- uid: App.AppController.Model.City*
+  name: City
+  href: api/App.AppController.Model.html#App_AppController_Model_City_
+  commentId: Overload:App.AppController.Model.City
+  isSpec: "True"
   fullName: App.AppController.Model.City
   nameWithType: AppController.Model.City
 - uid: App.AppController.Model.Get
@@ -125,18 +132,45 @@ references:
   isSpec: "True"
   fullName: App.AppController.Model.Get
   nameWithType: AppController.Model.Get
-- uid: App.AppController.Model.MeshFilter
-  name: MeshFilter
-  href: api/App.AppController.Model.html#App_AppController_Model_MeshFilter
-  commentId: F:App.AppController.Model.MeshFilter
-  fullName: App.AppController.Model.MeshFilter
-  nameWithType: AppController.Model.MeshFilter
+- uid: App.AppController.Model.TerrainHeightMap
+  name: TerrainHeightMap
+  href: api/App.AppController.Model.html#App_AppController_Model_TerrainHeightMap
+  commentId: P:App.AppController.Model.TerrainHeightMap
+  fullName: App.AppController.Model.TerrainHeightMap
+  nameWithType: AppController.Model.TerrainHeightMap
+- uid: App.AppController.Model.TerrainHeightMap*
+  name: TerrainHeightMap
+  href: api/App.AppController.Model.html#App_AppController_Model_TerrainHeightMap_
+  commentId: Overload:App.AppController.Model.TerrainHeightMap
+  isSpec: "True"
+  fullName: App.AppController.Model.TerrainHeightMap
+  nameWithType: AppController.Model.TerrainHeightMap
 - uid: App.AppController.Model.TerrainTexture
   name: TerrainTexture
   href: api/App.AppController.Model.html#App_AppController_Model_TerrainTexture
-  commentId: F:App.AppController.Model.TerrainTexture
+  commentId: P:App.AppController.Model.TerrainTexture
   fullName: App.AppController.Model.TerrainTexture
   nameWithType: AppController.Model.TerrainTexture
+- uid: App.AppController.Model.TerrainTexture*
+  name: TerrainTexture
+  href: api/App.AppController.Model.html#App_AppController_Model_TerrainTexture_
+  commentId: Overload:App.AppController.Model.TerrainTexture
+  isSpec: "True"
+  fullName: App.AppController.Model.TerrainTexture
+  nameWithType: AppController.Model.TerrainTexture
+- uid: App.AppController.Model.TerrainTransform
+  name: TerrainTransform
+  href: api/App.AppController.Model.html#App_AppController_Model_TerrainTransform
+  commentId: P:App.AppController.Model.TerrainTransform
+  fullName: App.AppController.Model.TerrainTransform
+  nameWithType: AppController.Model.TerrainTransform
+- uid: App.AppController.Model.TerrainTransform*
+  name: TerrainTransform
+  href: api/App.AppController.Model.html#App_AppController_Model_TerrainTransform_
+  commentId: Overload:App.AppController.Model.TerrainTransform
+  isSpec: "True"
+  fullName: App.AppController.Model.TerrainTransform
+  nameWithType: AppController.Model.TerrainTransform
 - uid: App.AppController.OnEnable
   name: OnEnable()
   href: api/App.AppController.html#App_AppController_OnEnable
@@ -538,15 +572,15 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.Generate
   nameWithType: CityViewModel.Generate
-- uid: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}})
-  name: GenerateBuildings((MeshFilter, IEnumerable<Plot>))
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GenerateBuildings_System_ValueTuple_UnityEngine_MeshFilter_System_Collections_Generic_IEnumerable_Cities_Plots_Plot___
-  commentId: M:App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}})
-  name.vb: GenerateBuildings((MeshFilter, IEnumerable(Of Plot)))
-  fullName: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple<UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>)
-  fullName.vb: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple(Of UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot)))
-  nameWithType: CityViewModel.GenerateBuildings((MeshFilter, IEnumerable<Plot>))
-  nameWithType.vb: CityViewModel.GenerateBuildings((MeshFilter, IEnumerable(Of Plot)))
+- uid: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}})
+  name: GenerateBuildings((TerrainInfo, IEnumerable<Plot>))
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GenerateBuildings_System_ValueTuple_Terrain_TerrainInfo_System_Collections_Generic_IEnumerable_Cities_Plots_Plot___
+  commentId: M:App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}})
+  name.vb: GenerateBuildings((TerrainInfo, IEnumerable(Of Plot)))
+  fullName: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple<Terrain.TerrainInfo, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>)
+  fullName.vb: App.ViewModels.Cities.CityViewModel.GenerateBuildings(System.ValueTuple(Of Terrain.TerrainInfo, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot)))
+  nameWithType: CityViewModel.GenerateBuildings((TerrainInfo, IEnumerable<Plot>))
+  nameWithType.vb: CityViewModel.GenerateBuildings((TerrainInfo, IEnumerable(Of Plot)))
 - uid: App.ViewModels.Cities.CityViewModel.GenerateBuildings*
   name: GenerateBuildings
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_GenerateBuildings_
@@ -1042,12 +1076,12 @@ references:
   commentId: T:App.ViewModels.Terrain.TerrainViewModel
   fullName: App.ViewModels.Terrain.TerrainViewModel
   nameWithType: TerrainViewModel
-- uid: App.ViewModels.Terrain.TerrainViewModel._noiseMapInjector
-  name: _noiseMapInjector
-  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__noiseMapInjector
-  commentId: F:App.ViewModels.Terrain.TerrainViewModel._noiseMapInjector
-  fullName: App.ViewModels.Terrain.TerrainViewModel._noiseMapInjector
-  nameWithType: TerrainViewModel._noiseMapInjector
+- uid: App.ViewModels.Terrain.TerrainViewModel._noiseMap
+  name: _noiseMap
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__noiseMap
+  commentId: F:App.ViewModels.Terrain.TerrainViewModel._noiseMap
+  fullName: App.ViewModels.Terrain.TerrainViewModel._noiseMap
+  nameWithType: TerrainViewModel._noiseMap
 - uid: App.ViewModels.Terrain.TerrainViewModel._noiseStrategyVisible
   name: _noiseStrategyVisible
   href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__noiseStrategyVisible
@@ -1175,31 +1209,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Terrain.TerrainViewModel.Initialize
   nameWithType: TerrainViewModel.Initialize
-- uid: App.ViewModels.Terrain.TerrainViewModel.Injector
-  name: TerrainViewModel.Injector
-  href: api/App.ViewModels.Terrain.TerrainViewModel.Injector.html
-  commentId: T:App.ViewModels.Terrain.TerrainViewModel.Injector
-  fullName: App.ViewModels.Terrain.TerrainViewModel.Injector
-  nameWithType: TerrainViewModel.Injector
-- uid: App.ViewModels.Terrain.TerrainViewModel.Injector.Get
-  name: Get()
-  href: api/App.ViewModels.Terrain.TerrainViewModel.Injector.html#App_ViewModels_Terrain_TerrainViewModel_Injector_Get
-  commentId: M:App.ViewModels.Terrain.TerrainViewModel.Injector.Get
-  fullName: App.ViewModels.Terrain.TerrainViewModel.Injector.Get()
-  nameWithType: TerrainViewModel.Injector.Get()
-- uid: App.ViewModels.Terrain.TerrainViewModel.Injector.Get*
-  name: Get
-  href: api/App.ViewModels.Terrain.TerrainViewModel.Injector.html#App_ViewModels_Terrain_TerrainViewModel_Injector_Get_
-  commentId: Overload:App.ViewModels.Terrain.TerrainViewModel.Injector.Get
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.TerrainViewModel.Injector.Get
-  nameWithType: TerrainViewModel.Injector.Get
-- uid: App.ViewModels.Terrain.TerrainViewModel.Injector.NoiseMap
-  name: NoiseMap
-  href: api/App.ViewModels.Terrain.TerrainViewModel.Injector.html#App_ViewModels_Terrain_TerrainViewModel_Injector_NoiseMap
-  commentId: F:App.ViewModels.Terrain.TerrainViewModel.Injector.NoiseMap
-  fullName: App.ViewModels.Terrain.TerrainViewModel.Injector.NoiseMap
-  nameWithType: TerrainViewModel.Injector.NoiseMap
 - uid: App.ViewModels.Terrain.TerrainViewModel.noiseStrategy
   name: noiseStrategy
   href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_noiseStrategy
@@ -1418,24 +1427,24 @@ references:
   commentId: T:Cities.Buildings.Factory
   fullName: Cities.Buildings.Factory
   nameWithType: Factory
-- uid: Cities.Buildings.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
-  name: Factory(IInjector<(MeshFilter, IEnumerable<Plot>)>)
-  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__ctor_Interfaces_IInjector_System_ValueTuple_UnityEngine_MeshFilter_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____
-  commentId: M:Cities.Buildings.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
-  name.vb: Factory(IInjector(Of (MeshFilter, IEnumerable(Of Plot))))
-  fullName: Cities.Buildings.Factory.Factory(Interfaces.IInjector<System.ValueTuple<UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>)
-  fullName.vb: Cities.Buildings.Factory.Factory(Interfaces.IInjector(Of System.ValueTuple(Of UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))))
-  nameWithType: Factory.Factory(IInjector<(MeshFilter, IEnumerable<Plot>)>)
-  nameWithType.vb: Factory.Factory(IInjector(Of (MeshFilter, IEnumerable(Of Plot))))
-- uid: Cities.Buildings.Factory.#ctor(System.Func{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
-  name: Factory(Func<(MeshFilter, IEnumerable<Plot>)>)
-  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__ctor_System_Func_System_ValueTuple_UnityEngine_MeshFilter_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____
-  commentId: M:Cities.Buildings.Factory.#ctor(System.Func{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
-  name.vb: Factory(Func(Of (MeshFilter, IEnumerable(Of Plot))))
-  fullName: Cities.Buildings.Factory.Factory(System.Func<System.ValueTuple<UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>)
-  fullName.vb: Cities.Buildings.Factory.Factory(System.Func(Of System.ValueTuple(Of UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))))
-  nameWithType: Factory.Factory(Func<(MeshFilter, IEnumerable<Plot>)>)
-  nameWithType.vb: Factory.Factory(Func(Of (MeshFilter, IEnumerable(Of Plot))))
+- uid: Cities.Buildings.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name: Factory(IInjector<(TerrainInfo, IEnumerable<Plot>)>)
+  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__ctor_Interfaces_IInjector_System_ValueTuple_Terrain_TerrainInfo_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____
+  commentId: M:Cities.Buildings.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name.vb: Factory(IInjector(Of (TerrainInfo, IEnumerable(Of Plot))))
+  fullName: Cities.Buildings.Factory.Factory(Interfaces.IInjector<System.ValueTuple<Terrain.TerrainInfo, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>)
+  fullName.vb: Cities.Buildings.Factory.Factory(Interfaces.IInjector(Of System.ValueTuple(Of Terrain.TerrainInfo, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))))
+  nameWithType: Factory.Factory(IInjector<(TerrainInfo, IEnumerable<Plot>)>)
+  nameWithType.vb: Factory.Factory(IInjector(Of (TerrainInfo, IEnumerable(Of Plot))))
+- uid: Cities.Buildings.Factory.#ctor(System.Func{System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name: Factory(Func<(TerrainInfo, IEnumerable<Plot>)>)
+  href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__ctor_System_Func_System_ValueTuple_Terrain_TerrainInfo_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____
+  commentId: M:Cities.Buildings.Factory.#ctor(System.Func{System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
+  name.vb: Factory(Func(Of (TerrainInfo, IEnumerable(Of Plot))))
+  fullName: Cities.Buildings.Factory.Factory(System.Func<System.ValueTuple<Terrain.TerrainInfo, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>)
+  fullName.vb: Cities.Buildings.Factory.Factory(System.Func(Of System.ValueTuple(Of Terrain.TerrainInfo, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))))
+  nameWithType: Factory.Factory(Func<(TerrainInfo, IEnumerable<Plot>)>)
+  nameWithType.vb: Factory.Factory(Func(Of (TerrainInfo, IEnumerable(Of Plot))))
 - uid: Cities.Buildings.Factory.#ctor*
   name: Factory
   href: api/Cities.Buildings.Factory.html#Cities_Buildings_Factory__ctor_
@@ -1462,47 +1471,6 @@ references:
   isSpec: "True"
   fullName: Cities.Buildings.Factory.CreateExtrusionStrategy
   nameWithType: Factory.CreateExtrusionStrategy
-- uid: Cities.Buildings.Factory.Injector
-  name: Factory.Injector
-  href: api/Cities.Buildings.Factory.Injector.html
-  commentId: T:Cities.Buildings.Factory.Injector
-  fullName: Cities.Buildings.Factory.Injector
-  nameWithType: Factory.Injector
-- uid: Cities.Buildings.Factory.Injector.#ctor(System.Func{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
-  name: Injector(Func<(MeshFilter, IEnumerable<Plot>)>)
-  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector__ctor_System_Func_System_ValueTuple_UnityEngine_MeshFilter_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____
-  commentId: M:Cities.Buildings.Factory.Injector.#ctor(System.Func{System.ValueTuple{UnityEngine.MeshFilter,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}})
-  name.vb: Injector(Func(Of (MeshFilter, IEnumerable(Of Plot))))
-  fullName: Cities.Buildings.Factory.Injector.Injector(System.Func<System.ValueTuple<UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>)
-  fullName.vb: Cities.Buildings.Factory.Injector.Injector(System.Func(Of System.ValueTuple(Of UnityEngine.MeshFilter, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))))
-  nameWithType: Factory.Injector.Injector(Func<(MeshFilter, IEnumerable<Plot>)>)
-  nameWithType.vb: Factory.Injector.Injector(Func(Of (MeshFilter, IEnumerable(Of Plot))))
-- uid: Cities.Buildings.Factory.Injector.#ctor*
-  name: Injector
-  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector__ctor_
-  commentId: Overload:Cities.Buildings.Factory.Injector.#ctor
-  isSpec: "True"
-  fullName: Cities.Buildings.Factory.Injector.Injector
-  nameWithType: Factory.Injector.Injector
-- uid: Cities.Buildings.Factory.Injector._injector
-  name: _injector
-  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector__injector
-  commentId: F:Cities.Buildings.Factory.Injector._injector
-  fullName: Cities.Buildings.Factory.Injector._injector
-  nameWithType: Factory.Injector._injector
-- uid: Cities.Buildings.Factory.Injector.Get
-  name: Get()
-  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector_Get
-  commentId: M:Cities.Buildings.Factory.Injector.Get
-  fullName: Cities.Buildings.Factory.Injector.Get()
-  nameWithType: Factory.Injector.Get()
-- uid: Cities.Buildings.Factory.Injector.Get*
-  name: Get
-  href: api/Cities.Buildings.Factory.Injector.html#Cities_Buildings_Factory_Injector_Get_
-  commentId: Overload:Cities.Buildings.Factory.Injector.Get
-  isSpec: "True"
-  fullName: Cities.Buildings.Factory.Injector.Get
-  nameWithType: Factory.Injector.Get
 - uid: Cities.City
   name: City
   href: api/Cities.City.html
@@ -2276,15 +2244,15 @@ references:
   commentId: T:Cities.Roads.AStarStrategy
   fullName: Cities.Roads.AStarStrategy
   nameWithType: AStarStrategy
-- uid: Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
-  name: AStarStrategy(IInjector<MeshFilter>)
-  href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__
-  commentId: M:Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
-  name.vb: AStarStrategy(IInjector(Of MeshFilter))
-  fullName: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector<UnityEngine.MeshFilter>)
-  fullName.vb: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector(Of UnityEngine.MeshFilter))
-  nameWithType: AStarStrategy.AStarStrategy(IInjector<MeshFilter>)
-  nameWithType.vb: AStarStrategy.AStarStrategy(IInjector(Of MeshFilter))
+- uid: Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  name: AStarStrategy(IInjector<Single[,]>)
+  href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_Interfaces_IInjector_System_Single_0__0____
+  commentId: M:Cities.Roads.AStarStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  name.vb: AStarStrategy(IInjector(Of Single(,)))
+  fullName: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector<System.Single[,]>)
+  fullName.vb: Cities.Roads.AStarStrategy.AStarStrategy(Interfaces.IInjector(Of System.Single(,)))
+  nameWithType: AStarStrategy.AStarStrategy(IInjector<Single[,]>)
+  nameWithType.vb: AStarStrategy.AStarStrategy(IInjector(Of Single(,)))
 - uid: Cities.Roads.AStarStrategy.#ctor*
   name: AStarStrategy
   href: api/Cities.Roads.AStarStrategy.html#Cities_Roads_AStarStrategy__ctor_
@@ -2521,37 +2489,15 @@ references:
   commentId: T:Cities.Roads.Factory
   fullName: Cities.Roads.Factory
   nameWithType: Factory
-- uid: Cities.Roads.Factory.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
-  name: Factory(IInjector<MeshFilter>)
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__
-  commentId: M:Cities.Roads.Factory.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter})
-  name.vb: Factory(IInjector(Of MeshFilter))
-  fullName: Cities.Roads.Factory.Factory(Interfaces.IInjector<UnityEngine.MeshFilter>)
-  fullName.vb: Cities.Roads.Factory.Factory(Interfaces.IInjector(Of UnityEngine.MeshFilter))
-  nameWithType: Factory.Factory(IInjector<MeshFilter>)
-  nameWithType.vb: Factory.Factory(IInjector(Of MeshFilter))
-- uid: Cities.Roads.Factory.#ctor*
-  name: Factory
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__ctor_
-  commentId: Overload:Cities.Roads.Factory.#ctor
-  isSpec: "True"
-  fullName: Cities.Roads.Factory.Factory
-  nameWithType: Factory.Factory
-- uid: Cities.Roads.Factory._terrainFilterInjector
-  name: _terrainFilterInjector
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory__terrainFilterInjector
-  commentId: F:Cities.Roads.Factory._terrainFilterInjector
-  fullName: Cities.Roads.Factory._terrainFilterInjector
-  nameWithType: Factory._terrainFilterInjector
-- uid: Cities.Roads.Factory.CreateAStarStrategy(System.Single,System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
-  name: CreateAStarStrategy(Single, IEnumerable<(Vector2Int Start, Vector2Int Goal)>)
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy_System_Single_System_Collections_Generic_IEnumerable_System_ValueTuple_UnityEngine_Vector2Int_UnityEngine_Vector2Int___
-  commentId: M:Cities.Roads.Factory.CreateAStarStrategy(System.Single,System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
-  name.vb: CreateAStarStrategy(Single, IEnumerable(Of (Start As Vector2Int, Goal As Vector2Int)))
-  fullName: Cities.Roads.Factory.CreateAStarStrategy(System.Single, System.Collections.Generic.IEnumerable<System.ValueTuple<UnityEngine.Vector2Int, UnityEngine.Vector2Int>>)
-  fullName.vb: Cities.Roads.Factory.CreateAStarStrategy(System.Single, System.Collections.Generic.IEnumerable(Of System.ValueTuple(Of UnityEngine.Vector2Int, UnityEngine.Vector2Int)))
-  nameWithType: Factory.CreateAStarStrategy(Single, IEnumerable<(Vector2Int Start, Vector2Int Goal)>)
-  nameWithType.vb: Factory.CreateAStarStrategy(Single, IEnumerable(Of (Start As Vector2Int, Goal As Vector2Int)))
+- uid: Cities.Roads.Factory.CreateAStarStrategy(Interfaces.IInjector{System.Single[0:,0:]},System.Single,System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
+  name: CreateAStarStrategy(IInjector<Single[,]>, Single, IEnumerable<(Vector2Int Start, Vector2Int Goal)>)
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy_Interfaces_IInjector_System_Single_0__0____System_Single_System_Collections_Generic_IEnumerable_System_ValueTuple_UnityEngine_Vector2Int_UnityEngine_Vector2Int___
+  commentId: M:Cities.Roads.Factory.CreateAStarStrategy(Interfaces.IInjector{System.Single[0:,0:]},System.Single,System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Vector2Int,UnityEngine.Vector2Int}})
+  name.vb: CreateAStarStrategy(IInjector(Of Single(,)), Single, IEnumerable(Of (Start As Vector2Int, Goal As Vector2Int)))
+  fullName: Cities.Roads.Factory.CreateAStarStrategy(Interfaces.IInjector<System.Single[,]>, System.Single, System.Collections.Generic.IEnumerable<System.ValueTuple<UnityEngine.Vector2Int, UnityEngine.Vector2Int>>)
+  fullName.vb: Cities.Roads.Factory.CreateAStarStrategy(Interfaces.IInjector(Of System.Single(,)), System.Single, System.Collections.Generic.IEnumerable(Of System.ValueTuple(Of UnityEngine.Vector2Int, UnityEngine.Vector2Int)))
+  nameWithType: Factory.CreateAStarStrategy(IInjector<Single[,]>, Single, IEnumerable<(Vector2Int Start, Vector2Int Goal)>)
+  nameWithType.vb: Factory.CreateAStarStrategy(IInjector(Of Single(,)), Single, IEnumerable(Of (Start As Vector2Int, Goal As Vector2Int)))
 - uid: Cities.Roads.Factory.CreateAStarStrategy*
   name: CreateAStarStrategy
   href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateAStarStrategy_
@@ -2559,18 +2505,15 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.Factory.CreateAStarStrategy
   nameWithType: Factory.CreateAStarStrategy
-- uid: Cities.Roads.Factory.CreateLSystemStrategy(System.Int32)
-  name: CreateLSystemStrategy(Int32)
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateLSystemStrategy_System_Int32_
-  commentId: M:Cities.Roads.Factory.CreateLSystemStrategy(System.Int32)
-  fullName: Cities.Roads.Factory.CreateLSystemStrategy(System.Int32)
-  nameWithType: Factory.CreateLSystemStrategy(Int32)
-- uid: Cities.Roads.Factory.CreateLSystemStrategy(UnityEngine.Vector2,System.Int32)
-  name: CreateLSystemStrategy(Vector2, Int32)
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateLSystemStrategy_UnityEngine_Vector2_System_Int32_
-  commentId: M:Cities.Roads.Factory.CreateLSystemStrategy(UnityEngine.Vector2,System.Int32)
-  fullName: Cities.Roads.Factory.CreateLSystemStrategy(UnityEngine.Vector2, System.Int32)
-  nameWithType: Factory.CreateLSystemStrategy(Vector2, Int32)
+- uid: Cities.Roads.Factory.CreateLSystemStrategy(Interfaces.IInjector{Terrain.TerrainInfo},UnityEngine.Vector2,System.Int32)
+  name: CreateLSystemStrategy(IInjector<TerrainInfo>, Vector2, Int32)
+  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateLSystemStrategy_Interfaces_IInjector_Terrain_TerrainInfo__UnityEngine_Vector2_System_Int32_
+  commentId: M:Cities.Roads.Factory.CreateLSystemStrategy(Interfaces.IInjector{Terrain.TerrainInfo},UnityEngine.Vector2,System.Int32)
+  name.vb: CreateLSystemStrategy(IInjector(Of TerrainInfo), Vector2, Int32)
+  fullName: Cities.Roads.Factory.CreateLSystemStrategy(Interfaces.IInjector<Terrain.TerrainInfo>, UnityEngine.Vector2, System.Int32)
+  fullName.vb: Cities.Roads.Factory.CreateLSystemStrategy(Interfaces.IInjector(Of Terrain.TerrainInfo), UnityEngine.Vector2, System.Int32)
+  nameWithType: Factory.CreateLSystemStrategy(IInjector<TerrainInfo>, Vector2, Int32)
+  nameWithType.vb: Factory.CreateLSystemStrategy(IInjector(Of TerrainInfo), Vector2, Int32)
 - uid: Cities.Roads.Factory.CreateLSystemStrategy*
   name: CreateLSystemStrategy
   href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateLSystemStrategy_
@@ -2578,34 +2521,21 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.Factory.CreateLSystemStrategy
   nameWithType: Factory.CreateLSystemStrategy
-- uid: Cities.Roads.Factory.CreateSampleStrategy
-  name: CreateSampleStrategy()
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateSampleStrategy
-  commentId: M:Cities.Roads.Factory.CreateSampleStrategy
-  fullName: Cities.Roads.Factory.CreateSampleStrategy()
-  nameWithType: Factory.CreateSampleStrategy()
-- uid: Cities.Roads.Factory.CreateSampleStrategy*
-  name: CreateSampleStrategy
-  href: api/Cities.Roads.Factory.html#Cities_Roads_Factory_CreateSampleStrategy_
-  commentId: Overload:Cities.Roads.Factory.CreateSampleStrategy
-  isSpec: "True"
-  fullName: Cities.Roads.Factory.CreateSampleStrategy
-  nameWithType: Factory.CreateSampleStrategy
 - uid: Cities.Roads.LSystem
   name: LSystem
   href: api/Cities.Roads.LSystem.html
   commentId: T:Cities.Roads.LSystem
   fullName: Cities.Roads.LSystem
   nameWithType: LSystem
-- uid: Cities.Roads.LSystem.#ctor(System.Char,UnityEngine.Vector2,Interfaces.IInjector{UnityEngine.MeshFilter})
-  name: LSystem(Char, Vector2, IInjector<MeshFilter>)
-  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__ctor_System_Char_UnityEngine_Vector2_Interfaces_IInjector_UnityEngine_MeshFilter__
-  commentId: M:Cities.Roads.LSystem.#ctor(System.Char,UnityEngine.Vector2,Interfaces.IInjector{UnityEngine.MeshFilter})
-  name.vb: LSystem(Char, Vector2, IInjector(Of MeshFilter))
-  fullName: Cities.Roads.LSystem.LSystem(System.Char, UnityEngine.Vector2, Interfaces.IInjector<UnityEngine.MeshFilter>)
-  fullName.vb: Cities.Roads.LSystem.LSystem(System.Char, UnityEngine.Vector2, Interfaces.IInjector(Of UnityEngine.MeshFilter))
-  nameWithType: LSystem.LSystem(Char, Vector2, IInjector<MeshFilter>)
-  nameWithType.vb: LSystem.LSystem(Char, Vector2, IInjector(Of MeshFilter))
+- uid: Cities.Roads.LSystem.#ctor(System.Char,UnityEngine.Vector2,Interfaces.IInjector{Terrain.TerrainInfo})
+  name: LSystem(Char, Vector2, IInjector<TerrainInfo>)
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__ctor_System_Char_UnityEngine_Vector2_Interfaces_IInjector_Terrain_TerrainInfo__
+  commentId: M:Cities.Roads.LSystem.#ctor(System.Char,UnityEngine.Vector2,Interfaces.IInjector{Terrain.TerrainInfo})
+  name.vb: LSystem(Char, Vector2, IInjector(Of TerrainInfo))
+  fullName: Cities.Roads.LSystem.LSystem(System.Char, UnityEngine.Vector2, Interfaces.IInjector<Terrain.TerrainInfo>)
+  fullName.vb: Cities.Roads.LSystem.LSystem(System.Char, UnityEngine.Vector2, Interfaces.IInjector(Of Terrain.TerrainInfo))
+  nameWithType: LSystem.LSystem(Char, Vector2, IInjector<TerrainInfo>)
+  nameWithType.vb: LSystem.LSystem(Char, Vector2, IInjector(Of TerrainInfo))
 - uid: Cities.Roads.LSystem.#ctor*
   name: LSystem
   href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__ctor_
@@ -2613,12 +2543,12 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.LSystem.LSystem
   nameWithType: LSystem.LSystem
-- uid: Cities.Roads.LSystem._terrainFilterInjector
-  name: _terrainFilterInjector
-  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__terrainFilterInjector
-  commentId: F:Cities.Roads.LSystem._terrainFilterInjector
-  fullName: Cities.Roads.LSystem._terrainFilterInjector
-  nameWithType: LSystem._terrainFilterInjector
+- uid: Cities.Roads.LSystem._terrainInjector
+  name: _terrainInjector
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem__terrainInjector
+  commentId: F:Cities.Roads.LSystem._terrainInjector
+  fullName: Cities.Roads.LSystem._terrainInjector
+  nameWithType: LSystem._terrainInjector
 - uid: Cities.Roads.LSystem.ApplyNoiseMap
   name: ApplyNoiseMap()
   href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_ApplyNoiseMap
@@ -2632,12 +2562,6 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.LSystem.ApplyNoiseMap
   nameWithType: LSystem.ApplyNoiseMap
-- uid: Cities.Roads.LSystem.axiom
-  name: axiom
-  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_axiom
-  commentId: F:Cities.Roads.LSystem.axiom
-  fullName: Cities.Roads.LSystem.axiom
-  nameWithType: LSystem.axiom
 - uid: Cities.Roads.LSystem.Grid(Cities.Roads.LSystem.State)
   name: Grid(LSystem.State)
   href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_Grid_Cities_Roads_LSystem_State_
@@ -2651,6 +2575,30 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.LSystem.Grid
   nameWithType: LSystem.Grid
+- uid: Cities.Roads.LSystem.maxX
+  name: maxX
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_maxX
+  commentId: F:Cities.Roads.LSystem.maxX
+  fullName: Cities.Roads.LSystem.maxX
+  nameWithType: LSystem.maxX
+- uid: Cities.Roads.LSystem.maxZ
+  name: maxZ
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_maxZ
+  commentId: F:Cities.Roads.LSystem.maxZ
+  fullName: Cities.Roads.LSystem.maxZ
+  nameWithType: LSystem.maxZ
+- uid: Cities.Roads.LSystem.minX
+  name: minX
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_minX
+  commentId: F:Cities.Roads.LSystem.minX
+  fullName: Cities.Roads.LSystem.minX
+  nameWithType: LSystem.minX
+- uid: Cities.Roads.LSystem.minZ
+  name: minZ
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_minZ
+  commentId: F:Cities.Roads.LSystem.minZ
+  fullName: Cities.Roads.LSystem.minZ
+  nameWithType: LSystem.minZ
 - uid: Cities.Roads.LSystem.network
   name: network
   href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_network
@@ -2757,6 +2705,19 @@ references:
   commentId: F:Cities.Roads.LSystem.states
   fullName: Cities.Roads.LSystem.states
   nameWithType: LSystem.states
+- uid: Cities.Roads.LSystem.TerrainInfo
+  name: TerrainInfo
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_TerrainInfo
+  commentId: P:Cities.Roads.LSystem.TerrainInfo
+  fullName: Cities.Roads.LSystem.TerrainInfo
+  nameWithType: LSystem.TerrainInfo
+- uid: Cities.Roads.LSystem.TerrainInfo*
+  name: TerrainInfo
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_TerrainInfo_
+  commentId: Overload:Cities.Roads.LSystem.TerrainInfo
+  isSpec: "True"
+  fullName: Cities.Roads.LSystem.TerrainInfo
+  nameWithType: LSystem.TerrainInfo
 - uid: Cities.Roads.LSystem.toRad
   name: toRad
   href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_toRad
@@ -2788,15 +2749,15 @@ references:
   commentId: T:Cities.Roads.LSystemStrategy
   fullName: Cities.Roads.LSystemStrategy
   nameWithType: LSystemStrategy
-- uid: Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter},System.Int32)
-  name: LSystemStrategy(IInjector<MeshFilter>, Int32)
-  href: api/Cities.Roads.LSystemStrategy.html#Cities_Roads_LSystemStrategy__ctor_Interfaces_IInjector_UnityEngine_MeshFilter__System_Int32_
-  commentId: M:Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{UnityEngine.MeshFilter},System.Int32)
-  name.vb: LSystemStrategy(IInjector(Of MeshFilter), Int32)
-  fullName: Cities.Roads.LSystemStrategy.LSystemStrategy(Interfaces.IInjector<UnityEngine.MeshFilter>, System.Int32)
-  fullName.vb: Cities.Roads.LSystemStrategy.LSystemStrategy(Interfaces.IInjector(Of UnityEngine.MeshFilter), System.Int32)
-  nameWithType: LSystemStrategy.LSystemStrategy(IInjector<MeshFilter>, Int32)
-  nameWithType.vb: LSystemStrategy.LSystemStrategy(IInjector(Of MeshFilter), Int32)
+- uid: Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{Terrain.TerrainInfo},System.Int32)
+  name: LSystemStrategy(IInjector<TerrainInfo>, Int32)
+  href: api/Cities.Roads.LSystemStrategy.html#Cities_Roads_LSystemStrategy__ctor_Interfaces_IInjector_Terrain_TerrainInfo__System_Int32_
+  commentId: M:Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{Terrain.TerrainInfo},System.Int32)
+  name.vb: LSystemStrategy(IInjector(Of TerrainInfo), Int32)
+  fullName: Cities.Roads.LSystemStrategy.LSystemStrategy(Interfaces.IInjector<Terrain.TerrainInfo>, System.Int32)
+  fullName.vb: Cities.Roads.LSystemStrategy.LSystemStrategy(Interfaces.IInjector(Of Terrain.TerrainInfo), System.Int32)
+  nameWithType: LSystemStrategy.LSystemStrategy(IInjector<TerrainInfo>, Int32)
+  nameWithType.vb: LSystemStrategy.LSystemStrategy(IInjector(Of TerrainInfo), Int32)
 - uid: Cities.Roads.LSystemStrategy.#ctor*
   name: LSystemStrategy
   href: api/Cities.Roads.LSystemStrategy.html#Cities_Roads_LSystemStrategy__ctor_
@@ -3921,49 +3882,6 @@ references:
   commentId: N:Interfaces
   fullName: Interfaces
   nameWithType: Interfaces
-- uid: Interfaces.Generator`1
-  name: Generator<T>
-  href: api/Interfaces.Generator-1.html
-  commentId: T:Interfaces.Generator`1
-  name.vb: Generator(Of T)
-  fullName: Interfaces.Generator<T>
-  fullName.vb: Interfaces.Generator(Of T)
-  nameWithType: Generator<T>
-  nameWithType.vb: Generator(Of T)
-- uid: Interfaces.Generator`1.Generate
-  name: Generate()
-  href: api/Interfaces.Generator-1.html#Interfaces_Generator_1_Generate
-  commentId: M:Interfaces.Generator`1.Generate
-  fullName: Interfaces.Generator<T>.Generate()
-  fullName.vb: Interfaces.Generator(Of T).Generate()
-  nameWithType: Generator<T>.Generate()
-  nameWithType.vb: Generator(Of T).Generate()
-- uid: Interfaces.Generator`1.Generate*
-  name: Generate
-  href: api/Interfaces.Generator-1.html#Interfaces_Generator_1_Generate_
-  commentId: Overload:Interfaces.Generator`1.Generate
-  isSpec: "True"
-  fullName: Interfaces.Generator<T>.Generate
-  fullName.vb: Interfaces.Generator(Of T).Generate
-  nameWithType: Generator<T>.Generate
-  nameWithType.vb: Generator(Of T).Generate
-- uid: Interfaces.Generator`1.Strategy
-  name: Strategy
-  href: api/Interfaces.Generator-1.html#Interfaces_Generator_1_Strategy
-  commentId: P:Interfaces.Generator`1.Strategy
-  fullName: Interfaces.Generator<T>.Strategy
-  fullName.vb: Interfaces.Generator(Of T).Strategy
-  nameWithType: Generator<T>.Strategy
-  nameWithType.vb: Generator(Of T).Strategy
-- uid: Interfaces.Generator`1.Strategy*
-  name: Strategy
-  href: api/Interfaces.Generator-1.html#Interfaces_Generator_1_Strategy_
-  commentId: Overload:Interfaces.Generator`1.Strategy
-  isSpec: "True"
-  fullName: Interfaces.Generator<T>.Strategy
-  fullName.vb: Interfaces.Generator(Of T).Strategy
-  nameWithType: Generator<T>.Strategy
-  nameWithType.vb: Generator(Of T).Strategy
 - uid: Interfaces.IDisplayable
   name: IDisplayable
   href: api/Interfaces.IDisplayable.html
@@ -4054,6 +3972,58 @@ references:
   fullName.vb: Interfaces.IInjector(Of T).Get
   nameWithType: IInjector<T>.Get
   nameWithType.vb: IInjector(Of T).Get
+- uid: Interfaces.Injector`1
+  name: Injector<T>
+  href: api/Interfaces.Injector-1.html
+  commentId: T:Interfaces.Injector`1
+  name.vb: Injector(Of T)
+  fullName: Interfaces.Injector<T>
+  fullName.vb: Interfaces.Injector(Of T)
+  nameWithType: Injector<T>
+  nameWithType.vb: Injector(Of T)
+- uid: Interfaces.Injector`1.#ctor(System.Func{`0})
+  name: Injector(Func<T>)
+  href: api/Interfaces.Injector-1.html#Interfaces_Injector_1__ctor_System_Func__0__
+  commentId: M:Interfaces.Injector`1.#ctor(System.Func{`0})
+  name.vb: Injector(Func(Of T))
+  fullName: Interfaces.Injector<T>.Injector(System.Func<T>)
+  fullName.vb: Interfaces.Injector(Of T).Injector(System.Func(Of T))
+  nameWithType: Injector<T>.Injector(Func<T>)
+  nameWithType.vb: Injector(Of T).Injector(Func(Of T))
+- uid: Interfaces.Injector`1.#ctor*
+  name: Injector
+  href: api/Interfaces.Injector-1.html#Interfaces_Injector_1__ctor_
+  commentId: Overload:Interfaces.Injector`1.#ctor
+  isSpec: "True"
+  fullName: Interfaces.Injector<T>.Injector
+  fullName.vb: Interfaces.Injector(Of T).Injector
+  nameWithType: Injector<T>.Injector
+  nameWithType.vb: Injector(Of T).Injector
+- uid: Interfaces.Injector`1._injector
+  name: _injector
+  href: api/Interfaces.Injector-1.html#Interfaces_Injector_1__injector
+  commentId: F:Interfaces.Injector`1._injector
+  fullName: Interfaces.Injector<T>._injector
+  fullName.vb: Interfaces.Injector(Of T)._injector
+  nameWithType: Injector<T>._injector
+  nameWithType.vb: Injector(Of T)._injector
+- uid: Interfaces.Injector`1.Get
+  name: Get()
+  href: api/Interfaces.Injector-1.html#Interfaces_Injector_1_Get
+  commentId: M:Interfaces.Injector`1.Get
+  fullName: Interfaces.Injector<T>.Get()
+  fullName.vb: Interfaces.Injector(Of T).Get()
+  nameWithType: Injector<T>.Get()
+  nameWithType.vb: Injector(Of T).Get()
+- uid: Interfaces.Injector`1.Get*
+  name: Get
+  href: api/Interfaces.Injector-1.html#Interfaces_Injector_1_Get_
+  commentId: Overload:Interfaces.Injector`1.Get
+  isSpec: "True"
+  fullName: Interfaces.Injector<T>.Get
+  fullName.vb: Interfaces.Injector(Of T).Get
+  nameWithType: Injector<T>.Get
+  nameWithType.vb: Injector(Of T).Get
 - uid: Interfaces.Strategy`2
   name: Strategy<TI, TO>
   href: api/Interfaces.Strategy-2.html
@@ -4098,6 +4068,23 @@ references:
   fullName.vb: Interfaces.Strategy(Of TI, TO).Generate
   nameWithType: Strategy<TI, TO>.Generate
   nameWithType.vb: Strategy(Of TI, TO).Generate
+- uid: Interfaces.Strategy`2.InjectedValue
+  name: InjectedValue
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue
+  commentId: P:Interfaces.Strategy`2.InjectedValue
+  fullName: Interfaces.Strategy<TI, TO>.InjectedValue
+  fullName.vb: Interfaces.Strategy(Of TI, TO).InjectedValue
+  nameWithType: Strategy<TI, TO>.InjectedValue
+  nameWithType.vb: Strategy(Of TI, TO).InjectedValue
+- uid: Interfaces.Strategy`2.InjectedValue*
+  name: InjectedValue
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue_
+  commentId: Overload:Interfaces.Strategy`2.InjectedValue
+  isSpec: "True"
+  fullName: Interfaces.Strategy<TI, TO>.InjectedValue
+  fullName.vb: Interfaces.Strategy(Of TI, TO).InjectedValue
+  nameWithType: Strategy<TI, TO>.InjectedValue
+  nameWithType.vb: Strategy(Of TI, TO).InjectedValue
 - uid: Interfaces.Strategy`2.Injector
   name: Injector
   href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector
@@ -4288,6 +4275,12 @@ references:
   fullName.vb: Services.ISubscriber(Of T).OnEvent
   nameWithType: ISubscriber<T>.OnEvent
   nameWithType.vb: ISubscriber(Of T).OnEvent
+- uid: Terrain
+  name: Terrain
+  href: api/Terrain.html
+  commentId: N:Terrain
+  fullName: Terrain
+  nameWithType: Terrain
 - uid: Terrain.Noise
   name: Terrain.Noise
   href: api/Terrain.Noise.html
@@ -4538,6 +4531,38 @@ references:
   isSpec: "True"
   fullName: Terrain.Noise.PerlinNoiseStrategy.Width
   nameWithType: PerlinNoiseStrategy.Width
+- uid: Terrain.TerrainInfo
+  name: TerrainInfo
+  href: api/Terrain.TerrainInfo.html
+  commentId: T:Terrain.TerrainInfo
+  fullName: Terrain.TerrainInfo
+  nameWithType: TerrainInfo
+- uid: Terrain.TerrainInfo.HeightMap
+  name: HeightMap
+  href: api/Terrain.TerrainInfo.html#Terrain_TerrainInfo_HeightMap
+  commentId: P:Terrain.TerrainInfo.HeightMap
+  fullName: Terrain.TerrainInfo.HeightMap
+  nameWithType: TerrainInfo.HeightMap
+- uid: Terrain.TerrainInfo.HeightMap*
+  name: HeightMap
+  href: api/Terrain.TerrainInfo.html#Terrain_TerrainInfo_HeightMap_
+  commentId: Overload:Terrain.TerrainInfo.HeightMap
+  isSpec: "True"
+  fullName: Terrain.TerrainInfo.HeightMap
+  nameWithType: TerrainInfo.HeightMap
+- uid: Terrain.TerrainInfo.Offset
+  name: Offset
+  href: api/Terrain.TerrainInfo.html#Terrain_TerrainInfo_Offset
+  commentId: P:Terrain.TerrainInfo.Offset
+  fullName: Terrain.TerrainInfo.Offset
+  nameWithType: TerrainInfo.Offset
+- uid: Terrain.TerrainInfo.Offset*
+  name: Offset
+  href: api/Terrain.TerrainInfo.html#Terrain_TerrainInfo_Offset_
+  commentId: Overload:Terrain.TerrainInfo.Offset
+  isSpec: "True"
+  fullName: Terrain.TerrainInfo.Offset
+  nameWithType: TerrainInfo.Offset
 - uid: Terrain.Textures
   name: Terrain.Textures
   href: api/Terrain.Textures.html
@@ -4559,6 +4584,15 @@ references:
   fullName.vb: Terrain.Textures.Factory.Factory(Interfaces.IInjector(Of System.Single(,)))
   nameWithType: Factory.Factory(IInjector<Single[,]>)
   nameWithType.vb: Factory.Factory(IInjector(Of Single(,)))
+- uid: Terrain.Textures.Factory.#ctor(System.Func{System.Single[0:,0:]})
+  name: Factory(Func<Single[,]>)
+  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory__ctor_System_Func_System_Single_0__0____
+  commentId: M:Terrain.Textures.Factory.#ctor(System.Func{System.Single[0:,0:]})
+  name.vb: Factory(Func(Of Single(,)))
+  fullName: Terrain.Textures.Factory.Factory(System.Func<System.Single[,]>)
+  fullName.vb: Terrain.Textures.Factory.Factory(System.Func(Of System.Single(,)))
+  nameWithType: Factory.Factory(Func<Single[,]>)
+  nameWithType.vb: Factory.Factory(Func(Of Single(,)))
 - uid: Terrain.Textures.Factory.#ctor*
   name: Factory
   href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory__ctor_
