@@ -79,6 +79,7 @@ namespace Cities.Roads
         public void Rewrite()
         {
             Random rdm = new Random();
+            int tries;
             StringBuilder newTree = new StringBuilder();
             float range = 4.0f;
             foreach (char c in tree.ToString())
@@ -113,7 +114,8 @@ namespace Cities.Roads
                             {
                                 case 'S':{
                                     splitState = new State(state.pos + length * splitDir, splitAngle);
-                                    for (int i = 0; i < 10 && (splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ); i++)
+                                    tries = 0;
+                                    while (tries < 10 && (splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ))
                                     {
                                         if(condition >= 0.5)
                                         {
@@ -124,9 +126,10 @@ namespace Cities.Roads
                                         }
                                         splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
                                         splitState = new State(state.pos + length * splitDir, splitAngle);
+                                        tries++;
                                     }
                                     intersects = noIntersects(splitState.pos, range);
-                                    if(intersects <= 1){
+                                    if(intersects <= 1 && tries < 10){
                                         states.Enqueue(splitState);
                                         splitRoad.AddLast(splitState.pos);
                                     }
@@ -168,7 +171,8 @@ namespace Cities.Roads
                         
                     }
                     Vector3 newPos = state.pos + length * direction;
-                    for (int i = 0; i < 10 && (newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ); i++){
+                    tries = 0;
+                    while(tries < 10 && (newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ)){
                     if(state.angle > 0){
                         state.angle += UnityEngine.Random.Range(30*toRad,55*toRad);
                     }else{
@@ -176,8 +180,9 @@ namespace Cities.Roads
                     }
                     direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                     newPos = state.pos + length * direction;
+                    tries++;
                     }
-                    if(noIntersects(newPos, range) <= 1){
+                    if(noIntersects(newPos, range) <= 1 && tries < 10){
                         road.AddLast(newPos);
                         network.AddRoad(road);
                         state.pos = newPos;
