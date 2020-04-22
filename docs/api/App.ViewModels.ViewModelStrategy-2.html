@@ -79,44 +79,29 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;TI, TO&gt;</div>
-    <div class="level2"><span class="xref">ViewModelStrategy&lt;TI, TO&gt;</span></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Cities.Buildings.BuildingViewModel.html">BuildingViewModel</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Cities.Buildings.ExtrusionStrategy.html">ExtrusionStrategy</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Cities.CityViewModel.html">CityViewModel</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Cities.Plots.PlotViewModel.html">PlotViewModel</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Cities.Roads.AStarStrategy.html">AStarStrategy</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Cities.Roads.LSystemStrategy.html">LSystemStrategy</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html">RoadViewModel</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Noise.NoiseViewModel.html">NoiseViewModel</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Noise.PerlinNoiseStrategy.html">PerlinNoiseStrategy</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Noise.Textures.GrayScaleStrategy.html">GrayScaleStrategy</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Noise.Textures.TextureViewModel.html">TextureViewModel</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Noise.Textures.WhittakerStrategy.html">WhittakerStrategy</a></div>
-      <div class="level3"><a class="xref" href="App.ViewModels.Terrain.TerrainViewModel.html">TerrainViewModel</a></div>
+    <div class="level1"><span class="xref">ViewModelStrategy&lt;TI, TO&gt;</span></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Cities.Buildings.BuildingViewModel.html">BuildingViewModel</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Cities.Buildings.ExtrusionStrategy.html">ExtrusionStrategy</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Cities.CityViewModel.html">CityViewModel</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Cities.Plots.PlotViewModel.html">PlotViewModel</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Cities.Roads.AStarStrategy.html">AStarStrategy</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Cities.Roads.LSystemStrategy.html">LSystemStrategy</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html">RoadViewModel</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Noise.NoiseViewModel.html">NoiseViewModel</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html">PerlinNoiseStrategy</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Terrain.TerrainViewModel.html">TerrainViewModel</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Textures.GrayScaleStrategy.html">GrayScaleStrategy</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Textures.TextureViewModel.html">TextureViewModel</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Textures.WhittakerStrategy.html">WhittakerStrategy</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;TO&gt;</div>
-    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;TO&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;TI, TO&gt;.Injector</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;TI, TO&gt;.InjectedValue</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate">Strategy&lt;TI, TO&gt;.Generate()</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Get">Strategy&lt;TI, TO&gt;.Get()</a>
-    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -144,7 +129,7 @@
   <h5 id="App_ViewModels_ViewModelStrategy_2_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public abstract class ViewModelStrategy&lt;TI, TO&gt; : Strategy&lt;TI, TO&gt;, IGenerator&lt;TO&gt;, IInjector&lt;TO&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;, IInitializable</code></pre>
+public abstract class ViewModelStrategy&lt;TI, TO&gt; : IGenerator&lt;TO&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -167,24 +152,6 @@ public abstract class ViewModelStrategy&lt;TI, TO&gt; : Strategy&lt;TI, TO&gt;, 
       </tr>
     </tbody>
   </table>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2__ctor.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L40">View Source</a>
-  </span>
-  <a id="App_ViewModels_ViewModelStrategy_2__ctor_" data-uid="App.ViewModels.ViewModelStrategy`2.#ctor*"></a>
-  <h4 id="App_ViewModels_ViewModelStrategy_2__ctor" data-uid="App.ViewModels.ViewModelStrategy`2.#ctor">ViewModelStrategy()</h4>
-  <div class="markdown level1 summary"><p>Required constructor for initializing the underlying injector.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected ViewModelStrategy()</code></pre>
-  </div>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
@@ -252,6 +219,38 @@ from the previous one and subscribed to the new one.</p>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_Injector.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.Injector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L15">View Source</a>
+  </span>
+  <a id="App_ViewModels_ViewModelStrategy_2_Injector_" data-uid="App.ViewModels.ViewModelStrategy`2.Injector*"></a>
+  <h4 id="App_ViewModels_ViewModelStrategy_2_Injector" data-uid="App.ViewModels.ViewModelStrategy`2.Injector">Injector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual IInjector&lt;TI&gt; Injector
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;TI&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -259,7 +258,7 @@ from the previous one and subscribed to the new one.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L54">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L40">View Source</a>
   </span>
   <a id="App_ViewModels_ViewModelStrategy_2_Display_" data-uid="App.ViewModels.ViewModelStrategy`2.Display*"></a>
   <h4 id="App_ViewModels_ViewModelStrategy_2_Display" data-uid="App.ViewModels.ViewModelStrategy`2.Display">Display()</h4>
@@ -268,14 +267,14 @@ from the previous one and subscribed to the new one.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Display()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract void Display()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L63">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L47">View Source</a>
   </span>
   <a id="App_ViewModels_ViewModelStrategy_2_Generate_" data-uid="App.ViewModels.ViewModelStrategy`2.Generate*"></a>
   <h4 id="App_ViewModels_ViewModelStrategy_2_Generate" data-uid="App.ViewModels.ViewModelStrategy`2.Generate">Generate()</h4>
@@ -285,7 +284,7 @@ on the values in the UI and on the input.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract override TO Generate()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract TO Generate()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -303,30 +302,12 @@ on the values in the UI and on the input.</p>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Interfaces.Strategy&lt;TI, TO&gt;.Generate()</span></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_Initialize.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L47">View Source</a>
-  </span>
-  <a id="App_ViewModels_ViewModelStrategy_2_Initialize_" data-uid="App.ViewModels.ViewModelStrategy`2.Initialize*"></a>
-  <h4 id="App_ViewModels_ViewModelStrategy_2_Initialize" data-uid="App.ViewModels.ViewModelStrategy`2.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"><p>Is required for initializing the non-serializable properties of the view model.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Initialize()</code></pre>
-  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.OnEvent(App.AppEvent%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L65">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L50">View Source</a>
   </span>
   <a id="App_ViewModels_ViewModelStrategy_2_OnEvent_" data-uid="App.ViewModels.ViewModelStrategy`2.OnEvent*"></a>
   <h4 id="App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_" data-uid="App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object)">OnEvent(AppEvent, Object)</h4>
@@ -363,16 +344,10 @@ on the values in the UI and on the input.</p>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
-  </div>
-  <div>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
   </div>
   <div>
       <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
   </div>
 </article>
           </div>

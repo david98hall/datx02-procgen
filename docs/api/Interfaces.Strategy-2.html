@@ -80,7 +80,6 @@
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Strategy&lt;TI, TO&gt;</span></div>
-      <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy&lt;TI, TO&gt;</a></div>
       <div class="level2"><a class="xref" href="Cities.Plots.AdjacentStrategy.html">AdjacentStrategy</a></div>
       <div class="level2"><a class="xref" href="Cities.Plots.BruteMinimalCycleStrategy.html">BruteMinimalCycleStrategy</a></div>
       <div class="level2"><a class="xref" href="Cities.Plots.ClockwiseCycleStrategy.html">ClockwiseCycleStrategy</a></div>
@@ -96,7 +95,6 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;TO&gt;</div>
-    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;TO&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -126,7 +124,7 @@
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
   <h5 id="Interfaces_Strategy_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Strategy&lt;TI, TO&gt; : IGenerator&lt;TO&gt;, IInjector&lt;TO&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Strategy&lt;TI, TO&gt; : IGenerator&lt;TO&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,7 +154,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Strategy_2__ctor_Interfaces_IInjector__0__.md&amp;value=---%0Auid%3A%20Interfaces.Strategy%602.%23ctor(Interfaces.IInjector%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L24">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L19">View Source</a>
   </span>
   <a id="Interfaces_Strategy_2__ctor_" data-uid="Interfaces.Strategy`2.#ctor*"></a>
   <h4 id="Interfaces_Strategy_2__ctor_Interfaces_IInjector__0__" data-uid="Interfaces.Strategy`2.#ctor(Interfaces.IInjector{`0})">Strategy(IInjector&lt;TI&gt;)</h4>
@@ -185,41 +183,8 @@
       </tr>
     </tbody>
   </table>
-  <h3 id="properties">Properties
+  <h3 id="fields">Fields
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Strategy_2_InjectedValue.md&amp;value=---%0Auid%3A%20Interfaces.Strategy%602.InjectedValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L18">View Source</a>
-  </span>
-  <a id="Interfaces_Strategy_2_InjectedValue_" data-uid="Interfaces.Strategy`2.InjectedValue*"></a>
-  <h4 id="Interfaces_Strategy_2_InjectedValue" data-uid="Interfaces.Strategy`2.InjectedValue">InjectedValue</h4>
-  <div class="markdown level1 summary"><p>The value, gotten from the Injector.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TI InjectedValue
-{
-}</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TI</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Strategy_2_Injector.md&amp;value=---%0Auid%3A%20Interfaces.Strategy%602.Injector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -227,18 +192,15 @@
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L13">View Source</a>
   </span>
-  <a id="Interfaces_Strategy_2_Injector_" data-uid="Interfaces.Strategy`2.Injector*"></a>
   <h4 id="Interfaces_Strategy_2_Injector" data-uid="Interfaces.Strategy`2.Injector">Injector</h4>
   <div class="markdown level1 summary"><p>The injector of the input.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual IInjector&lt;TI&gt; Injector
-{
-}</code></pre>
+    <pre><code class="lang-csharp hljs">protected IInjector&lt;TI&gt; Injector</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -260,7 +222,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Strategy_2_Generate.md&amp;value=---%0Auid%3A%20Interfaces.Strategy%602.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L33">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L28">View Source</a>
   </span>
   <a id="Interfaces_Strategy_2_Generate_" data-uid="Interfaces.Strategy`2.Generate*"></a>
   <h4 id="Interfaces_Strategy_2_Generate" data-uid="Interfaces.Strategy`2.Generate">Generate()</h4>
@@ -287,42 +249,9 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Interfaces_Strategy_2_Get.md&amp;value=---%0Auid%3A%20Interfaces.Strategy%602.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L35">View Source</a>
-  </span>
-  <a id="Interfaces_Strategy_2_Get_" data-uid="Interfaces.Strategy`2.Get*"></a>
-  <h4 id="Interfaces_Strategy_2_Get" data-uid="Interfaces.Strategy`2.Get">Get()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TO Get()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TO</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
   </div>
 </article>
           </div>

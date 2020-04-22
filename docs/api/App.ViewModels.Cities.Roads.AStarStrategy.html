@@ -79,28 +79,25 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
-    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
-    <div class="level3"><span class="xref">AStarStrategy</span></div>
+    <div class="level1"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level2"><span class="xref">AStarStrategy</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
-    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;.Injector</a>
+    </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;.EventBus</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;._eventBus</a>
-    </div>
-    <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;.Initialize()</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;.Display()</a>
@@ -110,15 +107,6 @@
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;.OnEvent(AppEvent, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Single[,], RoadNetwork&gt;.Injector</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;Single[,], RoadNetwork&gt;.InjectedValue</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Get">Strategy&lt;Single[,], RoadNetwork&gt;.Get()</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -147,7 +135,7 @@
   <h5 id="App_ViewModels_Cities_Roads_AStarStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class AStarStrategy : ViewModelStrategy&lt;float[, ], RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;, IInjector&lt;RoadNetwork&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;, IInitializable</code></pre>
+public class AStarStrategy : ViewModelStrategy&lt;float[, ], RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -318,7 +306,7 @@ Delegates the generation to the created generator.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_AStarStrategy_OnEvent_App_AppEvent_System_Object_.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Roads/AStarStrategy.cs/#L96">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Roads/AStarStrategy.cs/#L97">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_Roads_AStarStrategy_OnEvent_" data-uid="App.ViewModels.Cities.Roads.AStarStrategy.OnEvent*"></a>
   <h4 id="App_ViewModels_Cities_Roads_AStarStrategy_OnEvent_App_AppEvent_System_Object_" data-uid="App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent,System.Object)">OnEvent(AppEvent, Object)</h4>
@@ -357,16 +345,10 @@ Delegates the generation to the created generator.</p>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
-  </div>
-  <div>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
   </div>
   <div>
       <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
   </div>
 </article>
           </div>

@@ -79,28 +79,25 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
-    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
-    <div class="level3"><span class="xref">BuildingViewModel</span></div>
+    <div class="level1"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
+    <div class="level2"><span class="xref">BuildingViewModel</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
-    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Building</span>&gt;&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Injector</a>
+    </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.EventBus</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;._eventBus</a>
-    </div>
-    <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Initialize()</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Display()</a>
@@ -110,15 +107,6 @@
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.OnEvent(AppEvent, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Injector</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.InjectedValue</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Get">Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Get()</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -147,7 +135,7 @@
   <h5 id="App_ViewModels_Cities_Buildings_BuildingViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class BuildingViewModel : ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;, IGenerator&lt;IEnumerable&lt;Building&gt;&gt;, IInjector&lt;IEnumerable&lt;Building&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;, IInitializable</code></pre>
+public class BuildingViewModel : ViewModelStrategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;, IGenerator&lt;IEnumerable&lt;Building&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -404,7 +392,7 @@ ExtrusionStrategy extrusionStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Buildings_BuildingViewModel_EventBus.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Buildings.BuildingViewModel.EventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L97">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L96">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_Buildings_BuildingViewModel_EventBus_" data-uid="App.ViewModels.Cities.Buildings.BuildingViewModel.EventBus*"></a>
   <h4 id="App_ViewModels_Cities_Buildings_BuildingViewModel_EventBus" data-uid="App.ViewModels.Cities.Buildings.BuildingViewModel.EventBus">EventBus</h4>
@@ -464,7 +452,7 @@ ExtrusionStrategy extrusionStrategy</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Interfaces.Strategy&lt;System.ValueTuple&lt;Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Building&gt;&gt;.Injector</span></div>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.ValueTuple&lt;Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Building&gt;&gt;.Injector</span></div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -472,7 +460,7 @@ ExtrusionStrategy extrusionStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Buildings_BuildingViewModel_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Buildings.BuildingViewModel.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L114">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L113">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_Buildings_BuildingViewModel_Display_" data-uid="App.ViewModels.Cities.Buildings.BuildingViewModel.Display*"></a>
   <h4 id="App_ViewModels_Cities_Buildings_BuildingViewModel_Display" data-uid="App.ViewModels.Cities.Buildings.BuildingViewModel.Display">Display()</h4>
@@ -489,7 +477,7 @@ ExtrusionStrategy extrusionStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildingAppearance.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildingAppearance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L144">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L142">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildingAppearance_" data-uid="App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildingAppearance*"></a>
   <h4 id="App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildingAppearance" data-uid="App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildingAppearance">DisplayBuildingAppearance()</h4>
@@ -505,7 +493,7 @@ ExtrusionStrategy extrusionStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Buildings_BuildingViewModel_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Buildings.BuildingViewModel.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L165">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L162">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_Buildings_BuildingViewModel_Generate_" data-uid="App.ViewModels.Cities.Buildings.BuildingViewModel.Generate*"></a>
   <h4 id="App_ViewModels_Cities_Buildings_BuildingViewModel_Generate" data-uid="App.ViewModels.Cities.Buildings.BuildingViewModel.Generate">Generate()</h4>
@@ -555,16 +543,10 @@ ExtrusionStrategy extrusionStrategy</code></pre>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
-  </div>
-  <div>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
   </div>
   <div>
       <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
   </div>
 </article>
           </div>

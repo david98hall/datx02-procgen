@@ -434,24 +434,6 @@ references:
   commentId: T:App.ViewModels.Cities.CityViewModel
   fullName: App.ViewModels.Cities.CityViewModel
   nameWithType: CityViewModel
-- uid: App.ViewModels.Cities.CityViewModel._buildingViewModel
-  name: _buildingViewModel
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__buildingViewModel
-  commentId: F:App.ViewModels.Cities.CityViewModel._buildingViewModel
-  fullName: App.ViewModels.Cities.CityViewModel._buildingViewModel
-  nameWithType: CityViewModel._buildingViewModel
-- uid: App.ViewModels.Cities.CityViewModel._plotViewModel
-  name: _plotViewModel
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__plotViewModel
-  commentId: F:App.ViewModels.Cities.CityViewModel._plotViewModel
-  fullName: App.ViewModels.Cities.CityViewModel._plotViewModel
-  nameWithType: CityViewModel._plotViewModel
-- uid: App.ViewModels.Cities.CityViewModel._roadViewModel
-  name: _roadViewModel
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__roadViewModel
-  commentId: F:App.ViewModels.Cities.CityViewModel._roadViewModel
-  fullName: App.ViewModels.Cities.CityViewModel._roadViewModel
-  nameWithType: CityViewModel._roadViewModel
 - uid: App.ViewModels.Cities.CityViewModel._visible
   name: _visible
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel__visible
@@ -471,6 +453,12 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.BuildingMaterial
   nameWithType: CityViewModel.BuildingMaterial
+- uid: App.ViewModels.Cities.CityViewModel.buildingViewModel
+  name: buildingViewModel
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_buildingViewModel
+  commentId: F:App.ViewModels.Cities.CityViewModel.buildingViewModel
+  fullName: App.ViewModels.Cities.CityViewModel.buildingViewModel
+  nameWithType: CityViewModel.buildingViewModel
 - uid: App.ViewModels.Cities.CityViewModel.Display
   name: Display()
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Display
@@ -536,19 +524,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.Generate
   nameWithType: CityViewModel.Generate
-- uid: App.ViewModels.Cities.CityViewModel.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Initialize
-  commentId: M:App.ViewModels.Cities.CityViewModel.Initialize
-  fullName: App.ViewModels.Cities.CityViewModel.Initialize()
-  nameWithType: CityViewModel.Initialize()
-- uid: App.ViewModels.Cities.CityViewModel.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Initialize_
-  commentId: Overload:App.ViewModels.Cities.CityViewModel.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.CityViewModel.Initialize
-  nameWithType: CityViewModel.Initialize
 - uid: App.ViewModels.Cities.CityViewModel.Injector
   name: Injector
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Injector
@@ -575,6 +550,12 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.PlotMaterial
   nameWithType: CityViewModel.PlotMaterial
+- uid: App.ViewModels.Cities.CityViewModel.plotViewModel
+  name: plotViewModel
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_plotViewModel
+  commentId: F:App.ViewModels.Cities.CityViewModel.plotViewModel
+  fullName: App.ViewModels.Cities.CityViewModel.plotViewModel
+  nameWithType: CityViewModel.plotViewModel
 - uid: App.ViewModels.Cities.CityViewModel.RoadCurvature
   name: RoadCurvature
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadCurvature
@@ -627,6 +608,12 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY
   nameWithType: CityViewModel.RoadTerrainOffsetY
+- uid: App.ViewModels.Cities.CityViewModel.roadViewModel
+  name: roadViewModel
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_roadViewModel
+  commentId: F:App.ViewModels.Cities.CityViewModel.roadViewModel
+  fullName: App.ViewModels.Cities.CityViewModel.roadViewModel
+  nameWithType: CityViewModel.roadViewModel
 - uid: App.ViewModels.Cities.CityViewModel.RoadWidth
   name: RoadWidth
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadWidth
@@ -652,12 +639,6 @@ references:
   commentId: T:App.ViewModels.Cities.Plots.PlotViewModel
   fullName: App.ViewModels.Cities.Plots.PlotViewModel
   nameWithType: PlotViewModel
-- uid: App.ViewModels.Cities.Plots.PlotViewModel._displayPlots
-  name: _displayPlots
-  href: api/App.ViewModels.Cities.Plots.PlotViewModel.html#App_ViewModels_Cities_Plots_PlotViewModel__displayPlots
-  commentId: F:App.ViewModels.Cities.Plots.PlotViewModel._displayPlots
-  fullName: App.ViewModels.Cities.Plots.PlotViewModel._displayPlots
-  nameWithType: PlotViewModel._displayPlots
 - uid: App.ViewModels.Cities.Plots.PlotViewModel._plotStrategyVisible
   name: _plotStrategyVisible
   href: api/App.ViewModels.Cities.Plots.PlotViewModel.html#App_ViewModels_Cities_Plots_PlotViewModel__plotStrategyVisible
@@ -677,6 +658,12 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Plots.PlotViewModel.Display
   nameWithType: PlotViewModel.Display
+- uid: App.ViewModels.Cities.Plots.PlotViewModel.displayPlots
+  name: displayPlots
+  href: api/App.ViewModels.Cities.Plots.PlotViewModel.html#App_ViewModels_Cities_Plots_PlotViewModel_displayPlots
+  commentId: F:App.ViewModels.Cities.Plots.PlotViewModel.displayPlots
+  fullName: App.ViewModels.Cities.Plots.PlotViewModel.displayPlots
+  nameWithType: PlotViewModel.displayPlots
 - uid: App.ViewModels.Cities.Plots.PlotViewModel.DisplayPlots
   name: DisplayPlots
   href: api/App.ViewModels.Cities.Plots.PlotViewModel.html#App_ViewModels_Cities_Plots_PlotViewModel_DisplayPlots
@@ -858,19 +845,6 @@ references:
   commentId: F:App.ViewModels.Cities.Roads.AStarStrategy.Path.start
   fullName: App.ViewModels.Cities.Roads.AStarStrategy.Path.start
   nameWithType: AStarStrategy.Path.start
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Path.ToValueTuple
-  name: ToValueTuple()
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.Path.html#App_ViewModels_Cities_Roads_AStarStrategy_Path_ToValueTuple
-  commentId: M:App.ViewModels.Cities.Roads.AStarStrategy.Path.ToValueTuple
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Path.ToValueTuple()
-  nameWithType: AStarStrategy.Path.ToValueTuple()
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Path.ToValueTuple*
-  name: ToValueTuple
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.Path.html#App_ViewModels_Cities_Roads_AStarStrategy_Path_ToValueTuple_
-  commentId: Overload:App.ViewModels.Cities.Roads.AStarStrategy.Path.ToValueTuple
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Path.ToValueTuple
-  nameWithType: AStarStrategy.Path.ToValueTuple
 - uid: App.ViewModels.Cities.Roads.AStarStrategy.paths
   name: paths
   href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_paths
@@ -1002,18 +976,6 @@ references:
   commentId: T:App.ViewModels.Cities.Roads.RoadViewModel
   fullName: App.ViewModels.Cities.Roads.RoadViewModel
   nameWithType: RoadViewModel
-- uid: App.ViewModels.Cities.Roads.RoadViewModel._aStarEnabled
-  name: _aStarEnabled
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel__aStarEnabled
-  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel._aStarEnabled
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel._aStarEnabled
-  nameWithType: RoadViewModel._aStarEnabled
-- uid: App.ViewModels.Cities.Roads.RoadViewModel._lSystemEnabled
-  name: _lSystemEnabled
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel__lSystemEnabled
-  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel._lSystemEnabled
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel._lSystemEnabled
-  nameWithType: RoadViewModel._lSystemEnabled
 - uid: App.ViewModels.Cities.Roads.RoadViewModel._roadAppearanceVisible
   name: _roadAppearanceVisible
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel__roadAppearanceVisible
@@ -1026,6 +988,12 @@ references:
   commentId: F:App.ViewModels.Cities.Roads.RoadViewModel._roadNetworkStrategyVisible
   fullName: App.ViewModels.Cities.Roads.RoadViewModel._roadNetworkStrategyVisible
   nameWithType: RoadViewModel._roadNetworkStrategyVisible
+- uid: App.ViewModels.Cities.Roads.RoadViewModel.aStarEnabled
+  name: aStarEnabled
+  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_aStarEnabled
+  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.aStarEnabled
+  fullName: App.ViewModels.Cities.Roads.RoadViewModel.aStarEnabled
+  nameWithType: RoadViewModel.aStarEnabled
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.aStarStrategy
   name: aStarStrategy
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_aStarStrategy
@@ -1084,19 +1052,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.Generate
   nameWithType: RoadViewModel.Generate
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_Initialize
-  commentId: M:App.ViewModels.Cities.Roads.RoadViewModel.Initialize
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.Initialize()
-  nameWithType: RoadViewModel.Initialize()
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_Initialize_
-  commentId: Overload:App.ViewModels.Cities.Roads.RoadViewModel.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.Initialize
-  nameWithType: RoadViewModel.Initialize
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.Injector
   name: Injector
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_Injector
@@ -1110,6 +1065,12 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.Injector
   nameWithType: RoadViewModel.Injector
+- uid: App.ViewModels.Cities.Roads.RoadViewModel.lSystemEnabled
+  name: lSystemEnabled
+  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_lSystemEnabled
+  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.lSystemEnabled
+  fullName: App.ViewModels.Cities.Roads.RoadViewModel.lSystemEnabled
+  nameWithType: RoadViewModel.lSystemEnabled
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.lSystemStrategy
   name: lSystemStrategy
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_lSystemStrategy
@@ -1211,399 +1172,192 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.RoadWidth
   nameWithType: RoadViewModel.RoadWidth
-- uid: App.ViewModels.Noise
-  name: App.ViewModels.Noise
-  href: api/App.ViewModels.Noise.html
-  commentId: N:App.ViewModels.Noise
-  fullName: App.ViewModels.Noise
-  nameWithType: App.ViewModels.Noise
-- uid: App.ViewModels.Noise.NoiseViewModel
-  name: NoiseViewModel
-  href: api/App.ViewModels.Noise.NoiseViewModel.html
-  commentId: T:App.ViewModels.Noise.NoiseViewModel
-  fullName: App.ViewModels.Noise.NoiseViewModel
-  nameWithType: NoiseViewModel
-- uid: App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible
-  name: _noiseStrategyVisible
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel__noiseStrategyVisible
-  commentId: F:App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible
-  fullName: App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible
-  nameWithType: NoiseViewModel._noiseStrategyVisible
-- uid: App.ViewModels.Noise.NoiseViewModel.Display
-  name: Display()
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Display
-  commentId: M:App.ViewModels.Noise.NoiseViewModel.Display
-  fullName: App.ViewModels.Noise.NoiseViewModel.Display()
-  nameWithType: NoiseViewModel.Display()
-- uid: App.ViewModels.Noise.NoiseViewModel.Display*
-  name: Display
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Display_
-  commentId: Overload:App.ViewModels.Noise.NoiseViewModel.Display
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.NoiseViewModel.Display
-  nameWithType: NoiseViewModel.Display
-- uid: App.ViewModels.Noise.NoiseViewModel.EventBus
-  name: EventBus
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_EventBus
-  commentId: P:App.ViewModels.Noise.NoiseViewModel.EventBus
-  fullName: App.ViewModels.Noise.NoiseViewModel.EventBus
-  nameWithType: NoiseViewModel.EventBus
-- uid: App.ViewModels.Noise.NoiseViewModel.EventBus*
-  name: EventBus
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_EventBus_
-  commentId: Overload:App.ViewModels.Noise.NoiseViewModel.EventBus
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.NoiseViewModel.EventBus
-  nameWithType: NoiseViewModel.EventBus
-- uid: App.ViewModels.Noise.NoiseViewModel.Generate
-  name: Generate()
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Generate
-  commentId: M:App.ViewModels.Noise.NoiseViewModel.Generate
-  fullName: App.ViewModels.Noise.NoiseViewModel.Generate()
-  nameWithType: NoiseViewModel.Generate()
-- uid: App.ViewModels.Noise.NoiseViewModel.Generate*
-  name: Generate
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Generate_
-  commentId: Overload:App.ViewModels.Noise.NoiseViewModel.Generate
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.NoiseViewModel.Generate
-  nameWithType: NoiseViewModel.Generate
-- uid: App.ViewModels.Noise.NoiseViewModel.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Initialize
-  commentId: M:App.ViewModels.Noise.NoiseViewModel.Initialize
-  fullName: App.ViewModels.Noise.NoiseViewModel.Initialize()
-  nameWithType: NoiseViewModel.Initialize()
-- uid: App.ViewModels.Noise.NoiseViewModel.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Initialize_
-  commentId: Overload:App.ViewModels.Noise.NoiseViewModel.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.NoiseViewModel.Initialize
-  nameWithType: NoiseViewModel.Initialize
-- uid: App.ViewModels.Noise.NoiseViewModel.noiseStrategy
-  name: noiseStrategy
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_noiseStrategy
-  commentId: F:App.ViewModels.Noise.NoiseViewModel.noiseStrategy
-  fullName: App.ViewModels.Noise.NoiseViewModel.noiseStrategy
-  nameWithType: NoiseViewModel.noiseStrategy
-- uid: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy
-  name: NoiseViewModel.NoiseStrategy
-  href: api/App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.html
-  commentId: T:App.ViewModels.Noise.NoiseViewModel.NoiseStrategy
-  fullName: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy
-  nameWithType: NoiseViewModel.NoiseStrategy
-- uid: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
-  name: PerlinNoise
-  href: api/App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.html#App_ViewModels_Noise_NoiseViewModel_NoiseStrategy_PerlinNoise
-  commentId: F:App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
-  fullName: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
-  nameWithType: NoiseViewModel.NoiseStrategy.PerlinNoise
-- uid: App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
-  name: perlinNoiseStrategy
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_perlinNoiseStrategy
-  commentId: F:App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
-  fullName: App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
-  nameWithType: NoiseViewModel.perlinNoiseStrategy
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy
-  name: PerlinNoiseStrategy
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html
-  commentId: T:App.ViewModels.Noise.PerlinNoiseStrategy
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy
-  nameWithType: PerlinNoiseStrategy
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.depth
-  name: depth
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_depth
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.depth
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.depth
-  nameWithType: PerlinNoiseStrategy.depth
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Display
-  name: Display()
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Display
-  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.Display
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Display()
-  nameWithType: PerlinNoiseStrategy.Display()
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Display*
-  name: Display
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Display_
-  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.Display
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Display
-  nameWithType: PerlinNoiseStrategy.Display
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  name: DisplaySizeControls()
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_DisplaySizeControls
-  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls()
-  nameWithType: PerlinNoiseStrategy.DisplaySizeControls()
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls*
-  name: DisplaySizeControls
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_DisplaySizeControls_
-  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  nameWithType: PerlinNoiseStrategy.DisplaySizeControls
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Generate
-  name: Generate()
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Generate
-  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.Generate
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Generate()
-  nameWithType: PerlinNoiseStrategy.Generate()
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Generate*
-  name: Generate
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Generate_
-  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.Generate
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Generate
-  nameWithType: PerlinNoiseStrategy.Generate
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
-  name: lacunarity
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_lacunarity
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
-  nameWithType: PerlinNoiseStrategy.lacunarity
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
-  name: noiseOffset
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_noiseOffset
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
-  nameWithType: PerlinNoiseStrategy.noiseOffset
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
-  name: numOctaves
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_numOctaves
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
-  nameWithType: PerlinNoiseStrategy.numOctaves
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.persistence
-  name: persistence
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_persistence
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.persistence
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.persistence
-  nameWithType: PerlinNoiseStrategy.persistence
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.scale
-  name: scale
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_scale
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.scale
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.scale
-  nameWithType: PerlinNoiseStrategy.scale
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.seed
-  name: seed
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_seed
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.seed
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.seed
-  nameWithType: PerlinNoiseStrategy.seed
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.width
-  name: width
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_width
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.width
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.width
-  nameWithType: PerlinNoiseStrategy.width
-- uid: App.ViewModels.Noise.Textures
-  name: App.ViewModels.Noise.Textures
-  href: api/App.ViewModels.Noise.Textures.html
-  commentId: N:App.ViewModels.Noise.Textures
-  fullName: App.ViewModels.Noise.Textures
-  nameWithType: App.ViewModels.Noise.Textures
-- uid: App.ViewModels.Noise.Textures.GrayScaleStrategy
-  name: GrayScaleStrategy
-  href: api/App.ViewModels.Noise.Textures.GrayScaleStrategy.html
-  commentId: T:App.ViewModels.Noise.Textures.GrayScaleStrategy
-  fullName: App.ViewModels.Noise.Textures.GrayScaleStrategy
-  nameWithType: GrayScaleStrategy
-- uid: App.ViewModels.Noise.Textures.GrayScaleStrategy.Generate
-  name: Generate()
-  href: api/App.ViewModels.Noise.Textures.GrayScaleStrategy.html#App_ViewModels_Noise_Textures_GrayScaleStrategy_Generate
-  commentId: M:App.ViewModels.Noise.Textures.GrayScaleStrategy.Generate
-  fullName: App.ViewModels.Noise.Textures.GrayScaleStrategy.Generate()
-  nameWithType: GrayScaleStrategy.Generate()
-- uid: App.ViewModels.Noise.Textures.GrayScaleStrategy.Generate*
-  name: Generate
-  href: api/App.ViewModels.Noise.Textures.GrayScaleStrategy.html#App_ViewModels_Noise_Textures_GrayScaleStrategy_Generate_
-  commentId: Overload:App.ViewModels.Noise.Textures.GrayScaleStrategy.Generate
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.Textures.GrayScaleStrategy.Generate
-  nameWithType: GrayScaleStrategy.Generate
-- uid: App.ViewModels.Noise.Textures.TextureViewModel
-  name: TextureViewModel
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html
-  commentId: T:App.ViewModels.Noise.Textures.TextureViewModel
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel
-  nameWithType: TextureViewModel
-- uid: App.ViewModels.Noise.Textures.TextureViewModel._textureStrategyVisible
-  name: _textureStrategyVisible
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel__textureStrategyVisible
-  commentId: F:App.ViewModels.Noise.Textures.TextureViewModel._textureStrategyVisible
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel._textureStrategyVisible
-  nameWithType: TextureViewModel._textureStrategyVisible
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.Display
-  name: Display()
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_Display
-  commentId: M:App.ViewModels.Noise.Textures.TextureViewModel.Display
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.Display()
-  nameWithType: TextureViewModel.Display()
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.Display*
-  name: Display
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_Display_
-  commentId: Overload:App.ViewModels.Noise.Textures.TextureViewModel.Display
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.Display
-  nameWithType: TextureViewModel.Display
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.EventBus
-  name: EventBus
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_EventBus
-  commentId: P:App.ViewModels.Noise.Textures.TextureViewModel.EventBus
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.EventBus
-  nameWithType: TextureViewModel.EventBus
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.EventBus*
-  name: EventBus
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_EventBus_
-  commentId: Overload:App.ViewModels.Noise.Textures.TextureViewModel.EventBus
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.EventBus
-  nameWithType: TextureViewModel.EventBus
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.Generate
-  name: Generate()
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_Generate
-  commentId: M:App.ViewModels.Noise.Textures.TextureViewModel.Generate
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.Generate()
-  nameWithType: TextureViewModel.Generate()
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.Generate*
-  name: Generate
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_Generate_
-  commentId: Overload:App.ViewModels.Noise.Textures.TextureViewModel.Generate
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.Generate
-  nameWithType: TextureViewModel.Generate
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.grayScaleStrategy
-  name: grayScaleStrategy
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_grayScaleStrategy
-  commentId: F:App.ViewModels.Noise.Textures.TextureViewModel.grayScaleStrategy
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.grayScaleStrategy
-  nameWithType: TextureViewModel.grayScaleStrategy
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_Initialize
-  commentId: M:App.ViewModels.Noise.Textures.TextureViewModel.Initialize
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.Initialize()
-  nameWithType: TextureViewModel.Initialize()
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_Initialize_
-  commentId: Overload:App.ViewModels.Noise.Textures.TextureViewModel.Initialize
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.Initialize
-  nameWithType: TextureViewModel.Initialize
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.Injector
-  name: Injector
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_Injector
-  commentId: P:App.ViewModels.Noise.Textures.TextureViewModel.Injector
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.Injector
-  nameWithType: TextureViewModel.Injector
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.Injector*
-  name: Injector
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_Injector_
-  commentId: Overload:App.ViewModels.Noise.Textures.TextureViewModel.Injector
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.Injector
-  nameWithType: TextureViewModel.Injector
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.textureStrategy
-  name: textureStrategy
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_textureStrategy
-  commentId: F:App.ViewModels.Noise.Textures.TextureViewModel.textureStrategy
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.textureStrategy
-  nameWithType: TextureViewModel.textureStrategy
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy
-  name: TextureViewModel.TextureStrategy
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.html
-  commentId: T:App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy
-  nameWithType: TextureViewModel.TextureStrategy
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.GrayScale
-  name: GrayScale
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.html#App_ViewModels_Noise_Textures_TextureViewModel_TextureStrategy_GrayScale
-  commentId: F:App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.GrayScale
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.GrayScale
-  nameWithType: TextureViewModel.TextureStrategy.GrayScale
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.Whittaker
-  name: Whittaker
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.html#App_ViewModels_Noise_Textures_TextureViewModel_TextureStrategy_Whittaker
-  commentId: F:App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.Whittaker
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.TextureStrategy.Whittaker
-  nameWithType: TextureViewModel.TextureStrategy.Whittaker
-- uid: App.ViewModels.Noise.Textures.TextureViewModel.whittakerStrategy
-  name: whittakerStrategy
-  href: api/App.ViewModels.Noise.Textures.TextureViewModel.html#App_ViewModels_Noise_Textures_TextureViewModel_whittakerStrategy
-  commentId: F:App.ViewModels.Noise.Textures.TextureViewModel.whittakerStrategy
-  fullName: App.ViewModels.Noise.Textures.TextureViewModel.whittakerStrategy
-  nameWithType: TextureViewModel.whittakerStrategy
-- uid: App.ViewModels.Noise.Textures.WhittakerStrategy
-  name: WhittakerStrategy
-  href: api/App.ViewModels.Noise.Textures.WhittakerStrategy.html
-  commentId: T:App.ViewModels.Noise.Textures.WhittakerStrategy
-  fullName: App.ViewModels.Noise.Textures.WhittakerStrategy
-  nameWithType: WhittakerStrategy
-- uid: App.ViewModels.Noise.Textures.WhittakerStrategy.Display
-  name: Display()
-  href: api/App.ViewModels.Noise.Textures.WhittakerStrategy.html#App_ViewModels_Noise_Textures_WhittakerStrategy_Display
-  commentId: M:App.ViewModels.Noise.Textures.WhittakerStrategy.Display
-  fullName: App.ViewModels.Noise.Textures.WhittakerStrategy.Display()
-  nameWithType: WhittakerStrategy.Display()
-- uid: App.ViewModels.Noise.Textures.WhittakerStrategy.Display*
-  name: Display
-  href: api/App.ViewModels.Noise.Textures.WhittakerStrategy.html#App_ViewModels_Noise_Textures_WhittakerStrategy_Display_
-  commentId: Overload:App.ViewModels.Noise.Textures.WhittakerStrategy.Display
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.Textures.WhittakerStrategy.Display
-  nameWithType: WhittakerStrategy.Display
-- uid: App.ViewModels.Noise.Textures.WhittakerStrategy.Generate
-  name: Generate()
-  href: api/App.ViewModels.Noise.Textures.WhittakerStrategy.html#App_ViewModels_Noise_Textures_WhittakerStrategy_Generate
-  commentId: M:App.ViewModels.Noise.Textures.WhittakerStrategy.Generate
-  fullName: App.ViewModels.Noise.Textures.WhittakerStrategy.Generate()
-  nameWithType: WhittakerStrategy.Generate()
-- uid: App.ViewModels.Noise.Textures.WhittakerStrategy.Generate*
-  name: Generate
-  href: api/App.ViewModels.Noise.Textures.WhittakerStrategy.html#App_ViewModels_Noise_Textures_WhittakerStrategy_Generate_
-  commentId: Overload:App.ViewModels.Noise.Textures.WhittakerStrategy.Generate
-  isSpec: "True"
-  fullName: App.ViewModels.Noise.Textures.WhittakerStrategy.Generate
-  nameWithType: WhittakerStrategy.Generate
-- uid: App.ViewModels.Noise.Textures.WhittakerStrategy.precipitationScale
-  name: precipitationScale
-  href: api/App.ViewModels.Noise.Textures.WhittakerStrategy.html#App_ViewModels_Noise_Textures_WhittakerStrategy_precipitationScale
-  commentId: F:App.ViewModels.Noise.Textures.WhittakerStrategy.precipitationScale
-  fullName: App.ViewModels.Noise.Textures.WhittakerStrategy.precipitationScale
-  nameWithType: WhittakerStrategy.precipitationScale
-- uid: App.ViewModels.Noise.Textures.WhittakerStrategy.temperatureScale
-  name: temperatureScale
-  href: api/App.ViewModels.Noise.Textures.WhittakerStrategy.html#App_ViewModels_Noise_Textures_WhittakerStrategy_temperatureScale
-  commentId: F:App.ViewModels.Noise.Textures.WhittakerStrategy.temperatureScale
-  fullName: App.ViewModels.Noise.Textures.WhittakerStrategy.temperatureScale
-  nameWithType: WhittakerStrategy.temperatureScale
 - uid: App.ViewModels.Terrain
   name: App.ViewModels.Terrain
   href: api/App.ViewModels.Terrain.html
   commentId: N:App.ViewModels.Terrain
   fullName: App.ViewModels.Terrain
   nameWithType: App.ViewModels.Terrain
+- uid: App.ViewModels.Terrain.Noise
+  name: App.ViewModels.Terrain.Noise
+  href: api/App.ViewModels.Terrain.Noise.html
+  commentId: N:App.ViewModels.Terrain.Noise
+  fullName: App.ViewModels.Terrain.Noise
+  nameWithType: App.ViewModels.Terrain.Noise
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel
+  name: NoiseViewModel
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html
+  commentId: T:App.ViewModels.Terrain.Noise.NoiseViewModel
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel
+  nameWithType: NoiseViewModel
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel._noiseStrategyVisible
+  name: _noiseStrategyVisible
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel__noiseStrategyVisible
+  commentId: F:App.ViewModels.Terrain.Noise.NoiseViewModel._noiseStrategyVisible
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel._noiseStrategyVisible
+  nameWithType: NoiseViewModel._noiseStrategyVisible
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.Display
+  name: Display()
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_Display
+  commentId: M:App.ViewModels.Terrain.Noise.NoiseViewModel.Display
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.Display()
+  nameWithType: NoiseViewModel.Display()
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.Display*
+  name: Display
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_Display_
+  commentId: Overload:App.ViewModels.Terrain.Noise.NoiseViewModel.Display
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.Display
+  nameWithType: NoiseViewModel.Display
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
+  name: EventBus
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_EventBus
+  commentId: P:App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
+  nameWithType: NoiseViewModel.EventBus
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus*
+  name: EventBus
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_EventBus_
+  commentId: Overload:App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
+  nameWithType: NoiseViewModel.EventBus
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.Generate
+  name: Generate()
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_Generate
+  commentId: M:App.ViewModels.Terrain.Noise.NoiseViewModel.Generate
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.Generate()
+  nameWithType: NoiseViewModel.Generate()
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.Generate*
+  name: Generate
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_Generate_
+  commentId: Overload:App.ViewModels.Terrain.Noise.NoiseViewModel.Generate
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.Generate
+  nameWithType: NoiseViewModel.Generate
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.noiseStrategy
+  name: noiseStrategy
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_noiseStrategy
+  commentId: F:App.ViewModels.Terrain.Noise.NoiseViewModel.noiseStrategy
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.noiseStrategy
+  nameWithType: NoiseViewModel.noiseStrategy
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy
+  name: NoiseViewModel.NoiseStrategy
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.html
+  commentId: T:App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy
+  nameWithType: NoiseViewModel.NoiseStrategy
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
+  name: PerlinNoise
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.html#App_ViewModels_Terrain_Noise_NoiseViewModel_NoiseStrategy_PerlinNoise
+  commentId: F:App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
+  nameWithType: NoiseViewModel.NoiseStrategy.PerlinNoise
+- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.perlinNoiseStrategy
+  name: perlinNoiseStrategy
+  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_perlinNoiseStrategy
+  commentId: F:App.ViewModels.Terrain.Noise.NoiseViewModel.perlinNoiseStrategy
+  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.perlinNoiseStrategy
+  nameWithType: NoiseViewModel.perlinNoiseStrategy
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy
+  name: PerlinNoiseStrategy
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html
+  commentId: T:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy
+  nameWithType: PerlinNoiseStrategy
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.depth
+  name: depth
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_depth
+  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.depth
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.depth
+  nameWithType: PerlinNoiseStrategy.depth
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display
+  name: Display()
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_Display
+  commentId: M:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display()
+  nameWithType: PerlinNoiseStrategy.Display()
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display*
+  name: Display
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_Display_
+  commentId: Overload:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display
+  nameWithType: PerlinNoiseStrategy.Display
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  name: DisplaySizeControls()
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_DisplaySizeControls
+  commentId: M:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls()
+  nameWithType: PerlinNoiseStrategy.DisplaySizeControls()
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls*
+  name: DisplaySizeControls
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_DisplaySizeControls_
+  commentId: Overload:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  nameWithType: PerlinNoiseStrategy.DisplaySizeControls
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate
+  name: Generate()
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_Generate
+  commentId: M:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate()
+  nameWithType: PerlinNoiseStrategy.Generate()
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate*
+  name: Generate
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_Generate_
+  commentId: Overload:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate
+  nameWithType: PerlinNoiseStrategy.Generate
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.lacunarity
+  name: lacunarity
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_lacunarity
+  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.lacunarity
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.lacunarity
+  nameWithType: PerlinNoiseStrategy.lacunarity
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.noiseOffset
+  name: noiseOffset
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_noiseOffset
+  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.noiseOffset
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.noiseOffset
+  nameWithType: PerlinNoiseStrategy.noiseOffset
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.numOctaves
+  name: numOctaves
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_numOctaves
+  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.numOctaves
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.numOctaves
+  nameWithType: PerlinNoiseStrategy.numOctaves
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.persistence
+  name: persistence
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_persistence
+  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.persistence
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.persistence
+  nameWithType: PerlinNoiseStrategy.persistence
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.scale
+  name: scale
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_scale
+  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.scale
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.scale
+  nameWithType: PerlinNoiseStrategy.scale
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.seed
+  name: seed
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_seed
+  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.seed
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.seed
+  nameWithType: PerlinNoiseStrategy.seed
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.width
+  name: width
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_width
+  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.width
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.width
+  nameWithType: PerlinNoiseStrategy.width
 - uid: App.ViewModels.Terrain.TerrainViewModel
   name: TerrainViewModel
   href: api/App.ViewModels.Terrain.TerrainViewModel.html
   commentId: T:App.ViewModels.Terrain.TerrainViewModel
   fullName: App.ViewModels.Terrain.TerrainViewModel
   nameWithType: TerrainViewModel
-- uid: App.ViewModels.Terrain.TerrainViewModel._noiseViewModel
-  name: _noiseViewModel
-  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__noiseViewModel
-  commentId: F:App.ViewModels.Terrain.TerrainViewModel._noiseViewModel
-  fullName: App.ViewModels.Terrain.TerrainViewModel._noiseViewModel
-  nameWithType: TerrainViewModel._noiseViewModel
-- uid: App.ViewModels.Terrain.TerrainViewModel._textureViewModel
-  name: _textureViewModel
-  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__textureViewModel
-  commentId: F:App.ViewModels.Terrain.TerrainViewModel._textureViewModel
-  fullName: App.ViewModels.Terrain.TerrainViewModel._textureViewModel
-  nameWithType: TerrainViewModel._textureViewModel
 - uid: App.ViewModels.Terrain.TerrainViewModel._visible
   name: _visible
   href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel__visible
@@ -1661,19 +1415,194 @@ references:
   commentId: F:App.ViewModels.Terrain.TerrainViewModel.heightScale
   fullName: App.ViewModels.Terrain.TerrainViewModel.heightScale
   nameWithType: TerrainViewModel.heightScale
-- uid: App.ViewModels.Terrain.TerrainViewModel.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_Initialize
-  commentId: M:App.ViewModels.Terrain.TerrainViewModel.Initialize
-  fullName: App.ViewModels.Terrain.TerrainViewModel.Initialize()
-  nameWithType: TerrainViewModel.Initialize()
-- uid: App.ViewModels.Terrain.TerrainViewModel.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_Initialize_
-  commentId: Overload:App.ViewModels.Terrain.TerrainViewModel.Initialize
+- uid: App.ViewModels.Terrain.TerrainViewModel.noiseViewModel
+  name: noiseViewModel
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_noiseViewModel
+  commentId: F:App.ViewModels.Terrain.TerrainViewModel.noiseViewModel
+  fullName: App.ViewModels.Terrain.TerrainViewModel.noiseViewModel
+  nameWithType: TerrainViewModel.noiseViewModel
+- uid: App.ViewModels.Terrain.TerrainViewModel.textureViewModel
+  name: textureViewModel
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_textureViewModel
+  commentId: F:App.ViewModels.Terrain.TerrainViewModel.textureViewModel
+  fullName: App.ViewModels.Terrain.TerrainViewModel.textureViewModel
+  nameWithType: TerrainViewModel.textureViewModel
+- uid: App.ViewModels.Terrain.Textures
+  name: App.ViewModels.Terrain.Textures
+  href: api/App.ViewModels.Terrain.Textures.html
+  commentId: N:App.ViewModels.Terrain.Textures
+  fullName: App.ViewModels.Terrain.Textures
+  nameWithType: App.ViewModels.Terrain.Textures
+- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy
+  name: GrayScaleStrategy
+  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html
+  commentId: T:App.ViewModels.Terrain.Textures.GrayScaleStrategy
+  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy
+  nameWithType: GrayScaleStrategy
+- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display
+  name: Display()
+  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html#App_ViewModels_Terrain_Textures_GrayScaleStrategy_Display
+  commentId: M:App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display
+  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display()
+  nameWithType: GrayScaleStrategy.Display()
+- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display*
+  name: Display
+  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html#App_ViewModels_Terrain_Textures_GrayScaleStrategy_Display_
+  commentId: Overload:App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display
   isSpec: "True"
-  fullName: App.ViewModels.Terrain.TerrainViewModel.Initialize
-  nameWithType: TerrainViewModel.Initialize
+  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display
+  nameWithType: GrayScaleStrategy.Display
+- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate
+  name: Generate()
+  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html#App_ViewModels_Terrain_Textures_GrayScaleStrategy_Generate
+  commentId: M:App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate
+  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate()
+  nameWithType: GrayScaleStrategy.Generate()
+- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate*
+  name: Generate
+  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html#App_ViewModels_Terrain_Textures_GrayScaleStrategy_Generate_
+  commentId: Overload:App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate
+  nameWithType: GrayScaleStrategy.Generate
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel
+  name: TextureViewModel
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html
+  commentId: T:App.ViewModels.Terrain.Textures.TextureViewModel
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel
+  nameWithType: TextureViewModel
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel._textureStrategyVisible
+  name: _textureStrategyVisible
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel__textureStrategyVisible
+  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel._textureStrategyVisible
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel._textureStrategyVisible
+  nameWithType: TextureViewModel._textureStrategyVisible
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.Display
+  name: Display()
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_Display
+  commentId: M:App.ViewModels.Terrain.Textures.TextureViewModel.Display
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.Display()
+  nameWithType: TextureViewModel.Display()
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.Display*
+  name: Display
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_Display_
+  commentId: Overload:App.ViewModels.Terrain.Textures.TextureViewModel.Display
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.Display
+  nameWithType: TextureViewModel.Display
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.EventBus
+  name: EventBus
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_EventBus
+  commentId: P:App.ViewModels.Terrain.Textures.TextureViewModel.EventBus
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.EventBus
+  nameWithType: TextureViewModel.EventBus
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.EventBus*
+  name: EventBus
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_EventBus_
+  commentId: Overload:App.ViewModels.Terrain.Textures.TextureViewModel.EventBus
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.EventBus
+  nameWithType: TextureViewModel.EventBus
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.Generate
+  name: Generate()
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_Generate
+  commentId: M:App.ViewModels.Terrain.Textures.TextureViewModel.Generate
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.Generate()
+  nameWithType: TextureViewModel.Generate()
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.Generate*
+  name: Generate
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_Generate_
+  commentId: Overload:App.ViewModels.Terrain.Textures.TextureViewModel.Generate
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.Generate
+  nameWithType: TextureViewModel.Generate
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.Injector
+  name: Injector
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_Injector
+  commentId: P:App.ViewModels.Terrain.Textures.TextureViewModel.Injector
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.Injector
+  nameWithType: TextureViewModel.Injector
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.Injector*
+  name: Injector
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_Injector_
+  commentId: Overload:App.ViewModels.Terrain.Textures.TextureViewModel.Injector
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.Injector
+  nameWithType: TextureViewModel.Injector
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.textureStrategy
+  name: textureStrategy
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_textureStrategy
+  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.textureStrategy
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.textureStrategy
+  nameWithType: TextureViewModel.textureStrategy
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy
+  name: TextureViewModel.TextureStrategy
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html
+  commentId: T:App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy
+  nameWithType: TextureViewModel.TextureStrategy
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
+  name: GrayScale
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html#App_ViewModels_Terrain_Textures_TextureViewModel_TextureStrategy_GrayScale
+  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
+  nameWithType: TextureViewModel.TextureStrategy.GrayScale
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.Whittaker
+  name: Whittaker
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html#App_ViewModels_Terrain_Textures_TextureViewModel_TextureStrategy_Whittaker
+  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.Whittaker
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.Whittaker
+  nameWithType: TextureViewModel.TextureStrategy.Whittaker
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.whittakerStrategy
+  name: whittakerStrategy
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_whittakerStrategy
+  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.whittakerStrategy
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.whittakerStrategy
+  nameWithType: TextureViewModel.whittakerStrategy
+- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy
+  name: WhittakerStrategy
+  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html
+  commentId: T:App.ViewModels.Terrain.Textures.WhittakerStrategy
+  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy
+  nameWithType: WhittakerStrategy
+- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.Display
+  name: Display()
+  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_Display
+  commentId: M:App.ViewModels.Terrain.Textures.WhittakerStrategy.Display
+  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.Display()
+  nameWithType: WhittakerStrategy.Display()
+- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.Display*
+  name: Display
+  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_Display_
+  commentId: Overload:App.ViewModels.Terrain.Textures.WhittakerStrategy.Display
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.Display
+  nameWithType: WhittakerStrategy.Display
+- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate
+  name: Generate()
+  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_Generate
+  commentId: M:App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate
+  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate()
+  nameWithType: WhittakerStrategy.Generate()
+- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate*
+  name: Generate
+  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_Generate_
+  commentId: Overload:App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate
+  nameWithType: WhittakerStrategy.Generate
+- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.precipitationScale
+  name: precipitationScale
+  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_precipitationScale
+  commentId: F:App.ViewModels.Terrain.Textures.WhittakerStrategy.precipitationScale
+  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.precipitationScale
+  nameWithType: WhittakerStrategy.precipitationScale
+- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.temperatureScale
+  name: temperatureScale
+  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_temperatureScale
+  commentId: F:App.ViewModels.Terrain.Textures.WhittakerStrategy.temperatureScale
+  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.temperatureScale
+  nameWithType: WhittakerStrategy.temperatureScale
 - uid: App.ViewModels.ViewModelStrategy`2
   name: ViewModelStrategy<TI, TO>
   href: api/App.ViewModels.ViewModelStrategy-2.html
@@ -1683,23 +1612,6 @@ references:
   fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO)
   nameWithType: ViewModelStrategy<TI, TO>
   nameWithType.vb: ViewModelStrategy(Of TI, TO)
-- uid: App.ViewModels.ViewModelStrategy`2.#ctor
-  name: ViewModelStrategy()
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__ctor
-  commentId: M:App.ViewModels.ViewModelStrategy`2.#ctor
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.ViewModelStrategy()
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).ViewModelStrategy()
-  nameWithType: ViewModelStrategy<TI, TO>.ViewModelStrategy()
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).ViewModelStrategy()
-- uid: App.ViewModels.ViewModelStrategy`2.#ctor*
-  name: ViewModelStrategy
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__ctor_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.#ctor
-  isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.ViewModelStrategy
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).ViewModelStrategy
-  nameWithType: ViewModelStrategy<TI, TO>.ViewModelStrategy
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).ViewModelStrategy
 - uid: App.ViewModels.ViewModelStrategy`2._eventBus
   name: _eventBus
   href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus
@@ -1759,23 +1671,23 @@ references:
   fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Generate
   nameWithType: ViewModelStrategy<TI, TO>.Generate
   nameWithType.vb: ViewModelStrategy(Of TI, TO).Generate
-- uid: App.ViewModels.ViewModelStrategy`2.Initialize
-  name: Initialize()
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize
-  commentId: M:App.ViewModels.ViewModelStrategy`2.Initialize
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Initialize()
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Initialize()
-  nameWithType: ViewModelStrategy<TI, TO>.Initialize()
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Initialize()
-- uid: App.ViewModels.ViewModelStrategy`2.Initialize*
-  name: Initialize
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.Initialize
+- uid: App.ViewModels.ViewModelStrategy`2.Injector
+  name: Injector
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector
+  commentId: P:App.ViewModels.ViewModelStrategy`2.Injector
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Injector
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Injector
+  nameWithType: ViewModelStrategy<TI, TO>.Injector
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).Injector
+- uid: App.ViewModels.ViewModelStrategy`2.Injector*
+  name: Injector
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector_
+  commentId: Overload:App.ViewModels.ViewModelStrategy`2.Injector
   isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Initialize
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Initialize
-  nameWithType: ViewModelStrategy<TI, TO>.Initialize
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Initialize
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Injector
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Injector
+  nameWithType: ViewModelStrategy<TI, TO>.Injector
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).Injector
 - uid: App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object)
   name: OnEvent(AppEvent, Object)
   href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_
@@ -4285,42 +4197,6 @@ references:
   fullName.vb: Interfaces.IGenerator(Of T).Generate
   nameWithType: IGenerator<T>.Generate
   nameWithType.vb: IGenerator(Of T).Generate
-- uid: Interfaces.IGenerator`1.Get
-  name: Get()
-  href: api/Interfaces.IGenerator-1.html#Interfaces_IGenerator_1_Get
-  commentId: M:Interfaces.IGenerator`1.Get
-  fullName: Interfaces.IGenerator<T>.Get()
-  fullName.vb: Interfaces.IGenerator(Of T).Get()
-  nameWithType: IGenerator<T>.Get()
-  nameWithType.vb: IGenerator(Of T).Get()
-- uid: Interfaces.IGenerator`1.Get*
-  name: Get
-  href: api/Interfaces.IGenerator-1.html#Interfaces_IGenerator_1_Get_
-  commentId: Overload:Interfaces.IGenerator`1.Get
-  isSpec: "True"
-  fullName: Interfaces.IGenerator<T>.Get
-  fullName.vb: Interfaces.IGenerator(Of T).Get
-  nameWithType: IGenerator<T>.Get
-  nameWithType.vb: IGenerator(Of T).Get
-- uid: Interfaces.IInitializable
-  name: IInitializable
-  href: api/Interfaces.IInitializable.html
-  commentId: T:Interfaces.IInitializable
-  fullName: Interfaces.IInitializable
-  nameWithType: IInitializable
-- uid: Interfaces.IInitializable.Initialize
-  name: Initialize()
-  href: api/Interfaces.IInitializable.html#Interfaces_IInitializable_Initialize
-  commentId: M:Interfaces.IInitializable.Initialize
-  fullName: Interfaces.IInitializable.Initialize()
-  nameWithType: IInitializable.Initialize()
-- uid: Interfaces.IInitializable.Initialize*
-  name: Initialize
-  href: api/Interfaces.IInitializable.html#Interfaces_IInitializable_Initialize_
-  commentId: Overload:Interfaces.IInitializable.Initialize
-  isSpec: "True"
-  fullName: Interfaces.IInitializable.Initialize
-  nameWithType: IInitializable.Initialize
 - uid: Interfaces.IInjector`1
   name: IInjector<T>
   href: api/Interfaces.IInjector-1.html
@@ -4443,53 +4319,10 @@ references:
   fullName.vb: Interfaces.Strategy(Of TI, TO).Generate
   nameWithType: Strategy<TI, TO>.Generate
   nameWithType.vb: Strategy(Of TI, TO).Generate
-- uid: Interfaces.Strategy`2.Get
-  name: Get()
-  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Get
-  commentId: M:Interfaces.Strategy`2.Get
-  fullName: Interfaces.Strategy<TI, TO>.Get()
-  fullName.vb: Interfaces.Strategy(Of TI, TO).Get()
-  nameWithType: Strategy<TI, TO>.Get()
-  nameWithType.vb: Strategy(Of TI, TO).Get()
-- uid: Interfaces.Strategy`2.Get*
-  name: Get
-  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Get_
-  commentId: Overload:Interfaces.Strategy`2.Get
-  isSpec: "True"
-  fullName: Interfaces.Strategy<TI, TO>.Get
-  fullName.vb: Interfaces.Strategy(Of TI, TO).Get
-  nameWithType: Strategy<TI, TO>.Get
-  nameWithType.vb: Strategy(Of TI, TO).Get
-- uid: Interfaces.Strategy`2.InjectedValue
-  name: InjectedValue
-  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue
-  commentId: P:Interfaces.Strategy`2.InjectedValue
-  fullName: Interfaces.Strategy<TI, TO>.InjectedValue
-  fullName.vb: Interfaces.Strategy(Of TI, TO).InjectedValue
-  nameWithType: Strategy<TI, TO>.InjectedValue
-  nameWithType.vb: Strategy(Of TI, TO).InjectedValue
-- uid: Interfaces.Strategy`2.InjectedValue*
-  name: InjectedValue
-  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue_
-  commentId: Overload:Interfaces.Strategy`2.InjectedValue
-  isSpec: "True"
-  fullName: Interfaces.Strategy<TI, TO>.InjectedValue
-  fullName.vb: Interfaces.Strategy(Of TI, TO).InjectedValue
-  nameWithType: Strategy<TI, TO>.InjectedValue
-  nameWithType.vb: Strategy(Of TI, TO).InjectedValue
 - uid: Interfaces.Strategy`2.Injector
   name: Injector
   href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector
-  commentId: P:Interfaces.Strategy`2.Injector
-  fullName: Interfaces.Strategy<TI, TO>.Injector
-  fullName.vb: Interfaces.Strategy(Of TI, TO).Injector
-  nameWithType: Strategy<TI, TO>.Injector
-  nameWithType.vb: Strategy(Of TI, TO).Injector
-- uid: Interfaces.Strategy`2.Injector*
-  name: Injector
-  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector_
-  commentId: Overload:Interfaces.Strategy`2.Injector
-  isSpec: "True"
+  commentId: F:Interfaces.Strategy`2.Injector
   fullName: Interfaces.Strategy<TI, TO>.Injector
   fullName.vb: Interfaces.Strategy(Of TI, TO).Injector
   nameWithType: Strategy<TI, TO>.Injector
@@ -4761,19 +4594,6 @@ references:
   isSpec: "True"
   fullName: Terrain.Noise.NoiseMeshGenerator.Generate
   nameWithType: NoiseMeshGenerator.Generate
-- uid: Terrain.Noise.NoiseMeshGenerator.Get
-  name: Get()
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_Get
-  commentId: M:Terrain.Noise.NoiseMeshGenerator.Get
-  fullName: Terrain.Noise.NoiseMeshGenerator.Get()
-  nameWithType: NoiseMeshGenerator.Get()
-- uid: Terrain.Noise.NoiseMeshGenerator.Get*
-  name: Get
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_Get_
-  commentId: Overload:Terrain.Noise.NoiseMeshGenerator.Get
-  isSpec: "True"
-  fullName: Terrain.Noise.NoiseMeshGenerator.Get
-  nameWithType: NoiseMeshGenerator.Get
 - uid: Terrain.Noise.NoiseMeshGenerator.HeightCurve
   name: HeightCurve
   href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_HeightCurve
@@ -4832,19 +4652,6 @@ references:
   isSpec: "True"
   fullName: Terrain.Noise.PerlinNoiseStrategy.Generate
   nameWithType: PerlinNoiseStrategy.Generate
-- uid: Terrain.Noise.PerlinNoiseStrategy.Get
-  name: Get()
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Get
-  commentId: M:Terrain.Noise.PerlinNoiseStrategy.Get
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Get()
-  nameWithType: PerlinNoiseStrategy.Get()
-- uid: Terrain.Noise.PerlinNoiseStrategy.Get*
-  name: Get
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Get_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.Get
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Get
-  nameWithType: PerlinNoiseStrategy.Get
 - uid: Terrain.Noise.PerlinNoiseStrategy.Lacunarity
   name: Lacunarity
   href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Lacunarity

@@ -79,28 +79,25 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
-    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
-    <div class="level3"><span class="xref">PlotViewModel</span></div>
+    <div class="level1"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
+    <div class="level2"><span class="xref">PlotViewModel</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
-    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector">ViewModelStrategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.Injector</a>
+    </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.EventBus</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;._eventBus</a>
-    </div>
-    <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.Initialize()</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.Display()</a>
@@ -110,15 +107,6 @@
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.OnEvent(AppEvent, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.Injector</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.InjectedValue</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Get">Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.Get()</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -147,25 +135,24 @@
   <h5 id="App_ViewModels_Cities_Plots_PlotViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class PlotViewModel : ViewModelStrategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;, IGenerator&lt;IEnumerable&lt;Plot&gt;&gt;, IInjector&lt;IEnumerable&lt;Plot&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;, IInitializable</code></pre>
+public class PlotViewModel : ViewModelStrategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;, IGenerator&lt;IEnumerable&lt;Plot&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Plots_PlotViewModel__displayPlots.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Plots.PlotViewModel._displayPlots%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Plots_PlotViewModel__plotStrategyVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Plots.PlotViewModel._plotStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Plots/PlotViewModel.cs/#L54">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Plots/PlotViewModel.cs/#L22">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_Plots_PlotViewModel__displayPlots" data-uid="App.ViewModels.Cities.Plots.PlotViewModel._displayPlots">_displayPlots</h4>
-  <div class="markdown level1 summary"><p>Boolean if plots are visible.</p>
+  <h4 id="App_ViewModels_Cities_Plots_PlotViewModel__plotStrategyVisible" data-uid="App.ViewModels.Cities.Plots.PlotViewModel._plotStrategyVisible">_plotStrategyVisible</h4>
+  <div class="markdown level1 summary"><p>Visibility of the plot strategy editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-bool _displayPlots</code></pre>
+    <pre><code class="lang-csharp hljs">bool _plotStrategyVisible</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -184,18 +171,19 @@ bool _displayPlots</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Plots_PlotViewModel__plotStrategyVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Plots.PlotViewModel._plotStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Plots_PlotViewModel_displayPlots.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Plots.PlotViewModel.displayPlots%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Plots/PlotViewModel.cs/#L22">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Plots/PlotViewModel.cs/#L54">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_Plots_PlotViewModel__plotStrategyVisible" data-uid="App.ViewModels.Cities.Plots.PlotViewModel._plotStrategyVisible">_plotStrategyVisible</h4>
-  <div class="markdown level1 summary"><p>Visibility of the plot strategy editor.</p>
+  <h4 id="App_ViewModels_Cities_Plots_PlotViewModel_displayPlots" data-uid="App.ViewModels.Cities.Plots.PlotViewModel.displayPlots">displayPlots</h4>
+  <div class="markdown level1 summary"><p>Boolean if plots are visible.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _plotStrategyVisible</code></pre>
+    <pre><code class="lang-csharp hljs">[SerializeField]
+bool displayPlots</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -411,16 +399,10 @@ PlotViewModel.PlotStrategy plotStrategy</code></pre>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
-  </div>
-  <div>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
   </div>
   <div>
       <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
   </div>
 </article>
           </div>
