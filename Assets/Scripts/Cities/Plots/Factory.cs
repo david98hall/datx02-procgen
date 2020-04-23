@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using Cities.Roads;
 using Interfaces;
+using Terrain;
 
 namespace Cities.Plots
 {
@@ -12,18 +13,24 @@ namespace Cities.Plots
     public class Factory
     {
         private readonly IInjector<RoadNetwork> _roadNetworkInjector;
-        
+        private readonly IInjector<TerrainInfo> _terrainInjector;
+        private readonly IInjector<(RoadNetwork, TerrainInfo)> _combinedInjector;
+
         /// <summary>
-        /// Initializes this factory with a RoadNetwork injector.
+        /// Initializes this factory with a RoadNetwork and TerrainInfo injector.
         /// </summary>
         /// <param name="roadNetworkInjector">The RoadNetwork injector.</param>
-        public Factory(IInjector<RoadNetwork> roadNetworkInjector)
+        /// <param name="terrainInjector">The TerrainInfo injector</param>
+        /// <param name="combinedInjector">The RoadNetwork and TerrainInfo injectors combined.</param>
+        public Factory(IInjector<(RoadNetwork, TerrainInfo)> combinedInjector)
         {
-            _roadNetworkInjector = roadNetworkInjector;
+            _roadNetworkInjector = new Injector<RoadNetwork>(() => combinedInjector.Get().Item1);
+            _terrainInjector = new Injector<TerrainInfo>(() => combinedInjector.Get().Item2);
+            _combinedInjector = combinedInjector;
         }
         
         /// <summary>
-        /// Initializes this factory with a RoadNetwork injector.
+        /// Initializes this factory with a RoadNetwork and TerrainInfo injector.
         /// </summary>
         /// <param name="roadNetworkInjector">The RoadNetwork injector.</param>
         public Factory(Func<RoadNetwork> roadNetworkInjector)
@@ -47,7 +54,7 @@ namespace Cities.Plots
         /// <returns>The plots adjacent to the roads.</returns>
         public IGenerator<IEnumerable<Plot>> CreateAdjacentStrategy()
         {
-            return new AdjacentStrategy(_roadNetworkInjector);
+            return new AdjacentStrategy(_combinedInjector);
         }
 
         /// <summary>
@@ -66,6 +73,15 @@ namespace Cities.Plots
         public IGenerator<IEnumerable<Plot>> CreateClockwiseCycleStrategy()
         {
             return new ClockwiseCycleStrategy(_roadNetworkInjector);
+        }
+        
+        /// <summary>
+        /// Creates a strategy that combines adjacent and cyclic plot generation.
+        /// </summary>
+        /// <returns>The found plots.</returns>
+        public IGenerator<IEnumerable<Plot>> CreateCombinedStrategy()
+        {
+            return new CombinedStrategy(_combinedInjector);
         }
 
         /// <summary>
@@ -90,10 +106,6 @@ namespace Cities.Plots
             public RoadNetwork Get() => _roadNetworkInjector();
         }
         
-        public IGenerator<IEnumerable<Plot>> CreateCombinedStrategy()
-        {
-            return new CombinedStrategy(_roadNetworkInjector);
-        }
       
     }
 }

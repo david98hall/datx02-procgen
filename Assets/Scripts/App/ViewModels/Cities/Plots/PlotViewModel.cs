@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Cities.Plots;
 using Cities.Roads;
+using Interfaces;
+using Terrain;
 using UnityEditor;
 using UnityEngine;
 using Factory = Cities.Plots.Factory;
@@ -12,7 +14,7 @@ namespace App.ViewModels.Cities.Plots
     /// The view model for plot related generators.
     /// </summary>
     [Serializable]
-    public class PlotViewModel : ViewModelStrategy<RoadNetwork, IEnumerable<Plot>>
+    public class PlotViewModel : ViewModelStrategy<(RoadNetwork, TerrainInfo), IEnumerable<Plot>>
     {
         #region Plot Strategy
 
@@ -82,7 +84,8 @@ namespace App.ViewModels.Cities.Plots
 
         public override IEnumerable<Plot> Generate()
         {
-            if (Injector.Get() == null) return null;
+            // We can't generate plots with no roads
+            if (Injector.Get().Item1 == null) return null;
             
             var plotStrategyFactory = new Factory(Injector);
 

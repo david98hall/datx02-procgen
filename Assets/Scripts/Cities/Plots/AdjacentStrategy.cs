@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cities.Roads;
 using Interfaces;
+using Terrain;
 using Utils.Geometry;
 
 namespace Cities.Plots
 {
-    internal class AdjacentStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
+    internal class AdjacentStrategy : Strategy<(RoadNetwork, TerrainInfo), IEnumerable<Plot>>
     {
         /// <summary>
         /// The already existing plots that will be taken into account when generating the adjacent plots.
@@ -19,7 +20,7 @@ namespace Cities.Plots
         /// Initializes the strategy with a RoadNetwork injector.
         /// </summary>
         /// <param name="injector">The RoadNetwork injector.</param>
-        public AdjacentStrategy(IInjector<RoadNetwork> injector) : base(injector)
+        public AdjacentStrategy(IInjector<(RoadNetwork, TerrainInfo)> injector) : base(injector)
         {
             _prevPlots = new HashSet<Plot>();
         }
@@ -41,7 +42,7 @@ namespace Cities.Plots
         public override IEnumerable<Plot> Generate()
         {
             var plots = new HashSet<Plot>();
-            var roadNetwork = Injector.Get();
+            var roadNetwork = Injector.Get().Item1;
             var rand = new System.Random();
 
             foreach (var (start, end) in roadNetwork.GetRoadParts())

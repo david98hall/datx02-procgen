@@ -151,7 +151,8 @@ namespace App.ViewModels.Cities
             if (roadNetwork == null) return null;
             
             // Plots
-            plotViewModel.Injector = new Injector<RoadNetwork>(() => roadNetwork);
+            plotViewModel.Injector = new Injector<(RoadNetwork, TerrainInfo)>(() => 
+                (roadNetwork, Injector.Get()));
             var plots = plotViewModel.Generate();
             var enumerable = plots as Plot[] ?? plots.ToArray();
             

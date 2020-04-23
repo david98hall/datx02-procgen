@@ -2,12 +2,13 @@
 using System.Linq;
 using Cities.Roads;
 using Interfaces;
+using Terrain;
 using UnityEngine;
 using Utils.Geometry;
 
 namespace Cities.Plots
 {
-    internal class CombinedStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
+    internal class CombinedStrategy : Strategy<(RoadNetwork, TerrainInfo), IEnumerable<Plot>>
     {
         private readonly AdjacentStrategy _adjacentStrategy;
         private readonly MinimalCycleStrategy _minimalCycleStrategy;
@@ -16,10 +17,13 @@ namespace Cities.Plots
         /// Initializes the strategy with a RoadNetwork injector.
         /// </summary>
         /// <param name="injector">The RoadNetwork injector.</param>
-        public CombinedStrategy(IInjector<RoadNetwork> injector) : base(injector)
+        public CombinedStrategy(IInjector<(RoadNetwork, TerrainInfo)> injector) : base(injector)
         {
             _adjacentStrategy = new AdjacentStrategy(injector);
-            _minimalCycleStrategy = new MinimalCycleStrategy(injector);
+
+            // The minimal cycle strategy doesn't need the terrain info
+            var roadInjector = new Injector<RoadNetwork>(() => injector.Get().Item1);
+            _minimalCycleStrategy = new MinimalCycleStrategy(roadInjector);
         }
 
         /// <summary>
