@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -534,6 +535,33 @@ namespace Utils.Geometry
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Returns the extreme points of a polygon, the minimum and maximum X and Z values among all it's vertices.
+        /// </summary>
+        /// <returns>The polygon's extreme points in the x-z plane.</returns>
+        public static (float minX, float minZ, float maxX, float maxZ) PolyExtremePoints(IEnumerable<Vector3> poly)
+        {
+            // There's probably a way to do this in way fewer lines...
+            var minX = float.MaxValue;
+            var minZ = float.MaxValue;
+            var maxX = float.MinValue;
+            var maxZ = float.MinValue;
+
+            foreach (var vertex in poly)
+            {
+                if (vertex.x < minX)
+                    minX = vertex.x;
+                if (vertex.z < minZ)
+                    minZ = vertex.z;
+                if (vertex.x > maxX)
+                    maxX = vertex.x;
+                if (vertex.z > maxZ)
+                    maxZ = vertex.z;
+            }
+
+            return (minX, minZ, maxX, maxZ);
         }
 
         #endregion
