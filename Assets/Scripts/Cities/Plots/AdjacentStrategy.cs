@@ -97,8 +97,8 @@ namespace Cities.Plots
         {
             var minX = ti.Offset.x;
             var minZ = ti.Offset.z;
-            var maxX = ti.HeightMap.GetLength(0) + ti.Offset.x;
-            var maxZ = ti.HeightMap.GetLength(1) + ti.Offset.z;
+            var maxX = ti.HeightMap.GetLength(0) - 1 + ti.Offset.x;
+            var maxZ = ti.HeightMap.GetLength(1) - 1 + ti.Offset.z;
             
             return (minX, minZ, maxX, maxZ);
         }
