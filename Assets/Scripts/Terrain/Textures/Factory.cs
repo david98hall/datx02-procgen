@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using Cities.Plots;
 using Interfaces;
 using UnityEngine;
 
@@ -23,12 +26,24 @@ namespace Terrain.Textures
         {
             _noiseMapInjector = noiseMapInjector;
         }
-
+        
+        public Factory(Func<float[,]> injector)
+        {
+            _noiseMapInjector = new Injector<float[,]>(injector);
+        }
+        
         /// <summary>
         /// Constructs and returns a whittaker texture generation from <see cref="_noiseMapInjector"/>
         /// </summary>
-        /// <returns>A whittaker generator as its abstract super type</returns>
-        public IGenerator<Texture2D> CreateWhittakerStrategy() => new WhittakerStrategy(_noiseMapInjector);
+        /// <param name="precipitationScale">The scale used for generating a precipitation map.</param>
+        /// <param name="temperatureScale">The scale used for generating a temperature map.</param>
+        /// <returns>A whittaker generator as its abstract super type.</returns>
+        public IGenerator<Texture2D> CreateWhittakerStrategy(float precipitationScale = 50, float temperatureScale = 50) 
+            => new WhittakerStrategy(_noiseMapInjector)
+            {
+                PrecipitationScale = precipitationScale,
+                TemperatureScale = temperatureScale
+            };
 
         /// <summary>
         /// Constructs and returns a grayscale texture generation from <see cref="_noiseMapInjector"/>

@@ -9,18 +9,19 @@ namespace Cities.Roads
     /// <summary>
     /// A RoadNetwork strategy for testing.
     /// </summary>
-    internal class SampleStrategy : Strategy<float[,], RoadNetwork>
+    internal class SampleStrategy : Strategy<MeshFilter, RoadNetwork>
     {
         
-        internal SampleStrategy(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
+        internal SampleStrategy(IInjector<MeshFilter> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
         {
         }
         
         public override RoadNetwork Generate()
         {
             var roadNetwork = new RoadNetwork();
-            roadNetwork.AddRoads(CreateTestExample1());
-            roadNetwork.AddRoads(CreateTestExample2());
+            // roadNetwork.AddRoads(CreateTestExample1());
+            // roadNetwork.AddRoads(CreateTestExample2());
+            roadNetwork.AddRoads(new HashSet<IEnumerable<Vector3>> { CreateHighway() });
             return roadNetwork;
         }
 
@@ -43,7 +44,7 @@ namespace Cities.Roads
                 CreateCircleRoad(5, 0.5f, 22.5f),
                 CreateCircleRoad(2.5f, 0.5f, 22.5f)
             };
-            roads.AddRange(CreatePyramid(5f, 35, -3.75f));
+            //roads.AddRange(CreatePyramid(5f, 35, -3.75f));
             return roads;
         }
         #endregion
@@ -74,6 +75,7 @@ namespace Cities.Roads
 
             return circleRoad;
         }
+
         #endregion
         
         #region Example road networks
@@ -101,6 +103,18 @@ namespace Cities.Roads
             roads.Add(straightRoad);
 
             return roads;
+        }
+
+
+        private static IEnumerable<Vector3> CreateHighway()
+        {
+            var highway = new LinkedList<Vector3>();
+            highway.AddLast(new Vector3(0f, 0f, 0f));
+            highway.AddLast(new Vector3(7f, 0f, 4f));
+            highway.AddLast(new Vector3(10f, 0f, 10f));
+            highway.AddLast(new Vector3(11f, 0f, 5f));
+
+            return highway;
         }
         #endregion
         

@@ -83,8 +83,16 @@
     <div class="level3"><span class="xref">UnityEditor.Editor</span></div>
     <div class="level4"><span class="xref">ShapeEdit</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">UnityEditor.IPreviewable</span></div>
+    <div><span class="xref">UnityEditor.IToolModeOwner</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">UnityEditor.Editor.HasLargeHeader()</span>
+    </div>
     <div>
       <span class="xref">UnityEditor.Editor.CreateEditorWithContext(UnityEngine.Object[], UnityEngine.Object, System.Type)</span>
     </div>
@@ -116,6 +124,30 @@
       <span class="xref">UnityEditor.Editor.CreateEditor(UnityEngine.Object[], System.Type)</span>
     </div>
     <div>
+      <span class="xref">UnityEditor.Editor.GetSerializedObjectInternal()</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.InternalSetTargets(UnityEngine.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.UnityEditor.IToolModeOwner.GetWorldBoundsOfTargets()</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.GetWorldBoundsOfTarget(UnityEngine.Object)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.UnityEditor.IToolModeOwner.ModeSurvivesSelectionChange(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.OnForceReloadInspector()</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.GetOptimizedGUIBlock(System.Boolean, System.Boolean, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.OnOptimizedInspectorGUI(UnityEngine.Rect)</span>
+    </div>
+    <div>
       <span class="xref">UnityEditor.Editor.DrawPropertiesExcluding(UnityEditor.SerializedObject, System.String[])</span>
     </div>
     <div>
@@ -137,7 +169,19 @@
       <span class="xref">UnityEditor.Editor.OnHeaderGUI()</span>
     </div>
     <div>
+      <span class="xref">UnityEditor.Editor.OnHeaderControlsGUI()</span>
+    </div>
+    <div>
       <span class="xref">UnityEditor.Editor.ShouldHideOpenButton()</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.OnHeaderIconGUI(UnityEngine.Rect)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.OnHeaderTitleGUI(UnityEngine.Rect, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.DrawHeaderHelpAndSettingsGUI(UnityEngine.Rect)</span>
     </div>
     <div>
       <span class="xref">UnityEditor.Editor.DrawFoldoutInspector(UnityEngine.Object, UnityEditor.Editor)</span>
@@ -170,6 +214,9 @@
       <span class="xref">UnityEditor.Editor.ReloadPreviewInstances()</span>
     </div>
     <div>
+      <span class="xref">UnityEditor.Editor.IsEnabled()</span>
+    </div>
+    <div>
       <span class="xref">UnityEditor.Editor.UseDefaultMargins()</span>
     </div>
     <div>
@@ -182,10 +229,28 @@
       <span class="xref">UnityEditor.Editor.ResetTarget()</span>
     </div>
     <div>
+      <span class="xref">UnityEditor.Editor.OnAssetStoreInspectorGUI()</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.UnityEditor.IToolModeOwner.GetInstanceID()</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.preview</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.UnityEditor.IToolModeOwner.areToolModesAvailable</span>
+    </div>
+    <div>
       <span class="xref">UnityEditor.Editor.target</span>
     </div>
     <div>
       <span class="xref">UnityEditor.Editor.targets</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.referenceTargetIndex</span>
+    </div>
+    <div>
+      <span class="xref">UnityEditor.Editor.targetTitle</span>
     </div>
     <div>
       <span class="xref">UnityEditor.Editor.serializedObject</span>
@@ -315,8 +380,428 @@
     <pre><code class="lang-csharp hljs">[CustomEditor(typeof(ShapeMake))]
 public class ShapeEdit : Editor, IPreviewable, IToolModeOwner</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_needsRepaint.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.needsRepaint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L13">View Source</a>
+  </span>
+  <h4 id="DrawTool_Editor_ShapeEdit_needsRepaint" data-uid="DrawTool.Editor.ShapeEdit.needsRepaint">needsRepaint</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool needsRepaint</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_selectionInfo.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.selectionInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L12">View Source</a>
+  </span>
+  <h4 id="DrawTool_Editor_ShapeEdit_selectionInfo" data-uid="DrawTool.Editor.ShapeEdit.selectionInfo">selectionInfo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ShapeEdit.SelectionInfo selectionInfo</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DrawTool.Editor.ShapeEdit.SelectionInfo.html">ShapeEdit.SelectionInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_shapeMake.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.shapeMake%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L11">View Source</a>
+  </span>
+  <h4 id="DrawTool_Editor_ShapeEdit_shapeMake" data-uid="DrawTool.Editor.ShapeEdit.shapeMake">shapeMake</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ShapeMake shapeMake</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DrawTool.ShapeMake.html">ShapeMake</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_SelectedShape.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.SelectedShape%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L378">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_SelectedShape_" data-uid="DrawTool.Editor.ShapeEdit.SelectedShape*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_SelectedShape" data-uid="DrawTool.Editor.ShapeEdit.SelectedShape">SelectedShape</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Shape SelectedShape
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Utils.Geometry.Shape.html">Shape</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_CreateNewPoint_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.CreateNewPoint(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L93">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_CreateNewPoint_" data-uid="DrawTool.Editor.ShapeEdit.CreateNewPoint*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_CreateNewPoint_UnityEngine_Vector3_" data-uid="DrawTool.Editor.ShapeEdit.CreateNewPoint(UnityEngine.Vector3)">CreateNewPoint(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Adds a new point to the selected shape at the cursor's location.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateNewPoint(Vector3 position)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position of the cursor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_CreateNewShape.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.CreateNewShape%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L83">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_CreateNewShape_" data-uid="DrawTool.Editor.ShapeEdit.CreateNewShape*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_CreateNewShape" data-uid="DrawTool.Editor.ShapeEdit.CreateNewShape">CreateNewShape()</h4>
+  <div class="markdown level1 summary"><p>Adds a new shape to the list, and selects it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateNewShape()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_Draw.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.Draw%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L312">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_Draw_" data-uid="DrawTool.Editor.ShapeEdit.Draw*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_Draw" data-uid="DrawTool.Editor.ShapeEdit.Draw">Draw()</h4>
+  <div class="markdown level1 summary"><p>Places and moves graphical elements on the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_HandleInput_UnityEngine_Event_.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.HandleInput(UnityEngine.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L140">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_HandleInput_" data-uid="DrawTool.Editor.ShapeEdit.HandleInput*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_HandleInput_UnityEngine_Event_" data-uid="DrawTool.Editor.ShapeEdit.HandleInput(UnityEngine.Event)">HandleInput(Event)</h4>
+  <div class="markdown level1 summary"><p>Handles the different inputs by the user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void HandleInput(Event guiEvent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Event</span></td>
+        <td><span class="parametername">guiEvent</span></td>
+        <td><p>Describes what kind of input the user has provided.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DrawTool_Editor_ShapeEdit_HandleInput_UnityEngine_Event__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The different inputs are:
+Left Click to add a point to the selected shape,
+Shift + Left Click to create a new shape,
+Right Click to delete a point from the selected shape, and
+Left Click (Hold) to move point in space.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_HandleLeftMouseDown_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.HandleLeftMouseDown(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L184">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_HandleLeftMouseDown_" data-uid="DrawTool.Editor.ShapeEdit.HandleLeftMouseDown*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_HandleLeftMouseDown_UnityEngine_Vector3_" data-uid="DrawTool.Editor.ShapeEdit.HandleLeftMouseDown(UnityEngine.Vector3)">HandleLeftMouseDown(Vector3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void HandleLeftMouseDown(Vector3 mousePosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">mousePosition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_HandleLeftMouseDrag_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L218">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_HandleLeftMouseDrag_" data-uid="DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_HandleLeftMouseDrag_UnityEngine_Vector3_" data-uid="DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag(UnityEngine.Vector3)">HandleLeftMouseDrag(Vector3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void HandleLeftMouseDrag(Vector3 mousePosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">mousePosition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_HandleLeftMouseUp_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.HandleLeftMouseUp(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L203">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_HandleLeftMouseUp_" data-uid="DrawTool.Editor.ShapeEdit.HandleLeftMouseUp*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_HandleLeftMouseUp_UnityEngine_Vector3_" data-uid="DrawTool.Editor.ShapeEdit.HandleLeftMouseUp(UnityEngine.Vector3)">HandleLeftMouseUp(Vector3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void HandleLeftMouseUp(Vector3 mousePosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">mousePosition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_HandleRightMouseDown_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.HandleRightMouseDown(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L227">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_HandleRightMouseDown_" data-uid="DrawTool.Editor.ShapeEdit.HandleRightMouseDown*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_HandleRightMouseDown_UnityEngine_Vector3_" data-uid="DrawTool.Editor.ShapeEdit.HandleRightMouseDown(UnityEngine.Vector3)">HandleRightMouseDown(Vector3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void HandleRightMouseDown(Vector3 mousepos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">mousepos</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_HandleShiftLeftMouseDown_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L178">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_HandleShiftLeftMouseDown_" data-uid="DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_HandleShiftLeftMouseDown_UnityEngine_Vector3_" data-uid="DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown(UnityEngine.Vector3)">HandleShiftLeftMouseDown(Vector3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void HandleShiftLeftMouseDown(Vector3 mousePosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">mousePosition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_OnDisable.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.OnDisable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L362">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_OnDisable_" data-uid="DrawTool.Editor.ShapeEdit.OnDisable*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_OnDisable" data-uid="DrawTool.Editor.ShapeEdit.OnDisable">OnDisable()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void OnDisable()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_OnEnable.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.OnEnable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L353">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_OnEnable_" data-uid="DrawTool.Editor.ShapeEdit.OnEnable*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_OnEnable" data-uid="DrawTool.Editor.ShapeEdit.OnEnable">OnEnable()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void OnEnable()</code></pre>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_OnInspectorGUI.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.OnInspectorGUI%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -335,6 +820,111 @@ public class ShapeEdit : Editor, IPreviewable, IToolModeOwner</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">UnityEditor.Editor.OnInspectorGUI()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_OnSceneGUI.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.OnSceneGUI%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L59">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_OnSceneGUI_" data-uid="DrawTool.Editor.ShapeEdit.OnSceneGUI*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_OnSceneGUI" data-uid="DrawTool.Editor.ShapeEdit.OnSceneGUI">OnSceneGUI()</h4>
+  <div class="markdown level1 summary"><p>Handles any action or change that may occur on the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void OnSceneGUI()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_OnUndoOrRedo.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.OnUndoOrRedo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L370">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_OnUndoOrRedo_" data-uid="DrawTool.Editor.ShapeEdit.OnUndoOrRedo*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_OnUndoOrRedo" data-uid="DrawTool.Editor.ShapeEdit.OnUndoOrRedo">OnUndoOrRedo()</h4>
+  <div class="markdown level1 summary"><p>Keeps the index of the selected shape within range when and undo or redo is performed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void OnUndoOrRedo()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_SelectPointUnderMouse.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.SelectPointUnderMouse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L108">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_SelectPointUnderMouse_" data-uid="DrawTool.Editor.ShapeEdit.SelectPointUnderMouse*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_SelectPointUnderMouse" data-uid="DrawTool.Editor.ShapeEdit.SelectPointUnderMouse">SelectPointUnderMouse()</h4>
+  <div class="markdown level1 summary"><p>Selects the point under the cursor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SelectPointUnderMouse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_SelectShapeUnderMouse.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L121">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_SelectShapeUnderMouse_" data-uid="DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_SelectShapeUnderMouse" data-uid="DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse">SelectShapeUnderMouse()</h4>
+  <div class="markdown level1 summary"><p>Selects the shape under the cursor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SelectShapeUnderMouse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=DrawTool_Editor_ShapeEdit_UpdateMouseOverInfo_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/DrawTool/Editor/ShapeEdit.cs/#L243">View Source</a>
+  </span>
+  <a id="DrawTool_Editor_ShapeEdit_UpdateMouseOverInfo_" data-uid="DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo*"></a>
+  <h4 id="DrawTool_Editor_ShapeEdit_UpdateMouseOverInfo_UnityEngine_Vector3_" data-uid="DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo(UnityEngine.Vector3)">UpdateMouseOverInfo(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Keeps important variables concerning shapes and points up to date. (See the SelectionInfo class)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void UpdateMouseOverInfo(Vector3 mousePosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">mousePosition</span></td>
+        <td><p>The current position of the cursor in the scene.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">UnityEditor.IPreviewable</span>
+  </div>
+  <div>
+      <span class="xref">UnityEditor.IToolModeOwner</span>
+  </div>
 </article>
           </div>
           

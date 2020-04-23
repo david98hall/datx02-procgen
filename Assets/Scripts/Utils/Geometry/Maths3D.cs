@@ -53,40 +53,8 @@ namespace Utils.Geometry
             var yProportion = (vertex.y - linePoint1.y) / lineY;
             var zProportion = (vertex.z - linePoint1.z) / lineZ;
             return Abs(xProportion - yProportion) < tolerance && Abs(zProportion - yProportion) < tolerance;
-
-            /*
-            var relVec1 = linePoint2 - linePoint1;
-            var relVec2 = vertex - linePoint1;
-            var crossProduct = Vector3.Cross(relVec1, relVec2);
-
-            if (Abs(crossProduct.magnitude) > float.Epsilon)
-                return false;
-
-            var dotProduct = Vector3.Dot(relVec1, relVec2);
-
-            return 0 <= dotProduct && dotProduct <= (linePoint2 - linePoint1).sqrMagnitude;
-            */
         }
 
-        /*
-        def isBetween(a, b, c):
-        crossproduct = (c.y - a.y) * (b.x - a.x) - (c.x - a.x) * (b.y - a.y)
-
-        # compare versus epsilon for floating point values, or != 0 if using integers
-        if abs(crossproduct) > epsilon:
-        return False
-
-            dotproduct = (c.x - a.x) * (b.x - a.x) + (c.y - a.y)*(b.y - a.y)
-                         if dotproduct < 0:
-        return False
-
-            squaredlengthba = (b.x - a.x)*(b.x - a.x) + (b.y - a.y)*(b.y - a.y)
-                              if dotproduct > squaredlengthba:
-        return False
-
-        return True
-            */
-        
         /// <summary>
         /// Returns true and the intersection point if the two line segments intersect.
         /// </summary>
@@ -162,6 +130,15 @@ namespace Utils.Geometry
             intersection = Vector3.negativeInfinity;
             return false;
         }
-        
+
+        /// <summary>
+        /// Finds the perpendicular clockwise vector (normal) to a given vector in the x-z plane.
+        /// </summary>
+        /// <param name="vector">The vector from which to calculate the normal.</param>
+        /// <returns>The normal in the x-z plane to the given vector.</returns>
+        public static Vector3 PerpendicularClockwise(Vector3 vector)
+        {
+            return new Vector3(vector.z, vector.y, -vector.x);
+        }
     }
 }

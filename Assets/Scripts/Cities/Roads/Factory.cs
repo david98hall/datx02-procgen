@@ -1,5 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Interfaces;
+using Terrain;
+using UnityEngine;
 
 namespace Cities.Roads
 {
@@ -9,25 +11,46 @@ namespace Cities.Roads
     public class Factory
     {
 
-        private readonly IInjector<float[,]> _terrainMeshNoiseMapInjector;
-        
         /// <summary>
-        /// Initializes this factory with a noise map injector.
+        /// Creates an A* strategy for generating a road network.
         /// </summary>
-        /// <param name="terrainMeshNoiseMapInjector">The noise map injector.</param>
-        public Factory(IInjector<float[,]> terrainMeshNoiseMapInjector)
+        /// <param name="heightMapInjector">An injector of a height map.</param>
+        /// <param name="heightBias">The height bias for finding the optimal path.</param>
+        /// <param name="paths">Paths consisting of a start and goal node to generate a road between.</param>
+        /// <returns>The A* road network generator.</returns>
+        public IGenerator<RoadNetwork> CreateAStarStrategy(
+            IInjector<float[,]> heightMapInjector,
+            float heightBias = 0.5f, 
+            IEnumerable<(Vector2Int Start, Vector2Int Goal)> paths = null)
         {
-            _terrainMeshNoiseMapInjector = terrainMeshNoiseMapInjector;
+            var strategy = new AStarStrategy(heightMapInjector) {HeightBias = heightBias};
+            foreach (var (start, goal) in paths)
+            {
+                strategy.Add(start, goal);
+            }
+
+            return strategy;
         }
 
-        public IGenerator<RoadNetwork> CreateAStarStrategy() => new AStarStrategy(_terrainMeshNoiseMapInjector);
-
-        public IGenerator<RoadNetwork> CreateLSystemStrategy() => new LSystemStrategy(_terrainMeshNoiseMapInjector);
-
         /// <summary>
-        /// Creates a sample strategy for testing.
+        /// Creates a L-system strategy for generating a road network.
         /// </summary>
-        /// <returns>The strategy.</returns>
-        internal IGenerator<RoadNetwork> CreateSampleStrategy() => new SampleStrategy(_terrainMeshNoiseMapInjector);
+        /// <param name="terrainInjector">The terrain mesh filter injector.</param>
+        /// <param name="origin">The start point of the road network generation.</param>
+        /// <param name="rewriteCount">
+        /// The number of times the L-system should be rewritten,
+        /// before returning the road network.
+        /// </param>
+        /// <returns>An L-system generator for road networks.</returns>
+        public IGenerator<RoadNetwork> CreateLSystemStrategy(
+            IInjector<TerrainInfo> terrainInjector, 
+            Vector2 origin, 
+            int rewriteCount = 6)
+        {
+            return new LSystemStrategy(terrainInjector, rewriteCount)
+            {
+                Origin = origin
+            };
+        }
     }
 }
