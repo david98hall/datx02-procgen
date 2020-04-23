@@ -8,7 +8,7 @@
         /// <summary>
         /// The id of an event, regarding an update of the noise map size.
         /// </summary>
-        UPDATE_NOISE_MAP_SIZE
+        UpdateNoiseMapSize
     }
 
 }

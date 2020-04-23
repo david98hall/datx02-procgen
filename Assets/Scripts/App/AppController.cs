@@ -7,6 +7,7 @@ using Cities;
 using Extensions;
 using Interfaces;
 using Services;
+using Terrain;
 using UnityEngine;
 using Utils.Paths;
 
@@ -20,7 +21,7 @@ namespace App
     [ExecuteInEditMode]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), 
         typeof(MeshCollider))]
-    public class AppController : MonoBehaviour, IInitializable, IDisplayable
+    public class AppController : MonoBehaviour, IDisplayable
     {
         #region Models
 
@@ -97,12 +98,10 @@ namespace App
             if (gameObjects == null) gameObjects = new HashSet<GameObject>();
 
             terrainViewModel.EventBus = _eventBus;
-            terrainViewModel.Initialize();
 
             _model = new Model();
             cityViewModel.EventBus = _eventBus;
             cityViewModel.Injector = _model;
-            cityViewModel.Initialize();
 
             _initialized = true;
         }
@@ -116,11 +115,14 @@ namespace App
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
             
-            (_model.TerrainMesh, _model.TerrainTexture) = terrainViewModel.Generate();
-            _meshCollider.sharedMesh = _model.TerrainMesh;
-            _meshFilter.sharedMesh = _model.TerrainMesh;
+            (_meshFilter.sharedMesh, _model.TerrainTexture) = terrainViewModel.Generate();
+            _meshCollider.sharedMesh = _meshFilter.sharedMesh;
             _meshRenderer.sharedMaterial.mainTexture = _model.TerrainTexture;
 
+            // Update the model's terrain data
+            _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
+            _model.TerrainTransform = _meshFilter.transform;
+            
             _model.City = cityViewModel.Generate();
             if (_model.City == null) return;
             
@@ -143,6 +145,21 @@ namespace App
                     "Plot Borders", "Plot"));
             }
 
+            // Display buildings
+            if (cityViewModel.DisplayBuildings)
+            {
+                var container = new GameObject("Buildings", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+                foreach (var b in _model.City.Buildings)
+                {
+                    var obj = new GameObject("Building", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+                    obj.GetComponent<MeshFilter>().mesh = b.mesh;
+                    obj.GetComponent<MeshRenderer>().sharedMaterial = cityViewModel.BuildingMaterial;
+
+                    obj.transform.parent = container.transform;
+                }
+                gameObjects.Add(container);
+            }
+
             // Display roads
             pathObjectGenerator.PathMaterial = cityViewModel.RoadMaterial;
             gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
@@ -159,32 +176,38 @@ namespace App
             terrainViewModel.Display();
             cityViewModel.Display();
         }
-
+        
         /// <summary>
         /// The run-time model of all generated content.
         /// </summary>
-        private class Model : IInjector<float[,]>
+        private class Model : IInjector<TerrainInfo>
         {
             /// <summary>
             /// Generated terrain mesh.
             /// </summary>
-            internal Mesh TerrainMesh;
+            internal float[,] TerrainHeightMap { get; set; }
+
+            internal Transform TerrainTransform { get; set; }
             
             /// <summary>
             /// Generated texture.
             /// </summary>
-            internal Texture TerrainTexture;
+            internal Texture TerrainTexture { get; set; }
             
             /// <summary>
             /// Generated City
             /// </summary>
-            internal City City;
+            internal City City { get; set; }
 
             /// <summary>
             /// Injector method used by the city view model.
             /// </summary>
             /// <returns>The height map of the terrain mesh.</returns>
-            public float[,] Get() => TerrainMesh.HeightMap();
+            public TerrainInfo Get() => new TerrainInfo
+            {
+                HeightMap = TerrainHeightMap,
+                Offset = TerrainTransform.localPosition
+            };
         }
     }
 }

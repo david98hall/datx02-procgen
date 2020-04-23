@@ -142,29 +142,49 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     heightScale: 20
-    noiseStrategy: 0
-    perlinNoiseStrategy:
-      width: 250
-      depth: 250
-      seed: 0
-      scale: 50
-      numOctaves: 8
-      persistence: 0.075
-      lacunarity: 7.5
-      noiseOffset: {x: 0, y: 0}
-    textureStrategy: 1
-    whittakerStrategy:
-      precipitationScale: 50
-      temperatureScale: 40
+    noiseViewModel:
+      noiseStrategy: 0
+      perlinNoiseStrategy:
+        width: 250
+        depth: 250
+        seed: 0
+        scale: 58
+        numOctaves: 6
+        persistence: 0.044
+        lacunarity: 5.83
+        noiseOffset: {x: 0, y: 0}
+    textureViewModel:
+      textureStrategy: 1
+      whittakerStrategy:
+        precipitationScale: 47
+        temperatureScale: 47
   cityViewModel:
-    roadNetworkStrategy: 0
-    aStarStrategy:
-      heightBias: 1
-    plotStrategy: 0
-    plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
-    displayPlots: 1
-    roadWidth: 0.3
-    roadCurvature: 0.1
-    roadSmoothingIterations: 3
-    roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
-    roadTerrainOffsetY: 0.075
+    roadViewModel:
+      aStarStrategy:
+        heightBias: 0
+        paths:
+        - start: {x: 0, y: 0}
+          goal: {x: 249, y: 249}
+      lSystemStrategy:
+        inputs:
+        - origin: {x: 125, y: 125}
+          rewrites: 5
+      aStarEnabled: 1
+      lSystemEnabled: 1
+      roadWidth: 0.3
+      roadCurvature: 0.1
+      roadSmoothingIterations: 3
+      roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
+      roadTerrainOffsetY: 0.075
+    plotViewModel:
+      plotStrategy: 4
+      plotMaterial: {fileID: 2100000, guid: f772ab05f70db264390621af24a98a04, type: 2}
+      displayPlots: 1
+    buildingViewModel:
+      buildingStrategy: 0
+      extrusionStrategy:
+        minArea: 0
+        maxArea: 0
+      displayBuildings: 1
+      buildingMaterial: {fileID: 2100000, guid: 27fe3768c12178d4ebc58c5bebf21be0,
+        type: 2}

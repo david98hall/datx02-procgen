@@ -73,35 +73,46 @@
   
   <h1 id="App_ViewModels_Cities_LSystemStrategy" data-uid="App.ViewModels.Cities.LSystemStrategy" class="text-break">Class LSystemStrategy
   </h1>
-  <div class="markdown level0 summary"><p>View-model for displaying and generating road networks with the L-system strategy.</p>
+  <div class="markdown level0 summary"><p>View-model for displaying and generating road networks with the L-system strategy.
+It is injected with a tuple of terrain data: its offset in the scene, and its height map.
+This data is used to generate road networks with an L-system algorithm.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
-    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
     <div class="level3"><span class="xref">LSystemStrategy</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
+    <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;.Display()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.EventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;.Initialize()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;._eventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;Single[,], RoadNetwork&gt;.Generate()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.Display()</a>
     </div>
     <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Single[,], RoadNetwork&gt;.Injector</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.Generate()</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.OnEvent(AppEvent, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;TerrainInfo, RoadNetwork&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;TerrainInfo, RoadNetwork&gt;.InjectedValue</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -130,24 +141,23 @@
   <h5 id="App_ViewModels_Cities_LSystemStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class LSystemStrategy : ViewModelStrategy&lt;float[, ], RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;, IDisplayable, IInitializable</code></pre>
+public class LSystemStrategy : ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy__roadStrategyFactory.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy._roadStrategyFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy__terrainSize.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy._terrainSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L18">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L45">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_LSystemStrategy__roadStrategyFactory" data-uid="App.ViewModels.Cities.LSystemStrategy._roadStrategyFactory">_roadStrategyFactory</h4>
-  <div class="markdown level1 summary"><p>Underlying <a class="xref" href="Cities.Roads.Factory.html">Factory</a> for creating the A* strategy object</p>
-</div>
+  <h4 id="App_ViewModels_Cities_LSystemStrategy__terrainSize" data-uid="App.ViewModels.Cities.LSystemStrategy._terrainSize">_terrainSize</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Factory _roadStrategyFactory</code></pre>
+    <pre><code class="lang-csharp hljs">(int Width, int Depth) _terrainSize</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -159,26 +169,24 @@ public class LSystemStrategy : ViewModelStrategy&lt;float[, ], RoadNetwork&gt;, 
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Cities.Roads.Factory.html">Factory</a></td>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Int32</span>, <span class="xref">System.Int32</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_origin.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.origin%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_DefaultRewrites.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.DefaultRewrites%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L26">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L42">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_LSystemStrategy_origin" data-uid="App.ViewModels.Cities.LSystemStrategy.origin">origin</h4>
-  <div class="markdown level1 summary"><p>Serialized origin of the L-system.</p>
-</div>
+  <h4 id="App_ViewModels_Cities_LSystemStrategy_DefaultRewrites" data-uid="App.ViewModels.Cities.LSystemStrategy.DefaultRewrites">DefaultRewrites</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-Vector2 origin</code></pre>
+    <pre><code class="lang-csharp hljs">static readonly int DefaultRewrites</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -190,26 +198,84 @@ Vector2 origin</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector2</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_rewritesCount.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.rewritesCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_inputs.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.inputs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L32">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L38">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_LSystemStrategy_rewritesCount" data-uid="App.ViewModels.Cities.LSystemStrategy.rewritesCount">rewritesCount</h4>
-  <div class="markdown level1 summary"><p>Serialized number of rewrites of the L-system.</p>
+  <h4 id="App_ViewModels_Cities_LSystemStrategy_inputs" data-uid="App.ViewModels.Cities.LSystemStrategy.inputs">inputs</h4>
+  <div class="markdown level1 summary"><p>Serialized L-system generation input data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
-int rewritesCount</code></pre>
+List&lt;LSystemStrategy.Input&gt; inputs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="App.ViewModels.Cities.LSystemStrategy.Input.html">LSystemStrategy.Input</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_MaxRewrites.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.MaxRewrites%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L41">View Source</a>
+  </span>
+  <h4 id="App_ViewModels_Cities_LSystemStrategy_MaxRewrites" data-uid="App.ViewModels.Cities.LSystemStrategy.MaxRewrites">MaxRewrites</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static readonly int MaxRewrites</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_MinRewrites.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.MinRewrites%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L40">View Source</a>
+  </span>
+  <h4 id="App_ViewModels_Cities_LSystemStrategy_MinRewrites" data-uid="App.ViewModels.Cities.LSystemStrategy.MinRewrites">MinRewrites</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static readonly int MinRewrites</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -233,7 +299,7 @@ int rewritesCount</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L44">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L50">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_LSystemStrategy_Display_" data-uid="App.ViewModels.Cities.LSystemStrategy.Display*"></a>
   <h4 id="App_ViewModels_Cities_LSystemStrategy_Display" data-uid="App.ViewModels.Cities.LSystemStrategy.Display">Display()</h4>
@@ -245,13 +311,13 @@ int rewritesCount</code></pre>
     <pre><code class="lang-csharp hljs">public override void Display()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Single[,], Cities.Roads.RoadNetwork&gt;.Display()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Display()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L60">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L102">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_LSystemStrategy_Generate_" data-uid="App.ViewModels.Cities.LSystemStrategy.Generate*"></a>
   <h4 id="App_ViewModels_Cities_LSystemStrategy_Generate" data-uid="App.ViewModels.Cities.LSystemStrategy.Generate">Generate()</h4>
@@ -280,25 +346,76 @@ Delegates the generation to the created generator.</p>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Single[,], Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_Initialize.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_GetTerrainCenter.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L39">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L95">View Source</a>
   </span>
-  <a id="App_ViewModels_Cities_LSystemStrategy_Initialize_" data-uid="App.ViewModels.Cities.LSystemStrategy.Initialize*"></a>
-  <h4 id="App_ViewModels_Cities_LSystemStrategy_Initialize" data-uid="App.ViewModels.Cities.LSystemStrategy.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"><p>Is required for initializing the non-serializable properties of the view model.</p>
-</div>
+  <a id="App_ViewModels_Cities_LSystemStrategy_GetTerrainCenter_" data-uid="App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter*"></a>
+  <h4 id="App_ViewModels_Cities_LSystemStrategy_GetTerrainCenter" data-uid="App.ViewModels.Cities.LSystemStrategy.GetTerrainCenter">GetTerrainCenter()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+    <pre><code class="lang-csharp hljs">Vector2 GetTerrainCenter()</code></pre>
   </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy_OnEvent_App_AppEvent_System_Object_.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy.OnEvent(App.AppEvent%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L121">View Source</a>
+  </span>
+  <a id="App_ViewModels_Cities_LSystemStrategy_OnEvent_" data-uid="App.ViewModels.Cities.LSystemStrategy.OnEvent*"></a>
+  <h4 id="App_ViewModels_Cities_LSystemStrategy_OnEvent_App_AppEvent_System_Object_" data-uid="App.ViewModels.Cities.LSystemStrategy.OnEvent(App.AppEvent,System.Object)">OnEvent(AppEvent, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnEvent(AppEvent eventId, object eventData)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="App.AppEvent.html">AppEvent</a></td>
+        <td><span class="parametername">eventId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">eventData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Single[,], Cities.Roads.RoadNetwork&gt;.Initialize()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.OnEvent(App.AppEvent, System.Object)</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
@@ -307,7 +424,7 @@ Delegates the generation to the created generator.</p>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
   </div>
   <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
+      <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
   </div>
 </article>
           </div>
@@ -320,7 +437,7 @@ Delegates the generation to the created generator.</p>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_LSystemStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.LSystemStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/LSystemStrategy.cs/#L17" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

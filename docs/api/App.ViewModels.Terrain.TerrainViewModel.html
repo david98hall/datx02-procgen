@@ -79,29 +79,34 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.Object</span>, <span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Mesh</span>, <span class="xref">UnityEngine.Texture2D</span>&gt;&gt;</div>
-    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.Object</span>, <span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Mesh</span>, <span class="xref">UnityEngine.Texture2D</span>&gt;&gt;</div>
-    <div class="level3"><span class="xref">TerrainViewModel</span></div>
+    <div class="level1"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.Object</span>, <span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Mesh</span>, <span class="xref">UnityEngine.Texture2D</span>&gt;&gt;</div>
+    <div class="level2"><span class="xref">TerrainViewModel</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Mesh</span>, <span class="xref">UnityEngine.Texture2D</span>&gt;&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
+    <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.Display()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.Injector</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.Initialize()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.EventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;._eventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.Display()</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.Generate()</a>
     </div>
     <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Object, (Mesh, Texture2D)&gt;.Injector</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;Object, (Mesh, Texture2D)&gt;.OnEvent(AppEvent, Object)</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -130,107 +135,16 @@
   <h5 id="App_ViewModels_Terrain_TerrainViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class TerrainViewModel : ViewModelStrategy&lt;object, (Mesh, Texture2D)&gt;, IGenerator&lt;(Mesh, Texture2D)&gt;, IDisplayable, IInitializable</code></pre>
+public class TerrainViewModel : ViewModelStrategy&lt;object, (Mesh, Texture2D)&gt;, IGenerator&lt;(Mesh, Texture2D)&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel__generator.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel._generator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L18">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel__generator" data-uid="App.ViewModels.Terrain.TerrainViewModel._generator">_generator</h4>
-  <div class="markdown level1 summary"><p>Underlying <a class="xref" href="Terrain.TerrainGenerator.html">TerrainGenerator</a> model.
-Is required to be set explicitly in run-time.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TerrainGenerator _generator</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Terrain.TerrainGenerator.html">TerrainGenerator</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel__noiseStrategyVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel._noiseStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L42">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel__noiseStrategyVisible" data-uid="App.ViewModels.Terrain.TerrainViewModel._noiseStrategyVisible">_noiseStrategyVisible</h4>
-  <div class="markdown level1 summary"><p>Visibility of the noise strategy editor.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _noiseStrategyVisible</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel__textureStrategyVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel._textureStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L73">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel__textureStrategyVisible" data-uid="App.ViewModels.Terrain.TerrainViewModel._textureStrategyVisible">_textureStrategyVisible</h4>
-  <div class="markdown level1 summary"><p>Visibility of the texture strategy editor.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool _textureStrategyVisible</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel__visible.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel._visible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L23">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L21">View Source</a>
   </span>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel__visible" data-uid="App.ViewModels.Terrain.TerrainViewModel._visible">_visible</h4>
   <div class="markdown level1 summary"><p>Visibility of the editor.</p>
@@ -257,42 +171,10 @@ Is required to be set explicitly in run-time.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_grayScaleStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.grayScaleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L102">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel_grayScaleStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.grayScaleStrategy">grayScaleStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Terrain.GrayScaleStrategy.html">GrayScaleStrategy</a> view model.
-Is required to be explicitly defined to be serializable.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-GrayScaleStrategy grayScaleStrategy</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="App.ViewModels.Terrain.GrayScaleStrategy.html">GrayScaleStrategy</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_heightCurve.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.heightCurve%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L29">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L27">View Source</a>
   </span>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel_heightCurve" data-uid="App.ViewModels.Terrain.TerrainViewModel.heightCurve">heightCurve</h4>
   <div class="markdown level1 summary"><p>Serialized height curve.</p>
@@ -323,7 +205,7 @@ AnimationCurve heightCurve</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_heightScale.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.heightScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L35">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L33">View Source</a>
   </span>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel_heightScale" data-uid="App.ViewModels.Terrain.TerrainViewModel.heightScale">heightScale</h4>
   <div class="markdown level1 summary"><p>Serialized height scale.</p>
@@ -351,19 +233,18 @@ float heightScale</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_noiseStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.noiseStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_noiseViewModel.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.noiseViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L57">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L36">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel_noiseStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.noiseStrategy">noiseStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized noise strategy that is currently selected.</p>
-</div>
+  <h4 id="App_ViewModels_Terrain_TerrainViewModel_noiseViewModel" data-uid="App.ViewModels.Terrain.TerrainViewModel.noiseViewModel">noiseViewModel</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
-TerrainViewModel.NoiseStrategy noiseStrategy</code></pre>
+NoiseViewModel noiseViewModel</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -375,27 +256,25 @@ TerrainViewModel.NoiseStrategy noiseStrategy</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="App.ViewModels.Terrain.TerrainViewModel.NoiseStrategy.html">TerrainViewModel.NoiseStrategy</a></td>
+        <td><a class="xref" href="App.ViewModels.Terrain.Noise.NoiseViewModel.html">NoiseViewModel</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_perlinNoiseStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.perlinNoiseStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_textureViewModel.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.textureViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L64">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L39">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel_perlinNoiseStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.perlinNoiseStrategy">perlinNoiseStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Terrain.PerlinNoiseStrategy.html">PerlinNoiseStrategy</a> view model.
-Is required to be explicitly defined to be serializable.</p>
-</div>
+  <h4 id="App_ViewModels_Terrain_TerrainViewModel_textureViewModel" data-uid="App.ViewModels.Terrain.TerrainViewModel.textureViewModel">textureViewModel</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
-PerlinNoiseStrategy perlinNoiseStrategy</code></pre>
+TextureViewModel textureViewModel</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -407,28 +286,29 @@ PerlinNoiseStrategy perlinNoiseStrategy</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="App.ViewModels.Terrain.PerlinNoiseStrategy.html">PerlinNoiseStrategy</a></td>
+        <td><a class="xref" href="App.ViewModels.Terrain.Textures.TextureViewModel.html">TextureViewModel</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="properties">Properties
+  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_textureStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.textureStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_EventBus.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.EventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L88">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L41">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel_textureStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.textureStrategy">textureStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized texture strategy that is currently selected.</p>
-</div>
+  <a id="App_ViewModels_Terrain_TerrainViewModel_EventBus_" data-uid="App.ViewModels.Terrain.TerrainViewModel.EventBus*"></a>
+  <h4 id="App_ViewModels_Terrain_TerrainViewModel_EventBus" data-uid="App.ViewModels.Terrain.TerrainViewModel.EventBus">EventBus</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-TerrainViewModel.TextureStrategy textureStrategy</code></pre>
+    <pre><code class="lang-csharp hljs">public override EventBus&lt;AppEvent&gt; EventBus { get; set; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -438,43 +318,13 @@ TerrainViewModel.TextureStrategy textureStrategy</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="App.ViewModels.Terrain.TerrainViewModel.TextureStrategy.html">TerrainViewModel.TextureStrategy</a></td>
+        <td><a class="xref" href="Services.EventBus-1.html">EventBus</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_whittakerStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.whittakerStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L95">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel_whittakerStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.whittakerStrategy">whittakerStrategy</h4>
-  <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Terrain.WhittakerStrategy.html">WhittakerStrategy</a> view model.
-Is required to be explicitly defined to be serializable.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-WhittakerStrategy whittakerStrategy</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="App.ViewModels.Terrain.WhittakerStrategy.html">WhittakerStrategy</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Object, System.ValueTuple&lt;UnityEngine.Mesh, UnityEngine.Texture2D&gt;&gt;.EventBus</span></div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -482,7 +332,7 @@ WhittakerStrategy whittakerStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L124">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L62">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_TerrainViewModel_Display_" data-uid="App.ViewModels.Terrain.TerrainViewModel.Display*"></a>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel_Display" data-uid="App.ViewModels.Terrain.TerrainViewModel.Display">Display()</h4>
@@ -497,79 +347,14 @@ WhittakerStrategy whittakerStrategy</code></pre>
   <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Object, System.ValueTuple&lt;UnityEngine.Mesh, UnityEngine.Texture2D&gt;&gt;.Display()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_DisplayNoiseStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L143">View Source</a>
-  </span>
-  <a id="App_ViewModels_Terrain_TerrainViewModel_DisplayNoiseStrategy_" data-uid="App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy*"></a>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel_DisplayNoiseStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.DisplayNoiseStrategy">DisplayNoiseStrategy()</h4>
-  <div class="markdown level1 summary"><p>Displays the editor of noise and the view model of the currently selected noise strategy.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DisplayNoiseStrategy()</code></pre>
-  </div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>If no strategy is selected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_DisplayTextureStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L169">View Source</a>
-  </span>
-  <a id="App_ViewModels_Terrain_TerrainViewModel_DisplayTextureStrategy_" data-uid="App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy*"></a>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel_DisplayTextureStrategy" data-uid="App.ViewModels.Terrain.TerrainViewModel.DisplayTextureStrategy">DisplayTextureStrategy()</h4>
-  <div class="markdown level1 summary"><p>Displays the editor of texture and the view model of the currently selected texture strategy.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DisplayTextureStrategy()</code></pre>
-  </div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>If no strategy is selected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L201">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L81">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_TerrainViewModel_Generate_" data-uid="App.ViewModels.Terrain.TerrainViewModel.Generate*"></a>
   <h4 id="App_ViewModels_Terrain_TerrainViewModel_Generate" data-uid="App.ViewModels.Terrain.TerrainViewModel.Generate">Generate()</h4>
-  <div class="markdown level1 summary"><p>Updates the underlying generator with the serialized values from the editor.
-Delegates the generation to the underlying generator.</p>
+  <div class="markdown level1 summary"><p>Generates a terrain mesh and terrain texture with the selected strategies.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -587,47 +372,13 @@ Delegates the generation to the underlying generator.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Mesh</span>, <span class="xref">UnityEngine.Texture2D</span>&gt;</td>
-        <td><p>The result of the delegated generation call.</p>
+        <td><p>A tuple of a mesh and a texture</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Object, System.ValueTuple&lt;UnityEngine.Mesh, UnityEngine.Texture2D&gt;&gt;.Generate()</span></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>If no strategy is selected.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel_Initialize.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L109">View Source</a>
-  </span>
-  <a id="App_ViewModels_Terrain_TerrainViewModel_Initialize_" data-uid="App.ViewModels.Terrain.TerrainViewModel.Initialize*"></a>
-  <h4 id="App_ViewModels_Terrain_TerrainViewModel_Initialize" data-uid="App.ViewModels.Terrain.TerrainViewModel.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"><p>Is required for initializing the non-serializable properties of the view model.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Object, System.ValueTuple&lt;UnityEngine.Mesh, UnityEngine.Texture2D&gt;&gt;.Initialize()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
@@ -636,7 +387,7 @@ Delegates the generation to the underlying generator.</p>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
   </div>
   <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
+      <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
   </div>
 </article>
           </div>
@@ -649,7 +400,7 @@ Delegates the generation to the underlying generator.</p>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_TerrainViewModel.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.TerrainViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/TerrainViewModel.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

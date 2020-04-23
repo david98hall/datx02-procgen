@@ -87,21 +87,30 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">UnityEngine.Texture2D</span>&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
+    <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Single[,], Texture2D&gt;.Display()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;Single[,], Texture2D&gt;.EventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;Single[,], Texture2D&gt;.Initialize()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;Single[,], Texture2D&gt;._eventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Single[,], Texture2D&gt;.Display()</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;Single[,], Texture2D&gt;.Generate()</a>
     </div>
     <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;Single[,], Texture2D&gt;.OnEvent(AppEvent, Object)</a>
+    </div>
+    <div>
       <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Single[,], Texture2D&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;Single[,], Texture2D&gt;.InjectedValue</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -130,46 +139,16 @@
   <h5 id="App_ViewModels_Terrain_WhittakerStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class WhittakerStrategy : ViewModelStrategy&lt;float[, ], Texture2D&gt;, IGenerator&lt;Texture2D&gt;, IDisplayable, IInitializable</code></pre>
+public class WhittakerStrategy : ViewModelStrategy&lt;float[, ], Texture2D&gt;, IGenerator&lt;Texture2D&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_WhittakerStrategy__textureStrategyFactory.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.WhittakerStrategy._textureStrategyFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L17">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Terrain_WhittakerStrategy__textureStrategyFactory" data-uid="App.ViewModels.Terrain.WhittakerStrategy._textureStrategyFactory">_textureStrategyFactory</h4>
-  <div class="markdown level1 summary"><p>Underlying <a class="xref" href="Terrain.Textures.Factory.html">Factory</a> for creating the Whittaker strategy object</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Factory _textureStrategyFactory</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Terrain.Textures.Factory.html">Factory</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_WhittakerStrategy_precipitationScale.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.WhittakerStrategy.precipitationScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L25">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L20">View Source</a>
   </span>
   <h4 id="App_ViewModels_Terrain_WhittakerStrategy_precipitationScale" data-uid="App.ViewModels.Terrain.WhittakerStrategy.precipitationScale">precipitationScale</h4>
   <div class="markdown level1 summary"><p>Serialized precipitation scale.</p>
@@ -200,7 +179,7 @@ float precipitationScale</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_WhittakerStrategy_temperatureScale.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.WhittakerStrategy.temperatureScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L31">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L26">View Source</a>
   </span>
   <h4 id="App_ViewModels_Terrain_WhittakerStrategy_temperatureScale" data-uid="App.ViewModels.Terrain.WhittakerStrategy.temperatureScale">temperatureScale</h4>
   <div class="markdown level1 summary"><p>Serialized temperature scale.</p>
@@ -233,7 +212,7 @@ float temperatureScale</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_WhittakerStrategy_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.WhittakerStrategy.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L43">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L33">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_WhittakerStrategy_Display_" data-uid="App.ViewModels.Terrain.WhittakerStrategy.Display*"></a>
   <h4 id="App_ViewModels_Terrain_WhittakerStrategy_Display" data-uid="App.ViewModels.Terrain.WhittakerStrategy.Display">Display()</h4>
@@ -251,7 +230,7 @@ float temperatureScale</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_WhittakerStrategy_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.WhittakerStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L54">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L46">View Source</a>
   </span>
   <a id="App_ViewModels_Terrain_WhittakerStrategy_Generate_" data-uid="App.ViewModels.Terrain.WhittakerStrategy.Generate*"></a>
   <h4 id="App_ViewModels_Terrain_WhittakerStrategy_Generate" data-uid="App.ViewModels.Terrain.WhittakerStrategy.Generate">Generate()</h4>
@@ -281,24 +260,6 @@ Delegates the generation to the created generator.</p>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Single[,], UnityEngine.Texture2D&gt;.Generate()</span></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Terrain_WhittakerStrategy_Initialize.md&amp;value=---%0Auid%3A%20App.ViewModels.Terrain.WhittakerStrategy.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Terrain/WhittakerStrategy.cs/#L38">View Source</a>
-  </span>
-  <a id="App_ViewModels_Terrain_WhittakerStrategy_Initialize_" data-uid="App.ViewModels.Terrain.WhittakerStrategy.Initialize*"></a>
-  <h4 id="App_ViewModels_Terrain_WhittakerStrategy_Initialize" data-uid="App.ViewModels.Terrain.WhittakerStrategy.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"><p>Is required for initializing the non-serializable properties of the view model.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Single[,], UnityEngine.Texture2D&gt;.Initialize()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
@@ -307,7 +268,7 @@ Delegates the generation to the created generator.</p>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
   </div>
   <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
+      <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
   </div>
 </article>
           </div>

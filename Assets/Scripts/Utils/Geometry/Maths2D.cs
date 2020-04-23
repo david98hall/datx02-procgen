@@ -346,7 +346,52 @@ namespace Utils.Geometry
             return polygon1List.Any(vertex => IsInsidePolygon(vertex, polygon2))
                    || polygon2.Any(vertex => IsInsidePolygon(vertex, polygon1List));
         }
-        
+
+
+        /// <summary>
+        /// Gets the centroid (center of mass) of a polygon. Not necessarily inside concave polygon.
+        /// </summary>
+        /// <param name="vertices">The polygon to find centroid of.</param>
+        /// <returns>The centroid coordinates.</returns>
+        public static Vector2 GetConvexCenter(IList<Vector2> vertices)
+        {
+            float c1 = 0f;
+            float c2 = 0f;
+            float d = 0f;
+            float td = 0f;
+
+            for (int i = 1; i < vertices.Count; i++)
+            {
+                td = (vertices[i - 1].x * vertices[i].y) - (vertices[i].x * vertices[i - 1].y);
+                d += td;
+                c1 = (vertices[i - 1].x + vertices[i].x) * td;
+                c2 = (vertices[i - 1].y + vertices[i].y) * td;
+            }
+
+            c1 /= 3 * d;
+            c2 /= 3 * d;
+
+            return new Vector2(c1, c2);
+        }
+
+        /// <summary>
+        /// Determine winding order of polygon by checking if points are arranged in clockwise order or not.
+        /// </summary>
+        /// <param name="polygon">The polygon to check.</param>
+        /// <returns>Counter-clockwise or not</returns>
+        public static bool PointsAreCounterClockwise(IList<Vector3> polygon)
+        {
+            float signedArea = 0;
+            for (int i = 1; i < polygon.Count; i++)
+            {
+                signedArea += (polygon[i].x - polygon[i - 1].x) * (polygon[i].z + polygon[i - 1].z);
+            }
+
+            return signedArea < 0;
+        }
+
+
+
         /// <summary>
         /// Returns true if two convex polygons are colliding using the separating axis theorem (SAT).
         /// Based on http://www.dyn4j.org/2010/01/sat/#sat-convex.
@@ -357,7 +402,8 @@ namespace Utils.Geometry
         /// <param name="poly1">The first polygon.</param>
         /// <param name="poly2">The second polygon.</param>
         /// <returns>True </returns>
-        public static bool AreColliding(IEnumerable<Vector3> poly1, IEnumerable<Vector3> poly2) 
+        public static bool AreColliding(IEnumerable<Vector3> poly1, IEnumerable<Vector3> poly2)
+
         {
             // Using SAT, the axes you must test are the normals of each shape's edges.
             var axes = EdgeNormals(poly1).Concat(EdgeNormals(poly2));
@@ -373,7 +419,7 @@ namespace Utils.Geometry
                     return false;
                 }
             }
-            
+
             // If we find that there is an overlap on every axis, we know the polygons are colliding.
             return true;
         }
@@ -403,7 +449,10 @@ namespace Utils.Geometry
                     if (dp < min)
                     {
                         min = dp;
-                    } else if (dp > max)
+
+                    }
+                    else if (dp > max)
+
                     {
                         max = dp;
                     }
@@ -429,7 +478,7 @@ namespace Utils.Geometry
         /// This method is implemented using Vector3 to avoid conversion.
         /// </summary>
         /// <returns>The normals of each edge in the polygon.</returns>
-        public static IEnumerable<Vector3> EdgeNormals(IEnumerable<Vector3> vertices) 
+        public static IEnumerable<Vector3> EdgeNormals(IEnumerable<Vector3> vertices)
         {
             var normals = new LinkedList<Vector3>();
 
@@ -471,7 +520,7 @@ namespace Utils.Geometry
             {
                 if (!vertexEnum.MoveNext())
                     throw new ApplicationException("Cannot check for collision with a polygon without vertices.");
-                
+
                 var v1 = vertexEnum.Current;
                 while (vertexEnum.MoveNext())
                 {
@@ -486,8 +535,8 @@ namespace Utils.Geometry
 
             return false;
         }
-        
+
         #endregion
-        
+
     }
 }

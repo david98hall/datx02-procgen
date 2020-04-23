@@ -80,10 +80,12 @@
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Strategy&lt;TI, TO&gt;</span></div>
-      <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy&lt;TI, TO&gt;</a></div>
+      <div class="level2"><a class="xref" href="Cities.Plots.AdjacentStrategy.html">AdjacentStrategy</a></div>
       <div class="level2"><a class="xref" href="Cities.Plots.BruteMinimalCycleStrategy.html">BruteMinimalCycleStrategy</a></div>
       <div class="level2"><a class="xref" href="Cities.Plots.ClockwiseCycleStrategy.html">ClockwiseCycleStrategy</a></div>
+      <div class="level2"><a class="xref" href="Cities.Plots.CombinedStrategy.html">CombinedStrategy</a></div>
       <div class="level2"><a class="xref" href="Cities.Plots.MinimalCycleStrategy.html">MinimalCycleStrategy</a></div>
+      <div class="level2"><a class="xref" href="Cities.Plots.PlotSampleStrategy.html">PlotSampleStrategy</a></div>
       <div class="level2"><a class="xref" href="Cities.Roads.AStarStrategy.html">AStarStrategy</a></div>
       <div class="level2"><a class="xref" href="Cities.Roads.LSystemStrategy.html">LSystemStrategy</a></div>
       <div class="level2"><a class="xref" href="Cities.Roads.SampleStrategy.html">SampleStrategy</a></div>
@@ -181,7 +183,7 @@
       </tr>
     </tbody>
   </table>
-  <h3 id="properties">Properties
+  <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -190,16 +192,15 @@
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Interfaces/Strategy.cs/#L13">View Source</a>
   </span>
-  <a id="Interfaces_Strategy_2_Injector_" data-uid="Interfaces.Strategy`2.Injector*"></a>
   <h4 id="Interfaces_Strategy_2_Injector" data-uid="Interfaces.Strategy`2.Injector">Injector</h4>
   <div class="markdown level1 summary"><p>The injector of the input.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IInjector&lt;TI&gt; Injector { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected IInjector&lt;TI&gt; Injector</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>

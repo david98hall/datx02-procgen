@@ -10,10 +10,10 @@ namespace App.ViewModels
     /// <typeparam name="TI">The input type of the generation.</typeparam>
     /// <typeparam name="TO">The output type of the generation.</typeparam>
     [Serializable]
-    public abstract class ViewModelStrategy<TI, TO> 
-        : Strategy<TI, TO>, IDisplayable, IInitializable, ISubscriber<AppEvent>
+    public abstract class ViewModelStrategy<TI, TO> : IGenerator<TO>, IDisplayable, ISubscriber<AppEvent>
     {
-
+        internal virtual IInjector<TI> Injector { get; set; }
+        
         /// <summary>
         /// The event bus that this view model can create events on and
         /// where it can listen for events from other view models.
@@ -21,7 +21,7 @@ namespace App.ViewModels
         /// When set, this view model is automatically unsubscribed
         /// from the previous one and subscribed to the new one.
         /// </summary>
-        public EventBus<AppEvent> EventBus
+        public virtual EventBus<AppEvent> EventBus
         {
             get => _eventBus;
             set
@@ -31,39 +31,24 @@ namespace App.ViewModels
                 _eventBus.Subscribe(this);
             }
         }
-        private EventBus<AppEvent> _eventBus;
         
-        /// <summary>
-        /// Required constructor for initializing the underlying injector.
-        /// </summary>
-        protected ViewModelStrategy() : base(null)
-        {
-        }
+        private EventBus<AppEvent> _eventBus;
 
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
-        public virtual void Display()
-        {
-        }
-
-        /// <summary>
-        /// Initializes the view model.
-        /// </summary>
-        public virtual void Initialize()
-        {
-        }
+        public abstract void Display();
 
         /// <summary>
         /// Generates an instance of the output type based
         /// on the values in the UI and on the input.
         /// </summary>
         /// <returns>The output based on the UI</returns>
-        public abstract override TO Generate();
+        public abstract TO Generate();
 
+        
         public virtual void OnEvent(AppEvent eventId, object eventData)
         {
         }
-
     }
 }

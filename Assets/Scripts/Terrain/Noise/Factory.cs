@@ -44,5 +44,13 @@ namespace Terrain.Noise
                 NoiseOffset = noiseOffset
             };
         }
+
+        public IGenerator<Mesh> CreateMeshGenerator(
+            IInjector<float[,]> noiseMapInjector, 
+            AnimationCurve heightCurve, 
+            float heightScale)
+        {
+            return new NoiseMeshGenerator(noiseMapInjector){HeightCurve = heightCurve, HeightScale = heightScale};
+        }
     }
 }

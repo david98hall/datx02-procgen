@@ -9,10 +9,10 @@ namespace Cities.Roads
     /// <summary>
     /// A RoadNetwork strategy for testing.
     /// </summary>
-    internal class SampleStrategy : Strategy<float[,], RoadNetwork>
+    internal class SampleStrategy : Strategy<MeshFilter, RoadNetwork>
     {
         
-        internal SampleStrategy(IInjector<float[,]> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
+        internal SampleStrategy(IInjector<MeshFilter> terrainNoiseMapInjector) : base(terrainNoiseMapInjector)
         {
         }
         

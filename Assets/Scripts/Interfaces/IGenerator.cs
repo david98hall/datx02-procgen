@@ -11,5 +11,7 @@
         /// </summary>
         /// <returns>What has been generated.</returns>
         T Generate();
+        
+        //T Get();
     }
 }

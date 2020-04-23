@@ -43,38 +43,18 @@ namespace Cities.Roads
         /// </summary>
         internal float HeightBias
         {
-            get => _heightBias;
             set => _heightBias = Math.Max(0, Math.Min(1, value)); 
         }
 
         /// <summary>
         /// Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.
         /// </summary>
-        /// <param name="heightMapInjector">Non null height map injector object.</param>
-        internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector) 
-            : this(heightMapInjector, null)
-        {
-        }
-        
-        /// <summary>
-        /// Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.
-        /// </summary>
-        /// <param name="heightMapInjector">Non null height map injector object.</param>
-        /// <param name="paths">The paths where A* will be applied.</param>
-        internal AStarStrategy([NotNull] IInjector<float[,]> heightMapInjector, 
-            IEnumerable<(Vector2Int Start, Vector2Int End)> paths) 
-            : base(heightMapInjector)
+        /// <param name="terrainMeshInjector">Non null terrain mesh filter injector object.</param>
+        internal AStarStrategy([NotNull] IInjector<float[,]> terrainMeshInjector) : base(terrainMeshInjector)
         {
             _paths = new Dictionary<Vector2Int, ISet<Vector2Int>>();
-
-            // Add any given paths
-            if (paths == null) return;
-            foreach (var (start, end) in paths)
-            {
-                Add(start, end);
-            }
         }
-        
+
         #endregion
         
         #region Public and internal methods
@@ -122,7 +102,7 @@ namespace Cities.Roads
         /// </summary>
         /// <param name="start">The given start node.</param>
         /// <param name="goal">The given goal node.</param>
-        public void Add(Vector2Int start, Vector2Int goal)
+        internal void Add(Vector2Int start, Vector2Int goal)
         {
             if (!_paths.ContainsKey(start)) _paths[start] = new HashSet<Vector2Int>();
             _paths[start].Add(goal);

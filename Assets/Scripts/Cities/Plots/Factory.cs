@@ -40,7 +40,7 @@ namespace Cities.Plots
         {
             return new BruteMinimalCycleStrategy(_roadNetworkInjector);
         }
-        
+
         /// <summary>
         /// Creates a strategy for plots adjacent to the road network.
         /// </summary>
@@ -59,6 +59,7 @@ namespace Cities.Plots
             return new PlotSampleStrategy(_roadNetworkInjector);
         }
         
+        /// <summary>
         /// Finds all cyclic plots by always turning clockwise when searching the road network.
         /// </summary>
         /// <returns>The found plots.</returns>

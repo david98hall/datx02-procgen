@@ -171,6 +171,66 @@ This is useful in cases where overlaps are searched for but edge intersections d
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_AreColliding_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D%2CSystem.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/Geometry/Maths2D.cs/#L405">View Source</a>
+  </span>
+  <a id="Utils_Geometry_Maths2D_AreColliding_" data-uid="Utils.Geometry.Maths2D.AreColliding*"></a>
+  <h4 id="Utils_Geometry_Maths2D_AreColliding_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_UnityEngine_Vector3__" data-uid="Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{UnityEngine.Vector3})">AreColliding(IEnumerable&lt;Vector3&gt;, IEnumerable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns true if two convex polygons are colliding using the separating axis theorem (SAT).
+Based on <a href="http://www.dyn4j.org/2010/01/sat/#sat-convex">http://www.dyn4j.org/2010/01/sat/#sat-convex</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AreColliding(IEnumerable&lt;Vector3&gt; poly1, IEnumerable&lt;Vector3&gt; poly2)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">poly1</span></td>
+        <td><p>The first polygon.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">poly2</span></td>
+        <td><p>The second polygon.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Utils_Geometry_Maths2D_AreColliding_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_UnityEngine_Vector3___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is implemented using Vector3 to avoid conversion where it was intended to be used (Plots).</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_CalculatePolygonArea_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.CalculatePolygonArea(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector2%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -237,6 +297,57 @@ This is useful in cases where overlaps are searched for but edge intersections d
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_EdgeNormals_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.EdgeNormals(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/Geometry/Maths2D.cs/#L481">View Source</a>
+  </span>
+  <a id="Utils_Geometry_Maths2D_EdgeNormals_" data-uid="Utils.Geometry.Maths2D.EdgeNormals*"></a>
+  <h4 id="Utils_Geometry_Maths2D_EdgeNormals_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__" data-uid="Utils.Geometry.Maths2D.EdgeNormals(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})">EdgeNormals(IEnumerable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the normals of each edge of a given polygon defined by its vertices.
+The edges are determined by the order of the given vertices.</p>
+<p>This method is implemented using Vector3 to avoid conversion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3&gt; EdgeNormals(IEnumerable&lt;Vector3&gt; vertices)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">vertices</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><p>The normals of each edge in the polygon.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_GetCenterPoint_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.GetCenterPoint(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector2%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -281,6 +392,56 @@ This is useful in cases where overlaps are searched for but edge intersections d
       <tr>
         <td><span class="xref">UnityEngine.Vector2</span></td>
         <td><p>The center point.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_GetConvexCenter_System_Collections_Generic_IList_UnityEngine_Vector2__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.GetConvexCenter(System.Collections.Generic.IList%7BUnityEngine.Vector2%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/Geometry/Maths2D.cs/#L356">View Source</a>
+  </span>
+  <a id="Utils_Geometry_Maths2D_GetConvexCenter_" data-uid="Utils.Geometry.Maths2D.GetConvexCenter*"></a>
+  <h4 id="Utils_Geometry_Maths2D_GetConvexCenter_System_Collections_Generic_IList_UnityEngine_Vector2__" data-uid="Utils.Geometry.Maths2D.GetConvexCenter(System.Collections.Generic.IList{UnityEngine.Vector2})">GetConvexCenter(IList&lt;Vector2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets the centroid (center of mass) of a polygon. Not necessarily inside concave polygon.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 GetConvexCenter(IList&lt;Vector2&gt; vertices)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector2</span>&gt;</td>
+        <td><span class="parametername">vertices</span></td>
+        <td><p>The polygon to find centroid of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector2</span></td>
+        <td><p>The centroid coordinates.</p>
 </td>
       </tr>
     </tbody>
@@ -580,6 +741,69 @@ Here, extreme bounds means minimum and maximum x and y coordinates.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_LinePolyCollision_UnityEngine_Vector3_UnityEngine_Vector3_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.LinePolyCollision(UnityEngine.Vector3%2CUnityEngine.Vector3%2CSystem.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/Geometry/Maths2D.cs/#L512">View Source</a>
+  </span>
+  <a id="Utils_Geometry_Maths2D_LinePolyCollision_" data-uid="Utils.Geometry.Maths2D.LinePolyCollision*"></a>
+  <h4 id="Utils_Geometry_Maths2D_LinePolyCollision_UnityEngine_Vector3_UnityEngine_Vector3_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__" data-uid="Utils.Geometry.Maths2D.LinePolyCollision(UnityEngine.Vector3,UnityEngine.Vector3,System.Collections.Generic.IEnumerable{UnityEngine.Vector3})">LinePolyCollision(Vector3, Vector3, IEnumerable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns true if the line and polygon are colliding. They collide if either the line
+intersects one of the polygon's edges or the line lies inside the polygon.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool LinePolyCollision(Vector3 start, Vector3 end, IEnumerable&lt;Vector3&gt; poly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>Start point of the line.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">end</span></td>
+        <td><p>End point of the line.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">poly</span></td>
+        <td><p>The vertices of the polygon</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the line and polygon are colliding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_LineSegmentsIntersect_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_System_Boolean_.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.LineSegmentsIntersect(UnityEngine.Vector2%2CUnityEngine.Vector2%2CUnityEngine.Vector2%2CUnityEngine.Vector2%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -626,6 +850,58 @@ Here, extreme bounds means minimum and maximum x and y coordinates.</p>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">considerSegmentExtremes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_Overlap_System_ValueTuple_System_Single_System_Single__System_ValueTuple_System_Single_System_Single__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.Overlap(System.ValueTuple%7BSystem.Single%2CSystem.Single%7D%2CSystem.ValueTuple%7BSystem.Single%2CSystem.Single%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/Geometry/Maths2D.cs/#L465">View Source</a>
+  </span>
+  <a id="Utils_Geometry_Maths2D_Overlap_" data-uid="Utils.Geometry.Maths2D.Overlap*"></a>
+  <h4 id="Utils_Geometry_Maths2D_Overlap_System_ValueTuple_System_Single_System_Single__System_ValueTuple_System_Single_System_Single__" data-uid="Utils.Geometry.Maths2D.Overlap(System.ValueTuple{System.Single,System.Single},System.ValueTuple{System.Single,System.Single})">Overlap((Single, Single), (Single, Single))</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static bool Overlap((float, float) firstInterval, (float, float) secondInterval)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Single</span>, <span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">firstInterval</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Single</span>, <span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">secondInterval</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -709,6 +985,56 @@ Here, extreme bounds means minimum and maximum x and y coordinates.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_PointsAreCounterClockwise_System_Collections_Generic_IList_UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.PointsAreCounterClockwise(System.Collections.Generic.IList%7BUnityEngine.Vector3%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/Geometry/Maths2D.cs/#L382">View Source</a>
+  </span>
+  <a id="Utils_Geometry_Maths2D_PointsAreCounterClockwise_" data-uid="Utils.Geometry.Maths2D.PointsAreCounterClockwise*"></a>
+  <h4 id="Utils_Geometry_Maths2D_PointsAreCounterClockwise_System_Collections_Generic_IList_UnityEngine_Vector3__" data-uid="Utils.Geometry.Maths2D.PointsAreCounterClockwise(System.Collections.Generic.IList{UnityEngine.Vector3})">PointsAreCounterClockwise(IList&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determine winding order of polygon by checking if points are arranged in clockwise order or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool PointsAreCounterClockwise(IList&lt;Vector3&gt; polygon)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">polygon</span></td>
+        <td><p>The polygon to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Counter-clockwise or not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_PolygonsOverlap_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__System_Collections_Generic_IEnumerable_UnityEngine_Vector2__.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.PolygonsOverlap(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector2%7D%2CSystem.Collections.Generic.IEnumerable%7BUnityEngine.Vector2%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -763,6 +1089,64 @@ Here, extreme bounds means minimum and maximum x and y coordinates.</p>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_ProjectPolygonOntoAxis_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.ProjectPolygonOntoAxis(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D%2CUnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/Geometry/Maths2D.cs/#L435">View Source</a>
+  </span>
+  <a id="Utils_Geometry_Maths2D_ProjectPolygonOntoAxis_" data-uid="Utils.Geometry.Maths2D.ProjectPolygonOntoAxis*"></a>
+  <h4 id="Utils_Geometry_Maths2D_ProjectPolygonOntoAxis_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__UnityEngine_Vector3_" data-uid="Utils.Geometry.Maths2D.ProjectPolygonOntoAxis(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},UnityEngine.Vector3)">ProjectPolygonOntoAxis(IEnumerable&lt;Vector3&gt;, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Project the x-z value of each vertex of a polygon onto a given axis (infnite line), returning the minimum and maximum value.
+This can be seen as squashing a polygon (2D) onto a line (1D) returning an interval along the line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (float start, float end) ProjectPolygonOntoAxis(IEnumerable&lt;Vector3&gt; poly, Vector3 axis)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">poly</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">axis</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Single</span>, <span class="xref">System.Single</span>&gt;</td>
+        <td><p>The minimum and maximum value of the projection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Utils_Geometry_Maths2D_ProjectPolygonOntoAxis_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__UnityEngine_Vector3__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is implemented using Vector3 to avoid conversion where it was intended to be used (Plots).</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_Geometry_Maths2D_PseudoDistanceFromPointToLine_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_.md&amp;value=---%0Auid%3A%20Utils.Geometry.Maths2D.PseudoDistanceFromPointToLine(UnityEngine.Vector2%2CUnityEngine.Vector2%2CUnityEngine.Vector2)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>

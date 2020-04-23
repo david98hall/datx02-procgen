@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using Cities.Plots;
 using Interfaces;
 using UnityEngine;
 
@@ -22,6 +25,11 @@ namespace Terrain.Textures
         internal Factory(IInjector<float[,]> noiseMapInjector)
         {
             _noiseMapInjector = noiseMapInjector;
+        }
+        
+        public Factory(Func<float[,]> injector)
+        {
+            _noiseMapInjector = new Injector<float[,]>(injector);
         }
         
         /// <summary>

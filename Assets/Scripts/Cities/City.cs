@@ -32,5 +32,10 @@ namespace Cities
 
         private IEnumerable<Plot> _plots;
 
+        /// <summary>
+        /// All buildings in the city.
+        /// </summary>
+        public IEnumerable<Building> Buildings { get; set; }
+
     }
 }

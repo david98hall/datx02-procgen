@@ -73,12 +73,14 @@
   
   <h1 id="Cities_Roads_LSystemStrategy" data-uid="Cities.Roads.LSystemStrategy" class="text-break">Class LSystemStrategy
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A strategy which is injected with a tuple of terrain data: its offset in the scene, and its height map.
+Based on this data, a road network can be generated with an L-system algorithm.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
     <div class="level2"><span class="xref">LSystemStrategy</span></div>
   </div>
   <div classs="implements">
@@ -88,10 +90,10 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Single[,], RoadNetwork&gt;.Injector</a>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;TerrainInfo, RoadNetwork&gt;.Injector</a>
     </div>
     <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate">Strategy&lt;Single[,], RoadNetwork&gt;.Generate()</a>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate">Strategy&lt;TerrainInfo, RoadNetwork&gt;.Generate()</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -119,24 +121,24 @@
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
   <h5 id="Cities_Roads_LSystemStrategy_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">class LSystemStrategy : Strategy&lt;float[, ], RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">class LSystemStrategy : Strategy&lt;TerrainInfo, RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystemStrategy__ctor_Interfaces_IInjector_System_Single_0__0____System_Int32_.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystemStrategy.%23ctor(Interfaces.IInjector%7BSystem.Single%5B0%3A%2C0%3A%5D%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystemStrategy__ctor_Interfaces_IInjector_Terrain_TerrainInfo__System_Int32_.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystemStrategy.%23ctor(Interfaces.IInjector%7BTerrain.TerrainInfo%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L19">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L25">View Source</a>
   </span>
   <a id="Cities_Roads_LSystemStrategy__ctor_" data-uid="Cities.Roads.LSystemStrategy.#ctor*"></a>
-  <h4 id="Cities_Roads_LSystemStrategy__ctor_Interfaces_IInjector_System_Single_0__0____System_Int32_" data-uid="Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]},System.Int32)">LSystemStrategy(IInjector&lt;Single[,]&gt;, Int32)</h4>
+  <h4 id="Cities_Roads_LSystemStrategy__ctor_Interfaces_IInjector_Terrain_TerrainInfo__System_Int32_" data-uid="Cities.Roads.LSystemStrategy.#ctor(Interfaces.IInjector{Terrain.TerrainInfo},System.Int32)">LSystemStrategy(IInjector&lt;TerrainInfo&gt;, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">LSystemStrategy(IInjector&lt;float[, ]&gt; terrainNoiseMapInjector, int rewritesCount = 6)</code></pre>
+    <pre><code class="lang-csharp hljs">LSystemStrategy(IInjector&lt;TerrainInfo&gt; terrainInjector, int rewritesCount = 6)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -149,8 +151,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
-        <td><span class="parametername">terrainNoiseMapInjector</span></td>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>&gt;</td>
+        <td><span class="parametername">terrainInjector</span></td>
         <td></td>
       </tr>
       <tr>
@@ -167,7 +169,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystemStrategy_Origin.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystemStrategy.Origin%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L11">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L17">View Source</a>
   </span>
   <a id="Cities_Roads_LSystemStrategy_Origin_" data-uid="Cities.Roads.LSystemStrategy.Origin*"></a>
   <h4 id="Cities_Roads_LSystemStrategy_Origin" data-uid="Cities.Roads.LSystemStrategy.Origin">Origin</h4>
@@ -200,7 +202,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystemStrategy_RewritesCount.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystemStrategy.RewritesCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L17">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L23">View Source</a>
   </span>
   <a id="Cities_Roads_LSystemStrategy_RewritesCount_" data-uid="Cities.Roads.LSystemStrategy.RewritesCount*"></a>
   <h4 id="Cities_Roads_LSystemStrategy_RewritesCount" data-uid="Cities.Roads.LSystemStrategy.RewritesCount">RewritesCount</h4>
@@ -236,7 +238,7 @@ L-system before returning a road network based on it.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystemStrategy_Generate.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystemStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L25">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L30">View Source</a>
   </span>
   <a id="Cities_Roads_LSystemStrategy_Generate_" data-uid="Cities.Roads.LSystemStrategy.Generate*"></a>
   <h4 id="Cities_Roads_LSystemStrategy_Generate" data-uid="Cities.Roads.LSystemStrategy.Generate">Generate()</h4>
@@ -262,7 +264,7 @@ L-system before returning a road network based on it.</p>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Interfaces.Strategy&lt;System.Single[,], Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
+  <div><span class="xref">Interfaces.Strategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
@@ -278,7 +280,7 @@ L-system before returning a road network based on it.</p>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystemStrategy.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystemStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L5" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystemStrategy.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

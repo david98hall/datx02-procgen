@@ -1,11 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using App.ViewModels.Cities.Buildings;
+using App.ViewModels.Cities.Plots;
+using App.ViewModels.Cities.Roads;
 using Cities;
 using Cities.Plots;
 using Cities.Roads;
+using Interfaces;
+using Services;
+using Terrain;
 using UnityEditor;
 using UnityEngine;
-using Factory = Cities.Plots.Factory;
+using BuildingFactory = Cities.Buildings.Factory;
 
 namespace App.ViewModels.Cities
 {
@@ -13,185 +20,107 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<float[,], City>
+    public class CityViewModel : ViewModelStrategy<TerrainInfo, City>
     {
-        /// <summary>
-        /// Underlying <see cref="CityGenerator"/> model.
-        /// Is required to be set explicitly in run-time.
-        /// </summary>
-        // private CityGenerator _generator;
-        
         /// <summary>
         /// Visibility of the editor.
         /// </summary>
         private bool _visible;
-        private bool _aStarVisible;
-        private bool _lSystemVisible;
-        
-        #region Road Network Strategy
 
-        /// <summary>
-        /// Visibility of the road network strategy editor.
-        /// </summary>
-        private bool _roadNetworkStrategyVisible;
-
-        /// <summary>
-        /// Serialized view-model for <see cref="AStarStrategy"/> view model.
-        /// Is required to be explicitly defined to be serializable.
-        /// </summary>
         [SerializeField]
-        private AStarStrategy aStarStrategy;
+        private RoadViewModel roadViewModel;
+        
+        [SerializeField]
+        private PlotViewModel plotViewModel;
+        
+        [SerializeField]
+        private BuildingViewModel buildingViewModel;
 
+        #region View Model Properties
         /// <summary>
-        /// Serialized view-model for <see cref="LSystemStrategy"/> view model.
-        /// Is required to be explicitly defined to be serializable.
+        /// <see cref="RoadViewModel.RoadWidth"/>
         /// </summary>
-        [SerializeField] 
-        private LSystemStrategy lSystemStrategy;
-
+        public float RoadWidth => roadViewModel.RoadWidth;
+        
+        /// <summary>
+        /// <see cref="RoadViewModel.RoadCurvature"/>
+        /// </summary>
+        public float RoadCurvature => roadViewModel.RoadCurvature;
+        
+        /// <summary>
+        /// <see cref="RoadViewModel.RoadSmoothingIterations"/>
+        /// </summary>
+        public int RoadSmoothingIterations => roadViewModel.RoadSmoothingIterations;
+        
+        /// <summary>
+        /// <see cref="RoadViewModel.RoadTerrainOffsetY"/>
+        /// </summary>
+        public float RoadTerrainOffsetY => roadViewModel.RoadTerrainOffsetY;
+        
+        /// <summary>
+        /// <see cref="RoadViewModel.RoadMaterial"/>
+        /// </summary>
+        public Material RoadMaterial => roadViewModel.RoadMaterial;
+        
+        /// <summary>
+        /// <see cref="PlotViewModel.DisplayPlots"/>
+        /// </summary>
+        public bool DisplayPlots => plotViewModel.DisplayPlots;
+        
+        /// <summary>
+        /// <see cref="PlotViewModel.PlotMaterial"/>
+        /// </summary>
+        public Material PlotMaterial => plotViewModel.PlotMaterial;
+                
+        /// <summary>
+        /// <see cref="BuildingViewModel.DisplayBuildings"/>
+        /// </summary>
+        public bool DisplayBuildings => buildingViewModel.DisplayBuildings;
+        
+        /// <summary>
+        /// <see cref="BuildingViewModel.BuildingMaterial"/>
+        /// </summary>
+        public Material BuildingMaterial => buildingViewModel.BuildingMaterial;
         #endregion
         
-        #region Plot Strategy
-        
-        /// <summary>
-        /// Visibility of the plot strategy editor.
-        /// </summary>
-        private bool _plotStrategyVisible;
-        
-        /// <summary>
-        /// All plot strategy models.
-        /// No editor is required for plot strategies so no view models are required either.
-        /// Is required to be set explicitly in run-time.
-        /// </summary>
-        // private Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>> _plotStrategies;
-        
-        /// <summary>
-        /// Enum for plot strategies.
-        /// Is used for displaying the possible strategies in the editor.
-        /// </summary>
-        public enum PlotStrategy
+        internal override IInjector<TerrainInfo> Injector
         {
-            MinimalCycle, ClockWiseCycle, BruteMinimalCycle, Adjacent, Combined
-        }
-
-        /// <summary>
-        /// Serialized road network strategy that is currently selected.
-        /// </summary>
-        [SerializeField] 
-        private PlotStrategy plotStrategy;
-
-        /// <summary>
-        /// Material used for the generated plots.
-        /// </summary>
-        [SerializeField] 
-        private Material plotMaterial;
-        
-        /// <summary>
-        /// Getter for the material used for the generated plots.
-        /// </summary>
-        public Material PlotMaterial => plotMaterial;
-
-        /// <summary>
-        /// Boolean if plots are visible.
-        /// </summary>
-        [SerializeField] 
-        private bool displayPlots;
-        
-        /// <summary>
-        /// Getter for the boolean if plots are visible.
-        /// </summary>
-        public bool DisplayPlots => displayPlots;
-
-        #endregion
-        
-        #region Road Appearance fields
-        
-        /// <summary>
-        /// Visibility of the plot strategy editor.
-        /// </summary>
-        private bool _roadAppearanceVisible;
-        
-        /// <summary>
-        /// Toad width of the generated road network.
-        /// </summary>
-        [SerializeField]
-        private float roadWidth = 0.3f;
-        
-        /// <summary>
-        /// Getter for the road width of the generated road network.
-        /// </summary>
-        public float RoadWidth => roadWidth;
-
-        /// <summary>
-        /// Toad curvature of the generated road network.
-        /// </summary>
-        [SerializeField]
-        private float roadCurvature = 0.1f;
-
-        /// <summary>
-        /// Getter for the road curvature of the generated road network.
-        /// </summary>
-        public float RoadCurvature => roadCurvature;
-
-        /// <summary>
-        /// Road smoothing iterations of the generated road network.
-        /// </summary>
-        [SerializeField]
-        private int roadSmoothingIterations = 1;
-        
-        /// <summary>
-        /// Getter for the road smoothing iterations of the generated road network.
-        /// </summary>
-        public int RoadSmoothingIterations => roadSmoothingIterations;
-
-        [SerializeField]
-        private Material roadMaterial;
-        
-        /// <summary>
-        /// Road material of the generated road network.
-        /// </summary>
-        public Material RoadMaterial => roadMaterial;
-
-        /// <summary>
-        /// Getter for the road material of the generated road network.
-        /// </summary>
-        public float RoadTerrainOffsetY => roadTerrainOffsetY;
-
-        [SerializeField]
-        private float roadTerrainOffsetY = 0.075f;
-        
-        #endregion
-
-        /// <summary>
-        /// Is required for initializing the non-serializable properties of the view model.
-        /// </summary>
-        public override void Initialize()
-        {
-            // _generator = new CityGenerator();
-
-            aStarStrategy.EventBus = EventBus;
-            lSystemStrategy.EventBus = EventBus;
-            
-            aStarStrategy.Injector = Injector;
-            lSystemStrategy.Injector = Injector;
-            
-            aStarStrategy.Initialize();
-            lSystemStrategy.Initialize();
-            
-            /*
-            // Plot strategies
-            var plotStrategyFactory = new Factory(_generator);
-            _plotStrategies = new Dictionary<PlotStrategy, IGenerator<IEnumerable<Plot>>>
+            get => base.Injector;
+            set
             {
-                [PlotStrategy.MinimalCycle] = plotStrategyFactory.CreateMinimalCycleStrategy(),
-                [PlotStrategy.ClockWiseCycle] = plotStrategyFactory.CreateClockwiseCycleStrategy(),
-                [PlotStrategy.BruteMinimalCycle] = plotStrategyFactory.CreateBruteMinimalCycleStrategy(),
-                [PlotStrategy.Adjacent] = plotStrategyFactory.CreateAdjacentStrategy(),
-                [PlotStrategy.Combined] = plotStrategyFactory.CreateCombinedStrategy(),
-            };
-            */
+                base.Injector = value;
+                try
+                {   
+                    roadViewModel.Injector = value;
+                    buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() =>
+                        (Injector.Get(), plotViewModel.Generate()));
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
         }
-        
+
+        public override EventBus<AppEvent> EventBus
+        {
+            get => base.EventBus;
+            set
+            {
+                base.EventBus = value;
+                try
+                {   
+                    roadViewModel.EventBus = value;
+                    plotViewModel.EventBus = value;
+                    buildingViewModel.EventBus = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
@@ -202,99 +131,13 @@ namespace App.ViewModels.Cities
 
             EditorGUI.indentLevel++;
             
-            DisplayRoadStrategy();
-            DisplayPlotStrategy();
+            roadViewModel.Display();
+            plotViewModel.Display();
+            buildingViewModel.Display();
 
             EditorGUI.indentLevel--;
         }
 
-        /// <summary>
-        /// Displays the editor of road networks and the view model of the currently selected road network strategy.
-        /// </summary>
-        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
-        private void DisplayRoadStrategy()
-        {
-            _roadNetworkStrategyVisible 
-                = EditorGUILayout.Foldout(_roadNetworkStrategyVisible, "Road Network Generation");
-            if (!_roadNetworkStrategyVisible) return;
-            EditorGUI.indentLevel++;
-
-            // A* Strategy
-            _aStarVisible = EditorGUILayout.Toggle("A*", _aStarVisible);
-            if (_aStarVisible)
-            {
-                EditorGUI.indentLevel++;
-                aStarStrategy.Display();
-                EditorGUI.indentLevel--;
-            }
-
-            // L-system Strategy
-            _lSystemVisible = EditorGUILayout.Toggle("L-system", _lSystemVisible);
-            if (_lSystemVisible)
-            {
-                EditorGUI.indentLevel++;
-                lSystemStrategy.Display();
-                EditorGUI.indentLevel--;
-            }
-            
-            EditorGUI.indentLevel--;
-                
-            DisplayRoadAppearance();
-            
-            EditorGUI.indentLevel--;
-        }
-        
-        /// <summary>
-        /// Displays the editor of the road network appearance.
-        /// </summary>
-        private void DisplayRoadAppearance()
-        {
-            _roadAppearanceVisible 
-                = EditorGUILayout.Foldout(_roadAppearanceVisible, "Road Appearance");
-            if (!_roadAppearanceVisible) return;
-            EditorGUI.indentLevel++;
-                
-            // Road material
-            roadMaterial = (Material) EditorGUILayout.ObjectField(
-                "Material", roadMaterial, typeof(Material), true);
-                
-            // Road width
-            roadWidth = EditorGUILayout.Slider("Width", roadWidth, 0.1f, 10);
-                
-            // Road/Terrain y-offset
-            roadTerrainOffsetY = EditorGUILayout.FloatField("Y-Offset", roadTerrainOffsetY);
-
-            // Road curvature and smoothing
-            roadCurvature = EditorGUILayout.Slider("Curvature", roadCurvature, 0, 0.5f);
-            if (roadCurvature > 0)
-            {
-                roadSmoothingIterations = EditorGUILayout.IntSlider(
-                    "Smoothing Iterations", roadSmoothingIterations, 1, 10);   
-            }
-
-            EditorGUI.indentLevel--;
-        }
-
-        /// <summary>
-        /// Displays the editor of plots and the view model of the currently selected plot strategy.
-        /// </summary>
-        /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
-        private void DisplayPlotStrategy()
-        {
-            _plotStrategyVisible = EditorGUILayout.Foldout(_plotStrategyVisible, "Plot Generation");
-            if (!_plotStrategyVisible) return;
-            
-            EditorGUI.indentLevel++;
-            plotStrategy = (PlotStrategy) EditorGUILayout.EnumPopup("Strategy", plotStrategy);
-            displayPlots = EditorGUILayout.Toggle("Display Plots", displayPlots);
-            if (displayPlots)
-            {
-                plotMaterial = (Material) EditorGUILayout.ObjectField(
-                    "Plot Material", plotMaterial, typeof(Material), true);   
-            }
-            EditorGUI.indentLevel--;
-        }
-        
         /// <summary>
         /// Updates the underlying generator with the serialized values from the editor.
         /// Delegates the generation to the underlying generator.
@@ -303,60 +146,26 @@ namespace App.ViewModels.Cities
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         public override City Generate()
         {
-            var roadNetwork = GenerateRoadNetwork();
-            if (roadNetwork != null)
+            // Road network
+            var roadNetwork = roadViewModel.Generate();
+            if (roadNetwork == null) return null;
+            
+            // Plots
+            plotViewModel.Injector = new Injector<RoadNetwork>(() => roadNetwork);
+            var plots = plotViewModel.Generate();
+            var enumerable = plots as Plot[] ?? plots.ToArray();
+            
+            // Buildings
+            buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() => 
+                (Injector.Get(), enumerable));
+            
+            return new City
             {
-                return new City
-                {
-                    RoadNetwork = roadNetwork,
-                    Plots = GeneratePlots(roadNetwork)
-                };
-            }
-
-            return null;
+                RoadNetwork = roadNetwork,
+                Plots = enumerable,
+                Buildings = buildingViewModel.Generate()
+            };
         }
 
-        private IEnumerable<Plot> GeneratePlots(RoadNetwork roadNetwork)
-        {
-            var plotStrategyFactory = new Factory(() => roadNetwork);
-
-            switch (plotStrategy)
-            {
-                case PlotStrategy.MinimalCycle:
-                    return plotStrategyFactory.CreateMinimalCycleStrategy().Generate();
-                case PlotStrategy.ClockWiseCycle:
-                    return plotStrategyFactory.CreateClockwiseCycleStrategy().Generate();
-                case PlotStrategy.BruteMinimalCycle:
-                    return plotStrategyFactory.CreateBruteMinimalCycleStrategy().Generate();
-                case PlotStrategy.Combined:
-                    return plotStrategyFactory.CreateCombinedStrategy().Generate();
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-        
-        private RoadNetwork GenerateRoadNetwork()
-        {
-            var aStarRoadNetwork = _aStarVisible ? aStarStrategy.Generate() : null;
-            var lSystemRoadNetwork = _lSystemVisible ? lSystemStrategy.Generate() : null;
-
-            RoadNetwork mergedRoadNetwork;
-            if (aStarRoadNetwork == null)
-            {
-                mergedRoadNetwork = lSystemRoadNetwork;
-            } 
-            else if (lSystemRoadNetwork == null)
-            {
-                mergedRoadNetwork = aStarRoadNetwork;
-            }
-            else
-            {
-                aStarRoadNetwork.Merge(lSystemRoadNetwork);
-                mergedRoadNetwork = aStarRoadNetwork;
-            }
-
-            return mergedRoadNetwork;
-        }
-        
     }
 }
