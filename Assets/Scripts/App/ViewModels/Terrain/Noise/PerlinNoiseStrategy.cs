@@ -89,18 +89,28 @@ namespace App.ViewModels.Terrain.Noise
                 EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth));
             }
         }
-        
+
         /// <summary>
         /// Creates a generator with the serialized values from the editor.
         /// Delegates the generation to the created generator.
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
-        public override float[,] Generate() => 
-            new Factory().CreatePerlinNoiseStrategy(
+        public override float[,] Generate()
+        {
+            return new Factory().CreatePerlinNoiseStrategy(
                     width, depth, 
                     seed, scale, 
                     numOctaves, persistence, 
                     lacunarity, noiseOffset)
                 .Generate();
+        }
+
+        public override void OnEvent(AppEvent eventId, object eventData)
+        {
+            if (eventId == AppEvent.Broadcast)
+            {
+                EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth));
+            }
+        }
     }
 }
