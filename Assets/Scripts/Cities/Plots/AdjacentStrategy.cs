@@ -68,7 +68,7 @@ namespace Cities.Plots
                 // Check if new plot collides with any other plot
                 foreach (var plot in plots.Concat(_prevPlots))
                 {
-                    if (Maths2D.AreColliding(randomPlot.Vertices, plot.Vertices))
+                    if (Maths2D.PolyPolyCollision(randomPlot.Vertices, plot.Vertices).Item1)
                     {
                         collision = true;
                         break;

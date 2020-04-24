@@ -8,7 +8,6 @@ namespace Utils.Geometry
 {
     public static class Maths2D
     {
-
         public static float PseudoDistanceFromPointToLine(Vector2 a, Vector2 b, Vector2 c)
         {
             return Mathf.Abs((c.x - a.x) * (-b.y + a.y) + (c.y - a.y) * (b.x - a.x));
@@ -401,40 +400,54 @@ namespace Utils.Geometry
 
 
         /// <summary>
-        /// Returns true if two convex polygons are colliding using the separating axis theorem (SAT).
-        /// Based on http://www.dyn4j.org/2010/01/sat/#sat-convex.
+        /// Calculates whether two convex polygons are colliding using the separating axis theorem (SAT).
+        /// If they are, the axis along which there is the least overlap is also returned. This axis is called
+        /// minimum translation vector (mtv).
         /// </summary>
         /// <remarks>
+        /// Based on http://www.dyn4j.org/2010/01/sat/#sat-convex.
         /// This method is implemented using Vector3 to avoid conversion where it was intended to be used (Plots).
         /// </remarks>
         /// <param name="poly1">The first polygon.</param>
         /// <param name="poly2">The second polygon.</param>
-        /// <returns>True </returns>
-        public static bool AreColliding(IEnumerable<Vector3> poly1, IEnumerable<Vector3> poly2)
+        /// <returns>
+        /// A tuple containing both a boolean saying whether they collide and a minimum translation vector (mtv).
+        /// </returns>
+        public static (bool areColliding, Vector3 mtv) PolyPolyCollision(IEnumerable<Vector3> poly1, IEnumerable<Vector3> poly2)
 
         {
             // Using SAT, the axes you must test are the normals of each shape's edges.
             var axes = EdgeNormals(poly1).Concat(EdgeNormals(poly2));
+            var mtv = Vector3.zero;
+            var smallestOverlap = float.MaxValue;
 
             foreach (var axis in axes)
             {
                 // Project both polygons onto the axis
                 var projection1 = ProjectPolygonOntoAxis(poly1, axis);
                 var projection2 = ProjectPolygonOntoAxis(poly2, axis);
-                if (!Overlap(projection1, projection2))
+                
+                // Check overlap
+                var isOverlap = Overlap(out var overlapAmount, projection1, projection2);
+                if (!isOverlap)
+                    return (areColliding: false, mtv); // Based on SAT
+
+                if (overlapAmount < smallestOverlap)
                 {
-                    // Based on SAT
-                    return false;
+                    smallestOverlap = overlapAmount;
+                    mtv = axis * overlapAmount;
                 }
             }
 
             // If we find that there is an overlap on every axis, we know the polygons are colliding.
-            return true;
+            // The minimum translation vector is the axis where there is the least overlap.
+            return (areColliding: true, mtv);
         }
 
         /// <summary>
-        /// Project the x-z value of each vertex of a polygon onto a given axis (infnite line), returning the minimum and maximum value.
-        /// This can be seen as squashing a polygon (2D) onto a line (1D) returning an interval along the line.
+        /// Project the x-z value of each vertex of a polygon onto a given axis (infinite line), returning the minimum
+        /// and maximum value. This can be seen as squashing a polygon (2D) onto a line (1D) returning an interval along
+        /// the line.
         /// </summary>
         /// <remarks>
         /// This method is implemented using Vector3 to avoid conversion where it was intended to be used (Plots).
@@ -455,28 +468,33 @@ namespace Utils.Geometry
                     // For the projection we use the dot product
                     var dp = Vector3.Dot(vertexEnum.Current, axis);
                     if (dp < min)
-                    {
                         min = dp;
-
-                    }
                     else if (dp > max)
-
-                    {
                         max = dp;
-                    }
                 }
                 return (start: min, end: max);
             }
         }
 
         // Check if two intervals are overlapping. Or geometrically: if two line segments are overlapping.
-        private static bool Overlap(ValueTuple<float, float> firstInterval, ValueTuple<float, float> secondInterval)
+        // Assumes the first value given in the interval is smaller than the second, i.e. not [5, -1].
+        private static bool Overlap(out float overlapAmount, ValueTuple<float, float> firstInterval, ValueTuple<float, float> secondInterval)
         {
-            // Easy to understand if you think of the intervals as time. The equation essentially answers the
-            // question: "could two people have met?", with: "yes, if both were born before the other died".
             var (start1, end1) = firstInterval;
             var (start2, end2) = secondInterval;
-            return start1 < end2 && start2 < end1;
+
+            // Easy to understand if you think of the intervals as time. The equation essentially answers the
+            // question: "could two people have met?", with: "yes, if both were born before the other died".
+            var isOverlap = start1 < end2 && start2 < end1;
+
+            if (!isOverlap)
+            {
+                overlapAmount = 0f;
+                return false;
+            }
+
+            overlapAmount = Math.Min(end1, end2) - Math.Max(start1, start2);
+            return true;
         }
 
         /// <summary>
@@ -534,9 +552,7 @@ namespace Utils.Geometry
                 {
                     var v2 = vertexEnum.Current;
                     if (Maths3D.LineSegmentIntersection(out _, start, end, v1, v2))
-                    {
                         return true;
-                    }
                     v1 = v2;
                 }
             }
