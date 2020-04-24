@@ -81,13 +81,16 @@ namespace Cities.Plots
                             break;
                         }
                     }
-                    
+
                     if (!collision)
+                    {
                         // The plot passed all the tests
                         plots.Add(new Plot(randomPlot));
-                    else
-                        // Move the plot
-                        randomPlot = randomPlot.Select(v => v + mtv * moveDistance);
+                        break;
+                    }
+
+                    // There is a collision, so move the plot
+                    randomPlot = randomPlot.Select(v => v + mtv * moveDistance);
                 }
             }
 
