@@ -161,7 +161,7 @@ MonoBehaviour:
   cityViewModel:
     roadViewModel:
       aStarStrategy:
-        heightBias: 0
+        heightBias: 1
         paths:
         - start: {x: 0, y: 0}
           goal: {x: 249, y: 249}
@@ -172,8 +172,6 @@ MonoBehaviour:
       aStarEnabled: 1
       lSystemEnabled: 1
       roadWidth: 0.3
-      roadCurvature: 0.1
-      roadSmoothingIterations: 3
       roadMaterial: {fileID: 2100000, guid: 08f7691e5726643448ae41c3a5242171, type: 2}
       roadTerrainOffsetY: 0.075
     plotViewModel:
@@ -183,8 +181,8 @@ MonoBehaviour:
     buildingViewModel:
       buildingStrategy: 0
       extrusionStrategy:
-        minArea: 0
-        maxArea: 0
+        minArea: 2
+        maxArea: 100
       displayBuildings: 1
       buildingMaterial: {fileID: 2100000, guid: 27fe3768c12178d4ebc58c5bebf21be0,
         type: 2}

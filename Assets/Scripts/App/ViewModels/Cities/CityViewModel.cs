@@ -41,17 +41,7 @@ namespace App.ViewModels.Cities
         /// <see cref="RoadViewModel.RoadWidth"/>
         /// </summary>
         public float RoadWidth => roadViewModel.RoadWidth;
-        
-        /// <summary>
-        /// <see cref="RoadViewModel.RoadCurvature"/>
-        /// </summary>
-        public float RoadCurvature => roadViewModel.RoadCurvature;
-        
-        /// <summary>
-        /// <see cref="RoadViewModel.RoadSmoothingIterations"/>
-        /// </summary>
-        public int RoadSmoothingIterations => roadViewModel.RoadSmoothingIterations;
-        
+
         /// <summary>
         /// <see cref="RoadViewModel.RoadTerrainOffsetY"/>
         /// </summary>

@@ -16,40 +16,6 @@ namespace Utils.Paths
         public float PathWidth { get; set; } = 0.3f;
 
         /// <summary>
-        /// Determines how curved a path is between two vertices.
-        /// This value has to be in the range [0, 0.5]. 
-        /// </summary>
-        public float CurveFactor
-        {
-            get => _curveFactor;
-            set
-            {
-                if (value < 0.0f || value > 0.5f)
-                    throw new ArgumentOutOfRangeException(
-                        nameof(CurveFactor), "The curve factor has to be in the range [0, 0.5]");
-                _curveFactor = value;
-            }
-        }
-        private float _curveFactor = 0.1f;
-        
-        /// <summary>
-        /// How many times smoothing vertices should be added to a path.
-        /// Determines how smooth the path will be between two vertices.
-        /// </summary>
-        public int SmoothingIterations 
-        { 
-            get => _smoothingIterations;
-            set
-            {
-                if (value < 0)
-                    throw new ArgumentOutOfRangeException(
-                        nameof(SmoothingIterations), "The number of smoothing iterations has to be positive!");
-                _smoothingIterations = value;
-            } 
-        }
-        private int _smoothingIterations = 3;
-        
-        /// <summary>
         /// The material of the paths this generator creates.
         /// </summary>
         public Material PathMaterial { get; set; }
@@ -149,14 +115,6 @@ namespace Utils.Paths
             if (pathVertexList.Count < 2)
                 throw new Exception("At least two vertices are required to make a path!");
 
-            // If the curve factor is greater than zero, add new vertices between the
-            // existing vertices in order to make the path smoother looking
-            if (CurveFactor > 0.0f) {
-                for (var smoothingPass = 0; smoothingPass < SmoothingIterations; smoothingPass++) {
-                    AddSmoothingVertices(pathVertexList);
-                }
-            }
-            
             AdaptVerticesToTerrain(pathVertexList, terrainMeshFilter, terrainCollider);
 
             // Return the path game object
@@ -242,28 +200,6 @@ namespace Utils.Paths
             mesh.RecalculateNormals();
 
             return mesh;
-        }
-        
-        // Adds new vertices to make the path between the given vertices smoother
-        private void AddSmoothingVertices(IList<Vector3> vertices)
-        {
-            for (var i = 0; i < vertices.Count - 2; i++) 
-            {
-                var currentVertex = vertices[i];
-                var nextVertex = vertices[i + 1];
-                var nextNextVertex = vertices[i + 2];
-
-                var distance1 = Vector3.Distance(currentVertex, nextVertex);
-                var distance2 = Vector3.Distance(nextVertex, nextNextVertex);
-
-                var dir1 = (nextVertex - currentVertex).normalized;
-                var dir2 = (nextNextVertex - nextVertex).normalized;
-
-                vertices.RemoveAt(i + 1);
-                vertices.Insert(i + 1, currentVertex + dir1 * (distance1 * (1.0f - CurveFactor)));
-                vertices.Insert(i + 2, nextVertex + dir2 * (distance2 * CurveFactor));
-                i++;
-            }
         }
 
         // Sets the y-value of each given vertex to the y-value of the terrain height at same xz-position

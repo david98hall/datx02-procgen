@@ -129,23 +129,30 @@ namespace Utils.Geometry
         /// <returns>The extreme bounds.</returns>
         public static (float MinX, float MinY, float MaxX, float MaxY) GetExtremeBounds(IEnumerable<Vector2> vertices)
         {
-            var minX = float.MaxValue;
-            var minY = float.MaxValue;
-            var maxX = float.MinValue;
-            var maxY = float.MinValue;
-            foreach (var polygonVertex in vertices)
+            var vertexEnumerator = vertices.GetEnumerator();
+            
+            if (!vertexEnumerator.MoveNext())
+                throw new ArgumentException("There has to be at least one vertex in the enumerable!");
+            
+            var minX = vertexEnumerator.Current.x;
+            var minY = vertexEnumerator.Current.y;
+            var maxX = vertexEnumerator.Current.x;
+            var maxY = vertexEnumerator.Current.y;
+            while (vertexEnumerator.MoveNext())
             {
-                if (polygonVertex.x < minX)
-                    minX = polygonVertex.x;
-                else if (polygonVertex.x > maxX)
-                    maxX = polygonVertex.x;
+                var vertex = vertexEnumerator.Current;
+                if (vertex.x < minX)
+                    minX = vertex.x;
+                else if (vertex.x > maxX)
+                    maxX = vertex.x;
                 
-                if (polygonVertex.y < minY)
-                    minY = polygonVertex.y;
-                else if (polygonVertex.y > maxY)
-                    maxY = polygonVertex.y;
+                if (vertex.y < minY)
+                    minY = vertex.y;
+                else if (vertex.y > maxY)
+                    maxY = vertex.y;
             }
-
+            vertexEnumerator.Dispose();
+            
             return (minX, minY, maxX, maxY);
         }
 

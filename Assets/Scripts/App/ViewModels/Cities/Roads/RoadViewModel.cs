@@ -52,28 +52,6 @@ namespace App.ViewModels.Cities.Roads
         /// </summary>
         public float RoadWidth => roadWidth;
 
-        /// <summary>
-        /// Toad curvature of the generated road network.
-        /// </summary>
-        [SerializeField]
-        private float roadCurvature = 0.1f;
-
-        /// <summary>
-        /// Getter for the road curvature of the generated road network.
-        /// </summary>
-        public float RoadCurvature => roadCurvature;
-
-        /// <summary>
-        /// Road smoothing iterations of the generated road network.
-        /// </summary>
-        [SerializeField]
-        private int roadSmoothingIterations = 1;
-        
-        /// <summary>
-        /// Getter for the road smoothing iterations of the generated road network.
-        /// </summary>
-        public int RoadSmoothingIterations => roadSmoothingIterations;
-
         [SerializeField]
         private Material roadMaterial;
         
@@ -173,14 +151,6 @@ namespace App.ViewModels.Cities.Roads
                 
             // Road/Terrain y-offset
             roadTerrainOffsetY = EditorGUILayout.FloatField("Y-Offset", roadTerrainOffsetY);
-
-            // Road curvature and smoothing
-            roadCurvature = EditorGUILayout.Slider("Curvature", roadCurvature, 0, 0.5f);
-            if (roadCurvature > 0)
-            {
-                roadSmoothingIterations = EditorGUILayout.IntSlider(
-                    "Smoothing Iterations", roadSmoothingIterations, 1, 10);   
-            }
 
             EditorGUI.indentLevel--;
         }
