@@ -161,7 +161,6 @@ namespace App
             // Display roads
             pathObjectGenerator.PathMaterial = cityViewModel.RoadMaterial;
             gameObjects.Add(pathObjectGenerator.GeneratePathNetwork(
-                // _model.City.RoadNetwork.GetRoadParts().Select(p => new []{p.Start, p.End}), 
                 _model.City.RoadNetwork.GetRoads(), 
                 _meshFilter, _meshCollider,
                 "Road Network", "Road"));
