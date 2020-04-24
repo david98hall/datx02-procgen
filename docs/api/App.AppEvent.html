@@ -93,8 +93,15 @@
     <thead>
     <tbody>
       <tr>
+        <td id="App_AppEvent_Broadcast">Broadcast</td>
+        <td><p>The id of an event, regarding the broadcast of all relevant values.
+The data type of this event is redundant, can be null.</p>
+</td>
+      </tr>
+      <tr>
         <td id="App_AppEvent_UpdateNoiseMapSize">UpdateNoiseMapSize</td>
-        <td><p>The id of an event, regarding an update of the noise map size.</p>
+        <td><p>The id of an event, regarding an update of the noise map size.
+The data type of this event type is a ValueTuple of two floats, i.e., (width, height).</p>
 </td>
       </tr>
     </tbody>

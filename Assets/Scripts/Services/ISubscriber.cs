@@ -11,6 +11,7 @@
         /// </summary>
         /// <param name="eventId">The id of the event.</param>
         /// <param name="eventData">The data of the event.</param>
-        void OnEvent(T eventId, object eventData);
+        /// <param name="creator">The event's creator.</param>
+        void OnEvent(T eventId, object eventData, object creator);
     }
 }

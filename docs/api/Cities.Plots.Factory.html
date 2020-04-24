@@ -115,19 +115,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.%23ctor(Interfaces.IInjector%7BCities.Roads.RoadNetwork%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory__ctor_Interfaces_IInjector_System_ValueTuple_Cities_Roads_RoadNetwork_Terrain_TerrainInfo___.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.%23ctor(Interfaces.IInjector%7BSystem.ValueTuple%7BCities.Roads.RoadNetwork%2CTerrain.TerrainInfo%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L20">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L25">View Source</a>
   </span>
   <a id="Cities_Plots_Factory__ctor_" data-uid="Cities.Plots.Factory.#ctor*"></a>
-  <h4 id="Cities_Plots_Factory__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__" data-uid="Cities.Plots.Factory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})">Factory(IInjector&lt;RoadNetwork&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes this factory with a RoadNetwork injector.</p>
+  <h4 id="Cities_Plots_Factory__ctor_Interfaces_IInjector_System_ValueTuple_Cities_Roads_RoadNetwork_Terrain_TerrainInfo___" data-uid="Cities.Plots.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{Cities.Roads.RoadNetwork,Terrain.TerrainInfo}})">Factory(IInjector&lt;(RoadNetwork, TerrainInfo)&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes this factory with a RoadNetwork and TerrainInfo injector.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Factory(IInjector&lt;RoadNetwork&gt; roadNetworkInjector)</code></pre>
+    <pre><code class="lang-csharp hljs">public Factory(IInjector&lt;(RoadNetwork, TerrainInfo)&gt; combinedInjector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -140,9 +140,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</td>
-        <td><span class="parametername">roadNetworkInjector</span></td>
-        <td><p>The RoadNetwork injector.</p>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>&gt;&gt;</td>
+        <td><span class="parametername">combinedInjector</span></td>
+        <td><p>The RoadNetwork and TerrainInfo injectors combined.</p>
 </td>
       </tr>
     </tbody>
@@ -152,11 +152,11 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory__ctor_System_Func_Cities_Roads_RoadNetwork__.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.%23ctor(System.Func%7BCities.Roads.RoadNetwork%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L29">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L36">View Source</a>
   </span>
   <a id="Cities_Plots_Factory__ctor_" data-uid="Cities.Plots.Factory.#ctor*"></a>
   <h4 id="Cities_Plots_Factory__ctor_System_Func_Cities_Roads_RoadNetwork__" data-uid="Cities.Plots.Factory.#ctor(System.Func{Cities.Roads.RoadNetwork})">Factory(Func&lt;RoadNetwork&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes this factory with a RoadNetwork injector.</p>
+  <div class="markdown level1 summary"><p>Initializes this factory with a RoadNetwork and TerrainInfo injector.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -185,10 +185,39 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory__combinedInjector.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory._combinedInjector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L17">View Source</a>
+  </span>
+  <h4 id="Cities_Plots_Factory__combinedInjector" data-uid="Cities.Plots.Factory._combinedInjector">_combinedInjector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly IInjector&lt;(RoadNetwork, TerrainInfo)&gt; _combinedInjector</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory__roadNetworkInjector.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory._roadNetworkInjector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L14">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L15">View Source</a>
   </span>
   <h4 id="Cities_Plots_Factory__roadNetworkInjector" data-uid="Cities.Plots.Factory._roadNetworkInjector">_roadNetworkInjector</h4>
   <div class="markdown level1 summary"></div>
@@ -212,6 +241,35 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory__terrainInjector.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory._terrainInjector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L16">View Source</a>
+  </span>
+  <h4 id="Cities_Plots_Factory__terrainInjector" data-uid="Cities.Plots.Factory._terrainInjector">_terrainInjector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly IInjector&lt;TerrainInfo&gt; _terrainInjector</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -219,7 +277,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateAdjacentStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateAdjacentStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L48">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L55">View Source</a>
   </span>
   <a id="Cities_Plots_Factory_CreateAdjacentStrategy_" data-uid="Cities.Plots.Factory.CreateAdjacentStrategy*"></a>
   <h4 id="Cities_Plots_Factory_CreateAdjacentStrategy" data-uid="Cities.Plots.Factory.CreateAdjacentStrategy">CreateAdjacentStrategy()</h4>
@@ -251,7 +309,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateBruteMinimalCycleStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateBruteMinimalCycleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L39">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L46">View Source</a>
   </span>
   <a id="Cities_Plots_Factory_CreateBruteMinimalCycleStrategy_" data-uid="Cities.Plots.Factory.CreateBruteMinimalCycleStrategy*"></a>
   <h4 id="Cities_Plots_Factory_CreateBruteMinimalCycleStrategy" data-uid="Cities.Plots.Factory.CreateBruteMinimalCycleStrategy">CreateBruteMinimalCycleStrategy()</h4>
@@ -284,7 +342,7 @@ road network at hand. This strategy is relatively slow.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateClockwiseCycleStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateClockwiseCycleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L66">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L73">View Source</a>
   </span>
   <a id="Cities_Plots_Factory_CreateClockwiseCycleStrategy_" data-uid="Cities.Plots.Factory.CreateClockwiseCycleStrategy*"></a>
   <h4 id="Cities_Plots_Factory_CreateClockwiseCycleStrategy" data-uid="Cities.Plots.Factory.CreateClockwiseCycleStrategy">CreateClockwiseCycleStrategy()</h4>
@@ -316,11 +374,12 @@ road network at hand. This strategy is relatively slow.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateCombinedStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateCombinedStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L93">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L82">View Source</a>
   </span>
   <a id="Cities_Plots_Factory_CreateCombinedStrategy_" data-uid="Cities.Plots.Factory.CreateCombinedStrategy*"></a>
   <h4 id="Cities_Plots_Factory_CreateCombinedStrategy" data-uid="Cities.Plots.Factory.CreateCombinedStrategy">CreateCombinedStrategy()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a strategy that combines adjacent and cyclic plot generation.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -337,7 +396,8 @@ road network at hand. This strategy is relatively slow.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</td>
-        <td></td>
+        <td><p>The found plots.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -346,7 +406,7 @@ road network at hand. This strategy is relatively slow.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreateMinimalCycleStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreateMinimalCycleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L75">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L91">View Source</a>
   </span>
   <a id="Cities_Plots_Factory_CreateMinimalCycleStrategy_" data-uid="Cities.Plots.Factory.CreateMinimalCycleStrategy*"></a>
   <h4 id="Cities_Plots_Factory_CreateMinimalCycleStrategy" data-uid="Cities.Plots.Factory.CreateMinimalCycleStrategy">CreateMinimalCycleStrategy()</h4>
@@ -378,7 +438,7 @@ road network at hand. This strategy is relatively slow.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory_CreatePlotSampleStrategy.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory.CreatePlotSampleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L57">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L64">View Source</a>
   </span>
   <a id="Cities_Plots_Factory_CreatePlotSampleStrategy_" data-uid="Cities.Plots.Factory.CreatePlotSampleStrategy*"></a>
   <h4 id="Cities_Plots_Factory_CreatePlotSampleStrategy" data-uid="Cities.Plots.Factory.CreatePlotSampleStrategy">CreatePlotSampleStrategy()</h4>
@@ -416,7 +476,7 @@ road network at hand. This strategy is relatively slow.</p>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_Factory.md&amp;value=---%0Auid%3A%20Cities.Plots.Factory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/Factory.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

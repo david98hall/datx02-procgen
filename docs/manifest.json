@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.AppController.Model.html",
-          "hash": "2iUecJqaXE6kSJqOT8xsLA=="
+          "hash": "zVI8YU5PNBfXE9Hb3Cv4JA=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.AppController.html",
-          "hash": "kNfBuc/S04RCFsVDC7FIsQ=="
+          "hash": "oUyfuDjrHBMrAkDja86qjg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.AppEvent.html",
-          "hash": "YD5hUgrYZJwR9YDlS31ewA=="
+          "hash": "zPk9BuKLyQHbCJWLEETZlA=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Buildings.BuildingViewModel.html",
-          "hash": "7P1NU0cMNoWI4D3/FSRwgw=="
+          "hash": "/HSUHMg+Ysv7fUpztG3aNQ=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html",
-          "hash": "HEiXebaHJDyHB7tEWQfTOw=="
+          "hash": "vrt7ERsQitPhEXwqeYTn0g=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.CityViewModel.html",
-          "hash": "V/AZptdy1N1tDl6AMe0Jpg=="
+          "hash": "lhk6pgOdMF7PCNIyCEyQbA=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.html",
-          "hash": "eNMZ1lmGej0iucrQ3EDS7w=="
+          "hash": "wSCFfqQ3T8zNJdPHdRLhmA=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Plots.PlotViewModel.html",
-          "hash": "cP9s8TQUhg4c162RHGl4+w=="
+          "hash": "1tFQm1E5R0C4vuxvTaElYQ=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.AStarStrategy.html",
-          "hash": "eXxMMzLde5zFYJm7PrJ00w=="
+          "hash": "8eMLbjsqgs3mnsAkDwUfYw=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.LSystemStrategy.html",
-          "hash": "NFg1nzFWTy4YA4s39nMCcg=="
+          "hash": "KCDmKtsqKhglg+oiF5Y1xg=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.RoadViewModel.html",
-          "hash": "P3yHvdjAXnIikl1b24EFgA=="
+          "hash": "8ZbXyVDmkcfl582lMLRCHQ=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Noise.NoiseViewModel.html",
-          "hash": "tRbwYJUJsyvmkULOFTgzuA=="
+          "hash": "lTXBd7c4bnwqXG7u5zZ+4A=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html",
-          "hash": "8lXNEYs2bXC4TnPDEgdA+w=="
+          "hash": "n80Jq9RsdCR0XX7mdnw81Q=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.TerrainViewModel.html",
-          "hash": "amOa3OfDwXmFIfuJ5cJJ5Q=="
+          "hash": "19iPn+iLaesA5YXnD+TCCA=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html",
-          "hash": "7N3+bbxE+XHLXMMsSXpzLg=="
+          "hash": "kudbNebJCFI2dZWjg4niyw=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.TextureViewModel.html",
-          "hash": "FCKfTvY4TRHkOi+q3bCO2g=="
+          "hash": "LeLKTGqI1bmHnIb8L1JAJw=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html",
-          "hash": "ZvFw+psLYgXFAsiEB5lIXQ=="
+          "hash": "yrTI2JYWBOlX36nvSQ+2/w=="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.ViewModelStrategy-2.html",
-          "hash": "xDlhlTfI9w1ZhsadE9W0cA=="
+          "hash": "qEruojGaQo1IBsYp8XnSIg=="
         }
       },
       "is_incremental": false,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.AdjacentStrategy.html",
-          "hash": "B0slMMlToNdcsy4NNF6mYw=="
+          "hash": "PgjBJfz8CAAXsQOvsB2RTw=="
         }
       },
       "is_incremental": false,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.CombinedStrategy.html",
-          "hash": "kHFJmtWryMLJcqQe5bfxzA=="
+          "hash": "FJiKP0slRJyOshFYnKXm5Q=="
         }
       },
       "is_incremental": false,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.Factory.RoadNetworkInjector.html",
-          "hash": "opLCCoIId4ZlgRrPbn77iQ=="
+          "hash": "XbihKaxYn+gHNOnPMHMnVg=="
         }
       },
       "is_incremental": false,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.Factory.html",
-          "hash": "V22+laj9vy0bPsYjC+pRlA=="
+          "hash": "d/Z0L5n/SEOoy9J9K4mDUQ=="
         }
       },
       "is_incremental": false,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.Plot.html",
-          "hash": "2ISTxJd9OIrn4xSxjNOunA=="
+          "hash": "+sWdQN3npleotn6XUGmFvw=="
         }
       },
       "is_incremental": false,
@@ -677,66 +677,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/DrawTool.Editor.ShapeEdit.SelectionInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DrawTool.Editor.ShapeEdit.SelectionInfo.html",
-          "hash": "/AyEZEcXC0GItCKN4XF1gg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DrawTool.Editor.ShapeEdit.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DrawTool.Editor.ShapeEdit.html",
-          "hash": "hvxhyvGnBRWhLElj4ecutA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DrawTool.Editor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DrawTool.Editor.html",
-          "hash": "8HLtOOypmQpj74tja/AC9w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DrawTool.ShapeMake.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DrawTool.ShapeMake.html",
-          "hash": "iO/nT/2HkfadrEh1hX5A9g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DrawTool.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DrawTool.html",
-          "hash": "23fX9KPUtsCNMyvBGDRh6Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Extensions.CollectionExtensions.yml",
       "output": {
         ".html": {
@@ -849,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Services.EventBus-1.html",
-          "hash": "lg/yGzFu9axyNAxmIGuaXw=="
+          "hash": "iiTzQDnxogIOYWdESDF3ag=="
         }
       },
       "is_incremental": false,
@@ -861,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Services.IEventBus-1.html",
-          "hash": "3yEBl5qI/54f9SbZMXhuZA=="
+          "hash": "URowb0zgg7qXzgTxL1xHSw=="
         }
       },
       "is_incremental": false,
@@ -885,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Services.ISubscriber-1.html",
-          "hash": "GG2bDCKDewzJH7WyNF/5hQ=="
+          "hash": "M/qCJ2QvgeynFc/zfNuKuA=="
         }
       },
       "is_incremental": false,
@@ -1037,59 +977,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.html",
-          "hash": "CEgxPJNGa6PPDhDy0VHkjA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Utils.Geometry.CompositeShape.CompositeShapeData.html",
-          "hash": "doaCT4cYZ8NdMglkfmN5sA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Utils.Geometry.CompositeShape.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Utils.Geometry.CompositeShape.html",
-          "hash": "4BxaEqXZEbIG58krOdZx+A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Utils.Geometry.LineSegment.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Utils.Geometry.LineSegment.html",
-          "hash": "bchjibfrhXcbbAnsPZ1lHg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Utils.Geometry.Maths2D.yml",
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Maths2D.html",
-          "hash": "y+jSXAeMG/kYAZHazxJksw=="
+          "hash": "3u9Bc/OdxUt4iCuC7Att0Q=="
         }
       },
       "is_incremental": false,
@@ -1114,18 +1006,6 @@
         ".html": {
           "relative_path": "api/Utils.Geometry.Polygon.html",
           "hash": "uhKhqTdx+ZpQ9IqnozjMxA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Utils.Geometry.Shape.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Utils.Geometry.Shape.html",
-          "hash": "UsDkbQzbtH2D6D/B7cRCPg=="
         }
       },
       "is_incremental": false,
@@ -1173,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.html",
-          "hash": "wsNPFIAy6sQCaZG3fJmdog=="
+          "hash": "R6Q652J1twq2KJ0ZP/ODLw=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Paths.PathObjectGenerator.html",
-          "hash": "8FMlaSaSRJMnuEWrTRkkTw=="
+          "hash": "qNpTcRX7HVQi7lgzeLTgAw=="
         }
       },
       "is_incremental": false,
@@ -1293,7 +1173,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "uG0Y58GWCJocuza/h+w7VQ=="
+          "hash": "PjzIA9nzhC7+qIOm0S88Lw=="
         }
       },
       "is_incremental": false,
@@ -1361,13 +1241,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 2
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 106,
-          "skipped_file_count": 64
+          "total_file_count": 96,
+          "skipped_file_count": 67
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

@@ -10,11 +10,11 @@ namespace Services
     {
         private readonly ICollection<ISubscriber<T>> _subscribers = new HashSet<ISubscriber<T>>();
         
-        public void CreateEvent(T eventId, object eventData)
+        public void CreateEvent(T eventId, object eventData, object creator)
         {
             foreach (var eventSubscriber in _subscribers)
             {
-                eventSubscriber.OnEvent(eventId, eventData);
+                eventSubscriber.OnEvent(eventId, eventData, creator);
             }
         }
         

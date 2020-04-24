@@ -117,7 +117,7 @@ namespace App.ViewModels.Cities.Roads
             return roadNetwork;
         }
 
-        public override void OnEvent(AppEvent eventId, object eventData)
+        public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {
             if (eventId.Equals(AppEvent.UpdateNoiseMapSize))
             {

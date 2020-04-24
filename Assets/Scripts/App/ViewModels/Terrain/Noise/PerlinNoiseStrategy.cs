@@ -86,7 +86,7 @@ namespace App.ViewModels.Terrain.Noise
 
             if (oldWidth != width || oldDepth != depth)
             {
-                EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth));
+                EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth), this);
             }
         }
 
@@ -105,11 +105,11 @@ namespace App.ViewModels.Terrain.Noise
                 .Generate();
         }
 
-        public override void OnEvent(AppEvent eventId, object eventData)
+        public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {
             if (eventId == AppEvent.Broadcast)
             {
-                EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth));
+                EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth), this);
             }
         }
     }

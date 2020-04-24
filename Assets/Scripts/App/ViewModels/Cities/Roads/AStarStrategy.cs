@@ -94,7 +94,7 @@ namespace App.ViewModels.Cities.Roads
             new Factory().CreateAStarStrategy(Injector, heightBias, 
                 paths.Select(p => (p.start, p.goal))).Generate();
 
-        public override void OnEvent(AppEvent eventId, object eventData)
+        public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {
             if (eventId.Equals(AppEvent.UpdateNoiseMapSize))
             {

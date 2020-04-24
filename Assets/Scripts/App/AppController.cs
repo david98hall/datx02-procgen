@@ -104,7 +104,7 @@ namespace App
             cityViewModel.Injector = _model;
 
             // Create an event making all capable subscribers broadcast their values
-            _eventBus.CreateEvent(AppEvent.Broadcast, null);
+            _eventBus.CreateEvent(AppEvent.Broadcast, null, this);
             
             _initialized = true;
         }

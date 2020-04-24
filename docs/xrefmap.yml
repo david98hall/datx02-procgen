@@ -215,6 +215,12 @@ references:
   commentId: T:App.AppEvent
   fullName: App.AppEvent
   nameWithType: AppEvent
+- uid: App.AppEvent.Broadcast
+  name: Broadcast
+  href: api/App.AppEvent.html#App_AppEvent_Broadcast
+  commentId: F:App.AppEvent.Broadcast
+  fullName: App.AppEvent.Broadcast
+  nameWithType: AppEvent.Broadcast
 - uid: App.AppEvent.UpdateNoiseMapSize
   name: UpdateNoiseMapSize
   href: api/App.AppEvent.html#App_AppEvent_UpdateNoiseMapSize
@@ -556,19 +562,6 @@ references:
   commentId: F:App.ViewModels.Cities.CityViewModel.plotViewModel
   fullName: App.ViewModels.Cities.CityViewModel.plotViewModel
   nameWithType: CityViewModel.plotViewModel
-- uid: App.ViewModels.Cities.CityViewModel.RoadCurvature
-  name: RoadCurvature
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadCurvature
-  commentId: P:App.ViewModels.Cities.CityViewModel.RoadCurvature
-  fullName: App.ViewModels.Cities.CityViewModel.RoadCurvature
-  nameWithType: CityViewModel.RoadCurvature
-- uid: App.ViewModels.Cities.CityViewModel.RoadCurvature*
-  name: RoadCurvature
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadCurvature_
-  commentId: Overload:App.ViewModels.Cities.CityViewModel.RoadCurvature
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.CityViewModel.RoadCurvature
-  nameWithType: CityViewModel.RoadCurvature
 - uid: App.ViewModels.Cities.CityViewModel.RoadMaterial
   name: RoadMaterial
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadMaterial
@@ -582,19 +575,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.CityViewModel.RoadMaterial
   nameWithType: CityViewModel.RoadMaterial
-- uid: App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
-  name: RoadSmoothingIterations
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadSmoothingIterations
-  commentId: P:App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
-  fullName: App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
-  nameWithType: CityViewModel.RoadSmoothingIterations
-- uid: App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations*
-  name: RoadSmoothingIterations
-  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadSmoothingIterations_
-  commentId: Overload:App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.CityViewModel.RoadSmoothingIterations
-  nameWithType: CityViewModel.RoadSmoothingIterations
 - uid: App.ViewModels.Cities.CityViewModel.RoadTerrainOffsetY
   name: RoadTerrainOffsetY
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_RoadTerrainOffsetY
@@ -801,12 +781,12 @@ references:
   commentId: F:App.ViewModels.Cities.Roads.AStarStrategy.heightBias
   fullName: App.ViewModels.Cities.Roads.AStarStrategy.heightBias
   nameWithType: AStarStrategy.heightBias
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent,System.Object)
-  name: OnEvent(AppEvent, Object)
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_OnEvent_App_AppEvent_System_Object_
-  commentId: M:App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent,System.Object)
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent, System.Object)
-  nameWithType: AStarStrategy.OnEvent(AppEvent, Object)
+- uid: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  name: OnEvent(AppEvent, Object, Object)
+  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: AStarStrategy.OnEvent(AppEvent, Object, Object)
 - uid: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent*
   name: OnEvent
   href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_OnEvent_
@@ -957,12 +937,12 @@ references:
   commentId: F:App.ViewModels.Cities.Roads.LSystemStrategy.MinRewrites
   fullName: App.ViewModels.Cities.Roads.LSystemStrategy.MinRewrites
   nameWithType: LSystemStrategy.MinRewrites
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent,System.Object)
-  name: OnEvent(AppEvent, Object)
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_App_AppEvent_System_Object_
-  commentId: M:App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent,System.Object)
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent, System.Object)
-  nameWithType: LSystemStrategy.OnEvent(AppEvent, Object)
+- uid: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  name: OnEvent(AppEvent, Object, Object)
+  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: LSystemStrategy.OnEvent(AppEvent, Object, Object)
 - uid: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent*
   name: OnEvent
   href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_
@@ -1077,25 +1057,6 @@ references:
   commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.lSystemStrategy
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.lSystemStrategy
   nameWithType: RoadViewModel.lSystemStrategy
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.roadCurvature
-  name: roadCurvature
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_roadCurvature
-  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.roadCurvature
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.roadCurvature
-  nameWithType: RoadViewModel.roadCurvature
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.RoadCurvature
-  name: RoadCurvature
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadCurvature
-  commentId: P:App.ViewModels.Cities.Roads.RoadViewModel.RoadCurvature
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.RoadCurvature
-  nameWithType: RoadViewModel.RoadCurvature
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.RoadCurvature*
-  name: RoadCurvature
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadCurvature_
-  commentId: Overload:App.ViewModels.Cities.Roads.RoadViewModel.RoadCurvature
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.RoadCurvature
-  nameWithType: RoadViewModel.RoadCurvature
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.roadMaterial
   name: roadMaterial
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_roadMaterial
@@ -1115,25 +1076,6 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.RoadMaterial
   nameWithType: RoadViewModel.RoadMaterial
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.roadSmoothingIterations
-  name: roadSmoothingIterations
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_roadSmoothingIterations
-  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.roadSmoothingIterations
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.roadSmoothingIterations
-  nameWithType: RoadViewModel.roadSmoothingIterations
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.RoadSmoothingIterations
-  name: RoadSmoothingIterations
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadSmoothingIterations
-  commentId: P:App.ViewModels.Cities.Roads.RoadViewModel.RoadSmoothingIterations
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.RoadSmoothingIterations
-  nameWithType: RoadViewModel.RoadSmoothingIterations
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.RoadSmoothingIterations*
-  name: RoadSmoothingIterations
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_RoadSmoothingIterations_
-  commentId: Overload:App.ViewModels.Cities.Roads.RoadViewModel.RoadSmoothingIterations
-  isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.RoadSmoothingIterations
-  nameWithType: RoadViewModel.RoadSmoothingIterations
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.roadTerrainOffsetY
   name: roadTerrainOffsetY
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_roadTerrainOffsetY
@@ -1328,6 +1270,19 @@ references:
   commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.numOctaves
   fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.numOctaves
   nameWithType: PerlinNoiseStrategy.numOctaves
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  name: OnEvent(AppEvent, Object, Object)
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: PerlinNoiseStrategy.OnEvent(AppEvent, Object, Object)
+- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent*
+  name: OnEvent
+  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_OnEvent_
+  commentId: Overload:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent
+  nameWithType: PerlinNoiseStrategy.OnEvent
 - uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.persistence
   name: persistence
   href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_persistence
@@ -1688,14 +1643,14 @@ references:
   fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Injector
   nameWithType: ViewModelStrategy<TI, TO>.Injector
   nameWithType.vb: ViewModelStrategy(Of TI, TO).Injector
-- uid: App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object)
-  name: OnEvent(AppEvent, Object)
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_
-  commentId: M:App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object)
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.OnEvent(App.AppEvent, System.Object)
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).OnEvent(App.AppEvent, System.Object)
-  nameWithType: ViewModelStrategy<TI, TO>.OnEvent(AppEvent, Object)
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).OnEvent(AppEvent, Object)
+- uid: App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object,System.Object)
+  name: OnEvent(AppEvent, Object, Object)
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.OnEvent(App.AppEvent, System.Object, System.Object)
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: ViewModelStrategy<TI, TO>.OnEvent(AppEvent, Object, Object)
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).OnEvent(AppEvent, Object, Object)
 - uid: App.ViewModels.ViewModelStrategy`2.OnEvent*
   name: OnEvent
   href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_
@@ -1843,15 +1798,15 @@ references:
   commentId: T:Cities.Plots.AdjacentStrategy
   fullName: Cities.Plots.AdjacentStrategy
   nameWithType: AdjacentStrategy
-- uid: Cities.Plots.AdjacentStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
-  name: AdjacentStrategy(IInjector<RoadNetwork>)
-  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
-  commentId: M:Cities.Plots.AdjacentStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
-  name.vb: AdjacentStrategy(IInjector(Of RoadNetwork))
-  fullName: Cities.Plots.AdjacentStrategy.AdjacentStrategy(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
-  fullName.vb: Cities.Plots.AdjacentStrategy.AdjacentStrategy(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
-  nameWithType: AdjacentStrategy.AdjacentStrategy(IInjector<RoadNetwork>)
-  nameWithType.vb: AdjacentStrategy.AdjacentStrategy(IInjector(Of RoadNetwork))
+- uid: Cities.Plots.AdjacentStrategy.#ctor(Interfaces.IInjector{System.ValueTuple{Cities.Roads.RoadNetwork,Terrain.TerrainInfo}})
+  name: AdjacentStrategy(IInjector<(RoadNetwork, TerrainInfo)>)
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy__ctor_Interfaces_IInjector_System_ValueTuple_Cities_Roads_RoadNetwork_Terrain_TerrainInfo___
+  commentId: M:Cities.Plots.AdjacentStrategy.#ctor(Interfaces.IInjector{System.ValueTuple{Cities.Roads.RoadNetwork,Terrain.TerrainInfo}})
+  name.vb: AdjacentStrategy(IInjector(Of (RoadNetwork, TerrainInfo)))
+  fullName: Cities.Plots.AdjacentStrategy.AdjacentStrategy(Interfaces.IInjector<System.ValueTuple<Cities.Roads.RoadNetwork, Terrain.TerrainInfo>>)
+  fullName.vb: Cities.Plots.AdjacentStrategy.AdjacentStrategy(Interfaces.IInjector(Of System.ValueTuple(Of Cities.Roads.RoadNetwork, Terrain.TerrainInfo)))
+  nameWithType: AdjacentStrategy.AdjacentStrategy(IInjector<(RoadNetwork, TerrainInfo)>)
+  nameWithType.vb: AdjacentStrategy.AdjacentStrategy(IInjector(Of (RoadNetwork, TerrainInfo)))
 - uid: Cities.Plots.AdjacentStrategy.#ctor*
   name: AdjacentStrategy
   href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy__ctor_
@@ -1907,6 +1862,19 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.AdjacentStrategy.RandomRectPlot
   nameWithType: AdjacentStrategy.RandomRectPlot
+- uid: Cities.Plots.AdjacentStrategy.TerrainBounds(Terrain.TerrainInfo)
+  name: TerrainBounds(TerrainInfo)
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_TerrainBounds_Terrain_TerrainInfo_
+  commentId: M:Cities.Plots.AdjacentStrategy.TerrainBounds(Terrain.TerrainInfo)
+  fullName: Cities.Plots.AdjacentStrategy.TerrainBounds(Terrain.TerrainInfo)
+  nameWithType: AdjacentStrategy.TerrainBounds(TerrainInfo)
+- uid: Cities.Plots.AdjacentStrategy.TerrainBounds*
+  name: TerrainBounds
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_TerrainBounds_
+  commentId: Overload:Cities.Plots.AdjacentStrategy.TerrainBounds
+  isSpec: "True"
+  fullName: Cities.Plots.AdjacentStrategy.TerrainBounds
+  nameWithType: AdjacentStrategy.TerrainBounds
 - uid: Cities.Plots.BruteMinimalCycleStrategy
   name: BruteMinimalCycleStrategy
   href: api/Cities.Plots.BruteMinimalCycleStrategy.html
@@ -2160,15 +2128,15 @@ references:
   commentId: T:Cities.Plots.CombinedStrategy
   fullName: Cities.Plots.CombinedStrategy
   nameWithType: CombinedStrategy
-- uid: Cities.Plots.CombinedStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
-  name: CombinedStrategy(IInjector<RoadNetwork>)
-  href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
-  commentId: M:Cities.Plots.CombinedStrategy.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
-  name.vb: CombinedStrategy(IInjector(Of RoadNetwork))
-  fullName: Cities.Plots.CombinedStrategy.CombinedStrategy(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
-  fullName.vb: Cities.Plots.CombinedStrategy.CombinedStrategy(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
-  nameWithType: CombinedStrategy.CombinedStrategy(IInjector<RoadNetwork>)
-  nameWithType.vb: CombinedStrategy.CombinedStrategy(IInjector(Of RoadNetwork))
+- uid: Cities.Plots.CombinedStrategy.#ctor(Interfaces.IInjector{System.ValueTuple{Cities.Roads.RoadNetwork,Terrain.TerrainInfo}})
+  name: CombinedStrategy(IInjector<(RoadNetwork, TerrainInfo)>)
+  href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy__ctor_Interfaces_IInjector_System_ValueTuple_Cities_Roads_RoadNetwork_Terrain_TerrainInfo___
+  commentId: M:Cities.Plots.CombinedStrategy.#ctor(Interfaces.IInjector{System.ValueTuple{Cities.Roads.RoadNetwork,Terrain.TerrainInfo}})
+  name.vb: CombinedStrategy(IInjector(Of (RoadNetwork, TerrainInfo)))
+  fullName: Cities.Plots.CombinedStrategy.CombinedStrategy(Interfaces.IInjector<System.ValueTuple<Cities.Roads.RoadNetwork, Terrain.TerrainInfo>>)
+  fullName.vb: Cities.Plots.CombinedStrategy.CombinedStrategy(Interfaces.IInjector(Of System.ValueTuple(Of Cities.Roads.RoadNetwork, Terrain.TerrainInfo)))
+  nameWithType: CombinedStrategy.CombinedStrategy(IInjector<(RoadNetwork, TerrainInfo)>)
+  nameWithType.vb: CombinedStrategy.CombinedStrategy(IInjector(Of (RoadNetwork, TerrainInfo)))
 - uid: Cities.Plots.CombinedStrategy.#ctor*
   name: CombinedStrategy
   href: api/Cities.Plots.CombinedStrategy.html#Cities_Plots_CombinedStrategy__ctor_
@@ -2207,15 +2175,15 @@ references:
   commentId: T:Cities.Plots.Factory
   fullName: Cities.Plots.Factory
   nameWithType: Factory
-- uid: Cities.Plots.Factory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
-  name: Factory(IInjector<RoadNetwork>)
-  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__ctor_Interfaces_IInjector_Cities_Roads_RoadNetwork__
-  commentId: M:Cities.Plots.Factory.#ctor(Interfaces.IInjector{Cities.Roads.RoadNetwork})
-  name.vb: Factory(IInjector(Of RoadNetwork))
-  fullName: Cities.Plots.Factory.Factory(Interfaces.IInjector<Cities.Roads.RoadNetwork>)
-  fullName.vb: Cities.Plots.Factory.Factory(Interfaces.IInjector(Of Cities.Roads.RoadNetwork))
-  nameWithType: Factory.Factory(IInjector<RoadNetwork>)
-  nameWithType.vb: Factory.Factory(IInjector(Of RoadNetwork))
+- uid: Cities.Plots.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{Cities.Roads.RoadNetwork,Terrain.TerrainInfo}})
+  name: Factory(IInjector<(RoadNetwork, TerrainInfo)>)
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__ctor_Interfaces_IInjector_System_ValueTuple_Cities_Roads_RoadNetwork_Terrain_TerrainInfo___
+  commentId: M:Cities.Plots.Factory.#ctor(Interfaces.IInjector{System.ValueTuple{Cities.Roads.RoadNetwork,Terrain.TerrainInfo}})
+  name.vb: Factory(IInjector(Of (RoadNetwork, TerrainInfo)))
+  fullName: Cities.Plots.Factory.Factory(Interfaces.IInjector<System.ValueTuple<Cities.Roads.RoadNetwork, Terrain.TerrainInfo>>)
+  fullName.vb: Cities.Plots.Factory.Factory(Interfaces.IInjector(Of System.ValueTuple(Of Cities.Roads.RoadNetwork, Terrain.TerrainInfo)))
+  nameWithType: Factory.Factory(IInjector<(RoadNetwork, TerrainInfo)>)
+  nameWithType.vb: Factory.Factory(IInjector(Of (RoadNetwork, TerrainInfo)))
 - uid: Cities.Plots.Factory.#ctor(System.Func{Cities.Roads.RoadNetwork})
   name: Factory(Func<RoadNetwork>)
   href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__ctor_System_Func_Cities_Roads_RoadNetwork__
@@ -2232,12 +2200,24 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.Factory.Factory
   nameWithType: Factory.Factory
+- uid: Cities.Plots.Factory._combinedInjector
+  name: _combinedInjector
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__combinedInjector
+  commentId: F:Cities.Plots.Factory._combinedInjector
+  fullName: Cities.Plots.Factory._combinedInjector
+  nameWithType: Factory._combinedInjector
 - uid: Cities.Plots.Factory._roadNetworkInjector
   name: _roadNetworkInjector
   href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__roadNetworkInjector
   commentId: F:Cities.Plots.Factory._roadNetworkInjector
   fullName: Cities.Plots.Factory._roadNetworkInjector
   nameWithType: Factory._roadNetworkInjector
+- uid: Cities.Plots.Factory._terrainInjector
+  name: _terrainInjector
+  href: api/Cities.Plots.Factory.html#Cities_Plots_Factory__terrainInjector
+  commentId: F:Cities.Plots.Factory._terrainInjector
+  fullName: Cities.Plots.Factory._terrainInjector
+  nameWithType: Factory._terrainInjector
 - uid: Cities.Plots.Factory.CreateAdjacentStrategy
   name: CreateAdjacentStrategy()
   href: api/Cities.Plots.Factory.html#Cities_Plots_Factory_CreateAdjacentStrategy
@@ -3572,373 +3552,6 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.SampleStrategy.Generate
   nameWithType: SampleStrategy.Generate
-- uid: DrawTool
-  name: DrawTool
-  href: api/DrawTool.html
-  commentId: N:DrawTool
-  fullName: DrawTool
-  nameWithType: DrawTool
-- uid: DrawTool.Editor
-  name: DrawTool.Editor
-  href: api/DrawTool.Editor.html
-  commentId: N:DrawTool.Editor
-  fullName: DrawTool.Editor
-  nameWithType: DrawTool.Editor
-- uid: DrawTool.Editor.ShapeEdit
-  name: ShapeEdit
-  href: api/DrawTool.Editor.ShapeEdit.html
-  commentId: T:DrawTool.Editor.ShapeEdit
-  fullName: DrawTool.Editor.ShapeEdit
-  nameWithType: ShapeEdit
-- uid: DrawTool.Editor.ShapeEdit.CreateNewPoint(UnityEngine.Vector3)
-  name: CreateNewPoint(Vector3)
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_CreateNewPoint_UnityEngine_Vector3_
-  commentId: M:DrawTool.Editor.ShapeEdit.CreateNewPoint(UnityEngine.Vector3)
-  fullName: DrawTool.Editor.ShapeEdit.CreateNewPoint(UnityEngine.Vector3)
-  nameWithType: ShapeEdit.CreateNewPoint(Vector3)
-- uid: DrawTool.Editor.ShapeEdit.CreateNewPoint*
-  name: CreateNewPoint
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_CreateNewPoint_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.CreateNewPoint
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.CreateNewPoint
-  nameWithType: ShapeEdit.CreateNewPoint
-- uid: DrawTool.Editor.ShapeEdit.CreateNewShape
-  name: CreateNewShape()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_CreateNewShape
-  commentId: M:DrawTool.Editor.ShapeEdit.CreateNewShape
-  fullName: DrawTool.Editor.ShapeEdit.CreateNewShape()
-  nameWithType: ShapeEdit.CreateNewShape()
-- uid: DrawTool.Editor.ShapeEdit.CreateNewShape*
-  name: CreateNewShape
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_CreateNewShape_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.CreateNewShape
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.CreateNewShape
-  nameWithType: ShapeEdit.CreateNewShape
-- uid: DrawTool.Editor.ShapeEdit.Draw
-  name: Draw()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_Draw
-  commentId: M:DrawTool.Editor.ShapeEdit.Draw
-  fullName: DrawTool.Editor.ShapeEdit.Draw()
-  nameWithType: ShapeEdit.Draw()
-- uid: DrawTool.Editor.ShapeEdit.Draw*
-  name: Draw
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_Draw_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.Draw
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.Draw
-  nameWithType: ShapeEdit.Draw
-- uid: DrawTool.Editor.ShapeEdit.HandleInput(UnityEngine.Event)
-  name: HandleInput(Event)
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleInput_UnityEngine_Event_
-  commentId: M:DrawTool.Editor.ShapeEdit.HandleInput(UnityEngine.Event)
-  fullName: DrawTool.Editor.ShapeEdit.HandleInput(UnityEngine.Event)
-  nameWithType: ShapeEdit.HandleInput(Event)
-- uid: DrawTool.Editor.ShapeEdit.HandleInput*
-  name: HandleInput
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleInput_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.HandleInput
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.HandleInput
-  nameWithType: ShapeEdit.HandleInput
-- uid: DrawTool.Editor.ShapeEdit.HandleLeftMouseDown(UnityEngine.Vector3)
-  name: HandleLeftMouseDown(Vector3)
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleLeftMouseDown_UnityEngine_Vector3_
-  commentId: M:DrawTool.Editor.ShapeEdit.HandleLeftMouseDown(UnityEngine.Vector3)
-  fullName: DrawTool.Editor.ShapeEdit.HandleLeftMouseDown(UnityEngine.Vector3)
-  nameWithType: ShapeEdit.HandleLeftMouseDown(Vector3)
-- uid: DrawTool.Editor.ShapeEdit.HandleLeftMouseDown*
-  name: HandleLeftMouseDown
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleLeftMouseDown_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.HandleLeftMouseDown
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.HandleLeftMouseDown
-  nameWithType: ShapeEdit.HandleLeftMouseDown
-- uid: DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag(UnityEngine.Vector3)
-  name: HandleLeftMouseDrag(Vector3)
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleLeftMouseDrag_UnityEngine_Vector3_
-  commentId: M:DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag(UnityEngine.Vector3)
-  fullName: DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag(UnityEngine.Vector3)
-  nameWithType: ShapeEdit.HandleLeftMouseDrag(Vector3)
-- uid: DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag*
-  name: HandleLeftMouseDrag
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleLeftMouseDrag_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.HandleLeftMouseDrag
-  nameWithType: ShapeEdit.HandleLeftMouseDrag
-- uid: DrawTool.Editor.ShapeEdit.HandleLeftMouseUp(UnityEngine.Vector3)
-  name: HandleLeftMouseUp(Vector3)
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleLeftMouseUp_UnityEngine_Vector3_
-  commentId: M:DrawTool.Editor.ShapeEdit.HandleLeftMouseUp(UnityEngine.Vector3)
-  fullName: DrawTool.Editor.ShapeEdit.HandleLeftMouseUp(UnityEngine.Vector3)
-  nameWithType: ShapeEdit.HandleLeftMouseUp(Vector3)
-- uid: DrawTool.Editor.ShapeEdit.HandleLeftMouseUp*
-  name: HandleLeftMouseUp
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleLeftMouseUp_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.HandleLeftMouseUp
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.HandleLeftMouseUp
-  nameWithType: ShapeEdit.HandleLeftMouseUp
-- uid: DrawTool.Editor.ShapeEdit.HandleRightMouseDown(UnityEngine.Vector3)
-  name: HandleRightMouseDown(Vector3)
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleRightMouseDown_UnityEngine_Vector3_
-  commentId: M:DrawTool.Editor.ShapeEdit.HandleRightMouseDown(UnityEngine.Vector3)
-  fullName: DrawTool.Editor.ShapeEdit.HandleRightMouseDown(UnityEngine.Vector3)
-  nameWithType: ShapeEdit.HandleRightMouseDown(Vector3)
-- uid: DrawTool.Editor.ShapeEdit.HandleRightMouseDown*
-  name: HandleRightMouseDown
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleRightMouseDown_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.HandleRightMouseDown
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.HandleRightMouseDown
-  nameWithType: ShapeEdit.HandleRightMouseDown
-- uid: DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown(UnityEngine.Vector3)
-  name: HandleShiftLeftMouseDown(Vector3)
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleShiftLeftMouseDown_UnityEngine_Vector3_
-  commentId: M:DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown(UnityEngine.Vector3)
-  fullName: DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown(UnityEngine.Vector3)
-  nameWithType: ShapeEdit.HandleShiftLeftMouseDown(Vector3)
-- uid: DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown*
-  name: HandleShiftLeftMouseDown
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_HandleShiftLeftMouseDown_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.HandleShiftLeftMouseDown
-  nameWithType: ShapeEdit.HandleShiftLeftMouseDown
-- uid: DrawTool.Editor.ShapeEdit.needsRepaint
-  name: needsRepaint
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_needsRepaint
-  commentId: F:DrawTool.Editor.ShapeEdit.needsRepaint
-  fullName: DrawTool.Editor.ShapeEdit.needsRepaint
-  nameWithType: ShapeEdit.needsRepaint
-- uid: DrawTool.Editor.ShapeEdit.OnDisable
-  name: OnDisable()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnDisable
-  commentId: M:DrawTool.Editor.ShapeEdit.OnDisable
-  fullName: DrawTool.Editor.ShapeEdit.OnDisable()
-  nameWithType: ShapeEdit.OnDisable()
-- uid: DrawTool.Editor.ShapeEdit.OnDisable*
-  name: OnDisable
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnDisable_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.OnDisable
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.OnDisable
-  nameWithType: ShapeEdit.OnDisable
-- uid: DrawTool.Editor.ShapeEdit.OnEnable
-  name: OnEnable()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnEnable
-  commentId: M:DrawTool.Editor.ShapeEdit.OnEnable
-  fullName: DrawTool.Editor.ShapeEdit.OnEnable()
-  nameWithType: ShapeEdit.OnEnable()
-- uid: DrawTool.Editor.ShapeEdit.OnEnable*
-  name: OnEnable
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnEnable_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.OnEnable
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.OnEnable
-  nameWithType: ShapeEdit.OnEnable
-- uid: DrawTool.Editor.ShapeEdit.OnInspectorGUI
-  name: OnInspectorGUI()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnInspectorGUI
-  commentId: M:DrawTool.Editor.ShapeEdit.OnInspectorGUI
-  fullName: DrawTool.Editor.ShapeEdit.OnInspectorGUI()
-  nameWithType: ShapeEdit.OnInspectorGUI()
-- uid: DrawTool.Editor.ShapeEdit.OnInspectorGUI*
-  name: OnInspectorGUI
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnInspectorGUI_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.OnInspectorGUI
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.OnInspectorGUI
-  nameWithType: ShapeEdit.OnInspectorGUI
-- uid: DrawTool.Editor.ShapeEdit.OnSceneGUI
-  name: OnSceneGUI()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnSceneGUI
-  commentId: M:DrawTool.Editor.ShapeEdit.OnSceneGUI
-  fullName: DrawTool.Editor.ShapeEdit.OnSceneGUI()
-  nameWithType: ShapeEdit.OnSceneGUI()
-- uid: DrawTool.Editor.ShapeEdit.OnSceneGUI*
-  name: OnSceneGUI
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnSceneGUI_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.OnSceneGUI
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.OnSceneGUI
-  nameWithType: ShapeEdit.OnSceneGUI
-- uid: DrawTool.Editor.ShapeEdit.OnUndoOrRedo
-  name: OnUndoOrRedo()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnUndoOrRedo
-  commentId: M:DrawTool.Editor.ShapeEdit.OnUndoOrRedo
-  fullName: DrawTool.Editor.ShapeEdit.OnUndoOrRedo()
-  nameWithType: ShapeEdit.OnUndoOrRedo()
-- uid: DrawTool.Editor.ShapeEdit.OnUndoOrRedo*
-  name: OnUndoOrRedo
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_OnUndoOrRedo_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.OnUndoOrRedo
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.OnUndoOrRedo
-  nameWithType: ShapeEdit.OnUndoOrRedo
-- uid: DrawTool.Editor.ShapeEdit.SelectedShape
-  name: SelectedShape
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_SelectedShape
-  commentId: P:DrawTool.Editor.ShapeEdit.SelectedShape
-  fullName: DrawTool.Editor.ShapeEdit.SelectedShape
-  nameWithType: ShapeEdit.SelectedShape
-- uid: DrawTool.Editor.ShapeEdit.SelectedShape*
-  name: SelectedShape
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_SelectedShape_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.SelectedShape
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.SelectedShape
-  nameWithType: ShapeEdit.SelectedShape
-- uid: DrawTool.Editor.ShapeEdit.selectionInfo
-  name: selectionInfo
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_selectionInfo
-  commentId: F:DrawTool.Editor.ShapeEdit.selectionInfo
-  fullName: DrawTool.Editor.ShapeEdit.selectionInfo
-  nameWithType: ShapeEdit.selectionInfo
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo
-  name: ShapeEdit.SelectionInfo
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html
-  commentId: T:DrawTool.Editor.ShapeEdit.SelectionInfo
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo
-  nameWithType: ShapeEdit.SelectionInfo
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo.lineIndex
-  name: lineIndex
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html#DrawTool_Editor_ShapeEdit_SelectionInfo_lineIndex
-  commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.lineIndex
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.lineIndex
-  nameWithType: ShapeEdit.SelectionInfo.lineIndex
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo.mouseIsOverLine
-  name: mouseIsOverLine
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html#DrawTool_Editor_ShapeEdit_SelectionInfo_mouseIsOverLine
-  commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.mouseIsOverLine
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.mouseIsOverLine
-  nameWithType: ShapeEdit.SelectionInfo.mouseIsOverLine
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo.mouseIsOverPoint
-  name: mouseIsOverPoint
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html#DrawTool_Editor_ShapeEdit_SelectionInfo_mouseIsOverPoint
-  commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.mouseIsOverPoint
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.mouseIsOverPoint
-  nameWithType: ShapeEdit.SelectionInfo.mouseIsOverPoint
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo.mouseOverShapeIndex
-  name: mouseOverShapeIndex
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html#DrawTool_Editor_ShapeEdit_SelectionInfo_mouseOverShapeIndex
-  commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.mouseOverShapeIndex
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.mouseOverShapeIndex
-  nameWithType: ShapeEdit.SelectionInfo.mouseOverShapeIndex
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo.pointIndex
-  name: pointIndex
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html#DrawTool_Editor_ShapeEdit_SelectionInfo_pointIndex
-  commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.pointIndex
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.pointIndex
-  nameWithType: ShapeEdit.SelectionInfo.pointIndex
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo.pointIsSelected
-  name: pointIsSelected
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html#DrawTool_Editor_ShapeEdit_SelectionInfo_pointIsSelected
-  commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.pointIsSelected
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.pointIsSelected
-  nameWithType: ShapeEdit.SelectionInfo.pointIsSelected
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo.positionAtStartOfDrag
-  name: positionAtStartOfDrag
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html#DrawTool_Editor_ShapeEdit_SelectionInfo_positionAtStartOfDrag
-  commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.positionAtStartOfDrag
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.positionAtStartOfDrag
-  nameWithType: ShapeEdit.SelectionInfo.positionAtStartOfDrag
-- uid: DrawTool.Editor.ShapeEdit.SelectionInfo.selectedShapeIndex
-  name: selectedShapeIndex
-  href: api/DrawTool.Editor.ShapeEdit.SelectionInfo.html#DrawTool_Editor_ShapeEdit_SelectionInfo_selectedShapeIndex
-  commentId: F:DrawTool.Editor.ShapeEdit.SelectionInfo.selectedShapeIndex
-  fullName: DrawTool.Editor.ShapeEdit.SelectionInfo.selectedShapeIndex
-  nameWithType: ShapeEdit.SelectionInfo.selectedShapeIndex
-- uid: DrawTool.Editor.ShapeEdit.SelectPointUnderMouse
-  name: SelectPointUnderMouse()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_SelectPointUnderMouse
-  commentId: M:DrawTool.Editor.ShapeEdit.SelectPointUnderMouse
-  fullName: DrawTool.Editor.ShapeEdit.SelectPointUnderMouse()
-  nameWithType: ShapeEdit.SelectPointUnderMouse()
-- uid: DrawTool.Editor.ShapeEdit.SelectPointUnderMouse*
-  name: SelectPointUnderMouse
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_SelectPointUnderMouse_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.SelectPointUnderMouse
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.SelectPointUnderMouse
-  nameWithType: ShapeEdit.SelectPointUnderMouse
-- uid: DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse
-  name: SelectShapeUnderMouse()
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_SelectShapeUnderMouse
-  commentId: M:DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse
-  fullName: DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse()
-  nameWithType: ShapeEdit.SelectShapeUnderMouse()
-- uid: DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse*
-  name: SelectShapeUnderMouse
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_SelectShapeUnderMouse_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.SelectShapeUnderMouse
-  nameWithType: ShapeEdit.SelectShapeUnderMouse
-- uid: DrawTool.Editor.ShapeEdit.shapeMake
-  name: shapeMake
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_shapeMake
-  commentId: F:DrawTool.Editor.ShapeEdit.shapeMake
-  fullName: DrawTool.Editor.ShapeEdit.shapeMake
-  nameWithType: ShapeEdit.shapeMake
-- uid: DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo(UnityEngine.Vector3)
-  name: UpdateMouseOverInfo(Vector3)
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_UpdateMouseOverInfo_UnityEngine_Vector3_
-  commentId: M:DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo(UnityEngine.Vector3)
-  fullName: DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo(UnityEngine.Vector3)
-  nameWithType: ShapeEdit.UpdateMouseOverInfo(Vector3)
-- uid: DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo*
-  name: UpdateMouseOverInfo
-  href: api/DrawTool.Editor.ShapeEdit.html#DrawTool_Editor_ShapeEdit_UpdateMouseOverInfo_
-  commentId: Overload:DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo
-  isSpec: "True"
-  fullName: DrawTool.Editor.ShapeEdit.UpdateMouseOverInfo
-  nameWithType: ShapeEdit.UpdateMouseOverInfo
-- uid: DrawTool.ShapeMake
-  name: ShapeMake
-  href: api/DrawTool.ShapeMake.html
-  commentId: T:DrawTool.ShapeMake
-  fullName: DrawTool.ShapeMake
-  nameWithType: ShapeMake
-- uid: DrawTool.ShapeMake.handleRadius
-  name: handleRadius
-  href: api/DrawTool.ShapeMake.html#DrawTool_ShapeMake_handleRadius
-  commentId: F:DrawTool.ShapeMake.handleRadius
-  fullName: DrawTool.ShapeMake.handleRadius
-  nameWithType: ShapeMake.handleRadius
-- uid: DrawTool.ShapeMake.meshFilter
-  name: meshFilter
-  href: api/DrawTool.ShapeMake.html#DrawTool_ShapeMake_meshFilter
-  commentId: F:DrawTool.ShapeMake.meshFilter
-  fullName: DrawTool.ShapeMake.meshFilter
-  nameWithType: ShapeMake.meshFilter
-- uid: DrawTool.ShapeMake.shapes
-  name: shapes
-  href: api/DrawTool.ShapeMake.html#DrawTool_ShapeMake_shapes
-  commentId: F:DrawTool.ShapeMake.shapes
-  fullName: DrawTool.ShapeMake.shapes
-  nameWithType: ShapeMake.shapes
-- uid: DrawTool.ShapeMake.showShapesList
-  name: showShapesList
-  href: api/DrawTool.ShapeMake.html#DrawTool_ShapeMake_showShapesList
-  commentId: F:DrawTool.ShapeMake.showShapesList
-  fullName: DrawTool.ShapeMake.showShapesList
-  nameWithType: ShapeMake.showShapesList
-- uid: DrawTool.ShapeMake.UpdateMesh
-  name: UpdateMesh()
-  href: api/DrawTool.ShapeMake.html#DrawTool_ShapeMake_UpdateMesh
-  commentId: M:DrawTool.ShapeMake.UpdateMesh
-  fullName: DrawTool.ShapeMake.UpdateMesh()
-  nameWithType: ShapeMake.UpdateMesh()
-- uid: DrawTool.ShapeMake.UpdateMesh*
-  name: UpdateMesh
-  href: api/DrawTool.ShapeMake.html#DrawTool_ShapeMake_UpdateMesh_
-  commentId: Overload:DrawTool.ShapeMake.UpdateMesh
-  isSpec: "True"
-  fullName: DrawTool.ShapeMake.UpdateMesh
-  nameWithType: ShapeMake.UpdateMesh
 - uid: Extensions
   name: Extensions
   href: api/Extensions.html
@@ -4350,14 +3963,14 @@ references:
   fullName.vb: Services.EventBus(Of T)._subscribers
   nameWithType: EventBus<T>._subscribers
   nameWithType.vb: EventBus(Of T)._subscribers
-- uid: Services.EventBus`1.CreateEvent(`0,System.Object)
-  name: CreateEvent(T, Object)
-  href: api/Services.EventBus-1.html#Services_EventBus_1_CreateEvent__0_System_Object_
-  commentId: M:Services.EventBus`1.CreateEvent(`0,System.Object)
-  fullName: Services.EventBus<T>.CreateEvent(T, System.Object)
-  fullName.vb: Services.EventBus(Of T).CreateEvent(T, System.Object)
-  nameWithType: EventBus<T>.CreateEvent(T, Object)
-  nameWithType.vb: EventBus(Of T).CreateEvent(T, Object)
+- uid: Services.EventBus`1.CreateEvent(`0,System.Object,System.Object)
+  name: CreateEvent(T, Object, Object)
+  href: api/Services.EventBus-1.html#Services_EventBus_1_CreateEvent__0_System_Object_System_Object_
+  commentId: M:Services.EventBus`1.CreateEvent(`0,System.Object,System.Object)
+  fullName: Services.EventBus<T>.CreateEvent(T, System.Object, System.Object)
+  fullName.vb: Services.EventBus(Of T).CreateEvent(T, System.Object, System.Object)
+  nameWithType: EventBus<T>.CreateEvent(T, Object, Object)
+  nameWithType.vb: EventBus(Of T).CreateEvent(T, Object, Object)
 - uid: Services.EventBus`1.CreateEvent*
   name: CreateEvent
   href: api/Services.EventBus-1.html#Services_EventBus_1_CreateEvent_
@@ -4412,14 +4025,14 @@ references:
   fullName.vb: Services.IEventBus(Of T)
   nameWithType: IEventBus<T>
   nameWithType.vb: IEventBus(Of T)
-- uid: Services.IEventBus`1.CreateEvent(`0,System.Object)
-  name: CreateEvent(T, Object)
-  href: api/Services.IEventBus-1.html#Services_IEventBus_1_CreateEvent__0_System_Object_
-  commentId: M:Services.IEventBus`1.CreateEvent(`0,System.Object)
-  fullName: Services.IEventBus<T>.CreateEvent(T, System.Object)
-  fullName.vb: Services.IEventBus(Of T).CreateEvent(T, System.Object)
-  nameWithType: IEventBus<T>.CreateEvent(T, Object)
-  nameWithType.vb: IEventBus(Of T).CreateEvent(T, Object)
+- uid: Services.IEventBus`1.CreateEvent(`0,System.Object,System.Object)
+  name: CreateEvent(T, Object, Object)
+  href: api/Services.IEventBus-1.html#Services_IEventBus_1_CreateEvent__0_System_Object_System_Object_
+  commentId: M:Services.IEventBus`1.CreateEvent(`0,System.Object,System.Object)
+  fullName: Services.IEventBus<T>.CreateEvent(T, System.Object, System.Object)
+  fullName.vb: Services.IEventBus(Of T).CreateEvent(T, System.Object, System.Object)
+  nameWithType: IEventBus<T>.CreateEvent(T, Object, Object)
+  nameWithType.vb: IEventBus(Of T).CreateEvent(T, Object, Object)
 - uid: Services.IEventBus`1.CreateEvent*
   name: CreateEvent
   href: api/Services.IEventBus-1.html#Services_IEventBus_1_CreateEvent_
@@ -4483,14 +4096,14 @@ references:
   fullName.vb: Services.ISubscriber(Of T)
   nameWithType: ISubscriber<T>
   nameWithType.vb: ISubscriber(Of T)
-- uid: Services.ISubscriber`1.OnEvent(`0,System.Object)
-  name: OnEvent(T, Object)
-  href: api/Services.ISubscriber-1.html#Services_ISubscriber_1_OnEvent__0_System_Object_
-  commentId: M:Services.ISubscriber`1.OnEvent(`0,System.Object)
-  fullName: Services.ISubscriber<T>.OnEvent(T, System.Object)
-  fullName.vb: Services.ISubscriber(Of T).OnEvent(T, System.Object)
-  nameWithType: ISubscriber<T>.OnEvent(T, Object)
-  nameWithType.vb: ISubscriber(Of T).OnEvent(T, Object)
+- uid: Services.ISubscriber`1.OnEvent(`0,System.Object,System.Object)
+  name: OnEvent(T, Object, Object)
+  href: api/Services.ISubscriber-1.html#Services_ISubscriber_1_OnEvent__0_System_Object_System_Object_
+  commentId: M:Services.ISubscriber`1.OnEvent(`0,System.Object,System.Object)
+  fullName: Services.ISubscriber<T>.OnEvent(T, System.Object, System.Object)
+  fullName.vb: Services.ISubscriber(Of T).OnEvent(T, System.Object, System.Object)
+  nameWithType: ISubscriber<T>.OnEvent(T, Object, Object)
+  nameWithType.vb: ISubscriber(Of T).OnEvent(T, Object, Object)
 - uid: Services.ISubscriber`1.OnEvent*
   name: OnEvent
   href: api/Services.ISubscriber-1.html#Services_ISubscriber_1_OnEvent_
@@ -5164,335 +4777,6 @@ references:
   commentId: N:Utils.Geometry
   fullName: Utils.Geometry
   nameWithType: Utils.Geometry
-- uid: Utils.Geometry.CompositeShape
-  name: CompositeShape
-  href: api/Utils.Geometry.CompositeShape.html
-  commentId: T:Utils.Geometry.CompositeShape
-  fullName: Utils.Geometry.CompositeShape
-  nameWithType: CompositeShape
-- uid: Utils.Geometry.CompositeShape.#ctor(System.Collections.Generic.IEnumerable{Utils.Geometry.Shape})
-  name: CompositeShape(IEnumerable<Shape>)
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape__ctor_System_Collections_Generic_IEnumerable_Utils_Geometry_Shape__
-  commentId: M:Utils.Geometry.CompositeShape.#ctor(System.Collections.Generic.IEnumerable{Utils.Geometry.Shape})
-  name.vb: CompositeShape(IEnumerable(Of Shape))
-  fullName: Utils.Geometry.CompositeShape.CompositeShape(System.Collections.Generic.IEnumerable<Utils.Geometry.Shape>)
-  fullName.vb: Utils.Geometry.CompositeShape.CompositeShape(System.Collections.Generic.IEnumerable(Of Utils.Geometry.Shape))
-  nameWithType: CompositeShape.CompositeShape(IEnumerable<Shape>)
-  nameWithType.vb: CompositeShape.CompositeShape(IEnumerable(Of Shape))
-- uid: Utils.Geometry.CompositeShape.#ctor*
-  name: CompositeShape
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape__ctor_
-  commentId: Overload:Utils.Geometry.CompositeShape.#ctor
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.CompositeShape
-  nameWithType: CompositeShape.CompositeShape
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData
-  name: CompositeShape.CompositeShapeData
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html
-  commentId: T:Utils.Geometry.CompositeShape.CompositeShapeData
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData
-  nameWithType: CompositeShape.CompositeShapeData
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.#ctor(UnityEngine.Vector3[])
-  name: CompositeShapeData(Vector3[])
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData__ctor_UnityEngine_Vector3___
-  commentId: M:Utils.Geometry.CompositeShape.CompositeShapeData.#ctor(UnityEngine.Vector3[])
-  name.vb: CompositeShapeData(Vector3())
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.CompositeShapeData(UnityEngine.Vector3[])
-  fullName.vb: Utils.Geometry.CompositeShape.CompositeShapeData.CompositeShapeData(UnityEngine.Vector3())
-  nameWithType: CompositeShape.CompositeShapeData.CompositeShapeData(Vector3[])
-  nameWithType.vb: CompositeShape.CompositeShapeData.CompositeShapeData(Vector3())
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.#ctor*
-  name: CompositeShapeData
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData__ctor_
-  commentId: Overload:Utils.Geometry.CompositeShape.CompositeShapeData.#ctor
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.CompositeShapeData
-  nameWithType: CompositeShape.CompositeShapeData.CompositeShapeData
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.holes
-  name: holes
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_holes
-  commentId: F:Utils.Geometry.CompositeShape.CompositeShapeData.holes
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.holes
-  nameWithType: CompositeShape.CompositeShapeData.holes
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.IntersectsWithSelf
-  name: IntersectsWithSelf()
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_IntersectsWithSelf
-  commentId: M:Utils.Geometry.CompositeShape.CompositeShapeData.IntersectsWithSelf
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.IntersectsWithSelf()
-  nameWithType: CompositeShape.CompositeShapeData.IntersectsWithSelf()
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.IntersectsWithSelf*
-  name: IntersectsWithSelf
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_IntersectsWithSelf_
-  commentId: Overload:Utils.Geometry.CompositeShape.CompositeShapeData.IntersectsWithSelf
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.IntersectsWithSelf
-  nameWithType: CompositeShape.CompositeShapeData.IntersectsWithSelf
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.IsParentOf(Utils.Geometry.CompositeShape.CompositeShapeData)
-  name: IsParentOf(CompositeShape.CompositeShapeData)
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_IsParentOf_Utils_Geometry_CompositeShape_CompositeShapeData_
-  commentId: M:Utils.Geometry.CompositeShape.CompositeShapeData.IsParentOf(Utils.Geometry.CompositeShape.CompositeShapeData)
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.IsParentOf(Utils.Geometry.CompositeShape.CompositeShapeData)
-  nameWithType: CompositeShape.CompositeShapeData.IsParentOf(CompositeShape.CompositeShapeData)
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.IsParentOf*
-  name: IsParentOf
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_IsParentOf_
-  commentId: Overload:Utils.Geometry.CompositeShape.CompositeShapeData.IsParentOf
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.IsParentOf
-  nameWithType: CompositeShape.CompositeShapeData.IsParentOf
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.IsValidShape
-  name: IsValidShape
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_IsValidShape
-  commentId: P:Utils.Geometry.CompositeShape.CompositeShapeData.IsValidShape
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.IsValidShape
-  nameWithType: CompositeShape.CompositeShapeData.IsValidShape
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.IsValidShape*
-  name: IsValidShape
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_IsValidShape_
-  commentId: Overload:Utils.Geometry.CompositeShape.CompositeShapeData.IsValidShape
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.IsValidShape
-  nameWithType: CompositeShape.CompositeShapeData.IsValidShape
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment
-  name: CompositeShape.CompositeShapeData.LineSegment
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.html
-  commentId: T:Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment
-  nameWithType: CompositeShape.CompositeShapeData.LineSegment
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.#ctor(UnityEngine.Vector2,UnityEngine.Vector2)
-  name: LineSegment(Vector2, Vector2)
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.html#Utils_Geometry_CompositeShape_CompositeShapeData_LineSegment__ctor_UnityEngine_Vector2_UnityEngine_Vector2_
-  commentId: M:Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.#ctor(UnityEngine.Vector2,UnityEngine.Vector2)
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.LineSegment(UnityEngine.Vector2, UnityEngine.Vector2)
-  nameWithType: CompositeShape.CompositeShapeData.LineSegment.LineSegment(Vector2, Vector2)
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.#ctor*
-  name: LineSegment
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.html#Utils_Geometry_CompositeShape_CompositeShapeData_LineSegment__ctor_
-  commentId: Overload:Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.#ctor
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.LineSegment
-  nameWithType: CompositeShape.CompositeShapeData.LineSegment.LineSegment
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.a
-  name: a
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.html#Utils_Geometry_CompositeShape_CompositeShapeData_LineSegment_a
-  commentId: F:Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.a
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.a
-  nameWithType: CompositeShape.CompositeShapeData.LineSegment.a
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.b
-  name: b
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.html#Utils_Geometry_CompositeShape_CompositeShapeData_LineSegment_b
-  commentId: F:Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.b
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.LineSegment.b
-  nameWithType: CompositeShape.CompositeShapeData.LineSegment.b
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.OverlapsPartially(Utils.Geometry.CompositeShape.CompositeShapeData)
-  name: OverlapsPartially(CompositeShape.CompositeShapeData)
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_OverlapsPartially_Utils_Geometry_CompositeShape_CompositeShapeData_
-  commentId: M:Utils.Geometry.CompositeShape.CompositeShapeData.OverlapsPartially(Utils.Geometry.CompositeShape.CompositeShapeData)
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.OverlapsPartially(Utils.Geometry.CompositeShape.CompositeShapeData)
-  nameWithType: CompositeShape.CompositeShapeData.OverlapsPartially(CompositeShape.CompositeShapeData)
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.OverlapsPartially*
-  name: OverlapsPartially
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_OverlapsPartially_
-  commentId: Overload:Utils.Geometry.CompositeShape.CompositeShapeData.OverlapsPartially
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.OverlapsPartially
-  nameWithType: CompositeShape.CompositeShapeData.OverlapsPartially
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.parents
-  name: parents
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_parents
-  commentId: F:Utils.Geometry.CompositeShape.CompositeShapeData.parents
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.parents
-  nameWithType: CompositeShape.CompositeShapeData.parents
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.points
-  name: points
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_points
-  commentId: F:Utils.Geometry.CompositeShape.CompositeShapeData.points
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.points
-  nameWithType: CompositeShape.CompositeShapeData.points
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.polygon
-  name: polygon
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_polygon
-  commentId: F:Utils.Geometry.CompositeShape.CompositeShapeData.polygon
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.polygon
-  nameWithType: CompositeShape.CompositeShapeData.polygon
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.triangles
-  name: triangles
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_triangles
-  commentId: F:Utils.Geometry.CompositeShape.CompositeShapeData.triangles
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.triangles
-  nameWithType: CompositeShape.CompositeShapeData.triangles
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.ValidateHoles
-  name: ValidateHoles()
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_ValidateHoles
-  commentId: M:Utils.Geometry.CompositeShape.CompositeShapeData.ValidateHoles
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.ValidateHoles()
-  nameWithType: CompositeShape.CompositeShapeData.ValidateHoles()
-- uid: Utils.Geometry.CompositeShape.CompositeShapeData.ValidateHoles*
-  name: ValidateHoles
-  href: api/Utils.Geometry.CompositeShape.CompositeShapeData.html#Utils_Geometry_CompositeShape_CompositeShapeData_ValidateHoles_
-  commentId: Overload:Utils.Geometry.CompositeShape.CompositeShapeData.ValidateHoles
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.CompositeShapeData.ValidateHoles
-  nameWithType: CompositeShape.CompositeShapeData.ValidateHoles
-- uid: Utils.Geometry.CompositeShape.GetMesh
-  name: GetMesh()
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape_GetMesh
-  commentId: M:Utils.Geometry.CompositeShape.GetMesh
-  fullName: Utils.Geometry.CompositeShape.GetMesh()
-  nameWithType: CompositeShape.GetMesh()
-- uid: Utils.Geometry.CompositeShape.GetMesh*
-  name: GetMesh
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape_GetMesh_
-  commentId: Overload:Utils.Geometry.CompositeShape.GetMesh
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.GetMesh
-  nameWithType: CompositeShape.GetMesh
-- uid: Utils.Geometry.CompositeShape.height
-  name: height
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape_height
-  commentId: F:Utils.Geometry.CompositeShape.height
-  fullName: Utils.Geometry.CompositeShape.height
-  nameWithType: CompositeShape.height
-- uid: Utils.Geometry.CompositeShape.Process
-  name: Process()
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape_Process
-  commentId: M:Utils.Geometry.CompositeShape.Process
-  fullName: Utils.Geometry.CompositeShape.Process()
-  nameWithType: CompositeShape.Process()
-- uid: Utils.Geometry.CompositeShape.Process*
-  name: Process
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape_Process_
-  commentId: Overload:Utils.Geometry.CompositeShape.Process
-  isSpec: "True"
-  fullName: Utils.Geometry.CompositeShape.Process
-  nameWithType: CompositeShape.Process
-- uid: Utils.Geometry.CompositeShape.shapes
-  name: shapes
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape_shapes
-  commentId: F:Utils.Geometry.CompositeShape.shapes
-  fullName: Utils.Geometry.CompositeShape.shapes
-  nameWithType: CompositeShape.shapes
-- uid: Utils.Geometry.CompositeShape.triangles
-  name: triangles
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape_triangles
-  commentId: F:Utils.Geometry.CompositeShape.triangles
-  fullName: Utils.Geometry.CompositeShape.triangles
-  nameWithType: CompositeShape.triangles
-- uid: Utils.Geometry.CompositeShape.vertices
-  name: vertices
-  href: api/Utils.Geometry.CompositeShape.html#Utils_Geometry_CompositeShape_vertices
-  commentId: F:Utils.Geometry.CompositeShape.vertices
-  fullName: Utils.Geometry.CompositeShape.vertices
-  nameWithType: CompositeShape.vertices
-- uid: Utils.Geometry.LineSegment
-  name: LineSegment
-  href: api/Utils.Geometry.LineSegment.html
-  commentId: T:Utils.Geometry.LineSegment
-  fullName: Utils.Geometry.LineSegment
-  nameWithType: LineSegment
-- uid: Utils.Geometry.LineSegment.#ctor(UnityEngine.Vector3,UnityEngine.Vector3)
-  name: LineSegment(Vector3, Vector3)
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment__ctor_UnityEngine_Vector3_UnityEngine_Vector3_
-  commentId: M:Utils.Geometry.LineSegment.#ctor(UnityEngine.Vector3,UnityEngine.Vector3)
-  fullName: Utils.Geometry.LineSegment.LineSegment(UnityEngine.Vector3, UnityEngine.Vector3)
-  nameWithType: LineSegment.LineSegment(Vector3, Vector3)
-- uid: Utils.Geometry.LineSegment.#ctor*
-  name: LineSegment
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment__ctor_
-  commentId: Overload:Utils.Geometry.LineSegment.#ctor
-  isSpec: "True"
-  fullName: Utils.Geometry.LineSegment.LineSegment
-  nameWithType: LineSegment.LineSegment
-- uid: Utils.Geometry.LineSegment._end
-  name: _end
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment__end
-  commentId: F:Utils.Geometry.LineSegment._end
-  fullName: Utils.Geometry.LineSegment._end
-  nameWithType: LineSegment._end
-- uid: Utils.Geometry.LineSegment._start
-  name: _start
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment__start
-  commentId: F:Utils.Geometry.LineSegment._start
-  fullName: Utils.Geometry.LineSegment._start
-  nameWithType: LineSegment._start
-- uid: Utils.Geometry.LineSegment.CopyVector(UnityEngine.Vector3)
-  name: CopyVector(Vector3)
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_CopyVector_UnityEngine_Vector3_
-  commentId: M:Utils.Geometry.LineSegment.CopyVector(UnityEngine.Vector3)
-  fullName: Utils.Geometry.LineSegment.CopyVector(UnityEngine.Vector3)
-  nameWithType: LineSegment.CopyVector(Vector3)
-- uid: Utils.Geometry.LineSegment.CopyVector*
-  name: CopyVector
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_CopyVector_
-  commentId: Overload:Utils.Geometry.LineSegment.CopyVector
-  isSpec: "True"
-  fullName: Utils.Geometry.LineSegment.CopyVector
-  nameWithType: LineSegment.CopyVector
-- uid: Utils.Geometry.LineSegment.DirectionVector
-  name: DirectionVector
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_DirectionVector
-  commentId: P:Utils.Geometry.LineSegment.DirectionVector
-  fullName: Utils.Geometry.LineSegment.DirectionVector
-  nameWithType: LineSegment.DirectionVector
-- uid: Utils.Geometry.LineSegment.DirectionVector*
-  name: DirectionVector
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_DirectionVector_
-  commentId: Overload:Utils.Geometry.LineSegment.DirectionVector
-  isSpec: "True"
-  fullName: Utils.Geometry.LineSegment.DirectionVector
-  nameWithType: LineSegment.DirectionVector
-- uid: Utils.Geometry.LineSegment.End
-  name: End
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_End
-  commentId: P:Utils.Geometry.LineSegment.End
-  fullName: Utils.Geometry.LineSegment.End
-  nameWithType: LineSegment.End
-- uid: Utils.Geometry.LineSegment.End*
-  name: End
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_End_
-  commentId: Overload:Utils.Geometry.LineSegment.End
-  isSpec: "True"
-  fullName: Utils.Geometry.LineSegment.End
-  nameWithType: LineSegment.End
-- uid: Utils.Geometry.LineSegment.IsParallelTo(Utils.Geometry.LineSegment)
-  name: IsParallelTo(LineSegment)
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_IsParallelTo_Utils_Geometry_LineSegment_
-  commentId: M:Utils.Geometry.LineSegment.IsParallelTo(Utils.Geometry.LineSegment)
-  fullName: Utils.Geometry.LineSegment.IsParallelTo(Utils.Geometry.LineSegment)
-  nameWithType: LineSegment.IsParallelTo(LineSegment)
-- uid: Utils.Geometry.LineSegment.IsParallelTo*
-  name: IsParallelTo
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_IsParallelTo_
-  commentId: Overload:Utils.Geometry.LineSegment.IsParallelTo
-  isSpec: "True"
-  fullName: Utils.Geometry.LineSegment.IsParallelTo
-  nameWithType: LineSegment.IsParallelTo
-- uid: Utils.Geometry.LineSegment.RelativeVector
-  name: RelativeVector
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_RelativeVector
-  commentId: P:Utils.Geometry.LineSegment.RelativeVector
-  fullName: Utils.Geometry.LineSegment.RelativeVector
-  nameWithType: LineSegment.RelativeVector
-- uid: Utils.Geometry.LineSegment.RelativeVector*
-  name: RelativeVector
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_RelativeVector_
-  commentId: Overload:Utils.Geometry.LineSegment.RelativeVector
-  isSpec: "True"
-  fullName: Utils.Geometry.LineSegment.RelativeVector
-  nameWithType: LineSegment.RelativeVector
-- uid: Utils.Geometry.LineSegment.Start
-  name: Start
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_Start
-  commentId: P:Utils.Geometry.LineSegment.Start
-  fullName: Utils.Geometry.LineSegment.Start
-  nameWithType: LineSegment.Start
-- uid: Utils.Geometry.LineSegment.Start*
-  name: Start
-  href: api/Utils.Geometry.LineSegment.html#Utils_Geometry_LineSegment_Start_
-  commentId: Overload:Utils.Geometry.LineSegment.Start
-  isSpec: "True"
-  fullName: Utils.Geometry.LineSegment.Start
-  nameWithType: LineSegment.Start
 - uid: Utils.Geometry.Maths2D
   name: Maths2D
   href: api/Utils.Geometry.Maths2D.html
@@ -5740,6 +5024,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.PointsAreCounterClockwise
   nameWithType: Maths2D.PointsAreCounterClockwise
+- uid: Utils.Geometry.Maths2D.PolyExtremePoints(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name: PolyExtremePoints(IEnumerable<Vector3>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PolyExtremePoints_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Utils.Geometry.Maths2D.PolyExtremePoints(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name.vb: PolyExtremePoints(IEnumerable(Of Vector3))
+  fullName: Utils.Geometry.Maths2D.PolyExtremePoints(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Utils.Geometry.Maths2D.PolyExtremePoints(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  nameWithType: Maths2D.PolyExtremePoints(IEnumerable<Vector3>)
+  nameWithType.vb: Maths2D.PolyExtremePoints(IEnumerable(Of Vector3))
+- uid: Utils.Geometry.Maths2D.PolyExtremePoints*
+  name: PolyExtremePoints
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PolyExtremePoints_
+  commentId: Overload:Utils.Geometry.Maths2D.PolyExtremePoints
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.PolyExtremePoints
+  nameWithType: Maths2D.PolyExtremePoints
 - uid: Utils.Geometry.Maths2D.PolygonsOverlap(System.Collections.Generic.IEnumerable{UnityEngine.Vector2},System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
   name: PolygonsOverlap(IEnumerable<Vector2>, IEnumerable<Vector2>)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PolygonsOverlap_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
@@ -6050,18 +5350,6 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Polygon.PointsAreCounterClockwise
   nameWithType: Polygon.PointsAreCounterClockwise
-- uid: Utils.Geometry.Shape
-  name: Shape
-  href: api/Utils.Geometry.Shape.html
-  commentId: T:Utils.Geometry.Shape
-  fullName: Utils.Geometry.Shape
-  nameWithType: Shape
-- uid: Utils.Geometry.Shape.points
-  name: points
-  href: api/Utils.Geometry.Shape.html#Utils_Geometry_Shape_points
-  commentId: F:Utils.Geometry.Shape.points
-  fullName: Utils.Geometry.Shape.points
-  nameWithType: Shape.points
 - uid: Utils.Geometry.Triangulator
   name: Triangulator
   href: api/Utils.Geometry.Triangulator.html
@@ -6250,18 +5538,6 @@ references:
   isSpec: "True"
   fullName: Utils.Paths.PathObjectGenerator.PathObjectGenerator
   nameWithType: PathObjectGenerator.PathObjectGenerator
-- uid: Utils.Paths.PathObjectGenerator._curveFactor
-  name: _curveFactor
-  href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator__curveFactor
-  commentId: F:Utils.Paths.PathObjectGenerator._curveFactor
-  fullName: Utils.Paths.PathObjectGenerator._curveFactor
-  nameWithType: PathObjectGenerator._curveFactor
-- uid: Utils.Paths.PathObjectGenerator._smoothingIterations
-  name: _smoothingIterations
-  href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator__smoothingIterations
-  commentId: F:Utils.Paths.PathObjectGenerator._smoothingIterations
-  fullName: Utils.Paths.PathObjectGenerator._smoothingIterations
-  nameWithType: PathObjectGenerator._smoothingIterations
 - uid: Utils.Paths.PathObjectGenerator.AdaptVerticesToTerrain(System.Collections.Generic.IList{UnityEngine.Vector3},UnityEngine.MeshFilter,UnityEngine.Collider)
   name: AdaptVerticesToTerrain(IList<Vector3>, MeshFilter, Collider)
   href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_AdaptVerticesToTerrain_System_Collections_Generic_IList_UnityEngine_Vector3__UnityEngine_MeshFilter_UnityEngine_Collider_
@@ -6278,22 +5554,6 @@ references:
   isSpec: "True"
   fullName: Utils.Paths.PathObjectGenerator.AdaptVerticesToTerrain
   nameWithType: PathObjectGenerator.AdaptVerticesToTerrain
-- uid: Utils.Paths.PathObjectGenerator.AddSmoothingVertices(System.Collections.Generic.IList{UnityEngine.Vector3})
-  name: AddSmoothingVertices(IList<Vector3>)
-  href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_AddSmoothingVertices_System_Collections_Generic_IList_UnityEngine_Vector3__
-  commentId: M:Utils.Paths.PathObjectGenerator.AddSmoothingVertices(System.Collections.Generic.IList{UnityEngine.Vector3})
-  name.vb: AddSmoothingVertices(IList(Of Vector3))
-  fullName: Utils.Paths.PathObjectGenerator.AddSmoothingVertices(System.Collections.Generic.IList<UnityEngine.Vector3>)
-  fullName.vb: Utils.Paths.PathObjectGenerator.AddSmoothingVertices(System.Collections.Generic.IList(Of UnityEngine.Vector3))
-  nameWithType: PathObjectGenerator.AddSmoothingVertices(IList<Vector3>)
-  nameWithType.vb: PathObjectGenerator.AddSmoothingVertices(IList(Of Vector3))
-- uid: Utils.Paths.PathObjectGenerator.AddSmoothingVertices*
-  name: AddSmoothingVertices
-  href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_AddSmoothingVertices_
-  commentId: Overload:Utils.Paths.PathObjectGenerator.AddSmoothingVertices
-  isSpec: "True"
-  fullName: Utils.Paths.PathObjectGenerator.AddSmoothingVertices
-  nameWithType: PathObjectGenerator.AddSmoothingVertices
 - uid: Utils.Paths.PathObjectGenerator.CreateGameObject(UnityEngine.Mesh,System.String)
   name: CreateGameObject(Mesh, String)
   href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_CreateGameObject_UnityEngine_Mesh_System_String_
@@ -6323,19 +5583,6 @@ references:
   isSpec: "True"
   fullName: Utils.Paths.PathObjectGenerator.CreatePathMesh
   nameWithType: PathObjectGenerator.CreatePathMesh
-- uid: Utils.Paths.PathObjectGenerator.CurveFactor
-  name: CurveFactor
-  href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_CurveFactor
-  commentId: P:Utils.Paths.PathObjectGenerator.CurveFactor
-  fullName: Utils.Paths.PathObjectGenerator.CurveFactor
-  nameWithType: PathObjectGenerator.CurveFactor
-- uid: Utils.Paths.PathObjectGenerator.CurveFactor*
-  name: CurveFactor
-  href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_CurveFactor_
-  commentId: Overload:Utils.Paths.PathObjectGenerator.CurveFactor
-  isSpec: "True"
-  fullName: Utils.Paths.PathObjectGenerator.CurveFactor
-  nameWithType: PathObjectGenerator.CurveFactor
 - uid: Utils.Paths.PathObjectGenerator.GeneratePath(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},UnityEngine.MeshFilter,UnityEngine.Collider,System.String)
   name: GeneratePath(IEnumerable<Vector3>, MeshFilter, Collider, String)
   href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_GeneratePath_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__UnityEngine_MeshFilter_UnityEngine_Collider_System_String_
@@ -6419,19 +5666,6 @@ references:
   isSpec: "True"
   fullName: Utils.Paths.PathObjectGenerator.PathWidth
   nameWithType: PathObjectGenerator.PathWidth
-- uid: Utils.Paths.PathObjectGenerator.SmoothingIterations
-  name: SmoothingIterations
-  href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_SmoothingIterations
-  commentId: P:Utils.Paths.PathObjectGenerator.SmoothingIterations
-  fullName: Utils.Paths.PathObjectGenerator.SmoothingIterations
-  nameWithType: PathObjectGenerator.SmoothingIterations
-- uid: Utils.Paths.PathObjectGenerator.SmoothingIterations*
-  name: SmoothingIterations
-  href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_SmoothingIterations_
-  commentId: Overload:Utils.Paths.PathObjectGenerator.SmoothingIterations
-  isSpec: "True"
-  fullName: Utils.Paths.PathObjectGenerator.SmoothingIterations
-  nameWithType: PathObjectGenerator.SmoothingIterations
 - uid: Utils.Paths.PathObjectGenerator.TerrainOffsetY
   name: TerrainOffsetY
   href: api/Utils.Paths.PathObjectGenerator.html#Utils_Paths_PathObjectGenerator_TerrainOffsetY

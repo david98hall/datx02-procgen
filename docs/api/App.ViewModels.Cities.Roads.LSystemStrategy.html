@@ -108,7 +108,7 @@ This data is used to generate road networks with an L-system algorithm.</p>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.Generate()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.OnEvent(AppEvent, Object)</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.OnEvent(AppEvent, Object, Object)</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -375,18 +375,18 @@ Delegates the generation to the created generator.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_App_AppEvent_System_Object_.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_App_AppEvent_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Roads/LSystemStrategy.cs/#L120">View Source</a>
   </span>
   <a id="App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_" data-uid="App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent*"></a>
-  <h4 id="App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_App_AppEvent_System_Object_" data-uid="App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent,System.Object)">OnEvent(AppEvent, Object)</h4>
+  <h4 id="App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_App_AppEvent_System_Object_System_Object_" data-uid="App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent,System.Object,System.Object)">OnEvent(AppEvent, Object, Object)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnEvent(AppEvent eventId, object eventData)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnEvent(AppEvent eventId, object eventData, object creator)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -408,10 +408,15 @@ Delegates the generation to the created generator.</p>
         <td><span class="parametername">eventData</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">creator</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.OnEvent(App.AppEvent, System.Object)</span></div>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.OnEvent(App.AppEvent, System.Object, System.Object)</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>

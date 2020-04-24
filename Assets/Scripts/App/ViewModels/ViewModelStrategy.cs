@@ -47,7 +47,7 @@ namespace App.ViewModels
         public abstract TO Generate();
 
         
-        public virtual void OnEvent(AppEvent eventId, object eventData)
+        public virtual void OnEvent(AppEvent eventId, object eventData, object creator)
         {
         }
     }
