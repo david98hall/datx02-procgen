@@ -100,21 +100,11 @@ namespace App.ViewModels.Cities.Roads
         /// <returns>The result of the delegated generation call.</returns>
         public override RoadNetwork Generate()
         {
-            RoadNetwork roadNetwork = null;
-            foreach (var input in inputs)
-            {
-                var tmpNetwork = new Factory().CreateLSystemStrategy(Injector, input.origin, input.rewrites).Generate();
-                if (roadNetwork == null)
-                {
-                    roadNetwork = tmpNetwork;
-                }
-                else
-                {
-                    roadNetwork.Merge(tmpNetwork);
-                }
-            }
-
-            return roadNetwork;
+            // Run one task per input and return the merged road network
+            return TaskUtils.RunActionInTasks(inputs, input => new Factory()
+                    .CreateLSystemStrategy(Injector, input.origin, input.rewrites)
+                    .Generate())
+                .Aggregate(new RoadNetwork(), (r1, r2) => r1.Merge(r2));
         }
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)

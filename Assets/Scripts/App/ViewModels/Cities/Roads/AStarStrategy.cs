@@ -90,9 +90,13 @@ namespace App.ViewModels.Cities.Roads
         /// Delegates the generation to the created generator.
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
-        public override RoadNetwork Generate() => 
-            new Factory().CreateAStarStrategy(Injector, heightBias, 
-                paths.Select(p => (p.start, p.goal))).Generate();
+        public override RoadNetwork Generate()
+        {
+            return TaskUtils.RunActionInTasks(paths, path => new Factory()
+                    .CreateAStarStrategy(Injector, heightBias, new []{(path.start, path.goal)})
+                    .Generate())
+                .Aggregate(new RoadNetwork(), (r1, r2) => r1.Merge(r2));
+        }
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {

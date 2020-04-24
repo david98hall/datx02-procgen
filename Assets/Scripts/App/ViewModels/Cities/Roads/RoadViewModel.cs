@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Cities.Roads;
 using Interfaces;
 using Services;
@@ -157,9 +158,15 @@ namespace App.ViewModels.Cities.Roads
         
         public override RoadNetwork Generate()
         {
-            var aStarRoadNetwork = aStarEnabled ? aStarStrategy.Generate() : null;
-            var lSystemRoadNetwork = lSystemEnabled ? lSystemStrategy.Generate() : null;
-
+            var tasks = new Task[]
+            {
+                Task.Run(() => aStarEnabled ? aStarStrategy.Generate() : null),
+                Task.Run(() => lSystemEnabled ? lSystemStrategy.Generate() : null)
+            };
+            Task.WaitAll(tasks);
+            var aStarRoadNetwork = ((Task<RoadNetwork>) tasks[0]).Result;
+            var lSystemRoadNetwork = ((Task<RoadNetwork>) tasks[1]).Result;
+            
             RoadNetwork mergedRoadNetwork;
             if (aStarRoadNetwork == null)
             {

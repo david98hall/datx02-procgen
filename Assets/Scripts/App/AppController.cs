@@ -124,7 +124,7 @@ namespace App
 
             // Update the model's terrain data
             _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
-            _model.TerrainTransform = _meshFilter.transform;
+            _model.TerrainOffset = _meshFilter.transform.position;
             
             _model.City = cityViewModel.Generate();
             if (_model.City == null) return;
@@ -188,7 +188,7 @@ namespace App
             /// </summary>
             internal float[,] TerrainHeightMap { get; set; }
 
-            internal Transform TerrainTransform { get; set; }
+            internal Vector3 TerrainOffset { get; set; }
             
             /// <summary>
             /// Generated texture.
@@ -207,7 +207,7 @@ namespace App
             public TerrainInfo Get() => new TerrainInfo
             {
                 HeightMap = TerrainHeightMap,
-                Offset = TerrainTransform.localPosition
+                Offset = TerrainOffset
             };
         }
     }
