@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using App.ViewModels.Cities;
 using App.ViewModels.Terrain;
@@ -110,17 +111,28 @@ namespace App
             
             _initialized = true;
         }
+
+        public void Reset()
+        {
+            foreach (var obj in gameObjects) DestroyImmediate(obj);
+            gameObjects.Clear();
+            
+            _meshFilter.sharedMesh = null;
+            _meshCollider.sharedMesh = null;
+            _meshRenderer.sharedMaterial.mainTexture = null;
+        }
         
         /// <summary>
         /// Delegates the generation to the underlying view models.
         /// Displays the generated content using the unity objects
         /// </summary>
-        public async void GenerateAsync()
+        public async void GenerateAsync(CancellationToken cancellationToken)
         {
-            foreach (var obj in gameObjects) DestroyImmediate(obj);
-            gameObjects.Clear();
+            Reset();
             
-            var (terrainMesh, terrainTexture) = await Task.Run(() => terrainViewModel.Generate());
+            var (terrainMesh, terrainTexture) = await Task.Run(() => terrainViewModel.Generate(), cancellationToken);
+            if (cancellationToken.IsCancellationRequested || terrainMesh == null || terrainTexture == null) 
+                return;
             
             // Update component data
             _meshFilter.sharedMesh = terrainMesh;
@@ -130,11 +142,18 @@ namespace App
             // Update the model's terrain data
             _model.TerrainTexture = terrainTexture;
             _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
-            _model.TerrainOffset = _meshFilter.transform.position;
+            _model.TerrainOffset = _meshFilter.transform.position; 
             
-            _model.City = await Task.Run(() => cityViewModel.Generate());
-            if (_model.City == null) return;
-            
+            _model.City = await Task.Run(() => cityViewModel.Generate(), cancellationToken);
+            if (cancellationToken.IsCancellationRequested || _model.City == null) 
+                return;
+
+            CreateGameObjects();
+        }
+
+        // Create game objects based on the model data
+        private void CreateGameObjects()
+        {
             // Set the values of the path object generator according to the UI-values
             var pathObjectGenerator = new PathObjectGenerator
             {
@@ -174,7 +193,7 @@ namespace App
                 _meshFilter, _meshCollider,
                 "Road Network", "Road"));
         }
-
+        
         /// <summary>
         /// Displays the editors of the underlying view models.
         /// </summary>

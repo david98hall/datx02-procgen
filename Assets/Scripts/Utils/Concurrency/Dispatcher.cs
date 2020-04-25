@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
 namespace Utils.Concurrency
 {
@@ -16,12 +14,14 @@ namespace Utils.Concurrency
         
         private readonly Queue<Func<object>> pendingFunctions;
         private readonly ConcurrentDictionary<Func<object>, object> results;
+        private readonly ConcurrentDictionary<Action, byte> finishedActions;
         
         private Dispatcher()
         {
             pendingActions = new Queue<Action>();
             pendingFunctions = new Queue<Func<object>>();
             results = new ConcurrentDictionary<Func<object>, object>();
+            finishedActions = new ConcurrentDictionary<Action, byte>();
         }
 
         public void EnqueueAction(Action action)
@@ -29,6 +29,17 @@ namespace Utils.Concurrency
             lock (pendingActions)
             {
                 pendingActions.Enqueue(action);
+            }
+        }
+
+        public void EnqueueActionAndWait(Action action)
+        {
+            EnqueueAction(action);
+
+            while (true)
+            {
+                if (finishedActions.TryRemove(action, out _))
+                    break;
             }
         }
         
@@ -57,6 +68,8 @@ namespace Utils.Concurrency
                 foreach (var action in pendingActions)
                 {
                     action();
+                    while (!finishedActions.TryAdd(action, 0))
+                    {}
                 }
                 pendingActions.Clear();
             }
@@ -66,7 +79,7 @@ namespace Utils.Concurrency
                 foreach (var func in pendingFunctions)
                 {
                     var result = func();
-                    while (results.TryAdd(func, result))
+                    while (!results.TryAdd(func, result))
                     {}
                 }
                 pendingFunctions.Clear();
