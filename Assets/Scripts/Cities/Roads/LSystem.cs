@@ -149,7 +149,7 @@ namespace Cities.Roads
                                     break;
                                     }
                                     intersects = noIntersects(splitState.pos, range);
-                                    if(intersects <= 1){
+                                    if(intersects < 1){
                                         splitRoad.AddLast(state.pos + 2 * length * splitDir);
                                         splitRoad.AddLast(splitState.pos);
                                         states.Enqueue(splitState);
@@ -221,8 +221,6 @@ namespace Cities.Roads
 
             int grids = UnityEngine.Random.Range(3,10);
             Queue<State> workSites = new Queue<State>();
-            LinkedList<Vector3> road = new LinkedList<Vector3>();
-            road.AddLast(state.pos);
             workSites.Enqueue(state);
             float range = 3.0f;
             State workSite = new State();
@@ -249,6 +247,8 @@ namespace Cities.Roads
                         size = 2;
                         break;
                 }
+                LinkedList<Vector3> road = new LinkedList<Vector3>();
+                road.AddLast(state.pos);
                 for (int j = 0; j < 4; j++) // A square road is created
                 {
                     workSite.pos += size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
@@ -259,20 +259,25 @@ namespace Cities.Roads
                         }else{break;}
                     }else{break;}
                 }
-                network.AddRoad(road);
-                Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order of which worksites are added to the queue
-                    if(noIntersects(workSite.pos, range) <= 1)
-                        workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
-                    if(noIntersects(newPos, range) <= 1)
-                        workSites.Enqueue(new State(newPos, workSite.angle));
+                if(road.Count > 1){
+                    network.AddRoad(road);
+                    if(road.Count > 4){
+                        Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
+                        if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
+                            if(noIntersects(workSite.pos, range) <= 1)
+                                workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                            if(noIntersects(newPos, range) <= 1)
+                                workSites.Enqueue(new State(newPos, workSite.angle));
 
-                }else{
-                    if(noIntersects(newPos, range) <= 1)
-                        workSites.Enqueue(new State(newPos, workSite.angle));
-                    if(noIntersects(workSite.pos, range) <= 1)
-                        workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                        }else{
+                            if(noIntersects(newPos, range) <= 1)
+                                workSites.Enqueue(new State(newPos, workSite.angle));
+                            if(noIntersects(workSite.pos, range) <= 1)
+                                workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                        }
+                    }
                 }
+                
             }
             return workSite;
 
