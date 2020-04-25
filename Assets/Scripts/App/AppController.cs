@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using App.ViewModels.Cities;
 using App.ViewModels.Terrain;
 using Cities;
@@ -9,6 +10,7 @@ using Interfaces;
 using Services;
 using Terrain;
 using UnityEngine;
+using Utils.Concurrency;
 using Utils.Paths;
 
 namespace App
@@ -113,20 +115,24 @@ namespace App
         /// Delegates the generation to the underlying view models.
         /// Displays the generated content using the unity objects
         /// </summary>
-        public void Generate()
+        public async void GenerateAsync()
         {
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
             
-            (_meshFilter.sharedMesh, _model.TerrainTexture) = terrainViewModel.Generate();
-            _meshCollider.sharedMesh = _meshFilter.sharedMesh;
-            _meshRenderer.sharedMaterial.mainTexture = _model.TerrainTexture;
+            var (terrainMesh, terrainTexture) = await Task.Run(() => terrainViewModel.Generate());
+            
+            // Update component data
+            _meshFilter.sharedMesh = terrainMesh;
+            _meshCollider.sharedMesh = terrainMesh;
+            _meshRenderer.sharedMaterial.mainTexture = terrainTexture;
 
             // Update the model's terrain data
+            _model.TerrainTexture = terrainTexture;
             _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
             _model.TerrainOffset = _meshFilter.transform.position;
             
-            _model.City = cityViewModel.Generate();
+            _model.City = await Task.Run(() => cityViewModel.Generate());
             if (_model.City == null) return;
             
             // Set the values of the path object generator according to the UI-values
@@ -177,7 +183,7 @@ namespace App
             terrainViewModel.Display();
             cityViewModel.Display();
         }
-        
+
         /// <summary>
         /// The run-time model of all generated content.
         /// </summary>

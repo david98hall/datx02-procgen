@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils.Concurrency;
 
 /// <summary>
 /// Generated buildings. Each building is defined by its vertices, bounds, position and facing.
@@ -32,8 +33,11 @@ public class Building
     /// <param name="mesh"></param>
     public Building(Vector3 position, Vector2 facing, Mesh mesh)
     {
-        this.width = mesh.bounds.size.x;
-        this.height = mesh.bounds.size.z;
+        Dispatcher.Instance.EnqueueAction(() =>
+        {
+            width = mesh.bounds.size.x;
+            height = mesh.bounds.size.z;
+        });
 
         this.position = position;
         this.facing = facing;

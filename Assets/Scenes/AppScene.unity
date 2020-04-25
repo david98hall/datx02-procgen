@@ -363,45 +363,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator
       objectReference: {fileID: 0}
-    - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
-        type: 3}
-      propertyPath: cityViewModel.roadViewModel.aStarStrategy.paths.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
-        type: 3}
-      propertyPath: cityViewModel.roadViewModel.lSystemStrategy.inputs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
-        type: 3}
-      propertyPath: cityViewModel.roadViewModel.aStarStrategy.paths.Array.data[1].goal.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
-        type: 3}
-      propertyPath: cityViewModel.roadViewModel.aStarStrategy.paths.Array.data[1].goal.y
-      value: 249
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
-        type: 3}
-      propertyPath: cityViewModel.roadViewModel.aStarStrategy.paths.Array.data[1].start.x
-      value: 249
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
-        type: 3}
-      propertyPath: cityViewModel.roadViewModel.lSystemStrategy.inputs.Array.data[1].origin.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
-        type: 3}
-      propertyPath: cityViewModel.roadViewModel.lSystemStrategy.inputs.Array.data[1].origin.y
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
-        type: 3}
-      propertyPath: cityViewModel.roadViewModel.lSystemStrategy.inputs.Array.data[1].rewrites
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 618f259ca8856494ebb0cc9a75e707b7, type: 3}

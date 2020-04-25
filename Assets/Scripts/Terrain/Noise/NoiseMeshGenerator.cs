@@ -3,6 +3,7 @@ using Extensions;
 using Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
+using Utils.Concurrency;
 
 namespace Terrain.Noise
 {
@@ -111,16 +112,20 @@ namespace Terrain.Noise
                     vertexIndex++;
                 }
             }
-
+            
             // Return a mesh based on the calculated data
-            var mesh = new Mesh
+            return Dispatcher.Instance.EnqueueFunction(() =>
             {
-                vertices = vertices,
-                triangles = triangles,
-                uv = textureCoordinates
-            };
-            mesh.RecalculateNormals();
-            return mesh;
+                var mesh = new Mesh
+                {
+                    vertices = vertices,
+                    triangles = triangles,
+                    uv = textureCoordinates
+                };
+                mesh.RecalculateNormals();
+
+                return mesh;
+            });
         }
     }
 }

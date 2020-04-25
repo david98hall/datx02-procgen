@@ -87,6 +87,8 @@ namespace App.ViewModels.Terrain
             var mesh = new Factory().CreateMeshGenerator(
                 new Injector<float[,]>(() => heightMap), heightCurve, heightScale).Generate();
 
+            Debug.Log("Mesh finished!");
+            
             return (mesh, textureViewModel.Generate());
         }
 

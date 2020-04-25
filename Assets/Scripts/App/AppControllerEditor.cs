@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -19,7 +20,10 @@ namespace App
             if (!(target is AppController controller)) return;
             controller.Display();
 
-            if (GUILayout.Button("Update")) controller.Generate();
+            if (GUILayout.Button("Update"))
+            {
+                controller.GenerateAsync();
+            }
 
             if (!GUI.changed) return;
             EditorUtility.SetDirty(controller);

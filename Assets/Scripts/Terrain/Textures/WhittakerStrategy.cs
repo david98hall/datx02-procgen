@@ -2,6 +2,7 @@ using System;
 using Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
+using Utils.Concurrency;
 
 namespace Terrain.Textures
 {
@@ -60,21 +61,24 @@ namespace Terrain.Textures
             var heights = Injector.Get();
             var precipitation = GenerateMap(PrecipitationScale);
             var temperature = GenerateMap(TemperatureScale);
-            
-            var texture = new Texture2D(heights.GetLength(0), heights.GetLength(1));
-            
-            // for each pixel in texture, set color of texture
-            for (var x = 0; x < texture.width; x++)
+
+            return Dispatcher.Instance.EnqueueFunction(() =>
             {
-                for (var y = 0; y < texture.height; y++)
+                var texture = new Texture2D(heights.GetLength(0), heights.GetLength(1));
+
+                // for each pixel in texture, set color of texture
+                for (var x = 0; x < texture.width; x++)
                 {
-                    var color = ComputeColor(heights[x, y], precipitation[x, y], temperature[x, y]);
-                    texture.SetPixel(x, y, color);
+                    for (var y = 0; y < texture.height; y++)
+                    {
+                        var color = ComputeColor(heights[x, y], precipitation[x, y], temperature[x, y]);
+                        texture.SetPixel(x, y, color);
+                    }
                 }
-            }
-            
-            texture.Apply(false);
-            return texture;
+
+                texture.Apply(false);
+                return texture;
+            });
         }
         
         #endregion

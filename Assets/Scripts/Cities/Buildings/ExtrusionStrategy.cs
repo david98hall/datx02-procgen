@@ -7,6 +7,8 @@ using Cities.Plots;
 using Utils.Geometry;
 using Interfaces;
 using Terrain;
+using Utils;
+using Utils.Concurrency;
 
 /// <summary>
 /// Generator for buildings. 
@@ -110,7 +112,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
             // Only generate building if suitable lot
             if (ValidLot(lot))
             {
-                float y = Random.Range(1f, 5.5f);
+                float y = MathUtils.RandomFloatInRange(1f, 5.5f);
 
                 IList<Vector3> vertices = lot.Vertices.ToList();
 
@@ -283,13 +285,16 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     /// <returns>The mesh constructed from the arrays.</returns>
     private Mesh BuildMesh(ICollection<Vector3> verts, ICollection<int> tris)
     {
-        Mesh mesh = new Mesh();
-        mesh.vertices = verts.ToArray();
-        mesh.triangles = tris.ToArray();
-        mesh.uv = new Vector2[verts.Count];
-        mesh.RecalculateBounds();
-        mesh.RecalculateNormals();
-        return mesh;
+        return Dispatcher.Instance.EnqueueFunction(() =>
+        {
+            Mesh mesh = new Mesh();
+            mesh.vertices = verts.ToArray();
+            mesh.triangles = tris.ToArray();
+            mesh.uv = new Vector2[verts.Count];
+            mesh.RecalculateBounds();
+            mesh.RecalculateNormals();
+            return mesh;
+        });
     }
 
 
