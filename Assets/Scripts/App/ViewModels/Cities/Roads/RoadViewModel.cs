@@ -163,26 +163,14 @@ namespace App.ViewModels.Cities.Roads
                 Task.Run(() => aStarEnabled ? aStarStrategy.Generate() : null),
                 Task.Run(() => lSystemEnabled ? lSystemStrategy.Generate() : null)
             };
+            
             Task.WaitAll(tasks);
             var aStarRoadNetwork = ((Task<RoadNetwork>) tasks[0]).Result;
             var lSystemRoadNetwork = ((Task<RoadNetwork>) tasks[1]).Result;
             
-            RoadNetwork mergedRoadNetwork;
-            if (aStarRoadNetwork == null)
-            {
-                mergedRoadNetwork = lSystemRoadNetwork;
-            } 
-            else if (lSystemRoadNetwork == null)
-            {
-                mergedRoadNetwork = aStarRoadNetwork;
-            }
-            else
-            {
-                aStarRoadNetwork.Merge(lSystemRoadNetwork);
-                mergedRoadNetwork = aStarRoadNetwork;
-            }
-
-            return mergedRoadNetwork;
+            // Merge any combinations of road networks and return the result
+            if (aStarRoadNetwork == null) return lSystemRoadNetwork;
+            return lSystemRoadNetwork == null ? aStarRoadNetwork : aStarRoadNetwork.Merge(lSystemRoadNetwork);
         }
     }
 }
