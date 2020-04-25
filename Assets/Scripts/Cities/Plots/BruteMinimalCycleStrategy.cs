@@ -64,13 +64,16 @@ namespace Cities.Plots
         /// <returns>All cycles in the road network.</returns>
         private IEnumerable<IReadOnlyCollection<Vector3>> GetAllCycles(RoadNetwork roadNetwork)
         {
+            // Concurrent search for cycles from each vertex
             return TaskUtils.RunActionInTasks(
                     roadNetwork.RoadVertices,
                     vertex => TryGetCycles(roadNetwork, vertex, out var vertexCycles)
                         ? vertexCycles
                         : new List<IReadOnlyCollection<Vector3>>(), 
                     CancelToken)
+                // Put all found cycles in one collection
                 ?.SelectMany(cycle => cycle)
+                // Filter out any cycles that do not have any vertices
                 .Where(c => c.Any());
         }
         
@@ -79,7 +82,7 @@ namespace Cities.Plots
         /// </summary>
         /// <param name="cycles">The cycles to extract from.</param>
         /// <returns>All extracted minimal cycles in the given enumerable.</returns>
-        private static IEnumerable<IReadOnlyCollection<Vector3>> ExtractMinimalCycles(
+        private IEnumerable<IReadOnlyCollection<Vector3>> ExtractMinimalCycles(
             IEnumerable<IReadOnlyCollection<Vector3>> cycles)
         {
             var minimalCycles = new LinkedList<IReadOnlyCollection<Vector3>>();
@@ -87,6 +90,9 @@ namespace Cities.Plots
             // Filter away any cycles that overlap minimal ones; they're not minimal
             foreach (var cycle in cycles)
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+                
                 // Find out if the cycle is overlapping any minimal one
                 var cycleXz = cycle.Select(Vec3ToVec2);
                 var isOverlapping = minimalCycles.Any(minimalCycle => 

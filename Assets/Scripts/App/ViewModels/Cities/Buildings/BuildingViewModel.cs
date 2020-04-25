@@ -87,9 +87,7 @@ namespace App.ViewModels.Cities.Buildings
                     extrusionStrategy.Injector = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -104,9 +102,7 @@ namespace App.ViewModels.Cities.Buildings
                     extrusionStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
         
@@ -121,9 +117,7 @@ namespace App.ViewModels.Cities.Buildings
                     extrusionStrategy.CancelToken = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
         

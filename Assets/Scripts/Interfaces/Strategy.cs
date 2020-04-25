@@ -14,7 +14,7 @@ namespace Interfaces
         /// <summary>
         /// The injector of the input.
         /// </summary>
-        protected IInjector<TI> Injector;
+        protected IInjector<TI> Injector { get; set; }
 
         /// <summary>
         /// Initializes the strategy by setting the input injector.

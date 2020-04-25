@@ -30,7 +30,10 @@ namespace App.ViewModels
             get => _eventBus;
             set
             {
+                // Unsubscribe from the current event bus (if there is one)
                 _eventBus?.Unsubscribe(this);
+                
+                // Subscribe to the new event bus
                 _eventBus = value;
                 _eventBus.Subscribe(this);
             }
@@ -53,6 +56,7 @@ namespace App.ViewModels
         
         public virtual void OnEvent(AppEvent eventId, object eventData, object creator)
         {
+            // No default event action
         }
     }
 }

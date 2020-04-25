@@ -88,7 +88,6 @@ namespace App.ViewModels.Cities.Plots
             if (Injector.Get().Item1 == null) return null;
             
             var plotStrategyFactory = new Factory(Injector);
-
             IGenerator<IEnumerable<Plot>> generator;
             switch (plotStrategy)
             {
@@ -112,6 +111,7 @@ namespace App.ViewModels.Cities.Plots
                     throw new ArgumentOutOfRangeException();
             }
 
+            // Set the cancellation token so that the generation can be canceled
             generator.CancelToken = CancelToken;
             return generator.Generate();
         }

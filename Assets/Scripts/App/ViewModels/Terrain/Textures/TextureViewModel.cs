@@ -65,9 +65,7 @@ namespace App.ViewModels.Terrain.Textures
                     //grayScaleStrategy.Injector = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -83,9 +81,7 @@ namespace App.ViewModels.Terrain.Textures
                     //grayScaleStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -101,9 +97,7 @@ namespace App.ViewModels.Terrain.Textures
                     //grayScaleStrategy.CancelToken = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
         

@@ -87,9 +87,7 @@ namespace App.ViewModels.Cities
                         (Injector.Get(), plotViewModel.Generate()));
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -106,9 +104,7 @@ namespace App.ViewModels.Cities
                     buildingViewModel.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -125,9 +121,7 @@ namespace App.ViewModels.Cities
                     buildingViewModel.CancelToken = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
         
@@ -141,6 +135,7 @@ namespace App.ViewModels.Cities
 
             EditorGUI.indentLevel++;
             
+            // Display sub view models
             roadViewModel.Display();
             plotViewModel.Display();
             buildingViewModel.Display();

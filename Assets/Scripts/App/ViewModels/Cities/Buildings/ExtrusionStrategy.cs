@@ -53,6 +53,7 @@ namespace App.ViewModels.Cities.Buildings
         public override IEnumerable<Building> Generate()
         {
             var generator = new Factory(Injector).CreateExtrusionStrategy(minArea, maxArea);
+            // Set the cancellation token so that the generation can be canceled
             generator.CancelToken = CancelToken;
             return generator.Generate();
         }

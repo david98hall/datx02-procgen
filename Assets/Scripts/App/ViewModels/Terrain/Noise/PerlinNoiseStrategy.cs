@@ -102,6 +102,7 @@ namespace App.ViewModels.Terrain.Noise
                 seed, scale,
                 numOctaves, persistence,
                 lacunarity, noiseOffset);
+            // Set the cancellation token so that the generation can be canceled
             generator.CancelToken = CancelToken;
             return generator.Generate();
         }
@@ -110,6 +111,7 @@ namespace App.ViewModels.Terrain.Noise
         {
             if (eventId == AppEvent.Broadcast)
             {
+                // If a broadcast event is happening, broadcast the current noise map size
                 EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth), this);
             }
         }

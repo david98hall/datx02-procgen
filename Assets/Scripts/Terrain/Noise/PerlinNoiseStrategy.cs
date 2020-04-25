@@ -107,6 +107,5 @@ namespace Terrain.Noise
             return noiseMap;
         }
 
-        //public float[,] Get() => Generate();
     }   
 }

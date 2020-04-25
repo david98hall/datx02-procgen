@@ -111,6 +111,9 @@ namespace App
             _initialized = true;
         }
 
+        /// <summary>
+        /// Resets this AppController.
+        /// </summary>
         internal void Reset()
         {
             foreach (var obj in gameObjects) DestroyImmediate(obj);
@@ -125,62 +128,61 @@ namespace App
         /// Delegates the generation to the underlying view models.
         /// Displays the generated content using the unity objects
         /// </summary>
-        internal async void GenerateAsync(Action finishedAction, CancellationToken cancellationToken)
+        /// <param name="finishAction">The action to invoke at the end of this method.</param>
+        /// <param name="cancellationToken">The cancellation token, used to cancel the generation.</param>
+        internal async void GenerateAsync(Action finishAction, CancellationToken cancellationToken)
         {
             Reset();
 
-            void Finish() => finishedAction?.Invoke();
+            // Invokes the finish action
+            void Finish() => finishAction?.Invoke();
 
+            // Update the cancellation token of the view models
             terrainViewModel.CancelToken = cancellationToken;
             cityViewModel.CancelToken = cancellationToken;
 
-            Mesh terrainMesh;
-            Texture2D terrainTexture;
             try
             {
-                (terrainMesh, terrainTexture) = await Task.Run(() => terrainViewModel.Generate(), cancellationToken);;
-            }
-            catch (TaskCanceledException)
-            {
-                Finish();
-                return;
-            }
+                // Generate the terrain
+                var (terrainMesh, terrainTexture) = await Task.Run(() => terrainViewModel.Generate(), cancellationToken);
+                if (cancellationToken.IsCancellationRequested || terrainMesh == null || terrainTexture == null)
+                {
+                    // Either the task was cancelled or a terrain value is null, abort.
+                    Finish();
+                    return;
+                }
             
-            if (cancellationToken.IsCancellationRequested || terrainMesh == null || terrainTexture == null)
-            {
-                Finish();
-                return;
-            }
+                // Update component data
+                _meshFilter.sharedMesh = terrainMesh;
+                _meshCollider.sharedMesh = terrainMesh;
+                _meshRenderer.sharedMaterial.mainTexture = terrainTexture;
+
+                // Update the model's terrain data
+                _model.TerrainTexture = terrainTexture;
+                _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
+                _model.TerrainOffset = _meshFilter.transform.position;
             
-            // Update component data
-            _meshFilter.sharedMesh = terrainMesh;
-            _meshCollider.sharedMesh = terrainMesh;
-            _meshRenderer.sharedMaterial.mainTexture = terrainTexture;
-
-            // Update the model's terrain data
-            _model.TerrainTexture = terrainTexture;
-            _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
-            _model.TerrainOffset = _meshFilter.transform.position;
-
-
-            try
-            {
+                // Generate a city
                 _model.City = await Task.Run(() => cityViewModel.Generate(), cancellationToken);
             }
             catch (TaskCanceledException)
             {
+                // A task was canceled, abort
                 Finish();
                 return;
             }
-            
+
             if (cancellationToken.IsCancellationRequested || _model.City == null)
             {
+                // Either the task was canceled or the city is not valid, abort.
                 Finish();
                 return;
             }
 
+            // Create game objects based on the world data (terrain and city elements)
             CreateGameObjects(cancellationToken);
-
+            
+            // Invoke the finish action
             Finish();
         }
 

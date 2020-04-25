@@ -55,9 +55,7 @@ namespace App.ViewModels.Terrain.Noise
                     perlinNoiseStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -72,9 +70,7 @@ namespace App.ViewModels.Terrain.Noise
                     perlinNoiseStrategy.CancelToken = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
         

@@ -51,9 +51,7 @@ namespace App.ViewModels.Terrain
                     textureViewModel.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -69,9 +67,7 @@ namespace App.ViewModels.Terrain
                     textureViewModel.CancelToken = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
         
@@ -105,6 +101,7 @@ namespace App.ViewModels.Terrain
 
             var meshGenerator = new Factory().CreateMeshGenerator(
                 new Injector<float[,]>(() => heightMap), heightCurve, heightScale);
+            // Set the cancellation token so that the generation can be canceled
             meshGenerator.CancelToken = CancelToken;
             var mesh = meshGenerator.Generate();
 

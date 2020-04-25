@@ -46,11 +46,8 @@ namespace Terrain.Noise
         
         public Mesh Generate()
         {
-            if (CancelToken.IsCancellationRequested)
-            {
-                Debug.Log("NoiseMeshGenerator Cancel!");
-                return null;
-            }
+            // Cancel if requested
+            if (CancelToken.IsCancellationRequested) return null;
             
             if (_noiseMapInjector.Get() == null)
             {
@@ -137,7 +134,6 @@ namespace Terrain.Noise
                     uv = textureCoordinates
                 };
                 mesh.RecalculateNormals();
-
                 return mesh;
             });
         }

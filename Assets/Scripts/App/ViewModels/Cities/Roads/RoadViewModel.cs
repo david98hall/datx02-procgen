@@ -84,9 +84,7 @@ namespace App.ViewModels.Cities.Roads
                     lSystemStrategy.Injector = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -102,9 +100,7 @@ namespace App.ViewModels.Cities.Roads
                     lSystemStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -120,9 +116,7 @@ namespace App.ViewModels.Cities.Roads
                     lSystemStrategy.CancelToken = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
         
@@ -177,13 +171,25 @@ namespace App.ViewModels.Cities.Roads
         
         public override RoadNetwork Generate()
         {
+            // One task per road network generation strategy
             var tasks = new Task[]
             {
                 Task.Run(() => aStarEnabled ? aStarStrategy.Generate() : null, CancelToken),
                 Task.Run(() => lSystemEnabled ? lSystemStrategy.Generate() : null, CancelToken)
             };
+
+            try
+            {
+                // Wait for all strategies to finish generating
+                Task.WaitAll(tasks);
+            }
+            catch (Exception)
+            {
+                // Task canceled, abort
+                return null;
+            }
             
-            Task.WaitAll(tasks);
+            // Extract the results of the different road network generation tasks
             var aStarRoadNetwork = ((Task<RoadNetwork>) tasks[0]).Result;
             var lSystemRoadNetwork = ((Task<RoadNetwork>) tasks[1]).Result;
             

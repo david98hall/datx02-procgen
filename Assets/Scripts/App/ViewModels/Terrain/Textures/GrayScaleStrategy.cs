@@ -23,6 +23,7 @@ namespace App.ViewModels.Terrain.Textures
         public override Texture2D Generate()
         {
             var generator = new Factory(Injector).CreateGrayScaleStrategy();
+            // Set the cancellation token so that the generation can be canceled
             generator.CancelToken = CancelToken;
             return generator.Generate();
         }
