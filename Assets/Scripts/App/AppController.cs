@@ -11,7 +11,6 @@ using Interfaces;
 using Services;
 using Terrain;
 using UnityEngine;
-using Utils.Concurrency;
 using Utils.Paths;
 
 namespace App
@@ -126,7 +125,7 @@ namespace App
         /// Delegates the generation to the underlying view models.
         /// Displays the generated content using the unity objects
         /// </summary>
-        public async void GenerateAsync(CancellationToken cancellationToken)
+        public async void GenerateAsync(Action finishedAction, CancellationToken cancellationToken)
         {
             Reset();
             
@@ -149,6 +148,8 @@ namespace App
                 return;
 
             CreateGameObjects();
+
+            finishedAction?.Invoke();
         }
 
         // Create game objects based on the model data

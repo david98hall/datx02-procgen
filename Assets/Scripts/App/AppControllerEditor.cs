@@ -1,5 +1,4 @@
 using System.Threading;
-using System.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -16,6 +15,13 @@ namespace App
 
         private CancellationTokenSource _cancellationTokenSource;
 
+        private void ResetCancellationTokenSource()
+        {
+            _cancellationTokenSource.Cancel();
+            _cancellationTokenSource.Dispose();
+            _cancellationTokenSource = null;
+        }
+        
         /// <summary>
         /// Overrides the default editor inspector and displays the custom editor.
         /// </summary>
@@ -28,13 +34,11 @@ namespace App
             {
                 _cancellationTokenSource = new CancellationTokenSource();
                 var cancellationToken = _cancellationTokenSource.Token;
-                controller.GenerateAsync(cancellationToken);
+                controller.GenerateAsync(ResetCancellationTokenSource, cancellationToken);
             } 
             else if (_cancellationTokenSource != null && GUILayout.Button("Cancel Generation"))
             {
-                _cancellationTokenSource.Cancel();
-                _cancellationTokenSource.Dispose();
-                _cancellationTokenSource = null;
+                ResetCancellationTokenSource();
                 controller.Reset();
             }
 
