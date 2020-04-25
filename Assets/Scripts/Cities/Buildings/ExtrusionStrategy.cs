@@ -82,6 +82,9 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     {
         foreach (var p in Injector.Get().Item2)
         {
+            // Cancel if requested
+            if (CancelToken.IsCancellationRequested) return null;
+            
             //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
             //ICollection<Lot> lots = lg.Generate();
 
@@ -109,6 +112,9 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     {
         foreach (Lot lot in lots)
         {
+            // Cancel if requested
+            if (CancelToken.IsCancellationRequested) return;
+            
             // Only generate building if suitable lot
             if (ValidLot(lot))
             {

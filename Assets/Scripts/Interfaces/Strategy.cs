@@ -1,3 +1,5 @@
+using System.Threading;
+
 namespace Interfaces
 {
     /// <summary>
@@ -7,6 +9,8 @@ namespace Interfaces
     /// <typeparam name="TO">The output type.</typeparam>
     public abstract class Strategy<TI, TO> : IGenerator<TO>
     {
+        public virtual CancellationToken CancelToken { get; set; } = CancellationToken.None;
+        
         /// <summary>
         /// The injector of the input.
         /// </summary>

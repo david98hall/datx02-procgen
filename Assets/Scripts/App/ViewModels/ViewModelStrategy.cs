@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Interfaces;
 using Services;
 
@@ -12,6 +13,9 @@ namespace App.ViewModels
     [Serializable]
     public abstract class ViewModelStrategy<TI, TO> : IGenerator<TO>, IDisplayable, ISubscriber<AppEvent>
     {
+        
+        public virtual CancellationToken CancelToken { get; set; }
+        
         internal virtual IInjector<TI> Injector { get; set; }
         
         /// <summary>

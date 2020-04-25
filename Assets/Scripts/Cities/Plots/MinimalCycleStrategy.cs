@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Cities.Roads;
 using Interfaces;
 using UnityEngine;
@@ -12,6 +13,15 @@ namespace Cities.Plots
     /// </summary>
     internal class MinimalCycleStrategy : Strategy<RoadNetwork, IEnumerable<Plot>>
     {
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                _clockwiseCycleStrategy.CancelToken = value;
+            }
+        }
 
         private readonly ClockwiseCycleStrategy _clockwiseCycleStrategy;
         
@@ -31,9 +41,12 @@ namespace Cities.Plots
         public override IEnumerable<Plot> Generate()
         {
             Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
+
+            var plots = _clockwiseCycleStrategy.Generate();
+            if (plots == null) return null;
             
             // Sort all cycles according to their areas (smallest first)
-            var allPlots = new List<Plot>(_clockwiseCycleStrategy.Generate());
+            var allPlots = new List<Plot>(plots);
             allPlots.Sort((plot1, plot2) =>
             {
                 var area1 = Maths2D.CalculatePolygonArea(plot1.Vertices.Select(Vec3ToVec2));

@@ -89,7 +89,7 @@ namespace App
         /// Is required for initializing the non-serializable properties of the view model.
         /// Should only be called once due to expensive operations.
         /// </summary>
-        public void Initialize()
+        internal void Initialize()
         {
             _eventBus = new EventBus<AppEvent>();
             
@@ -111,7 +111,7 @@ namespace App
             _initialized = true;
         }
 
-        public void Reset()
+        internal void Reset()
         {
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
@@ -125,13 +125,36 @@ namespace App
         /// Delegates the generation to the underlying view models.
         /// Displays the generated content using the unity objects
         /// </summary>
-        public async void GenerateAsync(Action finishedAction, CancellationToken cancellationToken)
+        internal async void GenerateAsync(Action finishedAction, CancellationToken cancellationToken)
         {
             Reset();
-            
-            var (terrainMesh, terrainTexture) = await Task.Run(() => terrainViewModel.Generate(), cancellationToken);
-            if (cancellationToken.IsCancellationRequested || terrainMesh == null || terrainTexture == null) 
+
+            void Finish()
+            {
+                Debug.Log("Cancelling!");
+                finishedAction?.Invoke();
+            }
+
+            terrainViewModel.CancelToken = cancellationToken;
+            cityViewModel.CancelToken = cancellationToken;
+
+            Mesh terrainMesh;
+            Texture2D terrainTexture;
+            try
+            {
+                (terrainMesh, terrainTexture) = await Task.Run(() => terrainViewModel.Generate(), cancellationToken);;
+            }
+            catch (TaskCanceledException)
+            {
+                Finish();
                 return;
+            }
+            
+            if (cancellationToken.IsCancellationRequested || terrainMesh == null || terrainTexture == null)
+            {
+                Finish();
+                return;
+            }
             
             // Update component data
             _meshFilter.sharedMesh = terrainMesh;
@@ -141,19 +164,32 @@ namespace App
             // Update the model's terrain data
             _model.TerrainTexture = terrainTexture;
             _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
-            _model.TerrainOffset = _meshFilter.transform.position; 
-            
-            _model.City = await Task.Run(() => cityViewModel.Generate(), cancellationToken);
-            if (cancellationToken.IsCancellationRequested || _model.City == null) 
+            _model.TerrainOffset = _meshFilter.transform.position;
+
+
+            try
+            {
+                _model.City = await Task.Run(() => cityViewModel.Generate(), cancellationToken);
+            }
+            catch (TaskCanceledException)
+            {
+                Finish();
                 return;
+            }
+            
+            if (cancellationToken.IsCancellationRequested || _model.City == null)
+            {
+                Finish();
+                return;
+            }
 
-            CreateGameObjects();
+            CreateGameObjects(cancellationToken);
 
-            finishedAction?.Invoke();
+            Finish();
         }
 
         // Create game objects based on the model data
-        private void CreateGameObjects()
+        private void CreateGameObjects(CancellationToken cancellationToken)
         {
             // Set the values of the path object generator according to the UI-values
             var pathObjectGenerator = new PathObjectGenerator
@@ -175,10 +211,15 @@ namespace App
             // Display buildings
             if (cityViewModel.DisplayBuildings)
             {
-                var container = new GameObject("Buildings", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+                var container = new GameObject(
+                    "Buildings", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
                 foreach (var b in _model.City.Buildings)
                 {
-                    var obj = new GameObject("Building", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+                    // Cancel if requested
+                    if (cancellationToken.IsCancellationRequested) return;
+                    
+                    var obj = new GameObject(
+                        "Building", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
                     obj.GetComponent<MeshFilter>().mesh = b.mesh;
                     obj.GetComponent<MeshRenderer>().sharedMaterial = cityViewModel.BuildingMaterial;
 

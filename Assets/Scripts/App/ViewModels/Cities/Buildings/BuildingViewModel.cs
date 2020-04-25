@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using Cities.Plots;
 using Interfaces;
 using Services;
 using Terrain;
 using UnityEditor;
 using UnityEngine;
-using Factory = Cities.Buildings.Factory;
 
 namespace App.ViewModels.Cities.Buildings
 {
@@ -102,6 +102,23 @@ namespace App.ViewModels.Cities.Buildings
                 try
                 {
                     extrusionStrategy.EventBus = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+        
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    extrusionStrategy.CancelToken = value;
                 }
                 catch (NullReferenceException)
                 {

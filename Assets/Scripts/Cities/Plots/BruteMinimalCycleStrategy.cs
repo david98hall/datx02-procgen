@@ -62,14 +62,15 @@ namespace Cities.Plots
         /// </summary>
         /// <param name="roadNetwork">The road network.</param>
         /// <returns>All cycles in the road network.</returns>
-        private static IEnumerable<IReadOnlyCollection<Vector3>> GetAllCycles(RoadNetwork roadNetwork)
+        private IEnumerable<IReadOnlyCollection<Vector3>> GetAllCycles(RoadNetwork roadNetwork)
         {
             return TaskUtils.RunActionInTasks(
                     roadNetwork.RoadVertices,
                     vertex => TryGetCycles(roadNetwork, vertex, out var vertexCycles)
                         ? vertexCycles
-                        : new List<IReadOnlyCollection<Vector3>>())
-                .SelectMany(cycle => cycle)
+                        : new List<IReadOnlyCollection<Vector3>>(), 
+                    CancelToken)
+                ?.SelectMany(cycle => cycle)
                 .Where(c => c.Any());
         }
         

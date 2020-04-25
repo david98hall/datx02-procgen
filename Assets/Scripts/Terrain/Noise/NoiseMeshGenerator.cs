@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Extensions;
 using Interfaces;
 using JetBrains.Annotations;
@@ -12,7 +13,8 @@ namespace Terrain.Noise
     /// </summary>
     internal class NoiseMeshGenerator : IGenerator<Mesh>
     {
-
+        public CancellationToken CancelToken { get; set; }
+        
         /// <summary>
         /// The scale of heights when generating a terrain mesh. The larger the scale, the higher the "mountains".
         /// </summary>
@@ -44,6 +46,12 @@ namespace Terrain.Noise
         
         public Mesh Generate()
         {
+            if (CancelToken.IsCancellationRequested)
+            {
+                Debug.Log("NoiseMeshGenerator Cancel!");
+                return null;
+            }
+            
             if (_noiseMapInjector.Get() == null)
             {
                 throw new NullReferenceException("The noise map is not set!");
@@ -85,8 +93,14 @@ namespace Terrain.Noise
             var trianglePointIndex = 0;
             for (var z = 0; z < height; z++)
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+                
                 for (var x = 0; x < width; x++)
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+                    
                     // Add the vertices (in Unity, y is vertical)
                     var y = HeightScale * _heightCurve.Evaluate(noiseMap[x, z]);
                     vertices[vertexIndex] = new Vector3(x, y, z);

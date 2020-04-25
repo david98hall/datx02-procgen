@@ -37,13 +37,17 @@ namespace App.ViewModels.Terrain.Textures
             temperatureScale = EditorGUILayout.Slider(
                 "Temperature scale", temperatureScale, 1, 100);
         }
-        
+
         /// <summary>
         /// Creates a generator with the serialized values from the editor.
         /// Delegates the generation to the created generator.
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
-        public override Texture2D Generate() => 
-            new Factory(Injector).CreateWhittakerStrategy(precipitationScale, temperatureScale).Generate();
+        public override Texture2D Generate()
+        {
+            var generator = new Factory(Injector).CreateWhittakerStrategy(precipitationScale, temperatureScale);
+            generator.CancelToken = CancelToken;
+            return generator.Generate();
+        }
     }
 }

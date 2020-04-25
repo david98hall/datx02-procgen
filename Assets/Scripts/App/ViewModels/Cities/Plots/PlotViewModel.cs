@@ -89,21 +89,31 @@ namespace App.ViewModels.Cities.Plots
             
             var plotStrategyFactory = new Factory(Injector);
 
+            IGenerator<IEnumerable<Plot>> generator;
             switch (plotStrategy)
             {
                 case PlotStrategy.MinimalCycle:
-                    return plotStrategyFactory.CreateMinimalCycleStrategy().Generate();
+                    generator = plotStrategyFactory.CreateMinimalCycleStrategy();
+                    break;
+                
                 case PlotStrategy.ClockWiseCycle:
-                    return plotStrategyFactory.CreateClockwiseCycleStrategy().Generate();
+                    generator = plotStrategyFactory.CreateClockwiseCycleStrategy();
+                    break;
                 case PlotStrategy.BruteMinimalCycle:
-                    return plotStrategyFactory.CreateBruteMinimalCycleStrategy().Generate();
+                    generator = plotStrategyFactory.CreateBruteMinimalCycleStrategy();
+                    break;
                 case PlotStrategy.Adjacent:
-                    return plotStrategyFactory.CreateAdjacentStrategy().Generate();
+                    generator = plotStrategyFactory.CreateAdjacentStrategy();
+                    break;
                 case PlotStrategy.Combined:
-                    return plotStrategyFactory.CreateCombinedStrategy().Generate();
+                    generator = plotStrategyFactory.CreateCombinedStrategy();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            generator.CancelToken = CancelToken;
+            return generator.Generate();
         }
     }
 }

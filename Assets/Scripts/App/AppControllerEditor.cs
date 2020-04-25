@@ -17,8 +17,8 @@ namespace App
 
         private void ResetCancellationTokenSource()
         {
-            _cancellationTokenSource.Cancel();
-            _cancellationTokenSource.Dispose();
+            _cancellationTokenSource?.Cancel();
+            _cancellationTokenSource?.Dispose();
             _cancellationTokenSource = null;
         }
         

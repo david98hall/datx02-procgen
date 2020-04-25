@@ -52,6 +52,9 @@ namespace Cities.Plots
             // Attempt to generate a plot along each road part
             foreach (var (start, end) in roadNetwork.GetRoadParts())
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+                
                 var roadVector = end - start;
                 var maxSideLength = Vector3.Magnitude(roadVector);
                 const float roadOffset = 0.25f; // distance from each road part
@@ -68,6 +71,9 @@ namespace Cities.Plots
                 // Check if new plot collides with any other plot
                 foreach (var plot in plots.Concat(_prevPlots))
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+                    
                     if (Maths2D.AreColliding(randomPlot.Vertices, plot.Vertices))
                     {
                         collision = true;
@@ -78,6 +84,9 @@ namespace Cities.Plots
                 // Check if new plot collides with any road part
                 foreach (var (s, e) in roadNetwork.GetRoadParts())
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+                    
                     if (Maths2D.LinePolyCollision(s, e, randomPlot.Vertices))
                     {
                         collision = true;

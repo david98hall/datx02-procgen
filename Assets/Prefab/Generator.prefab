@@ -154,7 +154,7 @@ MonoBehaviour:
         lacunarity: 5.83
         noiseOffset: {x: 0, y: 0}
     textureViewModel:
-      textureStrategy: 1
+      textureStrategy: 0
       whittakerStrategy:
         precipitationScale: 47
         temperatureScale: 47

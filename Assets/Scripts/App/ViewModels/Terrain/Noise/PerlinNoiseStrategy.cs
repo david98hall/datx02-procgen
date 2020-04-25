@@ -97,12 +97,13 @@ namespace App.ViewModels.Terrain.Noise
         /// <returns>The result of the delegated generation call.</returns>
         public override float[,] Generate()
         {
-            return new Factory().CreatePerlinNoiseStrategy(
-                    width, depth, 
-                    seed, scale, 
-                    numOctaves, persistence, 
-                    lacunarity, noiseOffset)
-                .Generate();
+            var generator = new Factory().CreatePerlinNoiseStrategy(
+                width, depth,
+                seed, scale,
+                numOctaves, persistence,
+                lacunarity, noiseOffset);
+            generator.CancelToken = CancelToken;
+            return generator.Generate();
         }
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)

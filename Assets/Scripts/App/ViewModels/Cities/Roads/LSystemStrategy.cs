@@ -101,10 +101,15 @@ namespace App.ViewModels.Cities.Roads
         public override RoadNetwork Generate()
         {
             // Run one task per input and return the merged road network
-            return TaskUtils.RunActionInTasks(inputs, input => new Factory()
-                    .CreateLSystemStrategy(Injector, input.origin, input.rewrites)
-                    .Generate())
-                .Aggregate(new RoadNetwork(), (r1, r2) => r1.Merge(r2));
+            return TaskUtils.RunActionInTasks(inputs, input =>
+                    {
+                        var generator = new Factory()
+                            .CreateLSystemStrategy(Injector, input.origin, input.rewrites);
+                        generator.CancelToken = CancelToken;
+                        return generator.Generate();
+                    }, 
+                    CancelToken)
+                ?.Aggregate(new RoadNetwork(), (r1, r2) => r1.Merge(r2));
         }
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)

@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using App.ViewModels.Terrain.Noise;
 using App.ViewModels.Terrain.Textures;
 using Interfaces;
@@ -55,6 +56,24 @@ namespace App.ViewModels.Terrain
                 }
             }
         }
+
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    noiseViewModel.CancelToken = value;
+                    textureViewModel.CancelToken = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
         
         /// <summary>
         /// Displays the editor of the view model.
@@ -83,9 +102,11 @@ namespace App.ViewModels.Terrain
             var heightMap = noiseViewModel.Generate();
             //textureViewModel.Injector = noiseViewModel;
             textureViewModel.Injector = new Injector<float[,]>(() => heightMap);
-            
-            var mesh = new Factory().CreateMeshGenerator(
-                new Injector<float[,]>(() => heightMap), heightCurve, heightScale).Generate();
+
+            var meshGenerator = new Factory().CreateMeshGenerator(
+                new Injector<float[,]>(() => heightMap), heightCurve, heightScale);
+            meshGenerator.CancelToken = CancelToken;
+            var mesh = meshGenerator.Generate();
 
             return (mesh, textureViewModel.Generate());
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Cities.Roads;
 using Interfaces;
@@ -107,6 +108,24 @@ namespace App.ViewModels.Cities.Roads
             }
         }
 
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    aStarStrategy.CancelToken = value;
+                    lSystemStrategy.CancelToken = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+        
         public override void Display()
         {
             _roadNetworkStrategyVisible 
@@ -160,8 +179,8 @@ namespace App.ViewModels.Cities.Roads
         {
             var tasks = new Task[]
             {
-                Task.Run(() => aStarEnabled ? aStarStrategy.Generate() : null),
-                Task.Run(() => lSystemEnabled ? lSystemStrategy.Generate() : null)
+                Task.Run(() => aStarEnabled ? aStarStrategy.Generate() : null, CancelToken),
+                Task.Run(() => lSystemEnabled ? lSystemStrategy.Generate() : null, CancelToken)
             };
             
             Task.WaitAll(tasks);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Interfaces;
 using Services;
 using Terrain.Textures;
@@ -27,7 +28,7 @@ namespace App.ViewModels.Terrain.Textures
         /// </summary>
         public enum TextureStrategy
         {
-            GrayScale, Whittaker
+            Whittaker // , GrayScale
         }
 
         /// <summary>
@@ -88,6 +89,24 @@ namespace App.ViewModels.Terrain.Textures
             }
         }
 
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    whittakerStrategy.CancelToken = value;
+                    //grayScaleStrategy.CancelToken = value;
+                }
+                catch (NullReferenceException)
+                {
+                    // Ignore
+                }
+            }
+        }
+        
         /// <summary>
         /// Displays the editor of texture and the view model of the currently selected texture strategy.
         /// </summary>
@@ -103,8 +122,8 @@ namespace App.ViewModels.Terrain.Textures
             EditorGUI.indentLevel++;
             switch (textureStrategy)
             {
-                case TextureStrategy.GrayScale:
-                    break;
+                // case TextureStrategy.GrayScale:
+                    // break;
                 case TextureStrategy.Whittaker:
                     whittakerStrategy.Display();
                     break;
@@ -125,8 +144,8 @@ namespace App.ViewModels.Terrain.Textures
         {
             switch (textureStrategy)
             {
-                case TextureStrategy.GrayScale:
-                    return new Factory(Injector).CreateGrayScaleStrategy().Generate();
+                // case TextureStrategy.GrayScale:
+                    // return new Factory(Injector).CreateGrayScaleStrategy().Generate();
                 case TextureStrategy.Whittaker:
                     return whittakerStrategy.Generate();
                 default:
