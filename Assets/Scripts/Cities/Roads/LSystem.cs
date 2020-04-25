@@ -150,19 +150,36 @@ namespace Cities.Roads
                                     }
                                     intersects = noIntersects(splitState.pos, range);
                                     if(intersects < 1){
-                                        splitRoad.AddLast(state.pos + 2 * length * splitDir);
-                                        splitRoad.AddLast(splitState.pos);
-                                        states.Enqueue(splitState);
+                                        Vector3 corner = state.pos + 2 * length * splitDir;
+                                        if(corner.x < maxX && corner.x > minX && corner.z < maxZ && corner.z > minZ){
+                                            splitRoad.AddLast(corner);
+                                            splitRoad.AddLast(splitState.pos);
+                                            states.Enqueue(splitState);
+                                        }
                                         LinkedList<Vector3> row2 = new LinkedList<Vector3>();
-                                        row2.AddLast(state.pos + 1 * length * splitDir);
-                                        row2.AddLast(state.pos + 1 * length * (splitDir + rotate90));
-                                        network.AddRoad(row2);
+                                        Vector3 row2End = state.pos + 1 * length * (splitDir + rotate90);
+                                        if(row2End.x < maxX && row2End.x > minX && row2End.z < maxZ && row2End.z > minZ){
+                                            row2.AddLast(state.pos + 1 * length * splitDir);
+                                            row2.AddLast(row2End);
+                                            network.AddRoad(row2);
+                                        }
                                     }
                                     break;
                                 }
                             }
-                            if(intersects < 4)
-                                network.AddRoad(splitRoad);
+                            if(intersects <= 1 && splitRoad.Count > 1){
+                                bool withinMesh = true;
+                                foreach (Vector3 node in splitRoad)
+                                {
+                                    if(node.x > maxX || node.x < minX || node.z > maxZ || node.z < minZ){
+                                        withinMesh = false;
+                                        break;
+                                    }
+                                }
+                                if(withinMesh){
+                                    network.AddRoad(splitRoad);
+                                }
+                            }
                             break;
                         }
                         case 'G': //Create a grid
