@@ -269,7 +269,7 @@ namespace Cities.Roads
                 for (int j = 0; j < 4; j++) // A square road is created
                 {
                     workSite.pos += size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                    if(workSite.pos.x < maxX && workSite.pos.x > minX && workSite.pos.z < maxZ && workSite.pos.z > minZ){
+                    if(isWithinMesh(workSite.pos)){
                         if(noIntersects(workSite.pos, range) < 2){
                         road.AddLast(workSite.pos);
                         workSite.angle += 90*toRad;
@@ -277,20 +277,30 @@ namespace Cities.Roads
                     }else{break;}
                 }
                 if(road.Count > 1){
-                    network.AddRoad(road);
-                    if(road.Count > 4){
-                        Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                        if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
-                            if(noIntersects(workSite.pos, range) <= 1)
-                                workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
-                            if(noIntersects(newPos, range) <= 1)
-                                workSites.Enqueue(new State(newPos, workSite.angle));
+                    bool withinMesh = true;
+                    foreach (Vector3 node in road)
+                    {
+                        if(!isWithinMesh(node)){
+                            withinMesh = false;
+                            break;
+                        }
+                    }
+                    if(withinMesh){
+                        network.AddRoad(road);
+                        if(road.Count > 4){
+                            Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
+                            if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
+                                if(noIntersects(workSite.pos, range) <= 1)
+                                    workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                                if(noIntersects(newPos, range) <= 1)
+                                    workSites.Enqueue(new State(newPos, workSite.angle));
 
-                        }else{
-                            if(noIntersects(newPos, range) <= 1)
-                                workSites.Enqueue(new State(newPos, workSite.angle));
-                            if(noIntersects(workSite.pos, range) <= 1)
-                                workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                            }else{
+                                if(noIntersects(newPos, range) <= 1)
+                                    workSites.Enqueue(new State(newPos, workSite.angle));
+                                if(noIntersects(workSite.pos, range) <= 1)
+                                    workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                            }
                         }
                     }
                 }
@@ -313,6 +323,9 @@ namespace Cities.Roads
                     n++;
             }
             return n;
+        }
+        private bool isWithinMesh(Vector3 pos){
+            return (pos.x < maxX && pos.x > minX && pos.z < maxZ && pos.z > minZ);
         }
     }
 }
