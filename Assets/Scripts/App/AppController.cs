@@ -129,11 +129,7 @@ namespace App
         {
             Reset();
 
-            void Finish()
-            {
-                Debug.Log("Cancelling!");
-                finishedAction?.Invoke();
-            }
+            void Finish() => finishedAction?.Invoke();
 
             terrainViewModel.CancelToken = cancellationToken;
             cityViewModel.CancelToken = cancellationToken;

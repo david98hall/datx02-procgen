@@ -170,9 +170,7 @@ MonoBehaviour:
       lSystemStrategy:
         inputs:
         - origin: {x: 125, y: 125}
-          rewrites: 6
-        - origin: {x: 200, y: 200}
-          rewrites: 3
+          rewrites: 5
       aStarEnabled: 1
       lSystemEnabled: 1
       roadWidth: 0.3
