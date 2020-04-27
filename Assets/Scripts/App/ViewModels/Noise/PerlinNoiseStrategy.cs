@@ -1,9 +1,9 @@
 using System;
-using Terrain.Noise;
+using Noise;
 using UnityEditor;
 using UnityEngine;
 
-namespace App.ViewModels.Terrain.Noise
+namespace App.ViewModels.Noise
 {
     /// <summary>
     /// View-model for displaying and generating noise with the Perlin noise strategy.

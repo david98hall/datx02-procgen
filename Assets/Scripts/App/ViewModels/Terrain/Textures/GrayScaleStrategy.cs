@@ -1,5 +1,5 @@
 using System;
-using Terrain.Textures;
+using Textures;
 using UnityEngine;
 
 namespace App.ViewModels.Terrain.Textures

@@ -1,10 +1,10 @@
 using System;
 using System.Threading;
-using App.ViewModels.Terrain.Noise;
+using App.ViewModels.Noise;
 using App.ViewModels.Terrain.Textures;
 using Interfaces;
 using Services;
-using Terrain.Noise;
+using Noise;
 using UnityEditor;
 using UnityEngine;
 

@@ -1,7 +1,7 @@
 ﻿using Interfaces;
 using UnityEngine;
 
-namespace Terrain.Textures
+namespace Textures
 {
     
     /// <summary>

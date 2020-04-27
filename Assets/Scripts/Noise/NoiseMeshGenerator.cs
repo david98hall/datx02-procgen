@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using Utils.Concurrency;
 
-namespace Terrain.Noise
+namespace Noise
 {
     /// <summary>
     /// Generates meshes based on noise maps.

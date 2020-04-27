@@ -2,10 +2,9 @@
 using System.Threading;
 using Interfaces;
 using Services;
-using Terrain.Textures;
+using Textures;
 using UnityEditor;
 using UnityEngine;
-using WhittakerStrategy = App.ViewModels.Terrain.Textures.WhittakerStrategy;
 
 namespace App.ViewModels.Terrain.Textures
 {

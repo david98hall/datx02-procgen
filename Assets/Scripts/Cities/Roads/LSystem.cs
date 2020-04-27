@@ -150,20 +150,37 @@ namespace Cities.Roads
                                     break;
                                     }
                                     intersects = noIntersects(splitState.pos, range);
-                                    if(intersects <= 1){
-                                        splitRoad.AddLast(state.pos + 2 * length * splitDir);
-                                        splitRoad.AddLast(splitState.pos);
-                                        states.Enqueue(splitState);
+                                    if(intersects < 1){
+                                        Vector3 corner = state.pos + 2 * length * splitDir;
+                                        if(corner.x < maxX && corner.x > minX && corner.z < maxZ && corner.z > minZ){
+                                            splitRoad.AddLast(corner);
+                                            splitRoad.AddLast(splitState.pos);
+                                            states.Enqueue(splitState);
+                                        }
                                         LinkedList<Vector3> row2 = new LinkedList<Vector3>();
-                                        row2.AddLast(state.pos + 1 * length * splitDir);
-                                        row2.AddLast(state.pos + 1 * length * (splitDir + rotate90));
-                                        network.AddRoad(row2);
+                                        Vector3 row2End = state.pos + 1 * length * (splitDir + rotate90);
+                                        if(row2End.x < maxX && row2End.x > minX && row2End.z < maxZ && row2End.z > minZ){
+                                            row2.AddLast(state.pos + 1 * length * splitDir);
+                                            row2.AddLast(row2End);
+                                            network.AddRoad(row2);
+                                        }
                                     }
                                     break;
                                 }
                             }
-                            if(intersects < 4)
-                                network.AddRoad(splitRoad);
+                            if(intersects <= 1 && splitRoad.Count > 1){
+                                bool withinMesh = true;
+                                foreach (Vector3 node in splitRoad)
+                                {
+                                    if(node.x > maxX || node.x < minX || node.z > maxZ || node.z < minZ){
+                                        withinMesh = false;
+                                        break;
+                                    }
+                                }
+                                if(withinMesh){
+                                    network.AddRoad(splitRoad);
+                                }
+                            }
                             break;
                         }
                         case 'G': //Create a grid
@@ -224,8 +241,6 @@ namespace Cities.Roads
             var rdm = new Random();
             int grids = rdm.Next(3,10);
             Queue<State> workSites = new Queue<State>();
-            LinkedList<Vector3> road = new LinkedList<Vector3>();
-            road.AddLast(state.pos);
             workSites.Enqueue(state);
             float range = 3.0f;
             State workSite = new State();
@@ -252,30 +267,47 @@ namespace Cities.Roads
                         size = 2;
                         break;
                 }
+                LinkedList<Vector3> road = new LinkedList<Vector3>();
+                road.AddLast(state.pos);
                 for (int j = 0; j < 4; j++) // A square road is created
                 {
                     workSite.pos += size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                    if(workSite.pos.x < maxX && workSite.pos.x > minX && workSite.pos.z < maxZ && workSite.pos.z > minZ){
+                    if(isWithinMesh(workSite.pos)){
                         if(noIntersects(workSite.pos, range) < 2){
                         road.AddLast(workSite.pos);
                         workSite.angle += 90*toRad;
                         }else{break;}
                     }else{break;}
                 }
-                network.AddRoad(road);
-                Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                if(rdm.Next(0,1) < 0.5f){ //Some randomness to mix up the order of which worksites are added to the queue
-                    if(noIntersects(workSite.pos, range) <= 1)
-                        workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
-                    if(noIntersects(newPos, range) <= 1)
-                        workSites.Enqueue(new State(newPos, workSite.angle));
+                if(road.Count > 1){
+                    bool withinMesh = true;
+                    foreach (Vector3 node in road)
+                    {
+                        if(!isWithinMesh(node)){
+                            withinMesh = false;
+                            break;
+                        }
+                    }
+                    if(withinMesh){
+                        network.AddRoad(road);
+                        if(road.Count > 4){
+                            Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
+                            if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
+                                if(noIntersects(workSite.pos, range) <= 1)
+                                    workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                                if(noIntersects(newPos, range) <= 1)
+                                    workSites.Enqueue(new State(newPos, workSite.angle));
 
-                }else{
-                    if(noIntersects(newPos, range) <= 1)
-                        workSites.Enqueue(new State(newPos, workSite.angle));
-                    if(noIntersects(workSite.pos, range) <= 1)
-                        workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                            }else{
+                                if(noIntersects(newPos, range) <= 1)
+                                    workSites.Enqueue(new State(newPos, workSite.angle));
+                                if(noIntersects(workSite.pos, range) <= 1)
+                                    workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
+                            }
+                        }
+                    }
                 }
+                
             }
             return workSite;
 
@@ -294,6 +326,9 @@ namespace Cities.Roads
                     n++;
             }
             return n;
+        }
+        private bool isWithinMesh(Vector3 pos){
+            return (pos.x < maxX && pos.x > minX && pos.z < maxZ && pos.z > minZ);
         }
     }
 }
