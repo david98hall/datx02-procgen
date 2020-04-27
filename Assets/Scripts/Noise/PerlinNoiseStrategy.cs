@@ -1,7 +1,7 @@
 ﻿using Interfaces;
 using UnityEngine;
 
-namespace Terrain.Noise
+namespace Noise
 {
     internal class PerlinNoiseStrategy : IGenerator<float[,]>
     {
