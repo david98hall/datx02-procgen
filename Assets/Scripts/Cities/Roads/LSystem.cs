@@ -64,9 +64,9 @@ namespace Cities.Roads
             maxX = heightMap.GetLength(0) + TerrainInfo.Offset.x;
             maxZ = heightMap.GetLength(1) + TerrainInfo.Offset.z;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
-            ruleset.Add('F',"F+FB-]");
+            ruleset.Add('F',"F+FB-");
             ruleset.Add('S', "GB-FB[");
-            ruleset.Add('B',"FS[F+]");
+            ruleset.Add('B',"FS[F+");
             ruleset.Add('G',"GF-");
             tree = new StringBuilder(c.ToString());
         }
@@ -92,7 +92,7 @@ namespace Cities.Roads
                     LinkedList<Vector3> road = new LinkedList<Vector3>();
                     Vector3 direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                     road.AddLast(state.pos);
-                    float length = rdm.Next(1,3);
+                    float length = rdm.Next(2,4);
                     int intersects = 0;
                     switch(c)
                     {
@@ -116,7 +116,7 @@ namespace Cities.Roads
                                 case 'S':{
                                     splitState = new State(state.pos + length * splitDir, splitAngle);
                                     tries = 0;
-                                    while (tries < 10 && (splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ))
+                                    while (tries < 10 && !isWithinMesh(splitState.pos))
                                     {
                                         if(condition >= 0.5)
                                         {
@@ -146,23 +146,23 @@ namespace Cities.Roads
                                         rotate90 = new Vector3(Mathf.Cos((float) splitAngle - 90*toRad), 0, Mathf.Sin((float) splitAngle - 90*toRad));
                                     }
                                     splitState = new State(state.pos + 2*length*splitDir + length*rotate90, splitAngle);
-                                    if(splitState.pos.x > maxX || splitState.pos.x < minX || splitState.pos.z > maxZ || splitState.pos.z < minZ){
-                                    break;
+                                    if(!isWithinMesh(splitState.pos)){
+                                        break;
                                     }
                                     intersects = noIntersects(splitState.pos, range);
                                     if(intersects < 1){
                                         Vector3 corner = state.pos + 2 * length * splitDir;
-                                        if(corner.x < maxX && corner.x > minX && corner.z < maxZ && corner.z > minZ){
+                                        if(isWithinMesh(corner)){
                                             splitRoad.AddLast(corner);
                                             splitRoad.AddLast(splitState.pos);
                                             states.Enqueue(splitState);
-                                        }
-                                        LinkedList<Vector3> row2 = new LinkedList<Vector3>();
-                                        Vector3 row2End = state.pos + 1 * length * (splitDir + rotate90);
-                                        if(row2End.x < maxX && row2End.x > minX && row2End.z < maxZ && row2End.z > minZ){
-                                            row2.AddLast(state.pos + 1 * length * splitDir);
-                                            row2.AddLast(row2End);
-                                            network.AddRoad(row2);
+                                            LinkedList<Vector3> row2 = new LinkedList<Vector3>();
+                                            Vector3 row2End = state.pos + 1 * length * (splitDir + rotate90);
+                                            if(isWithinMesh(row2End)){
+                                                row2.AddLast(state.pos + 1 * length * splitDir);
+                                                row2.AddLast(row2End);
+                                                network.AddRoad(row2);
+                                            }
                                         }
                                     }
                                     break;
@@ -172,7 +172,7 @@ namespace Cities.Roads
                                 bool withinMesh = true;
                                 foreach (Vector3 node in splitRoad)
                                 {
-                                    if(node.x > maxX || node.x < minX || node.z > maxZ || node.z < minZ){
+                                    if(!isWithinMesh(node)){
                                         withinMesh = false;
                                         break;
                                     }
@@ -190,7 +190,7 @@ namespace Cities.Roads
                     }
                     Vector3 newPos = state.pos + length * direction;
                     tries = 0;
-                    while(tries < 10 && (newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ)){
+                    while(tries < 10 && !isWithinMesh(newPos)){
                     if(state.angle > 0){
                         state.angle += MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                     }else{
