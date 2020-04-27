@@ -61,8 +61,8 @@ namespace Cities.Roads
             var heightMap = TerrainInfo.HeightMap;
             minX = TerrainInfo.Offset.x;
             minZ = TerrainInfo.Offset.z;
-            maxX = heightMap.GetLength(0) + TerrainInfo.Offset.x;
-            maxZ = heightMap.GetLength(1) + TerrainInfo.Offset.z;
+            maxX = heightMap.GetLength(0)-1 + TerrainInfo.Offset.x;
+            maxZ = heightMap.GetLength(1)-1 + TerrainInfo.Offset.z;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
             ruleset.Add('F',"F+FB-");
             ruleset.Add('S', "GB-FB[");
