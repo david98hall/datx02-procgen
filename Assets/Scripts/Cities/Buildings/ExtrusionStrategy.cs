@@ -150,6 +150,8 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
         float min = MinimumHeightInBounds(poly);
 
         var heightMap = Injector.Get().Item1.HeightMap;
+        var dim = (heightMap.GetLength(0)-1, heightMap.GetLength(1)-1);
+
         for (int i = 0; i < poly.Count; i++)
         {
             int x = Mathf.FloorToInt(poly[i].x);
@@ -157,8 +159,11 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
             float fx = poly[i].x - x;
             float fy = poly[i].z - y;
 
-            float height1 = Mathf.Lerp(heightMap[x, y], heightMap[x + 1, y], fx);
-            float height2 = Mathf.Lerp(heightMap[x, y + 1], heightMap[x + 1, y + 1], fx);
+            int x2 = Mathf.Min(dim.Item1, x + 1);
+            int y2 = Mathf.Min(dim.Item2, y + 1);
+
+            float height1 = Mathf.Lerp(heightMap[x, y], heightMap[x2, y], fx);
+            float height2 = Mathf.Lerp(heightMap[x, y2], heightMap[x2, y2], fx);
             float finalHeight = Mathf.Lerp(height1, height2, fy);
 
             max = Mathf.Max(finalHeight, max);
