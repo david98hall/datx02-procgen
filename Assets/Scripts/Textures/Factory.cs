@@ -4,7 +4,7 @@ using Cities.Plots;
 using Interfaces;
 using UnityEngine;
 
-namespace Terrain.Textures
+namespace Textures
 {
     /// <summary>
     /// Factory for creating textures. Texture generators are mainly dependent on the noise map

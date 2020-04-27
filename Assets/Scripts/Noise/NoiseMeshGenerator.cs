@@ -4,7 +4,7 @@ using Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Terrain.Noise
+namespace Noise
 {
     /// <summary>
     /// Generates meshes based on noise maps.
