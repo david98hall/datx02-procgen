@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Extensions;
@@ -118,7 +119,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
             // Only generate building if suitable lot
             if (ValidLot(lot))
             {
-                float y = MathUtils.RandomFloatInRange(1f, 5.5f);
+                float y = MathUtils.RandomInclusiveFloat(1f, 5.5f);
 
                 IList<Vector3> vertices = lot.Vertices.ToList();
 

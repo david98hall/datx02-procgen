@@ -104,10 +104,10 @@ namespace Cities.Roads
                             double condition = rdm.NextDouble();
                             if(condition >= 0.5)
                             {
-                                splitAngle = state.angle + MathUtils.RandomFloatInRange(45*toRad,75*toRad);
+                                splitAngle = state.angle + MathUtils.RandomInclusiveFloat(45*toRad,75*toRad);
                             }else
                             {
-                                splitAngle = state.angle - MathUtils.RandomFloatInRange(45*toRad,75*toRad);
+                                splitAngle = state.angle - MathUtils.RandomInclusiveFloat(45*toRad,75*toRad);
                             }
                             Vector3 splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
                             State splitState = new State();
@@ -120,10 +120,10 @@ namespace Cities.Roads
                                     {
                                         if(condition >= 0.5)
                                         {
-                                            splitAngle += MathUtils.RandomFloatInRange(30*toRad,55*toRad);
+                                            splitAngle += MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                                         }else
                                         {
-                                            splitAngle -= MathUtils.RandomFloatInRange(30*toRad,55*toRad);
+                                            splitAngle -= MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                                         }
                                         splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
                                         splitState = new State(state.pos + length * splitDir, splitAngle);
@@ -192,9 +192,9 @@ namespace Cities.Roads
                     tries = 0;
                     while(tries < 10 && (newPos.x > maxX || newPos.x < minX || newPos.z > maxZ || newPos.z < minZ)){
                     if(state.angle > 0){
-                        state.angle += MathUtils.RandomFloatInRange(30*toRad,55*toRad);
+                        state.angle += MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                     }else{
-                        state.angle -= MathUtils.RandomFloatInRange(30*toRad,55*toRad);
+                        state.angle -= MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                     }
                     direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                     newPos = state.pos + length * direction;
@@ -211,10 +211,10 @@ namespace Cities.Roads
                     switch(c)
                     {
                         case '+':
-                            state.angle += MathUtils.RandomFloatInRange(30*toRad,55*toRad);
+                            state.angle += MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                             break;
                         case '-':
-                            state.angle -= MathUtils.RandomFloatInRange(30*toRad,55*toRad);
+                            state.angle -= MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                             break;
                         case '[':
                             states.Enqueue(state);
@@ -237,7 +237,6 @@ namespace Cities.Roads
         /// <returns></returns>
         private State Grid(State state)
         {
-
             var rdm = new Random();
             int grids = rdm.Next(3,10);
             Queue<State> workSites = new Queue<State>();
@@ -292,7 +291,7 @@ namespace Cities.Roads
                         network.AddRoad(road);
                         if(road.Count > 4){
                             Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                            if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
+                            if(rdm.Next(0,2) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
                                 if(noIntersects(workSite.pos, range) <= 1)
                                     workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
                                 if(noIntersects(newPos, range) <= 1)
