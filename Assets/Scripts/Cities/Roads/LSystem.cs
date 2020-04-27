@@ -63,9 +63,9 @@ namespace Cities.Roads
             maxX = heightMap.GetLength(0) + TerrainInfo.Offset.x;
             maxZ = heightMap.GetLength(1) + TerrainInfo.Offset.z;
             state = new State(new Vector3(origin.x, 0, origin.y), 0);
-            ruleset.Add('F',"F+FB-]");
+            ruleset.Add('F',"F+FB-");
             ruleset.Add('S', "GB-FB[");
-            ruleset.Add('B',"FS[F+]");
+            ruleset.Add('B',"FS[F+");
             ruleset.Add('G',"GF-");
             tree = new StringBuilder(c.ToString());
         }
@@ -91,7 +91,7 @@ namespace Cities.Roads
                     LinkedList<Vector3> road = new LinkedList<Vector3>();
                     Vector3 direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                     road.AddLast(state.pos);
-                    float length = UnityEngine.Random.Range(1,3);
+                    float length = UnityEngine.Random.Range(2,4);
                     int intersects = 0;
                     switch(c)
                     {
