@@ -135,15 +135,21 @@ namespace App.ViewModels.Terrain.Textures
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         public override Texture2D Generate()
         {
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Terrain Texture", this);
+            Texture2D texture;
             switch (textureStrategy)
             {
                 // case TextureStrategy.GrayScale:
                     // return new Factory(Injector).CreateGrayScaleStrategy().Generate();
                 case TextureStrategy.Whittaker:
-                    return whittakerStrategy.Generate();
+                    texture = whittakerStrategy.Generate();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Terrain Texture", this);
+            return texture;
         }
     }
 }

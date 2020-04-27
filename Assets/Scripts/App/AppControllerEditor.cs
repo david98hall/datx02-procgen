@@ -1,7 +1,9 @@
+using System;
 using System.Threading;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using Utils.Concurrency;
 
 namespace App
 {
@@ -12,14 +14,30 @@ namespace App
     [CustomEditor(typeof(AppController))]
     public class AppControllerEditor : Editor
     {
-
         private CancellationTokenSource _cancellationTokenSource;
-
-        private void ResetCancellationTokenSource()
+        private string _progressInfo;
+        private float _progress;
+        
+        private void Reset()
         {
+            _progressInfo = "";
+            
+            // Reset cancellation token source
             _cancellationTokenSource?.Cancel();
             _cancellationTokenSource?.Dispose();
             _cancellationTokenSource = null;
+        }
+
+        private void OnGenerationStart(string info)
+        {
+            _progressInfo = info;
+            Repaint();
+        }
+
+        private void OnGenerationEnd(string info, float progress)
+        {
+            _progress = progress;
+            Repaint();
         }
         
         /// <summary>
@@ -34,17 +52,24 @@ namespace App
             {
                 _cancellationTokenSource = new CancellationTokenSource();
                 var cancellationToken = _cancellationTokenSource.Token;
-                controller.GenerateAsync(ResetCancellationTokenSource, cancellationToken);
-            } 
-            else if (_cancellationTokenSource != null && GUILayout.Button("Cancel Generation"))
+                controller.GenerateAsync(
+                    Reset, OnGenerationStart, OnGenerationEnd, cancellationToken);
+            }
+            else if (_cancellationTokenSource != null)
             {
-                ResetCancellationTokenSource();
-                controller.Reset();
+                EditorGUILayout.LabelField($"Progress: {_progress * 100}% ({_progressInfo})");
+
+                if (GUILayout.Button("Cancel Generation"))
+                {
+                    Reset();
+                    controller.Reset();   
+                }
             }
 
             if (!GUI.changed) return;
             EditorUtility.SetDirty(controller);
             EditorSceneManager.MarkSceneDirty(controller.gameObject.scene);
         }
+        
     }
 }

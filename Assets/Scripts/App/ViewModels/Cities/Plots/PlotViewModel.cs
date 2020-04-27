@@ -86,6 +86,8 @@ namespace App.ViewModels.Cities.Plots
         {
             // We can't generate plots with no roads
             if (Injector.Get().Item1 == null) return null;
+         
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Plots", this);
             
             var plotStrategyFactory = new Factory(Injector);
             IGenerator<IEnumerable<Plot>> generator;
@@ -113,7 +115,10 @@ namespace App.ViewModels.Cities.Plots
 
             // Set the cancellation token so that the generation can be canceled
             generator.CancelToken = CancelToken;
-            return generator.Generate();
+            var plots = generator.Generate();
+
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Plots", this);
+            return plots;
         }
     }
 }

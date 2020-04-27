@@ -172,13 +172,20 @@ namespace App.ViewModels.Cities.Buildings
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         public override IEnumerable<Building> Generate()
         {
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Buildings", this);
+            
+            IEnumerable<Building> buildings;
             switch (buildingStrategy)
             {
                 case BuildingStrategy.Extrusion:
-                    return extrusionStrategy.Generate();
+                    buildings = extrusionStrategy.Generate();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Buildings", this);
+            return buildings;
         }
     }
 }

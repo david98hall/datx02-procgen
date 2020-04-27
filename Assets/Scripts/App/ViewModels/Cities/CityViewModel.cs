@@ -154,7 +154,7 @@ namespace App.ViewModels.Cities
             // Road network
             var roadNetwork = roadViewModel.Generate();
             if (roadNetwork == null) return null;
-            
+
             // Plots
             plotViewModel.Injector = new Injector<(RoadNetwork, TerrainInfo)>(() => 
                 (roadNetwork, Injector.Get()));

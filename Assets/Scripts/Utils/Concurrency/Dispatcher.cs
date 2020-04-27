@@ -41,6 +41,8 @@ namespace Utils.Concurrency
         /// <param name="action">The action to dispatch.</param>
         public void EnqueueAction(Action action)
         {
+            if (action == null) return;
+            
             lock (pendingActions)
             {
                 // Thread-safe enqueue
@@ -55,6 +57,8 @@ namespace Utils.Concurrency
         /// <param name="action">The action to dispatch.</param>
         public void EnqueueActionAndWait(Action action)
         {
+            if (action == null) return;
+            
             EnqueueAction(action);
 
             // Busy-wait until the action has been removed from the
@@ -75,6 +79,9 @@ namespace Utils.Concurrency
         /// <returns>The result of the invoked function.</returns>
         public TO EnqueueFunction<TO>(Func<TO> func)
         {
+            if (func == null)
+                throw new NullReferenceException("func cannot be null!");
+            
             // The same function, but returning an object
             object ObjectFunc() => func();
             

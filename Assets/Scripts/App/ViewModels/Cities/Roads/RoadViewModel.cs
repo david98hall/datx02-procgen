@@ -171,6 +171,8 @@ namespace App.ViewModels.Cities.Roads
         
         public override RoadNetwork Generate()
         {
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Road Network", this);
+            
             // One task per road network generation strategy
             var tasks = new Task[]
             {
@@ -194,8 +196,16 @@ namespace App.ViewModels.Cities.Roads
             var lSystemRoadNetwork = ((Task<RoadNetwork>) tasks[1]).Result;
             
             // Merge any combinations of road networks and return the result
-            if (aStarRoadNetwork == null) return lSystemRoadNetwork;
-            return lSystemRoadNetwork == null ? aStarRoadNetwork : aStarRoadNetwork.Merge(lSystemRoadNetwork);
+            var resultingNetwork = lSystemRoadNetwork;
+            if (aStarRoadNetwork != null)
+            {
+                resultingNetwork = lSystemRoadNetwork == null 
+                    ? aStarRoadNetwork 
+                    : aStarRoadNetwork.Merge(lSystemRoadNetwork);
+            }
+
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Road Network", this);
+            return resultingNetwork;
         }
     }
 }

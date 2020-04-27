@@ -11,6 +11,7 @@ using Interfaces;
 using Services;
 using Terrain;
 using UnityEngine;
+using Utils.Concurrency;
 using Utils.Paths;
 
 namespace App
@@ -23,7 +24,7 @@ namespace App
     [ExecuteInEditMode]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), 
         typeof(MeshCollider))]
-    public class AppController : MonoBehaviour, IDisplayable
+    public class AppController : MonoBehaviour, IDisplayable, ISubscriber<AppEvent>
     {
         #region Models
 
@@ -80,6 +81,16 @@ namespace App
         // Used for view model communications
         private EventBus<AppEvent> _eventBus;
         
+        private static readonly int _numProgressUpdates = 5;
+        private int _finishedGenerations;
+
+        internal delegate void OnGenerationStart(string info);
+
+        internal delegate void OnGenerationEnd(string info, float progress);
+        
+        private OnGenerationStart _onGenerationStart;
+        private OnGenerationEnd _onGenerationEnd;
+
         public void OnEnable()
         {
             if (!_initialized) Initialize();
@@ -92,6 +103,7 @@ namespace App
         internal void Initialize()
         {
             _eventBus = new EventBus<AppEvent>();
+            _eventBus.Subscribe(this);
             
             _meshFilter = GetComponent<MeshFilter>();
             _meshRenderer = GetComponent<MeshRenderer>();
@@ -123,19 +135,29 @@ namespace App
             _meshCollider.sharedMesh = null;
             _meshRenderer.sharedMaterial.mainTexture = null;
         }
-        
+
         /// <summary>
         /// Delegates the generation to the underlying view models.
         /// Displays the generated content using the unity objects
         /// </summary>
-        /// <param name="finishAction">The action to invoke at the end of this method.</param>
+        /// <param name="finishAction">The action to invoke when the generation is completed.</param>
+        /// <param name="generationStartAction">The action to invoke when a generation starts.</param>
+        /// <param name="generationEndAction">The action to invoke when a generation ends.</param>
         /// <param name="cancellationToken">The cancellation token, used to cancel the generation.</param>
-        internal async void GenerateAsync(Action finishAction, CancellationToken cancellationToken)
+        internal async void GenerateAsync(
+            Action finishAction, 
+            OnGenerationStart generationStartAction, 
+            OnGenerationEnd generationEndAction, 
+            CancellationToken cancellationToken)
         {
             Reset();
+            _finishedGenerations = 0;
 
+            _onGenerationStart = generationStartAction;
+            _onGenerationEnd = generationEndAction;
+            
             // Invokes the finish action
-            void Finish() => finishAction?.Invoke();
+            void OnGenerationFinish() => finishAction?.Invoke();
 
             // Update the cancellation token of the view models
             terrainViewModel.CancelToken = cancellationToken;
@@ -148,10 +170,10 @@ namespace App
                 if (cancellationToken.IsCancellationRequested || terrainMesh == null || terrainTexture == null)
                 {
                     // Either the task was cancelled or a terrain value is null, abort.
-                    Finish();
+                    OnGenerationFinish();
                     return;
                 }
-            
+
                 // Update component data
                 _meshFilter.sharedMesh = terrainMesh;
                 _meshCollider.sharedMesh = terrainMesh;
@@ -168,14 +190,14 @@ namespace App
             catch (TaskCanceledException)
             {
                 // A task was canceled, abort
-                Finish();
+                OnGenerationFinish();
                 return;
             }
 
             if (cancellationToken.IsCancellationRequested || _model.City == null)
             {
                 // Either the task was canceled or the city is not valid, abort.
-                Finish();
+                OnGenerationFinish();
                 return;
             }
 
@@ -183,7 +205,7 @@ namespace App
             CreateGameObjects(cancellationToken);
             
             // Invoke the finish action
-            Finish();
+            OnGenerationFinish();
         }
 
         // Create game objects based on the model data
@@ -274,6 +296,21 @@ namespace App
                 HeightMap = TerrainHeightMap,
                 Offset = TerrainOffset
             };
+        }
+
+        public void OnEvent(AppEvent eventId, object eventData, object creator)
+        {
+            switch (eventId)
+            {
+                case AppEvent.GenerationStart:
+                    Dispatcher.Instance.EnqueueAction(() => _onGenerationStart?.Invoke(eventData as string));
+                    break;
+                case AppEvent.GenerationEnd:
+                    _finishedGenerations++;
+                    var progress = _finishedGenerations / (float) _numProgressUpdates;
+                    Dispatcher.Instance.EnqueueAction(() => _onGenerationEnd?.Invoke(eventData as string, progress));
+                    break;
+            }
         }
     }
 }
