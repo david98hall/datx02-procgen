@@ -17,7 +17,7 @@ namespace Services
                 eventSubscriber.OnEvent(eventId, eventData, creator);
             }
         }
-        
+
         public void Subscribe(ISubscriber<T> newSubscriber)
         {
             _subscribers.Add(newSubscriber);

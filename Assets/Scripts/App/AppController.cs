@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using App.ViewModels.Cities;
 using App.ViewModels.Terrain;
 using Cities;
@@ -9,6 +11,7 @@ using Interfaces;
 using Services;
 using Terrain;
 using UnityEngine;
+using Utils.Concurrency;
 using Utils.Paths;
 
 namespace App
@@ -21,7 +24,7 @@ namespace App
     [ExecuteInEditMode]
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), 
         typeof(MeshCollider))]
-    public class AppController : MonoBehaviour, IDisplayable
+    public class AppController : MonoBehaviour, IDisplayable, ISubscriber<AppEvent>
     {
         #region Models
 
@@ -78,6 +81,16 @@ namespace App
         // Used for view model communications
         private EventBus<AppEvent> _eventBus;
         
+        private static readonly int _numProgressUpdates = 5;
+        private int _finishedGenerations;
+
+        internal delegate void OnGenerationStart(string info);
+
+        internal delegate void OnGenerationEnd(string info, float progress);
+        
+        private OnGenerationStart _onGenerationStart;
+        private OnGenerationEnd _onGenerationEnd;
+
         public void OnEnable()
         {
             if (!_initialized) Initialize();
@@ -87,9 +100,10 @@ namespace App
         /// Is required for initializing the non-serializable properties of the view model.
         /// Should only be called once due to expensive operations.
         /// </summary>
-        public void Initialize()
+        internal void Initialize()
         {
             _eventBus = new EventBus<AppEvent>();
+            _eventBus.Subscribe(this);
             
             _meshFilter = GetComponent<MeshFilter>();
             _meshRenderer = GetComponent<MeshRenderer>();
@@ -108,27 +122,95 @@ namespace App
             
             _initialized = true;
         }
-        
+
         /// <summary>
-        /// Delegates the generation to the underlying view models.
-        /// Displays the generated content using the unity objects
+        /// Resets this AppController.
         /// </summary>
-        public void Generate()
+        internal void Reset()
         {
             foreach (var obj in gameObjects) DestroyImmediate(obj);
             gameObjects.Clear();
             
-            (_meshFilter.sharedMesh, _model.TerrainTexture) = terrainViewModel.Generate();
-            _meshCollider.sharedMesh = _meshFilter.sharedMesh;
-            _meshRenderer.sharedMaterial.mainTexture = _model.TerrainTexture;
+            _meshFilter.sharedMesh = null;
+            _meshCollider.sharedMesh = null;
+            _meshRenderer.sharedMaterial.mainTexture = null;
+        }
 
-            // Update the model's terrain data
-            _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
-            _model.TerrainTransform = _meshFilter.transform;
+        /// <summary>
+        /// Delegates the generation to the underlying view models.
+        /// Displays the generated content using the unity objects
+        /// </summary>
+        /// <param name="finishAction">The action to invoke when the generation is completed.</param>
+        /// <param name="generationStartAction">The action to invoke when a generation starts.</param>
+        /// <param name="generationEndAction">The action to invoke when a generation ends.</param>
+        /// <param name="cancellationToken">The cancellation token, used to cancel the generation.</param>
+        internal async void GenerateAsync(
+            Action finishAction, 
+            OnGenerationStart generationStartAction, 
+            OnGenerationEnd generationEndAction, 
+            CancellationToken cancellationToken)
+        {
+            Reset();
+            _finishedGenerations = 0;
+
+            _onGenerationStart = generationStartAction;
+            _onGenerationEnd = generationEndAction;
             
-            _model.City = cityViewModel.Generate();
-            if (_model.City == null) return;
+            // Invokes the finish action
+            void OnGenerationFinish() => finishAction?.Invoke();
+
+            // Update the cancellation token of the view models
+            terrainViewModel.CancelToken = cancellationToken;
+            cityViewModel.CancelToken = cancellationToken;
+
+            try
+            {
+                // Generate the terrain
+                var (terrainMesh, terrainTexture) = await Task.Run(() => terrainViewModel.Generate(), cancellationToken);
+                if (cancellationToken.IsCancellationRequested || terrainMesh == null || terrainTexture == null)
+                {
+                    // Either the task was cancelled or a terrain value is null, abort.
+                    OnGenerationFinish();
+                    return;
+                }
+
+                // Update component data
+                _meshFilter.sharedMesh = terrainMesh;
+                _meshCollider.sharedMesh = terrainMesh;
+                _meshRenderer.sharedMaterial.mainTexture = terrainTexture;
+
+                // Update the model's terrain data
+                _model.TerrainTexture = terrainTexture;
+                _model.TerrainHeightMap = _meshFilter.sharedMesh.HeightMap();
+                _model.TerrainOffset = _meshFilter.transform.position;
             
+                // Generate a city
+                _model.City = await Task.Run(() => cityViewModel.Generate(), cancellationToken);
+            }
+            catch (TaskCanceledException)
+            {
+                // A task was canceled, abort
+                OnGenerationFinish();
+                return;
+            }
+
+            if (cancellationToken.IsCancellationRequested || _model.City == null)
+            {
+                // Either the task was canceled or the city is not valid, abort.
+                OnGenerationFinish();
+                return;
+            }
+
+            // Create game objects based on the world data (terrain and city elements)
+            CreateGameObjects(cancellationToken);
+            
+            // Invoke the finish action
+            OnGenerationFinish();
+        }
+
+        // Create game objects based on the model data
+        private void CreateGameObjects(CancellationToken cancellationToken)
+        {
             // Set the values of the path object generator according to the UI-values
             var pathObjectGenerator = new PathObjectGenerator
             {
@@ -149,10 +231,15 @@ namespace App
             // Display buildings
             if (cityViewModel.DisplayBuildings)
             {
-                var container = new GameObject("Buildings", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+                var container = new GameObject(
+                    "Buildings", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
                 foreach (var b in _model.City.Buildings)
                 {
-                    var obj = new GameObject("Building", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
+                    // Cancel if requested
+                    if (cancellationToken.IsCancellationRequested) return;
+                    
+                    var obj = new GameObject(
+                        "Building", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
                     obj.GetComponent<MeshFilter>().mesh = b.mesh;
                     obj.GetComponent<MeshRenderer>().sharedMaterial = cityViewModel.BuildingMaterial;
 
@@ -168,7 +255,7 @@ namespace App
                 _meshFilter, _meshCollider,
                 "Road Network", "Road"));
         }
-
+        
         /// <summary>
         /// Displays the editors of the underlying view models.
         /// </summary>
@@ -177,7 +264,7 @@ namespace App
             terrainViewModel.Display();
             cityViewModel.Display();
         }
-        
+
         /// <summary>
         /// The run-time model of all generated content.
         /// </summary>
@@ -188,7 +275,7 @@ namespace App
             /// </summary>
             internal float[,] TerrainHeightMap { get; set; }
 
-            internal Transform TerrainTransform { get; set; }
+            internal Vector3 TerrainOffset { get; set; }
             
             /// <summary>
             /// Generated texture.
@@ -207,8 +294,23 @@ namespace App
             public TerrainInfo Get() => new TerrainInfo
             {
                 HeightMap = TerrainHeightMap,
-                Offset = TerrainTransform.localPosition
+                Offset = TerrainOffset
             };
+        }
+
+        public void OnEvent(AppEvent eventId, object eventData, object creator)
+        {
+            switch (eventId)
+            {
+                case AppEvent.GenerationStart:
+                    Dispatcher.Instance.EnqueueAction(() => _onGenerationStart?.Invoke(eventData as string));
+                    break;
+                case AppEvent.GenerationEnd:
+                    _finishedGenerations++;
+                    var progress = _finishedGenerations / (float) _numProgressUpdates;
+                    Dispatcher.Instance.EnqueueAction(() => _onGenerationEnd?.Invoke(eventData as string, progress));
+                    break;
+            }
         }
     }
 }

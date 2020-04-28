@@ -100,27 +100,25 @@ namespace App.ViewModels.Cities.Roads
         /// <returns>The result of the delegated generation call.</returns>
         public override RoadNetwork Generate()
         {
-            RoadNetwork roadNetwork = null;
-            foreach (var input in inputs)
-            {
-                var tmpNetwork = new Factory().CreateLSystemStrategy(Injector, input.origin, input.rewrites).Generate();
-                if (roadNetwork == null)
-                {
-                    roadNetwork = tmpNetwork;
-                }
-                else
-                {
-                    roadNetwork.Merge(tmpNetwork);
-                }
-            }
-
-            return roadNetwork;
+            // Concurrent generation of L-system road networks
+            return TaskUtils.RunActionInTasks(inputs, input =>
+                    {
+                        var generator = new Factory()
+                            .CreateLSystemStrategy(Injector, input.origin, input.rewrites);
+                        // Set the cancellation token so that the generation can be canceled
+                        generator.CancelToken = CancelToken;
+                        return generator.Generate();
+                    }, 
+                    CancelToken)
+                // Merge all L-system road networks into one
+                ?.Aggregate(new RoadNetwork(), (r1, r2) => r1.Merge(r2));
         }
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {
             if (eventId.Equals(AppEvent.UpdateNoiseMapSize))
             {
+                // If the noise map size is changed, update it here as well
                 _terrainSize = ((int, int)) eventData;
             }
         }

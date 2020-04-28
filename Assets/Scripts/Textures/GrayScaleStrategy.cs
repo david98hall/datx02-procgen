@@ -35,6 +35,9 @@ namespace Textures
             {
                 for (var y = 0; y < height; y++)
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+                    
                     pixelColors[x * height + y] = Color.Lerp(Color.black, Color.white, noiseMap[x, y]);
                 }
             }

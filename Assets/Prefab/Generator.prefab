@@ -154,7 +154,7 @@ MonoBehaviour:
         lacunarity: 5.83
         noiseOffset: {x: 0, y: 0}
     textureViewModel:
-      textureStrategy: 1
+      textureStrategy: 0
       whittakerStrategy:
         precipitationScale: 47
         temperatureScale: 47
@@ -165,6 +165,8 @@ MonoBehaviour:
         paths:
         - start: {x: 0, y: 0}
           goal: {x: 249, y: 249}
+        - start: {x: 249, y: 0}
+          goal: {x: 0, y: 249}
       lSystemStrategy:
         inputs:
         - origin: {x: 125, y: 125}

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using Cities.Plots;
 using Interfaces;
 using Services;
 using Terrain;
 using UnityEditor;
 using UnityEngine;
-using Factory = Cities.Buildings.Factory;
 
 namespace App.ViewModels.Cities.Buildings
 {
@@ -87,9 +87,7 @@ namespace App.ViewModels.Cities.Buildings
                     extrusionStrategy.Injector = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -104,9 +102,22 @@ namespace App.ViewModels.Cities.Buildings
                     extrusionStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
+                {}
+            }
+        }
+        
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    extrusionStrategy.CancelToken = value;
                 }
+                catch (NullReferenceException)
+                {}
             }
         }
         
@@ -161,13 +172,20 @@ namespace App.ViewModels.Cities.Buildings
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         public override IEnumerable<Building> Generate()
         {
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Buildings", this);
+            
+            IEnumerable<Building> buildings;
             switch (buildingStrategy)
             {
                 case BuildingStrategy.Extrusion:
-                    return extrusionStrategy.Generate();
+                    buildings = extrusionStrategy.Generate();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Buildings", this);
+            return buildings;
         }
     }
 }

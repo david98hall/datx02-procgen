@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using App.ViewModels.Noise;
 using App.ViewModels.Terrain.Textures;
 using Interfaces;
@@ -50,9 +51,23 @@ namespace App.ViewModels.Terrain
                     textureViewModel.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
+                {}
+            }
+        }
+
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    noiseViewModel.CancelToken = value;
+                    textureViewModel.CancelToken = value;
                 }
+                catch (NullReferenceException)
+                {}
             }
         }
         
@@ -81,13 +96,21 @@ namespace App.ViewModels.Terrain
         public override (Mesh, Texture2D) Generate()
         {
             var heightMap = noiseViewModel.Generate();
-            //textureViewModel.Injector = noiseViewModel;
             textureViewModel.Injector = new Injector<float[,]>(() => heightMap);
-            
-            var mesh = new Factory().CreateMeshGenerator(
-                new Injector<float[,]>(() => heightMap), heightCurve, heightScale).Generate();
 
-            return (mesh, textureViewModel.Generate());
+            // Generate the mesh
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Terrain Mesh", this);
+            var meshGenerator = new Factory().CreateMeshGenerator(
+                new Injector<float[,]>(() => heightMap), heightCurve, heightScale);
+            // Set the cancellation token so that the generation can be canceled
+            meshGenerator.CancelToken = CancelToken;
+            var mesh = meshGenerator.Generate();
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Terrain Mesh", this);
+            
+            // Generate mesh texture
+            var texture = textureViewModel.Generate();
+
+            return (mesh, texture);
         }
 
     }

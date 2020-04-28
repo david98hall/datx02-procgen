@@ -31,6 +31,9 @@ namespace Cities.Roads{
             var system = new LSystem('F', Origin, Injector);
             for (var i = 0; i < RewritesCount; i++)
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+                
                 system.Rewrite();
             }
             return system.network;

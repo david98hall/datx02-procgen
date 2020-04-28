@@ -4,6 +4,7 @@ using System.Text;
 using Interfaces;
 using Terrain;
 using UnityEngine;
+using Utils;
 using Random = System.Random;
 
 namespace Cities.Roads
@@ -91,7 +92,7 @@ namespace Cities.Roads
                     LinkedList<Vector3> road = new LinkedList<Vector3>();
                     Vector3 direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                     road.AddLast(state.pos);
-                    float length = UnityEngine.Random.Range(2,4);
+                    float length = rdm.Next(2,4);
                     int intersects = 0;
                     switch(c)
                     {
@@ -103,10 +104,10 @@ namespace Cities.Roads
                             double condition = rdm.NextDouble();
                             if(condition >= 0.5)
                             {
-                                splitAngle = state.angle + UnityEngine.Random.Range(45*toRad,75*toRad);
+                                splitAngle = state.angle + MathUtils.RandomInclusiveFloat(45*toRad,75*toRad);
                             }else
                             {
-                                splitAngle = state.angle - UnityEngine.Random.Range(45*toRad,75*toRad);
+                                splitAngle = state.angle - MathUtils.RandomInclusiveFloat(45*toRad,75*toRad);
                             }
                             Vector3 splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
                             State splitState = new State();
@@ -119,10 +120,10 @@ namespace Cities.Roads
                                     {
                                         if(condition >= 0.5)
                                         {
-                                            splitAngle += UnityEngine.Random.Range(30*toRad,55*toRad);
+                                            splitAngle += MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                                         }else
                                         {
-                                            splitAngle -= UnityEngine.Random.Range(30*toRad,55*toRad);
+                                            splitAngle -= MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                                         }
                                         splitDir = new Vector3(Mathf.Cos((float) splitAngle), 0, Mathf.Sin((float) splitAngle));
                                         splitState = new State(state.pos + length * splitDir, splitAngle);
@@ -191,9 +192,9 @@ namespace Cities.Roads
                     tries = 0;
                     while(tries < 10 && !isWithinMesh(newPos)){
                     if(state.angle > 0){
-                        state.angle += UnityEngine.Random.Range(30*toRad,55*toRad);
+                        state.angle += MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                     }else{
-                        state.angle -= UnityEngine.Random.Range(30*toRad,55*toRad);
+                        state.angle -= MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                     }
                     direction = new Vector3(Mathf.Cos((float) state.angle), 0, Mathf.Sin((float) state.angle));
                     newPos = state.pos + length * direction;
@@ -210,10 +211,10 @@ namespace Cities.Roads
                     switch(c)
                     {
                         case '+':
-                            state.angle += UnityEngine.Random.Range(30*toRad,55*toRad);
+                            state.angle += MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                             break;
                         case '-':
-                            state.angle -= UnityEngine.Random.Range(30*toRad,55*toRad);
+                            state.angle -= MathUtils.RandomInclusiveFloat(30*toRad,55*toRad);
                             break;
                         case '[':
                             states.Enqueue(state);
@@ -234,9 +235,10 @@ namespace Cities.Roads
         /// </summary>
         /// <param name="state">The initial state of the grid, containing position and direction.</param>
         /// <returns></returns>
-        private State Grid(State state){
-
-            int grids = UnityEngine.Random.Range(3,10);
+        private State Grid(State state)
+        {
+            var rdm = new Random();
+            int grids = rdm.Next(3,10);
             Queue<State> workSites = new Queue<State>();
             workSites.Enqueue(state);
             float range = 3.0f;
@@ -247,7 +249,7 @@ namespace Cities.Roads
                 }catch(InvalidOperationException){
                     return workSite;
                 }
-                int type = UnityEngine.Random.Range(0,4);
+                int type = rdm.Next(0,4);
                 float size;
                 switch(type)
                 { //Some randomness in square size
@@ -289,7 +291,7 @@ namespace Cities.Roads
                         network.AddRoad(road);
                         if(road.Count > 4){
                             Vector3 newPos = workSite.pos + size * new Vector3(Mathf.Cos((float) workSite.angle), 0, Mathf.Sin((float) workSite.angle));
-                            if(UnityEngine.Random.Range(0,1) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
+                            if(rdm.Next(0,2) < 0.5f){ //Some randomness to mix up the order in which worksites are added to the queue
                                 if(noIntersects(workSite.pos, range) <= 1)
                                     workSites.Enqueue(new State(workSite.pos, workSite.angle - 90*toRad));
                                 if(noIntersects(newPos, range) <= 1)

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Extensions;
@@ -7,6 +8,8 @@ using Cities.Plots;
 using Utils.Geometry;
 using Interfaces;
 using Terrain;
+using Utils;
+using Utils.Concurrency;
 
 /// <summary>
 /// Generator for buildings. 
@@ -80,6 +83,9 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     {
         foreach (var p in Injector.Get().Item2)
         {
+            // Cancel if requested
+            if (CancelToken.IsCancellationRequested) return null;
+            
             //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
             //ICollection<Lot> lots = lg.Generate();
 
@@ -107,10 +113,13 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     {
         foreach (Lot lot in lots)
         {
+            // Cancel if requested
+            if (CancelToken.IsCancellationRequested) return;
+            
             // Only generate building if suitable lot
             if (ValidLot(lot))
             {
-                float y = Random.Range(1f, 5.5f);
+                float y = MathUtils.RandomInclusiveFloat(1f, 5.5f);
 
                 IList<Vector3> vertices = lot.Vertices.ToList();
 
@@ -288,13 +297,16 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     /// <returns>The mesh constructed from the arrays.</returns>
     private Mesh BuildMesh(ICollection<Vector3> verts, ICollection<int> tris)
     {
-        Mesh mesh = new Mesh();
-        mesh.vertices = verts.ToArray();
-        mesh.triangles = tris.ToArray();
-        mesh.uv = new Vector2[verts.Count];
-        mesh.RecalculateBounds();
-        mesh.RecalculateNormals();
-        return mesh;
+        return Dispatcher.Instance.EnqueueFunction(() =>
+        {
+            Mesh mesh = new Mesh();
+            mesh.vertices = verts.ToArray();
+            mesh.triangles = tris.ToArray();
+            mesh.uv = new Vector2[verts.Count];
+            mesh.RecalculateBounds();
+            mesh.RecalculateNormals();
+            return mesh;
+        });
     }
 
 

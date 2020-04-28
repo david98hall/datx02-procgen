@@ -90,18 +90,34 @@ namespace App.ViewModels.Cities.Roads
         /// Delegates the generation to the created generator.
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
-        public override RoadNetwork Generate() => 
-            new Factory().CreateAStarStrategy(Injector, heightBias, 
-                paths.Select(p => (p.start, p.goal))).Generate();
+        public override RoadNetwork Generate()
+        {
+            // Concurrent generation of A* road networks
+            return TaskUtils.RunActionInTasks(paths, path =>
+                    {
+                        var generator = new Factory()
+                            .CreateAStarStrategy(Injector, heightBias, new []{(path.start, path.goal)});
+                        // Set the cancellation token so that the generation can be canceled
+                        generator.CancelToken = CancelToken;
+                        return generator.Generate();
+                    },
+                    CancelToken)
+                // Merge all A* road networks into one
+                ?.Aggregate(new RoadNetwork(), (r1, r2) => r1.Merge(r2));
+        }
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {
             if (eventId.Equals(AppEvent.UpdateNoiseMapSize))
             {
+                // If the noise map size is changed, update it here as well
                 _terrainSize = ((int, int)) eventData;
             }
         }
         
+        /// <summary>
+        /// Serializable type representing a path with a start and goal vertex.
+        /// </summary>
         [Serializable]
         private class Path
         {

@@ -72,6 +72,9 @@ namespace Cities.Roads
             var roadNetwork = new RoadNetwork();
             foreach (var startVector in _paths.Keys)
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+                
                 if (!(0 <= startVector.x && startVector.x < heights.GetLength(0) && 0 <= startVector.y &&
                     startVector.y < heights.GetLength(1)))
                 {
@@ -81,6 +84,9 @@ namespace Cities.Roads
                 var start = new Node(startVector.x, heights[startVector.x, startVector.y], startVector.y);
                 foreach (var goalVector in _paths[startVector])
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+                    
                     if (!(0 <= goalVector.x && goalVector.x < heights.GetLength(0) && 0 <= goalVector.y &&
                           goalVector.y < heights.GetLength(1)))
                     {

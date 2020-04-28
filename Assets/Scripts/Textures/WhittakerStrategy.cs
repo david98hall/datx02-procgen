@@ -2,6 +2,7 @@ using System;
 using Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
+using Utils.Concurrency;
 
 namespace Textures
 {
@@ -58,23 +59,33 @@ namespace Textures
         public override Texture2D Generate()
         {
             var heights = Injector.Get();
+            
+            if (CancelToken.IsCancellationRequested || heights == null)
+                return null;
+            
             var precipitation = GenerateMap(PrecipitationScale);
             var temperature = GenerateMap(TemperatureScale);
-            
-            var texture = new Texture2D(heights.GetLength(0), heights.GetLength(1));
-            
-            // for each pixel in texture, set color of texture
-            for (var x = 0; x < texture.width; x++)
+
+            return Dispatcher.Instance.EnqueueFunction(() =>
             {
-                for (var y = 0; y < texture.height; y++)
+                var texture = new Texture2D(heights.GetLength(0), heights.GetLength(1));
+
+                // for each pixel in texture, set color of texture
+                for (var x = 0; x < texture.width; x++)
                 {
-                    var color = ComputeColor(heights[x, y], precipitation[x, y], temperature[x, y]);
-                    texture.SetPixel(x, y, color);
+                    for (var y = 0; y < texture.height; y++)
+                    {
+                        // Cancel if requested
+                        if (CancelToken.IsCancellationRequested) return null;
+                        
+                        var color = ComputeColor(heights[x, y], precipitation[x, y], temperature[x, y]);
+                        texture.SetPixel(x, y, color);
+                    }
                 }
-            }
-            
-            texture.Apply(false);
-            return texture;
+
+                texture.Apply(false);
+                return texture;
+            });
         }
         
         #endregion
@@ -93,6 +104,7 @@ namespace Textures
         private float[,] GenerateMap(float scale)
         {
             var heights = Injector.Get();
+
             var map = new float[heights.GetLength(0), heights.GetLength(1)];
             
             for (var x = 0; x < map.GetLength(0); x++)

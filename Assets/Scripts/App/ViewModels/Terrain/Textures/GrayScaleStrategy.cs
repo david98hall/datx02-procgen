@@ -12,7 +12,7 @@ namespace App.ViewModels.Terrain.Textures
     {
         public override void Display()
         {
-            throw new NotImplementedException();
+            // Nothing to display 
         }
 
         /// <summary>
@@ -20,6 +20,12 @@ namespace App.ViewModels.Terrain.Textures
         /// Delegates the generation to the created generator.
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
-        public override Texture2D Generate() => new Factory(Injector).CreateGrayScaleStrategy().Generate();
+        public override Texture2D Generate()
+        {
+            var generator = new Factory(Injector).CreateGrayScaleStrategy();
+            // Set the cancellation token so that the generation can be canceled
+            generator.CancelToken = CancelToken;
+            return generator.Generate();
+        }
     }
 }
