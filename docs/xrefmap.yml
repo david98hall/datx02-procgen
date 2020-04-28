@@ -5869,6 +5869,129 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Polygon.PointsAreCounterClockwise
   nameWithType: Polygon.PointsAreCounterClockwise
+- uid: Utils.Geometry.PolyTriangulator
+  name: PolyTriangulator
+  href: api/Utils.Geometry.PolyTriangulator.html
+  commentId: T:Utils.Geometry.PolyTriangulator
+  fullName: Utils.Geometry.PolyTriangulator
+  nameWithType: PolyTriangulator
+- uid: Utils.Geometry.PolyTriangulator.#ctor(System.Collections.Generic.IList{UnityEngine.Vector3})
+  name: PolyTriangulator(IList<Vector3>)
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator__ctor_System_Collections_Generic_IList_UnityEngine_Vector3__
+  commentId: M:Utils.Geometry.PolyTriangulator.#ctor(System.Collections.Generic.IList{UnityEngine.Vector3})
+  name.vb: PolyTriangulator(IList(Of Vector3))
+  fullName: Utils.Geometry.PolyTriangulator.PolyTriangulator(System.Collections.Generic.IList<UnityEngine.Vector3>)
+  fullName.vb: Utils.Geometry.PolyTriangulator.PolyTriangulator(System.Collections.Generic.IList(Of UnityEngine.Vector3))
+  nameWithType: PolyTriangulator.PolyTriangulator(IList<Vector3>)
+  nameWithType.vb: PolyTriangulator.PolyTriangulator(IList(Of Vector3))
+- uid: Utils.Geometry.PolyTriangulator.#ctor*
+  name: PolyTriangulator
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator__ctor_
+  commentId: Overload:Utils.Geometry.PolyTriangulator.#ctor
+  isSpec: "True"
+  fullName: Utils.Geometry.PolyTriangulator.PolyTriangulator
+  nameWithType: PolyTriangulator.PolyTriangulator
+- uid: Utils.Geometry.PolyTriangulator.CheckIfEar(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name: CheckIfEar(Vector3, Vector3, Vector3)
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_CheckIfEar_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.PolyTriangulator.CheckIfEar(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  fullName: Utils.Geometry.PolyTriangulator.CheckIfEar(UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: PolyTriangulator.CheckIfEar(Vector3, Vector3, Vector3)
+- uid: Utils.Geometry.PolyTriangulator.CheckIfEar*
+  name: CheckIfEar
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_CheckIfEar_
+  commentId: Overload:Utils.Geometry.PolyTriangulator.CheckIfEar
+  isSpec: "True"
+  fullName: Utils.Geometry.PolyTriangulator.CheckIfEar
+  nameWithType: PolyTriangulator.CheckIfEar
+- uid: Utils.Geometry.PolyTriangulator.convex
+  name: convex
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_convex
+  commentId: F:Utils.Geometry.PolyTriangulator.convex
+  fullName: Utils.Geometry.PolyTriangulator.convex
+  nameWithType: PolyTriangulator.convex
+- uid: Utils.Geometry.PolyTriangulator.ears
+  name: ears
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_ears
+  commentId: F:Utils.Geometry.PolyTriangulator.ears
+  fullName: Utils.Geometry.PolyTriangulator.ears
+  nameWithType: PolyTriangulator.ears
+- uid: Utils.Geometry.PolyTriangulator.indices
+  name: indices
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_indices
+  commentId: F:Utils.Geometry.PolyTriangulator.indices
+  fullName: Utils.Geometry.PolyTriangulator.indices
+  nameWithType: PolyTriangulator.indices
+- uid: Utils.Geometry.PolyTriangulator.IsConvex(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name: IsConvex(Vector3, Vector3, Vector3)
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_IsConvex_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.PolyTriangulator.IsConvex(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  fullName: Utils.Geometry.PolyTriangulator.IsConvex(UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: PolyTriangulator.IsConvex(Vector3, Vector3, Vector3)
+- uid: Utils.Geometry.PolyTriangulator.IsConvex*
+  name: IsConvex
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_IsConvex_
+  commentId: Overload:Utils.Geometry.PolyTriangulator.IsConvex
+  isSpec: "True"
+  fullName: Utils.Geometry.PolyTriangulator.IsConvex
+  nameWithType: PolyTriangulator.IsConvex
+- uid: Utils.Geometry.PolyTriangulator.PrepareLists
+  name: PrepareLists()
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_PrepareLists
+  commentId: M:Utils.Geometry.PolyTriangulator.PrepareLists
+  fullName: Utils.Geometry.PolyTriangulator.PrepareLists()
+  nameWithType: PolyTriangulator.PrepareLists()
+- uid: Utils.Geometry.PolyTriangulator.PrepareLists*
+  name: PrepareLists
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_PrepareLists_
+  commentId: Overload:Utils.Geometry.PolyTriangulator.PrepareLists
+  isSpec: "True"
+  fullName: Utils.Geometry.PolyTriangulator.PrepareLists
+  nameWithType: PolyTriangulator.PrepareLists
+- uid: Utils.Geometry.PolyTriangulator.reflex
+  name: reflex
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_reflex
+  commentId: F:Utils.Geometry.PolyTriangulator.reflex
+  fullName: Utils.Geometry.PolyTriangulator.reflex
+  nameWithType: PolyTriangulator.reflex
+- uid: Utils.Geometry.PolyTriangulator.Triangulate
+  name: Triangulate()
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_Triangulate
+  commentId: M:Utils.Geometry.PolyTriangulator.Triangulate
+  fullName: Utils.Geometry.PolyTriangulator.Triangulate()
+  nameWithType: PolyTriangulator.Triangulate()
+- uid: Utils.Geometry.PolyTriangulator.Triangulate*
+  name: Triangulate
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_Triangulate_
+  commentId: Overload:Utils.Geometry.PolyTriangulator.Triangulate
+  isSpec: "True"
+  fullName: Utils.Geometry.PolyTriangulator.Triangulate
+  nameWithType: PolyTriangulator.Triangulate
+- uid: Utils.Geometry.PolyTriangulator.UpdateVertex(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  name: UpdateVertex(Vector3, Vector3, Vector3)
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_UpdateVertex_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_
+  commentId: M:Utils.Geometry.PolyTriangulator.UpdateVertex(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)
+  fullName: Utils.Geometry.PolyTriangulator.UpdateVertex(UnityEngine.Vector3, UnityEngine.Vector3, UnityEngine.Vector3)
+  nameWithType: PolyTriangulator.UpdateVertex(Vector3, Vector3, Vector3)
+- uid: Utils.Geometry.PolyTriangulator.UpdateVertex*
+  name: UpdateVertex
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_UpdateVertex_
+  commentId: Overload:Utils.Geometry.PolyTriangulator.UpdateVertex
+  isSpec: "True"
+  fullName: Utils.Geometry.PolyTriangulator.UpdateVertex
+  nameWithType: PolyTriangulator.UpdateVertex
+- uid: Utils.Geometry.PolyTriangulator.vertices
+  name: vertices
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_vertices
+  commentId: F:Utils.Geometry.PolyTriangulator.vertices
+  fullName: Utils.Geometry.PolyTriangulator.vertices
+  nameWithType: PolyTriangulator.vertices
+- uid: Utils.Geometry.PolyTriangulator.verts
+  name: verts
+  href: api/Utils.Geometry.PolyTriangulator.html#Utils_Geometry_PolyTriangulator_verts
+  commentId: F:Utils.Geometry.PolyTriangulator.verts
+  fullName: Utils.Geometry.PolyTriangulator.verts
+  nameWithType: PolyTriangulator.verts
 - uid: Utils.Geometry.Triangulator
   name: Triangulator
   href: api/Utils.Geometry.Triangulator.html

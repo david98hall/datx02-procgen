@@ -1073,6 +1073,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Geometry.PolyTriangulator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Geometry.PolyTriangulator.html",
+          "hash": "0TSS5JUjCLtVZlVQk46I3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Utils.Geometry.Polygon.yml",
       "output": {
         ".html": {
@@ -1125,7 +1137,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.html",
-          "hash": "R6Q652J1twq2KJ0ZP/ODLw=="
+          "hash": "Ya8K/jQ4UKbHwMTfmoJsvg=="
         }
       },
       "is_incremental": false,
@@ -1245,7 +1257,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "jg2/EtxYsFGNEwnW172xRg=="
+          "hash": "hz+Xntjzl5/07/cXzbzPSQ=="
         }
       },
       "is_incremental": false,
@@ -1318,8 +1330,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 102,
-          "skipped_file_count": 55
+          "total_file_count": 103,
+          "skipped_file_count": 101
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
