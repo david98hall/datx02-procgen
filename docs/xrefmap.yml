@@ -5126,6 +5126,37 @@ references:
   isSpec: "True"
   fullName: Utils.Concurrency.DispatchInvoker..cctor
   nameWithType: DispatchInvoker..cctor
+- uid: Utils.Concurrency.TaskUtils
+  name: TaskUtils
+  href: api/Utils.Concurrency.TaskUtils.html
+  commentId: T:Utils.Concurrency.TaskUtils
+  fullName: Utils.Concurrency.TaskUtils
+  nameWithType: TaskUtils
+- uid: Utils.Concurrency.TaskUtils.RunActionInTasks*
+  name: RunActionInTasks
+  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks_
+  commentId: Overload:Utils.Concurrency.TaskUtils.RunActionInTasks
+  isSpec: "True"
+  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks
+  nameWithType: TaskUtils.RunActionInTasks
+- uid: Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
+  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__
+  commentId: M:Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
+  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>)
+  fullName.vb: Utils.Concurrency.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO))
+  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
+  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
+- uid: Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
+  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
+  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Threading_CancellationToken_
+  commentId: M:Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
+  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
+  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>, System.Threading.CancellationToken)
+  fullName.vb: Utils.Concurrency.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO), System.Threading.CancellationToken)
+  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
+  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
 - uid: Utils.CopyableEnumerator`1
   name: CopyableEnumerator<T>
   href: api/Utils.CopyableEnumerator-1.html
@@ -6199,37 +6230,6 @@ references:
   isSpec: "True"
   fullName: Utils.Paths.PathObjectGenerator.TerrainOffsetY
   nameWithType: PathObjectGenerator.TerrainOffsetY
-- uid: Utils.TaskUtils
-  name: TaskUtils
-  href: api/Utils.TaskUtils.html
-  commentId: T:Utils.TaskUtils
-  fullName: Utils.TaskUtils
-  nameWithType: TaskUtils
-- uid: Utils.TaskUtils.RunActionInTasks*
-  name: RunActionInTasks
-  href: api/Utils.TaskUtils.html#Utils_TaskUtils_RunActionInTasks_
-  commentId: Overload:Utils.TaskUtils.RunActionInTasks
-  isSpec: "True"
-  fullName: Utils.TaskUtils.RunActionInTasks
-  nameWithType: TaskUtils.RunActionInTasks
-- uid: Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
-  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
-  href: api/Utils.TaskUtils.html#Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__
-  commentId: M:Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
-  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
-  fullName: Utils.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>)
-  fullName.vb: Utils.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO))
-  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
-  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
-- uid: Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
-  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
-  href: api/Utils.TaskUtils.html#Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Threading_CancellationToken_
-  commentId: M:Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
-  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
-  fullName: Utils.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>, System.Threading.CancellationToken)
-  fullName.vb: Utils.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO), System.Threading.CancellationToken)
-  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
-  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
 - uid: Utils.TerrainUtil
   name: TerrainUtil
   href: api/Utils.TerrainUtil.html
