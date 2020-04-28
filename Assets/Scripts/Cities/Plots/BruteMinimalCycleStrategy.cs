@@ -4,7 +4,7 @@ using Cities.Roads;
 using Extensions;
 using Interfaces;
 using UnityEngine;
-using Utils;
+using Utils.Concurrency;
 using Utils.Geometry;
 
 namespace Cities.Plots

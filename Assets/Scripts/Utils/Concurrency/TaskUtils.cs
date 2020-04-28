@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Utils
+namespace Utils.Concurrency
 {
     /// <summary>
     /// Utility methods for tasks.

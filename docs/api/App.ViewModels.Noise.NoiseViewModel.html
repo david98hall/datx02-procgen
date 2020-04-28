@@ -79,28 +79,28 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.Object</span>, <span class="xref">System.Single</span>[,]&gt;</div>
-    <div class="level2"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.Object</span>, <span class="xref">System.Single</span>[,]&gt;</div>
-    <div class="level3"><span class="xref">NoiseViewModel</span></div>
+    <div class="level1"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.Object</span>, <span class="xref">System.Single</span>[,]&gt;</div>
+    <div class="level2"><span class="xref">NoiseViewModel</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Single</span>[,]&gt;</div>
-    <div><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</div>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
     <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
-    <div><a class="xref" href="Interfaces.IInitializable.html">IInitializable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_CancelToken">ViewModelStrategy&lt;Object, Single[,]&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector">ViewModelStrategy&lt;Object, Single[,]&gt;.Injector</a>
+    </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;Object, Single[,]&gt;.EventBus</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;Object, Single[,]&gt;._eventBus</a>
-    </div>
-    <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Initialize">ViewModelStrategy&lt;Object, Single[,]&gt;.Initialize()</a>
     </div>
     <div>
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;Object, Single[,]&gt;.Display()</a>
@@ -109,16 +109,7 @@
       <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;Object, Single[,]&gt;.Generate()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_">ViewModelStrategy&lt;Object, Single[,]&gt;.OnEvent(AppEvent, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;Object, Single[,]&gt;.Injector</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_InjectedValue">Strategy&lt;Object, Single[,]&gt;.InjectedValue</a>
-    </div>
-    <div>
-      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Get">Strategy&lt;Object, Single[,]&gt;.Get()</a>
+      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_">ViewModelStrategy&lt;Object, Single[,]&gt;.OnEvent(AppEvent, Object, Object)</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -147,7 +138,7 @@
   <h5 id="App_ViewModels_Noise_NoiseViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class NoiseViewModel : ViewModelStrategy&lt;object, float[, ]&gt;, IGenerator&lt;float[, ]&gt;, IInjector&lt;float[, ]&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;, IInitializable</code></pre>
+public class NoiseViewModel : ViewModelStrategy&lt;object, float[, ]&gt;, IGenerator&lt;float[, ]&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -156,7 +147,7 @@ public class NoiseViewModel : ViewModelStrategy&lt;object, float[, ]&gt;, IGener
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel__noiseStrategyVisible.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L20">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L21">View Source</a>
   </span>
   <h4 id="App_ViewModels_Noise_NoiseViewModel__noiseStrategyVisible" data-uid="App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible">_noiseStrategyVisible</h4>
   <div class="markdown level1 summary"><p>Visibility of the noise strategy editor.</p>
@@ -186,7 +177,7 @@ public class NoiseViewModel : ViewModelStrategy&lt;object, float[, ]&gt;, IGener
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel_noiseStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel.noiseStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L35">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L36">View Source</a>
   </span>
   <h4 id="App_ViewModels_Noise_NoiseViewModel_noiseStrategy" data-uid="App.ViewModels.Noise.NoiseViewModel.noiseStrategy">noiseStrategy</h4>
   <div class="markdown level1 summary"><p>Serialized noise strategy that is currently selected.</p>
@@ -217,7 +208,7 @@ NoiseViewModel.NoiseStrategy noiseStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel_perlinNoiseStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L42">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L43">View Source</a>
   </span>
   <h4 id="App_ViewModels_Noise_NoiseViewModel_perlinNoiseStrategy" data-uid="App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy">perlinNoiseStrategy</h4>
   <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Noise.PerlinNoiseStrategy.html">PerlinNoiseStrategy</a> view model.
@@ -248,10 +239,42 @@ PerlinNoiseStrategy perlinNoiseStrategy</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel_CancelToken.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel.CancelToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L62">View Source</a>
+  </span>
+  <a id="App_ViewModels_Noise_NoiseViewModel_CancelToken_" data-uid="App.ViewModels.Noise.NoiseViewModel.CancelToken*"></a>
+  <h4 id="App_ViewModels_Noise_NoiseViewModel_CancelToken" data-uid="App.ViewModels.Noise.NoiseViewModel.CancelToken">CancelToken</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override CancellationToken CancelToken { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Object, System.Single[,]&gt;.CancelToken</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel_EventBus.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel.EventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L46">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L47">View Source</a>
   </span>
   <a id="App_ViewModels_Noise_NoiseViewModel_EventBus_" data-uid="App.ViewModels.Noise.NoiseViewModel.EventBus*"></a>
   <h4 id="App_ViewModels_Noise_NoiseViewModel_EventBus" data-uid="App.ViewModels.Noise.NoiseViewModel.EventBus">EventBus</h4>
@@ -285,7 +308,7 @@ PerlinNoiseStrategy perlinNoiseStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L72">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L81">View Source</a>
   </span>
   <a id="App_ViewModels_Noise_NoiseViewModel_Display_" data-uid="App.ViewModels.Noise.NoiseViewModel.Display*"></a>
   <h4 id="App_ViewModels_Noise_NoiseViewModel_Display" data-uid="App.ViewModels.Noise.NoiseViewModel.Display">Display()</h4>
@@ -319,7 +342,7 @@ PerlinNoiseStrategy perlinNoiseStrategy</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L94">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L103">View Source</a>
   </span>
   <a id="App_ViewModels_Noise_NoiseViewModel_Generate_" data-uid="App.ViewModels.Noise.NoiseViewModel.Generate*"></a>
   <h4 id="App_ViewModels_Noise_NoiseViewModel_Generate" data-uid="App.ViewModels.Noise.NoiseViewModel.Generate">Generate()</h4>
@@ -346,38 +369,15 @@ PerlinNoiseStrategy perlinNoiseStrategy</code></pre>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Object, System.Single[,]&gt;.Generate()</span></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel_Initialize.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L63">View Source</a>
-  </span>
-  <a id="App_ViewModels_Noise_NoiseViewModel_Initialize_" data-uid="App.ViewModels.Noise.NoiseViewModel.Initialize*"></a>
-  <h4 id="App_ViewModels_Noise_NoiseViewModel_Initialize" data-uid="App.ViewModels.Noise.NoiseViewModel.Initialize">Initialize()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.Object, System.Single[,]&gt;.Initialize()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInjector-1.html">IInjector&lt;T&gt;</a>
   </div>
   <div>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
   </div>
   <div>
       <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Interfaces.IInitializable.html">IInitializable</a>
   </div>
 </article>
           </div>
@@ -390,7 +390,7 @@ PerlinNoiseStrategy perlinNoiseStrategy</code></pre>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Noise_NoiseViewModel.md&amp;value=---%0Auid%3A%20App.ViewModels.Noise.NoiseViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Noise/NoiseViewModel.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

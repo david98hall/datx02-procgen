@@ -89,6 +89,9 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_CancelToken">Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.CancelToken</a>
+    </div>
+    <div>
       <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.Injector</a>
     </div>
     <div>
@@ -165,7 +168,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_ClockwiseCycleStrategy_FindCycle_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___System_Boolean_.md&amp;value=---%0Auid%3A%20Cities.Plots.ClockwiseCycleStrategy.FindCycle(UnityEngine.Vector3%2CUnityEngine.Vector3%2CUnityEngine.Vector3%2CCities.Roads.RoadNetwork%2CSystem.Collections.Generic.ICollection%7BSystem.ValueTuple%7BUnityEngine.Vector3%2CUnityEngine.Vector3%7D%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/ClockwiseCycleStrategy.cs/#L78">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/ClockwiseCycleStrategy.cs/#L81">View Source</a>
   </span>
   <a id="Cities_Plots_ClockwiseCycleStrategy_FindCycle_" data-uid="Cities.Plots.ClockwiseCycleStrategy.FindCycle*"></a>
   <h4 id="Cities_Plots_ClockwiseCycleStrategy_FindCycle_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___System_Boolean_" data-uid="Cities.Plots.ClockwiseCycleStrategy.FindCycle(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,Cities.Roads.RoadNetwork,System.Collections.Generic.ICollection{System.ValueTuple{UnityEngine.Vector3,UnityEngine.Vector3}},System.Boolean)">FindCycle(Vector3, Vector3, Vector3, RoadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt;, Boolean)</h4>
@@ -174,7 +177,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">static IReadOnlyCollection&lt;Vector3&gt; FindCycle(Vector3 start, Vector3 vertex, Vector3 previous, RoadNetwork roadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt; visitedEdges, bool firstIteration = true)</code></pre>
+    <pre><code class="lang-csharp hljs">IReadOnlyCollection&lt;Vector3&gt; FindCycle(Vector3 start, Vector3 vertex, Vector3 previous, RoadNetwork roadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt; visitedEdges, bool firstIteration = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -310,7 +313,7 @@ null if no cycle was found.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_ClockwiseCycleStrategy_TryFindCycle_UnityEngine_Vector3_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___System_Collections_Generic_IReadOnlyCollection_UnityEngine_Vector3___.md&amp;value=---%0Auid%3A%20Cities.Plots.ClockwiseCycleStrategy.TryFindCycle(UnityEngine.Vector3%2CCities.Roads.RoadNetwork%2CSystem.Collections.Generic.ICollection%7BSystem.ValueTuple%7BUnityEngine.Vector3%2CUnityEngine.Vector3%7D%7D%2CSystem.Collections.Generic.IReadOnlyCollection%7BUnityEngine.Vector3%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/ClockwiseCycleStrategy.cs/#L53">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/ClockwiseCycleStrategy.cs/#L56">View Source</a>
   </span>
   <a id="Cities_Plots_ClockwiseCycleStrategy_TryFindCycle_" data-uid="Cities.Plots.ClockwiseCycleStrategy.TryFindCycle*"></a>
   <h4 id="Cities_Plots_ClockwiseCycleStrategy_TryFindCycle_UnityEngine_Vector3_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___System_Collections_Generic_IReadOnlyCollection_UnityEngine_Vector3___" data-uid="Cities.Plots.ClockwiseCycleStrategy.TryFindCycle(UnityEngine.Vector3,Cities.Roads.RoadNetwork,System.Collections.Generic.ICollection{System.ValueTuple{UnityEngine.Vector3,UnityEngine.Vector3}},System.Collections.Generic.IReadOnlyCollection{UnityEngine.Vector3}@)">TryFindCycle(Vector3, RoadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt;, out IReadOnlyCollection&lt;Vector3&gt;)</h4>
@@ -318,7 +321,7 @@ null if no cycle was found.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">static bool TryFindCycle(Vector3 vertex, RoadNetwork roadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt; visitedEdges, out IReadOnlyCollection&lt;Vector3&gt; cycle)</code></pre>
+    <pre><code class="lang-csharp hljs">bool TryFindCycle(Vector3 vertex, RoadNetwork roadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt; visitedEdges, out IReadOnlyCollection&lt;Vector3&gt; cycle)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -372,7 +375,7 @@ null if no cycle was found.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_ClockwiseCycleStrategy_TryGetClockwiseNeighbour_UnityEngine_Vector3_UnityEngine_Vector3_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20Cities.Plots.ClockwiseCycleStrategy.TryGetClockwiseNeighbour(UnityEngine.Vector3%2CUnityEngine.Vector3%2CCities.Roads.RoadNetwork%2CSystem.Collections.Generic.ICollection%7BSystem.ValueTuple%7BUnityEngine.Vector3%2CUnityEngine.Vector3%7D%7D%2CUnityEngine.Vector3%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/ClockwiseCycleStrategy.cs/#L124">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/ClockwiseCycleStrategy.cs/#L130">View Source</a>
   </span>
   <a id="Cities_Plots_ClockwiseCycleStrategy_TryGetClockwiseNeighbour_" data-uid="Cities.Plots.ClockwiseCycleStrategy.TryGetClockwiseNeighbour*"></a>
   <h4 id="Cities_Plots_ClockwiseCycleStrategy_TryGetClockwiseNeighbour_UnityEngine_Vector3_UnityEngine_Vector3_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___UnityEngine_Vector3__" data-uid="Cities.Plots.ClockwiseCycleStrategy.TryGetClockwiseNeighbour(UnityEngine.Vector3,UnityEngine.Vector3,Cities.Roads.RoadNetwork,System.Collections.Generic.ICollection{System.ValueTuple{UnityEngine.Vector3,UnityEngine.Vector3}},UnityEngine.Vector3@)">TryGetClockwiseNeighbour(Vector3, Vector3, RoadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt;, out Vector3)</h4>
@@ -447,7 +450,7 @@ neighbour of the given vertex.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Plots_ClockwiseCycleStrategy_Vec3ToVec2_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20Cities.Plots.ClockwiseCycleStrategy.Vec3ToVec2(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/ClockwiseCycleStrategy.cs/#L164">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Plots/ClockwiseCycleStrategy.cs/#L170">View Source</a>
   </span>
   <a id="Cities_Plots_ClockwiseCycleStrategy_Vec3ToVec2_" data-uid="Cities.Plots.ClockwiseCycleStrategy.Vec3ToVec2*"></a>
   <h4 id="Cities_Plots_ClockwiseCycleStrategy_Vec3ToVec2_UnityEngine_Vector3_" data-uid="Cities.Plots.ClockwiseCycleStrategy.Vec3ToVec2(UnityEngine.Vector3)">Vec3ToVec2(Vector3)</h4>

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class TaskUtils
+    <title>Class MathUtils
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class TaskUtils
+    <meta name="title" content="Class MathUtils
    ">
     <meta name="generator" content="docfx 2.50.0.0">
     
@@ -68,18 +68,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Utils.TaskUtils">
+            <article class="content wrap" id="_content" data-uid="Utils.MathUtils">
   
   
-  <h1 id="Utils_TaskUtils" data-uid="Utils.TaskUtils" class="text-break">Class TaskUtils
+  <h1 id="Utils_MathUtils" data-uid="Utils.MathUtils" class="text-break">Class MathUtils
   </h1>
-  <div class="markdown level0 summary"><p>Utility methods for tasks.</p>
+  <div class="markdown level0 summary"><p>Mathematics utility methods.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">TaskUtils</span></div>
+    <div class="level1"><span class="xref">MathUtils</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -107,27 +107,27 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Utils.html">Utils</a></h6>
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
-  <h5 id="Utils_TaskUtils_syntax">Syntax</h5>
+  <h5 id="Utils_MathUtils_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class TaskUtils</code></pre>
+    <pre><code class="lang-csharp hljs">public static class MathUtils</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__.md&amp;value=---%0Auid%3A%20Utils.TaskUtils.RunActionInTasks%60%602(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_MathUtils_RandomHalfClosedFloat_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Utils.MathUtils.RandomHalfClosedFloat(System.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/TaskUtils.cs/#L22">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/MathUtils.cs/#L30">View Source</a>
   </span>
-  <a id="Utils_TaskUtils_RunActionInTasks_" data-uid="Utils.TaskUtils.RunActionInTasks*"></a>
-  <h4 id="Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__" data-uid="Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">RunActionInTasks&lt;TI, TO&gt;(IEnumerable&lt;TI&gt;, Func&lt;TI, TO&gt;)</h4>
-  <div class="markdown level1 summary"><p>Runs a task for each input item, executing the output action.</p>
+  <a id="Utils_MathUtils_RandomHalfClosedFloat_" data-uid="Utils.MathUtils.RandomHalfClosedFloat*"></a>
+  <h4 id="Utils_MathUtils_RandomHalfClosedFloat_System_Single_System_Single_" data-uid="Utils.MathUtils.RandomHalfClosedFloat(System.Single,System.Single)">RandomHalfClosedFloat(Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Returns a random float in the range [lower, upper).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;TO&gt; RunActionInTasks&lt;TI, TO&gt;(IEnumerable&lt;TI&gt; input, Func&lt;TI, TO&gt; outputAction)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float RandomHalfClosedFloat(float lower, float upper)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -140,15 +140,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TI&gt;</td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The input.</p>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">lower</span></td>
+        <td><p>Inclusive lower bound.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;TI, TO&gt;</td>
-        <td><span class="parametername">outputAction</span></td>
-        <td><p>The action to apply on each input item.</p>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">upper</span></td>
+        <td><p>Exclusive upper bound.</p>
 </td>
       </tr>
     </tbody>
@@ -163,48 +163,27 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TO&gt;</td>
-        <td><p>Each task's output.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TI</span></td>
-        <td><p>The input type.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TO</span></td>
-        <td><p>The output type.</p>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>A random float.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Utils.TaskUtils.RunActionInTasks%60%602(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_MathUtils_RandomInclusiveFloat_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Utils.MathUtils.RandomInclusiveFloat(System.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/TaskUtils.cs/#L36">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/MathUtils.cs/#L18">View Source</a>
   </span>
-  <a id="Utils_TaskUtils_RunActionInTasks_" data-uid="Utils.TaskUtils.RunActionInTasks*"></a>
-  <h4 id="Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Threading_CancellationToken_" data-uid="Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)">RunActionInTasks&lt;TI, TO&gt;(IEnumerable&lt;TI&gt;, Func&lt;TI, TO&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Runs a task for each input item, executing the output action.</p>
+  <a id="Utils_MathUtils_RandomInclusiveFloat_" data-uid="Utils.MathUtils.RandomInclusiveFloat*"></a>
+  <h4 id="Utils_MathUtils_RandomInclusiveFloat_System_Single_System_Single_" data-uid="Utils.MathUtils.RandomInclusiveFloat(System.Single,System.Single)">RandomInclusiveFloat(Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Returns a random float in the range [lower, upper].</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;TO&gt; RunActionInTasks&lt;TI, TO&gt;(IEnumerable&lt;TI&gt; input, Func&lt;TI, TO&gt; outputAction, CancellationToken cancellationToken)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float RandomInclusiveFloat(float lower, float upper)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -217,21 +196,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TI&gt;</td>
-        <td><span class="parametername">input</span></td>
-        <td><p>The input.</p>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">lower</span></td>
+        <td><p>Inclusive lower bound.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;TI, TO&gt;</td>
-        <td><span class="parametername">outputAction</span></td>
-        <td><p>The action to apply on each input item.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token.</p>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">upper</span></td>
+        <td><p>Inclusive upper bound.</p>
 </td>
       </tr>
     </tbody>
@@ -246,29 +219,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TO&gt;</td>
-        <td><p>Each task's output.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TI</span></td>
-        <td><p>The input type.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TO</span></td>
-        <td><p>The output type.</p>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>A random float.</p>
 </td>
       </tr>
     </tbody>
@@ -281,10 +233,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_TaskUtils.md&amp;value=---%0Auid%3A%20Utils.TaskUtils%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Utils_MathUtils.md&amp;value=---%0Auid%3A%20Utils.MathUtils%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/TaskUtils.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Utils/MathUtils.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

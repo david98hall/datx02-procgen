@@ -19,6 +19,12 @@ references:
   commentId: F:App.AppController._eventBus
   fullName: App.AppController._eventBus
   nameWithType: AppController._eventBus
+- uid: App.AppController._finishedGenerations
+  name: _finishedGenerations
+  href: api/App.AppController.html#App_AppController__finishedGenerations
+  commentId: F:App.AppController._finishedGenerations
+  fullName: App.AppController._finishedGenerations
+  nameWithType: AppController._finishedGenerations
 - uid: App.AppController._initialized
   name: _initialized
   href: api/App.AppController.html#App_AppController__initialized
@@ -49,12 +55,43 @@ references:
   commentId: F:App.AppController._model
   fullName: App.AppController._model
   nameWithType: AppController._model
+- uid: App.AppController._numProgressUpdates
+  name: _numProgressUpdates
+  href: api/App.AppController.html#App_AppController__numProgressUpdates
+  commentId: F:App.AppController._numProgressUpdates
+  fullName: App.AppController._numProgressUpdates
+  nameWithType: AppController._numProgressUpdates
+- uid: App.AppController._onGenerationEnd
+  name: _onGenerationEnd
+  href: api/App.AppController.html#App_AppController__onGenerationEnd
+  commentId: F:App.AppController._onGenerationEnd
+  fullName: App.AppController._onGenerationEnd
+  nameWithType: AppController._onGenerationEnd
+- uid: App.AppController._onGenerationStart
+  name: _onGenerationStart
+  href: api/App.AppController.html#App_AppController__onGenerationStart
+  commentId: F:App.AppController._onGenerationStart
+  fullName: App.AppController._onGenerationStart
+  nameWithType: AppController._onGenerationStart
 - uid: App.AppController.cityViewModel
   name: cityViewModel
   href: api/App.AppController.html#App_AppController_cityViewModel
   commentId: F:App.AppController.cityViewModel
   fullName: App.AppController.cityViewModel
   nameWithType: AppController.cityViewModel
+- uid: App.AppController.CreateGameObjects(System.Threading.CancellationToken)
+  name: CreateGameObjects(CancellationToken)
+  href: api/App.AppController.html#App_AppController_CreateGameObjects_System_Threading_CancellationToken_
+  commentId: M:App.AppController.CreateGameObjects(System.Threading.CancellationToken)
+  fullName: App.AppController.CreateGameObjects(System.Threading.CancellationToken)
+  nameWithType: AppController.CreateGameObjects(CancellationToken)
+- uid: App.AppController.CreateGameObjects*
+  name: CreateGameObjects
+  href: api/App.AppController.html#App_AppController_CreateGameObjects_
+  commentId: Overload:App.AppController.CreateGameObjects
+  isSpec: "True"
+  fullName: App.AppController.CreateGameObjects
+  nameWithType: AppController.CreateGameObjects
 - uid: App.AppController.Display
   name: Display()
   href: api/App.AppController.html#App_AppController_Display
@@ -74,19 +111,19 @@ references:
   commentId: F:App.AppController.gameObjects
   fullName: App.AppController.gameObjects
   nameWithType: AppController.gameObjects
-- uid: App.AppController.Generate
-  name: Generate()
-  href: api/App.AppController.html#App_AppController_Generate
-  commentId: M:App.AppController.Generate
-  fullName: App.AppController.Generate()
-  nameWithType: AppController.Generate()
-- uid: App.AppController.Generate*
-  name: Generate
-  href: api/App.AppController.html#App_AppController_Generate_
-  commentId: Overload:App.AppController.Generate
+- uid: App.AppController.GenerateAsync(System.Action,App.AppController.OnGenerationStart,App.AppController.OnGenerationEnd,System.Threading.CancellationToken)
+  name: GenerateAsync(Action, AppController.OnGenerationStart, AppController.OnGenerationEnd, CancellationToken)
+  href: api/App.AppController.html#App_AppController_GenerateAsync_System_Action_App_AppController_OnGenerationStart_App_AppController_OnGenerationEnd_System_Threading_CancellationToken_
+  commentId: M:App.AppController.GenerateAsync(System.Action,App.AppController.OnGenerationStart,App.AppController.OnGenerationEnd,System.Threading.CancellationToken)
+  fullName: App.AppController.GenerateAsync(System.Action, App.AppController.OnGenerationStart, App.AppController.OnGenerationEnd, System.Threading.CancellationToken)
+  nameWithType: AppController.GenerateAsync(Action, AppController.OnGenerationStart, AppController.OnGenerationEnd, CancellationToken)
+- uid: App.AppController.GenerateAsync*
+  name: GenerateAsync
+  href: api/App.AppController.html#App_AppController_GenerateAsync_
+  commentId: Overload:App.AppController.GenerateAsync
   isSpec: "True"
-  fullName: App.AppController.Generate
-  nameWithType: AppController.Generate
+  fullName: App.AppController.GenerateAsync
+  nameWithType: AppController.GenerateAsync
 - uid: App.AppController.Initialize
   name: Initialize()
   href: api/App.AppController.html#App_AppController_Initialize
@@ -145,6 +182,19 @@ references:
   isSpec: "True"
   fullName: App.AppController.Model.TerrainHeightMap
   nameWithType: AppController.Model.TerrainHeightMap
+- uid: App.AppController.Model.TerrainOffset
+  name: TerrainOffset
+  href: api/App.AppController.Model.html#App_AppController_Model_TerrainOffset
+  commentId: P:App.AppController.Model.TerrainOffset
+  fullName: App.AppController.Model.TerrainOffset
+  nameWithType: AppController.Model.TerrainOffset
+- uid: App.AppController.Model.TerrainOffset*
+  name: TerrainOffset
+  href: api/App.AppController.Model.html#App_AppController_Model_TerrainOffset_
+  commentId: Overload:App.AppController.Model.TerrainOffset
+  isSpec: "True"
+  fullName: App.AppController.Model.TerrainOffset
+  nameWithType: AppController.Model.TerrainOffset
 - uid: App.AppController.Model.TerrainTexture
   name: TerrainTexture
   href: api/App.AppController.Model.html#App_AppController_Model_TerrainTexture
@@ -158,19 +208,6 @@ references:
   isSpec: "True"
   fullName: App.AppController.Model.TerrainTexture
   nameWithType: AppController.Model.TerrainTexture
-- uid: App.AppController.Model.TerrainTransform
-  name: TerrainTransform
-  href: api/App.AppController.Model.html#App_AppController_Model_TerrainTransform
-  commentId: P:App.AppController.Model.TerrainTransform
-  fullName: App.AppController.Model.TerrainTransform
-  nameWithType: AppController.Model.TerrainTransform
-- uid: App.AppController.Model.TerrainTransform*
-  name: TerrainTransform
-  href: api/App.AppController.Model.html#App_AppController_Model_TerrainTransform_
-  commentId: Overload:App.AppController.Model.TerrainTransform
-  isSpec: "True"
-  fullName: App.AppController.Model.TerrainTransform
-  nameWithType: AppController.Model.TerrainTransform
 - uid: App.AppController.OnEnable
   name: OnEnable()
   href: api/App.AppController.html#App_AppController_OnEnable
@@ -184,6 +221,44 @@ references:
   isSpec: "True"
   fullName: App.AppController.OnEnable
   nameWithType: AppController.OnEnable
+- uid: App.AppController.OnEvent(App.AppEvent,System.Object,System.Object)
+  name: OnEvent(AppEvent, Object, Object)
+  href: api/App.AppController.html#App_AppController_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.AppController.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.AppController.OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: AppController.OnEvent(AppEvent, Object, Object)
+- uid: App.AppController.OnEvent*
+  name: OnEvent
+  href: api/App.AppController.html#App_AppController_OnEvent_
+  commentId: Overload:App.AppController.OnEvent
+  isSpec: "True"
+  fullName: App.AppController.OnEvent
+  nameWithType: AppController.OnEvent
+- uid: App.AppController.OnGenerationEnd
+  name: AppController.OnGenerationEnd
+  href: api/App.AppController.OnGenerationEnd.html
+  commentId: T:App.AppController.OnGenerationEnd
+  fullName: App.AppController.OnGenerationEnd
+  nameWithType: AppController.OnGenerationEnd
+- uid: App.AppController.OnGenerationStart
+  name: AppController.OnGenerationStart
+  href: api/App.AppController.OnGenerationStart.html
+  commentId: T:App.AppController.OnGenerationStart
+  fullName: App.AppController.OnGenerationStart
+  nameWithType: AppController.OnGenerationStart
+- uid: App.AppController.Reset
+  name: Reset()
+  href: api/App.AppController.html#App_AppController_Reset
+  commentId: M:App.AppController.Reset
+  fullName: App.AppController.Reset()
+  nameWithType: AppController.Reset()
+- uid: App.AppController.Reset*
+  name: Reset
+  href: api/App.AppController.html#App_AppController_Reset_
+  commentId: Overload:App.AppController.Reset
+  isSpec: "True"
+  fullName: App.AppController.Reset
+  nameWithType: AppController.Reset
 - uid: App.AppController.terrainViewModel
   name: terrainViewModel
   href: api/App.AppController.html#App_AppController_terrainViewModel
@@ -196,6 +271,50 @@ references:
   commentId: T:App.AppControllerEditor
   fullName: App.AppControllerEditor
   nameWithType: AppControllerEditor
+- uid: App.AppControllerEditor._cancellationTokenSource
+  name: _cancellationTokenSource
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor__cancellationTokenSource
+  commentId: F:App.AppControllerEditor._cancellationTokenSource
+  fullName: App.AppControllerEditor._cancellationTokenSource
+  nameWithType: AppControllerEditor._cancellationTokenSource
+- uid: App.AppControllerEditor._progress
+  name: _progress
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor__progress
+  commentId: F:App.AppControllerEditor._progress
+  fullName: App.AppControllerEditor._progress
+  nameWithType: AppControllerEditor._progress
+- uid: App.AppControllerEditor._progressInfo
+  name: _progressInfo
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor__progressInfo
+  commentId: F:App.AppControllerEditor._progressInfo
+  fullName: App.AppControllerEditor._progressInfo
+  nameWithType: AppControllerEditor._progressInfo
+- uid: App.AppControllerEditor.OnGenerationEnd(System.String,System.Single)
+  name: OnGenerationEnd(String, Single)
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor_OnGenerationEnd_System_String_System_Single_
+  commentId: M:App.AppControllerEditor.OnGenerationEnd(System.String,System.Single)
+  fullName: App.AppControllerEditor.OnGenerationEnd(System.String, System.Single)
+  nameWithType: AppControllerEditor.OnGenerationEnd(String, Single)
+- uid: App.AppControllerEditor.OnGenerationEnd*
+  name: OnGenerationEnd
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor_OnGenerationEnd_
+  commentId: Overload:App.AppControllerEditor.OnGenerationEnd
+  isSpec: "True"
+  fullName: App.AppControllerEditor.OnGenerationEnd
+  nameWithType: AppControllerEditor.OnGenerationEnd
+- uid: App.AppControllerEditor.OnGenerationStart(System.String)
+  name: OnGenerationStart(String)
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor_OnGenerationStart_System_String_
+  commentId: M:App.AppControllerEditor.OnGenerationStart(System.String)
+  fullName: App.AppControllerEditor.OnGenerationStart(System.String)
+  nameWithType: AppControllerEditor.OnGenerationStart(String)
+- uid: App.AppControllerEditor.OnGenerationStart*
+  name: OnGenerationStart
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor_OnGenerationStart_
+  commentId: Overload:App.AppControllerEditor.OnGenerationStart
+  isSpec: "True"
+  fullName: App.AppControllerEditor.OnGenerationStart
+  nameWithType: AppControllerEditor.OnGenerationStart
 - uid: App.AppControllerEditor.OnInspectorGUI
   name: OnInspectorGUI()
   href: api/App.AppControllerEditor.html#App_AppControllerEditor_OnInspectorGUI
@@ -209,6 +328,19 @@ references:
   isSpec: "True"
   fullName: App.AppControllerEditor.OnInspectorGUI
   nameWithType: AppControllerEditor.OnInspectorGUI
+- uid: App.AppControllerEditor.Reset
+  name: Reset()
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor_Reset
+  commentId: M:App.AppControllerEditor.Reset
+  fullName: App.AppControllerEditor.Reset()
+  nameWithType: AppControllerEditor.Reset()
+- uid: App.AppControllerEditor.Reset*
+  name: Reset
+  href: api/App.AppControllerEditor.html#App_AppControllerEditor_Reset_
+  commentId: Overload:App.AppControllerEditor.Reset
+  isSpec: "True"
+  fullName: App.AppControllerEditor.Reset
+  nameWithType: AppControllerEditor.Reset
 - uid: App.AppEvent
   name: AppEvent
   href: api/App.AppEvent.html
@@ -221,6 +353,18 @@ references:
   commentId: F:App.AppEvent.Broadcast
   fullName: App.AppEvent.Broadcast
   nameWithType: AppEvent.Broadcast
+- uid: App.AppEvent.GenerationEnd
+  name: GenerationEnd
+  href: api/App.AppEvent.html#App_AppEvent_GenerationEnd
+  commentId: F:App.AppEvent.GenerationEnd
+  fullName: App.AppEvent.GenerationEnd
+  nameWithType: AppEvent.GenerationEnd
+- uid: App.AppEvent.GenerationStart
+  name: GenerationStart
+  href: api/App.AppEvent.html#App_AppEvent_GenerationStart
+  commentId: F:App.AppEvent.GenerationStart
+  fullName: App.AppEvent.GenerationStart
+  nameWithType: AppEvent.GenerationStart
 - uid: App.AppEvent.UpdateNoiseMapSize
   name: UpdateNoiseMapSize
   href: api/App.AppEvent.html#App_AppEvent_UpdateNoiseMapSize
@@ -300,6 +444,19 @@ references:
   commentId: F:App.ViewModels.Cities.Buildings.BuildingViewModel.BuildingStrategy.Extrusion
   fullName: App.ViewModels.Cities.Buildings.BuildingViewModel.BuildingStrategy.Extrusion
   nameWithType: BuildingViewModel.BuildingStrategy.Extrusion
+- uid: App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken
+  name: CancelToken
+  href: api/App.ViewModels.Cities.Buildings.BuildingViewModel.html#App_ViewModels_Cities_Buildings_BuildingViewModel_CancelToken
+  commentId: P:App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken
+  fullName: App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken
+  nameWithType: BuildingViewModel.CancelToken
+- uid: App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken*
+  name: CancelToken
+  href: api/App.ViewModels.Cities.Buildings.BuildingViewModel.html#App_ViewModels_Cities_Buildings_BuildingViewModel_CancelToken_
+  commentId: Overload:App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken
+  nameWithType: BuildingViewModel.CancelToken
 - uid: App.ViewModels.Cities.Buildings.BuildingViewModel.Display
   name: Display()
   href: api/App.ViewModels.Cities.Buildings.BuildingViewModel.html#App_ViewModels_Cities_Buildings_BuildingViewModel_Display
@@ -465,6 +622,19 @@ references:
   commentId: F:App.ViewModels.Cities.CityViewModel.buildingViewModel
   fullName: App.ViewModels.Cities.CityViewModel.buildingViewModel
   nameWithType: CityViewModel.buildingViewModel
+- uid: App.ViewModels.Cities.CityViewModel.CancelToken
+  name: CancelToken
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_CancelToken
+  commentId: P:App.ViewModels.Cities.CityViewModel.CancelToken
+  fullName: App.ViewModels.Cities.CityViewModel.CancelToken
+  nameWithType: CityViewModel.CancelToken
+- uid: App.ViewModels.Cities.CityViewModel.CancelToken*
+  name: CancelToken
+  href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_CancelToken_
+  commentId: Overload:App.ViewModels.Cities.CityViewModel.CancelToken
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.CityViewModel.CancelToken
+  nameWithType: CityViewModel.CancelToken
 - uid: App.ViewModels.Cities.CityViewModel.Display
   name: Display()
   href: api/App.ViewModels.Cities.CityViewModel.html#App_ViewModels_Cities_CityViewModel_Display
@@ -980,6 +1150,19 @@ references:
   commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.aStarStrategy
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.aStarStrategy
   nameWithType: RoadViewModel.aStarStrategy
+- uid: App.ViewModels.Cities.Roads.RoadViewModel.CancelToken
+  name: CancelToken
+  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_CancelToken
+  commentId: P:App.ViewModels.Cities.Roads.RoadViewModel.CancelToken
+  fullName: App.ViewModels.Cities.Roads.RoadViewModel.CancelToken
+  nameWithType: RoadViewModel.CancelToken
+- uid: App.ViewModels.Cities.Roads.RoadViewModel.CancelToken*
+  name: CancelToken
+  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_CancelToken_
+  commentId: Overload:App.ViewModels.Cities.Roads.RoadViewModel.CancelToken
+  isSpec: "True"
+  fullName: App.ViewModels.Cities.Roads.RoadViewModel.CancelToken
+  nameWithType: RoadViewModel.CancelToken
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.Display
   name: Display()
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_Display
@@ -1114,199 +1297,212 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.RoadWidth
   nameWithType: RoadViewModel.RoadWidth
+- uid: App.ViewModels.Noise
+  name: App.ViewModels.Noise
+  href: api/App.ViewModels.Noise.html
+  commentId: N:App.ViewModels.Noise
+  fullName: App.ViewModels.Noise
+  nameWithType: App.ViewModels.Noise
+- uid: App.ViewModels.Noise.NoiseViewModel
+  name: NoiseViewModel
+  href: api/App.ViewModels.Noise.NoiseViewModel.html
+  commentId: T:App.ViewModels.Noise.NoiseViewModel
+  fullName: App.ViewModels.Noise.NoiseViewModel
+  nameWithType: NoiseViewModel
+- uid: App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible
+  name: _noiseStrategyVisible
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel__noiseStrategyVisible
+  commentId: F:App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible
+  fullName: App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible
+  nameWithType: NoiseViewModel._noiseStrategyVisible
+- uid: App.ViewModels.Noise.NoiseViewModel.CancelToken
+  name: CancelToken
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_CancelToken
+  commentId: P:App.ViewModels.Noise.NoiseViewModel.CancelToken
+  fullName: App.ViewModels.Noise.NoiseViewModel.CancelToken
+  nameWithType: NoiseViewModel.CancelToken
+- uid: App.ViewModels.Noise.NoiseViewModel.CancelToken*
+  name: CancelToken
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_CancelToken_
+  commentId: Overload:App.ViewModels.Noise.NoiseViewModel.CancelToken
+  isSpec: "True"
+  fullName: App.ViewModels.Noise.NoiseViewModel.CancelToken
+  nameWithType: NoiseViewModel.CancelToken
+- uid: App.ViewModels.Noise.NoiseViewModel.Display
+  name: Display()
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Display
+  commentId: M:App.ViewModels.Noise.NoiseViewModel.Display
+  fullName: App.ViewModels.Noise.NoiseViewModel.Display()
+  nameWithType: NoiseViewModel.Display()
+- uid: App.ViewModels.Noise.NoiseViewModel.Display*
+  name: Display
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Display_
+  commentId: Overload:App.ViewModels.Noise.NoiseViewModel.Display
+  isSpec: "True"
+  fullName: App.ViewModels.Noise.NoiseViewModel.Display
+  nameWithType: NoiseViewModel.Display
+- uid: App.ViewModels.Noise.NoiseViewModel.EventBus
+  name: EventBus
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_EventBus
+  commentId: P:App.ViewModels.Noise.NoiseViewModel.EventBus
+  fullName: App.ViewModels.Noise.NoiseViewModel.EventBus
+  nameWithType: NoiseViewModel.EventBus
+- uid: App.ViewModels.Noise.NoiseViewModel.EventBus*
+  name: EventBus
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_EventBus_
+  commentId: Overload:App.ViewModels.Noise.NoiseViewModel.EventBus
+  isSpec: "True"
+  fullName: App.ViewModels.Noise.NoiseViewModel.EventBus
+  nameWithType: NoiseViewModel.EventBus
+- uid: App.ViewModels.Noise.NoiseViewModel.Generate
+  name: Generate()
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Generate
+  commentId: M:App.ViewModels.Noise.NoiseViewModel.Generate
+  fullName: App.ViewModels.Noise.NoiseViewModel.Generate()
+  nameWithType: NoiseViewModel.Generate()
+- uid: App.ViewModels.Noise.NoiseViewModel.Generate*
+  name: Generate
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_Generate_
+  commentId: Overload:App.ViewModels.Noise.NoiseViewModel.Generate
+  isSpec: "True"
+  fullName: App.ViewModels.Noise.NoiseViewModel.Generate
+  nameWithType: NoiseViewModel.Generate
+- uid: App.ViewModels.Noise.NoiseViewModel.noiseStrategy
+  name: noiseStrategy
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_noiseStrategy
+  commentId: F:App.ViewModels.Noise.NoiseViewModel.noiseStrategy
+  fullName: App.ViewModels.Noise.NoiseViewModel.noiseStrategy
+  nameWithType: NoiseViewModel.noiseStrategy
+- uid: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy
+  name: NoiseViewModel.NoiseStrategy
+  href: api/App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.html
+  commentId: T:App.ViewModels.Noise.NoiseViewModel.NoiseStrategy
+  fullName: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy
+  nameWithType: NoiseViewModel.NoiseStrategy
+- uid: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
+  name: PerlinNoise
+  href: api/App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.html#App_ViewModels_Noise_NoiseViewModel_NoiseStrategy_PerlinNoise
+  commentId: F:App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
+  fullName: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
+  nameWithType: NoiseViewModel.NoiseStrategy.PerlinNoise
+- uid: App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
+  name: perlinNoiseStrategy
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_perlinNoiseStrategy
+  commentId: F:App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
+  fullName: App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
+  nameWithType: NoiseViewModel.perlinNoiseStrategy
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy
+  name: PerlinNoiseStrategy
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html
+  commentId: T:App.ViewModels.Noise.PerlinNoiseStrategy
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy
+  nameWithType: PerlinNoiseStrategy
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.depth
+  name: depth
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_depth
+  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.depth
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.depth
+  nameWithType: PerlinNoiseStrategy.depth
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Display
+  name: Display()
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Display
+  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.Display
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Display()
+  nameWithType: PerlinNoiseStrategy.Display()
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Display*
+  name: Display
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Display_
+  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.Display
+  isSpec: "True"
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Display
+  nameWithType: PerlinNoiseStrategy.Display
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  name: DisplaySizeControls()
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_DisplaySizeControls
+  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls()
+  nameWithType: PerlinNoiseStrategy.DisplaySizeControls()
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls*
+  name: DisplaySizeControls
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_DisplaySizeControls_
+  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  isSpec: "True"
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  nameWithType: PerlinNoiseStrategy.DisplaySizeControls
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Generate
+  name: Generate()
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Generate
+  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.Generate
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Generate()
+  nameWithType: PerlinNoiseStrategy.Generate()
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Generate*
+  name: Generate
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Generate_
+  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.Generate
+  isSpec: "True"
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Generate
+  nameWithType: PerlinNoiseStrategy.Generate
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
+  name: lacunarity
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_lacunarity
+  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
+  nameWithType: PerlinNoiseStrategy.lacunarity
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
+  name: noiseOffset
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_noiseOffset
+  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
+  nameWithType: PerlinNoiseStrategy.noiseOffset
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
+  name: numOctaves
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_numOctaves
+  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
+  nameWithType: PerlinNoiseStrategy.numOctaves
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  name: OnEvent(AppEvent, Object, Object)
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: PerlinNoiseStrategy.OnEvent(AppEvent, Object, Object)
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent*
+  name: OnEvent
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_OnEvent_
+  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent
+  isSpec: "True"
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent
+  nameWithType: PerlinNoiseStrategy.OnEvent
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.persistence
+  name: persistence
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_persistence
+  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.persistence
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.persistence
+  nameWithType: PerlinNoiseStrategy.persistence
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.scale
+  name: scale
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_scale
+  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.scale
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.scale
+  nameWithType: PerlinNoiseStrategy.scale
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.seed
+  name: seed
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_seed
+  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.seed
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.seed
+  nameWithType: PerlinNoiseStrategy.seed
+- uid: App.ViewModels.Noise.PerlinNoiseStrategy.width
+  name: width
+  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_width
+  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.width
+  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.width
+  nameWithType: PerlinNoiseStrategy.width
 - uid: App.ViewModels.Terrain
   name: App.ViewModels.Terrain
   href: api/App.ViewModels.Terrain.html
   commentId: N:App.ViewModels.Terrain
   fullName: App.ViewModels.Terrain
   nameWithType: App.ViewModels.Terrain
-- uid: App.ViewModels.Terrain.Noise
-  name: App.ViewModels.Terrain.Noise
-  href: api/App.ViewModels.Terrain.Noise.html
-  commentId: N:App.ViewModels.Terrain.Noise
-  fullName: App.ViewModels.Terrain.Noise
-  nameWithType: App.ViewModels.Terrain.Noise
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel
-  name: NoiseViewModel
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html
-  commentId: T:App.ViewModels.Terrain.Noise.NoiseViewModel
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel
-  nameWithType: NoiseViewModel
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel._noiseStrategyVisible
-  name: _noiseStrategyVisible
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel__noiseStrategyVisible
-  commentId: F:App.ViewModels.Terrain.Noise.NoiseViewModel._noiseStrategyVisible
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel._noiseStrategyVisible
-  nameWithType: NoiseViewModel._noiseStrategyVisible
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.Display
-  name: Display()
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_Display
-  commentId: M:App.ViewModels.Terrain.Noise.NoiseViewModel.Display
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.Display()
-  nameWithType: NoiseViewModel.Display()
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.Display*
-  name: Display
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_Display_
-  commentId: Overload:App.ViewModels.Terrain.Noise.NoiseViewModel.Display
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.Display
-  nameWithType: NoiseViewModel.Display
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
-  name: EventBus
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_EventBus
-  commentId: P:App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
-  nameWithType: NoiseViewModel.EventBus
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus*
-  name: EventBus
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_EventBus_
-  commentId: Overload:App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.EventBus
-  nameWithType: NoiseViewModel.EventBus
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.Generate
-  name: Generate()
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_Generate
-  commentId: M:App.ViewModels.Terrain.Noise.NoiseViewModel.Generate
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.Generate()
-  nameWithType: NoiseViewModel.Generate()
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.Generate*
-  name: Generate
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_Generate_
-  commentId: Overload:App.ViewModels.Terrain.Noise.NoiseViewModel.Generate
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.Generate
-  nameWithType: NoiseViewModel.Generate
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.noiseStrategy
-  name: noiseStrategy
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_noiseStrategy
-  commentId: F:App.ViewModels.Terrain.Noise.NoiseViewModel.noiseStrategy
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.noiseStrategy
-  nameWithType: NoiseViewModel.noiseStrategy
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy
-  name: NoiseViewModel.NoiseStrategy
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.html
-  commentId: T:App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy
-  nameWithType: NoiseViewModel.NoiseStrategy
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
-  name: PerlinNoise
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.html#App_ViewModels_Terrain_Noise_NoiseViewModel_NoiseStrategy_PerlinNoise
-  commentId: F:App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
-  nameWithType: NoiseViewModel.NoiseStrategy.PerlinNoise
-- uid: App.ViewModels.Terrain.Noise.NoiseViewModel.perlinNoiseStrategy
-  name: perlinNoiseStrategy
-  href: api/App.ViewModels.Terrain.Noise.NoiseViewModel.html#App_ViewModels_Terrain_Noise_NoiseViewModel_perlinNoiseStrategy
-  commentId: F:App.ViewModels.Terrain.Noise.NoiseViewModel.perlinNoiseStrategy
-  fullName: App.ViewModels.Terrain.Noise.NoiseViewModel.perlinNoiseStrategy
-  nameWithType: NoiseViewModel.perlinNoiseStrategy
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy
-  name: PerlinNoiseStrategy
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html
-  commentId: T:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy
-  nameWithType: PerlinNoiseStrategy
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.depth
-  name: depth
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_depth
-  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.depth
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.depth
-  nameWithType: PerlinNoiseStrategy.depth
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display
-  name: Display()
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_Display
-  commentId: M:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display()
-  nameWithType: PerlinNoiseStrategy.Display()
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display*
-  name: Display
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_Display_
-  commentId: Overload:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Display
-  nameWithType: PerlinNoiseStrategy.Display
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  name: DisplaySizeControls()
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_DisplaySizeControls
-  commentId: M:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls()
-  nameWithType: PerlinNoiseStrategy.DisplaySizeControls()
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls*
-  name: DisplaySizeControls
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_DisplaySizeControls_
-  commentId: Overload:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  nameWithType: PerlinNoiseStrategy.DisplaySizeControls
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate
-  name: Generate()
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_Generate
-  commentId: M:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate()
-  nameWithType: PerlinNoiseStrategy.Generate()
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate*
-  name: Generate
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_Generate_
-  commentId: Overload:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.Generate
-  nameWithType: PerlinNoiseStrategy.Generate
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.lacunarity
-  name: lacunarity
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_lacunarity
-  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.lacunarity
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.lacunarity
-  nameWithType: PerlinNoiseStrategy.lacunarity
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.noiseOffset
-  name: noiseOffset
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_noiseOffset
-  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.noiseOffset
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.noiseOffset
-  nameWithType: PerlinNoiseStrategy.noiseOffset
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.numOctaves
-  name: numOctaves
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_numOctaves
-  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.numOctaves
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.numOctaves
-  nameWithType: PerlinNoiseStrategy.numOctaves
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
-  name: OnEvent(AppEvent, Object, Object)
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_OnEvent_App_AppEvent_System_Object_System_Object_
-  commentId: M:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent, System.Object, System.Object)
-  nameWithType: PerlinNoiseStrategy.OnEvent(AppEvent, Object, Object)
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent*
-  name: OnEvent
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_OnEvent_
-  commentId: Overload:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.OnEvent
-  nameWithType: PerlinNoiseStrategy.OnEvent
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.persistence
-  name: persistence
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_persistence
-  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.persistence
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.persistence
-  nameWithType: PerlinNoiseStrategy.persistence
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.scale
-  name: scale
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_scale
-  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.scale
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.scale
-  nameWithType: PerlinNoiseStrategy.scale
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.seed
-  name: seed
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_seed
-  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.seed
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.seed
-  nameWithType: PerlinNoiseStrategy.seed
-- uid: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.width
-  name: width
-  href: api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html#App_ViewModels_Terrain_Noise_PerlinNoiseStrategy_width
-  commentId: F:App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.width
-  fullName: App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.width
-  nameWithType: PerlinNoiseStrategy.width
 - uid: App.ViewModels.Terrain.TerrainViewModel
   name: TerrainViewModel
   href: api/App.ViewModels.Terrain.TerrainViewModel.html
@@ -1319,6 +1515,19 @@ references:
   commentId: F:App.ViewModels.Terrain.TerrainViewModel._visible
   fullName: App.ViewModels.Terrain.TerrainViewModel._visible
   nameWithType: TerrainViewModel._visible
+- uid: App.ViewModels.Terrain.TerrainViewModel.CancelToken
+  name: CancelToken
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_CancelToken
+  commentId: P:App.ViewModels.Terrain.TerrainViewModel.CancelToken
+  fullName: App.ViewModels.Terrain.TerrainViewModel.CancelToken
+  nameWithType: TerrainViewModel.CancelToken
+- uid: App.ViewModels.Terrain.TerrainViewModel.CancelToken*
+  name: CancelToken
+  href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_CancelToken_
+  commentId: Overload:App.ViewModels.Terrain.TerrainViewModel.CancelToken
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.TerrainViewModel.CancelToken
+  nameWithType: TerrainViewModel.CancelToken
 - uid: App.ViewModels.Terrain.TerrainViewModel.Display
   name: Display()
   href: api/App.ViewModels.Terrain.TerrainViewModel.html#App_ViewModels_Terrain_TerrainViewModel_Display
@@ -1432,6 +1641,19 @@ references:
   commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel._textureStrategyVisible
   fullName: App.ViewModels.Terrain.Textures.TextureViewModel._textureStrategyVisible
   nameWithType: TextureViewModel._textureStrategyVisible
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.CancelToken
+  name: CancelToken
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_CancelToken
+  commentId: P:App.ViewModels.Terrain.Textures.TextureViewModel.CancelToken
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.CancelToken
+  nameWithType: TextureViewModel.CancelToken
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.CancelToken*
+  name: CancelToken
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_CancelToken_
+  commentId: Overload:App.ViewModels.Terrain.Textures.TextureViewModel.CancelToken
+  isSpec: "True"
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.CancelToken
+  nameWithType: TextureViewModel.CancelToken
 - uid: App.ViewModels.Terrain.Textures.TextureViewModel.Display
   name: Display()
   href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_Display
@@ -1496,12 +1718,6 @@ references:
   commentId: T:App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy
   fullName: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy
   nameWithType: TextureViewModel.TextureStrategy
-- uid: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
-  name: GrayScale
-  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html#App_ViewModels_Terrain_Textures_TextureViewModel_TextureStrategy_GrayScale
-  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
-  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
-  nameWithType: TextureViewModel.TextureStrategy.GrayScale
 - uid: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.Whittaker
   name: Whittaker
   href: api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html#App_ViewModels_Terrain_Textures_TextureViewModel_TextureStrategy_Whittaker
@@ -1575,6 +1791,23 @@ references:
   fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO)._eventBus
   nameWithType: ViewModelStrategy<TI, TO>._eventBus
   nameWithType.vb: ViewModelStrategy(Of TI, TO)._eventBus
+- uid: App.ViewModels.ViewModelStrategy`2.CancelToken
+  name: CancelToken
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_CancelToken
+  commentId: P:App.ViewModels.ViewModelStrategy`2.CancelToken
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.CancelToken
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).CancelToken
+  nameWithType: ViewModelStrategy<TI, TO>.CancelToken
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).CancelToken
+- uid: App.ViewModels.ViewModelStrategy`2.CancelToken*
+  name: CancelToken
+  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_CancelToken_
+  commentId: Overload:App.ViewModels.ViewModelStrategy`2.CancelToken
+  isSpec: "True"
+  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.CancelToken
+  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).CancelToken
+  nameWithType: ViewModelStrategy<TI, TO>.CancelToken
+  nameWithType.vb: ViewModelStrategy(Of TI, TO).CancelToken
 - uid: App.ViewModels.ViewModelStrategy`2.Display
   name: Display()
   href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display
@@ -1849,6 +2082,22 @@ references:
   isSpec: "True"
   fullName: Cities.Plots.AdjacentStrategy.Generate
   nameWithType: AdjacentStrategy.Generate
+- uid: Cities.Plots.AdjacentStrategy.PlotsAreColliding(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{Cities.Plots.Plot})
+  name: PlotsAreColliding(IEnumerable<Vector3>, IEnumerable<Plot>)
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_PlotsAreColliding_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_Cities_Plots_Plot__
+  commentId: M:Cities.Plots.AdjacentStrategy.PlotsAreColliding(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{Cities.Plots.Plot})
+  name.vb: PlotsAreColliding(IEnumerable(Of Vector3), IEnumerable(Of Plot))
+  fullName: Cities.Plots.AdjacentStrategy.PlotsAreColliding(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>)
+  fullName.vb: Cities.Plots.AdjacentStrategy.PlotsAreColliding(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3), System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))
+  nameWithType: AdjacentStrategy.PlotsAreColliding(IEnumerable<Vector3>, IEnumerable<Plot>)
+  nameWithType.vb: AdjacentStrategy.PlotsAreColliding(IEnumerable(Of Vector3), IEnumerable(Of Plot))
+- uid: Cities.Plots.AdjacentStrategy.PlotsAreColliding*
+  name: PlotsAreColliding
+  href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_PlotsAreColliding_
+  commentId: Overload:Cities.Plots.AdjacentStrategy.PlotsAreColliding
+  isSpec: "True"
+  fullName: Cities.Plots.AdjacentStrategy.PlotsAreColliding
+  nameWithType: AdjacentStrategy.PlotsAreColliding
 - uid: Cities.Plots.AdjacentStrategy.RandomRectPlot(System.Random,UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single,System.Single)
   name: RandomRectPlot(Random, Vector3, Vector3, Single, Single, Single)
   href: api/Cities.Plots.AdjacentStrategy.html#Cities_Plots_AdjacentStrategy_RandomRectPlot_System_Random_UnityEngine_Vector3_UnityEngine_Vector3_System_Single_System_Single_System_Single_
@@ -2365,6 +2614,19 @@ references:
   commentId: F:Cities.Plots.MinimalCycleStrategy._clockwiseCycleStrategy
   fullName: Cities.Plots.MinimalCycleStrategy._clockwiseCycleStrategy
   nameWithType: MinimalCycleStrategy._clockwiseCycleStrategy
+- uid: Cities.Plots.MinimalCycleStrategy.CancelToken
+  name: CancelToken
+  href: api/Cities.Plots.MinimalCycleStrategy.html#Cities_Plots_MinimalCycleStrategy_CancelToken
+  commentId: P:Cities.Plots.MinimalCycleStrategy.CancelToken
+  fullName: Cities.Plots.MinimalCycleStrategy.CancelToken
+  nameWithType: MinimalCycleStrategy.CancelToken
+- uid: Cities.Plots.MinimalCycleStrategy.CancelToken*
+  name: CancelToken
+  href: api/Cities.Plots.MinimalCycleStrategy.html#Cities_Plots_MinimalCycleStrategy_CancelToken_
+  commentId: Overload:Cities.Plots.MinimalCycleStrategy.CancelToken
+  isSpec: "True"
+  fullName: Cities.Plots.MinimalCycleStrategy.CancelToken
+  nameWithType: MinimalCycleStrategy.CancelToken
 - uid: Cities.Plots.MinimalCycleStrategy.Generate
   name: Generate()
   href: api/Cities.Plots.MinimalCycleStrategy.html#Cities_Plots_MinimalCycleStrategy_Generate
@@ -2838,6 +3100,19 @@ references:
   isSpec: "True"
   fullName: Cities.Roads.LSystem.Grid
   nameWithType: LSystem.Grid
+- uid: Cities.Roads.LSystem.isWithinMesh(UnityEngine.Vector3)
+  name: isWithinMesh(Vector3)
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_isWithinMesh_UnityEngine_Vector3_
+  commentId: M:Cities.Roads.LSystem.isWithinMesh(UnityEngine.Vector3)
+  fullName: Cities.Roads.LSystem.isWithinMesh(UnityEngine.Vector3)
+  nameWithType: LSystem.isWithinMesh(Vector3)
+- uid: Cities.Roads.LSystem.isWithinMesh*
+  name: isWithinMesh
+  href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_isWithinMesh_
+  commentId: Overload:Cities.Roads.LSystem.isWithinMesh
+  isSpec: "True"
+  fullName: Cities.Roads.LSystem.isWithinMesh
+  nameWithType: LSystem.isWithinMesh
 - uid: Cities.Roads.LSystem.maxX
   name: maxX
   href: api/Cities.Roads.LSystem.html#Cities_Roads_LSystem_maxX
@@ -3793,6 +4068,23 @@ references:
   fullName.vb: Interfaces.IGenerator(Of T)
   nameWithType: IGenerator<T>
   nameWithType.vb: IGenerator(Of T)
+- uid: Interfaces.IGenerator`1.CancelToken
+  name: CancelToken
+  href: api/Interfaces.IGenerator-1.html#Interfaces_IGenerator_1_CancelToken
+  commentId: P:Interfaces.IGenerator`1.CancelToken
+  fullName: Interfaces.IGenerator<T>.CancelToken
+  fullName.vb: Interfaces.IGenerator(Of T).CancelToken
+  nameWithType: IGenerator<T>.CancelToken
+  nameWithType.vb: IGenerator(Of T).CancelToken
+- uid: Interfaces.IGenerator`1.CancelToken*
+  name: CancelToken
+  href: api/Interfaces.IGenerator-1.html#Interfaces_IGenerator_1_CancelToken_
+  commentId: Overload:Interfaces.IGenerator`1.CancelToken
+  isSpec: "True"
+  fullName: Interfaces.IGenerator<T>.CancelToken
+  fullName.vb: Interfaces.IGenerator(Of T).CancelToken
+  nameWithType: IGenerator<T>.CancelToken
+  nameWithType.vb: IGenerator(Of T).CancelToken
 - uid: Interfaces.IGenerator`1.Generate
   name: Generate()
   href: api/Interfaces.IGenerator-1.html#Interfaces_IGenerator_1_Generate
@@ -3915,6 +4207,23 @@ references:
   fullName.vb: Interfaces.Strategy(Of TI, TO).Strategy
   nameWithType: Strategy<TI, TO>.Strategy
   nameWithType.vb: Strategy(Of TI, TO).Strategy
+- uid: Interfaces.Strategy`2.CancelToken
+  name: CancelToken
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_CancelToken
+  commentId: P:Interfaces.Strategy`2.CancelToken
+  fullName: Interfaces.Strategy<TI, TO>.CancelToken
+  fullName.vb: Interfaces.Strategy(Of TI, TO).CancelToken
+  nameWithType: Strategy<TI, TO>.CancelToken
+  nameWithType.vb: Strategy(Of TI, TO).CancelToken
+- uid: Interfaces.Strategy`2.CancelToken*
+  name: CancelToken
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_CancelToken_
+  commentId: Overload:Interfaces.Strategy`2.CancelToken
+  isSpec: "True"
+  fullName: Interfaces.Strategy<TI, TO>.CancelToken
+  fullName.vb: Interfaces.Strategy(Of TI, TO).CancelToken
+  nameWithType: Strategy<TI, TO>.CancelToken
+  nameWithType.vb: Strategy(Of TI, TO).CancelToken
 - uid: Interfaces.Strategy`2.Generate
   name: Generate()
   href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate
@@ -3935,11 +4244,296 @@ references:
 - uid: Interfaces.Strategy`2.Injector
   name: Injector
   href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector
-  commentId: F:Interfaces.Strategy`2.Injector
+  commentId: P:Interfaces.Strategy`2.Injector
   fullName: Interfaces.Strategy<TI, TO>.Injector
   fullName.vb: Interfaces.Strategy(Of TI, TO).Injector
   nameWithType: Strategy<TI, TO>.Injector
   nameWithType.vb: Strategy(Of TI, TO).Injector
+- uid: Interfaces.Strategy`2.Injector*
+  name: Injector
+  href: api/Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector_
+  commentId: Overload:Interfaces.Strategy`2.Injector
+  isSpec: "True"
+  fullName: Interfaces.Strategy<TI, TO>.Injector
+  fullName.vb: Interfaces.Strategy(Of TI, TO).Injector
+  nameWithType: Strategy<TI, TO>.Injector
+  nameWithType.vb: Strategy(Of TI, TO).Injector
+- uid: Noise
+  name: Noise
+  href: api/Noise.html
+  commentId: N:Noise
+  fullName: Noise
+  nameWithType: Noise
+- uid: Noise.Factory
+  name: Factory
+  href: api/Noise.Factory.html
+  commentId: T:Noise.Factory
+  fullName: Noise.Factory
+  nameWithType: Factory
+- uid: Noise.Factory.CreateMeshGenerator(Interfaces.IInjector{System.Single[0:,0:]},UnityEngine.AnimationCurve,System.Single)
+  name: CreateMeshGenerator(IInjector<Single[,]>, AnimationCurve, Single)
+  href: api/Noise.Factory.html#Noise_Factory_CreateMeshGenerator_Interfaces_IInjector_System_Single_0__0____UnityEngine_AnimationCurve_System_Single_
+  commentId: M:Noise.Factory.CreateMeshGenerator(Interfaces.IInjector{System.Single[0:,0:]},UnityEngine.AnimationCurve,System.Single)
+  name.vb: CreateMeshGenerator(IInjector(Of Single(,)), AnimationCurve, Single)
+  fullName: Noise.Factory.CreateMeshGenerator(Interfaces.IInjector<System.Single[,]>, UnityEngine.AnimationCurve, System.Single)
+  fullName.vb: Noise.Factory.CreateMeshGenerator(Interfaces.IInjector(Of System.Single(,)), UnityEngine.AnimationCurve, System.Single)
+  nameWithType: Factory.CreateMeshGenerator(IInjector<Single[,]>, AnimationCurve, Single)
+  nameWithType.vb: Factory.CreateMeshGenerator(IInjector(Of Single(,)), AnimationCurve, Single)
+- uid: Noise.Factory.CreateMeshGenerator*
+  name: CreateMeshGenerator
+  href: api/Noise.Factory.html#Noise_Factory_CreateMeshGenerator_
+  commentId: Overload:Noise.Factory.CreateMeshGenerator
+  isSpec: "True"
+  fullName: Noise.Factory.CreateMeshGenerator
+  nameWithType: Factory.CreateMeshGenerator
+- uid: Noise.Factory.CreatePerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
+  name: CreatePerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
+  href: api/Noise.Factory.html#Noise_Factory_CreatePerlinNoiseStrategy_System_Int32_System_Int32_System_Int32_System_Single_System_Int32_System_Single_System_Single_UnityEngine_Vector2_
+  commentId: M:Noise.Factory.CreatePerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
+  fullName: Noise.Factory.CreatePerlinNoiseStrategy(System.Int32, System.Int32, System.Int32, System.Single, System.Int32, System.Single, System.Single, UnityEngine.Vector2)
+  nameWithType: Factory.CreatePerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
+- uid: Noise.Factory.CreatePerlinNoiseStrategy*
+  name: CreatePerlinNoiseStrategy
+  href: api/Noise.Factory.html#Noise_Factory_CreatePerlinNoiseStrategy_
+  commentId: Overload:Noise.Factory.CreatePerlinNoiseStrategy
+  isSpec: "True"
+  fullName: Noise.Factory.CreatePerlinNoiseStrategy
+  nameWithType: Factory.CreatePerlinNoiseStrategy
+- uid: Noise.NoiseMeshGenerator
+  name: NoiseMeshGenerator
+  href: api/Noise.NoiseMeshGenerator.html
+  commentId: T:Noise.NoiseMeshGenerator
+  fullName: Noise.NoiseMeshGenerator
+  nameWithType: NoiseMeshGenerator
+- uid: Noise.NoiseMeshGenerator.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  name: NoiseMeshGenerator(IInjector<Single[,]>)
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator__ctor_Interfaces_IInjector_System_Single_0__0____
+  commentId: M:Noise.NoiseMeshGenerator.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  name.vb: NoiseMeshGenerator(IInjector(Of Single(,)))
+  fullName: Noise.NoiseMeshGenerator.NoiseMeshGenerator(Interfaces.IInjector<System.Single[,]>)
+  fullName.vb: Noise.NoiseMeshGenerator.NoiseMeshGenerator(Interfaces.IInjector(Of System.Single(,)))
+  nameWithType: NoiseMeshGenerator.NoiseMeshGenerator(IInjector<Single[,]>)
+  nameWithType.vb: NoiseMeshGenerator.NoiseMeshGenerator(IInjector(Of Single(,)))
+- uid: Noise.NoiseMeshGenerator.#ctor*
+  name: NoiseMeshGenerator
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator__ctor_
+  commentId: Overload:Noise.NoiseMeshGenerator.#ctor
+  isSpec: "True"
+  fullName: Noise.NoiseMeshGenerator.NoiseMeshGenerator
+  nameWithType: NoiseMeshGenerator.NoiseMeshGenerator
+- uid: Noise.NoiseMeshGenerator._heightCurve
+  name: _heightCurve
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator__heightCurve
+  commentId: F:Noise.NoiseMeshGenerator._heightCurve
+  fullName: Noise.NoiseMeshGenerator._heightCurve
+  nameWithType: NoiseMeshGenerator._heightCurve
+- uid: Noise.NoiseMeshGenerator._noiseMapInjector
+  name: _noiseMapInjector
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator__noiseMapInjector
+  commentId: F:Noise.NoiseMeshGenerator._noiseMapInjector
+  fullName: Noise.NoiseMeshGenerator._noiseMapInjector
+  nameWithType: NoiseMeshGenerator._noiseMapInjector
+- uid: Noise.NoiseMeshGenerator.CancelToken
+  name: CancelToken
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator_CancelToken
+  commentId: P:Noise.NoiseMeshGenerator.CancelToken
+  fullName: Noise.NoiseMeshGenerator.CancelToken
+  nameWithType: NoiseMeshGenerator.CancelToken
+- uid: Noise.NoiseMeshGenerator.CancelToken*
+  name: CancelToken
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator_CancelToken_
+  commentId: Overload:Noise.NoiseMeshGenerator.CancelToken
+  isSpec: "True"
+  fullName: Noise.NoiseMeshGenerator.CancelToken
+  nameWithType: NoiseMeshGenerator.CancelToken
+- uid: Noise.NoiseMeshGenerator.Generate
+  name: Generate()
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator_Generate
+  commentId: M:Noise.NoiseMeshGenerator.Generate
+  fullName: Noise.NoiseMeshGenerator.Generate()
+  nameWithType: NoiseMeshGenerator.Generate()
+- uid: Noise.NoiseMeshGenerator.Generate*
+  name: Generate
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator_Generate_
+  commentId: Overload:Noise.NoiseMeshGenerator.Generate
+  isSpec: "True"
+  fullName: Noise.NoiseMeshGenerator.Generate
+  nameWithType: NoiseMeshGenerator.Generate
+- uid: Noise.NoiseMeshGenerator.HeightCurve
+  name: HeightCurve
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator_HeightCurve
+  commentId: P:Noise.NoiseMeshGenerator.HeightCurve
+  fullName: Noise.NoiseMeshGenerator.HeightCurve
+  nameWithType: NoiseMeshGenerator.HeightCurve
+- uid: Noise.NoiseMeshGenerator.HeightCurve*
+  name: HeightCurve
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator_HeightCurve_
+  commentId: Overload:Noise.NoiseMeshGenerator.HeightCurve
+  isSpec: "True"
+  fullName: Noise.NoiseMeshGenerator.HeightCurve
+  nameWithType: NoiseMeshGenerator.HeightCurve
+- uid: Noise.NoiseMeshGenerator.HeightScale
+  name: HeightScale
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator_HeightScale
+  commentId: P:Noise.NoiseMeshGenerator.HeightScale
+  fullName: Noise.NoiseMeshGenerator.HeightScale
+  nameWithType: NoiseMeshGenerator.HeightScale
+- uid: Noise.NoiseMeshGenerator.HeightScale*
+  name: HeightScale
+  href: api/Noise.NoiseMeshGenerator.html#Noise_NoiseMeshGenerator_HeightScale_
+  commentId: Overload:Noise.NoiseMeshGenerator.HeightScale
+  isSpec: "True"
+  fullName: Noise.NoiseMeshGenerator.HeightScale
+  nameWithType: NoiseMeshGenerator.HeightScale
+- uid: Noise.PerlinNoiseStrategy
+  name: PerlinNoiseStrategy
+  href: api/Noise.PerlinNoiseStrategy.html
+  commentId: T:Noise.PerlinNoiseStrategy
+  fullName: Noise.PerlinNoiseStrategy
+  nameWithType: PerlinNoiseStrategy
+- uid: Noise.PerlinNoiseStrategy.CancelToken
+  name: CancelToken
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_CancelToken
+  commentId: P:Noise.PerlinNoiseStrategy.CancelToken
+  fullName: Noise.PerlinNoiseStrategy.CancelToken
+  nameWithType: PerlinNoiseStrategy.CancelToken
+- uid: Noise.PerlinNoiseStrategy.CancelToken*
+  name: CancelToken
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_CancelToken_
+  commentId: Overload:Noise.PerlinNoiseStrategy.CancelToken
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.CancelToken
+  nameWithType: PerlinNoiseStrategy.CancelToken
+- uid: Noise.PerlinNoiseStrategy.Depth
+  name: Depth
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Depth
+  commentId: P:Noise.PerlinNoiseStrategy.Depth
+  fullName: Noise.PerlinNoiseStrategy.Depth
+  nameWithType: PerlinNoiseStrategy.Depth
+- uid: Noise.PerlinNoiseStrategy.Depth*
+  name: Depth
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Depth_
+  commentId: Overload:Noise.PerlinNoiseStrategy.Depth
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.Depth
+  nameWithType: PerlinNoiseStrategy.Depth
+- uid: Noise.PerlinNoiseStrategy.Generate
+  name: Generate()
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Generate
+  commentId: M:Noise.PerlinNoiseStrategy.Generate
+  fullName: Noise.PerlinNoiseStrategy.Generate()
+  nameWithType: PerlinNoiseStrategy.Generate()
+- uid: Noise.PerlinNoiseStrategy.Generate*
+  name: Generate
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Generate_
+  commentId: Overload:Noise.PerlinNoiseStrategy.Generate
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.Generate
+  nameWithType: PerlinNoiseStrategy.Generate
+- uid: Noise.PerlinNoiseStrategy.Lacunarity
+  name: Lacunarity
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Lacunarity
+  commentId: P:Noise.PerlinNoiseStrategy.Lacunarity
+  fullName: Noise.PerlinNoiseStrategy.Lacunarity
+  nameWithType: PerlinNoiseStrategy.Lacunarity
+- uid: Noise.PerlinNoiseStrategy.Lacunarity*
+  name: Lacunarity
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Lacunarity_
+  commentId: Overload:Noise.PerlinNoiseStrategy.Lacunarity
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.Lacunarity
+  nameWithType: PerlinNoiseStrategy.Lacunarity
+- uid: Noise.PerlinNoiseStrategy.NoiseOffset
+  name: NoiseOffset
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_NoiseOffset
+  commentId: P:Noise.PerlinNoiseStrategy.NoiseOffset
+  fullName: Noise.PerlinNoiseStrategy.NoiseOffset
+  nameWithType: PerlinNoiseStrategy.NoiseOffset
+- uid: Noise.PerlinNoiseStrategy.NoiseOffset*
+  name: NoiseOffset
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_NoiseOffset_
+  commentId: Overload:Noise.PerlinNoiseStrategy.NoiseOffset
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.NoiseOffset
+  nameWithType: PerlinNoiseStrategy.NoiseOffset
+- uid: Noise.PerlinNoiseStrategy.NumOctaves
+  name: NumOctaves
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_NumOctaves
+  commentId: P:Noise.PerlinNoiseStrategy.NumOctaves
+  fullName: Noise.PerlinNoiseStrategy.NumOctaves
+  nameWithType: PerlinNoiseStrategy.NumOctaves
+- uid: Noise.PerlinNoiseStrategy.NumOctaves*
+  name: NumOctaves
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_NumOctaves_
+  commentId: Overload:Noise.PerlinNoiseStrategy.NumOctaves
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.NumOctaves
+  nameWithType: PerlinNoiseStrategy.NumOctaves
+- uid: Noise.PerlinNoiseStrategy.Persistence
+  name: Persistence
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Persistence
+  commentId: P:Noise.PerlinNoiseStrategy.Persistence
+  fullName: Noise.PerlinNoiseStrategy.Persistence
+  nameWithType: PerlinNoiseStrategy.Persistence
+- uid: Noise.PerlinNoiseStrategy.Persistence*
+  name: Persistence
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Persistence_
+  commentId: Overload:Noise.PerlinNoiseStrategy.Persistence
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.Persistence
+  nameWithType: PerlinNoiseStrategy.Persistence
+- uid: Noise.PerlinNoiseStrategy.RandomOffset
+  name: RandomOffset()
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_RandomOffset
+  commentId: M:Noise.PerlinNoiseStrategy.RandomOffset
+  fullName: Noise.PerlinNoiseStrategy.RandomOffset()
+  nameWithType: PerlinNoiseStrategy.RandomOffset()
+- uid: Noise.PerlinNoiseStrategy.RandomOffset*
+  name: RandomOffset
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_RandomOffset_
+  commentId: Overload:Noise.PerlinNoiseStrategy.RandomOffset
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.RandomOffset
+  nameWithType: PerlinNoiseStrategy.RandomOffset
+- uid: Noise.PerlinNoiseStrategy.Scale
+  name: Scale
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Scale
+  commentId: P:Noise.PerlinNoiseStrategy.Scale
+  fullName: Noise.PerlinNoiseStrategy.Scale
+  nameWithType: PerlinNoiseStrategy.Scale
+- uid: Noise.PerlinNoiseStrategy.Scale*
+  name: Scale
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Scale_
+  commentId: Overload:Noise.PerlinNoiseStrategy.Scale
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.Scale
+  nameWithType: PerlinNoiseStrategy.Scale
+- uid: Noise.PerlinNoiseStrategy.Seed
+  name: Seed
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Seed
+  commentId: P:Noise.PerlinNoiseStrategy.Seed
+  fullName: Noise.PerlinNoiseStrategy.Seed
+  nameWithType: PerlinNoiseStrategy.Seed
+- uid: Noise.PerlinNoiseStrategy.Seed*
+  name: Seed
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Seed_
+  commentId: Overload:Noise.PerlinNoiseStrategy.Seed
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.Seed
+  nameWithType: PerlinNoiseStrategy.Seed
+- uid: Noise.PerlinNoiseStrategy.Width
+  name: Width
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Width
+  commentId: P:Noise.PerlinNoiseStrategy.Width
+  fullName: Noise.PerlinNoiseStrategy.Width
+  nameWithType: PerlinNoiseStrategy.Width
+- uid: Noise.PerlinNoiseStrategy.Width*
+  name: Width
+  href: api/Noise.PerlinNoiseStrategy.html#Noise_PerlinNoiseStrategy_Width_
+  commentId: Overload:Noise.PerlinNoiseStrategy.Width
+  isSpec: "True"
+  fullName: Noise.PerlinNoiseStrategy.Width
+  nameWithType: PerlinNoiseStrategy.Width
 - uid: Services
   name: Services
   href: api/Services.html
@@ -4119,256 +4713,6 @@ references:
   commentId: N:Terrain
   fullName: Terrain
   nameWithType: Terrain
-- uid: Terrain.Noise
-  name: Terrain.Noise
-  href: api/Terrain.Noise.html
-  commentId: N:Terrain.Noise
-  fullName: Terrain.Noise
-  nameWithType: Terrain.Noise
-- uid: Terrain.Noise.Factory
-  name: Factory
-  href: api/Terrain.Noise.Factory.html
-  commentId: T:Terrain.Noise.Factory
-  fullName: Terrain.Noise.Factory
-  nameWithType: Factory
-- uid: Terrain.Noise.Factory.CreateMeshGenerator(Interfaces.IInjector{System.Single[0:,0:]},UnityEngine.AnimationCurve,System.Single)
-  name: CreateMeshGenerator(IInjector<Single[,]>, AnimationCurve, Single)
-  href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreateMeshGenerator_Interfaces_IInjector_System_Single_0__0____UnityEngine_AnimationCurve_System_Single_
-  commentId: M:Terrain.Noise.Factory.CreateMeshGenerator(Interfaces.IInjector{System.Single[0:,0:]},UnityEngine.AnimationCurve,System.Single)
-  name.vb: CreateMeshGenerator(IInjector(Of Single(,)), AnimationCurve, Single)
-  fullName: Terrain.Noise.Factory.CreateMeshGenerator(Interfaces.IInjector<System.Single[,]>, UnityEngine.AnimationCurve, System.Single)
-  fullName.vb: Terrain.Noise.Factory.CreateMeshGenerator(Interfaces.IInjector(Of System.Single(,)), UnityEngine.AnimationCurve, System.Single)
-  nameWithType: Factory.CreateMeshGenerator(IInjector<Single[,]>, AnimationCurve, Single)
-  nameWithType.vb: Factory.CreateMeshGenerator(IInjector(Of Single(,)), AnimationCurve, Single)
-- uid: Terrain.Noise.Factory.CreateMeshGenerator*
-  name: CreateMeshGenerator
-  href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreateMeshGenerator_
-  commentId: Overload:Terrain.Noise.Factory.CreateMeshGenerator
-  isSpec: "True"
-  fullName: Terrain.Noise.Factory.CreateMeshGenerator
-  nameWithType: Factory.CreateMeshGenerator
-- uid: Terrain.Noise.Factory.CreatePerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
-  name: CreatePerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
-  href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreatePerlinNoiseStrategy_System_Int32_System_Int32_System_Int32_System_Single_System_Int32_System_Single_System_Single_UnityEngine_Vector2_
-  commentId: M:Terrain.Noise.Factory.CreatePerlinNoiseStrategy(System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Single,System.Single,UnityEngine.Vector2)
-  fullName: Terrain.Noise.Factory.CreatePerlinNoiseStrategy(System.Int32, System.Int32, System.Int32, System.Single, System.Int32, System.Single, System.Single, UnityEngine.Vector2)
-  nameWithType: Factory.CreatePerlinNoiseStrategy(Int32, Int32, Int32, Single, Int32, Single, Single, Vector2)
-- uid: Terrain.Noise.Factory.CreatePerlinNoiseStrategy*
-  name: CreatePerlinNoiseStrategy
-  href: api/Terrain.Noise.Factory.html#Terrain_Noise_Factory_CreatePerlinNoiseStrategy_
-  commentId: Overload:Terrain.Noise.Factory.CreatePerlinNoiseStrategy
-  isSpec: "True"
-  fullName: Terrain.Noise.Factory.CreatePerlinNoiseStrategy
-  nameWithType: Factory.CreatePerlinNoiseStrategy
-- uid: Terrain.Noise.NoiseMeshGenerator
-  name: NoiseMeshGenerator
-  href: api/Terrain.Noise.NoiseMeshGenerator.html
-  commentId: T:Terrain.Noise.NoiseMeshGenerator
-  fullName: Terrain.Noise.NoiseMeshGenerator
-  nameWithType: NoiseMeshGenerator
-- uid: Terrain.Noise.NoiseMeshGenerator.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name: NoiseMeshGenerator(IInjector<Single[,]>)
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Terrain.Noise.NoiseMeshGenerator.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
-  name.vb: NoiseMeshGenerator(IInjector(Of Single(,)))
-  fullName: Terrain.Noise.NoiseMeshGenerator.NoiseMeshGenerator(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Terrain.Noise.NoiseMeshGenerator.NoiseMeshGenerator(Interfaces.IInjector(Of System.Single(,)))
-  nameWithType: NoiseMeshGenerator.NoiseMeshGenerator(IInjector<Single[,]>)
-  nameWithType.vb: NoiseMeshGenerator.NoiseMeshGenerator(IInjector(Of Single(,)))
-- uid: Terrain.Noise.NoiseMeshGenerator.#ctor*
-  name: NoiseMeshGenerator
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator__ctor_
-  commentId: Overload:Terrain.Noise.NoiseMeshGenerator.#ctor
-  isSpec: "True"
-  fullName: Terrain.Noise.NoiseMeshGenerator.NoiseMeshGenerator
-  nameWithType: NoiseMeshGenerator.NoiseMeshGenerator
-- uid: Terrain.Noise.NoiseMeshGenerator._heightCurve
-  name: _heightCurve
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator__heightCurve
-  commentId: F:Terrain.Noise.NoiseMeshGenerator._heightCurve
-  fullName: Terrain.Noise.NoiseMeshGenerator._heightCurve
-  nameWithType: NoiseMeshGenerator._heightCurve
-- uid: Terrain.Noise.NoiseMeshGenerator._noiseMapInjector
-  name: _noiseMapInjector
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator__noiseMapInjector
-  commentId: F:Terrain.Noise.NoiseMeshGenerator._noiseMapInjector
-  fullName: Terrain.Noise.NoiseMeshGenerator._noiseMapInjector
-  nameWithType: NoiseMeshGenerator._noiseMapInjector
-- uid: Terrain.Noise.NoiseMeshGenerator.Generate
-  name: Generate()
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_Generate
-  commentId: M:Terrain.Noise.NoiseMeshGenerator.Generate
-  fullName: Terrain.Noise.NoiseMeshGenerator.Generate()
-  nameWithType: NoiseMeshGenerator.Generate()
-- uid: Terrain.Noise.NoiseMeshGenerator.Generate*
-  name: Generate
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_Generate_
-  commentId: Overload:Terrain.Noise.NoiseMeshGenerator.Generate
-  isSpec: "True"
-  fullName: Terrain.Noise.NoiseMeshGenerator.Generate
-  nameWithType: NoiseMeshGenerator.Generate
-- uid: Terrain.Noise.NoiseMeshGenerator.HeightCurve
-  name: HeightCurve
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_HeightCurve
-  commentId: P:Terrain.Noise.NoiseMeshGenerator.HeightCurve
-  fullName: Terrain.Noise.NoiseMeshGenerator.HeightCurve
-  nameWithType: NoiseMeshGenerator.HeightCurve
-- uid: Terrain.Noise.NoiseMeshGenerator.HeightCurve*
-  name: HeightCurve
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_HeightCurve_
-  commentId: Overload:Terrain.Noise.NoiseMeshGenerator.HeightCurve
-  isSpec: "True"
-  fullName: Terrain.Noise.NoiseMeshGenerator.HeightCurve
-  nameWithType: NoiseMeshGenerator.HeightCurve
-- uid: Terrain.Noise.NoiseMeshGenerator.HeightScale
-  name: HeightScale
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_HeightScale
-  commentId: P:Terrain.Noise.NoiseMeshGenerator.HeightScale
-  fullName: Terrain.Noise.NoiseMeshGenerator.HeightScale
-  nameWithType: NoiseMeshGenerator.HeightScale
-- uid: Terrain.Noise.NoiseMeshGenerator.HeightScale*
-  name: HeightScale
-  href: api/Terrain.Noise.NoiseMeshGenerator.html#Terrain_Noise_NoiseMeshGenerator_HeightScale_
-  commentId: Overload:Terrain.Noise.NoiseMeshGenerator.HeightScale
-  isSpec: "True"
-  fullName: Terrain.Noise.NoiseMeshGenerator.HeightScale
-  nameWithType: NoiseMeshGenerator.HeightScale
-- uid: Terrain.Noise.PerlinNoiseStrategy
-  name: PerlinNoiseStrategy
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html
-  commentId: T:Terrain.Noise.PerlinNoiseStrategy
-  fullName: Terrain.Noise.PerlinNoiseStrategy
-  nameWithType: PerlinNoiseStrategy
-- uid: Terrain.Noise.PerlinNoiseStrategy.Depth
-  name: Depth
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Depth
-  commentId: P:Terrain.Noise.PerlinNoiseStrategy.Depth
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Depth
-  nameWithType: PerlinNoiseStrategy.Depth
-- uid: Terrain.Noise.PerlinNoiseStrategy.Depth*
-  name: Depth
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Depth_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.Depth
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Depth
-  nameWithType: PerlinNoiseStrategy.Depth
-- uid: Terrain.Noise.PerlinNoiseStrategy.Generate
-  name: Generate()
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Generate
-  commentId: M:Terrain.Noise.PerlinNoiseStrategy.Generate
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Generate()
-  nameWithType: PerlinNoiseStrategy.Generate()
-- uid: Terrain.Noise.PerlinNoiseStrategy.Generate*
-  name: Generate
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Generate_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.Generate
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Generate
-  nameWithType: PerlinNoiseStrategy.Generate
-- uid: Terrain.Noise.PerlinNoiseStrategy.Lacunarity
-  name: Lacunarity
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Lacunarity
-  commentId: P:Terrain.Noise.PerlinNoiseStrategy.Lacunarity
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Lacunarity
-  nameWithType: PerlinNoiseStrategy.Lacunarity
-- uid: Terrain.Noise.PerlinNoiseStrategy.Lacunarity*
-  name: Lacunarity
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Lacunarity_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.Lacunarity
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Lacunarity
-  nameWithType: PerlinNoiseStrategy.Lacunarity
-- uid: Terrain.Noise.PerlinNoiseStrategy.NoiseOffset
-  name: NoiseOffset
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_NoiseOffset
-  commentId: P:Terrain.Noise.PerlinNoiseStrategy.NoiseOffset
-  fullName: Terrain.Noise.PerlinNoiseStrategy.NoiseOffset
-  nameWithType: PerlinNoiseStrategy.NoiseOffset
-- uid: Terrain.Noise.PerlinNoiseStrategy.NoiseOffset*
-  name: NoiseOffset
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_NoiseOffset_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.NoiseOffset
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.NoiseOffset
-  nameWithType: PerlinNoiseStrategy.NoiseOffset
-- uid: Terrain.Noise.PerlinNoiseStrategy.NumOctaves
-  name: NumOctaves
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_NumOctaves
-  commentId: P:Terrain.Noise.PerlinNoiseStrategy.NumOctaves
-  fullName: Terrain.Noise.PerlinNoiseStrategy.NumOctaves
-  nameWithType: PerlinNoiseStrategy.NumOctaves
-- uid: Terrain.Noise.PerlinNoiseStrategy.NumOctaves*
-  name: NumOctaves
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_NumOctaves_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.NumOctaves
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.NumOctaves
-  nameWithType: PerlinNoiseStrategy.NumOctaves
-- uid: Terrain.Noise.PerlinNoiseStrategy.Persistence
-  name: Persistence
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Persistence
-  commentId: P:Terrain.Noise.PerlinNoiseStrategy.Persistence
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Persistence
-  nameWithType: PerlinNoiseStrategy.Persistence
-- uid: Terrain.Noise.PerlinNoiseStrategy.Persistence*
-  name: Persistence
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Persistence_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.Persistence
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Persistence
-  nameWithType: PerlinNoiseStrategy.Persistence
-- uid: Terrain.Noise.PerlinNoiseStrategy.RandomOffset
-  name: RandomOffset()
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_RandomOffset
-  commentId: M:Terrain.Noise.PerlinNoiseStrategy.RandomOffset
-  fullName: Terrain.Noise.PerlinNoiseStrategy.RandomOffset()
-  nameWithType: PerlinNoiseStrategy.RandomOffset()
-- uid: Terrain.Noise.PerlinNoiseStrategy.RandomOffset*
-  name: RandomOffset
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_RandomOffset_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.RandomOffset
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.RandomOffset
-  nameWithType: PerlinNoiseStrategy.RandomOffset
-- uid: Terrain.Noise.PerlinNoiseStrategy.Scale
-  name: Scale
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Scale
-  commentId: P:Terrain.Noise.PerlinNoiseStrategy.Scale
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Scale
-  nameWithType: PerlinNoiseStrategy.Scale
-- uid: Terrain.Noise.PerlinNoiseStrategy.Scale*
-  name: Scale
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Scale_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.Scale
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Scale
-  nameWithType: PerlinNoiseStrategy.Scale
-- uid: Terrain.Noise.PerlinNoiseStrategy.Seed
-  name: Seed
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Seed
-  commentId: P:Terrain.Noise.PerlinNoiseStrategy.Seed
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Seed
-  nameWithType: PerlinNoiseStrategy.Seed
-- uid: Terrain.Noise.PerlinNoiseStrategy.Seed*
-  name: Seed
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Seed_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.Seed
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Seed
-  nameWithType: PerlinNoiseStrategy.Seed
-- uid: Terrain.Noise.PerlinNoiseStrategy.Width
-  name: Width
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Width
-  commentId: P:Terrain.Noise.PerlinNoiseStrategy.Width
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Width
-  nameWithType: PerlinNoiseStrategy.Width
-- uid: Terrain.Noise.PerlinNoiseStrategy.Width*
-  name: Width
-  href: api/Terrain.Noise.PerlinNoiseStrategy.html#Terrain_Noise_PerlinNoiseStrategy_Width_
-  commentId: Overload:Terrain.Noise.PerlinNoiseStrategy.Width
-  isSpec: "True"
-  fullName: Terrain.Noise.PerlinNoiseStrategy.Width
-  nameWithType: PerlinNoiseStrategy.Width
 - uid: Terrain.TerrainInfo
   name: TerrainInfo
   href: api/Terrain.TerrainInfo.html
@@ -4401,238 +4745,238 @@ references:
   isSpec: "True"
   fullName: Terrain.TerrainInfo.Offset
   nameWithType: TerrainInfo.Offset
-- uid: Terrain.Textures
-  name: Terrain.Textures
-  href: api/Terrain.Textures.html
-  commentId: N:Terrain.Textures
-  fullName: Terrain.Textures
-  nameWithType: Terrain.Textures
-- uid: Terrain.Textures.Factory
+- uid: Textures
+  name: Textures
+  href: api/Textures.html
+  commentId: N:Textures
+  fullName: Textures
+  nameWithType: Textures
+- uid: Textures.Factory
   name: Factory
-  href: api/Terrain.Textures.Factory.html
-  commentId: T:Terrain.Textures.Factory
-  fullName: Terrain.Textures.Factory
+  href: api/Textures.Factory.html
+  commentId: T:Textures.Factory
+  fullName: Textures.Factory
   nameWithType: Factory
-- uid: Terrain.Textures.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+- uid: Textures.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
   name: Factory(IInjector<Single[,]>)
-  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Terrain.Textures.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  href: api/Textures.Factory.html#Textures_Factory__ctor_Interfaces_IInjector_System_Single_0__0____
+  commentId: M:Textures.Factory.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
   name.vb: Factory(IInjector(Of Single(,)))
-  fullName: Terrain.Textures.Factory.Factory(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Terrain.Textures.Factory.Factory(Interfaces.IInjector(Of System.Single(,)))
+  fullName: Textures.Factory.Factory(Interfaces.IInjector<System.Single[,]>)
+  fullName.vb: Textures.Factory.Factory(Interfaces.IInjector(Of System.Single(,)))
   nameWithType: Factory.Factory(IInjector<Single[,]>)
   nameWithType.vb: Factory.Factory(IInjector(Of Single(,)))
-- uid: Terrain.Textures.Factory.#ctor(System.Func{System.Single[0:,0:]})
+- uid: Textures.Factory.#ctor(System.Func{System.Single[0:,0:]})
   name: Factory(Func<Single[,]>)
-  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory__ctor_System_Func_System_Single_0__0____
-  commentId: M:Terrain.Textures.Factory.#ctor(System.Func{System.Single[0:,0:]})
+  href: api/Textures.Factory.html#Textures_Factory__ctor_System_Func_System_Single_0__0____
+  commentId: M:Textures.Factory.#ctor(System.Func{System.Single[0:,0:]})
   name.vb: Factory(Func(Of Single(,)))
-  fullName: Terrain.Textures.Factory.Factory(System.Func<System.Single[,]>)
-  fullName.vb: Terrain.Textures.Factory.Factory(System.Func(Of System.Single(,)))
+  fullName: Textures.Factory.Factory(System.Func<System.Single[,]>)
+  fullName.vb: Textures.Factory.Factory(System.Func(Of System.Single(,)))
   nameWithType: Factory.Factory(Func<Single[,]>)
   nameWithType.vb: Factory.Factory(Func(Of Single(,)))
-- uid: Terrain.Textures.Factory.#ctor*
+- uid: Textures.Factory.#ctor*
   name: Factory
-  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory__ctor_
-  commentId: Overload:Terrain.Textures.Factory.#ctor
+  href: api/Textures.Factory.html#Textures_Factory__ctor_
+  commentId: Overload:Textures.Factory.#ctor
   isSpec: "True"
-  fullName: Terrain.Textures.Factory.Factory
+  fullName: Textures.Factory.Factory
   nameWithType: Factory.Factory
-- uid: Terrain.Textures.Factory._noiseMapInjector
+- uid: Textures.Factory._noiseMapInjector
   name: _noiseMapInjector
-  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory__noiseMapInjector
-  commentId: F:Terrain.Textures.Factory._noiseMapInjector
-  fullName: Terrain.Textures.Factory._noiseMapInjector
+  href: api/Textures.Factory.html#Textures_Factory__noiseMapInjector
+  commentId: F:Textures.Factory._noiseMapInjector
+  fullName: Textures.Factory._noiseMapInjector
   nameWithType: Factory._noiseMapInjector
-- uid: Terrain.Textures.Factory.CreateGrayScaleStrategy
+- uid: Textures.Factory.CreateGrayScaleStrategy
   name: CreateGrayScaleStrategy()
-  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory_CreateGrayScaleStrategy
-  commentId: M:Terrain.Textures.Factory.CreateGrayScaleStrategy
-  fullName: Terrain.Textures.Factory.CreateGrayScaleStrategy()
+  href: api/Textures.Factory.html#Textures_Factory_CreateGrayScaleStrategy
+  commentId: M:Textures.Factory.CreateGrayScaleStrategy
+  fullName: Textures.Factory.CreateGrayScaleStrategy()
   nameWithType: Factory.CreateGrayScaleStrategy()
-- uid: Terrain.Textures.Factory.CreateGrayScaleStrategy*
+- uid: Textures.Factory.CreateGrayScaleStrategy*
   name: CreateGrayScaleStrategy
-  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory_CreateGrayScaleStrategy_
-  commentId: Overload:Terrain.Textures.Factory.CreateGrayScaleStrategy
+  href: api/Textures.Factory.html#Textures_Factory_CreateGrayScaleStrategy_
+  commentId: Overload:Textures.Factory.CreateGrayScaleStrategy
   isSpec: "True"
-  fullName: Terrain.Textures.Factory.CreateGrayScaleStrategy
+  fullName: Textures.Factory.CreateGrayScaleStrategy
   nameWithType: Factory.CreateGrayScaleStrategy
-- uid: Terrain.Textures.Factory.CreateWhittakerStrategy(System.Single,System.Single)
+- uid: Textures.Factory.CreateWhittakerStrategy(System.Single,System.Single)
   name: CreateWhittakerStrategy(Single, Single)
-  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory_CreateWhittakerStrategy_System_Single_System_Single_
-  commentId: M:Terrain.Textures.Factory.CreateWhittakerStrategy(System.Single,System.Single)
-  fullName: Terrain.Textures.Factory.CreateWhittakerStrategy(System.Single, System.Single)
+  href: api/Textures.Factory.html#Textures_Factory_CreateWhittakerStrategy_System_Single_System_Single_
+  commentId: M:Textures.Factory.CreateWhittakerStrategy(System.Single,System.Single)
+  fullName: Textures.Factory.CreateWhittakerStrategy(System.Single, System.Single)
   nameWithType: Factory.CreateWhittakerStrategy(Single, Single)
-- uid: Terrain.Textures.Factory.CreateWhittakerStrategy*
+- uid: Textures.Factory.CreateWhittakerStrategy*
   name: CreateWhittakerStrategy
-  href: api/Terrain.Textures.Factory.html#Terrain_Textures_Factory_CreateWhittakerStrategy_
-  commentId: Overload:Terrain.Textures.Factory.CreateWhittakerStrategy
+  href: api/Textures.Factory.html#Textures_Factory_CreateWhittakerStrategy_
+  commentId: Overload:Textures.Factory.CreateWhittakerStrategy
   isSpec: "True"
-  fullName: Terrain.Textures.Factory.CreateWhittakerStrategy
+  fullName: Textures.Factory.CreateWhittakerStrategy
   nameWithType: Factory.CreateWhittakerStrategy
-- uid: Terrain.Textures.GrayScaleStrategy
+- uid: Textures.GrayScaleStrategy
   name: GrayScaleStrategy
-  href: api/Terrain.Textures.GrayScaleStrategy.html
-  commentId: T:Terrain.Textures.GrayScaleStrategy
-  fullName: Terrain.Textures.GrayScaleStrategy
+  href: api/Textures.GrayScaleStrategy.html
+  commentId: T:Textures.GrayScaleStrategy
+  fullName: Textures.GrayScaleStrategy
   nameWithType: GrayScaleStrategy
-- uid: Terrain.Textures.GrayScaleStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+- uid: Textures.GrayScaleStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
   name: GrayScaleStrategy(IInjector<Single[,]>)
-  href: api/Terrain.Textures.GrayScaleStrategy.html#Terrain_Textures_GrayScaleStrategy__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Terrain.Textures.GrayScaleStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  href: api/Textures.GrayScaleStrategy.html#Textures_GrayScaleStrategy__ctor_Interfaces_IInjector_System_Single_0__0____
+  commentId: M:Textures.GrayScaleStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
   name.vb: GrayScaleStrategy(IInjector(Of Single(,)))
-  fullName: Terrain.Textures.GrayScaleStrategy.GrayScaleStrategy(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Terrain.Textures.GrayScaleStrategy.GrayScaleStrategy(Interfaces.IInjector(Of System.Single(,)))
+  fullName: Textures.GrayScaleStrategy.GrayScaleStrategy(Interfaces.IInjector<System.Single[,]>)
+  fullName.vb: Textures.GrayScaleStrategy.GrayScaleStrategy(Interfaces.IInjector(Of System.Single(,)))
   nameWithType: GrayScaleStrategy.GrayScaleStrategy(IInjector<Single[,]>)
   nameWithType.vb: GrayScaleStrategy.GrayScaleStrategy(IInjector(Of Single(,)))
-- uid: Terrain.Textures.GrayScaleStrategy.#ctor*
+- uid: Textures.GrayScaleStrategy.#ctor*
   name: GrayScaleStrategy
-  href: api/Terrain.Textures.GrayScaleStrategy.html#Terrain_Textures_GrayScaleStrategy__ctor_
-  commentId: Overload:Terrain.Textures.GrayScaleStrategy.#ctor
+  href: api/Textures.GrayScaleStrategy.html#Textures_GrayScaleStrategy__ctor_
+  commentId: Overload:Textures.GrayScaleStrategy.#ctor
   isSpec: "True"
-  fullName: Terrain.Textures.GrayScaleStrategy.GrayScaleStrategy
+  fullName: Textures.GrayScaleStrategy.GrayScaleStrategy
   nameWithType: GrayScaleStrategy.GrayScaleStrategy
-- uid: Terrain.Textures.GrayScaleStrategy.CreateColoredTexture(UnityEngine.Color[],System.Int32,System.Int32)
+- uid: Textures.GrayScaleStrategy.CreateColoredTexture(UnityEngine.Color[],System.Int32,System.Int32)
   name: CreateColoredTexture(Color[], Int32, Int32)
-  href: api/Terrain.Textures.GrayScaleStrategy.html#Terrain_Textures_GrayScaleStrategy_CreateColoredTexture_UnityEngine_Color___System_Int32_System_Int32_
-  commentId: M:Terrain.Textures.GrayScaleStrategy.CreateColoredTexture(UnityEngine.Color[],System.Int32,System.Int32)
+  href: api/Textures.GrayScaleStrategy.html#Textures_GrayScaleStrategy_CreateColoredTexture_UnityEngine_Color___System_Int32_System_Int32_
+  commentId: M:Textures.GrayScaleStrategy.CreateColoredTexture(UnityEngine.Color[],System.Int32,System.Int32)
   name.vb: CreateColoredTexture(Color(), Int32, Int32)
-  fullName: Terrain.Textures.GrayScaleStrategy.CreateColoredTexture(UnityEngine.Color[], System.Int32, System.Int32)
-  fullName.vb: Terrain.Textures.GrayScaleStrategy.CreateColoredTexture(UnityEngine.Color(), System.Int32, System.Int32)
+  fullName: Textures.GrayScaleStrategy.CreateColoredTexture(UnityEngine.Color[], System.Int32, System.Int32)
+  fullName.vb: Textures.GrayScaleStrategy.CreateColoredTexture(UnityEngine.Color(), System.Int32, System.Int32)
   nameWithType: GrayScaleStrategy.CreateColoredTexture(Color[], Int32, Int32)
   nameWithType.vb: GrayScaleStrategy.CreateColoredTexture(Color(), Int32, Int32)
-- uid: Terrain.Textures.GrayScaleStrategy.CreateColoredTexture*
+- uid: Textures.GrayScaleStrategy.CreateColoredTexture*
   name: CreateColoredTexture
-  href: api/Terrain.Textures.GrayScaleStrategy.html#Terrain_Textures_GrayScaleStrategy_CreateColoredTexture_
-  commentId: Overload:Terrain.Textures.GrayScaleStrategy.CreateColoredTexture
+  href: api/Textures.GrayScaleStrategy.html#Textures_GrayScaleStrategy_CreateColoredTexture_
+  commentId: Overload:Textures.GrayScaleStrategy.CreateColoredTexture
   isSpec: "True"
-  fullName: Terrain.Textures.GrayScaleStrategy.CreateColoredTexture
+  fullName: Textures.GrayScaleStrategy.CreateColoredTexture
   nameWithType: GrayScaleStrategy.CreateColoredTexture
-- uid: Terrain.Textures.GrayScaleStrategy.Generate
+- uid: Textures.GrayScaleStrategy.Generate
   name: Generate()
-  href: api/Terrain.Textures.GrayScaleStrategy.html#Terrain_Textures_GrayScaleStrategy_Generate
-  commentId: M:Terrain.Textures.GrayScaleStrategy.Generate
-  fullName: Terrain.Textures.GrayScaleStrategy.Generate()
+  href: api/Textures.GrayScaleStrategy.html#Textures_GrayScaleStrategy_Generate
+  commentId: M:Textures.GrayScaleStrategy.Generate
+  fullName: Textures.GrayScaleStrategy.Generate()
   nameWithType: GrayScaleStrategy.Generate()
-- uid: Terrain.Textures.GrayScaleStrategy.Generate*
+- uid: Textures.GrayScaleStrategy.Generate*
   name: Generate
-  href: api/Terrain.Textures.GrayScaleStrategy.html#Terrain_Textures_GrayScaleStrategy_Generate_
-  commentId: Overload:Terrain.Textures.GrayScaleStrategy.Generate
+  href: api/Textures.GrayScaleStrategy.html#Textures_GrayScaleStrategy_Generate_
+  commentId: Overload:Textures.GrayScaleStrategy.Generate
   isSpec: "True"
-  fullName: Terrain.Textures.GrayScaleStrategy.Generate
+  fullName: Textures.GrayScaleStrategy.Generate
   nameWithType: GrayScaleStrategy.Generate
-- uid: Terrain.Textures.WhittakerStrategy
+- uid: Textures.WhittakerStrategy
   name: WhittakerStrategy
-  href: api/Terrain.Textures.WhittakerStrategy.html
-  commentId: T:Terrain.Textures.WhittakerStrategy
-  fullName: Terrain.Textures.WhittakerStrategy
+  href: api/Textures.WhittakerStrategy.html
+  commentId: T:Textures.WhittakerStrategy
+  fullName: Textures.WhittakerStrategy
   nameWithType: WhittakerStrategy
-- uid: Terrain.Textures.WhittakerStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+- uid: Textures.WhittakerStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
   name: WhittakerStrategy(IInjector<Single[,]>)
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy__ctor_Interfaces_IInjector_System_Single_0__0____
-  commentId: M:Terrain.Textures.WhittakerStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy__ctor_Interfaces_IInjector_System_Single_0__0____
+  commentId: M:Textures.WhittakerStrategy.#ctor(Interfaces.IInjector{System.Single[0:,0:]})
   name.vb: WhittakerStrategy(IInjector(Of Single(,)))
-  fullName: Terrain.Textures.WhittakerStrategy.WhittakerStrategy(Interfaces.IInjector<System.Single[,]>)
-  fullName.vb: Terrain.Textures.WhittakerStrategy.WhittakerStrategy(Interfaces.IInjector(Of System.Single(,)))
+  fullName: Textures.WhittakerStrategy.WhittakerStrategy(Interfaces.IInjector<System.Single[,]>)
+  fullName.vb: Textures.WhittakerStrategy.WhittakerStrategy(Interfaces.IInjector(Of System.Single(,)))
   nameWithType: WhittakerStrategy.WhittakerStrategy(IInjector<Single[,]>)
   nameWithType.vb: WhittakerStrategy.WhittakerStrategy(IInjector(Of Single(,)))
-- uid: Terrain.Textures.WhittakerStrategy.#ctor*
+- uid: Textures.WhittakerStrategy.#ctor*
   name: WhittakerStrategy
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy__ctor_
-  commentId: Overload:Terrain.Textures.WhittakerStrategy.#ctor
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy__ctor_
+  commentId: Overload:Textures.WhittakerStrategy.#ctor
   isSpec: "True"
-  fullName: Terrain.Textures.WhittakerStrategy.WhittakerStrategy
+  fullName: Textures.WhittakerStrategy.WhittakerStrategy
   nameWithType: WhittakerStrategy.WhittakerStrategy
-- uid: Terrain.Textures.WhittakerStrategy.ComputeColor(System.Single,System.Single,System.Single)
+- uid: Textures.WhittakerStrategy.ComputeColor(System.Single,System.Single,System.Single)
   name: ComputeColor(Single, Single, Single)
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_ComputeColor_System_Single_System_Single_System_Single_
-  commentId: M:Terrain.Textures.WhittakerStrategy.ComputeColor(System.Single,System.Single,System.Single)
-  fullName: Terrain.Textures.WhittakerStrategy.ComputeColor(System.Single, System.Single, System.Single)
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_ComputeColor_System_Single_System_Single_System_Single_
+  commentId: M:Textures.WhittakerStrategy.ComputeColor(System.Single,System.Single,System.Single)
+  fullName: Textures.WhittakerStrategy.ComputeColor(System.Single, System.Single, System.Single)
   nameWithType: WhittakerStrategy.ComputeColor(Single, Single, Single)
-- uid: Terrain.Textures.WhittakerStrategy.ComputeColor*
+- uid: Textures.WhittakerStrategy.ComputeColor*
   name: ComputeColor
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_ComputeColor_
-  commentId: Overload:Terrain.Textures.WhittakerStrategy.ComputeColor
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_ComputeColor_
+  commentId: Overload:Textures.WhittakerStrategy.ComputeColor
   isSpec: "True"
-  fullName: Terrain.Textures.WhittakerStrategy.ComputeColor
+  fullName: Textures.WhittakerStrategy.ComputeColor
   nameWithType: WhittakerStrategy.ComputeColor
-- uid: Terrain.Textures.WhittakerStrategy.Generate
+- uid: Textures.WhittakerStrategy.Generate
   name: Generate()
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_Generate
-  commentId: M:Terrain.Textures.WhittakerStrategy.Generate
-  fullName: Terrain.Textures.WhittakerStrategy.Generate()
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_Generate
+  commentId: M:Textures.WhittakerStrategy.Generate
+  fullName: Textures.WhittakerStrategy.Generate()
   nameWithType: WhittakerStrategy.Generate()
-- uid: Terrain.Textures.WhittakerStrategy.Generate*
+- uid: Textures.WhittakerStrategy.Generate*
   name: Generate
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_Generate_
-  commentId: Overload:Terrain.Textures.WhittakerStrategy.Generate
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_Generate_
+  commentId: Overload:Textures.WhittakerStrategy.Generate
   isSpec: "True"
-  fullName: Terrain.Textures.WhittakerStrategy.Generate
+  fullName: Textures.WhittakerStrategy.Generate
   nameWithType: WhittakerStrategy.Generate
-- uid: Terrain.Textures.WhittakerStrategy.GenerateMap(System.Single)
+- uid: Textures.WhittakerStrategy.GenerateMap(System.Single)
   name: GenerateMap(Single)
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_GenerateMap_System_Single_
-  commentId: M:Terrain.Textures.WhittakerStrategy.GenerateMap(System.Single)
-  fullName: Terrain.Textures.WhittakerStrategy.GenerateMap(System.Single)
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_GenerateMap_System_Single_
+  commentId: M:Textures.WhittakerStrategy.GenerateMap(System.Single)
+  fullName: Textures.WhittakerStrategy.GenerateMap(System.Single)
   nameWithType: WhittakerStrategy.GenerateMap(Single)
-- uid: Terrain.Textures.WhittakerStrategy.GenerateMap*
+- uid: Textures.WhittakerStrategy.GenerateMap*
   name: GenerateMap
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_GenerateMap_
-  commentId: Overload:Terrain.Textures.WhittakerStrategy.GenerateMap
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_GenerateMap_
+  commentId: Overload:Textures.WhittakerStrategy.GenerateMap
   isSpec: "True"
-  fullName: Terrain.Textures.WhittakerStrategy.GenerateMap
+  fullName: Textures.WhittakerStrategy.GenerateMap
   nameWithType: WhittakerStrategy.GenerateMap
-- uid: Terrain.Textures.WhittakerStrategy.PrecipitationMap
+- uid: Textures.WhittakerStrategy.PrecipitationMap
   name: PrecipitationMap
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_PrecipitationMap
-  commentId: P:Terrain.Textures.WhittakerStrategy.PrecipitationMap
-  fullName: Terrain.Textures.WhittakerStrategy.PrecipitationMap
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_PrecipitationMap
+  commentId: P:Textures.WhittakerStrategy.PrecipitationMap
+  fullName: Textures.WhittakerStrategy.PrecipitationMap
   nameWithType: WhittakerStrategy.PrecipitationMap
-- uid: Terrain.Textures.WhittakerStrategy.PrecipitationMap*
+- uid: Textures.WhittakerStrategy.PrecipitationMap*
   name: PrecipitationMap
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_PrecipitationMap_
-  commentId: Overload:Terrain.Textures.WhittakerStrategy.PrecipitationMap
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_PrecipitationMap_
+  commentId: Overload:Textures.WhittakerStrategy.PrecipitationMap
   isSpec: "True"
-  fullName: Terrain.Textures.WhittakerStrategy.PrecipitationMap
+  fullName: Textures.WhittakerStrategy.PrecipitationMap
   nameWithType: WhittakerStrategy.PrecipitationMap
-- uid: Terrain.Textures.WhittakerStrategy.PrecipitationScale
+- uid: Textures.WhittakerStrategy.PrecipitationScale
   name: PrecipitationScale
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_PrecipitationScale
-  commentId: P:Terrain.Textures.WhittakerStrategy.PrecipitationScale
-  fullName: Terrain.Textures.WhittakerStrategy.PrecipitationScale
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_PrecipitationScale
+  commentId: P:Textures.WhittakerStrategy.PrecipitationScale
+  fullName: Textures.WhittakerStrategy.PrecipitationScale
   nameWithType: WhittakerStrategy.PrecipitationScale
-- uid: Terrain.Textures.WhittakerStrategy.PrecipitationScale*
+- uid: Textures.WhittakerStrategy.PrecipitationScale*
   name: PrecipitationScale
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_PrecipitationScale_
-  commentId: Overload:Terrain.Textures.WhittakerStrategy.PrecipitationScale
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_PrecipitationScale_
+  commentId: Overload:Textures.WhittakerStrategy.PrecipitationScale
   isSpec: "True"
-  fullName: Terrain.Textures.WhittakerStrategy.PrecipitationScale
+  fullName: Textures.WhittakerStrategy.PrecipitationScale
   nameWithType: WhittakerStrategy.PrecipitationScale
-- uid: Terrain.Textures.WhittakerStrategy.TemperatureMap
+- uid: Textures.WhittakerStrategy.TemperatureMap
   name: TemperatureMap
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_TemperatureMap
-  commentId: P:Terrain.Textures.WhittakerStrategy.TemperatureMap
-  fullName: Terrain.Textures.WhittakerStrategy.TemperatureMap
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_TemperatureMap
+  commentId: P:Textures.WhittakerStrategy.TemperatureMap
+  fullName: Textures.WhittakerStrategy.TemperatureMap
   nameWithType: WhittakerStrategy.TemperatureMap
-- uid: Terrain.Textures.WhittakerStrategy.TemperatureMap*
+- uid: Textures.WhittakerStrategy.TemperatureMap*
   name: TemperatureMap
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_TemperatureMap_
-  commentId: Overload:Terrain.Textures.WhittakerStrategy.TemperatureMap
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_TemperatureMap_
+  commentId: Overload:Textures.WhittakerStrategy.TemperatureMap
   isSpec: "True"
-  fullName: Terrain.Textures.WhittakerStrategy.TemperatureMap
+  fullName: Textures.WhittakerStrategy.TemperatureMap
   nameWithType: WhittakerStrategy.TemperatureMap
-- uid: Terrain.Textures.WhittakerStrategy.TemperatureScale
+- uid: Textures.WhittakerStrategy.TemperatureScale
   name: TemperatureScale
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_TemperatureScale
-  commentId: P:Terrain.Textures.WhittakerStrategy.TemperatureScale
-  fullName: Terrain.Textures.WhittakerStrategy.TemperatureScale
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_TemperatureScale
+  commentId: P:Textures.WhittakerStrategy.TemperatureScale
+  fullName: Textures.WhittakerStrategy.TemperatureScale
   nameWithType: WhittakerStrategy.TemperatureScale
-- uid: Terrain.Textures.WhittakerStrategy.TemperatureScale*
+- uid: Textures.WhittakerStrategy.TemperatureScale*
   name: TemperatureScale
-  href: api/Terrain.Textures.WhittakerStrategy.html#Terrain_Textures_WhittakerStrategy_TemperatureScale_
-  commentId: Overload:Terrain.Textures.WhittakerStrategy.TemperatureScale
+  href: api/Textures.WhittakerStrategy.html#Textures_WhittakerStrategy_TemperatureScale_
+  commentId: Overload:Textures.WhittakerStrategy.TemperatureScale
   isSpec: "True"
-  fullName: Terrain.Textures.WhittakerStrategy.TemperatureScale
+  fullName: Textures.WhittakerStrategy.TemperatureScale
   nameWithType: WhittakerStrategy.TemperatureScale
 - uid: Utils
   name: Utils
@@ -4640,6 +4984,179 @@ references:
   commentId: N:Utils
   fullName: Utils
   nameWithType: Utils
+- uid: Utils.Concurrency
+  name: Utils.Concurrency
+  href: api/Utils.Concurrency.html
+  commentId: N:Utils.Concurrency
+  fullName: Utils.Concurrency
+  nameWithType: Utils.Concurrency
+- uid: Utils.Concurrency.Dispatcher
+  name: Dispatcher
+  href: api/Utils.Concurrency.Dispatcher.html
+  commentId: T:Utils.Concurrency.Dispatcher
+  fullName: Utils.Concurrency.Dispatcher
+  nameWithType: Dispatcher
+- uid: Utils.Concurrency.Dispatcher.#ctor
+  name: Dispatcher()
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher__ctor
+  commentId: M:Utils.Concurrency.Dispatcher.#ctor
+  fullName: Utils.Concurrency.Dispatcher.Dispatcher()
+  nameWithType: Dispatcher.Dispatcher()
+- uid: Utils.Concurrency.Dispatcher.#ctor*
+  name: Dispatcher
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher__ctor_
+  commentId: Overload:Utils.Concurrency.Dispatcher.#ctor
+  isSpec: "True"
+  fullName: Utils.Concurrency.Dispatcher.Dispatcher
+  nameWithType: Dispatcher.Dispatcher
+- uid: Utils.Concurrency.Dispatcher.EnqueueAction(System.Action)
+  name: EnqueueAction(Action)
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueAction_System_Action_
+  commentId: M:Utils.Concurrency.Dispatcher.EnqueueAction(System.Action)
+  fullName: Utils.Concurrency.Dispatcher.EnqueueAction(System.Action)
+  nameWithType: Dispatcher.EnqueueAction(Action)
+- uid: Utils.Concurrency.Dispatcher.EnqueueAction*
+  name: EnqueueAction
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueAction_
+  commentId: Overload:Utils.Concurrency.Dispatcher.EnqueueAction
+  isSpec: "True"
+  fullName: Utils.Concurrency.Dispatcher.EnqueueAction
+  nameWithType: Dispatcher.EnqueueAction
+- uid: Utils.Concurrency.Dispatcher.EnqueueActionAndWait(System.Action)
+  name: EnqueueActionAndWait(Action)
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueActionAndWait_System_Action_
+  commentId: M:Utils.Concurrency.Dispatcher.EnqueueActionAndWait(System.Action)
+  fullName: Utils.Concurrency.Dispatcher.EnqueueActionAndWait(System.Action)
+  nameWithType: Dispatcher.EnqueueActionAndWait(Action)
+- uid: Utils.Concurrency.Dispatcher.EnqueueActionAndWait*
+  name: EnqueueActionAndWait
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueActionAndWait_
+  commentId: Overload:Utils.Concurrency.Dispatcher.EnqueueActionAndWait
+  isSpec: "True"
+  fullName: Utils.Concurrency.Dispatcher.EnqueueActionAndWait
+  nameWithType: Dispatcher.EnqueueActionAndWait
+- uid: Utils.Concurrency.Dispatcher.EnqueueFunction*
+  name: EnqueueFunction
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueFunction_
+  commentId: Overload:Utils.Concurrency.Dispatcher.EnqueueFunction
+  isSpec: "True"
+  fullName: Utils.Concurrency.Dispatcher.EnqueueFunction
+  nameWithType: Dispatcher.EnqueueFunction
+- uid: Utils.Concurrency.Dispatcher.EnqueueFunction``1(System.Func{``0})
+  name: EnqueueFunction<TO>(Func<TO>)
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueFunction__1_System_Func___0__
+  commentId: M:Utils.Concurrency.Dispatcher.EnqueueFunction``1(System.Func{``0})
+  name.vb: EnqueueFunction(Of TO)(Func(Of TO))
+  fullName: Utils.Concurrency.Dispatcher.EnqueueFunction<TO>(System.Func<TO>)
+  fullName.vb: Utils.Concurrency.Dispatcher.EnqueueFunction(Of TO)(System.Func(Of TO))
+  nameWithType: Dispatcher.EnqueueFunction<TO>(Func<TO>)
+  nameWithType.vb: Dispatcher.EnqueueFunction(Of TO)(Func(Of TO))
+- uid: Utils.Concurrency.Dispatcher.finishedActions
+  name: finishedActions
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_finishedActions
+  commentId: F:Utils.Concurrency.Dispatcher.finishedActions
+  fullName: Utils.Concurrency.Dispatcher.finishedActions
+  nameWithType: Dispatcher.finishedActions
+- uid: Utils.Concurrency.Dispatcher.instance
+  name: instance
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_instance
+  commentId: F:Utils.Concurrency.Dispatcher.instance
+  fullName: Utils.Concurrency.Dispatcher.instance
+  nameWithType: Dispatcher.instance
+- uid: Utils.Concurrency.Dispatcher.Instance
+  name: Instance
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_Instance
+  commentId: P:Utils.Concurrency.Dispatcher.Instance
+  fullName: Utils.Concurrency.Dispatcher.Instance
+  nameWithType: Dispatcher.Instance
+- uid: Utils.Concurrency.Dispatcher.Instance*
+  name: Instance
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_Instance_
+  commentId: Overload:Utils.Concurrency.Dispatcher.Instance
+  isSpec: "True"
+  fullName: Utils.Concurrency.Dispatcher.Instance
+  nameWithType: Dispatcher.Instance
+- uid: Utils.Concurrency.Dispatcher.InvokePending
+  name: InvokePending()
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_InvokePending
+  commentId: M:Utils.Concurrency.Dispatcher.InvokePending
+  fullName: Utils.Concurrency.Dispatcher.InvokePending()
+  nameWithType: Dispatcher.InvokePending()
+- uid: Utils.Concurrency.Dispatcher.InvokePending*
+  name: InvokePending
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_InvokePending_
+  commentId: Overload:Utils.Concurrency.Dispatcher.InvokePending
+  isSpec: "True"
+  fullName: Utils.Concurrency.Dispatcher.InvokePending
+  nameWithType: Dispatcher.InvokePending
+- uid: Utils.Concurrency.Dispatcher.pendingActions
+  name: pendingActions
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_pendingActions
+  commentId: F:Utils.Concurrency.Dispatcher.pendingActions
+  fullName: Utils.Concurrency.Dispatcher.pendingActions
+  nameWithType: Dispatcher.pendingActions
+- uid: Utils.Concurrency.Dispatcher.pendingFunctions
+  name: pendingFunctions
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_pendingFunctions
+  commentId: F:Utils.Concurrency.Dispatcher.pendingFunctions
+  fullName: Utils.Concurrency.Dispatcher.pendingFunctions
+  nameWithType: Dispatcher.pendingFunctions
+- uid: Utils.Concurrency.Dispatcher.results
+  name: results
+  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_results
+  commentId: F:Utils.Concurrency.Dispatcher.results
+  fullName: Utils.Concurrency.Dispatcher.results
+  nameWithType: Dispatcher.results
+- uid: Utils.Concurrency.DispatchInvoker
+  name: DispatchInvoker
+  href: api/Utils.Concurrency.DispatchInvoker.html
+  commentId: T:Utils.Concurrency.DispatchInvoker
+  fullName: Utils.Concurrency.DispatchInvoker
+  nameWithType: DispatchInvoker
+- uid: Utils.Concurrency.DispatchInvoker.#cctor
+  name: .cctor()
+  href: api/Utils.Concurrency.DispatchInvoker.html#Utils_Concurrency_DispatchInvoker__cctor
+  commentId: M:Utils.Concurrency.DispatchInvoker.#cctor
+  fullName: Utils.Concurrency.DispatchInvoker..cctor()
+  nameWithType: DispatchInvoker..cctor()
+- uid: Utils.Concurrency.DispatchInvoker.#cctor*
+  name: .cctor
+  href: api/Utils.Concurrency.DispatchInvoker.html#Utils_Concurrency_DispatchInvoker__cctor_
+  commentId: Overload:Utils.Concurrency.DispatchInvoker.#cctor
+  isSpec: "True"
+  fullName: Utils.Concurrency.DispatchInvoker..cctor
+  nameWithType: DispatchInvoker..cctor
+- uid: Utils.Concurrency.TaskUtils
+  name: TaskUtils
+  href: api/Utils.Concurrency.TaskUtils.html
+  commentId: T:Utils.Concurrency.TaskUtils
+  fullName: Utils.Concurrency.TaskUtils
+  nameWithType: TaskUtils
+- uid: Utils.Concurrency.TaskUtils.RunActionInTasks*
+  name: RunActionInTasks
+  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks_
+  commentId: Overload:Utils.Concurrency.TaskUtils.RunActionInTasks
+  isSpec: "True"
+  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks
+  nameWithType: TaskUtils.RunActionInTasks
+- uid: Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
+  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__
+  commentId: M:Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
+  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>)
+  fullName.vb: Utils.Concurrency.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO))
+  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
+  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
+- uid: Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
+  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
+  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Threading_CancellationToken_
+  commentId: M:Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
+  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
+  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>, System.Threading.CancellationToken)
+  fullName.vb: Utils.Concurrency.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO), System.Threading.CancellationToken)
+  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
+  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
 - uid: Utils.CopyableEnumerator`1
   name: CopyableEnumerator<T>
   href: api/Utils.CopyableEnumerator-1.html
@@ -4799,22 +5316,6 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.AnyPolygonCenterOverlaps
   nameWithType: Maths2D.AnyPolygonCenterOverlaps
-- uid: Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
-  name: AreColliding(IEnumerable<Vector3>, IEnumerable<Vector3>)
-  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_AreColliding_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
-  commentId: M:Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
-  name.vb: AreColliding(IEnumerable(Of Vector3), IEnumerable(Of Vector3))
-  fullName: Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>, System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
-  fullName.vb: Utils.Geometry.Maths2D.AreColliding(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3), System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
-  nameWithType: Maths2D.AreColliding(IEnumerable<Vector3>, IEnumerable<Vector3>)
-  nameWithType.vb: Maths2D.AreColliding(IEnumerable(Of Vector3), IEnumerable(Of Vector3))
-- uid: Utils.Geometry.Maths2D.AreColliding*
-  name: AreColliding
-  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_AreColliding_
-  commentId: Overload:Utils.Geometry.Maths2D.AreColliding
-  isSpec: "True"
-  fullName: Utils.Geometry.Maths2D.AreColliding
-  nameWithType: Maths2D.AreColliding
 - uid: Utils.Geometry.Maths2D.CalculatePolygonArea(System.Collections.Generic.IEnumerable{UnityEngine.Vector2})
   name: CalculatePolygonArea(IEnumerable<Vector2>)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_CalculatePolygonArea_System_Collections_Generic_IEnumerable_UnityEngine_Vector2__
@@ -4981,13 +5482,15 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.LineSegmentsIntersect
   nameWithType: Maths2D.LineSegmentsIntersect
-- uid: Utils.Geometry.Maths2D.Overlap(System.ValueTuple{System.Single,System.Single},System.ValueTuple{System.Single,System.Single})
-  name: Overlap((Single, Single), (Single, Single))
-  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_Overlap_System_ValueTuple_System_Single_System_Single__System_ValueTuple_System_Single_System_Single__
-  commentId: M:Utils.Geometry.Maths2D.Overlap(System.ValueTuple{System.Single,System.Single},System.ValueTuple{System.Single,System.Single})
-  fullName: Utils.Geometry.Maths2D.Overlap(System.ValueTuple<System.Single, System.Single>, System.ValueTuple<System.Single, System.Single>)
-  fullName.vb: Utils.Geometry.Maths2D.Overlap(System.ValueTuple(Of System.Single, System.Single), System.ValueTuple(Of System.Single, System.Single))
-  nameWithType: Maths2D.Overlap((Single, Single), (Single, Single))
+- uid: Utils.Geometry.Maths2D.Overlap(System.Single@,System.ValueTuple{System.Single,System.Single},System.ValueTuple{System.Single,System.Single})
+  name: Overlap(out Single, (Single, Single), (Single, Single))
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_Overlap_System_Single__System_ValueTuple_System_Single_System_Single__System_ValueTuple_System_Single_System_Single__
+  commentId: M:Utils.Geometry.Maths2D.Overlap(System.Single@,System.ValueTuple{System.Single,System.Single},System.ValueTuple{System.Single,System.Single})
+  name.vb: Overlap(ByRef Single, (Single, Single), (Single, Single))
+  fullName: Utils.Geometry.Maths2D.Overlap(out System.Single, System.ValueTuple<System.Single, System.Single>, System.ValueTuple<System.Single, System.Single>)
+  fullName.vb: Utils.Geometry.Maths2D.Overlap(ByRef System.Single, System.ValueTuple(Of System.Single, System.Single), System.ValueTuple(Of System.Single, System.Single))
+  nameWithType: Maths2D.Overlap(out Single, (Single, Single), (Single, Single))
+  nameWithType.vb: Maths2D.Overlap(ByRef Single, (Single, Single), (Single, Single))
 - uid: Utils.Geometry.Maths2D.Overlap*
   name: Overlap
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_Overlap_
@@ -5056,6 +5559,22 @@ references:
   isSpec: "True"
   fullName: Utils.Geometry.Maths2D.PolygonsOverlap
   nameWithType: Maths2D.PolygonsOverlap
+- uid: Utils.Geometry.Maths2D.PolyPolyCollision(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name: PolyPolyCollision(IEnumerable<Vector3>, IEnumerable<Vector3>)
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PolyPolyCollision_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Utils.Geometry.Maths2D.PolyPolyCollision(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name.vb: PolyPolyCollision(IEnumerable(Of Vector3), IEnumerable(Of Vector3))
+  fullName: Utils.Geometry.Maths2D.PolyPolyCollision(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>, System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Utils.Geometry.Maths2D.PolyPolyCollision(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3), System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  nameWithType: Maths2D.PolyPolyCollision(IEnumerable<Vector3>, IEnumerable<Vector3>)
+  nameWithType.vb: Maths2D.PolyPolyCollision(IEnumerable(Of Vector3), IEnumerable(Of Vector3))
+- uid: Utils.Geometry.Maths2D.PolyPolyCollision*
+  name: PolyPolyCollision
+  href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_PolyPolyCollision_
+  commentId: Overload:Utils.Geometry.Maths2D.PolyPolyCollision
+  isSpec: "True"
+  fullName: Utils.Geometry.Maths2D.PolyPolyCollision
+  nameWithType: Maths2D.PolyPolyCollision
 - uid: Utils.Geometry.Maths2D.ProjectPolygonOntoAxis(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},UnityEngine.Vector3)
   name: ProjectPolygonOntoAxis(IEnumerable<Vector3>, Vector3)
   href: api/Utils.Geometry.Maths2D.html#Utils_Geometry_Maths2D_ProjectPolygonOntoAxis_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__UnityEngine_Vector3_
@@ -5513,6 +6032,38 @@ references:
   commentId: F:Utils.Geometry.Triangulator.vertsInClippedPolygon
   fullName: Utils.Geometry.Triangulator.vertsInClippedPolygon
   nameWithType: Triangulator.vertsInClippedPolygon
+- uid: Utils.MathUtils
+  name: MathUtils
+  href: api/Utils.MathUtils.html
+  commentId: T:Utils.MathUtils
+  fullName: Utils.MathUtils
+  nameWithType: MathUtils
+- uid: Utils.MathUtils.RandomHalfClosedFloat(System.Single,System.Single)
+  name: RandomHalfClosedFloat(Single, Single)
+  href: api/Utils.MathUtils.html#Utils_MathUtils_RandomHalfClosedFloat_System_Single_System_Single_
+  commentId: M:Utils.MathUtils.RandomHalfClosedFloat(System.Single,System.Single)
+  fullName: Utils.MathUtils.RandomHalfClosedFloat(System.Single, System.Single)
+  nameWithType: MathUtils.RandomHalfClosedFloat(Single, Single)
+- uid: Utils.MathUtils.RandomHalfClosedFloat*
+  name: RandomHalfClosedFloat
+  href: api/Utils.MathUtils.html#Utils_MathUtils_RandomHalfClosedFloat_
+  commentId: Overload:Utils.MathUtils.RandomHalfClosedFloat
+  isSpec: "True"
+  fullName: Utils.MathUtils.RandomHalfClosedFloat
+  nameWithType: MathUtils.RandomHalfClosedFloat
+- uid: Utils.MathUtils.RandomInclusiveFloat(System.Single,System.Single)
+  name: RandomInclusiveFloat(Single, Single)
+  href: api/Utils.MathUtils.html#Utils_MathUtils_RandomInclusiveFloat_System_Single_System_Single_
+  commentId: M:Utils.MathUtils.RandomInclusiveFloat(System.Single,System.Single)
+  fullName: Utils.MathUtils.RandomInclusiveFloat(System.Single, System.Single)
+  nameWithType: MathUtils.RandomInclusiveFloat(Single, Single)
+- uid: Utils.MathUtils.RandomInclusiveFloat*
+  name: RandomInclusiveFloat
+  href: api/Utils.MathUtils.html#Utils_MathUtils_RandomInclusiveFloat_
+  commentId: Overload:Utils.MathUtils.RandomInclusiveFloat
+  isSpec: "True"
+  fullName: Utils.MathUtils.RandomInclusiveFloat
+  nameWithType: MathUtils.RandomInclusiveFloat
 - uid: Utils.Paths
   name: Utils.Paths
   href: api/Utils.Paths.html
@@ -5679,28 +6230,6 @@ references:
   isSpec: "True"
   fullName: Utils.Paths.PathObjectGenerator.TerrainOffsetY
   nameWithType: PathObjectGenerator.TerrainOffsetY
-- uid: Utils.TaskUtils
-  name: TaskUtils
-  href: api/Utils.TaskUtils.html
-  commentId: T:Utils.TaskUtils
-  fullName: Utils.TaskUtils
-  nameWithType: TaskUtils
-- uid: Utils.TaskUtils.RunActionInTasks*
-  name: RunActionInTasks
-  href: api/Utils.TaskUtils.html#Utils_TaskUtils_RunActionInTasks_
-  commentId: Overload:Utils.TaskUtils.RunActionInTasks
-  isSpec: "True"
-  fullName: Utils.TaskUtils.RunActionInTasks
-  nameWithType: TaskUtils.RunActionInTasks
-- uid: Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
-  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
-  href: api/Utils.TaskUtils.html#Utils_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__
-  commentId: M:Utils.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
-  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
-  fullName: Utils.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>)
-  fullName.vb: Utils.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO))
-  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
-  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
 - uid: Utils.TerrainUtil
   name: TerrainUtil
   href: api/Utils.TerrainUtil.html

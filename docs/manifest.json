@@ -9,7 +9,31 @@
       "output": {
         ".html": {
           "relative_path": "api/App.AppController.Model.html",
-          "hash": "zVI8YU5PNBfXE9Hb3Cv4JA=="
+          "hash": "s1PZzFE2pxwhuCx5cgEXoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/App.AppController.OnGenerationEnd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/App.AppController.OnGenerationEnd.html",
+          "hash": "6v8YhNKLxk9n1xGznwkWBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/App.AppController.OnGenerationStart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/App.AppController.OnGenerationStart.html",
+          "hash": "o3WnC+rLSctoOUdrO1CtiQ=="
         }
       },
       "is_incremental": false,
@@ -21,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.AppController.html",
-          "hash": "oUyfuDjrHBMrAkDja86qjg=="
+          "hash": "HWwNtzeNlgJqF4OE6xan1w=="
         }
       },
       "is_incremental": false,
@@ -33,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.AppControllerEditor.html",
-          "hash": "GZQpilUSJEZoBZgihndr3Q=="
+          "hash": "7/8CZdVbBvm0pEZfiYAv9A=="
         }
       },
       "is_incremental": false,
@@ -45,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.AppEvent.html",
-          "hash": "zPk9BuKLyQHbCJWLEETZlA=="
+          "hash": "c6ah20ghzSgfmct84kLLGw=="
         }
       },
       "is_incremental": false,
@@ -69,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Buildings.BuildingViewModel.html",
-          "hash": "/HSUHMg+Ysv7fUpztG3aNQ=="
+          "hash": "0HnyDnN99ThgA8AKst8fUA=="
         }
       },
       "is_incremental": false,
@@ -81,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html",
-          "hash": "vrt7ERsQitPhEXwqeYTn0g=="
+          "hash": "4B8ueW4TQdplVbgtWfaZlg=="
         }
       },
       "is_incremental": false,
@@ -105,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.CityViewModel.html",
-          "hash": "lhk6pgOdMF7PCNIyCEyQbA=="
+          "hash": "ST48+e4lZgcxKadOb1WDOQ=="
         }
       },
       "is_incremental": false,
@@ -129,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Plots.PlotViewModel.html",
-          "hash": "1tFQm1E5R0C4vuxvTaElYQ=="
+          "hash": "phEEH8bA2lEbD2pSOuyfRQ=="
         }
       },
       "is_incremental": false,
@@ -153,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.AStarStrategy.Path.html",
-          "hash": "wGcqZohnuDRHLhRQY+bHTg=="
+          "hash": "Qhy46XNCiqBaU4iGlrPnNw=="
         }
       },
       "is_incremental": false,
@@ -165,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.AStarStrategy.html",
-          "hash": "8eMLbjsqgs3mnsAkDwUfYw=="
+          "hash": "i27ck1pYSDk5cI6Tsv2TmA=="
         }
       },
       "is_incremental": false,
@@ -177,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.LSystemStrategy.Input.html",
-          "hash": "CbIUG5m1O/RhGxgj2tdz0w=="
+          "hash": "kLdieXwd30umaTqss2H/hQ=="
         }
       },
       "is_incremental": false,
@@ -189,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.LSystemStrategy.html",
-          "hash": "KCDmKtsqKhglg+oiF5Y1xg=="
+          "hash": "P19aoXwWUbV3j3pO/8whQg=="
         }
       },
       "is_incremental": false,
@@ -201,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.RoadViewModel.html",
-          "hash": "8ZbXyVDmkcfl582lMLRCHQ=="
+          "hash": "vXKTn6QwHeB0Qc6kABtXOw=="
         }
       },
       "is_incremental": false,
@@ -213,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Roads.html",
-          "hash": "5Hz98sHc96XNn2xP9j562A=="
+          "hash": "O9e/uTujO/i2Wy5P2vaaAA=="
         }
       },
       "is_incremental": false,
@@ -233,11 +257,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.yml",
+      "source_relative_path": "api/App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.yml",
       "output": {
         ".html": {
-          "relative_path": "api/App.ViewModels.Terrain.Noise.NoiseViewModel.NoiseStrategy.html",
-          "hash": "58JSHn+rpb0zt5hn5//p5A=="
+          "relative_path": "api/App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.html",
+          "hash": "nrkawDuGr6MOZPoTcRiBWA=="
         }
       },
       "is_incremental": false,
@@ -245,11 +269,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/App.ViewModels.Terrain.Noise.NoiseViewModel.yml",
+      "source_relative_path": "api/App.ViewModels.Noise.NoiseViewModel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/App.ViewModels.Terrain.Noise.NoiseViewModel.html",
-          "hash": "lTXBd7c4bnwqXG7u5zZ+4A=="
+          "relative_path": "api/App.ViewModels.Noise.NoiseViewModel.html",
+          "hash": "tfqwHvxUlcGLlBbqOlmydg=="
         }
       },
       "is_incremental": false,
@@ -257,11 +281,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.yml",
+      "source_relative_path": "api/App.ViewModels.Noise.PerlinNoiseStrategy.yml",
       "output": {
         ".html": {
-          "relative_path": "api/App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html",
-          "hash": "n80Jq9RsdCR0XX7mdnw81Q=="
+          "relative_path": "api/App.ViewModels.Noise.PerlinNoiseStrategy.html",
+          "hash": "VpnB1QsdgavuDU8QqqEUlQ=="
         }
       },
       "is_incremental": false,
@@ -269,11 +293,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/App.ViewModels.Terrain.Noise.yml",
+      "source_relative_path": "api/App.ViewModels.Noise.yml",
       "output": {
         ".html": {
-          "relative_path": "api/App.ViewModels.Terrain.Noise.html",
-          "hash": "seiOdLafLJIy5AnyhrM6Kg=="
+          "relative_path": "api/App.ViewModels.Noise.html",
+          "hash": "MgKIuspahb8JcC8hfL2LNw=="
         }
       },
       "is_incremental": false,
@@ -285,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.TerrainViewModel.html",
-          "hash": "19iPn+iLaesA5YXnD+TCCA=="
+          "hash": "1zp0oSptEHR7EI5ArzTIeA=="
         }
       },
       "is_incremental": false,
@@ -297,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html",
-          "hash": "kudbNebJCFI2dZWjg4niyw=="
+          "hash": "0eLMjWfiOJBVjnlyFC2CYQ=="
         }
       },
       "is_incremental": false,
@@ -309,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html",
-          "hash": "RphGslQMYkNuu6zZDO1WRA=="
+          "hash": "YNWGvcliNA588rrg6jdnpw=="
         }
       },
       "is_incremental": false,
@@ -321,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.TextureViewModel.html",
-          "hash": "LeLKTGqI1bmHnIb8L1JAJw=="
+          "hash": "BxRF74LC43lmRvRCkga2/g=="
         }
       },
       "is_incremental": false,
@@ -333,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html",
-          "hash": "yrTI2JYWBOlX36nvSQ+2/w=="
+          "hash": "oxhA8enQ3hIqHFQlGZ42wg=="
         }
       },
       "is_incremental": false,
@@ -369,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.ViewModelStrategy-2.html",
-          "hash": "qEruojGaQo1IBsYp8XnSIg=="
+          "hash": "ia6DDvwvV6MZIedCeapiFg=="
         }
       },
       "is_incremental": false,
@@ -393,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.html",
-          "hash": "/Mg4OHo07fxzjXbUi2wVjA=="
+          "hash": "WVLOmLHqk6lVrGs9/lHetQ=="
         }
       },
       "is_incremental": false,
@@ -441,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.AdjacentStrategy.html",
-          "hash": "PgjBJfz8CAAXsQOvsB2RTw=="
+          "hash": "q2YGum2LTPuyj4YvSN0E3g=="
         }
       },
       "is_incremental": false,
@@ -453,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.BruteMinimalCycleStrategy.html",
-          "hash": "Ptx4vkhoPY7smWL6PmMDFw=="
+          "hash": "CJmBEVkBRIm9VRH+c3VvKw=="
         }
       },
       "is_incremental": false,
@@ -465,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.ClockwiseCycleStrategy.html",
-          "hash": "8XMhMTD9kMBPPzQ7V4Uf/A=="
+          "hash": "JW0jwXSWr1seAH8dGvKpzA=="
         }
       },
       "is_incremental": false,
@@ -477,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.CombinedStrategy.html",
-          "hash": "FJiKP0slRJyOshFYnKXm5Q=="
+          "hash": "XfFOo2kIdcCyIXK2nqQl6w=="
         }
       },
       "is_incremental": false,
@@ -513,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.MinimalCycleStrategy.html",
-          "hash": "2CAELOczC1xZ1vWva0x9jA=="
+          "hash": "uvEkZrOH3yLFb2YfeIhb3Q=="
         }
       },
       "is_incremental": false,
@@ -537,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Plots.PlotSampleStrategy.html",
-          "hash": "z10sRo6uiSL5zPJKZgQrWA=="
+          "hash": "fgP2GP1x6mzy5Lz3slOouQ=="
         }
       },
       "is_incremental": false,
@@ -561,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.AStarStrategy.Node.html",
-          "hash": "CKgFxOFAmjHS/8hJoD5Zzw=="
+          "hash": "6b2M5foryReihiyU39Kg1g=="
         }
       },
       "is_incremental": false,
@@ -573,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.AStarStrategy.html",
-          "hash": "dRdJGda89v8sSkrFrhlTpg=="
+          "hash": "uLo93H5pHQgFob7RGT2k5A=="
         }
       },
       "is_incremental": false,
@@ -597,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.LSystem.State.html",
-          "hash": "Ez5q5yVKKYsBeVns0tsHMg=="
+          "hash": "/9m8EyGNsFBrU3/idwNLqg=="
         }
       },
       "is_incremental": false,
@@ -609,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.LSystem.html",
-          "hash": "OcvLweLFa5B76/LAqH9ROQ=="
+          "hash": "uDXu2rMqYNB0zdbjsKX+IQ=="
         }
       },
       "is_incremental": false,
@@ -621,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.LSystemStrategy.html",
-          "hash": "u6p1j2+BGNEHuBFOEQuFjg=="
+          "hash": "lF+w3uIr/FH0IVoDqPnrAg=="
         }
       },
       "is_incremental": false,
@@ -633,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.RoadNetwork.html",
-          "hash": "dxNh19CgetKgjnUIV/Kr5Q=="
+          "hash": "QA8EeOFHRDIgd+nDH4yPVw=="
         }
       },
       "is_incremental": false,
@@ -645,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Cities.Roads.SampleStrategy.html",
-          "hash": "/IqgZIVuAnGUwKgdtWtglw=="
+          "hash": "WO2ONIU7ga7gIQ8jiATctg=="
         }
       },
       "is_incremental": false,
@@ -729,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Interfaces.IGenerator-1.html",
-          "hash": "nLh5kE7PhHBXPOKUs4Vh8A=="
+          "hash": "8gR45243cJuED0cVCAS1wg=="
         }
       },
       "is_incremental": false,
@@ -765,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Interfaces.Strategy-2.html",
-          "hash": "+LqenU0Io3GkGW2aLK2Dnw=="
+          "hash": "l3Hd6tYYQp8LD/OSa/OIxg=="
         }
       },
       "is_incremental": false,
@@ -778,6 +802,54 @@
         ".html": {
           "relative_path": "api/Interfaces.html",
           "hash": "ps9Qwjzz6BsDl9cIgvZDBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Noise.Factory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Noise.Factory.html",
+          "hash": "bOxmyfNQu+S5NGCjGi0eKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Noise.NoiseMeshGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Noise.NoiseMeshGenerator.html",
+          "hash": "oCv1uHww/clsq8AJThf6jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Noise.PerlinNoiseStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Noise.PerlinNoiseStrategy.html",
+          "hash": "3Yx/BuO032p7KyZ+Q4i+Gg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Noise.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Noise.html",
+          "hash": "bwUTwjTn4zy7Co4VeTiaIA=="
         }
       },
       "is_incremental": false,
@@ -845,54 +917,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Noise.Factory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Noise.Factory.html",
-          "hash": "swOcv+5kVYW1zxeINgMDgQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Noise.NoiseMeshGenerator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Noise.NoiseMeshGenerator.html",
-          "hash": "3M4bZsKNL1argzY8ax3+WA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Noise.PerlinNoiseStrategy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Noise.PerlinNoiseStrategy.html",
-          "hash": "qAdqD0Jar34myhuX3RE/PA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Noise.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Noise.html",
-          "hash": "24MOA4/8EpLL8qNWNCnHyw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terrain.TerrainInfo.yml",
       "output": {
         ".html": {
@@ -905,59 +929,107 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Textures.Factory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Textures.Factory.html",
-          "hash": "6mNcxEY+kdmL1eT/pufUqg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Textures.GrayScaleStrategy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Textures.GrayScaleStrategy.html",
-          "hash": "etmvf9qfH0tQiHvmcAj5gA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Textures.WhittakerStrategy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Textures.WhittakerStrategy.html",
-          "hash": "JadDnAOSXTbBxhA/Sw6d3w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terrain.Textures.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terrain.Textures.html",
-          "hash": "inQaduO/uoe8zC61EKz1Sg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terrain.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terrain.html",
           "hash": "37fep/JnCFpCKc6/mXyawQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Textures.Factory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Textures.Factory.html",
+          "hash": "hVq1jI0vta2dLPdiVQDwEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Textures.GrayScaleStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Textures.GrayScaleStrategy.html",
+          "hash": "Mf2+kbN8bE+mdezvjbtLag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Textures.WhittakerStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Textures.WhittakerStrategy.html",
+          "hash": "7vU88QcMsrf/ihOC3gRwEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Textures.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Textures.html",
+          "hash": "x/YW825asZxqS+8Yi2Uf0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Concurrency.DispatchInvoker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Concurrency.DispatchInvoker.html",
+          "hash": "73oRJHK6ZIITWcM/ZWaKoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Concurrency.Dispatcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Concurrency.Dispatcher.html",
+          "hash": "YtbnvFyem0k1QKNTY8cNMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Concurrency.TaskUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Concurrency.TaskUtils.html",
+          "hash": "CIpcfGTGsIQBDjtK+bpRAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Utils.Concurrency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.Concurrency.html",
+          "hash": "frpXJNHUuP3AhJ7CdRGc9g=="
         }
       },
       "is_incremental": false,
@@ -981,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.Geometry.Maths2D.html",
-          "hash": "3u9Bc/OdxUt4iCuC7Att0Q=="
+          "hash": "YDFp/z9Oj3x/aSTNUPk8gg=="
         }
       },
       "is_incremental": false,
@@ -1061,6 +1133,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Utils.MathUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Utils.MathUtils.html",
+          "hash": "9L22h9FaIhyX+jRAvRmOug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Utils.Paths.PathObjectGenerator.yml",
       "output": {
         ".html": {
@@ -1078,18 +1162,6 @@
         ".html": {
           "relative_path": "api/Utils.Paths.html",
           "hash": "aSl56WzyJi8XloqjRSm6Fw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Utils.TaskUtils.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Utils.TaskUtils.html",
-          "hash": "Pr4LNW5jnU8FqNBwb2UGcQ=="
         }
       },
       "is_incremental": false,
@@ -1149,7 +1221,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Utils.html",
-          "hash": "ZFz/gGhs9uM6qTM50vF9KQ=="
+          "hash": "QnMIpfz2YknpZX1UXFZISg=="
         }
       },
       "is_incremental": false,
@@ -1173,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "PjzIA9nzhC7+qIOm0S88Lw=="
+          "hash": "jg2/EtxYsFGNEwnW172xRg=="
         }
       },
       "is_incremental": false,
@@ -1246,8 +1318,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 96,
-          "skipped_file_count": 67
+          "total_file_count": 102,
+          "skipped_file_count": 55
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

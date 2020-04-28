@@ -84,8 +84,16 @@ namespace App
         private static readonly int _numProgressUpdates = 5;
         private int _finishedGenerations;
 
+        /// <summary>
+        /// Called when a generation starts.
+        /// </summary>
+        /// <param name="info">Information about the generation in question.</param>
         internal delegate void OnGenerationStart(string info);
 
+        /// <summary>
+        /// Called when a generation ends.
+        /// </summary>
+        /// <param name="info">Information about the generation in question.</param>
         internal delegate void OnGenerationEnd(string info, float progress);
         
         private OnGenerationStart _onGenerationStart;

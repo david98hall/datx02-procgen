@@ -88,6 +88,7 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a></div>
+    <div><a class="xref" href="Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="App.AppEvent.html">AppEvent</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -384,7 +385,7 @@
     <pre><code class="lang-csharp hljs">[Serializable]
 [ExecuteInEditMode]
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider))]
-public class AppController : MonoBehaviour, IDisplayable</code></pre>
+public class AppController : MonoBehaviour, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -393,7 +394,7 @@ public class AppController : MonoBehaviour, IDisplayable</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__eventBus.md&amp;value=---%0Auid%3A%20App.AppController._eventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L79">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L82">View Source</a>
   </span>
   <h4 id="App_AppController__eventBus" data-uid="App.AppController._eventBus">_eventBus</h4>
   <div class="markdown level1 summary"></div>
@@ -419,10 +420,39 @@ public class AppController : MonoBehaviour, IDisplayable</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__finishedGenerations.md&amp;value=---%0Auid%3A%20App.AppController._finishedGenerations%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L85">View Source</a>
+  </span>
+  <h4 id="App_AppController__finishedGenerations" data-uid="App.AppController._finishedGenerations">_finishedGenerations</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int _finishedGenerations</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__initialized.md&amp;value=---%0Auid%3A%20App.AppController._initialized%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L32">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L35">View Source</a>
   </span>
   <h4 id="App_AppController__initialized" data-uid="App.AppController._initialized">_initialized</h4>
   <div class="markdown level1 summary"><p>Boolean for if the run-time objects have been initialized.
@@ -453,7 +483,7 @@ Is required for performance to not perform expensive operations twice.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__meshCollider.md&amp;value=---%0Auid%3A%20App.AppController._meshCollider%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L68">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L71">View Source</a>
   </span>
   <h4 id="App_AppController__meshCollider" data-uid="App.AppController._meshCollider">_meshCollider</h4>
   <div class="markdown level1 summary"><p>Collider for displaying game objects.</p>
@@ -483,7 +513,7 @@ Is required for performance to not perform expensive operations twice.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__meshFilter.md&amp;value=---%0Auid%3A%20App.AppController._meshFilter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L58">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L61">View Source</a>
   </span>
   <h4 id="App_AppController__meshFilter" data-uid="App.AppController._meshFilter">_meshFilter</h4>
   <div class="markdown level1 summary"><p>Filter for displaying meshes and game objects</p>
@@ -513,7 +543,7 @@ Is required for performance to not perform expensive operations twice.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__meshRenderer.md&amp;value=---%0Auid%3A%20App.AppController._meshRenderer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L63">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L66">View Source</a>
   </span>
   <h4 id="App_AppController__meshRenderer" data-uid="App.AppController._meshRenderer">_meshRenderer</h4>
   <div class="markdown level1 summary"><p>Renderer for display textures.</p>
@@ -543,7 +573,7 @@ Is required for performance to not perform expensive operations twice.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__model.md&amp;value=---%0Auid%3A%20App.AppController._model%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L37">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L40">View Source</a>
   </span>
   <h4 id="App_AppController__model" data-uid="App.AppController._model">_model</h4>
   <div class="markdown level1 summary"><p>Model containing all generated content.</p>
@@ -570,10 +600,97 @@ Is required for performance to not perform expensive operations twice.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__numProgressUpdates.md&amp;value=---%0Auid%3A%20App.AppController._numProgressUpdates%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L84">View Source</a>
+  </span>
+  <h4 id="App_AppController__numProgressUpdates" data-uid="App.AppController._numProgressUpdates">_numProgressUpdates</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static readonly int _numProgressUpdates</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__onGenerationEnd.md&amp;value=---%0Auid%3A%20App.AppController._onGenerationEnd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L100">View Source</a>
+  </span>
+  <h4 id="App_AppController__onGenerationEnd" data-uid="App.AppController._onGenerationEnd">_onGenerationEnd</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AppController.OnGenerationEnd _onGenerationEnd</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="App.AppController.OnGenerationEnd.html">AppController.OnGenerationEnd</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController__onGenerationStart.md&amp;value=---%0Auid%3A%20App.AppController._onGenerationStart%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L99">View Source</a>
+  </span>
+  <h4 id="App_AppController__onGenerationStart" data-uid="App.AppController._onGenerationStart">_onGenerationStart</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AppController.OnGenerationStart _onGenerationStart</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="App.AppController.OnGenerationStart.html">AppController.OnGenerationStart</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_cityViewModel.md&amp;value=---%0Auid%3A%20App.AppController.cityViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L49">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L52">View Source</a>
   </span>
   <h4 id="App_AppController_cityViewModel" data-uid="App.AppController.cityViewModel">cityViewModel</h4>
   <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Terrain.TerrainViewModel.html">TerrainViewModel</a> view model.</p>
@@ -604,7 +721,7 @@ CityViewModel cityViewModel</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_gameObjects.md&amp;value=---%0Auid%3A%20App.AppController.gameObjects%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L74">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L77">View Source</a>
   </span>
   <h4 id="App_AppController_gameObjects" data-uid="App.AppController.gameObjects">gameObjects</h4>
   <div class="markdown level1 summary"><p>Serialized set of all created game objects.</p>
@@ -635,7 +752,7 @@ HashSet&lt;GameObject&gt; gameObjects</code></pre>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_terrainViewModel.md&amp;value=---%0Auid%3A%20App.AppController.terrainViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L43">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L46">View Source</a>
   </span>
   <h4 id="App_AppController_terrainViewModel" data-uid="App.AppController.terrainViewModel">terrainViewModel</h4>
   <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="App.ViewModels.Terrain.TerrainViewModel.html">TerrainViewModel</a> view model.</p>
@@ -665,10 +782,42 @@ TerrainViewModel terrainViewModel</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_CreateGameObjects_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20App.AppController.CreateGameObjects(System.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L220">View Source</a>
+  </span>
+  <a id="App_AppController_CreateGameObjects_" data-uid="App.AppController.CreateGameObjects*"></a>
+  <h4 id="App_AppController_CreateGameObjects_System_Threading_CancellationToken_" data-uid="App.AppController.CreateGameObjects(System.Threading.CancellationToken)">CreateGameObjects(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateGameObjects(CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_Display.md&amp;value=---%0Auid%3A%20App.AppController.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L175">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L270">View Source</a>
   </span>
   <a id="App_AppController_Display_" data-uid="App.AppController.Display*"></a>
   <h4 id="App_AppController_Display" data-uid="App.AppController.Display">Display()</h4>
@@ -681,27 +830,63 @@ TerrainViewModel terrainViewModel</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_Generate.md&amp;value=---%0Auid%3A%20App.AppController.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_GenerateAsync_System_Action_App_AppController_OnGenerationStart_App_AppController_OnGenerationEnd_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20App.AppController.GenerateAsync(System.Action%2CApp.AppController.OnGenerationStart%2CApp.AppController.OnGenerationEnd%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L116">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L155">View Source</a>
   </span>
-  <a id="App_AppController_Generate_" data-uid="App.AppController.Generate*"></a>
-  <h4 id="App_AppController_Generate" data-uid="App.AppController.Generate">Generate()</h4>
+  <a id="App_AppController_GenerateAsync_" data-uid="App.AppController.GenerateAsync*"></a>
+  <h4 id="App_AppController_GenerateAsync_System_Action_App_AppController_OnGenerationStart_App_AppController_OnGenerationEnd_System_Threading_CancellationToken_" data-uid="App.AppController.GenerateAsync(System.Action,App.AppController.OnGenerationStart,App.AppController.OnGenerationEnd,System.Threading.CancellationToken)">GenerateAsync(Action, AppController.OnGenerationStart, AppController.OnGenerationEnd, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Delegates the generation to the underlying view models.
 Displays the generated content using the unity objects</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Generate()</code></pre>
+    <pre><code class="lang-csharp hljs">void GenerateAsync(Action finishAction, AppController.OnGenerationStart generationStartAction, AppController.OnGenerationEnd generationEndAction, CancellationToken cancellationToken)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td><span class="parametername">finishAction</span></td>
+        <td><p>The action to invoke when the generation is completed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="App.AppController.OnGenerationStart.html">AppController.OnGenerationStart</a></td>
+        <td><span class="parametername">generationStartAction</span></td>
+        <td><p>The action to invoke when a generation starts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="App.AppController.OnGenerationEnd.html">AppController.OnGenerationEnd</a></td>
+        <td><span class="parametername">generationEndAction</span></td>
+        <td><p>The action to invoke when a generation ends.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token, used to cancel the generation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_Initialize.md&amp;value=---%0Auid%3A%20App.AppController.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L90">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L111">View Source</a>
   </span>
   <a id="App_AppController_Initialize_" data-uid="App.AppController.Initialize*"></a>
   <h4 id="App_AppController_Initialize" data-uid="App.AppController.Initialize">Initialize()</h4>
@@ -711,14 +896,14 @@ Should only be called once due to expensive operations.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Initialize()</code></pre>
+    <pre><code class="lang-csharp hljs">void Initialize()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_OnEnable.md&amp;value=---%0Auid%3A%20App.AppController.OnEnable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L81">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L102">View Source</a>
   </span>
   <a id="App_AppController_OnEnable_" data-uid="App.AppController.OnEnable*"></a>
   <h4 id="App_AppController_OnEnable" data-uid="App.AppController.OnEnable">OnEnable()</h4>
@@ -728,9 +913,70 @@ Should only be called once due to expensive operations.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void OnEnable()</code></pre>
   </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_OnEvent_App_AppEvent_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20App.AppController.OnEvent(App.AppEvent%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L309">View Source</a>
+  </span>
+  <a id="App_AppController_OnEvent_" data-uid="App.AppController.OnEvent*"></a>
+  <h4 id="App_AppController_OnEvent_App_AppEvent_System_Object_System_Object_" data-uid="App.AppController.OnEvent(App.AppEvent,System.Object,System.Object)">OnEvent(AppEvent, Object, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnEvent(AppEvent eventId, object eventData, object creator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="App.AppEvent.html">AppEvent</a></td>
+        <td><span class="parametername">eventId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">eventData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">creator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController_Reset.md&amp;value=---%0Auid%3A%20App.AppController.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L137">View Source</a>
+  </span>
+  <a id="App_AppController_Reset_" data-uid="App.AppController.Reset*"></a>
+  <h4 id="App_AppController_Reset" data-uid="App.AppController.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Resets this AppController.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Reset()</code></pre>
+  </div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IDisplayable.html">IDisplayable</a>
+  </div>
+  <div>
+      <a class="xref" href="Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
   </div>
 </article>
           </div>
@@ -743,7 +989,7 @@ Should only be called once due to expensive operations.</p>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_AppController.md&amp;value=---%0Auid%3A%20App.AppController%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/AppController.cs/#L23" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

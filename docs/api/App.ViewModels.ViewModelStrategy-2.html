@@ -87,8 +87,8 @@
       <div class="level2"><a class="xref" href="App.ViewModels.Cities.Roads.AStarStrategy.html">AStarStrategy</a></div>
       <div class="level2"><a class="xref" href="App.ViewModels.Cities.Roads.LSystemStrategy.html">LSystemStrategy</a></div>
       <div class="level2"><a class="xref" href="App.ViewModels.Cities.Roads.RoadViewModel.html">RoadViewModel</a></div>
-      <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Noise.NoiseViewModel.html">NoiseViewModel</a></div>
-      <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Noise.PerlinNoiseStrategy.html">PerlinNoiseStrategy</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Noise.NoiseViewModel.html">NoiseViewModel</a></div>
+      <div class="level2"><a class="xref" href="App.ViewModels.Noise.PerlinNoiseStrategy.html">PerlinNoiseStrategy</a></div>
       <div class="level2"><a class="xref" href="App.ViewModels.Terrain.TerrainViewModel.html">TerrainViewModel</a></div>
       <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Textures.GrayScaleStrategy.html">GrayScaleStrategy</a></div>
       <div class="level2"><a class="xref" href="App.ViewModels.Terrain.Textures.TextureViewModel.html">TextureViewModel</a></div>
@@ -159,7 +159,7 @@ public abstract class ViewModelStrategy&lt;TI, TO&gt; : IGenerator&lt;TO&gt;, ID
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2__eventBus.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602._eventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L35">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L42">View Source</a>
   </span>
   <h4 id="App_ViewModels_ViewModelStrategy_2__eventBus" data-uid="App.ViewModels.ViewModelStrategy`2._eventBus">_eventBus</h4>
   <div class="markdown level1 summary"></div>
@@ -187,10 +187,40 @@ public abstract class ViewModelStrategy&lt;TI, TO&gt; : IGenerator&lt;TO&gt;, ID
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_CancelToken.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.CancelToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L17">View Source</a>
+  </span>
+  <a id="App_ViewModels_ViewModelStrategy_2_CancelToken_" data-uid="App.ViewModels.ViewModelStrategy`2.CancelToken*"></a>
+  <h4 id="App_ViewModels_ViewModelStrategy_2_CancelToken" data-uid="App.ViewModels.ViewModelStrategy`2.CancelToken">CancelToken</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual CancellationToken CancelToken { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_EventBus.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.EventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L24">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L28">View Source</a>
   </span>
   <a id="App_ViewModels_ViewModelStrategy_2_EventBus_" data-uid="App.ViewModels.ViewModelStrategy`2.EventBus*"></a>
   <h4 id="App_ViewModels_ViewModelStrategy_2_EventBus" data-uid="App.ViewModels.ViewModelStrategy`2.EventBus">EventBus</h4>
@@ -224,7 +254,7 @@ from the previous one and subscribed to the new one.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_Injector.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.Injector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L15">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L19">View Source</a>
   </span>
   <a id="App_ViewModels_ViewModelStrategy_2_Injector_" data-uid="App.ViewModels.ViewModelStrategy`2.Injector*"></a>
   <h4 id="App_ViewModels_ViewModelStrategy_2_Injector" data-uid="App.ViewModels.ViewModelStrategy`2.Injector">Injector</h4>
@@ -258,7 +288,7 @@ from the previous one and subscribed to the new one.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_Display.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L40">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L47">View Source</a>
   </span>
   <a id="App_ViewModels_ViewModelStrategy_2_Display_" data-uid="App.ViewModels.ViewModelStrategy`2.Display*"></a>
   <h4 id="App_ViewModels_ViewModelStrategy_2_Display" data-uid="App.ViewModels.ViewModelStrategy`2.Display">Display()</h4>
@@ -274,7 +304,7 @@ from the previous one and subscribed to the new one.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L47">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L54">View Source</a>
   </span>
   <a id="App_ViewModels_ViewModelStrategy_2_Generate_" data-uid="App.ViewModels.ViewModelStrategy`2.Generate*"></a>
   <h4 id="App_ViewModels_ViewModelStrategy_2_Generate" data-uid="App.ViewModels.ViewModelStrategy`2.Generate">Generate()</h4>
@@ -307,7 +337,7 @@ on the values in the UI and on the input.</p>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602.OnEvent(App.AppEvent%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L50">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L56">View Source</a>
   </span>
   <a id="App_ViewModels_ViewModelStrategy_2_OnEvent_" data-uid="App.ViewModels.ViewModelStrategy`2.OnEvent*"></a>
   <h4 id="App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_" data-uid="App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object,System.Object)">OnEvent(AppEvent, Object, Object)</h4>
@@ -365,7 +395,7 @@ on the values in the UI and on the input.</p>
                     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_ViewModelStrategy_2.md&amp;value=---%0Auid%3A%20App.ViewModels.ViewModelStrategy%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/ViewModelStrategy.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
