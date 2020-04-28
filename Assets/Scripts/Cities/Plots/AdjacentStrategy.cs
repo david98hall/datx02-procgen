@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Xml.Schema;
 using UnityEngine;
 using Cities.Roads;
@@ -43,8 +44,8 @@ namespace Cities.Plots
         /// <returns>The plots that lie along the parts of the road network.</returns>
         public override IEnumerable<Plot> Generate()
         {
-            var plots = new HashSet<Plot>();
-            var rand = new System.Random();
+            var plots = new HashSet<Plot>(); // The adjacent plots that will be generated
+            var rand = new System.Random();  // Initialized here so as to not generate the same random plot each time
             var roadNetwork = Injector.Get().Item1;
             // We need to terrain bounds to make sure the generated plots lie inside 
             var (minX, minZ, maxX, maxZ) = TerrainBounds(Injector.Get().Item2);
@@ -58,44 +59,48 @@ namespace Cities.Plots
                 var roadVector = end - start;
                 var maxSideLength = Vector3.Magnitude(roadVector);
                 const float roadOffset = 0.25f; // distance from each road part
-                var randomPlot = RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength, roadOffset);
+                var randomPlot =
+                    RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength, roadOffset);
 
-                var collision = false;
-                
-                // Check if new plot lies within terrain bounds
-                var (plotMinX, plotMinZ, plotMaxX, plotMaxZ) =
-                    Maths2D.PolyExtremePoints(randomPlot.Vertices);
-                if (plotMinX < minX || plotMinZ < minZ || plotMaxX > maxX || plotMaxZ > maxZ)
-                    collision = true;
 
-                // Check if new plot collides with any other plot
-                foreach (var plot in plots.Concat(_prevPlots))
+                const int moveAttempts = 3; // Amount of times to attempt moving the plot before discarding it
+                const float moveDistance = 1f; // Distance to move the plot in each iteration
+                for (var i = 0; i < moveAttempts; i++)
                 {
                     // Cancel if requested
                     if (CancelToken.IsCancellationRequested) return null;
+
+                    var (collision, mtv) = PlotsAreColliding(randomPlot, plots.Concat(_prevPlots));
                     
-                    if (Maths2D.AreColliding(randomPlot.Vertices, plot.Vertices))
+                    // Check if new plot lies within terrain bounds
+                    var (plotMinX, plotMinZ, plotMaxX, plotMaxZ) =
+                        Maths2D.PolyExtremePoints(randomPlot);
+                    if (plotMinX < minX || plotMinZ < minZ || plotMaxX > maxX || plotMaxZ > maxZ)
+                        break;
+                    
+                    // Check if new plot collides with any road part
+                    foreach (var (s, e) in roadNetwork.GetRoadParts())
                     {
-                        collision = true;
+                        // Cancel if requested
+                        if (CancelToken.IsCancellationRequested) return null;
+
+                        if (Maths2D.LinePolyCollision(s, e, randomPlot))
+                        {
+                            collision = true;
+                            break;
+                        }
+                    }
+
+                    if (!collision)
+                    {
+                        // The plot passed all the tests
+                        plots.Add(new Plot(randomPlot));
                         break;
                     }
-                }
 
-                // Check if new plot collides with any road part
-                foreach (var (s, e) in roadNetwork.GetRoadParts())
-                {
-                    // Cancel if requested
-                    if (CancelToken.IsCancellationRequested) return null;
-                    
-                    if (Maths2D.LinePolyCollision(s, e, randomPlot.Vertices))
-                    {
-                        collision = true;
-                        break;
-                    }
+                    // There is a collision, so move the plot
+                    randomPlot = randomPlot.Select(v => v + mtv * moveDistance);
                 }
-                if (!collision)
-                    plots.Add(randomPlot);
-
             }
 
             return plots;
@@ -113,7 +118,7 @@ namespace Cities.Plots
         }
 
         // Returns a random (within given bounds) rectangular plot that lies alongside the road part defined by roadVector.
-        private static Plot RandomRectPlot(System.Random rand, Vector3 start, Vector3 roadVector, float maxWidth, float maxLength, float roadOffset)
+        private static IEnumerable<Vector3> RandomRectPlot(System.Random rand, Vector3 start, Vector3 roadVector, float maxWidth, float maxLength, float roadOffset)
         {
             // The size of the side that lies alongside the road
             var width = (float)rand.NextDouble() * maxWidth + 1; // [1 .. maxWidth]
@@ -129,7 +134,7 @@ namespace Cities.Plots
             if (rand.NextDouble() >= 0.5)
                 dir *= -1f;
 
-            // We want the plot to lie somewhere along the road, and not always have a corner at the start of the road part.
+            // Make the plot to lie somewhere along the road, and not always have a corner at the start of the road part.
             var startOffset = (float)rand.NextDouble() * (roadVector.magnitude - width);
 
             start += roadVector.normalized * startOffset;
@@ -142,7 +147,24 @@ namespace Cities.Plots
             vertices.AddLast(start + dir * length);
             vertices.AddLast(start);
 
-            return new Plot(vertices.Select(v => v + dir * roadOffset));
+            return vertices.Select(v => v + dir * roadOffset);
+        }
+
+        /// <summary>
+        /// Check for collision between the new plot and a set of other plots. Returns the boolean and mtv.
+        /// </summary>
+        private static (bool collision, Vector3 mtv) PlotsAreColliding(IEnumerable<Vector3> newPlot, IEnumerable<Plot> oldPlots)
+        {
+            var mtv = Vector3.zero;
+            foreach (var oldPlot in oldPlots)
+            {
+                bool collision;
+                (collision, mtv) = Maths2D.PolyPolyCollision(newPlot, oldPlot.Vertices);
+                if (collision)
+                    return (true, mtv);
+            }
+
+            return (false, mtv);
         }
     }
 }
