@@ -33,9 +33,6 @@ namespace Textures
             var pixelColors = new Color[width * height];
             for (var x = 0; x < width; x++)
             {
-                // Cancel if requested
-                if (CancelToken.IsCancellationRequested) return null;
-                
                 for (var y = 0; y < height; y++)
                 {
                     // Cancel if requested

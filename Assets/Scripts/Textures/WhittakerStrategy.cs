@@ -73,9 +73,6 @@ namespace Textures
                 // for each pixel in texture, set color of texture
                 for (var x = 0; x < texture.width; x++)
                 {
-                    // Cancel if requested
-                    if (CancelToken.IsCancellationRequested) return null;
-                    
                     for (var y = 0; y < texture.height; y++)
                     {
                         // Cancel if requested

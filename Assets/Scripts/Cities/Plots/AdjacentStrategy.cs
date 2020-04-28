@@ -62,7 +62,6 @@ namespace Cities.Plots
                 var randomPlot =
                     RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength, roadOffset);
 
-
                 const int moveAttempts = 3; // Amount of times to attempt moving the plot before discarding it
                 const float moveDistance = 1f; // Distance to move the plot in each iteration
                 for (var i = 0; i < moveAttempts; i++)

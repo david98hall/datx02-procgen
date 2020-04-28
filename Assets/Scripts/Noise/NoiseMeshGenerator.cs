@@ -90,9 +90,6 @@ namespace Noise
             var trianglePointIndex = 0;
             for (var z = 0; z < height; z++)
             {
-                // Cancel if requested
-                if (CancelToken.IsCancellationRequested) return null;
-                
                 for (var x = 0; x < width; x++)
                 {
                     // Cancel if requested

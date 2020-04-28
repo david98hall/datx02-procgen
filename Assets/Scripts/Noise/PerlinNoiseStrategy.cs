@@ -49,9 +49,6 @@ namespace Noise
 
             for (var y = 0; y < Depth; y++)
             {
-                // Cancel if requested
-                if (CancelToken.IsCancellationRequested) return null;
-                
                 for (var x = 0; x < Width; x++)
                 {
                     // Cancel if requested
