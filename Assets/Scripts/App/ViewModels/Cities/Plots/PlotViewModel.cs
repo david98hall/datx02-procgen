@@ -29,7 +29,7 @@ namespace App.ViewModels.Cities.Plots
         /// </summary>
         public enum PlotStrategy
         {
-            MinimalCycle, ClockWiseCycle, BruteMinimalCycle, Adjacent, Combined
+            MinimalCycle, Adjacent, Combined // ClockWiseCycle, BruteMinimalCycle,
         }
 
         /// <summary>
@@ -96,13 +96,14 @@ namespace App.ViewModels.Cities.Plots
                 case PlotStrategy.MinimalCycle:
                     generator = plotStrategyFactory.CreateMinimalCycleStrategy();
                     break;
-                
+                /*
                 case PlotStrategy.ClockWiseCycle:
                     generator = plotStrategyFactory.CreateClockwiseCycleStrategy();
                     break;
                 case PlotStrategy.BruteMinimalCycle:
                     generator = plotStrategyFactory.CreateBruteMinimalCycleStrategy();
                     break;
+                */
                 case PlotStrategy.Adjacent:
                     generator = plotStrategyFactory.CreateAdjacentStrategy();
                     break;
