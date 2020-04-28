@@ -97,18 +97,21 @@ namespace App.ViewModels.Noise
         /// <returns>The result of the delegated generation call.</returns>
         public override float[,] Generate()
         {
-            return new Factory().CreatePerlinNoiseStrategy(
-                    width, depth, 
-                    seed, scale, 
-                    numOctaves, persistence, 
-                    lacunarity, noiseOffset)
-                .Generate();
+            var generator = new Factory().CreatePerlinNoiseStrategy(
+                width, depth,
+                seed, scale,
+                numOctaves, persistence,
+                lacunarity, noiseOffset);
+            // Set the cancellation token so that the generation can be canceled
+            generator.CancelToken = CancelToken;
+            return generator.Generate();
         }
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {
             if (eventId == AppEvent.Broadcast)
             {
+                // If a broadcast event is happening, broadcast the current noise map size
                 EventBus.CreateEvent(AppEvent.UpdateNoiseMapSize, (width, depth), this);
             }
         }

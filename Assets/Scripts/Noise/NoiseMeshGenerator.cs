@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading;
 using Extensions;
 using Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
+using Utils.Concurrency;
 
 namespace Noise
 {
@@ -11,7 +13,8 @@ namespace Noise
     /// </summary>
     internal class NoiseMeshGenerator : IGenerator<Mesh>
     {
-
+        public CancellationToken CancelToken { get; set; }
+        
         /// <summary>
         /// The scale of heights when generating a terrain mesh. The larger the scale, the higher the "mountains".
         /// </summary>
@@ -43,6 +46,9 @@ namespace Noise
         
         public Mesh Generate()
         {
+            // Cancel if requested
+            if (CancelToken.IsCancellationRequested) return null;
+            
             if (_noiseMapInjector.Get() == null)
             {
                 throw new NullReferenceException("The noise map is not set!");
@@ -86,6 +92,9 @@ namespace Noise
             {
                 for (var x = 0; x < width; x++)
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+                    
                     // Add the vertices (in Unity, y is vertical)
                     var y = HeightScale * _heightCurve.Evaluate(noiseMap[x, z]);
                     vertices[vertexIndex] = new Vector3(x, y, z);
@@ -111,16 +120,19 @@ namespace Noise
                     vertexIndex++;
                 }
             }
-
+            
             // Return a mesh based on the calculated data
-            var mesh = new Mesh
+            return Dispatcher.Instance.EnqueueFunction(() =>
             {
-                vertices = vertices,
-                triangles = triangles,
-                uv = textureCoordinates
-            };
-            mesh.RecalculateNormals();
-            return mesh;
+                var mesh = new Mesh
+                {
+                    vertices = vertices,
+                    triangles = triangles,
+                    uv = textureCoordinates
+                };
+                mesh.RecalculateNormals();
+                return mesh;
+            });
         }
     }
 }

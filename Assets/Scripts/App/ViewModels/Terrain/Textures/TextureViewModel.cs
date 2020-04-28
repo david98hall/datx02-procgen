@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Interfaces;
 using Services;
 using Textures;
@@ -26,7 +27,7 @@ namespace App.ViewModels.Terrain.Textures
         /// </summary>
         public enum TextureStrategy
         {
-            GrayScale, Whittaker
+            Whittaker // , GrayScale
         }
 
         /// <summary>
@@ -63,9 +64,7 @@ namespace App.ViewModels.Terrain.Textures
                     //grayScaleStrategy.Injector = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -81,12 +80,26 @@ namespace App.ViewModels.Terrain.Textures
                     //grayScaleStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    whittakerStrategy.CancelToken = value;
+                    //grayScaleStrategy.CancelToken = value;
+                }
+                catch (NullReferenceException)
+                {}
+            }
+        }
+        
         /// <summary>
         /// Displays the editor of texture and the view model of the currently selected texture strategy.
         /// </summary>
@@ -102,8 +115,8 @@ namespace App.ViewModels.Terrain.Textures
             EditorGUI.indentLevel++;
             switch (textureStrategy)
             {
-                case TextureStrategy.GrayScale:
-                    break;
+                // case TextureStrategy.GrayScale:
+                    // break;
                 case TextureStrategy.Whittaker:
                     whittakerStrategy.Display();
                     break;
@@ -122,15 +135,21 @@ namespace App.ViewModels.Terrain.Textures
         /// <exception cref="ArgumentOutOfRangeException">If no strategy is selected.</exception>
         public override Texture2D Generate()
         {
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Terrain Texture", this);
+            Texture2D texture;
             switch (textureStrategy)
             {
-                case TextureStrategy.GrayScale:
-                    return new Factory(Injector).CreateGrayScaleStrategy().Generate();
+                // case TextureStrategy.GrayScale:
+                    // return new Factory(Injector).CreateGrayScaleStrategy().Generate();
                 case TextureStrategy.Whittaker:
-                    return whittakerStrategy.Generate();
+                    texture = whittakerStrategy.Generate();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Terrain Texture", this);
+            return texture;
         }
     }
 }

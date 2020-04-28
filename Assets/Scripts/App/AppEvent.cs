@@ -15,7 +15,19 @@
         /// The id of an event, regarding an update of the noise map size.
         /// The data type of this event type is a ValueTuple of two floats, i.e., (width, height).
         /// </summary>
-        UpdateNoiseMapSize
+        UpdateNoiseMapSize,
+        
+        /// <summary>
+        /// The id of an event, regarding the start of a generation.
+        /// The data type of this event type is a string containing info about what's to be generated.
+        /// </summary>
+        GenerationStart,
+        
+        /// <summary>
+        /// The id of an event, regarding the end of a generation.
+        /// The data type of this event type is a string containing info about has been generated.
+        /// </summary>
+        GenerationEnd
     }
 
 }

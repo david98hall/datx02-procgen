@@ -50,7 +50,12 @@ namespace App.ViewModels.Cities.Buildings
         /// Delegates the generation to the created generator.
         /// </summary>
         /// <returns>The result of the delegated generation call.</returns>
-        public override IEnumerable<Building> Generate() =>
-            new Factory(Injector).CreateExtrusionStrategy(minArea, maxArea).Generate();
+        public override IEnumerable<Building> Generate()
+        {
+            var generator = new Factory(Injector).CreateExtrusionStrategy(minArea, maxArea);
+            // Set the cancellation token so that the generation can be canceled
+            generator.CancelToken = CancelToken;
+            return generator.Generate();
+        }
     }
 }

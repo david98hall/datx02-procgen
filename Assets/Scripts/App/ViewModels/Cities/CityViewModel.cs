@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using App.ViewModels.Cities.Buildings;
 using App.ViewModels.Cities.Plots;
 using App.ViewModels.Cities.Roads;
@@ -86,9 +87,7 @@ namespace App.ViewModels.Cities
                         (Injector.Get(), plotViewModel.Generate()));
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -105,12 +104,27 @@ namespace App.ViewModels.Cities
                     buildingViewModel.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    roadViewModel.CancelToken = value;
+                    plotViewModel.CancelToken = value;
+                    buildingViewModel.CancelToken = value;
+                }
+                catch (NullReferenceException)
+                {}
+            }
+        }
+        
         /// <summary>
         /// Displays the editor of the view model.
         /// </summary>
@@ -121,6 +135,7 @@ namespace App.ViewModels.Cities
 
             EditorGUI.indentLevel++;
             
+            // Display sub view models
             roadViewModel.Display();
             plotViewModel.Display();
             buildingViewModel.Display();
@@ -139,22 +154,24 @@ namespace App.ViewModels.Cities
             // Road network
             var roadNetwork = roadViewModel.Generate();
             if (roadNetwork == null) return null;
-            
+
             // Plots
             plotViewModel.Injector = new Injector<(RoadNetwork, TerrainInfo)>(() => 
                 (roadNetwork, Injector.Get()));
             var plots = plotViewModel.Generate();
-            var enumerable = plots as Plot[] ?? plots.ToArray();
+            if (plots == null) return null;
             
             // Buildings
             buildingViewModel.Injector = new Injector<(TerrainInfo, IEnumerable<Plot>)>(() => 
-                (Injector.Get(), enumerable));
+                (Injector.Get(), plots));
+            var buildings = buildingViewModel.Generate();
+            if (buildings == null) return null;
             
             return new City
             {
                 RoadNetwork = roadNetwork,
-                Plots = enumerable,
-                Buildings = buildingViewModel.Generate()
+                Plots = plots,
+                Buildings = buildings
             };
         }
 

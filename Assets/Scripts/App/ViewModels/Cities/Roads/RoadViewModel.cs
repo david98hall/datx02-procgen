@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Cities.Roads;
 using Interfaces;
 using Services;
@@ -82,9 +84,7 @@ namespace App.ViewModels.Cities.Roads
                     lSystemStrategy.Injector = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
@@ -100,12 +100,26 @@ namespace App.ViewModels.Cities.Roads
                     lSystemStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    aStarStrategy.CancelToken = value;
+                    lSystemStrategy.CancelToken = value;
+                }
+                catch (NullReferenceException)
+                {}
+            }
+        }
+        
         public override void Display()
         {
             _roadNetworkStrategyVisible 
@@ -157,25 +171,41 @@ namespace App.ViewModels.Cities.Roads
         
         public override RoadNetwork Generate()
         {
-            var aStarRoadNetwork = aStarEnabled ? aStarStrategy.Generate() : null;
-            var lSystemRoadNetwork = lSystemEnabled ? lSystemStrategy.Generate() : null;
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Road Network", this);
+            
+            // One task per road network generation strategy
+            var tasks = new Task[]
+            {
+                Task.Run(() => aStarEnabled ? aStarStrategy.Generate() : null, CancelToken),
+                Task.Run(() => lSystemEnabled ? lSystemStrategy.Generate() : null, CancelToken)
+            };
 
-            RoadNetwork mergedRoadNetwork;
-            if (aStarRoadNetwork == null)
+            try
             {
-                mergedRoadNetwork = lSystemRoadNetwork;
-            } 
-            else if (lSystemRoadNetwork == null)
-            {
-                mergedRoadNetwork = aStarRoadNetwork;
+                // Wait for all strategies to finish generating
+                Task.WaitAll(tasks);
             }
-            else
+            catch (Exception)
             {
-                aStarRoadNetwork.Merge(lSystemRoadNetwork);
-                mergedRoadNetwork = aStarRoadNetwork;
+                // Task canceled, abort
+                return null;
+            }
+            
+            // Extract the results of the different road network generation tasks
+            var aStarRoadNetwork = ((Task<RoadNetwork>) tasks[0]).Result;
+            var lSystemRoadNetwork = ((Task<RoadNetwork>) tasks[1]).Result;
+            
+            // Merge any combinations of road networks and return the result
+            var resultingNetwork = lSystemRoadNetwork;
+            if (aStarRoadNetwork != null)
+            {
+                resultingNetwork = lSystemRoadNetwork == null 
+                    ? aStarRoadNetwork 
+                    : aStarRoadNetwork.Merge(lSystemRoadNetwork);
             }
 
-            return mergedRoadNetwork;
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Road Network", this);
+            return resultingNetwork;
         }
     }
 }

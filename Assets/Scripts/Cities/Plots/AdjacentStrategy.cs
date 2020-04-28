@@ -53,17 +53,22 @@ namespace Cities.Plots
             // Attempt to generate a plot along each road part
             foreach (var (start, end) in roadNetwork.GetRoadParts())
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+                
                 var roadVector = end - start;
                 var maxSideLength = Vector3.Magnitude(roadVector);
                 const float roadOffset = 0.25f; // distance from each road part
                 var randomPlot =
                     RandomRectPlot(rand, start, roadVector, maxSideLength, maxSideLength, roadOffset);
 
-
                 const int moveAttempts = 3; // Amount of times to attempt moving the plot before discarding it
                 const float moveDistance = 1f; // Distance to move the plot in each iteration
                 for (var i = 0; i < moveAttempts; i++)
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+
                     var (collision, mtv) = PlotsAreColliding(randomPlot, plots.Concat(_prevPlots));
                     
                     // Check if new plot lies within terrain bounds
@@ -75,6 +80,9 @@ namespace Cities.Plots
                     // Check if new plot collides with any road part
                     foreach (var (s, e) in roadNetwork.GetRoadParts())
                     {
+                        // Cancel if requested
+                        if (CancelToken.IsCancellationRequested) return null;
+
                         if (Maths2D.LinePolyCollision(s, e, randomPlot))
                         {
                             collision = true;

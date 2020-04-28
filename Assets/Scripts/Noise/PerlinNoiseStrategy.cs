@@ -1,10 +1,13 @@
-﻿using Interfaces;
+﻿using System.Threading;
+using Interfaces;
 using UnityEngine;
 
 namespace Noise
 {
     internal class PerlinNoiseStrategy : IGenerator<float[,]>
     {
+        public CancellationToken CancelToken { get; set; }
+
         internal int Width { get; set; }
         internal int Depth { get; set; }
         internal int Seed { get; set; }
@@ -48,6 +51,9 @@ namespace Noise
             {
                 for (var x = 0; x < Width; x++)
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+                    
                     float amplitude = 1;
                     float frequency = 1;
                     float noiseHeight = 0;
@@ -82,8 +88,14 @@ namespace Noise
             // Normalize the noise map to the range [0, 1] because the rest of the program expect these values
             for (var y = 0; y < Depth; y++)
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+            
                 for (var x = 0; x < Width; x++)
                 {
+                    // Cancel if requested
+                    if (CancelToken.IsCancellationRequested) return null;
+                    
                     // InverseLerp returns a percentage value beteween minNoiseHeight and maxNoiseHeight
                     // to achieve the desired range
                     noiseMap[x, y] = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight, noiseMap[x, y]);
@@ -92,6 +104,5 @@ namespace Noise
             return noiseMap;
         }
 
-        //public float[,] Get() => Generate();
     }   
 }

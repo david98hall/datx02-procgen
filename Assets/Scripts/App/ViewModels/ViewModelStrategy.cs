@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Interfaces;
 using Services;
 
@@ -12,6 +13,9 @@ namespace App.ViewModels
     [Serializable]
     public abstract class ViewModelStrategy<TI, TO> : IGenerator<TO>, IDisplayable, ISubscriber<AppEvent>
     {
+        
+        public virtual CancellationToken CancelToken { get; set; }
+        
         internal virtual IInjector<TI> Injector { get; set; }
         
         /// <summary>
@@ -26,7 +30,10 @@ namespace App.ViewModels
             get => _eventBus;
             set
             {
+                // Unsubscribe from the current event bus (if there is one)
                 _eventBus?.Unsubscribe(this);
+                
+                // Subscribe to the new event bus
                 _eventBus = value;
                 _eventBus.Subscribe(this);
             }
@@ -46,9 +53,9 @@ namespace App.ViewModels
         /// <returns>The output based on the UI</returns>
         public abstract TO Generate();
 
-        
         public virtual void OnEvent(AppEvent eventId, object eventData, object creator)
         {
+            // The default event action is to do nothing
         }
     }
 }

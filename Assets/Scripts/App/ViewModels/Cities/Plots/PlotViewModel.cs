@@ -86,24 +86,39 @@ namespace App.ViewModels.Cities.Plots
         {
             // We can't generate plots with no roads
             if (Injector.Get().Item1 == null) return null;
+         
+            EventBus.CreateEvent(AppEvent.GenerationStart, "Generating Plots", this);
             
             var plotStrategyFactory = new Factory(Injector);
-
+            IGenerator<IEnumerable<Plot>> generator;
             switch (plotStrategy)
             {
                 case PlotStrategy.MinimalCycle:
-                    return plotStrategyFactory.CreateMinimalCycleStrategy().Generate();
+                    generator = plotStrategyFactory.CreateMinimalCycleStrategy();
+                    break;
+                
                 case PlotStrategy.ClockWiseCycle:
-                    return plotStrategyFactory.CreateClockwiseCycleStrategy().Generate();
+                    generator = plotStrategyFactory.CreateClockwiseCycleStrategy();
+                    break;
                 case PlotStrategy.BruteMinimalCycle:
-                    return plotStrategyFactory.CreateBruteMinimalCycleStrategy().Generate();
+                    generator = plotStrategyFactory.CreateBruteMinimalCycleStrategy();
+                    break;
                 case PlotStrategy.Adjacent:
-                    return plotStrategyFactory.CreateAdjacentStrategy().Generate();
+                    generator = plotStrategyFactory.CreateAdjacentStrategy();
+                    break;
                 case PlotStrategy.Combined:
-                    return plotStrategyFactory.CreateCombinedStrategy().Generate();
+                    generator = plotStrategyFactory.CreateCombinedStrategy();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            // Set the cancellation token so that the generation can be canceled
+            generator.CancelToken = CancelToken;
+            var plots = generator.Generate();
+
+            EventBus.CreateEvent(AppEvent.GenerationEnd, "Generated Plots", this);
+            return plots;
         }
     }
 }

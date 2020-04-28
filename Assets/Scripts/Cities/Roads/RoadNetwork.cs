@@ -308,11 +308,13 @@ namespace Cities.Roads
 
         /// <summary>
         /// Merges the passed road network into this one.
+        /// Returns this road network to allow for chaining method calls.
         /// </summary>
         /// <param name="roadNetwork">The road network to merge into this.</param>
-        public void Merge(RoadNetwork roadNetwork)
+        public RoadNetwork Merge(RoadNetwork roadNetwork)
         {
             AddRoads(roadNetwork.GetRoads());
+            return this;
         }
         
         #region Get road parts

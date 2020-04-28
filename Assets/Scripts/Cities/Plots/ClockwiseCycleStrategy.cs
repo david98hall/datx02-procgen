@@ -20,7 +20,7 @@ namespace Cities.Plots
         {
         }
 
-        public override IEnumerable<Plot> Generate() => GetAllCyclesXz().Select(cycle => new Plot(cycle));
+        public override IEnumerable<Plot> Generate() => GetAllCyclesXz()?.Select(cycle => new Plot(cycle));
 
         /// <summary>
         /// Finds all cycles in the road network.
@@ -40,6 +40,9 @@ namespace Cities.Plots
             var visitedEdges = new HashSet<(Vector3 Start, Vector3 End)>();
             foreach (var vertex in roadNetwork.RoadVertices)
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+                
                 if (TryFindCycle(vertex, roadNetwork, visitedEdges, out var cycle))
                 {
                     cycles.Add(cycle);
@@ -50,7 +53,7 @@ namespace Cities.Plots
         }
 
         // Searches for a cycle in the road network
-        private static bool TryFindCycle(
+        private bool TryFindCycle(
             Vector3 vertex, 
             RoadNetwork roadNetwork, 
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges,
@@ -75,7 +78,7 @@ namespace Cities.Plots
         /// A cycle if one is found when moving clockwise from the start vertex.
         /// null if no cycle was found.  
         /// </returns>
-        private static IReadOnlyCollection<Vector3> FindCycle(
+        private IReadOnlyCollection<Vector3> FindCycle(
             Vector3 start,
             Vector3 vertex,
             Vector3 previous,
@@ -83,6 +86,9 @@ namespace Cities.Plots
             ICollection<(Vector3 Start, Vector3 End)> visitedEdges,
             bool firstIteration = true)
         {
+            // Cancel if requested
+            if (CancelToken.IsCancellationRequested) return null;
+            
             if (!firstIteration && start.Equals(vertex))
                 return new []{vertex};
 

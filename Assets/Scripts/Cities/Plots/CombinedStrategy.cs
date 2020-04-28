@@ -33,20 +33,24 @@ namespace Cities.Plots
         /// <returns>The plots created by combining the strategies.</returns>
         public override IEnumerable<Plot> Generate()
         {
-            var cyclicPlots = _minimalCycleStrategy.Generate().ToList();
+            var cyclicPlots = _minimalCycleStrategy.Generate();
+            if (cyclicPlots == null) return null;
 
             // What area is big enough?
             const float bigEnoughArea = 2f;
             var bigEnoughPlots = new HashSet<Plot>();
             foreach (var plot in cyclicPlots)
             {
+                // Cancel if requested
+                if (CancelToken.IsCancellationRequested) return null;
+                
                 var vertices2D = plot.Vertices.Select(v => new Vector2(v.x, v.z));
                 if (Maths2D.CalculatePolygonArea(vertices2D) > bigEnoughArea)
                     bigEnoughPlots.Add(plot);
             }
 
             _adjacentStrategy.AddExistingPlots(bigEnoughPlots);
-            return _adjacentStrategy.Generate().Concat(bigEnoughPlots);
+            return _adjacentStrategy.Generate()?.Concat(bigEnoughPlots);
         }
     }
 }

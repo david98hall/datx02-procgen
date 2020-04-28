@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Services;
 using UnityEditor;
 using UnityEngine;
@@ -54,12 +55,25 @@ namespace App.ViewModels.Noise
                     perlinNoiseStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
-                {
-                    // Ignore
-                }
+                {}
             }
         }
 
+        public override CancellationToken CancelToken
+        {
+            get => base.CancelToken;
+            set
+            {
+                base.CancelToken = value;
+                try
+                {   
+                    perlinNoiseStrategy.CancelToken = value;
+                }
+                catch (NullReferenceException)
+                {}
+            }
+        }
+        
         /// <summary>
         /// Displays the editor of noise and the view model of the currently selected noise strategy.
         /// </summary>
