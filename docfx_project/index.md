@@ -4,4 +4,4 @@ BIAS stands for "Built In A Second" (derived from the saying "Rome was not built
 
 The Bachelor's thesis of the project can be found [here](https://drive.google.com/file/d/1w27e40J0BUkVa_c9lEFAAb4XK3_CBJHg/view).
 
-![BIAS City](https://i.imgur.com/cZosf4s.png "BIAS City")
+![BIAS City](https://i.imgur.com/nvDgOrF.png "BIAS City")
