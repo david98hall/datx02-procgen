@@ -27,7 +27,7 @@ namespace App.ViewModels.Terrain.Textures
         /// </summary>
         public enum TextureStrategy
         {
-            Whittaker // , GrayScale
+            Whittaker, GrayScale
         }
 
         /// <summary>
@@ -61,7 +61,6 @@ namespace App.ViewModels.Terrain.Textures
                 try
                 {   
                     whittakerStrategy.Injector = value;
-                    //grayScaleStrategy.Injector = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -77,7 +76,6 @@ namespace App.ViewModels.Terrain.Textures
                 try
                 {   
                     whittakerStrategy.EventBus = value;
-                    //grayScaleStrategy.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -93,7 +91,6 @@ namespace App.ViewModels.Terrain.Textures
                 try
                 {   
                     whittakerStrategy.CancelToken = value;
-                    //grayScaleStrategy.CancelToken = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -113,16 +110,8 @@ namespace App.ViewModels.Terrain.Textures
             textureStrategy = (TextureStrategy) EditorGUILayout.EnumPopup("Strategy", textureStrategy);
 
             EditorGUI.indentLevel++;
-            switch (textureStrategy)
-            {
-                // case TextureStrategy.GrayScale:
-                    // break;
-                case TextureStrategy.Whittaker:
-                    whittakerStrategy.Display();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            if (textureStrategy == TextureStrategy.Whittaker) 
+                whittakerStrategy.Display();
 
             EditorGUI.indentLevel--;
             EditorGUI.indentLevel--;
@@ -139,8 +128,11 @@ namespace App.ViewModels.Terrain.Textures
             Texture2D texture;
             switch (textureStrategy)
             {
-                // case TextureStrategy.GrayScale:
-                    // return new Factory(Injector).CreateGrayScaleStrategy().Generate();
+                case TextureStrategy.GrayScale:
+                    var generator = new Factory(Injector).CreateGrayScaleStrategy();
+                    // Set the cancellation token so that the generation can be canceled
+                    generator.CancelToken = CancelToken;
+                    return generator.Generate();
                 case TextureStrategy.Whittaker:
                     texture = whittakerStrategy.Generate();
                     break;
