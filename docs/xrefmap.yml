@@ -877,18 +877,6 @@ references:
   commentId: F:App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.Adjacent
   fullName: App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.Adjacent
   nameWithType: PlotViewModel.PlotStrategy.Adjacent
-- uid: App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.BruteMinimalCycle
-  name: BruteMinimalCycle
-  href: api/App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.html#App_ViewModels_Cities_Plots_PlotViewModel_PlotStrategy_BruteMinimalCycle
-  commentId: F:App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.BruteMinimalCycle
-  fullName: App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.BruteMinimalCycle
-  nameWithType: PlotViewModel.PlotStrategy.BruteMinimalCycle
-- uid: App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.ClockWiseCycle
-  name: ClockWiseCycle
-  href: api/App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.html#App_ViewModels_Cities_Plots_PlotViewModel_PlotStrategy_ClockWiseCycle
-  commentId: F:App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.ClockWiseCycle
-  fullName: App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.ClockWiseCycle
-  nameWithType: PlotViewModel.PlotStrategy.ClockWiseCycle
 - uid: App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.Combined
   name: Combined
   href: api/App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.html#App_ViewModels_Cities_Plots_PlotViewModel_PlotStrategy_Combined
@@ -1597,38 +1585,6 @@ references:
   commentId: N:App.ViewModels.Terrain.Textures
   fullName: App.ViewModels.Terrain.Textures
   nameWithType: App.ViewModels.Terrain.Textures
-- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy
-  name: GrayScaleStrategy
-  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html
-  commentId: T:App.ViewModels.Terrain.Textures.GrayScaleStrategy
-  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy
-  nameWithType: GrayScaleStrategy
-- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display
-  name: Display()
-  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html#App_ViewModels_Terrain_Textures_GrayScaleStrategy_Display
-  commentId: M:App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display
-  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display()
-  nameWithType: GrayScaleStrategy.Display()
-- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display*
-  name: Display
-  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html#App_ViewModels_Terrain_Textures_GrayScaleStrategy_Display_
-  commentId: Overload:App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Display
-  nameWithType: GrayScaleStrategy.Display
-- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate
-  name: Generate()
-  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html#App_ViewModels_Terrain_Textures_GrayScaleStrategy_Generate
-  commentId: M:App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate
-  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate()
-  nameWithType: GrayScaleStrategy.Generate()
-- uid: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate*
-  name: Generate
-  href: api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html#App_ViewModels_Terrain_Textures_GrayScaleStrategy_Generate_
-  commentId: Overload:App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate
-  isSpec: "True"
-  fullName: App.ViewModels.Terrain.Textures.GrayScaleStrategy.Generate
-  nameWithType: GrayScaleStrategy.Generate
 - uid: App.ViewModels.Terrain.Textures.TextureViewModel
   name: TextureViewModel
   href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html
@@ -1718,6 +1674,12 @@ references:
   commentId: T:App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy
   fullName: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy
   nameWithType: TextureViewModel.TextureStrategy
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
+  name: GrayScale
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html#App_ViewModels_Terrain_Textures_TextureViewModel_TextureStrategy_GrayScale
+  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.GrayScale
+  nameWithType: TextureViewModel.TextureStrategy.GrayScale
 - uid: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.Whittaker
   name: Whittaker
   href: api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html#App_ViewModels_Terrain_Textures_TextureViewModel_TextureStrategy_Whittaker

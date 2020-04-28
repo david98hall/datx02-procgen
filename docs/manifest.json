@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Cities.Plots.PlotViewModel.PlotStrategy.html",
-          "hash": "wSCFfqQ3T8zNJdPHdRLhmA=="
+          "hash": "+VIcvCnXA9roi5o4Zjvj1Q=="
         }
       },
       "is_incremental": false,
@@ -317,23 +317,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/App.ViewModels.Terrain.Textures.GrayScaleStrategy.html",
-          "hash": "0eLMjWfiOJBVjnlyFC2CYQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.yml",
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.html",
-          "hash": "YNWGvcliNA588rrg6jdnpw=="
+          "hash": "RphGslQMYkNuu6zZDO1WRA=="
         }
       },
       "is_incremental": false,
@@ -345,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.TextureViewModel.html",
-          "hash": "BxRF74LC43lmRvRCkga2/g=="
+          "hash": "DCNCX5jSQTJYXfoUJdxrUg=="
         }
       },
       "is_incremental": false,
@@ -369,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.Terrain.Textures.html",
-          "hash": "URtQnDFdO7BtNyRU+xk88A=="
+          "hash": "1z9IyRlLY8zgeFaYpPUdSQ=="
         }
       },
       "is_incremental": false,
@@ -393,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/App.ViewModels.ViewModelStrategy-2.html",
-          "hash": "ia6DDvwvV6MZIedCeapiFg=="
+          "hash": "e2baKuvYC1IjzHJZyQT3eA=="
         }
       },
       "is_incremental": false,
@@ -957,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Textures.GrayScaleStrategy.html",
-          "hash": "Mf2+kbN8bE+mdezvjbtLag=="
+          "hash": "KzfRsm56P2mLaC4F3AMrlA=="
         }
       },
       "is_incremental": false,
@@ -1257,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "hz+Xntjzl5/07/cXzbzPSQ=="
+          "hash": "YVZBsisew96NbhYzOhuigA=="
         }
       },
       "is_incremental": false,
@@ -1330,8 +1318,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 103,
-          "skipped_file_count": 101
+          "total_file_count": 102,
+          "skipped_file_count": 96
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
