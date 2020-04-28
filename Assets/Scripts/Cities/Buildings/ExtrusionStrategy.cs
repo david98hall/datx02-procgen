@@ -211,22 +211,15 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     private (ICollection<Vector3>, ICollection<int>) ExtrudePolygon(IList<Vector3> vertices, float distance)
     {
         // Prepare a shape for extrusion (using triangulator to get tris)
-        Triangulator t = new Triangulator(new Polygon(ToXZ(vertices).ToArray(), new Vector2[0][]));
-        int[] bottomTris = t.Triangulate();
-
-        if (bottomTris == null)
-        {
-            Debug.Log("Polygon: ");
-            foreach (var v in vertices)
-                Debug.Log(v);
-        }
+        PolyTriangulator t = new PolyTriangulator(vertices);
+        var bottomTris = t.Triangulate();
 
         IList<int> tris = new List<int>();
         tris.AddRange(bottomTris);
 
         // Add indices and points for the additional vertex array (which has same relative indices as bottom)
         int n = vertices.Count;
-        for (int i = 0; i < bottomTris.Length; i++)
+        for (int i = 0; i < bottomTris.Count; i++)
         {
             tris.Add(bottomTris[i] + n);
         }
