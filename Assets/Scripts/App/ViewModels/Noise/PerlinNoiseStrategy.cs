@@ -109,6 +109,7 @@ namespace App.ViewModels.Noise
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {
+            base.OnEvent(eventId, eventData, creator);
             if (eventId == AppEvent.Broadcast)
             {
                 // If a broadcast event is happening, broadcast the current noise map size

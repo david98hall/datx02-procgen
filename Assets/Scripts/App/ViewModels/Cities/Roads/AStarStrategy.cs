@@ -109,6 +109,7 @@ namespace App.ViewModels.Cities.Roads
 
         public override void OnEvent(AppEvent eventId, object eventData, object creator)
         {
+            base.OnEvent(eventId, eventData, creator);
             if (eventId.Equals(AppEvent.UpdateNoiseMapSize))
             {
                 // If the noise map size is changed, update it here as well
