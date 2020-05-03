@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Extensions;
 
 namespace Utils.Geometry
 {
@@ -397,6 +398,17 @@ namespace Utils.Geometry
             return signedArea < 0;
         }
 
+        /// <summary>
+        /// Checks the signed distance from v1 to the line formed by v0 and v2.
+        /// </summary>
+        /// <param name="v0"></param>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns>If the point is outside line.</returns>
+        public static bool IsConvex(Vector3 v0, Vector3 v1, Vector3 v2)
+        {
+            return SideOfLine(v0.ToXZ(), v2.ToXZ(), v1.ToXZ()) == -1;
+        }
 
 
         /// <summary>

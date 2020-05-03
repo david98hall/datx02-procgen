@@ -75,7 +75,7 @@ namespace Utils.Geometry
             var i = j - 1;
             for (int k = 0; k < vertices.Count; k++)
             {
-                if (!IsConvex(vertices[i], vertices[j], vertices[k]))
+                if (!Maths2D.IsConvex(vertices[i], vertices[j], vertices[k]))
                     reflex.AddLast(vertices[j]);
                 else
                     convex.AddLast(vertices[j]);
@@ -169,7 +169,7 @@ namespace Utils.Geometry
             // Check if vertex became convex and update if so
             if (reflex.Contains(curr))
             {
-                if (IsConvex(prev, curr, next))
+                if (Maths2D.IsConvex(prev, curr, next))
                 {
                     reflex.Remove(curr);
                     convex.AddLast(curr);
@@ -210,17 +210,6 @@ namespace Utils.Geometry
             return true;
         }
 
-        /// <summary>
-        /// Checks the signed distance from v1 to the line formed by v0 and v2.
-        /// </summary>
-        /// <param name="v0"></param>
-        /// <param name="v1"></param>
-        /// <param name="v2"></param>
-        /// <returns>If the point is outside line.</returns>
-        bool IsConvex(Vector3 v0, Vector3 v1, Vector3 v2)
-        {
-            return Maths2D.SideOfLine(v0.ToXZ(), v2.ToXZ(), v1.ToXZ()) == -1;
-        }
 
         #endregion
     }

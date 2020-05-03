@@ -10,6 +10,7 @@ using Interfaces;
 using Terrain;
 using Utils;
 using Utils.Concurrency;
+using UnityEngine.Profiling;
 
 /// <summary>
 /// Generator for buildings. 
@@ -81,15 +82,22 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     /// <returns>The set of all generated buildings.</returns>
     public override IEnumerable<Building> Generate()
     {
-        foreach (var p in Injector.Get().Item2)
+        var plots = Injector.Get().Item2;
+
+        foreach (var p in plots)
         {
             // Cancel if requested
             if (CancelToken.IsCancellationRequested) return null;
-            
-            //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
-            //ICollection<Lot> lots = lg.Generate();
 
-            var vertices = p.Vertices;
+        //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
+        //ICollection<Lot> lots = lg.Generate();
+
+        var vertices = p.Vertices;
+
+            //var vertices = new List<Vector3> { new Vector3(1f, 0f, 1f), new Vector3(5f, 0f, 2f), new Vector3(3f, 0f, 1.5f), new Vector3(10f, 0f, 1f), new Vector3(6f, 0f, 3f), new Vector3(8f, 0f, 5f),
+            //    new Vector3(12f, 0f, 7f), new Vector3(10f, 0f, 8f), new Vector3(10f, 0f, 10f), new Vector3(4f, 0f, 3f), new Vector3(1f, 0f, 10f), new Vector3(2f, 0f, 5f), new Vector3(1f, 0f, 1f)};
+
+            //var vertices = new List<Vector3> { new Vector3(1f, 0f, 1f), new Vector3(10f, 0f, 1f), new Vector3(10f, 0f, 10f), new Vector3(1f, 0f, 10f), new Vector3(1f, 0f, 1f) };
 
             // Necessary for non-counter-clockwise plots
             if (!Maths2D.PointsAreCounterClockwise(vertices.ToList()))
@@ -97,10 +105,22 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
 
             Lot lot = new Lot(vertices);
 
-            GetBuildings(new List<Lot> { lot });
+            Profiler.BeginSample("Buildings");
+
+            Test(lot);
+
+            Profiler.EndSample();
         }
 
         return buildings;
+    }
+
+    private void Test(Lot lot)
+    {
+        //for (int i = 0; i < 1000; i++)
+        //{
+            GetBuildings(new List<Lot> { lot });
+        //}
     }
 
 
@@ -126,10 +146,18 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
                 // Polygon centroid
                 Vector2 c = Maths2D.GetConvexCenter(ToXZ(vertices));
 
+                // Duplicate points can mess with triangulation
                 vertices.RemoveAt(vertices.Count - 1);
+
+                // Make sure we can construct a sensible footprint, otherwise skip this building
+                vertices = CutCorners(vertices, 45f);
+                if (vertices == null)
+                    continue;
+
                 var tup = SetBaseHeight(vertices);
 
                 var (verts, tris) = ExtrudePolygon(vertices, tup.max + y);
+    
                 Mesh m = BuildMesh(verts, tris);
 
                 buildings.Add(new Building(c.ToXYZ(0f), Vector2.zero, m));
@@ -145,6 +173,50 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     private bool ValidLot(Lot lot)
     {
         return lot.area >= minArea && lot.area < maxArea;
+    }
+
+    /// <summary>
+    /// Trim building corners from extreme cases.
+    /// </summary>
+    /// <param name="vertices">The polygon to trim.</param>
+    /// <param name="minAngle">The smallest allowed angle.</param>
+    private IList<Vector3> CutCorners(IList<Vector3> vertices, float minAngle)
+    {
+
+        // priority queue of angles?
+        // TODO: only does a single pass, but removal of a corner may produce new illegal corners - while loop?
+
+        Debug.Log("New Poly: ");
+
+        List<Vector3> verts = new List<Vector3>(vertices.Count);
+
+        int j = vertices.Count - 1;
+        int i = j - 1;
+        for (int k = 0; k < vertices.Count;)
+        {
+
+            var p0 = vertices[i];
+            var p1 = vertices[j];
+            var p2 = vertices[k];
+
+            var v0 = p2 - p1;
+            var v1 = p0 - p1;
+
+            float angle = Vector2.SignedAngle(v0.ToXZ(), v1.ToXZ());
+
+            if ( !(angle > 0f && angle < minAngle) ) 
+            {
+                verts.Add(p1);
+                Debug.Log(verts.Count + ", " + p1);
+            }
+
+            i = j;
+            j = k++;
+        }
+        if (verts.Count < 3)
+            return null;
+
+        return verts;
     }
 
     /// <summary>
@@ -240,6 +312,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
 
         return ConstructSideFaces(vertices, tris);
     }
+
 
     /// <summary>
     /// Constructs a simple face of 4 vertices for each edge, connecting the extruded polygon 
