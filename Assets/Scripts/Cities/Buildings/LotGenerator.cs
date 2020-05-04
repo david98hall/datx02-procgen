@@ -83,8 +83,8 @@ public class LotGenerator
         {
             var newLots = SplitAtEdge(poly, baseVars.index);
 
-            BisectorDivide(newLots.Item1);
-            BisectorDivide(newLots.Item2);
+            foreach (var l in newLots)
+                BisectorDivide(l);
         }
     }
 
@@ -107,66 +107,103 @@ public class LotGenerator
     /// <param name="poly"></param> The polygon to split
     /// <param name="index"></param> The index at which to split
     /// <returns></returns>
-    private (IList<Vector3>, IList<Vector3>) SplitAtEdge(IList<Vector3> poly, int index)
+    private IList<List<Vector3>> SplitAtEdge(IList<Vector3> poly, int index)
     {
 
         var indices = new List<int>();
-        var intersections = new Dictionary<int, Vector3>();
+        var intersectionLines = new Dictionary<Vector3, (Vector3 start, Vector3 end)>();
+        var intersections = new List<(Vector3, Vector3)>();
 
         var prev = poly[index];
         var next = poly[(index + 1) % poly.Count];
         var nextDir = (next - prev);
 
-        var splitPoint = (nextDir * 0.5f ) + prev;
+        var splitPoint = (nextDir * 0.5f) + prev;
 
         // Perpendicular line direction, scaled outside bounds
         var splitVector = (clockwise ? Vector3.Cross(nextDir, Vector3.up) : Vector3.Cross(Vector3.up, nextDir)).normalized;
         splitVector = splitVector * boundsFactor;
 
+        var p0 = splitPoint - splitVector;
+        var p1 = splitVector + splitPoint;
+
+        // Collect all intersections
         for (int i = 1; i < poly.Count; i++)
         {
-            if (Maths3D.LineSegmentIntersection(out var intersection, poly[i - 1], poly[i], splitPoint - splitVector, splitVector + splitPoint))
+            if (Maths3D.LineSegmentIntersection(out var intersection, poly[i - 1], poly[i], p0, p1))
             {
-                if (!intersections.ContainsValue(intersection))
+                if (!intersections.Contains( (poly[i-1], intersection) ))
                 {
-                    intersections.Add(i - 1, intersection);
+                    intersections.Add( (poly[i-1], intersection) );
                     indices.Add(i - 1); // ordered
-
-                    //if (accessPoints.Contains(poly[i - 1]) && accessPoints.Contains(poly[i]))
-                    //    accessPoints.Add(intersection);
                 }
             }
         }
 
-        // Should not happen
-        if (intersections.Count < 2)
+        // Gather intersections into pairs by sorting according to order of occurrence along split line
+        IList<(Vector3 key, Vector3 point)> sorted = intersections.OrderBy(v => (v.Item2 - splitPoint).magnitude).ToList();
+
+        // With the sorted list, we can know which intersection pairs are inside the polygon and thus are valid edges
+        for (int i = 1; i < sorted.Count; i+=2)
         {
-            throw new UnityException("Not enough intersections when splitting lot");
+            intersectionLines.Add(sorted[i-1].key, (sorted[i-1].point, sorted[i].point));
+            intersectionLines.Add(sorted[i].key, (sorted[i].point, sorted[i-1].point));
         }
 
-        // Get new polygons with intersections
-        var poly1 = new List<Vector3>();
-        var poly2 = new List<Vector3>();
+        var polyLink = new LinkedList<Vector3>(poly);
+        IList<List<Vector3>> polys = new List<List<Vector3>>();
 
-        int start = indices[0];
-        int end = indices[1];
-
-        for (int i = 0; i < poly.Count; i++)
+        // The intersection pairs should be indexed and ready to be added when we add points to our new polygons
+        int k = -1;
+        var start = polyLink.First;
+        var curr = start;
+        var nextt = curr.Next;
+        while (polyLink.Count > 0)
         {
-            if (i <= start || i > end)
-                poly1.Add(poly[i]);
-            else
-                poly2.Add(poly[i]);
+            // We have arrived back at the start for this polygon, create new list and start over
+            if (curr == start)
+            {
+                start = polyLink.First;
+                curr = start;
+                polys.Add(new List<Vector3>());
+                k++;
+            }
+
+
+            if (intersectionLines.TryGetValue(curr.Value, out var intersectionLine1))
+            {
+                // Add intersection to polygon
+                polys[k].Add(intersectionLine1.start);
+                polys[k].Add(intersectionLine1.end);
+
+                // Iterate past other polygon back to this one
+                while (!intersectionLines.TryGetValue(nextt.Value, out var v))
+                {
+                    curr = nextt;
+                    nextt = nextt.Next ?? polyLink.First;
+                }
+                curr = nextt.Next ?? polyLink.First;
+                nextt = curr.Next ?? polyLink.First;
+
+                // need to consider what happens when we're back at start
+            }
+
+            // Add this node to new polygon and remove from the list
+            polys[k].Add(curr.Value);
+            polyLink.Remove(curr);
+
+            curr = nextt;
+            nextt = nextt.Next ?? polyLink.First;
         }
 
-        poly1.Insert(start + 1, intersections[indices[1]]);
-        poly1.Insert(start + 1, intersections[indices[0]]);
 
-        poly2.Add(intersections[indices[1]]);
-        poly2.Add(intersections[indices[0]]);
-        poly2.Add(poly[start + 1]);
+        //// Should not happen
+        //if (intersections.Count < 2)
+        //{
+        //    throw new UnityException("Not enough intersections when splitting lot");
+        //}
 
-        return (poly1, poly2);
+        return polys;
     }
 
     /// <summary>
