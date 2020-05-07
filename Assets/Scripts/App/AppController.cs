@@ -11,7 +11,7 @@ using Interfaces;
 using Services;
 using Terrain;
 using UnityEngine;
-using Utils.Concurrency;
+using Utils.Parallelism;
 using Utils.Paths;
 
 namespace App

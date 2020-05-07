@@ -5,7 +5,7 @@ using Cities.Roads;
 using UnityEditor;
 using UnityEngine;
 using Utils;
-using Utils.Concurrency;
+using Utils.Parallelism;
 
 namespace App.ViewModels.Cities.Roads
 {

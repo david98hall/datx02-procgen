@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace Utils.Concurrency
+namespace Utils.Parallelism
 {
     /// <summary>
     /// Continuously invokes the Dispatcher at every Unity update.

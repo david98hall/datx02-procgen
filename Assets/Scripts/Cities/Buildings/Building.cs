@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Utils.Concurrency;
+﻿using UnityEngine;
+using Utils.Parallelism;
 
 /// <summary>
 /// Generated buildings. Each building is defined by its vertices, bounds, position and facing.

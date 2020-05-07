@@ -1,6 +1,6 @@
 ﻿using Interfaces;
 using UnityEngine;
-using Utils.Concurrency;
+using Utils.Parallelism;
 
 namespace Textures
 {

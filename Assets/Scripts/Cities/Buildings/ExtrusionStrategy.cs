@@ -9,7 +9,7 @@ using Utils.Geometry;
 using Interfaces;
 using Terrain;
 using Utils;
-using Utils.Concurrency;
+using Utils.Parallelism;
 
 /// <summary>
 /// Generator for buildings. 

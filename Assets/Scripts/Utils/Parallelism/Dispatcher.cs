@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace Utils.Concurrency
+namespace Utils.Parallelism
 {
     /// <summary>
     /// A thread-safe singleton type used to dispatch actions

@@ -4,7 +4,7 @@ using Extensions;
 using Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
-using Utils.Concurrency;
+using Utils.Parallelism;
 
 namespace Noise
 {
