@@ -144,35 +144,35 @@ MonoBehaviour:
     heightScale: 20
     noiseViewModel:
       noiseStrategy: 0
-      perlinNoiseStrategy:
+      perlinNoise:
         width: 250
         depth: 250
         seed: 0
-        scale: 58
-        numOctaves: 6
-        persistence: 0.044
-        lacunarity: 5.83
+        scale: 50
+        numOctaves: 8
+        persistence: 0.075
+        lacunarity: 7.5
         noiseOffset: {x: 0, y: 0}
     textureViewModel:
       textureStrategy: 0
-      whittakerStrategy:
-        precipitationScale: 47
-        temperatureScale: 47
+      whittaker:
+        precipitationScale: 50
+        temperatureScale: 40
   cityViewModel:
     roadViewModel:
-      aStarStrategy:
+      aStar:
         heightBias: 1
         paths:
         - start: {x: 50, y: 50}
           goal: {x: 200, y: 200}
-      lSystemStrategy:
+      lSystem:
         inputs:
         - origin: {x: 50, y: 50}
-          rewrites: 6
+          rewrites: 5
         - origin: {x: 200, y: 200}
           rewrites: 5
         - origin: {x: 125, y: 125}
-          rewrites: 4
+          rewrites: 6
       aStarEnabled: 1
       lSystemEnabled: 1
       roadWidth: 0.3
@@ -184,7 +184,7 @@ MonoBehaviour:
       displayPlots: 0
     buildingViewModel:
       buildingStrategy: 0
-      extrusionStrategy:
+      extrusion:
         minArea: 2
         maxArea: 100
       displayBuildings: 1

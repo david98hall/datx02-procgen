@@ -6,12 +6,12 @@ using Services;
 namespace App.ViewModels
 {
     /// <summary>
-    /// A view model for a strategy to generate something based on an input.
+    /// A view model for a generator, taking an input.
     /// </summary>
     /// <typeparam name="TI">The input type of the generation.</typeparam>
     /// <typeparam name="TO">The output type of the generation.</typeparam>
     [Serializable]
-    public abstract class ViewModelStrategy<TI, TO> : IGenerator<TO>, IDisplayable, ISubscriber<AppEvent>
+    public abstract class ViewModel<TI, TO> : IGenerator<TO>, IDisplayable, ISubscriber<AppEvent>
     {
         
         public virtual CancellationToken CancelToken { get; set; }

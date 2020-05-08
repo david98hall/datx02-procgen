@@ -14,7 +14,7 @@ namespace App.ViewModels.Cities.Roads
     /// The view model for road network related generators.
     /// </summary>
     [Serializable]
-    public class RoadViewModel : ViewModelStrategy<TerrainInfo, RoadNetwork>
+    public class RoadViewModel : ViewModel<TerrainInfo, RoadNetwork>
     {
         #region Road Generation Fields
         
@@ -23,11 +23,11 @@ namespace App.ViewModels.Cities.Roads
 
         // Serialized view-model for <see cref="AStarStrategy"/> view model.
         [SerializeField]
-        private AStarStrategy aStarStrategy;
+        private AStar aStar;
 
         // Serialized view-model for <see cref="LSystemStrategy"/> view model.
         [SerializeField] 
-        private LSystemStrategy lSystemStrategy;
+        private LSystem lSystem;
         
         [SerializeField]
         private bool aStarEnabled;
@@ -80,8 +80,8 @@ namespace App.ViewModels.Cities.Roads
                 base.Injector = value;
                 try
                 {   
-                    aStarStrategy.Injector = new Injector<float[,]>(() => value.Get().HeightMap);
-                    lSystemStrategy.Injector = value;
+                    aStar.Injector = new Injector<float[,]>(() => value.Get().HeightMap);
+                    lSystem.Injector = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -96,8 +96,8 @@ namespace App.ViewModels.Cities.Roads
                 base.EventBus = value;
                 try
                 {   
-                    aStarStrategy.EventBus = value;
-                    lSystemStrategy.EventBus = value;
+                    aStar.EventBus = value;
+                    lSystem.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -112,8 +112,8 @@ namespace App.ViewModels.Cities.Roads
                 base.CancelToken = value;
                 try
                 {   
-                    aStarStrategy.CancelToken = value;
-                    lSystemStrategy.CancelToken = value;
+                    aStar.CancelToken = value;
+                    lSystem.CancelToken = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -132,7 +132,7 @@ namespace App.ViewModels.Cities.Roads
             if (aStarEnabled)
             {
                 EditorGUI.indentLevel++;
-                aStarStrategy.Display();
+                aStar.Display();
                 EditorGUI.indentLevel--;
             }
 
@@ -141,7 +141,7 @@ namespace App.ViewModels.Cities.Roads
             if (lSystemEnabled)
             {
                 EditorGUI.indentLevel++;
-                lSystemStrategy.Display();
+                lSystem.Display();
                 EditorGUI.indentLevel--;
             }
             
@@ -176,8 +176,8 @@ namespace App.ViewModels.Cities.Roads
             // One task per road network generation strategy
             var tasks = new Task[]
             {
-                Task.Run(() => aStarEnabled ? aStarStrategy.Generate() : null, CancelToken),
-                Task.Run(() => lSystemEnabled ? lSystemStrategy.Generate() : null, CancelToken)
+                Task.Run(() => aStarEnabled ? aStar.Generate() : null, CancelToken),
+                Task.Run(() => lSystemEnabled ? lSystem.Generate() : null, CancelToken)
             };
 
             try

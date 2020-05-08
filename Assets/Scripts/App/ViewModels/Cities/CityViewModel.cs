@@ -21,7 +21,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<TerrainInfo, City>
+    public class CityViewModel : ViewModel<TerrainInfo, City>
     {
         /// <summary>
         /// Visibility of the editor.

@@ -13,7 +13,7 @@ namespace App.ViewModels.Cities.Roads
     /// View-model for displaying and generating road networks with the A* strategy.
     /// </summary>
     [Serializable]
-    public class AStarStrategy : ViewModelStrategy<float[,], RoadNetwork>
+    public class AStar : ViewModel<float[,], RoadNetwork>
     {
         #region Editor fields
 

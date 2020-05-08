@@ -13,7 +13,7 @@ namespace App.ViewModels.Cities.Buildings
     /// The view model for using the extrusion algorithm for generating buildings.
     /// </summary>
     [Serializable]
-    public class ExtrusionStrategy : ViewModelStrategy<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
+    public class Extrusion : ViewModel<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
     {
 
         #region Editor Fields

@@ -9,7 +9,7 @@ namespace App.ViewModels.Noise
     /// View-model for displaying and generating noise with the Perlin noise strategy.
     /// </summary>
     [Serializable]
-    public class PerlinNoiseStrategy : ViewModelStrategy<object, float[,]>
+    public class PerlinNoise : ViewModel<object, float[,]>
     {
         #region Editor Fields
         

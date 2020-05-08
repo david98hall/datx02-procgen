@@ -14,7 +14,7 @@ namespace App.ViewModels.Cities.Plots
     /// The view model for plot related generators.
     /// </summary>
     [Serializable]
-    public class PlotViewModel : ViewModelStrategy<(RoadNetwork, TerrainInfo), IEnumerable<Plot>>
+    public class PlotViewModel : ViewModel<(RoadNetwork, TerrainInfo), IEnumerable<Plot>>
     {
         #region Plot Strategy
 

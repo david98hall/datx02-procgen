@@ -10,7 +10,7 @@ namespace App.ViewModels.Noise
     /// The view model for noise generation.
     /// </summary>
     [Serializable]
-    public class NoiseViewModel : ViewModelStrategy<object, float[,]>
+    public class NoiseViewModel : ViewModel<object, float[,]>
     {
         
         #region Noise Strategy
@@ -36,11 +36,11 @@ namespace App.ViewModels.Noise
         private NoiseStrategy noiseStrategy;
 
         /// <summary>
-        /// Serialized view-model for <see cref="PerlinNoiseStrategy"/> view model.
+        /// Serialized view-model for <see cref="PerlinNoise"/> view model.
         /// Is required to be explicitly defined to be serializable.
         /// </summary>
         [SerializeField]
-        private PerlinNoiseStrategy perlinNoiseStrategy;
+        private PerlinNoise perlinNoise;
 
         #endregion
 
@@ -52,7 +52,7 @@ namespace App.ViewModels.Noise
                 base.EventBus = value;
                 try
                 {   
-                    perlinNoiseStrategy.EventBus = value;
+                    perlinNoise.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -67,7 +67,7 @@ namespace App.ViewModels.Noise
                 base.CancelToken = value;
                 try
                 {   
-                    perlinNoiseStrategy.CancelToken = value;
+                    perlinNoise.CancelToken = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -90,7 +90,7 @@ namespace App.ViewModels.Noise
             switch (noiseStrategy)
             {
                 case NoiseStrategy.PerlinNoise:
-                    perlinNoiseStrategy.Display();
+                    perlinNoise.Display();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -105,7 +105,7 @@ namespace App.ViewModels.Noise
             switch (noiseStrategy)
             {
                 case NoiseStrategy.PerlinNoise:
-                    return perlinNoiseStrategy.Generate();
+                    return perlinNoise.Generate();
                 default:
                     throw new ArgumentOutOfRangeException();
             }

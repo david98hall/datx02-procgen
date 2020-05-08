@@ -14,7 +14,7 @@ namespace App.ViewModels.Cities.Buildings
     /// The view model for building related generators.
     /// </summary>
     [Serializable]
-    public class BuildingViewModel : ViewModelStrategy<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
+    public class BuildingViewModel : ViewModel<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
     {
         
         #region Building Strategy
@@ -40,11 +40,11 @@ namespace App.ViewModels.Cities.Buildings
         private BuildingStrategy buildingStrategy;
 
         /// <summary>
-        /// Serialized view-model for <see cref="ExtrusionStrategy"/> view model.
+        /// Serialized view-model for <see cref="Extrusion"/> view model.
         /// Is required to be explicitly defined to be serializable.
         /// </summary>
         [SerializeField]
-        private ExtrusionStrategy extrusionStrategy;
+        private Extrusion extrusion;
 
         /// <summary>
         /// Boolean to set building visibility.
@@ -84,7 +84,7 @@ namespace App.ViewModels.Cities.Buildings
             {
                 try
                 {
-                    extrusionStrategy.Injector = value;
+                    extrusion.Injector = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -99,7 +99,7 @@ namespace App.ViewModels.Cities.Buildings
                 base.EventBus = value;
                 try
                 {
-                    extrusionStrategy.EventBus = value;
+                    extrusion.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -114,7 +114,7 @@ namespace App.ViewModels.Cities.Buildings
                 base.CancelToken = value;
                 try
                 {   
-                    extrusionStrategy.CancelToken = value;
+                    extrusion.CancelToken = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -134,7 +134,7 @@ namespace App.ViewModels.Cities.Buildings
             switch (buildingStrategy)
             {
                 case BuildingStrategy.Extrusion:
-                    extrusionStrategy.Display();
+                    extrusion.Display();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -178,7 +178,7 @@ namespace App.ViewModels.Cities.Buildings
             switch (buildingStrategy)
             {
                 case BuildingStrategy.Extrusion:
-                    buildings = extrusionStrategy.Generate();
+                    buildings = extrusion.Generate();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

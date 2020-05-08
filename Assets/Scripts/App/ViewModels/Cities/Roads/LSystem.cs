@@ -16,7 +16,7 @@ namespace App.ViewModels.Cities.Roads
     /// This data is used to generate road networks with an L-system algorithm.
     /// </summary>
     [Serializable]
-    public class LSystemStrategy : ViewModelStrategy<TerrainInfo, RoadNetwork>
+    public class LSystem : ViewModel<TerrainInfo, RoadNetwork>
     {
         [Serializable]
         private class Input

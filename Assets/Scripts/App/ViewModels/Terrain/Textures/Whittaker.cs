@@ -9,7 +9,7 @@ namespace App.ViewModels.Terrain.Textures
     /// View-model for displaying and generating textures with the Whittaker strategy.
     /// </summary>
     [Serializable]
-    public class WhittakerStrategy : ViewModelStrategy<float[,], Texture2D>
+    public class Whittaker : ViewModel<float[,], Texture2D>
     {
         #region Editor Fields
         

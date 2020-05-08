@@ -12,7 +12,7 @@ namespace App.ViewModels.Terrain.Textures
     /// The view model for terrain texture generation.
     /// </summary>
     [Serializable]
-    public class TextureViewModel : ViewModelStrategy<float[,], Texture2D>
+    public class TextureViewModel : ViewModel<float[,], Texture2D>
     {
         #region Texture Strategy 
 
@@ -37,11 +37,11 @@ namespace App.ViewModels.Terrain.Textures
         private TextureStrategy textureStrategy;
         
         /// <summary>
-        /// Serialized view-model for <see cref="WhittakerStrategy"/> view model.
+        /// Serialized view-model for <see cref="Whittaker"/> view model.
         /// Is required to be explicitly defined to be serializable.
         /// </summary>
         [SerializeField] 
-        private WhittakerStrategy whittakerStrategy;
+        private Whittaker whittaker;
 
         /// <summary>
         /// Serialized view-model for <see cref="GrayScaleStrategy"/> view model.
@@ -60,7 +60,7 @@ namespace App.ViewModels.Terrain.Textures
                 base.Injector = value;
                 try
                 {   
-                    whittakerStrategy.Injector = value;
+                    whittaker.Injector = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -75,7 +75,7 @@ namespace App.ViewModels.Terrain.Textures
                 base.EventBus = value;
                 try
                 {   
-                    whittakerStrategy.EventBus = value;
+                    whittaker.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -90,7 +90,7 @@ namespace App.ViewModels.Terrain.Textures
                 base.CancelToken = value;
                 try
                 {   
-                    whittakerStrategy.CancelToken = value;
+                    whittaker.CancelToken = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -111,7 +111,7 @@ namespace App.ViewModels.Terrain.Textures
 
             EditorGUI.indentLevel++;
             if (textureStrategy == TextureStrategy.Whittaker) 
-                whittakerStrategy.Display();
+                whittaker.Display();
 
             EditorGUI.indentLevel--;
             EditorGUI.indentLevel--;
@@ -134,7 +134,7 @@ namespace App.ViewModels.Terrain.Textures
                     generator.CancelToken = CancelToken;
                     return generator.Generate();
                 case TextureStrategy.Whittaker:
-                    texture = whittakerStrategy.Generate();
+                    texture = whittaker.Generate();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
