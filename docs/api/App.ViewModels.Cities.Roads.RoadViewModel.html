@@ -79,7 +79,7 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level1"><a class="xref" href="App.ViewModels.ViewModel-2.html">ViewModel</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
     <div class="level2"><span class="xref">RoadViewModel</span></div>
   </div>
   <div classs="implements">
@@ -91,25 +91,25 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_CancelToken">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.CancelToken</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_CancelToken">ViewModel&lt;TerrainInfo, RoadNetwork&gt;.CancelToken</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.Injector</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Injector">ViewModel&lt;TerrainInfo, RoadNetwork&gt;.Injector</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.EventBus</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_EventBus">ViewModel&lt;TerrainInfo, RoadNetwork&gt;.EventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;._eventBus</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2__eventBus">ViewModel&lt;TerrainInfo, RoadNetwork&gt;._eventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.Display()</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Display">ViewModel&lt;TerrainInfo, RoadNetwork&gt;.Display()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.Generate()</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Generate">ViewModel&lt;TerrainInfo, RoadNetwork&gt;.Generate()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_">ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;.OnEvent(AppEvent, Object, Object)</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_OnEvent_App_AppEvent_System_Object_System_Object_">ViewModel&lt;TerrainInfo, RoadNetwork&gt;.OnEvent(AppEvent, Object, Object)</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -138,7 +138,7 @@
   <h5 id="App_ViewModels_Cities_Roads_RoadViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class RoadViewModel : ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
+public class RoadViewModel : ViewModel&lt;TerrainInfo, RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -203,6 +203,36 @@ public class RoadViewModel : ViewModelStrategy&lt;TerrainInfo, RoadNetwork&gt;, 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_aStar.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.aStar%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Roads/RoadViewModel.cs/#L26">View Source</a>
+  </span>
+  <h4 id="App_ViewModels_Cities_Roads_RoadViewModel_aStar" data-uid="App.ViewModels.Cities.Roads.RoadViewModel.aStar">aStar</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+AStar aStar</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="App.ViewModels.Cities.Roads.AStar.html">AStar</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_aStarEnabled.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.aStarEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -233,18 +263,18 @@ bool aStarEnabled</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_aStarStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.aStarStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_lSystem.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.lSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Roads/RoadViewModel.cs/#L26">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Roads/RoadViewModel.cs/#L30">View Source</a>
   </span>
-  <h4 id="App_ViewModels_Cities_Roads_RoadViewModel_aStarStrategy" data-uid="App.ViewModels.Cities.Roads.RoadViewModel.aStarStrategy">aStarStrategy</h4>
+  <h4 id="App_ViewModels_Cities_Roads_RoadViewModel_lSystem" data-uid="App.ViewModels.Cities.Roads.RoadViewModel.lSystem">lSystem</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
-AStarStrategy aStarStrategy</code></pre>
+LSystem lSystem</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -256,7 +286,7 @@ AStarStrategy aStarStrategy</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="App.ViewModels.Cities.Roads.AStarStrategy.html">AStarStrategy</a></td>
+        <td><a class="xref" href="App.ViewModels.Cities.Roads.LSystem.html">LSystem</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -287,36 +317,6 @@ bool lSystemEnabled</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_lSystemStrategy.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.lSystemStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/App/ViewModels/Cities/Roads/RoadViewModel.cs/#L30">View Source</a>
-  </span>
-  <h4 id="App_ViewModels_Cities_Roads_RoadViewModel_lSystemStrategy" data-uid="App.ViewModels.Cities.Roads.RoadViewModel.lSystemStrategy">lSystemStrategy</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-LSystemStrategy lSystemStrategy</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="App.ViewModels.Cities.Roads.LSystemStrategy.html">LSystemStrategy</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -445,7 +445,7 @@ float roadWidth</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.CancelToken</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.CancelToken</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_EventBus.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.EventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -477,7 +477,7 @@ float roadWidth</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.EventBus</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.EventBus</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_Injector.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.Injector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -511,7 +511,7 @@ float roadWidth</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Injector</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Injector</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_RoadMaterial.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.RoadMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -623,7 +623,7 @@ float roadWidth</code></pre>
     <pre><code class="lang-csharp hljs">public override void Display()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Display()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Display()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_Roads_RoadViewModel_DisplayRoadAppearance.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.Roads.RoadViewModel.DisplayRoadAppearance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -670,7 +670,7 @@ float roadWidth</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>

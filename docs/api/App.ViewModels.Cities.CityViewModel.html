@@ -79,7 +79,7 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <a class="xref" href="Cities.City.html">City</a>&gt;</div>
+    <div class="level1"><a class="xref" href="App.ViewModels.ViewModel-2.html">ViewModel</a>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <a class="xref" href="Cities.City.html">City</a>&gt;</div>
     <div class="level2"><span class="xref">CityViewModel</span></div>
   </div>
   <div classs="implements">
@@ -91,25 +91,25 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_CancelToken">ViewModelStrategy&lt;TerrainInfo, City&gt;.CancelToken</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_CancelToken">ViewModel&lt;TerrainInfo, City&gt;.CancelToken</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector">ViewModelStrategy&lt;TerrainInfo, City&gt;.Injector</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Injector">ViewModel&lt;TerrainInfo, City&gt;.Injector</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;TerrainInfo, City&gt;.EventBus</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_EventBus">ViewModel&lt;TerrainInfo, City&gt;.EventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;TerrainInfo, City&gt;._eventBus</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2__eventBus">ViewModel&lt;TerrainInfo, City&gt;._eventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;TerrainInfo, City&gt;.Display()</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Display">ViewModel&lt;TerrainInfo, City&gt;.Display()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;TerrainInfo, City&gt;.Generate()</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Generate">ViewModel&lt;TerrainInfo, City&gt;.Generate()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_">ViewModelStrategy&lt;TerrainInfo, City&gt;.OnEvent(AppEvent, Object, Object)</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_OnEvent_App_AppEvent_System_Object_System_Object_">ViewModel&lt;TerrainInfo, City&gt;.OnEvent(AppEvent, Object, Object)</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -138,7 +138,7 @@
   <h5 id="App_ViewModels_Cities_CityViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class CityViewModel : ViewModelStrategy&lt;TerrainInfo, City&gt;, IGenerator&lt;City&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
+public class CityViewModel : ViewModel&lt;TerrainInfo, City&gt;, IGenerator&lt;City&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -326,7 +326,7 @@ RoadViewModel roadViewModel</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.City&gt;.CancelToken</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.City&gt;.CancelToken</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_DisplayBuildings.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.DisplayBuildings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -420,7 +420,7 @@ RoadViewModel roadViewModel</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.City&gt;.EventBus</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.City&gt;.EventBus</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_Injector.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.Injector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -454,7 +454,7 @@ RoadViewModel roadViewModel</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.City&gt;.Injector</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.City&gt;.Injector</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_PlotMaterial.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.PlotMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -598,7 +598,7 @@ RoadViewModel roadViewModel</code></pre>
     <pre><code class="lang-csharp hljs">public override void Display()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.City&gt;.Display()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.City&gt;.Display()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=App_ViewModels_Cities_CityViewModel_Generate.md&amp;value=---%0Auid%3A%20App.ViewModels.Cities.CityViewModel.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -633,7 +633,7 @@ Delegates the generation to the underlying generator.</p>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;Terrain.TerrainInfo, Cities.City&gt;.Generate()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;Terrain.TerrainInfo, Cities.City&gt;.Generate()</span></div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>

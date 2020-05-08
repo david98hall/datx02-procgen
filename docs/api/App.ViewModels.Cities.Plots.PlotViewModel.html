@@ -79,7 +79,7 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="App.ViewModels.ViewModelStrategy-2.html">ViewModelStrategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
+    <div class="level1"><a class="xref" href="App.ViewModels.ViewModel-2.html">ViewModel</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
     <div class="level2"><span class="xref">PlotViewModel</span></div>
   </div>
   <div classs="implements">
@@ -91,25 +91,25 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_CancelToken">ViewModelStrategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.CancelToken</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_CancelToken">ViewModel&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.CancelToken</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector">ViewModelStrategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.Injector</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Injector">ViewModel&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.Injector</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus">ViewModelStrategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.EventBus</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_EventBus">ViewModel&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.EventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus">ViewModelStrategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;._eventBus</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2__eventBus">ViewModel&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;._eventBus</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display">ViewModelStrategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.Display()</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Display">ViewModel&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.Display()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate">ViewModelStrategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.Generate()</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Generate">ViewModel&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.Generate()</a>
     </div>
     <div>
-      <a class="xref" href="App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_">ViewModelStrategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.OnEvent(AppEvent, Object, Object)</a>
+      <a class="xref" href="App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_OnEvent_App_AppEvent_System_Object_System_Object_">ViewModel&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.OnEvent(AppEvent, Object, Object)</a>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -138,7 +138,7 @@
   <h5 id="App_ViewModels_Cities_Plots_PlotViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class PlotViewModel : ViewModelStrategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;, IGenerator&lt;IEnumerable&lt;Plot&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
+public class PlotViewModel : ViewModel&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;, IGenerator&lt;IEnumerable&lt;Plot&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -348,7 +348,7 @@ PlotViewModel.PlotStrategy plotStrategy</code></pre>
     <pre><code class="lang-csharp hljs">public override void Display()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.ValueTuple&lt;Cities.Roads.RoadNetwork, Terrain.TerrainInfo&gt;, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;.Display()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;System.ValueTuple&lt;Cities.Roads.RoadNetwork, Terrain.TerrainInfo&gt;, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;.Display()</span></div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -396,7 +396,7 @@ PlotViewModel.PlotStrategy plotStrategy</code></pre>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">App.ViewModels.ViewModelStrategy&lt;System.ValueTuple&lt;Cities.Roads.RoadNetwork, Terrain.TerrainInfo&gt;, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;.Generate()</span></div>
+  <div><span class="xref">App.ViewModels.ViewModel&lt;System.ValueTuple&lt;Cities.Roads.RoadNetwork, Terrain.TerrainInfo&gt;, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;.Generate()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>

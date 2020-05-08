@@ -515,12 +515,12 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Buildings.BuildingViewModel.EventBus
   nameWithType: BuildingViewModel.EventBus
-- uid: App.ViewModels.Cities.Buildings.BuildingViewModel.extrusionStrategy
-  name: extrusionStrategy
-  href: api/App.ViewModels.Cities.Buildings.BuildingViewModel.html#App_ViewModels_Cities_Buildings_BuildingViewModel_extrusionStrategy
-  commentId: F:App.ViewModels.Cities.Buildings.BuildingViewModel.extrusionStrategy
-  fullName: App.ViewModels.Cities.Buildings.BuildingViewModel.extrusionStrategy
-  nameWithType: BuildingViewModel.extrusionStrategy
+- uid: App.ViewModels.Cities.Buildings.BuildingViewModel.extrusion
+  name: extrusion
+  href: api/App.ViewModels.Cities.Buildings.BuildingViewModel.html#App_ViewModels_Cities_Buildings_BuildingViewModel_extrusion
+  commentId: F:App.ViewModels.Cities.Buildings.BuildingViewModel.extrusion
+  fullName: App.ViewModels.Cities.Buildings.BuildingViewModel.extrusion
+  nameWithType: BuildingViewModel.extrusion
 - uid: App.ViewModels.Cities.Buildings.BuildingViewModel.Generate
   name: Generate()
   href: api/App.ViewModels.Cities.Buildings.BuildingViewModel.html#App_ViewModels_Cities_Buildings_BuildingViewModel_Generate
@@ -547,50 +547,50 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Buildings.BuildingViewModel.Injector
   nameWithType: BuildingViewModel.Injector
-- uid: App.ViewModels.Cities.Buildings.ExtrusionStrategy
-  name: ExtrusionStrategy
-  href: api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html
-  commentId: T:App.ViewModels.Cities.Buildings.ExtrusionStrategy
-  fullName: App.ViewModels.Cities.Buildings.ExtrusionStrategy
-  nameWithType: ExtrusionStrategy
-- uid: App.ViewModels.Cities.Buildings.ExtrusionStrategy.Display
+- uid: App.ViewModels.Cities.Buildings.Extrusion
+  name: Extrusion
+  href: api/App.ViewModels.Cities.Buildings.Extrusion.html
+  commentId: T:App.ViewModels.Cities.Buildings.Extrusion
+  fullName: App.ViewModels.Cities.Buildings.Extrusion
+  nameWithType: Extrusion
+- uid: App.ViewModels.Cities.Buildings.Extrusion.Display
   name: Display()
-  href: api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html#App_ViewModels_Cities_Buildings_ExtrusionStrategy_Display
-  commentId: M:App.ViewModels.Cities.Buildings.ExtrusionStrategy.Display
-  fullName: App.ViewModels.Cities.Buildings.ExtrusionStrategy.Display()
-  nameWithType: ExtrusionStrategy.Display()
-- uid: App.ViewModels.Cities.Buildings.ExtrusionStrategy.Display*
+  href: api/App.ViewModels.Cities.Buildings.Extrusion.html#App_ViewModels_Cities_Buildings_Extrusion_Display
+  commentId: M:App.ViewModels.Cities.Buildings.Extrusion.Display
+  fullName: App.ViewModels.Cities.Buildings.Extrusion.Display()
+  nameWithType: Extrusion.Display()
+- uid: App.ViewModels.Cities.Buildings.Extrusion.Display*
   name: Display
-  href: api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html#App_ViewModels_Cities_Buildings_ExtrusionStrategy_Display_
-  commentId: Overload:App.ViewModels.Cities.Buildings.ExtrusionStrategy.Display
+  href: api/App.ViewModels.Cities.Buildings.Extrusion.html#App_ViewModels_Cities_Buildings_Extrusion_Display_
+  commentId: Overload:App.ViewModels.Cities.Buildings.Extrusion.Display
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Buildings.ExtrusionStrategy.Display
-  nameWithType: ExtrusionStrategy.Display
-- uid: App.ViewModels.Cities.Buildings.ExtrusionStrategy.Generate
+  fullName: App.ViewModels.Cities.Buildings.Extrusion.Display
+  nameWithType: Extrusion.Display
+- uid: App.ViewModels.Cities.Buildings.Extrusion.Generate
   name: Generate()
-  href: api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html#App_ViewModels_Cities_Buildings_ExtrusionStrategy_Generate
-  commentId: M:App.ViewModels.Cities.Buildings.ExtrusionStrategy.Generate
-  fullName: App.ViewModels.Cities.Buildings.ExtrusionStrategy.Generate()
-  nameWithType: ExtrusionStrategy.Generate()
-- uid: App.ViewModels.Cities.Buildings.ExtrusionStrategy.Generate*
+  href: api/App.ViewModels.Cities.Buildings.Extrusion.html#App_ViewModels_Cities_Buildings_Extrusion_Generate
+  commentId: M:App.ViewModels.Cities.Buildings.Extrusion.Generate
+  fullName: App.ViewModels.Cities.Buildings.Extrusion.Generate()
+  nameWithType: Extrusion.Generate()
+- uid: App.ViewModels.Cities.Buildings.Extrusion.Generate*
   name: Generate
-  href: api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html#App_ViewModels_Cities_Buildings_ExtrusionStrategy_Generate_
-  commentId: Overload:App.ViewModels.Cities.Buildings.ExtrusionStrategy.Generate
+  href: api/App.ViewModels.Cities.Buildings.Extrusion.html#App_ViewModels_Cities_Buildings_Extrusion_Generate_
+  commentId: Overload:App.ViewModels.Cities.Buildings.Extrusion.Generate
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Buildings.ExtrusionStrategy.Generate
-  nameWithType: ExtrusionStrategy.Generate
-- uid: App.ViewModels.Cities.Buildings.ExtrusionStrategy.maxArea
+  fullName: App.ViewModels.Cities.Buildings.Extrusion.Generate
+  nameWithType: Extrusion.Generate
+- uid: App.ViewModels.Cities.Buildings.Extrusion.maxArea
   name: maxArea
-  href: api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html#App_ViewModels_Cities_Buildings_ExtrusionStrategy_maxArea
-  commentId: F:App.ViewModels.Cities.Buildings.ExtrusionStrategy.maxArea
-  fullName: App.ViewModels.Cities.Buildings.ExtrusionStrategy.maxArea
-  nameWithType: ExtrusionStrategy.maxArea
-- uid: App.ViewModels.Cities.Buildings.ExtrusionStrategy.minArea
+  href: api/App.ViewModels.Cities.Buildings.Extrusion.html#App_ViewModels_Cities_Buildings_Extrusion_maxArea
+  commentId: F:App.ViewModels.Cities.Buildings.Extrusion.maxArea
+  fullName: App.ViewModels.Cities.Buildings.Extrusion.maxArea
+  nameWithType: Extrusion.maxArea
+- uid: App.ViewModels.Cities.Buildings.Extrusion.minArea
   name: minArea
-  href: api/App.ViewModels.Cities.Buildings.ExtrusionStrategy.html#App_ViewModels_Cities_Buildings_ExtrusionStrategy_minArea
-  commentId: F:App.ViewModels.Cities.Buildings.ExtrusionStrategy.minArea
-  fullName: App.ViewModels.Cities.Buildings.ExtrusionStrategy.minArea
-  nameWithType: ExtrusionStrategy.minArea
+  href: api/App.ViewModels.Cities.Buildings.Extrusion.html#App_ViewModels_Cities_Buildings_Extrusion_minArea
+  commentId: F:App.ViewModels.Cities.Buildings.Extrusion.minArea
+  fullName: App.ViewModels.Cities.Buildings.Extrusion.minArea
+  nameWithType: Extrusion.minArea
 - uid: App.ViewModels.Cities.CityViewModel
   name: CityViewModel
   href: api/App.ViewModels.Cities.CityViewModel.html
@@ -895,219 +895,219 @@ references:
   commentId: N:App.ViewModels.Cities.Roads
   fullName: App.ViewModels.Cities.Roads
   nameWithType: App.ViewModels.Cities.Roads
-- uid: App.ViewModels.Cities.Roads.AStarStrategy
-  name: AStarStrategy
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html
-  commentId: T:App.ViewModels.Cities.Roads.AStarStrategy
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy
-  nameWithType: AStarStrategy
-- uid: App.ViewModels.Cities.Roads.AStarStrategy._terrainSize
+- uid: App.ViewModels.Cities.Roads.AStar
+  name: AStar
+  href: api/App.ViewModels.Cities.Roads.AStar.html
+  commentId: T:App.ViewModels.Cities.Roads.AStar
+  fullName: App.ViewModels.Cities.Roads.AStar
+  nameWithType: AStar
+- uid: App.ViewModels.Cities.Roads.AStar._terrainSize
   name: _terrainSize
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy__terrainSize
-  commentId: F:App.ViewModels.Cities.Roads.AStarStrategy._terrainSize
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy._terrainSize
-  nameWithType: AStarStrategy._terrainSize
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Display
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar__terrainSize
+  commentId: F:App.ViewModels.Cities.Roads.AStar._terrainSize
+  fullName: App.ViewModels.Cities.Roads.AStar._terrainSize
+  nameWithType: AStar._terrainSize
+- uid: App.ViewModels.Cities.Roads.AStar.Display
   name: Display()
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_Display
-  commentId: M:App.ViewModels.Cities.Roads.AStarStrategy.Display
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Display()
-  nameWithType: AStarStrategy.Display()
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Display*
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar_Display
+  commentId: M:App.ViewModels.Cities.Roads.AStar.Display
+  fullName: App.ViewModels.Cities.Roads.AStar.Display()
+  nameWithType: AStar.Display()
+- uid: App.ViewModels.Cities.Roads.AStar.Display*
   name: Display
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_Display_
-  commentId: Overload:App.ViewModels.Cities.Roads.AStarStrategy.Display
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar_Display_
+  commentId: Overload:App.ViewModels.Cities.Roads.AStar.Display
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Display
-  nameWithType: AStarStrategy.Display
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Generate
+  fullName: App.ViewModels.Cities.Roads.AStar.Display
+  nameWithType: AStar.Display
+- uid: App.ViewModels.Cities.Roads.AStar.Generate
   name: Generate()
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_Generate
-  commentId: M:App.ViewModels.Cities.Roads.AStarStrategy.Generate
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Generate()
-  nameWithType: AStarStrategy.Generate()
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Generate*
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar_Generate
+  commentId: M:App.ViewModels.Cities.Roads.AStar.Generate
+  fullName: App.ViewModels.Cities.Roads.AStar.Generate()
+  nameWithType: AStar.Generate()
+- uid: App.ViewModels.Cities.Roads.AStar.Generate*
   name: Generate
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_Generate_
-  commentId: Overload:App.ViewModels.Cities.Roads.AStarStrategy.Generate
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar_Generate_
+  commentId: Overload:App.ViewModels.Cities.Roads.AStar.Generate
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Generate
-  nameWithType: AStarStrategy.Generate
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.heightBias
+  fullName: App.ViewModels.Cities.Roads.AStar.Generate
+  nameWithType: AStar.Generate
+- uid: App.ViewModels.Cities.Roads.AStar.heightBias
   name: heightBias
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_heightBias
-  commentId: F:App.ViewModels.Cities.Roads.AStarStrategy.heightBias
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.heightBias
-  nameWithType: AStarStrategy.heightBias
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar_heightBias
+  commentId: F:App.ViewModels.Cities.Roads.AStar.heightBias
+  fullName: App.ViewModels.Cities.Roads.AStar.heightBias
+  nameWithType: AStar.heightBias
+- uid: App.ViewModels.Cities.Roads.AStar.OnEvent(App.AppEvent,System.Object,System.Object)
   name: OnEvent(AppEvent, Object, Object)
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_OnEvent_App_AppEvent_System_Object_System_Object_
-  commentId: M:App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent(App.AppEvent, System.Object, System.Object)
-  nameWithType: AStarStrategy.OnEvent(AppEvent, Object, Object)
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent*
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.Cities.Roads.AStar.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.Cities.Roads.AStar.OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: AStar.OnEvent(AppEvent, Object, Object)
+- uid: App.ViewModels.Cities.Roads.AStar.OnEvent*
   name: OnEvent
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_OnEvent_
-  commentId: Overload:App.ViewModels.Cities.Roads.AStarStrategy.OnEvent
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar_OnEvent_
+  commentId: Overload:App.ViewModels.Cities.Roads.AStar.OnEvent
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.OnEvent
-  nameWithType: AStarStrategy.OnEvent
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Path
-  name: AStarStrategy.Path
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.Path.html
-  commentId: T:App.ViewModels.Cities.Roads.AStarStrategy.Path
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Path
-  nameWithType: AStarStrategy.Path
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Path.#ctor(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
+  fullName: App.ViewModels.Cities.Roads.AStar.OnEvent
+  nameWithType: AStar.OnEvent
+- uid: App.ViewModels.Cities.Roads.AStar.Path
+  name: AStar.Path
+  href: api/App.ViewModels.Cities.Roads.AStar.Path.html
+  commentId: T:App.ViewModels.Cities.Roads.AStar.Path
+  fullName: App.ViewModels.Cities.Roads.AStar.Path
+  nameWithType: AStar.Path
+- uid: App.ViewModels.Cities.Roads.AStar.Path.#ctor(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
   name: Path(Vector2Int, Vector2Int)
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.Path.html#App_ViewModels_Cities_Roads_AStarStrategy_Path__ctor_UnityEngine_Vector2Int_UnityEngine_Vector2Int_
-  commentId: M:App.ViewModels.Cities.Roads.AStarStrategy.Path.#ctor(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Path.Path(UnityEngine.Vector2Int, UnityEngine.Vector2Int)
-  nameWithType: AStarStrategy.Path.Path(Vector2Int, Vector2Int)
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Path.#ctor*
+  href: api/App.ViewModels.Cities.Roads.AStar.Path.html#App_ViewModels_Cities_Roads_AStar_Path__ctor_UnityEngine_Vector2Int_UnityEngine_Vector2Int_
+  commentId: M:App.ViewModels.Cities.Roads.AStar.Path.#ctor(UnityEngine.Vector2Int,UnityEngine.Vector2Int)
+  fullName: App.ViewModels.Cities.Roads.AStar.Path.Path(UnityEngine.Vector2Int, UnityEngine.Vector2Int)
+  nameWithType: AStar.Path.Path(Vector2Int, Vector2Int)
+- uid: App.ViewModels.Cities.Roads.AStar.Path.#ctor*
   name: Path
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.Path.html#App_ViewModels_Cities_Roads_AStarStrategy_Path__ctor_
-  commentId: Overload:App.ViewModels.Cities.Roads.AStarStrategy.Path.#ctor
+  href: api/App.ViewModels.Cities.Roads.AStar.Path.html#App_ViewModels_Cities_Roads_AStar_Path__ctor_
+  commentId: Overload:App.ViewModels.Cities.Roads.AStar.Path.#ctor
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Path.Path
-  nameWithType: AStarStrategy.Path.Path
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Path.goal
+  fullName: App.ViewModels.Cities.Roads.AStar.Path.Path
+  nameWithType: AStar.Path.Path
+- uid: App.ViewModels.Cities.Roads.AStar.Path.goal
   name: goal
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.Path.html#App_ViewModels_Cities_Roads_AStarStrategy_Path_goal
-  commentId: F:App.ViewModels.Cities.Roads.AStarStrategy.Path.goal
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Path.goal
-  nameWithType: AStarStrategy.Path.goal
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.Path.start
+  href: api/App.ViewModels.Cities.Roads.AStar.Path.html#App_ViewModels_Cities_Roads_AStar_Path_goal
+  commentId: F:App.ViewModels.Cities.Roads.AStar.Path.goal
+  fullName: App.ViewModels.Cities.Roads.AStar.Path.goal
+  nameWithType: AStar.Path.goal
+- uid: App.ViewModels.Cities.Roads.AStar.Path.start
   name: start
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.Path.html#App_ViewModels_Cities_Roads_AStarStrategy_Path_start
-  commentId: F:App.ViewModels.Cities.Roads.AStarStrategy.Path.start
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.Path.start
-  nameWithType: AStarStrategy.Path.start
-- uid: App.ViewModels.Cities.Roads.AStarStrategy.paths
+  href: api/App.ViewModels.Cities.Roads.AStar.Path.html#App_ViewModels_Cities_Roads_AStar_Path_start
+  commentId: F:App.ViewModels.Cities.Roads.AStar.Path.start
+  fullName: App.ViewModels.Cities.Roads.AStar.Path.start
+  nameWithType: AStar.Path.start
+- uid: App.ViewModels.Cities.Roads.AStar.paths
   name: paths
-  href: api/App.ViewModels.Cities.Roads.AStarStrategy.html#App_ViewModels_Cities_Roads_AStarStrategy_paths
-  commentId: F:App.ViewModels.Cities.Roads.AStarStrategy.paths
-  fullName: App.ViewModels.Cities.Roads.AStarStrategy.paths
-  nameWithType: AStarStrategy.paths
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy
-  name: LSystemStrategy
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html
-  commentId: T:App.ViewModels.Cities.Roads.LSystemStrategy
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy
-  nameWithType: LSystemStrategy
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy._terrainSize
+  href: api/App.ViewModels.Cities.Roads.AStar.html#App_ViewModels_Cities_Roads_AStar_paths
+  commentId: F:App.ViewModels.Cities.Roads.AStar.paths
+  fullName: App.ViewModels.Cities.Roads.AStar.paths
+  nameWithType: AStar.paths
+- uid: App.ViewModels.Cities.Roads.LSystem
+  name: LSystem
+  href: api/App.ViewModels.Cities.Roads.LSystem.html
+  commentId: T:App.ViewModels.Cities.Roads.LSystem
+  fullName: App.ViewModels.Cities.Roads.LSystem
+  nameWithType: LSystem
+- uid: App.ViewModels.Cities.Roads.LSystem._terrainSize
   name: _terrainSize
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy__terrainSize
-  commentId: F:App.ViewModels.Cities.Roads.LSystemStrategy._terrainSize
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy._terrainSize
-  nameWithType: LSystemStrategy._terrainSize
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.DefaultRewrites
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem__terrainSize
+  commentId: F:App.ViewModels.Cities.Roads.LSystem._terrainSize
+  fullName: App.ViewModels.Cities.Roads.LSystem._terrainSize
+  nameWithType: LSystem._terrainSize
+- uid: App.ViewModels.Cities.Roads.LSystem.DefaultRewrites
   name: DefaultRewrites
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_DefaultRewrites
-  commentId: F:App.ViewModels.Cities.Roads.LSystemStrategy.DefaultRewrites
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.DefaultRewrites
-  nameWithType: LSystemStrategy.DefaultRewrites
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Display
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_DefaultRewrites
+  commentId: F:App.ViewModels.Cities.Roads.LSystem.DefaultRewrites
+  fullName: App.ViewModels.Cities.Roads.LSystem.DefaultRewrites
+  nameWithType: LSystem.DefaultRewrites
+- uid: App.ViewModels.Cities.Roads.LSystem.Display
   name: Display()
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_Display
-  commentId: M:App.ViewModels.Cities.Roads.LSystemStrategy.Display
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Display()
-  nameWithType: LSystemStrategy.Display()
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Display*
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_Display
+  commentId: M:App.ViewModels.Cities.Roads.LSystem.Display
+  fullName: App.ViewModels.Cities.Roads.LSystem.Display()
+  nameWithType: LSystem.Display()
+- uid: App.ViewModels.Cities.Roads.LSystem.Display*
   name: Display
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_Display_
-  commentId: Overload:App.ViewModels.Cities.Roads.LSystemStrategy.Display
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_Display_
+  commentId: Overload:App.ViewModels.Cities.Roads.LSystem.Display
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Display
-  nameWithType: LSystemStrategy.Display
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Generate
+  fullName: App.ViewModels.Cities.Roads.LSystem.Display
+  nameWithType: LSystem.Display
+- uid: App.ViewModels.Cities.Roads.LSystem.Generate
   name: Generate()
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_Generate
-  commentId: M:App.ViewModels.Cities.Roads.LSystemStrategy.Generate
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Generate()
-  nameWithType: LSystemStrategy.Generate()
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Generate*
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_Generate
+  commentId: M:App.ViewModels.Cities.Roads.LSystem.Generate
+  fullName: App.ViewModels.Cities.Roads.LSystem.Generate()
+  nameWithType: LSystem.Generate()
+- uid: App.ViewModels.Cities.Roads.LSystem.Generate*
   name: Generate
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_Generate_
-  commentId: Overload:App.ViewModels.Cities.Roads.LSystemStrategy.Generate
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_Generate_
+  commentId: Overload:App.ViewModels.Cities.Roads.LSystem.Generate
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Generate
-  nameWithType: LSystemStrategy.Generate
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.GetTerrainCenter
+  fullName: App.ViewModels.Cities.Roads.LSystem.Generate
+  nameWithType: LSystem.Generate
+- uid: App.ViewModels.Cities.Roads.LSystem.GetTerrainCenter
   name: GetTerrainCenter()
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_GetTerrainCenter
-  commentId: M:App.ViewModels.Cities.Roads.LSystemStrategy.GetTerrainCenter
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.GetTerrainCenter()
-  nameWithType: LSystemStrategy.GetTerrainCenter()
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.GetTerrainCenter*
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_GetTerrainCenter
+  commentId: M:App.ViewModels.Cities.Roads.LSystem.GetTerrainCenter
+  fullName: App.ViewModels.Cities.Roads.LSystem.GetTerrainCenter()
+  nameWithType: LSystem.GetTerrainCenter()
+- uid: App.ViewModels.Cities.Roads.LSystem.GetTerrainCenter*
   name: GetTerrainCenter
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_GetTerrainCenter_
-  commentId: Overload:App.ViewModels.Cities.Roads.LSystemStrategy.GetTerrainCenter
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_GetTerrainCenter_
+  commentId: Overload:App.ViewModels.Cities.Roads.LSystem.GetTerrainCenter
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.GetTerrainCenter
-  nameWithType: LSystemStrategy.GetTerrainCenter
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Input
-  name: LSystemStrategy.Input
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.Input.html
-  commentId: T:App.ViewModels.Cities.Roads.LSystemStrategy.Input
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Input
-  nameWithType: LSystemStrategy.Input
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Input.#ctor(UnityEngine.Vector2,System.Int32)
+  fullName: App.ViewModels.Cities.Roads.LSystem.GetTerrainCenter
+  nameWithType: LSystem.GetTerrainCenter
+- uid: App.ViewModels.Cities.Roads.LSystem.Input
+  name: LSystem.Input
+  href: api/App.ViewModels.Cities.Roads.LSystem.Input.html
+  commentId: T:App.ViewModels.Cities.Roads.LSystem.Input
+  fullName: App.ViewModels.Cities.Roads.LSystem.Input
+  nameWithType: LSystem.Input
+- uid: App.ViewModels.Cities.Roads.LSystem.Input.#ctor(UnityEngine.Vector2,System.Int32)
   name: Input(Vector2, Int32)
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.Input.html#App_ViewModels_Cities_Roads_LSystemStrategy_Input__ctor_UnityEngine_Vector2_System_Int32_
-  commentId: M:App.ViewModels.Cities.Roads.LSystemStrategy.Input.#ctor(UnityEngine.Vector2,System.Int32)
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Input.Input(UnityEngine.Vector2, System.Int32)
-  nameWithType: LSystemStrategy.Input.Input(Vector2, Int32)
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Input.#ctor*
+  href: api/App.ViewModels.Cities.Roads.LSystem.Input.html#App_ViewModels_Cities_Roads_LSystem_Input__ctor_UnityEngine_Vector2_System_Int32_
+  commentId: M:App.ViewModels.Cities.Roads.LSystem.Input.#ctor(UnityEngine.Vector2,System.Int32)
+  fullName: App.ViewModels.Cities.Roads.LSystem.Input.Input(UnityEngine.Vector2, System.Int32)
+  nameWithType: LSystem.Input.Input(Vector2, Int32)
+- uid: App.ViewModels.Cities.Roads.LSystem.Input.#ctor*
   name: Input
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.Input.html#App_ViewModels_Cities_Roads_LSystemStrategy_Input__ctor_
-  commentId: Overload:App.ViewModels.Cities.Roads.LSystemStrategy.Input.#ctor
+  href: api/App.ViewModels.Cities.Roads.LSystem.Input.html#App_ViewModels_Cities_Roads_LSystem_Input__ctor_
+  commentId: Overload:App.ViewModels.Cities.Roads.LSystem.Input.#ctor
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Input.Input
-  nameWithType: LSystemStrategy.Input.Input
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Input.origin
+  fullName: App.ViewModels.Cities.Roads.LSystem.Input.Input
+  nameWithType: LSystem.Input.Input
+- uid: App.ViewModels.Cities.Roads.LSystem.Input.origin
   name: origin
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.Input.html#App_ViewModels_Cities_Roads_LSystemStrategy_Input_origin
-  commentId: F:App.ViewModels.Cities.Roads.LSystemStrategy.Input.origin
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Input.origin
-  nameWithType: LSystemStrategy.Input.origin
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.Input.rewrites
+  href: api/App.ViewModels.Cities.Roads.LSystem.Input.html#App_ViewModels_Cities_Roads_LSystem_Input_origin
+  commentId: F:App.ViewModels.Cities.Roads.LSystem.Input.origin
+  fullName: App.ViewModels.Cities.Roads.LSystem.Input.origin
+  nameWithType: LSystem.Input.origin
+- uid: App.ViewModels.Cities.Roads.LSystem.Input.rewrites
   name: rewrites
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.Input.html#App_ViewModels_Cities_Roads_LSystemStrategy_Input_rewrites
-  commentId: F:App.ViewModels.Cities.Roads.LSystemStrategy.Input.rewrites
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.Input.rewrites
-  nameWithType: LSystemStrategy.Input.rewrites
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.inputs
+  href: api/App.ViewModels.Cities.Roads.LSystem.Input.html#App_ViewModels_Cities_Roads_LSystem_Input_rewrites
+  commentId: F:App.ViewModels.Cities.Roads.LSystem.Input.rewrites
+  fullName: App.ViewModels.Cities.Roads.LSystem.Input.rewrites
+  nameWithType: LSystem.Input.rewrites
+- uid: App.ViewModels.Cities.Roads.LSystem.inputs
   name: inputs
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_inputs
-  commentId: F:App.ViewModels.Cities.Roads.LSystemStrategy.inputs
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.inputs
-  nameWithType: LSystemStrategy.inputs
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.MaxRewrites
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_inputs
+  commentId: F:App.ViewModels.Cities.Roads.LSystem.inputs
+  fullName: App.ViewModels.Cities.Roads.LSystem.inputs
+  nameWithType: LSystem.inputs
+- uid: App.ViewModels.Cities.Roads.LSystem.MaxRewrites
   name: MaxRewrites
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_MaxRewrites
-  commentId: F:App.ViewModels.Cities.Roads.LSystemStrategy.MaxRewrites
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.MaxRewrites
-  nameWithType: LSystemStrategy.MaxRewrites
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.MinRewrites
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_MaxRewrites
+  commentId: F:App.ViewModels.Cities.Roads.LSystem.MaxRewrites
+  fullName: App.ViewModels.Cities.Roads.LSystem.MaxRewrites
+  nameWithType: LSystem.MaxRewrites
+- uid: App.ViewModels.Cities.Roads.LSystem.MinRewrites
   name: MinRewrites
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_MinRewrites
-  commentId: F:App.ViewModels.Cities.Roads.LSystemStrategy.MinRewrites
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.MinRewrites
-  nameWithType: LSystemStrategy.MinRewrites
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_MinRewrites
+  commentId: F:App.ViewModels.Cities.Roads.LSystem.MinRewrites
+  fullName: App.ViewModels.Cities.Roads.LSystem.MinRewrites
+  nameWithType: LSystem.MinRewrites
+- uid: App.ViewModels.Cities.Roads.LSystem.OnEvent(App.AppEvent,System.Object,System.Object)
   name: OnEvent(AppEvent, Object, Object)
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_App_AppEvent_System_Object_System_Object_
-  commentId: M:App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent(App.AppEvent, System.Object, System.Object)
-  nameWithType: LSystemStrategy.OnEvent(AppEvent, Object, Object)
-- uid: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent*
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.Cities.Roads.LSystem.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.Cities.Roads.LSystem.OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: LSystem.OnEvent(AppEvent, Object, Object)
+- uid: App.ViewModels.Cities.Roads.LSystem.OnEvent*
   name: OnEvent
-  href: api/App.ViewModels.Cities.Roads.LSystemStrategy.html#App_ViewModels_Cities_Roads_LSystemStrategy_OnEvent_
-  commentId: Overload:App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent
+  href: api/App.ViewModels.Cities.Roads.LSystem.html#App_ViewModels_Cities_Roads_LSystem_OnEvent_
+  commentId: Overload:App.ViewModels.Cities.Roads.LSystem.OnEvent
   isSpec: "True"
-  fullName: App.ViewModels.Cities.Roads.LSystemStrategy.OnEvent
-  nameWithType: LSystemStrategy.OnEvent
+  fullName: App.ViewModels.Cities.Roads.LSystem.OnEvent
+  nameWithType: LSystem.OnEvent
 - uid: App.ViewModels.Cities.Roads.RoadViewModel
   name: RoadViewModel
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html
@@ -1126,18 +1126,18 @@ references:
   commentId: F:App.ViewModels.Cities.Roads.RoadViewModel._roadNetworkStrategyVisible
   fullName: App.ViewModels.Cities.Roads.RoadViewModel._roadNetworkStrategyVisible
   nameWithType: RoadViewModel._roadNetworkStrategyVisible
+- uid: App.ViewModels.Cities.Roads.RoadViewModel.aStar
+  name: aStar
+  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_aStar
+  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.aStar
+  fullName: App.ViewModels.Cities.Roads.RoadViewModel.aStar
+  nameWithType: RoadViewModel.aStar
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.aStarEnabled
   name: aStarEnabled
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_aStarEnabled
   commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.aStarEnabled
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.aStarEnabled
   nameWithType: RoadViewModel.aStarEnabled
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.aStarStrategy
-  name: aStarStrategy
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_aStarStrategy
-  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.aStarStrategy
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.aStarStrategy
-  nameWithType: RoadViewModel.aStarStrategy
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.CancelToken
   name: CancelToken
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_CancelToken
@@ -1216,18 +1216,18 @@ references:
   isSpec: "True"
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.Injector
   nameWithType: RoadViewModel.Injector
+- uid: App.ViewModels.Cities.Roads.RoadViewModel.lSystem
+  name: lSystem
+  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_lSystem
+  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.lSystem
+  fullName: App.ViewModels.Cities.Roads.RoadViewModel.lSystem
+  nameWithType: RoadViewModel.lSystem
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.lSystemEnabled
   name: lSystemEnabled
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_lSystemEnabled
   commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.lSystemEnabled
   fullName: App.ViewModels.Cities.Roads.RoadViewModel.lSystemEnabled
   nameWithType: RoadViewModel.lSystemEnabled
-- uid: App.ViewModels.Cities.Roads.RoadViewModel.lSystemStrategy
-  name: lSystemStrategy
-  href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_lSystemStrategy
-  commentId: F:App.ViewModels.Cities.Roads.RoadViewModel.lSystemStrategy
-  fullName: App.ViewModels.Cities.Roads.RoadViewModel.lSystemStrategy
-  nameWithType: RoadViewModel.lSystemStrategy
 - uid: App.ViewModels.Cities.Roads.RoadViewModel.roadMaterial
   name: roadMaterial
   href: api/App.ViewModels.Cities.Roads.RoadViewModel.html#App_ViewModels_Cities_Roads_RoadViewModel_roadMaterial
@@ -1373,118 +1373,118 @@ references:
   commentId: F:App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
   fullName: App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.PerlinNoise
   nameWithType: NoiseViewModel.NoiseStrategy.PerlinNoise
-- uid: App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
-  name: perlinNoiseStrategy
-  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_perlinNoiseStrategy
-  commentId: F:App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
-  fullName: App.ViewModels.Noise.NoiseViewModel.perlinNoiseStrategy
-  nameWithType: NoiseViewModel.perlinNoiseStrategy
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy
-  name: PerlinNoiseStrategy
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html
-  commentId: T:App.ViewModels.Noise.PerlinNoiseStrategy
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy
-  nameWithType: PerlinNoiseStrategy
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.depth
+- uid: App.ViewModels.Noise.NoiseViewModel.perlinNoise
+  name: perlinNoise
+  href: api/App.ViewModels.Noise.NoiseViewModel.html#App_ViewModels_Noise_NoiseViewModel_perlinNoise
+  commentId: F:App.ViewModels.Noise.NoiseViewModel.perlinNoise
+  fullName: App.ViewModels.Noise.NoiseViewModel.perlinNoise
+  nameWithType: NoiseViewModel.perlinNoise
+- uid: App.ViewModels.Noise.PerlinNoise
+  name: PerlinNoise
+  href: api/App.ViewModels.Noise.PerlinNoise.html
+  commentId: T:App.ViewModels.Noise.PerlinNoise
+  fullName: App.ViewModels.Noise.PerlinNoise
+  nameWithType: PerlinNoise
+- uid: App.ViewModels.Noise.PerlinNoise.depth
   name: depth
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_depth
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.depth
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.depth
-  nameWithType: PerlinNoiseStrategy.depth
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Display
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_depth
+  commentId: F:App.ViewModels.Noise.PerlinNoise.depth
+  fullName: App.ViewModels.Noise.PerlinNoise.depth
+  nameWithType: PerlinNoise.depth
+- uid: App.ViewModels.Noise.PerlinNoise.Display
   name: Display()
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Display
-  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.Display
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Display()
-  nameWithType: PerlinNoiseStrategy.Display()
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Display*
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_Display
+  commentId: M:App.ViewModels.Noise.PerlinNoise.Display
+  fullName: App.ViewModels.Noise.PerlinNoise.Display()
+  nameWithType: PerlinNoise.Display()
+- uid: App.ViewModels.Noise.PerlinNoise.Display*
   name: Display
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Display_
-  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.Display
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_Display_
+  commentId: Overload:App.ViewModels.Noise.PerlinNoise.Display
   isSpec: "True"
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Display
-  nameWithType: PerlinNoiseStrategy.Display
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  fullName: App.ViewModels.Noise.PerlinNoise.Display
+  nameWithType: PerlinNoise.Display
+- uid: App.ViewModels.Noise.PerlinNoise.DisplaySizeControls
   name: DisplaySizeControls()
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_DisplaySizeControls
-  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls()
-  nameWithType: PerlinNoiseStrategy.DisplaySizeControls()
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls*
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_DisplaySizeControls
+  commentId: M:App.ViewModels.Noise.PerlinNoise.DisplaySizeControls
+  fullName: App.ViewModels.Noise.PerlinNoise.DisplaySizeControls()
+  nameWithType: PerlinNoise.DisplaySizeControls()
+- uid: App.ViewModels.Noise.PerlinNoise.DisplaySizeControls*
   name: DisplaySizeControls
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_DisplaySizeControls_
-  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_DisplaySizeControls_
+  commentId: Overload:App.ViewModels.Noise.PerlinNoise.DisplaySizeControls
   isSpec: "True"
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.DisplaySizeControls
-  nameWithType: PerlinNoiseStrategy.DisplaySizeControls
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Generate
+  fullName: App.ViewModels.Noise.PerlinNoise.DisplaySizeControls
+  nameWithType: PerlinNoise.DisplaySizeControls
+- uid: App.ViewModels.Noise.PerlinNoise.Generate
   name: Generate()
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Generate
-  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.Generate
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Generate()
-  nameWithType: PerlinNoiseStrategy.Generate()
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.Generate*
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_Generate
+  commentId: M:App.ViewModels.Noise.PerlinNoise.Generate
+  fullName: App.ViewModels.Noise.PerlinNoise.Generate()
+  nameWithType: PerlinNoise.Generate()
+- uid: App.ViewModels.Noise.PerlinNoise.Generate*
   name: Generate
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_Generate_
-  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.Generate
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_Generate_
+  commentId: Overload:App.ViewModels.Noise.PerlinNoise.Generate
   isSpec: "True"
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.Generate
-  nameWithType: PerlinNoiseStrategy.Generate
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
+  fullName: App.ViewModels.Noise.PerlinNoise.Generate
+  nameWithType: PerlinNoise.Generate
+- uid: App.ViewModels.Noise.PerlinNoise.lacunarity
   name: lacunarity
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_lacunarity
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.lacunarity
-  nameWithType: PerlinNoiseStrategy.lacunarity
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_lacunarity
+  commentId: F:App.ViewModels.Noise.PerlinNoise.lacunarity
+  fullName: App.ViewModels.Noise.PerlinNoise.lacunarity
+  nameWithType: PerlinNoise.lacunarity
+- uid: App.ViewModels.Noise.PerlinNoise.noiseOffset
   name: noiseOffset
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_noiseOffset
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.noiseOffset
-  nameWithType: PerlinNoiseStrategy.noiseOffset
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_noiseOffset
+  commentId: F:App.ViewModels.Noise.PerlinNoise.noiseOffset
+  fullName: App.ViewModels.Noise.PerlinNoise.noiseOffset
+  nameWithType: PerlinNoise.noiseOffset
+- uid: App.ViewModels.Noise.PerlinNoise.numOctaves
   name: numOctaves
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_numOctaves
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.numOctaves
-  nameWithType: PerlinNoiseStrategy.numOctaves
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_numOctaves
+  commentId: F:App.ViewModels.Noise.PerlinNoise.numOctaves
+  fullName: App.ViewModels.Noise.PerlinNoise.numOctaves
+  nameWithType: PerlinNoise.numOctaves
+- uid: App.ViewModels.Noise.PerlinNoise.OnEvent(App.AppEvent,System.Object,System.Object)
   name: OnEvent(AppEvent, Object, Object)
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_OnEvent_App_AppEvent_System_Object_System_Object_
-  commentId: M:App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent,System.Object,System.Object)
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent(App.AppEvent, System.Object, System.Object)
-  nameWithType: PerlinNoiseStrategy.OnEvent(AppEvent, Object, Object)
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent*
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.Noise.PerlinNoise.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.Noise.PerlinNoise.OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: PerlinNoise.OnEvent(AppEvent, Object, Object)
+- uid: App.ViewModels.Noise.PerlinNoise.OnEvent*
   name: OnEvent
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_OnEvent_
-  commentId: Overload:App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_OnEvent_
+  commentId: Overload:App.ViewModels.Noise.PerlinNoise.OnEvent
   isSpec: "True"
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.OnEvent
-  nameWithType: PerlinNoiseStrategy.OnEvent
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.persistence
+  fullName: App.ViewModels.Noise.PerlinNoise.OnEvent
+  nameWithType: PerlinNoise.OnEvent
+- uid: App.ViewModels.Noise.PerlinNoise.persistence
   name: persistence
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_persistence
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.persistence
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.persistence
-  nameWithType: PerlinNoiseStrategy.persistence
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.scale
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_persistence
+  commentId: F:App.ViewModels.Noise.PerlinNoise.persistence
+  fullName: App.ViewModels.Noise.PerlinNoise.persistence
+  nameWithType: PerlinNoise.persistence
+- uid: App.ViewModels.Noise.PerlinNoise.scale
   name: scale
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_scale
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.scale
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.scale
-  nameWithType: PerlinNoiseStrategy.scale
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.seed
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_scale
+  commentId: F:App.ViewModels.Noise.PerlinNoise.scale
+  fullName: App.ViewModels.Noise.PerlinNoise.scale
+  nameWithType: PerlinNoise.scale
+- uid: App.ViewModels.Noise.PerlinNoise.seed
   name: seed
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_seed
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.seed
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.seed
-  nameWithType: PerlinNoiseStrategy.seed
-- uid: App.ViewModels.Noise.PerlinNoiseStrategy.width
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_seed
+  commentId: F:App.ViewModels.Noise.PerlinNoise.seed
+  fullName: App.ViewModels.Noise.PerlinNoise.seed
+  nameWithType: PerlinNoise.seed
+- uid: App.ViewModels.Noise.PerlinNoise.width
   name: width
-  href: api/App.ViewModels.Noise.PerlinNoiseStrategy.html#App_ViewModels_Noise_PerlinNoiseStrategy_width
-  commentId: F:App.ViewModels.Noise.PerlinNoiseStrategy.width
-  fullName: App.ViewModels.Noise.PerlinNoiseStrategy.width
-  nameWithType: PerlinNoiseStrategy.width
+  href: api/App.ViewModels.Noise.PerlinNoise.html#App_ViewModels_Noise_PerlinNoise_width
+  commentId: F:App.ViewModels.Noise.PerlinNoise.width
+  fullName: App.ViewModels.Noise.PerlinNoise.width
+  nameWithType: PerlinNoise.width
 - uid: App.ViewModels.Terrain
   name: App.ViewModels.Terrain
   href: api/App.ViewModels.Terrain.html
@@ -1686,175 +1686,175 @@ references:
   commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.Whittaker
   fullName: App.ViewModels.Terrain.Textures.TextureViewModel.TextureStrategy.Whittaker
   nameWithType: TextureViewModel.TextureStrategy.Whittaker
-- uid: App.ViewModels.Terrain.Textures.TextureViewModel.whittakerStrategy
-  name: whittakerStrategy
-  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_whittakerStrategy
-  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.whittakerStrategy
-  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.whittakerStrategy
-  nameWithType: TextureViewModel.whittakerStrategy
-- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy
-  name: WhittakerStrategy
-  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html
-  commentId: T:App.ViewModels.Terrain.Textures.WhittakerStrategy
-  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy
-  nameWithType: WhittakerStrategy
-- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.Display
+- uid: App.ViewModels.Terrain.Textures.TextureViewModel.whittaker
+  name: whittaker
+  href: api/App.ViewModels.Terrain.Textures.TextureViewModel.html#App_ViewModels_Terrain_Textures_TextureViewModel_whittaker
+  commentId: F:App.ViewModels.Terrain.Textures.TextureViewModel.whittaker
+  fullName: App.ViewModels.Terrain.Textures.TextureViewModel.whittaker
+  nameWithType: TextureViewModel.whittaker
+- uid: App.ViewModels.Terrain.Textures.Whittaker
+  name: Whittaker
+  href: api/App.ViewModels.Terrain.Textures.Whittaker.html
+  commentId: T:App.ViewModels.Terrain.Textures.Whittaker
+  fullName: App.ViewModels.Terrain.Textures.Whittaker
+  nameWithType: Whittaker
+- uid: App.ViewModels.Terrain.Textures.Whittaker.Display
   name: Display()
-  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_Display
-  commentId: M:App.ViewModels.Terrain.Textures.WhittakerStrategy.Display
-  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.Display()
-  nameWithType: WhittakerStrategy.Display()
-- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.Display*
+  href: api/App.ViewModels.Terrain.Textures.Whittaker.html#App_ViewModels_Terrain_Textures_Whittaker_Display
+  commentId: M:App.ViewModels.Terrain.Textures.Whittaker.Display
+  fullName: App.ViewModels.Terrain.Textures.Whittaker.Display()
+  nameWithType: Whittaker.Display()
+- uid: App.ViewModels.Terrain.Textures.Whittaker.Display*
   name: Display
-  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_Display_
-  commentId: Overload:App.ViewModels.Terrain.Textures.WhittakerStrategy.Display
+  href: api/App.ViewModels.Terrain.Textures.Whittaker.html#App_ViewModels_Terrain_Textures_Whittaker_Display_
+  commentId: Overload:App.ViewModels.Terrain.Textures.Whittaker.Display
   isSpec: "True"
-  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.Display
-  nameWithType: WhittakerStrategy.Display
-- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate
+  fullName: App.ViewModels.Terrain.Textures.Whittaker.Display
+  nameWithType: Whittaker.Display
+- uid: App.ViewModels.Terrain.Textures.Whittaker.Generate
   name: Generate()
-  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_Generate
-  commentId: M:App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate
-  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate()
-  nameWithType: WhittakerStrategy.Generate()
-- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate*
+  href: api/App.ViewModels.Terrain.Textures.Whittaker.html#App_ViewModels_Terrain_Textures_Whittaker_Generate
+  commentId: M:App.ViewModels.Terrain.Textures.Whittaker.Generate
+  fullName: App.ViewModels.Terrain.Textures.Whittaker.Generate()
+  nameWithType: Whittaker.Generate()
+- uid: App.ViewModels.Terrain.Textures.Whittaker.Generate*
   name: Generate
-  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_Generate_
-  commentId: Overload:App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate
+  href: api/App.ViewModels.Terrain.Textures.Whittaker.html#App_ViewModels_Terrain_Textures_Whittaker_Generate_
+  commentId: Overload:App.ViewModels.Terrain.Textures.Whittaker.Generate
   isSpec: "True"
-  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.Generate
-  nameWithType: WhittakerStrategy.Generate
-- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.precipitationScale
+  fullName: App.ViewModels.Terrain.Textures.Whittaker.Generate
+  nameWithType: Whittaker.Generate
+- uid: App.ViewModels.Terrain.Textures.Whittaker.precipitationScale
   name: precipitationScale
-  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_precipitationScale
-  commentId: F:App.ViewModels.Terrain.Textures.WhittakerStrategy.precipitationScale
-  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.precipitationScale
-  nameWithType: WhittakerStrategy.precipitationScale
-- uid: App.ViewModels.Terrain.Textures.WhittakerStrategy.temperatureScale
+  href: api/App.ViewModels.Terrain.Textures.Whittaker.html#App_ViewModels_Terrain_Textures_Whittaker_precipitationScale
+  commentId: F:App.ViewModels.Terrain.Textures.Whittaker.precipitationScale
+  fullName: App.ViewModels.Terrain.Textures.Whittaker.precipitationScale
+  nameWithType: Whittaker.precipitationScale
+- uid: App.ViewModels.Terrain.Textures.Whittaker.temperatureScale
   name: temperatureScale
-  href: api/App.ViewModels.Terrain.Textures.WhittakerStrategy.html#App_ViewModels_Terrain_Textures_WhittakerStrategy_temperatureScale
-  commentId: F:App.ViewModels.Terrain.Textures.WhittakerStrategy.temperatureScale
-  fullName: App.ViewModels.Terrain.Textures.WhittakerStrategy.temperatureScale
-  nameWithType: WhittakerStrategy.temperatureScale
-- uid: App.ViewModels.ViewModelStrategy`2
-  name: ViewModelStrategy<TI, TO>
-  href: api/App.ViewModels.ViewModelStrategy-2.html
-  commentId: T:App.ViewModels.ViewModelStrategy`2
-  name.vb: ViewModelStrategy(Of TI, TO)
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO)
-  nameWithType: ViewModelStrategy<TI, TO>
-  nameWithType.vb: ViewModelStrategy(Of TI, TO)
-- uid: App.ViewModels.ViewModelStrategy`2._eventBus
+  href: api/App.ViewModels.Terrain.Textures.Whittaker.html#App_ViewModels_Terrain_Textures_Whittaker_temperatureScale
+  commentId: F:App.ViewModels.Terrain.Textures.Whittaker.temperatureScale
+  fullName: App.ViewModels.Terrain.Textures.Whittaker.temperatureScale
+  nameWithType: Whittaker.temperatureScale
+- uid: App.ViewModels.ViewModel`2
+  name: ViewModel<TI, TO>
+  href: api/App.ViewModels.ViewModel-2.html
+  commentId: T:App.ViewModels.ViewModel`2
+  name.vb: ViewModel(Of TI, TO)
+  fullName: App.ViewModels.ViewModel<TI, TO>
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO)
+  nameWithType: ViewModel<TI, TO>
+  nameWithType.vb: ViewModel(Of TI, TO)
+- uid: App.ViewModels.ViewModel`2._eventBus
   name: _eventBus
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2__eventBus
-  commentId: F:App.ViewModels.ViewModelStrategy`2._eventBus
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>._eventBus
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO)._eventBus
-  nameWithType: ViewModelStrategy<TI, TO>._eventBus
-  nameWithType.vb: ViewModelStrategy(Of TI, TO)._eventBus
-- uid: App.ViewModels.ViewModelStrategy`2.CancelToken
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2__eventBus
+  commentId: F:App.ViewModels.ViewModel`2._eventBus
+  fullName: App.ViewModels.ViewModel<TI, TO>._eventBus
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO)._eventBus
+  nameWithType: ViewModel<TI, TO>._eventBus
+  nameWithType.vb: ViewModel(Of TI, TO)._eventBus
+- uid: App.ViewModels.ViewModel`2.CancelToken
   name: CancelToken
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_CancelToken
-  commentId: P:App.ViewModels.ViewModelStrategy`2.CancelToken
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.CancelToken
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).CancelToken
-  nameWithType: ViewModelStrategy<TI, TO>.CancelToken
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).CancelToken
-- uid: App.ViewModels.ViewModelStrategy`2.CancelToken*
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_CancelToken
+  commentId: P:App.ViewModels.ViewModel`2.CancelToken
+  fullName: App.ViewModels.ViewModel<TI, TO>.CancelToken
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).CancelToken
+  nameWithType: ViewModel<TI, TO>.CancelToken
+  nameWithType.vb: ViewModel(Of TI, TO).CancelToken
+- uid: App.ViewModels.ViewModel`2.CancelToken*
   name: CancelToken
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_CancelToken_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.CancelToken
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_CancelToken_
+  commentId: Overload:App.ViewModels.ViewModel`2.CancelToken
   isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.CancelToken
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).CancelToken
-  nameWithType: ViewModelStrategy<TI, TO>.CancelToken
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).CancelToken
-- uid: App.ViewModels.ViewModelStrategy`2.Display
+  fullName: App.ViewModels.ViewModel<TI, TO>.CancelToken
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).CancelToken
+  nameWithType: ViewModel<TI, TO>.CancelToken
+  nameWithType.vb: ViewModel(Of TI, TO).CancelToken
+- uid: App.ViewModels.ViewModel`2.Display
   name: Display()
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display
-  commentId: M:App.ViewModels.ViewModelStrategy`2.Display
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Display()
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Display()
-  nameWithType: ViewModelStrategy<TI, TO>.Display()
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Display()
-- uid: App.ViewModels.ViewModelStrategy`2.Display*
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Display
+  commentId: M:App.ViewModels.ViewModel`2.Display
+  fullName: App.ViewModels.ViewModel<TI, TO>.Display()
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).Display()
+  nameWithType: ViewModel<TI, TO>.Display()
+  nameWithType.vb: ViewModel(Of TI, TO).Display()
+- uid: App.ViewModels.ViewModel`2.Display*
   name: Display
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Display_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.Display
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Display_
+  commentId: Overload:App.ViewModels.ViewModel`2.Display
   isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Display
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Display
-  nameWithType: ViewModelStrategy<TI, TO>.Display
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Display
-- uid: App.ViewModels.ViewModelStrategy`2.EventBus
+  fullName: App.ViewModels.ViewModel<TI, TO>.Display
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).Display
+  nameWithType: ViewModel<TI, TO>.Display
+  nameWithType.vb: ViewModel(Of TI, TO).Display
+- uid: App.ViewModels.ViewModel`2.EventBus
   name: EventBus
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus
-  commentId: P:App.ViewModels.ViewModelStrategy`2.EventBus
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.EventBus
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).EventBus
-  nameWithType: ViewModelStrategy<TI, TO>.EventBus
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).EventBus
-- uid: App.ViewModels.ViewModelStrategy`2.EventBus*
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_EventBus
+  commentId: P:App.ViewModels.ViewModel`2.EventBus
+  fullName: App.ViewModels.ViewModel<TI, TO>.EventBus
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).EventBus
+  nameWithType: ViewModel<TI, TO>.EventBus
+  nameWithType.vb: ViewModel(Of TI, TO).EventBus
+- uid: App.ViewModels.ViewModel`2.EventBus*
   name: EventBus
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_EventBus_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.EventBus
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_EventBus_
+  commentId: Overload:App.ViewModels.ViewModel`2.EventBus
   isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.EventBus
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).EventBus
-  nameWithType: ViewModelStrategy<TI, TO>.EventBus
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).EventBus
-- uid: App.ViewModels.ViewModelStrategy`2.Generate
+  fullName: App.ViewModels.ViewModel<TI, TO>.EventBus
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).EventBus
+  nameWithType: ViewModel<TI, TO>.EventBus
+  nameWithType.vb: ViewModel(Of TI, TO).EventBus
+- uid: App.ViewModels.ViewModel`2.Generate
   name: Generate()
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate
-  commentId: M:App.ViewModels.ViewModelStrategy`2.Generate
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Generate()
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Generate()
-  nameWithType: ViewModelStrategy<TI, TO>.Generate()
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Generate()
-- uid: App.ViewModels.ViewModelStrategy`2.Generate*
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Generate
+  commentId: M:App.ViewModels.ViewModel`2.Generate
+  fullName: App.ViewModels.ViewModel<TI, TO>.Generate()
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).Generate()
+  nameWithType: ViewModel<TI, TO>.Generate()
+  nameWithType.vb: ViewModel(Of TI, TO).Generate()
+- uid: App.ViewModels.ViewModel`2.Generate*
   name: Generate
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Generate_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.Generate
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Generate_
+  commentId: Overload:App.ViewModels.ViewModel`2.Generate
   isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Generate
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Generate
-  nameWithType: ViewModelStrategy<TI, TO>.Generate
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Generate
-- uid: App.ViewModels.ViewModelStrategy`2.Injector
+  fullName: App.ViewModels.ViewModel<TI, TO>.Generate
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).Generate
+  nameWithType: ViewModel<TI, TO>.Generate
+  nameWithType.vb: ViewModel(Of TI, TO).Generate
+- uid: App.ViewModels.ViewModel`2.Injector
   name: Injector
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector
-  commentId: P:App.ViewModels.ViewModelStrategy`2.Injector
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Injector
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Injector
-  nameWithType: ViewModelStrategy<TI, TO>.Injector
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Injector
-- uid: App.ViewModels.ViewModelStrategy`2.Injector*
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Injector
+  commentId: P:App.ViewModels.ViewModel`2.Injector
+  fullName: App.ViewModels.ViewModel<TI, TO>.Injector
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).Injector
+  nameWithType: ViewModel<TI, TO>.Injector
+  nameWithType.vb: ViewModel(Of TI, TO).Injector
+- uid: App.ViewModels.ViewModel`2.Injector*
   name: Injector
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_Injector_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.Injector
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_Injector_
+  commentId: Overload:App.ViewModels.ViewModel`2.Injector
   isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.Injector
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).Injector
-  nameWithType: ViewModelStrategy<TI, TO>.Injector
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).Injector
-- uid: App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.ViewModel<TI, TO>.Injector
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).Injector
+  nameWithType: ViewModel<TI, TO>.Injector
+  nameWithType.vb: ViewModel(Of TI, TO).Injector
+- uid: App.ViewModels.ViewModel`2.OnEvent(App.AppEvent,System.Object,System.Object)
   name: OnEvent(AppEvent, Object, Object)
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_App_AppEvent_System_Object_System_Object_
-  commentId: M:App.ViewModels.ViewModelStrategy`2.OnEvent(App.AppEvent,System.Object,System.Object)
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.OnEvent(App.AppEvent, System.Object, System.Object)
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).OnEvent(App.AppEvent, System.Object, System.Object)
-  nameWithType: ViewModelStrategy<TI, TO>.OnEvent(AppEvent, Object, Object)
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).OnEvent(AppEvent, Object, Object)
-- uid: App.ViewModels.ViewModelStrategy`2.OnEvent*
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_OnEvent_App_AppEvent_System_Object_System_Object_
+  commentId: M:App.ViewModels.ViewModel`2.OnEvent(App.AppEvent,System.Object,System.Object)
+  fullName: App.ViewModels.ViewModel<TI, TO>.OnEvent(App.AppEvent, System.Object, System.Object)
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).OnEvent(App.AppEvent, System.Object, System.Object)
+  nameWithType: ViewModel<TI, TO>.OnEvent(AppEvent, Object, Object)
+  nameWithType.vb: ViewModel(Of TI, TO).OnEvent(AppEvent, Object, Object)
+- uid: App.ViewModels.ViewModel`2.OnEvent*
   name: OnEvent
-  href: api/App.ViewModels.ViewModelStrategy-2.html#App_ViewModels_ViewModelStrategy_2_OnEvent_
-  commentId: Overload:App.ViewModels.ViewModelStrategy`2.OnEvent
+  href: api/App.ViewModels.ViewModel-2.html#App_ViewModels_ViewModel_2_OnEvent_
+  commentId: Overload:App.ViewModels.ViewModel`2.OnEvent
   isSpec: "True"
-  fullName: App.ViewModels.ViewModelStrategy<TI, TO>.OnEvent
-  fullName.vb: App.ViewModels.ViewModelStrategy(Of TI, TO).OnEvent
-  nameWithType: ViewModelStrategy<TI, TO>.OnEvent
-  nameWithType.vb: ViewModelStrategy(Of TI, TO).OnEvent
+  fullName: App.ViewModels.ViewModel<TI, TO>.OnEvent
+  fullName.vb: App.ViewModels.ViewModel(Of TI, TO).OnEvent
+  nameWithType: ViewModel<TI, TO>.OnEvent
+  nameWithType.vb: ViewModel(Of TI, TO).OnEvent
 - uid: Cities
   name: Cities
   href: api/Cities.html
@@ -4946,179 +4946,6 @@ references:
   commentId: N:Utils
   fullName: Utils
   nameWithType: Utils
-- uid: Utils.Concurrency
-  name: Utils.Concurrency
-  href: api/Utils.Concurrency.html
-  commentId: N:Utils.Concurrency
-  fullName: Utils.Concurrency
-  nameWithType: Utils.Concurrency
-- uid: Utils.Concurrency.Dispatcher
-  name: Dispatcher
-  href: api/Utils.Concurrency.Dispatcher.html
-  commentId: T:Utils.Concurrency.Dispatcher
-  fullName: Utils.Concurrency.Dispatcher
-  nameWithType: Dispatcher
-- uid: Utils.Concurrency.Dispatcher.#ctor
-  name: Dispatcher()
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher__ctor
-  commentId: M:Utils.Concurrency.Dispatcher.#ctor
-  fullName: Utils.Concurrency.Dispatcher.Dispatcher()
-  nameWithType: Dispatcher.Dispatcher()
-- uid: Utils.Concurrency.Dispatcher.#ctor*
-  name: Dispatcher
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher__ctor_
-  commentId: Overload:Utils.Concurrency.Dispatcher.#ctor
-  isSpec: "True"
-  fullName: Utils.Concurrency.Dispatcher.Dispatcher
-  nameWithType: Dispatcher.Dispatcher
-- uid: Utils.Concurrency.Dispatcher.EnqueueAction(System.Action)
-  name: EnqueueAction(Action)
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueAction_System_Action_
-  commentId: M:Utils.Concurrency.Dispatcher.EnqueueAction(System.Action)
-  fullName: Utils.Concurrency.Dispatcher.EnqueueAction(System.Action)
-  nameWithType: Dispatcher.EnqueueAction(Action)
-- uid: Utils.Concurrency.Dispatcher.EnqueueAction*
-  name: EnqueueAction
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueAction_
-  commentId: Overload:Utils.Concurrency.Dispatcher.EnqueueAction
-  isSpec: "True"
-  fullName: Utils.Concurrency.Dispatcher.EnqueueAction
-  nameWithType: Dispatcher.EnqueueAction
-- uid: Utils.Concurrency.Dispatcher.EnqueueActionAndWait(System.Action)
-  name: EnqueueActionAndWait(Action)
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueActionAndWait_System_Action_
-  commentId: M:Utils.Concurrency.Dispatcher.EnqueueActionAndWait(System.Action)
-  fullName: Utils.Concurrency.Dispatcher.EnqueueActionAndWait(System.Action)
-  nameWithType: Dispatcher.EnqueueActionAndWait(Action)
-- uid: Utils.Concurrency.Dispatcher.EnqueueActionAndWait*
-  name: EnqueueActionAndWait
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueActionAndWait_
-  commentId: Overload:Utils.Concurrency.Dispatcher.EnqueueActionAndWait
-  isSpec: "True"
-  fullName: Utils.Concurrency.Dispatcher.EnqueueActionAndWait
-  nameWithType: Dispatcher.EnqueueActionAndWait
-- uid: Utils.Concurrency.Dispatcher.EnqueueFunction*
-  name: EnqueueFunction
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueFunction_
-  commentId: Overload:Utils.Concurrency.Dispatcher.EnqueueFunction
-  isSpec: "True"
-  fullName: Utils.Concurrency.Dispatcher.EnqueueFunction
-  nameWithType: Dispatcher.EnqueueFunction
-- uid: Utils.Concurrency.Dispatcher.EnqueueFunction``1(System.Func{``0})
-  name: EnqueueFunction<TO>(Func<TO>)
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_EnqueueFunction__1_System_Func___0__
-  commentId: M:Utils.Concurrency.Dispatcher.EnqueueFunction``1(System.Func{``0})
-  name.vb: EnqueueFunction(Of TO)(Func(Of TO))
-  fullName: Utils.Concurrency.Dispatcher.EnqueueFunction<TO>(System.Func<TO>)
-  fullName.vb: Utils.Concurrency.Dispatcher.EnqueueFunction(Of TO)(System.Func(Of TO))
-  nameWithType: Dispatcher.EnqueueFunction<TO>(Func<TO>)
-  nameWithType.vb: Dispatcher.EnqueueFunction(Of TO)(Func(Of TO))
-- uid: Utils.Concurrency.Dispatcher.finishedActions
-  name: finishedActions
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_finishedActions
-  commentId: F:Utils.Concurrency.Dispatcher.finishedActions
-  fullName: Utils.Concurrency.Dispatcher.finishedActions
-  nameWithType: Dispatcher.finishedActions
-- uid: Utils.Concurrency.Dispatcher.instance
-  name: instance
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_instance
-  commentId: F:Utils.Concurrency.Dispatcher.instance
-  fullName: Utils.Concurrency.Dispatcher.instance
-  nameWithType: Dispatcher.instance
-- uid: Utils.Concurrency.Dispatcher.Instance
-  name: Instance
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_Instance
-  commentId: P:Utils.Concurrency.Dispatcher.Instance
-  fullName: Utils.Concurrency.Dispatcher.Instance
-  nameWithType: Dispatcher.Instance
-- uid: Utils.Concurrency.Dispatcher.Instance*
-  name: Instance
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_Instance_
-  commentId: Overload:Utils.Concurrency.Dispatcher.Instance
-  isSpec: "True"
-  fullName: Utils.Concurrency.Dispatcher.Instance
-  nameWithType: Dispatcher.Instance
-- uid: Utils.Concurrency.Dispatcher.InvokePending
-  name: InvokePending()
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_InvokePending
-  commentId: M:Utils.Concurrency.Dispatcher.InvokePending
-  fullName: Utils.Concurrency.Dispatcher.InvokePending()
-  nameWithType: Dispatcher.InvokePending()
-- uid: Utils.Concurrency.Dispatcher.InvokePending*
-  name: InvokePending
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_InvokePending_
-  commentId: Overload:Utils.Concurrency.Dispatcher.InvokePending
-  isSpec: "True"
-  fullName: Utils.Concurrency.Dispatcher.InvokePending
-  nameWithType: Dispatcher.InvokePending
-- uid: Utils.Concurrency.Dispatcher.pendingActions
-  name: pendingActions
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_pendingActions
-  commentId: F:Utils.Concurrency.Dispatcher.pendingActions
-  fullName: Utils.Concurrency.Dispatcher.pendingActions
-  nameWithType: Dispatcher.pendingActions
-- uid: Utils.Concurrency.Dispatcher.pendingFunctions
-  name: pendingFunctions
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_pendingFunctions
-  commentId: F:Utils.Concurrency.Dispatcher.pendingFunctions
-  fullName: Utils.Concurrency.Dispatcher.pendingFunctions
-  nameWithType: Dispatcher.pendingFunctions
-- uid: Utils.Concurrency.Dispatcher.results
-  name: results
-  href: api/Utils.Concurrency.Dispatcher.html#Utils_Concurrency_Dispatcher_results
-  commentId: F:Utils.Concurrency.Dispatcher.results
-  fullName: Utils.Concurrency.Dispatcher.results
-  nameWithType: Dispatcher.results
-- uid: Utils.Concurrency.DispatchInvoker
-  name: DispatchInvoker
-  href: api/Utils.Concurrency.DispatchInvoker.html
-  commentId: T:Utils.Concurrency.DispatchInvoker
-  fullName: Utils.Concurrency.DispatchInvoker
-  nameWithType: DispatchInvoker
-- uid: Utils.Concurrency.DispatchInvoker.#cctor
-  name: .cctor()
-  href: api/Utils.Concurrency.DispatchInvoker.html#Utils_Concurrency_DispatchInvoker__cctor
-  commentId: M:Utils.Concurrency.DispatchInvoker.#cctor
-  fullName: Utils.Concurrency.DispatchInvoker..cctor()
-  nameWithType: DispatchInvoker..cctor()
-- uid: Utils.Concurrency.DispatchInvoker.#cctor*
-  name: .cctor
-  href: api/Utils.Concurrency.DispatchInvoker.html#Utils_Concurrency_DispatchInvoker__cctor_
-  commentId: Overload:Utils.Concurrency.DispatchInvoker.#cctor
-  isSpec: "True"
-  fullName: Utils.Concurrency.DispatchInvoker..cctor
-  nameWithType: DispatchInvoker..cctor
-- uid: Utils.Concurrency.TaskUtils
-  name: TaskUtils
-  href: api/Utils.Concurrency.TaskUtils.html
-  commentId: T:Utils.Concurrency.TaskUtils
-  fullName: Utils.Concurrency.TaskUtils
-  nameWithType: TaskUtils
-- uid: Utils.Concurrency.TaskUtils.RunActionInTasks*
-  name: RunActionInTasks
-  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks_
-  commentId: Overload:Utils.Concurrency.TaskUtils.RunActionInTasks
-  isSpec: "True"
-  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks
-  nameWithType: TaskUtils.RunActionInTasks
-- uid: Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
-  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
-  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__
-  commentId: M:Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
-  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
-  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>)
-  fullName.vb: Utils.Concurrency.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO))
-  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
-  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
-- uid: Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
-  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
-  href: api/Utils.Concurrency.TaskUtils.html#Utils_Concurrency_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Threading_CancellationToken_
-  commentId: M:Utils.Concurrency.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
-  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
-  fullName: Utils.Concurrency.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>, System.Threading.CancellationToken)
-  fullName.vb: Utils.Concurrency.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO), System.Threading.CancellationToken)
-  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
-  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
 - uid: Utils.CopyableEnumerator`1
   name: CopyableEnumerator<T>
   href: api/Utils.CopyableEnumerator-1.html
@@ -6149,6 +5976,179 @@ references:
   isSpec: "True"
   fullName: Utils.MathUtils.RandomInclusiveFloat
   nameWithType: MathUtils.RandomInclusiveFloat
+- uid: Utils.Parallelism
+  name: Utils.Parallelism
+  href: api/Utils.Parallelism.html
+  commentId: N:Utils.Parallelism
+  fullName: Utils.Parallelism
+  nameWithType: Utils.Parallelism
+- uid: Utils.Parallelism.Dispatcher
+  name: Dispatcher
+  href: api/Utils.Parallelism.Dispatcher.html
+  commentId: T:Utils.Parallelism.Dispatcher
+  fullName: Utils.Parallelism.Dispatcher
+  nameWithType: Dispatcher
+- uid: Utils.Parallelism.Dispatcher.#ctor
+  name: Dispatcher()
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher__ctor
+  commentId: M:Utils.Parallelism.Dispatcher.#ctor
+  fullName: Utils.Parallelism.Dispatcher.Dispatcher()
+  nameWithType: Dispatcher.Dispatcher()
+- uid: Utils.Parallelism.Dispatcher.#ctor*
+  name: Dispatcher
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher__ctor_
+  commentId: Overload:Utils.Parallelism.Dispatcher.#ctor
+  isSpec: "True"
+  fullName: Utils.Parallelism.Dispatcher.Dispatcher
+  nameWithType: Dispatcher.Dispatcher
+- uid: Utils.Parallelism.Dispatcher.EnqueueAction(System.Action)
+  name: EnqueueAction(Action)
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_EnqueueAction_System_Action_
+  commentId: M:Utils.Parallelism.Dispatcher.EnqueueAction(System.Action)
+  fullName: Utils.Parallelism.Dispatcher.EnqueueAction(System.Action)
+  nameWithType: Dispatcher.EnqueueAction(Action)
+- uid: Utils.Parallelism.Dispatcher.EnqueueAction*
+  name: EnqueueAction
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_EnqueueAction_
+  commentId: Overload:Utils.Parallelism.Dispatcher.EnqueueAction
+  isSpec: "True"
+  fullName: Utils.Parallelism.Dispatcher.EnqueueAction
+  nameWithType: Dispatcher.EnqueueAction
+- uid: Utils.Parallelism.Dispatcher.EnqueueActionAndWait(System.Action)
+  name: EnqueueActionAndWait(Action)
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_EnqueueActionAndWait_System_Action_
+  commentId: M:Utils.Parallelism.Dispatcher.EnqueueActionAndWait(System.Action)
+  fullName: Utils.Parallelism.Dispatcher.EnqueueActionAndWait(System.Action)
+  nameWithType: Dispatcher.EnqueueActionAndWait(Action)
+- uid: Utils.Parallelism.Dispatcher.EnqueueActionAndWait*
+  name: EnqueueActionAndWait
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_EnqueueActionAndWait_
+  commentId: Overload:Utils.Parallelism.Dispatcher.EnqueueActionAndWait
+  isSpec: "True"
+  fullName: Utils.Parallelism.Dispatcher.EnqueueActionAndWait
+  nameWithType: Dispatcher.EnqueueActionAndWait
+- uid: Utils.Parallelism.Dispatcher.EnqueueFunction*
+  name: EnqueueFunction
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_EnqueueFunction_
+  commentId: Overload:Utils.Parallelism.Dispatcher.EnqueueFunction
+  isSpec: "True"
+  fullName: Utils.Parallelism.Dispatcher.EnqueueFunction
+  nameWithType: Dispatcher.EnqueueFunction
+- uid: Utils.Parallelism.Dispatcher.EnqueueFunction``1(System.Func{``0})
+  name: EnqueueFunction<TO>(Func<TO>)
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_EnqueueFunction__1_System_Func___0__
+  commentId: M:Utils.Parallelism.Dispatcher.EnqueueFunction``1(System.Func{``0})
+  name.vb: EnqueueFunction(Of TO)(Func(Of TO))
+  fullName: Utils.Parallelism.Dispatcher.EnqueueFunction<TO>(System.Func<TO>)
+  fullName.vb: Utils.Parallelism.Dispatcher.EnqueueFunction(Of TO)(System.Func(Of TO))
+  nameWithType: Dispatcher.EnqueueFunction<TO>(Func<TO>)
+  nameWithType.vb: Dispatcher.EnqueueFunction(Of TO)(Func(Of TO))
+- uid: Utils.Parallelism.Dispatcher.finishedActions
+  name: finishedActions
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_finishedActions
+  commentId: F:Utils.Parallelism.Dispatcher.finishedActions
+  fullName: Utils.Parallelism.Dispatcher.finishedActions
+  nameWithType: Dispatcher.finishedActions
+- uid: Utils.Parallelism.Dispatcher.instance
+  name: instance
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_instance
+  commentId: F:Utils.Parallelism.Dispatcher.instance
+  fullName: Utils.Parallelism.Dispatcher.instance
+  nameWithType: Dispatcher.instance
+- uid: Utils.Parallelism.Dispatcher.Instance
+  name: Instance
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_Instance
+  commentId: P:Utils.Parallelism.Dispatcher.Instance
+  fullName: Utils.Parallelism.Dispatcher.Instance
+  nameWithType: Dispatcher.Instance
+- uid: Utils.Parallelism.Dispatcher.Instance*
+  name: Instance
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_Instance_
+  commentId: Overload:Utils.Parallelism.Dispatcher.Instance
+  isSpec: "True"
+  fullName: Utils.Parallelism.Dispatcher.Instance
+  nameWithType: Dispatcher.Instance
+- uid: Utils.Parallelism.Dispatcher.InvokePending
+  name: InvokePending()
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_InvokePending
+  commentId: M:Utils.Parallelism.Dispatcher.InvokePending
+  fullName: Utils.Parallelism.Dispatcher.InvokePending()
+  nameWithType: Dispatcher.InvokePending()
+- uid: Utils.Parallelism.Dispatcher.InvokePending*
+  name: InvokePending
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_InvokePending_
+  commentId: Overload:Utils.Parallelism.Dispatcher.InvokePending
+  isSpec: "True"
+  fullName: Utils.Parallelism.Dispatcher.InvokePending
+  nameWithType: Dispatcher.InvokePending
+- uid: Utils.Parallelism.Dispatcher.pendingActions
+  name: pendingActions
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_pendingActions
+  commentId: F:Utils.Parallelism.Dispatcher.pendingActions
+  fullName: Utils.Parallelism.Dispatcher.pendingActions
+  nameWithType: Dispatcher.pendingActions
+- uid: Utils.Parallelism.Dispatcher.pendingFunctions
+  name: pendingFunctions
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_pendingFunctions
+  commentId: F:Utils.Parallelism.Dispatcher.pendingFunctions
+  fullName: Utils.Parallelism.Dispatcher.pendingFunctions
+  nameWithType: Dispatcher.pendingFunctions
+- uid: Utils.Parallelism.Dispatcher.results
+  name: results
+  href: api/Utils.Parallelism.Dispatcher.html#Utils_Parallelism_Dispatcher_results
+  commentId: F:Utils.Parallelism.Dispatcher.results
+  fullName: Utils.Parallelism.Dispatcher.results
+  nameWithType: Dispatcher.results
+- uid: Utils.Parallelism.DispatchInvoker
+  name: DispatchInvoker
+  href: api/Utils.Parallelism.DispatchInvoker.html
+  commentId: T:Utils.Parallelism.DispatchInvoker
+  fullName: Utils.Parallelism.DispatchInvoker
+  nameWithType: DispatchInvoker
+- uid: Utils.Parallelism.DispatchInvoker.#cctor
+  name: .cctor()
+  href: api/Utils.Parallelism.DispatchInvoker.html#Utils_Parallelism_DispatchInvoker__cctor
+  commentId: M:Utils.Parallelism.DispatchInvoker.#cctor
+  fullName: Utils.Parallelism.DispatchInvoker..cctor()
+  nameWithType: DispatchInvoker..cctor()
+- uid: Utils.Parallelism.DispatchInvoker.#cctor*
+  name: .cctor
+  href: api/Utils.Parallelism.DispatchInvoker.html#Utils_Parallelism_DispatchInvoker__cctor_
+  commentId: Overload:Utils.Parallelism.DispatchInvoker.#cctor
+  isSpec: "True"
+  fullName: Utils.Parallelism.DispatchInvoker..cctor
+  nameWithType: DispatchInvoker..cctor
+- uid: Utils.Parallelism.TaskUtils
+  name: TaskUtils
+  href: api/Utils.Parallelism.TaskUtils.html
+  commentId: T:Utils.Parallelism.TaskUtils
+  fullName: Utils.Parallelism.TaskUtils
+  nameWithType: TaskUtils
+- uid: Utils.Parallelism.TaskUtils.RunActionInTasks*
+  name: RunActionInTasks
+  href: api/Utils.Parallelism.TaskUtils.html#Utils_Parallelism_TaskUtils_RunActionInTasks_
+  commentId: Overload:Utils.Parallelism.TaskUtils.RunActionInTasks
+  isSpec: "True"
+  fullName: Utils.Parallelism.TaskUtils.RunActionInTasks
+  nameWithType: TaskUtils.RunActionInTasks
+- uid: Utils.Parallelism.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
+  href: api/Utils.Parallelism.TaskUtils.html#Utils_Parallelism_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__
+  commentId: M:Utils.Parallelism.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
+  fullName: Utils.Parallelism.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>)
+  fullName.vb: Utils.Parallelism.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO))
+  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>)
+  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO))
+- uid: Utils.Parallelism.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
+  name: RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
+  href: api/Utils.Parallelism.TaskUtils.html#Utils_Parallelism_TaskUtils_RunActionInTasks__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Threading_CancellationToken_
+  commentId: M:Utils.Parallelism.TaskUtils.RunActionInTasks``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Threading.CancellationToken)
+  name.vb: RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
+  fullName: Utils.Parallelism.TaskUtils.RunActionInTasks<TI, TO>(System.Collections.Generic.IEnumerable<TI>, System.Func<TI, TO>, System.Threading.CancellationToken)
+  fullName.vb: Utils.Parallelism.TaskUtils.RunActionInTasks(Of TI, TO)(System.Collections.Generic.IEnumerable(Of TI), System.Func(Of TI, TO), System.Threading.CancellationToken)
+  nameWithType: TaskUtils.RunActionInTasks<TI, TO>(IEnumerable<TI>, Func<TI, TO>, CancellationToken)
+  nameWithType.vb: TaskUtils.RunActionInTasks(Of TI, TO)(IEnumerable(Of TI), Func(Of TI, TO), CancellationToken)
 - uid: Utils.Paths
   name: Utils.Paths
   href: api/Utils.Paths.html
