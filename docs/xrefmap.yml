@@ -2184,12 +2184,6 @@ references:
   commentId: F:Cities.Buildings.Lot.area
   fullName: Cities.Buildings.Lot.area
   nameWithType: Lot.area
-- uid: Cities.Buildings.Lot.facing
-  name: facing
-  href: api/Cities.Buildings.Lot.html#Cities_Buildings_Lot_facing
-  commentId: F:Cities.Buildings.Lot.facing
-  fullName: Cities.Buildings.Lot.facing
-  nameWithType: Lot.facing
 - uid: Cities.Buildings.Lot.Vertices
   name: Vertices
   href: api/Cities.Buildings.Lot.html#Cities_Buildings_Lot_Vertices
