@@ -12,7 +12,7 @@ namespace Cities.Buildings
     {
         internal readonly float area;
         //public readonly Vector3 center;
-        internal readonly Vector2 facing;
+        // internal readonly Vector2 facing;
 
         /// <summary>
         /// The polygonal shape of the lot.

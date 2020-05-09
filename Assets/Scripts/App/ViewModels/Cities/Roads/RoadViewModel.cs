@@ -23,11 +23,11 @@ namespace App.ViewModels.Cities.Roads
 
         // Serialized view-model for <see cref="AStarStrategy"/> view model.
         [SerializeField]
-        private AStar aStar;
+        private AStar aStar = null;
 
         // Serialized view-model for <see cref="LSystemStrategy"/> view model.
         [SerializeField] 
-        private LSystem lSystem;
+        private LSystem lSystem = null;
         
         [SerializeField]
         private bool aStarEnabled;

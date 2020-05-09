@@ -28,13 +28,13 @@ namespace App.ViewModels.Cities
         private bool _visible;
 
         [SerializeField]
-        private RoadViewModel roadViewModel;
+        private RoadViewModel roadViewModel = null;
         
         [SerializeField]
-        private PlotViewModel plotViewModel;
+        private PlotViewModel plotViewModel = null;
         
         [SerializeField]
-        private BuildingViewModel buildingViewModel;
+        private BuildingViewModel buildingViewModel = null;
 
         #region View Model Properties
         /// <summary>

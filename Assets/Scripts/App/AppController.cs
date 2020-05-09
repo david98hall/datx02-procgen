@@ -43,13 +43,13 @@ namespace App
         /// Serialized view-model for <see cref="TerrainViewModel"/> view model.
         /// </summary>
         [SerializeField]
-        private TerrainViewModel terrainViewModel;
+        private TerrainViewModel terrainViewModel = null;
         
         /// <summary>
         /// Serialized view-model for <see cref="TerrainViewModel"/> view model.
         /// </summary>
         [SerializeField]
-        private CityViewModel cityViewModel;
+        private CityViewModel cityViewModel = null;
 
         #endregion
 

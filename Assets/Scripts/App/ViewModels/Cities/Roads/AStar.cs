@@ -27,7 +27,7 @@ namespace App.ViewModels.Cities.Roads
         /// Serialized start and goal paths
         /// </summary>
         [SerializeField]
-        private List<Path> paths;
+        private List<Path> paths = null;
 
         private (int Width, int Depth) _terrainSize;
 

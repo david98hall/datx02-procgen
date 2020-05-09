@@ -40,7 +40,7 @@ namespace App.ViewModels.Noise
         /// Is required to be explicitly defined to be serializable.
         /// </summary>
         [SerializeField]
-        private PerlinNoise perlinNoise;
+        private PerlinNoise perlinNoise = null;
 
         #endregion
 

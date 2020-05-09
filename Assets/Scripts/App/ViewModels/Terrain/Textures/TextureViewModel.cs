@@ -41,7 +41,7 @@ namespace App.ViewModels.Terrain.Textures
         /// Is required to be explicitly defined to be serializable.
         /// </summary>
         [SerializeField] 
-        private Whittaker whittaker;
+        private Whittaker whittaker = null;
 
         /// <summary>
         /// Serialized view-model for <see cref="GrayScaleStrategy"/> view model.

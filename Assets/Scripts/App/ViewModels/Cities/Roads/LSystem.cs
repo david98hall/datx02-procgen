@@ -35,7 +35,7 @@ namespace App.ViewModels.Cities.Roads
         /// Serialized L-system generation input data.
         /// </summary>
         [SerializeField]
-        private List<Input> inputs;
+        private List<Input> inputs = null;
 
         private static readonly int MinRewrites = 3;
         private static readonly int MaxRewrites = 7;

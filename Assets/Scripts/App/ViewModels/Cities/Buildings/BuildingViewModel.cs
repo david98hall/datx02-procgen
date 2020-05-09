@@ -45,7 +45,7 @@ namespace App.ViewModels.Cities.Buildings
         /// Is required to be explicitly defined to be serializable.
         /// </summary>
         [SerializeField]
-        private Extrusion extrusion;
+        private Extrusion extrusion = null;
 
         /// <summary>
         /// Boolean to set building visibility.
