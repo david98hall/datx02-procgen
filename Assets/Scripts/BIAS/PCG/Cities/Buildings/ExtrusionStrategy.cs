@@ -82,23 +82,35 @@ namespace BIAS.PCG.Cities.Buildings
         /// <returns>The set of all generated buildings.</returns>
         public override IEnumerable<Building> Generate()
         {
+
             foreach (var p in Injector.Get().Item2)
             {
+
                 // Cancel if requested
                 if (CancelToken.IsCancellationRequested) return null;
-                
-                //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
-                //ICollection<Lot> lots = lg.Generate();
 
-                var vertices = p.Vertices;
+                List<Vector3> vertices = p.Vertices.ToList();
 
                 // Necessary for non-counter-clockwise plots
                 if (!Maths2D.PointsAreCounterClockwise(vertices.ToList()))
-                    vertices = vertices.Reverse();
+                   vertices.Reverse();
+
+
+                // Polygon centroid
+                Vector2 c = Maths2D.GetConvexCenter(ToXZ(vertices));
+
+                // Duplicate points can mess with triangulation
+                vertices.RemoveAt(vertices.Count - 1);
+
+                // Make sure we can construct a sensible footprint, otherwise skip this building
+                vertices = CutCorners(vertices, 40f, 0.5f);
+                if (vertices == null)
+                    continue;
+
 
                 Lot lot = new Lot(vertices);
 
-                GetBuildings(new List<Lot> { lot });
+                GetBuildings(new List<Lot> { lot }, c);
             }
 
             return buildings;
@@ -110,27 +122,24 @@ namespace BIAS.PCG.Cities.Buildings
         /// These may be convex or concave shapes, and the building appearance will be based on it.
         /// </summary>
         /// <param name="lots">The lots to generate a building in.</param>
-        private void GetBuildings(ICollection<Lot> lots)
+        private void GetBuildings(ICollection<Lot> lots, Vector2 c)
         {
             foreach (Lot lot in lots)
             {
                 // Cancel if requested
                 if (CancelToken.IsCancellationRequested) return;
-                
+
                 // Only generate building if suitable lot
                 if (ValidLot(lot))
                 {
+                    var vertices = lot.Vertices.ToList();
+
                     float y = MathUtils.RandomInclusiveFloat(1f, 5.5f);
 
-                    IList<Vector3> vertices = lot.Vertices.ToList();
-
-                    // Polygon centroid
-                    Vector2 c = Maths2D.GetConvexCenter(ToXZ(vertices));
-
-                    vertices.RemoveAt(vertices.Count - 1);
                     var tup = SetBaseHeight(vertices);
 
                     var (verts, tris) = ExtrudePolygon(vertices, tup.max + y);
+
                     Mesh m = BuildMesh(verts, tris);
 
                     buildings.Add(new Building(c.ToXYZ(0f), Vector2.zero, m));
@@ -147,6 +156,66 @@ namespace BIAS.PCG.Cities.Buildings
         {
             return lot.area >= minArea && lot.area < maxArea;
         }
+
+
+    /// <summary>
+    /// Trim building corners from extreme cases.
+    /// </summary>
+    /// <param name="vertices">The polygon to trim.</param>
+    /// <param name="minAngle">The smallest allowed angle.</param>
+    private List<Vector3> CutCorners(List<Vector3> vertices, float minAngle, float minArea)
+    {
+        if (vertices.Count < 3)
+            return null;
+
+        int n = vertices.Count;
+        int i = 0;
+        var verts = new LinkedList<Vector3>(vertices);
+        vertices.Clear();
+
+        // Filter out the points that are inside the angle limit until whole list has been traversed
+        var v1 = verts.Last;
+        var v0 = v1.Previous;
+        var v2 = verts.First;
+        while (i < n && verts.Count > 3)
+        {
+            var e0 = v2.Value - v1.Value;
+            var e1 = v0.Value - v1.Value;
+
+            float angle = Vector2.SignedAngle(e0.ToXZ(), e1.ToXZ());
+            float area = Maths2D.CalculatePolygonArea(new List<Vector2> {v0.Value.ToXZ(), v1.Value.ToXZ(), v2.Value.ToXZ()});
+
+            // We add the point if it's within the angle limit, or remove it and step backwards
+            // to check the now-modified angle of the previous point and go from there.
+            if ( (angle <= 0f || angle >= minAngle) && area > minArea)
+            {
+                if (!vertices.Contains(v1.Value))
+                    vertices.Add(v1.Value);
+
+                v0 = v1;
+                v1 = v2;
+                v2 = v2.Next ?? verts.First;
+
+                i++;
+            }
+            else
+            {
+                if (vertices.Contains(v1.Value))
+                    vertices.Remove(v1.Value);
+                verts.Remove(v1);
+
+                v1 = v0;
+                v0 = v0.Previous ?? verts.Last;
+            }
+        }
+
+        // Too many invalid points will lead to invalid plot
+        if (vertices.Count < 3)
+            return null;
+
+        return vertices;
+    }
+
 
         /// <summary>
         /// Finds the height of the terrain for each building base vertex, as well as the minimum 
@@ -257,7 +326,6 @@ namespace BIAS.PCG.Cities.Buildings
             int i11 = n - 1;
             int i21 = j - 1;
             int i22 = n;
-
 
             for (int i12 = 0; i12 < n; i11 = i12++)
             {
