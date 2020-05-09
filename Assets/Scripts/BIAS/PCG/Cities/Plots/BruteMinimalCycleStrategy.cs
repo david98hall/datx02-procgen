@@ -5,7 +5,7 @@ using BIAS.Utils.Extensions;
 using BIAS.Utils.Interfaces;
 using UnityEngine;
 using BIAS.Utils.Parallelism;
-using BIAS.Utils.Geometry;
+using BIAS.Utils.Maths.Geometry;
 
 namespace BIAS.PCG.Cities.Plots
 {

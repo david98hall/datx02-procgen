@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using static System.Math;
 
-namespace BIAS.Utils.Geometry
+namespace BIAS.Utils.Maths.Geometry
 {
     /// <summary>
     /// 3D geometry math utility methods.

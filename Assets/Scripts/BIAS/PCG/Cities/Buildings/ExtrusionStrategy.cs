@@ -4,10 +4,10 @@ using UnityEngine;
 using BIAS.Utils.Extensions;
 using System.Linq;
 using BIAS.PCG.Cities.Plots;
-using BIAS.Utils.Geometry;
+using BIAS.Utils.Maths.Geometry;
 using BIAS.Utils.Interfaces;
 using BIAS.PCG.Terrain;
-using BIAS.Utils;
+using BIAS.Utils.Maths;
 using BIAS.Utils.Parallelism;
 
 namespace BIAS.PCG.Cities.Buildings 

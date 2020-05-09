@@ -4,7 +4,7 @@ using BIAS.PCG.Cities.Roads;
 using BIAS.Utils.Interfaces;
 using BIAS.PCG.Terrain;
 using UnityEngine;
-using BIAS.Utils.Geometry;
+using BIAS.Utils.Maths.Geometry;
 
 namespace BIAS.PCG.Cities.Plots
 {

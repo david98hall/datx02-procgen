@@ -2,7 +2,7 @@
 using UnityEngine;
 using BIAS.Utils.Extensions;
 
-namespace BIAS.Utils.Geometry
+namespace BIAS.Utils.Maths.Geometry
 {
     /// <summary>
     /// A class for triangulating polygons by ear-clipping.

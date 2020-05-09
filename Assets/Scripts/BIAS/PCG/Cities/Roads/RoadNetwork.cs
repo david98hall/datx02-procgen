@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BIAS.Utils.Extensions;
 using UnityEngine;
-using static BIAS.Utils.Geometry.Maths3D;
+using static BIAS.Utils.Maths.Geometry.Maths3D;
 
 namespace BIAS.PCG.Cities.Roads
 {

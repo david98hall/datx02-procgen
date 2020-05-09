@@ -2,7 +2,7 @@
 using BIAS.Utils.Parallelism;
 using Random = UnityEngine.Random;
 
-namespace BIAS.Utils
+namespace BIAS.Utils.Maths
 {
     /// <summary>
     /// Mathematics utility methods.

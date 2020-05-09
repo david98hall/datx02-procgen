@@ -4,7 +4,7 @@ using System.Text;
 using BIAS.Utils.Interfaces;
 using BIAS.PCG.Terrain;
 using UnityEngine;
-using BIAS.Utils;
+using BIAS.Utils.Maths;
 using Random = System.Random;
 
 namespace BIAS.PCG.Cities.Roads
