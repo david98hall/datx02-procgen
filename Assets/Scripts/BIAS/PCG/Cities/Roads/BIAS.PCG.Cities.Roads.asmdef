@@ -1,11 +1,8 @@
 {
-    "name": "BIAS.PCG.Cities",
+    "name": "BIAS.PCG.Cities.Roads",
     "references": [
-        "GUID:9b87899da6216614aa17e93f71d794da",
         "GUID:73b1c6c88f16f1844a6a02caccd1d4ed",
-        "GUID:a44b0febe43a4094eb9c967b680ddee0",
-        "GUID:8ed9e5df52c0a474d860f61621fce0ea",
-        "GUID:e9b2b227dcb70e349b767fe82bbebe60"
+        "GUID:9b87899da6216614aa17e93f71d794da"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
