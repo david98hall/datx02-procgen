@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Extensions;
+using BIAS.Utils.Extensions;
 
 namespace BIAS.Utils.Maths.Geometry
 {

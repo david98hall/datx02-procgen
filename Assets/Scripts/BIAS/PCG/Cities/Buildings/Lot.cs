@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-using Utils.Geometry;
+using BIAS.Utils.Maths.Geometry;
 
 namespace BIAS.PCG.Cities.Buildings
 {
