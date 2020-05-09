@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace BIAS.Utils
+namespace BIAS.Utils.Terrains
 {
     public static class TerrainUtil
     {

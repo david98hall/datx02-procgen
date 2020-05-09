@@ -5,7 +5,7 @@ using BIAS.PCG.Cities.Roads;
 using BIAS.PCG.Terrain;
 using UnityEditor;
 using UnityEngine;
-using BIAS.Utils;
+using BIAS.Utils.Terrains;
 using BIAS.Utils.Parallelism;
 
 namespace BIAS.App.ViewModels.Cities.Roads
