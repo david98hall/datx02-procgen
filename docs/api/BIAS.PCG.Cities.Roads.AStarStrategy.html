@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AStarStrategy
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AStarStrategy
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy">
+  
+  
+  <h1 id="BIAS_PCG_Cities_Roads_AStarStrategy" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy" class="text-break">Class AStarStrategy
+  </h1>
+  <div class="markdown level0 summary"><p>Generates the optimal roads between a set of start and goal nodes with a given height bias.
+Extends the <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html">Strategy&lt;TI, TO&gt;</a> class.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level2"><span class="xref">AStarStrategy</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_CancelToken">Strategy&lt;Single[,], RoadNetwork&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Strategy&lt;Single[,], RoadNetwork&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Generate">Strategy&lt;Single[,], RoadNetwork&gt;.Generate()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.PCG.Cities.Roads.html">BIAS.PCG.Cities.Roads</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.PCG.Cities.Roads.dll</h6>
+  <h5 id="BIAS_PCG_Cities_Roads_AStarStrategy_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class AStarStrategy : Strategy&lt;float[, ], RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy__ctor_BIAS_Utils_Interfaces_IInjector_System_Single_0__0____.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy.%23ctor(BIAS.Utils.Interfaces.IInjector%7BSystem.Single%5B0%3A%2C0%3A%5D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L53">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_AStarStrategy__ctor_" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.#ctor*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_AStarStrategy__ctor_BIAS_Utils_Interfaces_IInjector_System_Single_0__0____" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.#ctor(BIAS.Utils.Interfaces.IInjector{System.Single[0:,0:]})">AStarStrategy(IInjector&lt;Single[,]&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructs a new A* Generator with a given height map injector and an empty set of start and goal nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AStarStrategy([NotNull] IInjector&lt;float[, ]&gt; terrainMeshInjector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
+        <td><span class="parametername">terrainMeshInjector</span></td>
+        <td><p>Non null terrain mesh filter injector object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy__heightBias.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy._heightBias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L38">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_AStarStrategy__heightBias" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy._heightBias">_heightBias</h4>
+  <div class="markdown level1 summary"><p>The height bias for finding the optimal path.
+Is used by <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a> in <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html#BIAS_PCG_Cities_Roads_AStarStrategy_Node_Cost_BIAS_PCG_Cities_Roads_AStarStrategy_Node_System_Single_">Cost(AStarStrategy.Node, Single)</a> to calculate the cost of the given node.
+A greater value implies that height impacts the nodes cost more.
+When zero, the height has no impact.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float _heightBias</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy__paths.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy._paths%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L30">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_AStarStrategy__paths" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy._paths">_paths</h4>
+  <div class="markdown level1 summary"><p>A dictionary of the the start and goal nodes.
+Start nodes are given as keys.
+Goal nodes from a given start node is given as a set of nodes from the start key.
+Is used in <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.html#BIAS_PCG_Cities_Roads_AStarStrategy_Generate">Generate()</a> to find the optimal path between each pair of start and goal nodes.
+Each pair of start and goal nodes is implicitly used in <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.html#BIAS_PCG_Cities_Roads_AStarStrategy_Path_BIAS_PCG_Cities_Roads_AStarStrategy_Node_BIAS_PCG_Cities_Roads_AStarStrategy_Node_System_Single_0__0___">Path(AStarStrategy.Node, AStarStrategy.Node, Single[,])</a> to found the optimal path
+between the given pair of nodes.
+Since the height map in <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Injector</a> may be changed externally, the nodes in the
+dictionary may be invalid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly Dictionary&lt;Vector2Int, ISet&lt;Vector2Int&gt;&gt; _paths</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">UnityEngine.Vector2Int</span>, <span class="xref">System.Collections.Generic.ISet</span>&lt;<span class="xref">UnityEngine.Vector2Int</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy_HeightBias.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy.HeightBias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L44">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_AStarStrategy_HeightBias_" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.HeightBias*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_AStarStrategy_HeightBias" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.HeightBias">HeightBias</h4>
+  <div class="markdown level1 summary"><p>Internal getter and setter for <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.html#BIAS_PCG_Cities_Roads_AStarStrategy__heightBias">_heightBias</a>
+Assures that the height bias is between zero and one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float HeightBias
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy_Add_UnityEngine_Vector2Int_UnityEngine_Vector2Int_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy.Add(UnityEngine.Vector2Int%2CUnityEngine.Vector2Int)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L111">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_AStarStrategy_Add_" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.Add*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_AStarStrategy_Add_UnityEngine_Vector2Int_UnityEngine_Vector2Int_" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.Add(UnityEngine.Vector2Int,UnityEngine.Vector2Int)">Add(Vector2Int, Vector2Int)</h4>
+  <div class="markdown level1 summary"><p>Adds a new pair of start and goal nodes to <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.html#BIAS_PCG_Cities_Roads_AStarStrategy__paths">_paths</a>.
+If the start node does not already exist, a empty set of goal nodes from that node is added.
+The validity of the start and goal node is not checked, since the height map in
+<a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Injector</a> may be changed externally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Add(Vector2Int start, Vector2Int goal)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector2Int</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The given start node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector2Int</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The given goal node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy_Clear.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L120">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_AStarStrategy_Clear_" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.Clear*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_AStarStrategy_Clear" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears the start and goal nodes in <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.html#BIAS_PCG_Cities_Roads_AStarStrategy__paths">_paths</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy_Generate.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L69">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_AStarStrategy_Generate_" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.Generate*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_AStarStrategy_Generate" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.Generate">Generate()</h4>
+  <div class="markdown level1 summary"><p>Implementation of <see cref="!:Interfaces.IGenerator&lt;T>.Generate()"></see>.
+Generates a road network with the optimal roads between each pair of start and goal nodes in the
+height map from <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Injector</a>.
+Iterates each pair of nodes in <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.html#BIAS_PCG_Cities_Roads_AStarStrategy__paths">_paths</a> and calculates the optimal path with <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.html#BIAS_PCG_Cities_Roads_AStarStrategy_Path_BIAS_PCG_Cities_Roads_AStarStrategy_Node_BIAS_PCG_Cities_Roads_AStarStrategy_Node_System_Single_0__0___">Path(AStarStrategy.Node, AStarStrategy.Node, Single[,])</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override RoadNetwork Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
+        <td><p>The generated <a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.Utils.Interfaces.Strategy&lt;System.Single[,], BIAS.PCG.Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy_Path_BIAS_PCG_Cities_Roads_AStarStrategy_Node_BIAS_PCG_Cities_Roads_AStarStrategy_Node_System_Single_0__0___.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy.Path(BIAS.PCG.Cities.Roads.AStarStrategy.Node%2CBIAS.PCG.Cities.Roads.AStarStrategy.Node%2CSystem.Single%5B0%3A%2C0%3A%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L140">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_AStarStrategy_Path_" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.Path*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_AStarStrategy_Path_BIAS_PCG_Cities_Roads_AStarStrategy_Node_BIAS_PCG_Cities_Roads_AStarStrategy_Node_System_Single_0__0___" data-uid="BIAS.PCG.Cities.Roads.AStarStrategy.Path(BIAS.PCG.Cities.Roads.AStarStrategy.Node,BIAS.PCG.Cities.Roads.AStarStrategy.Node,System.Single[0:,0:])">Path(AStarStrategy.Node, AStarStrategy.Node, Single[,])</h4>
+  <div class="markdown level1 summary"><p>Find the optimal path by using the A* search algorithm between a start and goal node given
+as <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a> objects.
+The optimal path is defined as the cheapest path in terms the cost between the start and goal node.
+The cost is defined as the sum of the cost of reaching the node, <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html#BIAS_PCG_Cities_Roads_AStarStrategy_Node__cost">_cost</a>, and the
+estimated cost to the goal from the node, <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html#BIAS_PCG_Cities_Roads_AStarStrategy_Node__heuristic">_heuristic</a>, as given by the A* algorithm.
+The path with the lowest cost is found by using a <span class="xref">System.Collections.Generic.SortedSet`1</span> object with a custom
+<span class="xref">System.IComparable&lt;T&gt;</span> object defined with <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html#BIAS_PCG_Cities_Roads_AStarStrategy_Node_CompareTo_BIAS_PCG_Cities_Roads_AStarStrategy_Node_">CompareTo(AStarStrategy.Node)</a>.
+The search is expanded by using <a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html#BIAS_PCG_Cities_Roads_AStarStrategy_Node_Adjacent_System_Single_0__0___System_Collections_Generic_ICollection_BIAS_PCG_Cities_Roads_AStarStrategy_Node__BIAS_PCG_Cities_Roads_AStarStrategy_Node_System_Single_">Adjacent(Single[,], ICollection&lt;AStarStrategy.Node&gt;, AStarStrategy.Node, Single)</a> of the currently cheapest node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Vector3&gt; Path(AStarStrategy.Node start, AStarStrategy.Node goal, float[, ] heights)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The given start node</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.AStarStrategy.Node.html">AStarStrategy.Node</a></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The given goal node</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span>[,]</td>
+        <td><span class="parametername">heights</span></td>
+        <td><p>The height map from <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Injector</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><p>An enumerable object of the location of the nodes is the path, given as vectors.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_AStarStrategy.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.AStarStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/AStarStrategy.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class LSystemStrategy
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class LSystemStrategy
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy">
+  
+  
+  <h1 id="BIAS_PCG_Cities_Roads_LSystemStrategy" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy" class="text-break">Class LSystemStrategy
+  </h1>
+  <div class="markdown level0 summary"><p>A strategy which is injected with a tuple of terrain data: its offset in the scene, and its height map.
+Based on this data, a road network can be generated with an L-system algorithm.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html">Strategy</a>&lt;<a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a>, <a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level2"><span class="xref">LSystemStrategy</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_CancelToken">Strategy&lt;TerrainInfo, RoadNetwork&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Strategy&lt;TerrainInfo, RoadNetwork&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Generate">Strategy&lt;TerrainInfo, RoadNetwork&gt;.Generate()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.PCG.Cities.Roads.html">BIAS.PCG.Cities.Roads</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.PCG.Cities.Roads.dll</h6>
+  <h5 id="BIAS_PCG_Cities_Roads_LSystemStrategy_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class LSystemStrategy : Strategy&lt;TerrainInfo, RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystemStrategy__ctor_BIAS_Utils_Interfaces_IInjector_BIAS_PCG_Terrain_TerrainInfo__System_Int32_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystemStrategy.%23ctor(BIAS.Utils.Interfaces.IInjector%7BBIAS.PCG.Terrain.TerrainInfo%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystemStrategy.cs/#L25">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystemStrategy__ctor_" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy.#ctor*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystemStrategy__ctor_BIAS_Utils_Interfaces_IInjector_BIAS_PCG_Terrain_TerrainInfo__System_Int32_" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy.#ctor(BIAS.Utils.Interfaces.IInjector{BIAS.PCG.Terrain.TerrainInfo},System.Int32)">LSystemStrategy(IInjector&lt;TerrainInfo&gt;, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">LSystemStrategy(IInjector&lt;TerrainInfo&gt; terrainInjector, int rewritesCount = 6)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a>&gt;</td>
+        <td><span class="parametername">terrainInjector</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rewritesCount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystemStrategy_Origin.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystemStrategy.Origin%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystemStrategy.cs/#L17">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystemStrategy_Origin_" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy.Origin*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystemStrategy_Origin" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy.Origin">Origin</h4>
+  <div class="markdown level1 summary"><p>The start point of the L-system road network generation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector2 Origin
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystemStrategy_RewritesCount.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystemStrategy.RewritesCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystemStrategy.cs/#L23">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystemStrategy_RewritesCount_" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy.RewritesCount*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystemStrategy_RewritesCount" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy.RewritesCount">RewritesCount</h4>
+  <div class="markdown level1 summary"><p>The number of times this strategy will rewrite the
+L-system before returning a road network based on it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int RewritesCount
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystemStrategy_Generate.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystemStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystemStrategy.cs/#L30">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystemStrategy_Generate_" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy.Generate*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystemStrategy_Generate" data-uid="BIAS.PCG.Cities.Roads.LSystemStrategy.Generate">Generate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override RoadNetwork Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.Utils.Interfaces.Strategy&lt;BIAS.PCG.Terrain.TerrainInfo, BIAS.PCG.Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystemStrategy.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystemStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystemStrategy.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

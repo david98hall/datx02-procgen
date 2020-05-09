@@ -1,0 +1,718 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PathObjectGenerator
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PathObjectGenerator
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.Utils.Paths.PathObjectGenerator">
+  
+  
+  <h1 id="BIAS_Utils_Paths_PathObjectGenerator" data-uid="BIAS.Utils.Paths.PathObjectGenerator" class="text-break">Class PathObjectGenerator
+  </h1>
+  <div class="markdown level0 summary"><p>Generates path game objects based on path vertices and a terrain.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">PathObjectGenerator</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.Utils.Paths.html">BIAS.Utils.Paths</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.Utils.dll</h6>
+  <h5 id="BIAS_Utils_Paths_PathObjectGenerator_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PathObjectGenerator</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator__ctor_UnityEngine_Material_.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.%23ctor(UnityEngine.Material)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L32">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator__ctor_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.#ctor*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator__ctor_UnityEngine_Material_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.#ctor(UnityEngine.Material)">PathObjectGenerator(Material)</h4>
+  <div class="markdown level1 summary"><p>Initializes this generator by setting the path material.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PathObjectGenerator(Material pathMaterial = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Material</span></td>
+        <td><span class="parametername">pathMaterial</span></td>
+        <td><p>The material to use when creating paths objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_PathMaterial.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.PathMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L21">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_PathMaterial_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.PathMaterial*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_PathMaterial" data-uid="BIAS.Utils.Paths.PathObjectGenerator.PathMaterial">PathMaterial</h4>
+  <div class="markdown level1 summary"><p>The material of the paths this generator creates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material PathMaterial { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Material</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_PathWidth.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.PathWidth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L16">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_PathWidth_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.PathWidth*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_PathWidth" data-uid="BIAS.Utils.Paths.PathObjectGenerator.PathWidth">PathWidth</h4>
+  <div class="markdown level1 summary"><p>The width of the generated path objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PathWidth { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_TerrainOffsetY.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.TerrainOffsetY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L26">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_TerrainOffsetY_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.TerrainOffsetY*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_TerrainOffsetY" data-uid="BIAS.Utils.Paths.PathObjectGenerator.TerrainOffsetY">TerrainOffsetY</h4>
+  <div class="markdown level1 summary"><p>The y-coordinate offset between the terrain and the paths.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TerrainOffsetY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_AdaptVerticesToTerrain_System_Collections_Generic_IList_UnityEngine_Vector3__UnityEngine_MeshFilter_UnityEngine_Collider_.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.AdaptVerticesToTerrain(System.Collections.Generic.IList%7BUnityEngine.Vector3%7D%2CUnityEngine.MeshFilter%2CUnityEngine.Collider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L206">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_AdaptVerticesToTerrain_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.AdaptVerticesToTerrain*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_AdaptVerticesToTerrain_System_Collections_Generic_IList_UnityEngine_Vector3__UnityEngine_MeshFilter_UnityEngine_Collider_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.AdaptVerticesToTerrain(System.Collections.Generic.IList{UnityEngine.Vector3},UnityEngine.MeshFilter,UnityEngine.Collider)">AdaptVerticesToTerrain(IList&lt;Vector3&gt;, MeshFilter, Collider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AdaptVerticesToTerrain(IList&lt;Vector3&gt; vertices, MeshFilter terrainMeshFilter, Collider terrainCollider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">vertices</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.MeshFilter</span></td>
+        <td><span class="parametername">terrainMeshFilter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Collider</span></td>
+        <td><span class="parametername">terrainCollider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_CreateGameObject_UnityEngine_Mesh_System_String_.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.CreateGameObject(UnityEngine.Mesh%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L244">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_CreateGameObject_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.CreateGameObject*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_CreateGameObject_UnityEngine_Mesh_System_String_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.CreateGameObject(UnityEngine.Mesh,System.String)">CreateGameObject(Mesh, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GameObject CreateGameObject(Mesh mesh, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Mesh</span></td>
+        <td><span class="parametername">mesh</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_CreatePathMesh_System_Collections_Generic_IList_UnityEngine_Vector3__UnityEngine_Collider_System_String_.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.CreatePathMesh(System.Collections.Generic.IList%7BUnityEngine.Vector3%7D%2CUnityEngine.Collider%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L126">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_CreatePathMesh_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.CreatePathMesh*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_CreatePathMesh_System_Collections_Generic_IList_UnityEngine_Vector3__UnityEngine_Collider_System_String_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.CreatePathMesh(System.Collections.Generic.IList{UnityEngine.Vector3},UnityEngine.Collider,System.String)">CreatePathMesh(IList&lt;Vector3&gt;, Collider, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Mesh CreatePathMesh(IList&lt;Vector3&gt; pathVertices, Collider terrainCollider, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">pathVertices</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Collider</span></td>
+        <td><span class="parametername">terrainCollider</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Mesh</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_GeneratePath_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__UnityEngine_MeshFilter_UnityEngine_Collider_System_String_.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.GeneratePath(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D%2CUnityEngine.MeshFilter%2CUnityEngine.Collider%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L106">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_GeneratePath_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.GeneratePath*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_GeneratePath_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__UnityEngine_MeshFilter_UnityEngine_Collider_System_String_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.GeneratePath(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},UnityEngine.MeshFilter,UnityEngine.Collider,System.String)">GeneratePath(IEnumerable&lt;Vector3&gt;, MeshFilter, Collider, String)</h4>
+  <div class="markdown level1 summary"><p>Generates a path GameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject GeneratePath(IEnumerable&lt;Vector3&gt; pathVertices, MeshFilter terrainMeshFilter, Collider terrainCollider, string name = &quot;Path&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">pathVertices</span></td>
+        <td><p>The vertices along the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.MeshFilter</span></td>
+        <td><span class="parametername">terrainMeshFilter</span></td>
+        <td><p>The mesh filter of the terrain mesh.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Collider</span></td>
+        <td><span class="parametername">terrainCollider</span></td>
+        <td><p>The mesh collider of the terrain mesh.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><p>A path as a GameObject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>If there are less than 2 vertices or if the SmoothingFactor is not an element of [0, 0.5].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_GeneratePathNetwork_System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_UnityEngine_Vector3___UnityEngine_MeshFilter_UnityEngine_Collider_System_String_System_String_.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.GeneratePathNetwork(System.Collections.Generic.IEnumerable%7BSystem.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D%7D%2CUnityEngine.MeshFilter%2CUnityEngine.Collider%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L48">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_GeneratePathNetwork_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.GeneratePathNetwork*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_GeneratePathNetwork_System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_UnityEngine_Vector3___UnityEngine_MeshFilter_UnityEngine_Collider_System_String_System_String_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.GeneratePathNetwork(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{UnityEngine.Vector3}},UnityEngine.MeshFilter,UnityEngine.Collider,System.String,System.String)">GeneratePathNetwork(IEnumerable&lt;IEnumerable&lt;Vector3&gt;&gt;, MeshFilter, Collider, String, String)</h4>
+  <div class="markdown level1 summary"><p>Generates a path network GameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject GeneratePathNetwork(IEnumerable&lt;IEnumerable&lt;Vector3&gt;&gt; paths, MeshFilter terrainMeshFilter, Collider terrainCollider, string pathNetworkName = &quot;Path Network&quot;, string basePathName = &quot;Path&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;&gt;</td>
+        <td><span class="parametername">paths</span></td>
+        <td><p>All the paths in the network.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.MeshFilter</span></td>
+        <td><span class="parametername">terrainMeshFilter</span></td>
+        <td><p>The mesh filter of the terrain mesh.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Collider</span></td>
+        <td><span class="parametername">terrainCollider</span></td>
+        <td><p>The mesh collider of the terrain mesh.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pathNetworkName</span></td>
+        <td><p>The name of the path network to generate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">basePathName</span></td>
+        <td><p>The base name of each path. The path index will be added at the end of each path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><p>The path network as a GameObject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_GeneratePathNetwork_System_Collections_Generic_IEnumerator_System_Collections_Generic_IEnumerable_UnityEngine_Vector3___UnityEngine_MeshFilter_UnityEngine_Collider_System_String_System_String_.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.GeneratePathNetwork(System.Collections.Generic.IEnumerator%7BSystem.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D%7D%2CUnityEngine.MeshFilter%2CUnityEngine.Collider%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L73">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_GeneratePathNetwork_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.GeneratePathNetwork*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_GeneratePathNetwork_System_Collections_Generic_IEnumerator_System_Collections_Generic_IEnumerable_UnityEngine_Vector3___UnityEngine_MeshFilter_UnityEngine_Collider_System_String_System_String_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.GeneratePathNetwork(System.Collections.Generic.IEnumerator{System.Collections.Generic.IEnumerable{UnityEngine.Vector3}},UnityEngine.MeshFilter,UnityEngine.Collider,System.String,System.String)">GeneratePathNetwork(IEnumerator&lt;IEnumerable&lt;Vector3&gt;&gt;, MeshFilter, Collider, String, String)</h4>
+  <div class="markdown level1 summary"><p>Generates a path network GameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject GeneratePathNetwork(IEnumerator&lt;IEnumerable&lt;Vector3&gt;&gt; paths, MeshFilter terrainMeshFilter, Collider terrainCollider, string pathNetworkName = &quot;Path Network&quot;, string basePathName = &quot;Path&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;&gt;</td>
+        <td><span class="parametername">paths</span></td>
+        <td><p>All the paths in the network.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.MeshFilter</span></td>
+        <td><span class="parametername">terrainMeshFilter</span></td>
+        <td><p>The mesh filter of the terrain mesh.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Collider</span></td>
+        <td><span class="parametername">terrainCollider</span></td>
+        <td><p>The mesh collider of the terrain mesh.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pathNetworkName</span></td>
+        <td><p>The name of the path network to generate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">basePathName</span></td>
+        <td><p>The base name of each path. The path index will be added at the end of each path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><p>The path network as a GameObject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator_GenerateUVs_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator.GenerateUVs(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L263">View Source</a>
+  </span>
+  <a id="BIAS_Utils_Paths_PathObjectGenerator_GenerateUVs_" data-uid="BIAS.Utils.Paths.PathObjectGenerator.GenerateUVs*"></a>
+  <h4 id="BIAS_Utils_Paths_PathObjectGenerator_GenerateUVs_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__" data-uid="BIAS.Utils.Paths.PathObjectGenerator.GenerateUVs(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})">GenerateUVs(IEnumerable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static List&lt;Vector2&gt; GenerateUVs(IEnumerable&lt;Vector3&gt; vertices)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">vertices</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">UnityEngine.Vector2</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_Utils_Paths_PathObjectGenerator.md&amp;value=---%0Auid%3A%20BIAS.Utils.Paths.PathObjectGenerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/Utils/Paths/PathObjectGenerator.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

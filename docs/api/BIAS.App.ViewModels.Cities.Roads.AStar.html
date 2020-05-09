@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AStar
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AStar
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar">
+  
+  
+  <h1 id="BIAS_App_ViewModels_Cities_Roads_AStar" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar" class="text-break">Class AStar
+  </h1>
+  <div class="markdown level0 summary"><p>View-model for displaying and generating road networks with the A* strategy.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html">ViewModel</a>&lt;<span class="xref">System.Single</span>[,], <a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div class="level2"><span class="xref">AStar</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator</a>&lt;<a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</div>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IDisplayable.html">IDisplayable</a></div>
+    <div><a class="xref" href="BIAS.Utils.Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="BIAS.App.AppEvent.html">AppEvent</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_CancelToken">ViewModel&lt;Single[,], RoadNetwork&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Injector">ViewModel&lt;Single[,], RoadNetwork&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_EventBus">ViewModel&lt;Single[,], RoadNetwork&gt;.EventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2__eventBus">ViewModel&lt;Single[,], RoadNetwork&gt;._eventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Display">ViewModel&lt;Single[,], RoadNetwork&gt;.Display()</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Generate">ViewModel&lt;Single[,], RoadNetwork&gt;.Generate()</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_OnEvent_BIAS_App_AppEvent_System_Object_System_Object_">ViewModel&lt;Single[,], RoadNetwork&gt;.OnEvent(AppEvent, Object, Object)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.App.ViewModels.Cities.Roads.html">BIAS.App.ViewModels.Cities.Roads</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.App.dll</h6>
+  <h5 id="BIAS_App_ViewModels_Cities_Roads_AStar_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class AStar : ViewModel&lt;float[, ], RoadNetwork&gt;, IGenerator&lt;RoadNetwork&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Roads_AStar__terrainSize.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Roads.AStar._terrainSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Roads/AStar.cs/#L32">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Roads_AStar__terrainSize" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar._terrainSize">_terrainSize</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">(int Width, int Depth) _terrainSize</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Int32</span>, <span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Roads_AStar_heightBias.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Roads.AStar.heightBias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Roads/AStar.cs/#L24">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Roads_AStar_heightBias" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar.heightBias">heightBias</h4>
+  <div class="markdown level1 summary"><p>Serialized height bias</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+float heightBias</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Roads_AStar_paths.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Roads.AStar.paths%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Roads/AStar.cs/#L30">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Roads_AStar_paths" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar.paths">paths</h4>
+  <div class="markdown level1 summary"><p>Serialized start and goal paths</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+List&lt;AStar.Path&gt; paths</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="BIAS.App.ViewModels.Cities.Roads.AStar.Path.html">AStar.Path</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Roads_AStar_Display.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Roads.AStar.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Roads/AStar.cs/#L40">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Roads_AStar_Display_" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar.Display*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Roads_AStar_Display" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar.Display">Display()</h4>
+  <div class="markdown level1 summary"><p>Displays the editor of the view model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Display()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.Single[,], BIAS.PCG.Cities.Roads.RoadNetwork&gt;.Display()</span></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>If no strategy is selected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Roads_AStar_Generate.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Roads.AStar.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Roads/AStar.cs/#L94">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Roads_AStar_Generate_" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar.Generate*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Roads_AStar_Generate" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar.Generate">Generate()</h4>
+  <div class="markdown level1 summary"><p>Creates a generator with the serialized values from the editor.
+Delegates the generation to the created generator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override RoadNetwork Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
+        <td><p>The result of the delegated generation call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.Single[,], BIAS.PCG.Cities.Roads.RoadNetwork&gt;.Generate()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Roads_AStar_OnEvent_BIAS_App_AppEvent_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Roads.AStar.OnEvent(BIAS.App.AppEvent%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Roads/AStar.cs/#L110">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Roads_AStar_OnEvent_" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar.OnEvent*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Roads_AStar_OnEvent_BIAS_App_AppEvent_System_Object_System_Object_" data-uid="BIAS.App.ViewModels.Cities.Roads.AStar.OnEvent(BIAS.App.AppEvent,System.Object,System.Object)">OnEvent(AppEvent, Object, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnEvent(AppEvent eventId, object eventData, object creator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.App.AppEvent.html">AppEvent</a></td>
+        <td><span class="parametername">eventId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">eventData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">creator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.Single[,], BIAS.PCG.Cities.Roads.RoadNetwork&gt;.OnEvent(BIAS.App.AppEvent, System.Object, System.Object)</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IDisplayable.html">IDisplayable</a>
+  </div>
+  <div>
+      <a class="xref" href="BIAS.Utils.Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Roads_AStar.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Roads.AStar%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Roads/AStar.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

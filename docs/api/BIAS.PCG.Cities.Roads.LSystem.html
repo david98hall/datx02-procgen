@@ -1,0 +1,782 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class LSystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class LSystem
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.PCG.Cities.Roads.LSystem">
+  
+  
+  <h1 id="BIAS_PCG_Cities_Roads_LSystem" data-uid="BIAS.PCG.Cities.Roads.LSystem" class="text-break">Class LSystem
+  </h1>
+  <div class="markdown level0 summary"><p>A way of generating roads using a non-deterministic L-system.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">LSystem</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.PCG.Cities.Roads.html">BIAS.PCG.Cities.Roads</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.PCG.Cities.Roads.dll</h6>
+  <h5 id="BIAS_PCG_Cities_Roads_LSystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class LSystem</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem__ctor_System_Char_UnityEngine_Vector2_BIAS_Utils_Interfaces_IInjector_BIAS_PCG_Terrain_TerrainInfo__.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.%23ctor(System.Char%2CUnityEngine.Vector2%2CBIAS.Utils.Interfaces.IInjector%7BBIAS.PCG.Terrain.TerrainInfo%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L58">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystem__ctor_" data-uid="BIAS.PCG.Cities.Roads.LSystem.#ctor*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem__ctor_System_Char_UnityEngine_Vector2_BIAS_Utils_Interfaces_IInjector_BIAS_PCG_Terrain_TerrainInfo__" data-uid="BIAS.PCG.Cities.Roads.LSystem.#ctor(System.Char,UnityEngine.Vector2,BIAS.Utils.Interfaces.IInjector{BIAS.PCG.Terrain.TerrainInfo})">LSystem(Char, Vector2, IInjector&lt;TerrainInfo&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">LSystem(char c, Vector2 origin, IInjector&lt;TerrainInfo&gt; terrainInjector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">c</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector2</span></td>
+        <td><span class="parametername">origin</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a>&gt;</td>
+        <td><span class="parametername">terrainInjector</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem__terrainInjector.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem._terrainInjector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L55">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem__terrainInjector" data-uid="BIAS.PCG.Cities.Roads.LSystem._terrainInjector">_terrainInjector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly IInjector&lt;TerrainInfo&gt; _terrainInjector</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_maxX.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.maxX%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L47">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_maxX" data-uid="BIAS.PCG.Cities.Roads.LSystem.maxX">maxX</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly float maxX</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_maxZ.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.maxZ%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L48">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_maxZ" data-uid="BIAS.PCG.Cities.Roads.LSystem.maxZ">maxZ</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly float maxZ</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_minX.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.minX%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L45">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_minX" data-uid="BIAS.PCG.Cities.Roads.LSystem.minX">minX</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly float minX</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_minZ.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.minZ%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L46">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_minZ" data-uid="BIAS.PCG.Cities.Roads.LSystem.minZ">minZ</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly float minZ</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_network.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.network%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L49">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_network" data-uid="BIAS.PCG.Cities.Roads.LSystem.network">network</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly RoadNetwork network</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_pi.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.pi%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L53">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_pi" data-uid="BIAS.PCG.Cities.Roads.LSystem.pi">pi</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">const float pi = 3.14159274F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_ruleset.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.ruleset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L43">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_ruleset" data-uid="BIAS.PCG.Cities.Roads.LSystem.ruleset">ruleset</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly IDictionary&lt;char, string&gt; ruleset</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_state.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.state%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L50">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_state" data-uid="BIAS.PCG.Cities.Roads.LSystem.state">state</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">LSystem.State state</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.LSystem.State.html">LSystem.State</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_states.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.states%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L51">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_states" data-uid="BIAS.PCG.Cities.Roads.LSystem.states">states</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly Queue&lt;LSystem.State&gt; states</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Queue</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Roads.LSystem.State.html">LSystem.State</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_toRad.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.toRad%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L52">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_toRad" data-uid="BIAS.PCG.Cities.Roads.LSystem.toRad">toRad</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">const float toRad = 0.0174532924F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_tree.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.tree%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L44">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_tree" data-uid="BIAS.PCG.Cities.Roads.LSystem.tree">tree</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">StringBuilder tree</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_TerrainInfo.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.TerrainInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L56">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystem_TerrainInfo_" data-uid="BIAS.PCG.Cities.Roads.LSystem.TerrainInfo*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_TerrainInfo" data-uid="BIAS.PCG.Cities.Roads.LSystem.TerrainInfo">TerrainInfo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TerrainInfo TerrainInfo
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_Grid_BIAS_PCG_Cities_Roads_LSystem_State_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.Grid(BIAS.PCG.Cities.Roads.LSystem.State)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L239">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystem_Grid_" data-uid="BIAS.PCG.Cities.Roads.LSystem.Grid*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_Grid_BIAS_PCG_Cities_Roads_LSystem_State_" data-uid="BIAS.PCG.Cities.Roads.LSystem.Grid(BIAS.PCG.Cities.Roads.LSystem.State)">Grid(LSystem.State)</h4>
+  <div class="markdown level1 summary"><p>Generates a grid with varying size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">LSystem.State Grid(LSystem.State state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.LSystem.State.html">LSystem.State</a></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>The initial state of the grid, containing position and direction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.LSystem.State.html">LSystem.State</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_isWithinMesh_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.isWithinMesh(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L330">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystem_isWithinMesh_" data-uid="BIAS.PCG.Cities.Roads.LSystem.isWithinMesh*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_isWithinMesh_UnityEngine_Vector3_" data-uid="BIAS.PCG.Cities.Roads.LSystem.isWithinMesh(UnityEngine.Vector3)">isWithinMesh(Vector3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool isWithinMesh(Vector3 pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">pos</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_noIntersects_UnityEngine_Vector3_System_Single_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.noIntersects(UnityEngine.Vector3%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L321">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystem_noIntersects_" data-uid="BIAS.PCG.Cities.Roads.LSystem.noIntersects*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_noIntersects_UnityEngine_Vector3_System_Single_" data-uid="BIAS.PCG.Cities.Roads.LSystem.noIntersects(UnityEngine.Vector3,System.Single)">noIntersects(Vector3, Single)</h4>
+  <div class="markdown level1 summary"><p>Given a position and a radius, returns the number of intersections that can be found within.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int noIntersects(Vector3 pos, float radius)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The point from which the radius is defined.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>the radius within which an intersection is considered</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>the number of intersections within the radius</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_Rewrite.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.Rewrite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L81">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystem_Rewrite_" data-uid="BIAS.PCG.Cities.Roads.LSystem.Rewrite*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_Rewrite" data-uid="BIAS.PCG.Cities.Roads.LSystem.Rewrite">Rewrite()</h4>
+  <div class="markdown level1 summary"><p>Rewrites the String within the L-system according to the ruleset, and generates roads.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Rewrite()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem_ToString.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L74">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Roads_LSystem_ToString_" data-uid="BIAS.PCG.Cities.Roads.LSystem.ToString*"></a>
+  <h4 id="BIAS_PCG_Cities_Roads_LSystem_ToString" data-uid="BIAS.PCG.Cities.Roads.LSystem.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Roads_LSystem.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Roads.LSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Roads/LSystem.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

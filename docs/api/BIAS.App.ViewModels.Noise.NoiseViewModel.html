@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NoiseViewModel
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NoiseViewModel
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel">
+  
+  
+  <h1 id="BIAS_App_ViewModels_Noise_NoiseViewModel" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel" class="text-break">Class NoiseViewModel
+  </h1>
+  <div class="markdown level0 summary"><p>The view model for noise generation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html">ViewModel</a>&lt;<span class="xref">System.Object</span>, <span class="xref">System.Single</span>[,]&gt;</div>
+    <div class="level2"><span class="xref">NoiseViewModel</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Single</span>[,]&gt;</div>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IDisplayable.html">IDisplayable</a></div>
+    <div><a class="xref" href="BIAS.Utils.Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="BIAS.App.AppEvent.html">AppEvent</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_CancelToken">ViewModel&lt;Object, Single[,]&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Injector">ViewModel&lt;Object, Single[,]&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_EventBus">ViewModel&lt;Object, Single[,]&gt;.EventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2__eventBus">ViewModel&lt;Object, Single[,]&gt;._eventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Display">ViewModel&lt;Object, Single[,]&gt;.Display()</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Generate">ViewModel&lt;Object, Single[,]&gt;.Generate()</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_OnEvent_BIAS_App_AppEvent_System_Object_System_Object_">ViewModel&lt;Object, Single[,]&gt;.OnEvent(AppEvent, Object, Object)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.App.ViewModels.Noise.html">BIAS.App.ViewModels.Noise</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.App.dll</h6>
+  <h5 id="BIAS_App_ViewModels_Noise_NoiseViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class NoiseViewModel : ViewModel&lt;object, float[, ]&gt;, IGenerator&lt;float[, ]&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Noise_NoiseViewModel__noiseStrategyVisible.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Noise/NoiseViewModel.cs/#L21">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Noise_NoiseViewModel__noiseStrategyVisible" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel._noiseStrategyVisible">_noiseStrategyVisible</h4>
+  <div class="markdown level1 summary"><p>Visibility of the noise strategy editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool _noiseStrategyVisible</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Noise_NoiseViewModel_noiseStrategy.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Noise.NoiseViewModel.noiseStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Noise/NoiseViewModel.cs/#L36">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Noise_NoiseViewModel_noiseStrategy" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.noiseStrategy">noiseStrategy</h4>
+  <div class="markdown level1 summary"><p>Serialized noise strategy that is currently selected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+NoiseViewModel.NoiseStrategy noiseStrategy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.App.ViewModels.Noise.NoiseViewModel.NoiseStrategy.html">NoiseViewModel.NoiseStrategy</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Noise_NoiseViewModel_perlinNoise.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Noise.NoiseViewModel.perlinNoise%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Noise/NoiseViewModel.cs/#L43">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Noise_NoiseViewModel_perlinNoise" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.perlinNoise">perlinNoise</h4>
+  <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="BIAS.App.ViewModels.Noise.PerlinNoise.html">PerlinNoise</a> view model.
+Is required to be explicitly defined to be serializable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+PerlinNoise perlinNoise</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.App.ViewModels.Noise.PerlinNoise.html">PerlinNoise</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Noise_NoiseViewModel_CancelToken.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Noise.NoiseViewModel.CancelToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Noise/NoiseViewModel.cs/#L62">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Noise_NoiseViewModel_CancelToken_" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.CancelToken*"></a>
+  <h4 id="BIAS_App_ViewModels_Noise_NoiseViewModel_CancelToken" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.CancelToken">CancelToken</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override CancellationToken CancelToken { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.Object, System.Single[,]&gt;.CancelToken</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Noise_NoiseViewModel_EventBus.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Noise.NoiseViewModel.EventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Noise/NoiseViewModel.cs/#L47">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Noise_NoiseViewModel_EventBus_" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.EventBus*"></a>
+  <h4 id="BIAS_App_ViewModels_Noise_NoiseViewModel_EventBus" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.EventBus">EventBus</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override EventBus&lt;AppEvent&gt; EventBus { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Services.EventBus-1.html">EventBus</a>&lt;<a class="xref" href="BIAS.App.AppEvent.html">AppEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.Object, System.Single[,]&gt;.EventBus</span></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Noise_NoiseViewModel_Display.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Noise.NoiseViewModel.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Noise/NoiseViewModel.cs/#L81">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Noise_NoiseViewModel_Display_" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.Display*"></a>
+  <h4 id="BIAS_App_ViewModels_Noise_NoiseViewModel_Display" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.Display">Display()</h4>
+  <div class="markdown level1 summary"><p>Displays the editor of noise and the view model of the currently selected noise strategy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Display()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.Object, System.Single[,]&gt;.Display()</span></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>If no strategy is selected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Noise_NoiseViewModel_Generate.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Noise.NoiseViewModel.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Noise/NoiseViewModel.cs/#L103">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Noise_NoiseViewModel_Generate_" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.Generate*"></a>
+  <h4 id="BIAS_App_ViewModels_Noise_NoiseViewModel_Generate" data-uid="BIAS.App.ViewModels.Noise.NoiseViewModel.Generate">Generate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float[, ] Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span>[,]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.Object, System.Single[,]&gt;.Generate()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IDisplayable.html">IDisplayable</a>
+  </div>
+  <div>
+      <a class="xref" href="BIAS.Utils.Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Noise_NoiseViewModel.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Noise.NoiseViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Noise/NoiseViewModel.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

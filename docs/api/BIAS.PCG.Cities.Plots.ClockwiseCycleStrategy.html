@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ClockwiseCycleStrategy
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ClockwiseCycleStrategy
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy">
+  
+  
+  <h1 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy" class="text-break">Class ClockwiseCycleStrategy
+  </h1>
+  <div class="markdown level0 summary"><p>Finds cyclic plots by always turning clockwise when searching the road network.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html">Strategy</a>&lt;<a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
+    <div class="level2"><span class="xref">ClockwiseCycleStrategy</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_CancelToken">Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Generate">Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;.Generate()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.PCG.Cities.Plots.html">BIAS.PCG.Cities.Plots</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.PCG.Cities.Plots.dll</h6>
+  <h5 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class ClockwiseCycleStrategy : Strategy&lt;RoadNetwork, IEnumerable&lt;Plot&gt;&gt;, IGenerator&lt;IEnumerable&lt;Plot&gt;&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy__ctor_BIAS_Utils_Interfaces_IInjector_BIAS_PCG_Cities_Roads_RoadNetwork__.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.%23ctor(BIAS.Utils.Interfaces.IInjector%7BBIAS.PCG.Cities.Roads.RoadNetwork%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/ClockwiseCycleStrategy.cs/#L19">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy__ctor_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.#ctor*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy__ctor_BIAS_Utils_Interfaces_IInjector_BIAS_PCG_Cities_Roads_RoadNetwork__" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.#ctor(BIAS.Utils.Interfaces.IInjector{BIAS.PCG.Cities.Roads.RoadNetwork})">ClockwiseCycleStrategy(IInjector&lt;RoadNetwork&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes the strategy with a RoadNetwork injector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ClockwiseCycleStrategy(IInjector&lt;RoadNetwork&gt; injector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Interfaces.IInjector-1.html">IInjector</a>&lt;<a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>&gt;</td>
+        <td><span class="parametername">injector</span></td>
+        <td><p>The RoadNetwork injector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_FindCycle_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_BIAS_PCG_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___System_Boolean_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.FindCycle(UnityEngine.Vector3%2CUnityEngine.Vector3%2CUnityEngine.Vector3%2CBIAS.PCG.Cities.Roads.RoadNetwork%2CSystem.Collections.Generic.ICollection%7BSystem.ValueTuple%7BUnityEngine.Vector3%2CUnityEngine.Vector3%7D%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/ClockwiseCycleStrategy.cs/#L81">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_FindCycle_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.FindCycle*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_FindCycle_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_BIAS_PCG_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___System_Boolean_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.FindCycle(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,BIAS.PCG.Cities.Roads.RoadNetwork,System.Collections.Generic.ICollection{System.ValueTuple{UnityEngine.Vector3,UnityEngine.Vector3}},System.Boolean)">FindCycle(Vector3, Vector3, Vector3, RoadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Searches for a cycle, moving clockwise from the start vertex.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyCollection&lt;Vector3&gt; FindCycle(Vector3 start, Vector3 vertex, Vector3 previous, RoadNetwork roadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt; visitedEdges, bool firstIteration = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The start vertex of the search.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">vertex</span></td>
+        <td><p>The current vertex in the search..</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">previous</span></td>
+        <td><p>The previous vertex in the search.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
+        <td><span class="parametername">roadNetwork</span></td>
+        <td><p>The road network that is being searched.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Vector3</span>, <span class="xref">UnityEngine.Vector3</span>&gt;&gt;</td>
+        <td><span class="parametername">visitedEdges</span></td>
+        <td><p>All visited edges during the search.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">firstIteration</span></td>
+        <td><p>true if it is the first iteration of the search; otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><p>A cycle if one is found when moving clockwise from the start vertex.
+null if no cycle was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_Generate.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/ClockwiseCycleStrategy.cs/#L23">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_Generate_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.Generate*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_Generate" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.Generate">Generate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Plot&gt; Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.Utils.Interfaces.Strategy&lt;BIAS.PCG.Cities.Roads.RoadNetwork, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Plots.Plot&gt;&gt;.Generate()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_GetAllCyclesXz.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.GetAllCyclesXz%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/ClockwiseCycleStrategy.cs/#L29">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_GetAllCyclesXz_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.GetAllCyclesXz*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_GetAllCyclesXz" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.GetAllCyclesXz">GetAllCyclesXz()</h4>
+  <div class="markdown level1 summary"><p>Finds all cycles in the road network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;IReadOnlyCollection&lt;Vector3&gt;&gt; GetAllCyclesXz()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;&gt;</td>
+        <td><p>All found cycles.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_TryFindCycle_UnityEngine_Vector3_BIAS_PCG_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___System_Collections_Generic_IReadOnlyCollection_UnityEngine_Vector3___.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.TryFindCycle(UnityEngine.Vector3%2CBIAS.PCG.Cities.Roads.RoadNetwork%2CSystem.Collections.Generic.ICollection%7BSystem.ValueTuple%7BUnityEngine.Vector3%2CUnityEngine.Vector3%7D%7D%2CSystem.Collections.Generic.IReadOnlyCollection%7BUnityEngine.Vector3%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/ClockwiseCycleStrategy.cs/#L56">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_TryFindCycle_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.TryFindCycle*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_TryFindCycle_UnityEngine_Vector3_BIAS_PCG_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___System_Collections_Generic_IReadOnlyCollection_UnityEngine_Vector3___" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.TryFindCycle(UnityEngine.Vector3,BIAS.PCG.Cities.Roads.RoadNetwork,System.Collections.Generic.ICollection{System.ValueTuple{UnityEngine.Vector3,UnityEngine.Vector3}},System.Collections.Generic.IReadOnlyCollection{UnityEngine.Vector3}@)">TryFindCycle(Vector3, RoadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt;, out IReadOnlyCollection&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryFindCycle(Vector3 vertex, RoadNetwork roadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt; visitedEdges, out IReadOnlyCollection&lt;Vector3&gt; cycle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">vertex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
+        <td><span class="parametername">roadNetwork</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Vector3</span>, <span class="xref">UnityEngine.Vector3</span>&gt;&gt;</td>
+        <td><span class="parametername">visitedEdges</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">cycle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_TryGetClockwiseNeighbour_UnityEngine_Vector3_UnityEngine_Vector3_BIAS_PCG_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.TryGetClockwiseNeighbour(UnityEngine.Vector3%2CUnityEngine.Vector3%2CBIAS.PCG.Cities.Roads.RoadNetwork%2CSystem.Collections.Generic.ICollection%7BSystem.ValueTuple%7BUnityEngine.Vector3%2CUnityEngine.Vector3%7D%7D%2CUnityEngine.Vector3%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/ClockwiseCycleStrategy.cs/#L130">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_TryGetClockwiseNeighbour_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.TryGetClockwiseNeighbour*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_TryGetClockwiseNeighbour_UnityEngine_Vector3_UnityEngine_Vector3_BIAS_PCG_Cities_Roads_RoadNetwork_System_Collections_Generic_ICollection_System_ValueTuple_UnityEngine_Vector3_UnityEngine_Vector3___UnityEngine_Vector3__" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.TryGetClockwiseNeighbour(UnityEngine.Vector3,UnityEngine.Vector3,BIAS.PCG.Cities.Roads.RoadNetwork,System.Collections.Generic.ICollection{System.ValueTuple{UnityEngine.Vector3,UnityEngine.Vector3}},UnityEngine.Vector3@)">TryGetClockwiseNeighbour(Vector3, Vector3, RoadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt;, out Vector3)</h4>
+  <div class="markdown level1 summary"><p>Tries to get the most clockwise and non-visited
+neighbour of the given vertex.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static bool TryGetClockwiseNeighbour(Vector3 vertex, Vector3 previous, RoadNetwork roadNetwork, ICollection&lt;(Vector3 Start, Vector3 End)&gt; visitedEdges, out Vector3 clockwiseNeighbour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">vertex</span></td>
+        <td><p>The vertex to look for neighbours from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">previous</span></td>
+        <td><p>The vertex visited directly before vertex.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a></td>
+        <td><span class="parametername">roadNetwork</span></td>
+        <td><p>The road network to look for neighbouring vertices in.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">UnityEngine.Vector3</span>, <span class="xref">UnityEngine.Vector3</span>&gt;&gt;</td>
+        <td><span class="parametername">visitedEdges</span></td>
+        <td><p>The set of already visited edges.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">clockwiseNeighbour</span></td>
+        <td><p>The neighbour that is most clockwise and reachable to the given vertex.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if a clockwise neighbour was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_Vec3ToVec2_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.Vec3ToVec2(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/ClockwiseCycleStrategy.cs/#L170">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_Vec3ToVec2_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.Vec3ToVec2*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy_Vec3ToVec2_UnityEngine_Vector3_" data-uid="BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy.Vec3ToVec2(UnityEngine.Vector3)">Vec3ToVec2(Vector3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static Vector2 Vec3ToVec2(Vector3 v)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">v</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_ClockwiseCycleStrategy.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.ClockwiseCycleStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/ClockwiseCycleStrategy.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

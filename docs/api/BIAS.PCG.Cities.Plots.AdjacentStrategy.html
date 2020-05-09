@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AdjacentStrategy
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AdjacentStrategy
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy">
+  
+  
+  <h1 id="BIAS_PCG_Cities_Plots_AdjacentStrategy" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy" class="text-break">Class AdjacentStrategy
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a>&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
+    <div class="level2"><span class="xref">AdjacentStrategy</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_CancelToken">Strategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Strategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Generate">Strategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;.Generate()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.PCG.Cities.Plots.html">BIAS.PCG.Cities.Plots</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.PCG.Cities.Plots.dll</h6>
+  <h5 id="BIAS_PCG_Cities_Plots_AdjacentStrategy_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class AdjacentStrategy : Strategy&lt;(RoadNetwork, TerrainInfo), IEnumerable&lt;Plot&gt;&gt;, IGenerator&lt;IEnumerable&lt;Plot&gt;&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_AdjacentStrategy__ctor_BIAS_Utils_Interfaces_IInjector_System_ValueTuple_BIAS_PCG_Cities_Roads_RoadNetwork_BIAS_PCG_Terrain_TerrainInfo___.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.AdjacentStrategy.%23ctor(BIAS.Utils.Interfaces.IInjector%7BSystem.ValueTuple%7BBIAS.PCG.Cities.Roads.RoadNetwork%2CBIAS.PCG.Terrain.TerrainInfo%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/AdjacentStrategy.cs/#L22">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_AdjacentStrategy__ctor_" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.#ctor*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_AdjacentStrategy__ctor_BIAS_Utils_Interfaces_IInjector_System_ValueTuple_BIAS_PCG_Cities_Roads_RoadNetwork_BIAS_PCG_Terrain_TerrainInfo___" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.#ctor(BIAS.Utils.Interfaces.IInjector{System.ValueTuple{BIAS.PCG.Cities.Roads.RoadNetwork,BIAS.PCG.Terrain.TerrainInfo}})">AdjacentStrategy(IInjector&lt;(RoadNetwork, TerrainInfo)&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes the strategy with a RoadNetwork injector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AdjacentStrategy(IInjector&lt;(RoadNetwork, TerrainInfo)&gt; injector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Roads.RoadNetwork.html">RoadNetwork</a>, <a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a>&gt;&gt;</td>
+        <td><span class="parametername">injector</span></td>
+        <td><p>The RoadNetwork injector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_AdjacentStrategy__prevPlots.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.AdjacentStrategy._prevPlots%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/AdjacentStrategy.cs/#L16">View Source</a>
+  </span>
+  <h4 id="BIAS_PCG_Cities_Plots_AdjacentStrategy__prevPlots" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy._prevPlots">_prevPlots</h4>
+  <div class="markdown level1 summary"><p>The already existing plots that will be taken into account when generating the adjacent plots.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;Plot&gt; _prevPlots</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_AdjacentStrategy_AddExistingPlots_System_Collections_Generic_IEnumerable_BIAS_PCG_Cities_Plots_Plot__.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.AdjacentStrategy.AddExistingPlots(System.Collections.Generic.IEnumerable%7BBIAS.PCG.Cities.Plots.Plot%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/AdjacentStrategy.cs/#L31">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_AdjacentStrategy_AddExistingPlots_" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.AddExistingPlots*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_AdjacentStrategy_AddExistingPlots_System_Collections_Generic_IEnumerable_BIAS_PCG_Cities_Plots_Plot__" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.AddExistingPlots(System.Collections.Generic.IEnumerable{BIAS.PCG.Cities.Plots.Plot})">AddExistingPlots(IEnumerable&lt;Plot&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds plots to the previously existing plots that will be taken into account in generation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddExistingPlots(IEnumerable&lt;Plot&gt; plots)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;</td>
+        <td><span class="parametername">plots</span></td>
+        <td><p>The already existing plots to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_AdjacentStrategy_Generate.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.AdjacentStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/AdjacentStrategy.cs/#L42">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_AdjacentStrategy_Generate_" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.Generate*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_AdjacentStrategy_Generate" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.Generate">Generate()</h4>
+  <div class="markdown level1 summary"><p>Generates differently sized rectangular plots along the road network parts. The plots that are intersecting
+with road parts or previous plots are discarded. Plots that are outside the terrain bounds are also
+discarded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Plot&gt; Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;</td>
+        <td><p>The plots that lie along the parts of the road network.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.Utils.Interfaces.Strategy&lt;System.ValueTuple&lt;BIAS.PCG.Cities.Roads.RoadNetwork, BIAS.PCG.Terrain.TerrainInfo&gt;, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Plots.Plot&gt;&gt;.Generate()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_AdjacentStrategy_PlotsAreColliding_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_BIAS_PCG_Cities_Plots_Plot__.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.AdjacentStrategy.PlotsAreColliding(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D%2CSystem.Collections.Generic.IEnumerable%7BBIAS.PCG.Cities.Plots.Plot%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/AdjacentStrategy.cs/#L152">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_AdjacentStrategy_PlotsAreColliding_" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.PlotsAreColliding*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_AdjacentStrategy_PlotsAreColliding_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__System_Collections_Generic_IEnumerable_BIAS_PCG_Cities_Plots_Plot__" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.PlotsAreColliding(System.Collections.Generic.IEnumerable{UnityEngine.Vector3},System.Collections.Generic.IEnumerable{BIAS.PCG.Cities.Plots.Plot})">PlotsAreColliding(IEnumerable&lt;Vector3&gt;, IEnumerable&lt;Plot&gt;)</h4>
+  <div class="markdown level1 summary"><p>Check for collision between the new plot and a set of other plots. Returns the boolean and mtv.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static (bool collision, Vector3 mtv) PlotsAreColliding(IEnumerable&lt;Vector3&gt; newPlot, IEnumerable&lt;Plot&gt; oldPlots)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">newPlot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;</td>
+        <td><span class="parametername">oldPlots</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Boolean</span>, <span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_AdjacentStrategy_RandomRectPlot_System_Random_UnityEngine_Vector3_UnityEngine_Vector3_System_Single_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.AdjacentStrategy.RandomRectPlot(System.Random%2CUnityEngine.Vector3%2CUnityEngine.Vector3%2CSystem.Single%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/AdjacentStrategy.cs/#L117">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_AdjacentStrategy_RandomRectPlot_" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.RandomRectPlot*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_AdjacentStrategy_RandomRectPlot_System_Random_UnityEngine_Vector3_UnityEngine_Vector3_System_Single_System_Single_System_Single_" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.RandomRectPlot(System.Random,UnityEngine.Vector3,UnityEngine.Vector3,System.Single,System.Single,System.Single)">RandomRectPlot(Random, Vector3, Vector3, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static IEnumerable&lt;Vector3&gt; RandomRectPlot(Random rand, Vector3 start, Vector3 roadVector, float maxWidth, float maxLength, float roadOffset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Random</span></td>
+        <td><span class="parametername">rand</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">roadVector</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">maxWidth</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">maxLength</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">roadOffset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_AdjacentStrategy_TerrainBounds_BIAS_PCG_Terrain_TerrainInfo_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.AdjacentStrategy.TerrainBounds(BIAS.PCG.Terrain.TerrainInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/AdjacentStrategy.cs/#L106">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Cities_Plots_AdjacentStrategy_TerrainBounds_" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.TerrainBounds*"></a>
+  <h4 id="BIAS_PCG_Cities_Plots_AdjacentStrategy_TerrainBounds_BIAS_PCG_Terrain_TerrainInfo_" data-uid="BIAS.PCG.Cities.Plots.AdjacentStrategy.TerrainBounds(BIAS.PCG.Terrain.TerrainInfo)">TerrainBounds(TerrainInfo)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static (float minX, float minZ, float maxX, float maxZ) TerrainBounds(TerrainInfo ti)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a></td>
+        <td><span class="parametername">ti</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Single</span>, <span class="xref">System.Single</span>, <span class="xref">System.Single</span>, <span class="xref">System.Single</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Cities_Plots_AdjacentStrategy.md&amp;value=---%0Auid%3A%20BIAS.PCG.Cities.Plots.AdjacentStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Cities/Plots/AdjacentStrategy.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

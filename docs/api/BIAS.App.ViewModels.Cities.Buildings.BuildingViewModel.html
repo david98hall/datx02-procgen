@@ -1,0 +1,627 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BuildingViewModel
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BuildingViewModel
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel">
+  
+  
+  <h1 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel" class="text-break">Class BuildingViewModel
+  </h1>
+  <div class="markdown level0 summary"><p>The view model for building related generators.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html">ViewModel</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Buildings.Building.html">Building</a>&gt;&gt;</div>
+    <div class="level2"><span class="xref">BuildingViewModel</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Buildings.Building.html">Building</a>&gt;&gt;</div>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IDisplayable.html">IDisplayable</a></div>
+    <div><a class="xref" href="BIAS.Utils.Services.ISubscriber-1.html">ISubscriber</a>&lt;<a class="xref" href="BIAS.App.AppEvent.html">AppEvent</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_CancelToken">ViewModel&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Injector">ViewModel&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_EventBus">ViewModel&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.EventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2__eventBus">ViewModel&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;._eventBus</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Display">ViewModel&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Display()</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_Generate">ViewModel&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Generate()</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.App.ViewModels.ViewModel-2.html#BIAS_App_ViewModels_ViewModel_2_OnEvent_BIAS_App_AppEvent_System_Object_System_Object_">ViewModel&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.OnEvent(AppEvent, Object, Object)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.App.ViewModels.Cities.Buildings.html">BIAS.App.ViewModels.Cities.Buildings</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.App.dll</h6>
+  <h5 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class BuildingViewModel : ViewModel&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;, IGenerator&lt;IEnumerable&lt;Building&gt;&gt;, IDisplayable, ISubscriber&lt;AppEvent&gt;</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel__buildingAppearanceVisible.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel._buildingAppearanceVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L65">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel__buildingAppearanceVisible" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel._buildingAppearanceVisible">_buildingAppearanceVisible</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool _buildingAppearanceVisible</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel__buildingStrategyVisible.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel._buildingStrategyVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L26">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel__buildingStrategyVisible" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel._buildingStrategyVisible">_buildingStrategyVisible</h4>
+  <div class="markdown level1 summary"><p>Visibility of the building strategy editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool _buildingStrategyVisible</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_buildingMaterial.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.buildingMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L71">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_buildingMaterial" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.buildingMaterial">buildingMaterial</h4>
+  <div class="markdown level1 summary"><p>Building material.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+Material buildingMaterial</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Material</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_buildingStrategy.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.buildingStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L41">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_buildingStrategy" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.buildingStrategy">buildingStrategy</h4>
+  <div class="markdown level1 summary"><p>Serialized building strategy that is currently selected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+BuildingViewModel.BuildingStrategy buildingStrategy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.BuildingStrategy.html">BuildingViewModel.BuildingStrategy</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_displayBuildings.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.displayBuildings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L54">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_displayBuildings" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.displayBuildings">displayBuildings</h4>
+  <div class="markdown level1 summary"><p>Boolean to set building visibility.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+bool displayBuildings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_extrusion.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.extrusion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L48">View Source</a>
+  </span>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_extrusion" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.extrusion">extrusion</h4>
+  <div class="markdown level1 summary"><p>Serialized view-model for <a class="xref" href="BIAS.App.ViewModels.Cities.Buildings.Extrusion.html">Extrusion</a> view model.
+Is required to be explicitly defined to be serializable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+Extrusion extrusion</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.App.ViewModels.Cities.Buildings.Extrusion.html">Extrusion</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_BuildingMaterial.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.BuildingMaterial%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L77">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_BuildingMaterial_" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.BuildingMaterial*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_BuildingMaterial" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.BuildingMaterial">BuildingMaterial</h4>
+  <div class="markdown level1 summary"><p>Building material getter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material BuildingMaterial { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Material</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_CancelToken.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L110">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_CancelToken_" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_CancelToken" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.CancelToken">CancelToken</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override CancellationToken CancelToken { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.ValueTuple&lt;BIAS.PCG.Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Buildings.Building&gt;&gt;.CancelToken</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildings.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L59">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildings_" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildings*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildings" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildings">DisplayBuildings</h4>
+  <div class="markdown level1 summary"><p>Getter for building visibility.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DisplayBuildings { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_EventBus.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.EventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L95">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_EventBus_" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.EventBus*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_EventBus" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.EventBus">EventBus</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override EventBus&lt;AppEvent&gt; EventBus { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Services.EventBus-1.html">EventBus</a>&lt;<a class="xref" href="BIAS.App.AppEvent.html">AppEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.ValueTuple&lt;BIAS.PCG.Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Buildings.Building&gt;&gt;.EventBus</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Injector.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Injector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L81">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Injector_" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Injector*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Injector" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Injector">Injector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">override IInjector&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;)&gt; Injector
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="BIAS.PCG.Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Plots.Plot.html">Plot</a>&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.ValueTuple&lt;BIAS.PCG.Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Buildings.Building&gt;&gt;.Injector</span></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Display.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Display%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L125">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Display_" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Display*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Display" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Display">Display()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Display()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.ValueTuple&lt;BIAS.PCG.Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Buildings.Building&gt;&gt;.Display()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildingAppearance.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildingAppearance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L154">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildingAppearance_" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildingAppearance*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_DisplayBuildingAppearance" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.DisplayBuildingAppearance">DisplayBuildingAppearance()</h4>
+  <div class="markdown level1 summary"><p>Displays the editor of the building appearance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DisplayBuildingAppearance()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Generate.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L174">View Source</a>
+  </span>
+  <a id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Generate_" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Generate*"></a>
+  <h4 id="BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel_Generate" data-uid="BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel.Generate">Generate()</h4>
+  <div class="markdown level1 summary"><p>Generates buildings with the current strategy from a enumerable of plots</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Building&gt; Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="BIAS.PCG.Cities.Buildings.Building.html">Building</a>&gt;</td>
+        <td><p>An enumerable object of buildings.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.App.ViewModels.ViewModel&lt;System.ValueTuple&lt;BIAS.PCG.Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;BIAS.PCG.Cities.Buildings.Building&gt;&gt;.Generate()</span></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>If no strategy is selected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IDisplayable.html">IDisplayable</a>
+  </div>
+  <div>
+      <a class="xref" href="BIAS.Utils.Services.ISubscriber-1.html">ISubscriber&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_App_ViewModels_Cities_Buildings_BuildingViewModel.md&amp;value=---%0Auid%3A%20BIAS.App.ViewModels.Cities.Buildings.BuildingViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/App/ViewModels/Cities/Buildings/BuildingViewModel.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,504 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class WhittakerStrategy
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class WhittakerStrategy
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="BIAS.PCG.Textures.WhittakerStrategy">
+  
+  
+  <h1 id="BIAS_PCG_Textures_WhittakerStrategy" data-uid="BIAS.PCG.Textures.WhittakerStrategy" class="text-break">Class WhittakerStrategy
+  </h1>
+  <div class="markdown level0 summary"><p>Generates 2D textures from a given height map with a simple version of a Whittaker diagram.
+A Whittaker diagram define a simple ecosystem depending on temperature and precipitation.
+This class also takes the height into consideration.
+see <see cref="!:Interfaces.IGenerator&lt;T>"></see>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.Single</span>[,], <span class="xref">UnityEngine.Texture2D</span>&gt;</div>
+    <div class="level2"><span class="xref">WhittakerStrategy</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">UnityEngine.Texture2D</span>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_CancelToken">Strategy&lt;Single[,], Texture2D&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Strategy&lt;Single[,], Texture2D&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Generate">Strategy&lt;Single[,], Texture2D&gt;.Generate()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="BIAS.PCG.Textures.html">BIAS.PCG.Textures</a></h6>
+  <h6><strong>Assembly</strong>: BIAS.PCG.Textures.dll</h6>
+  <h5 id="BIAS_PCG_Textures_WhittakerStrategy_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class WhittakerStrategy : Strategy&lt;float[, ], Texture2D&gt;, IGenerator&lt;Texture2D&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy__ctor_BIAS_Utils_Interfaces_IInjector_System_Single_0__0____.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy.%23ctor(BIAS.Utils.Interfaces.IInjector%7BSystem.Single%5B0%3A%2C0%3A%5D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L43">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Textures_WhittakerStrategy__ctor_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.#ctor*"></a>
+  <h4 id="BIAS_PCG_Textures_WhittakerStrategy__ctor_BIAS_Utils_Interfaces_IInjector_System_Single_0__0____" data-uid="BIAS.PCG.Textures.WhittakerStrategy.#ctor(BIAS.Utils.Interfaces.IInjector{System.Single[0:,0:]})">WhittakerStrategy(IInjector&lt;Single[,]&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructs a WhittakerGenerator object from a given height map injector.</p>
+<param name="heightMapInjector"> The given height map..
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">WhittakerStrategy([NotNull] IInjector&lt;float[, ]&gt; heightMapInjector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="BIAS.Utils.Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.Single</span>[,]&gt;</td>
+        <td><span class="parametername">heightMapInjector</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy_PrecipitationMap.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy.PrecipitationMap%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L27">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Textures_WhittakerStrategy_PrecipitationMap_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.PrecipitationMap*"></a>
+  <h4 id="BIAS_PCG_Textures_WhittakerStrategy_PrecipitationMap" data-uid="BIAS.PCG.Textures.WhittakerStrategy.PrecipitationMap">PrecipitationMap</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float[, ] PrecipitationMap
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span>[,]</td>
+        <td><p>Generates a precipitation map with <a class="xref" href="BIAS.PCG.Textures.WhittakerStrategy.html#BIAS_PCG_Textures_WhittakerStrategy_GenerateMap_System_Single_">GenerateMap(Single)</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy_PrecipitationScale.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy.PrecipitationScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L22">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Textures_WhittakerStrategy_PrecipitationScale_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.PrecipitationScale*"></a>
+  <h4 id="BIAS_PCG_Textures_WhittakerStrategy_PrecipitationScale" data-uid="BIAS.PCG.Textures.WhittakerStrategy.PrecipitationScale">PrecipitationScale</h4>
+  <div class="markdown level1 summary"><p>The scale used for generating a precipitation map</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float PrecipitationScale
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy_TemperatureMap.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy.TemperatureMap%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L37">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Textures_WhittakerStrategy_TemperatureMap_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.TemperatureMap*"></a>
+  <h4 id="BIAS_PCG_Textures_WhittakerStrategy_TemperatureMap" data-uid="BIAS.PCG.Textures.WhittakerStrategy.TemperatureMap">TemperatureMap</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float[, ] TemperatureMap
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span>[,]</td>
+        <td><p>Generates a temperature map with <a class="xref" href="BIAS.PCG.Textures.WhittakerStrategy.html#BIAS_PCG_Textures_WhittakerStrategy_GenerateMap_System_Single_">GenerateMap(Single)</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy_TemperatureScale.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy.TemperatureScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L32">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Textures_WhittakerStrategy_TemperatureScale_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.TemperatureScale*"></a>
+  <h4 id="BIAS_PCG_Textures_WhittakerStrategy_TemperatureScale" data-uid="BIAS.PCG.Textures.WhittakerStrategy.TemperatureScale">TemperatureScale</h4>
+  <div class="markdown level1 summary"><p>The scale used for generating a temperature map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float TemperatureScale
+{
+}</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy_ComputeColor_System_Single_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy.ComputeColor(System.Single%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L138">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Textures_WhittakerStrategy_ComputeColor_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.ComputeColor*"></a>
+  <h4 id="BIAS_PCG_Textures_WhittakerStrategy_ComputeColor_System_Single_System_Single_System_Single_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.ComputeColor(System.Single,System.Single,System.Single)">ComputeColor(Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Computes a color from a simple Whittaker ecosystem using a given height,
+precipitation and temperature.</p>
+<p>The colors of the ecosystem is defined as:
+Whittaker [Precipitation, Temperature] in [0, 0] to [1, 1]
+Gray   = [0, 0]
+White  = [1, 0]
+Yellow = [0, 1]
+Green  = [1, 1]</p>
+<p>The color is computed by interpolated between the colors using the precipitation and temperature.
+The precipitation and temperature are recalculated with the height as a bias.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static Color ComputeColor(float height, float precipitation, float temperature)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">height</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">precipitation</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">temperature</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Color</span></td>
+        <td><p>The computed color.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy_Generate.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L59">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Textures_WhittakerStrategy_Generate_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.Generate*"></a>
+  <h4 id="BIAS_PCG_Textures_WhittakerStrategy_Generate" data-uid="BIAS.PCG.Textures.WhittakerStrategy.Generate">Generate()</h4>
+  <div class="markdown level1 summary"><p>Generates the whittaker textures from the height, precipitation and temperature maps.
+See <see cref="!:Interfaces.IGenerator&lt;T>.Generate()"></see>.
+See <a class="xref" href="BIAS.PCG.Textures.WhittakerStrategy.html#BIAS_PCG_Textures_WhittakerStrategy_ComputeColor_System_Single_System_Single_System_Single_">ComputeColor(Single, Single, Single)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Texture2D Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Texture2D</span></td>
+        <td><p>The generated Texture2D object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">BIAS.Utils.Interfaces.Strategy&lt;System.Single[,], UnityEngine.Texture2D&gt;.Generate()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy_GenerateMap_System_Single_.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy.GenerateMap(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L104">View Source</a>
+  </span>
+  <a id="BIAS_PCG_Textures_WhittakerStrategy_GenerateMap_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.GenerateMap*"></a>
+  <h4 id="BIAS_PCG_Textures_WhittakerStrategy_GenerateMap_System_Single_" data-uid="BIAS.PCG.Textures.WhittakerStrategy.GenerateMap(System.Single)">GenerateMap(Single)</h4>
+  <div class="markdown level1 summary"><p>Generates a 2x2 array (map) with the same size as the height map from
+<a class="xref" href="BIAS.Utils.Interfaces.Strategy-2.html#BIAS_Utils_Interfaces_Strategy_2_Injector">Injector</a> in the range of [0, 1].
+The map is generated with <span class="xref">UnityEngine.Mathf.PerlinNoise(System.Single,System.Single)</span> with a given scale.</p>
+<param name="scale"> The given scale.
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float[, ] GenerateMap(float scale)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">scale</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span>[,]</td>
+        <td><p>The generated map.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="BIAS.Utils.Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=BIAS_PCG_Textures_WhittakerStrategy.md&amp;value=---%0Auid%3A%20BIAS.PCG.Textures.WhittakerStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/BIAS/PCG/Textures/WhittakerStrategy.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
