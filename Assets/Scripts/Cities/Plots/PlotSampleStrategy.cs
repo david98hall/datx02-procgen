@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 using Cities.Roads;
@@ -19,7 +16,7 @@ namespace Cities.Plots
         /// Initializes this strategy by setting the RoadNetwork injector.
         /// </summary>
         /// <param name="roadNetworkInjector">The RoadNetwork injector.</param>
-        public PlotSampleStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
+        internal PlotSampleStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
         {
         }
 

@@ -12,7 +12,7 @@ namespace App.ViewModels.Terrain.Textures
     /// The view model for terrain texture generation.
     /// </summary>
     [Serializable]
-    public class TextureViewModel : ViewModelStrategy<float[,], Texture2D>
+    public class TextureViewModel : ViewModel<float[,], Texture2D>
     {
         #region Texture Strategy 
 
@@ -27,7 +27,7 @@ namespace App.ViewModels.Terrain.Textures
         /// </summary>
         public enum TextureStrategy
         {
-            Whittaker // , GrayScale
+            Whittaker, GrayScale
         }
 
         /// <summary>
@@ -37,11 +37,11 @@ namespace App.ViewModels.Terrain.Textures
         private TextureStrategy textureStrategy;
         
         /// <summary>
-        /// Serialized view-model for <see cref="WhittakerStrategy"/> view model.
+        /// Serialized view-model for <see cref="Whittaker"/> view model.
         /// Is required to be explicitly defined to be serializable.
         /// </summary>
         [SerializeField] 
-        private WhittakerStrategy whittakerStrategy;
+        private Whittaker whittaker = null;
 
         /// <summary>
         /// Serialized view-model for <see cref="GrayScaleStrategy"/> view model.
@@ -60,8 +60,7 @@ namespace App.ViewModels.Terrain.Textures
                 base.Injector = value;
                 try
                 {   
-                    whittakerStrategy.Injector = value;
-                    //grayScaleStrategy.Injector = value;
+                    whittaker.Injector = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -76,8 +75,7 @@ namespace App.ViewModels.Terrain.Textures
                 base.EventBus = value;
                 try
                 {   
-                    whittakerStrategy.EventBus = value;
-                    //grayScaleStrategy.EventBus = value;
+                    whittaker.EventBus = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -92,8 +90,7 @@ namespace App.ViewModels.Terrain.Textures
                 base.CancelToken = value;
                 try
                 {   
-                    whittakerStrategy.CancelToken = value;
-                    //grayScaleStrategy.CancelToken = value;
+                    whittaker.CancelToken = value;
                 }
                 catch (NullReferenceException)
                 {}
@@ -113,16 +110,8 @@ namespace App.ViewModels.Terrain.Textures
             textureStrategy = (TextureStrategy) EditorGUILayout.EnumPopup("Strategy", textureStrategy);
 
             EditorGUI.indentLevel++;
-            switch (textureStrategy)
-            {
-                // case TextureStrategy.GrayScale:
-                    // break;
-                case TextureStrategy.Whittaker:
-                    whittakerStrategy.Display();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            if (textureStrategy == TextureStrategy.Whittaker) 
+                whittaker.Display();
 
             EditorGUI.indentLevel--;
             EditorGUI.indentLevel--;
@@ -139,10 +128,13 @@ namespace App.ViewModels.Terrain.Textures
             Texture2D texture;
             switch (textureStrategy)
             {
-                // case TextureStrategy.GrayScale:
-                    // return new Factory(Injector).CreateGrayScaleStrategy().Generate();
+                case TextureStrategy.GrayScale:
+                    var generator = new Factory(Injector).CreateGrayScaleStrategy();
+                    // Set the cancellation token so that the generation can be canceled
+                    generator.CancelToken = CancelToken;
+                    return generator.Generate();
                 case TextureStrategy.Whittaker:
-                    texture = whittakerStrategy.Generate();
+                    texture = whittaker.Generate();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

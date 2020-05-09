@@ -7,6 +7,9 @@ using Extensions;
 
 namespace Utils.Geometry
 {
+    /// <summary>
+    /// 2D geometry math utility methods.
+    /// </summary>
     public static class Maths2D
     {
         public static float PseudoDistanceFromPointToLine(Vector2 a, Vector2 b, Vector2 c)

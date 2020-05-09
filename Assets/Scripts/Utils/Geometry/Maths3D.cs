@@ -1,11 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using static System.Math;
 
 namespace Utils.Geometry
 {
     /// <summary>
-    /// 3D math utility methods.
+    /// 3D geometry math utility methods.
     /// </summary>
     public static class Maths3D
     {

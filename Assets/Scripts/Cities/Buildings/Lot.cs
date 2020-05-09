@@ -1,40 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using Cities.Plots;
+using Utils.Geometry;
 
-/// <summary>
-/// Contains exactly one building.
-/// Contains area, center and facing for building generation operations.
-/// </summary>
-public class Lot
+namespace Cities.Buildings
 {
-    public readonly float area;
-    //public readonly Vector3 center;
-    public readonly Vector2 facing;
-
     /// <summary>
-    /// The polygonal shape of the lot.
+    /// Contains exactly one building.
+    /// Contains area, center and facing for building generation operations.
     /// </summary>
-    internal IEnumerable<Vector3> Vertices { get; }
-
-    public Lot(IEnumerable<Vector3> vertices)
+    internal class Lot
     {
-        Vertices = vertices;
+        internal readonly float area;
+        //public readonly Vector3 center;
+        // internal readonly Vector2 facing;
 
-        List<Vector3> v = vertices.ToList();
-        float area = 0;
-        for (int i = 1; i < v.Count; i++)
+        /// <summary>
+        /// The polygonal shape of the lot.
+        /// </summary>
+        internal IList<Vector3> Vertices { get; }
+
+        internal Lot(IList<Vector3> vertices)
         {
-            float a = v[i - 1].x * v[i].z;
-            float b = v[i - 1].z * v[i].x;
+            Vertices = vertices;
 
-            area += (a - b);
+            this.area = Maths2D.CalculatePolygonArea((IEnumerable<Vector2>) ToXZ(vertices));
         }
-        this.area = Mathf.Abs(area / 2);
 
-        //this.center = center;
-        //this.facing = facing;
+        private List<Vector2> ToXZ(IEnumerable<Vector3> vecs)
+        {
+            List<Vector2> vecsXZ = new List<Vector2>();
+
+            foreach (Vector3 v in vecs)
+            {
+                vecsXZ.Add(new Vector2(v.x, v.z));
+            }
+            return vecsXZ;
+        }
     }
 }

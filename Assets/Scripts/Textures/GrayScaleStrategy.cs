@@ -1,5 +1,6 @@
 ﻿using Interfaces;
 using UnityEngine;
+using Utils.Parallelism;
 
 namespace Textures
 {
@@ -47,10 +48,13 @@ namespace Textures
 
         private static Texture2D CreateColoredTexture(Color[] pixelColors, int width, int height)
         {
-            var texture = new Texture2D(width, height);
-            texture.SetPixels(pixelColors);
-            texture.Apply();
-            return texture;
+            return Dispatcher.Instance.EnqueueFunction(() =>
+            {
+                var texture = new Texture2D(width, height);
+                texture.SetPixels(pixelColors);
+                texture.Apply();
+                return texture;
+            });
         }
         
     }

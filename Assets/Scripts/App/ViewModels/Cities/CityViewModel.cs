@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using App.ViewModels.Cities.Buildings;
 using App.ViewModels.Cities.Plots;
@@ -21,7 +20,7 @@ namespace App.ViewModels.Cities
     /// View-model for displaying and generating a city
     /// </summary>
     [Serializable]
-    public class CityViewModel : ViewModelStrategy<TerrainInfo, City>
+    public class CityViewModel : ViewModel<TerrainInfo, City>
     {
         /// <summary>
         /// Visibility of the editor.
@@ -29,13 +28,13 @@ namespace App.ViewModels.Cities
         private bool _visible;
 
         [SerializeField]
-        private RoadViewModel roadViewModel;
+        private RoadViewModel roadViewModel = null;
         
         [SerializeField]
-        private PlotViewModel plotViewModel;
+        private PlotViewModel plotViewModel = null;
         
         [SerializeField]
-        private BuildingViewModel buildingViewModel;
+        private BuildingViewModel buildingViewModel = null;
 
         #region View Model Properties
         /// <summary>

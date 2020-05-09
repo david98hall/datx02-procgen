@@ -14,7 +14,7 @@ namespace App.ViewModels.Terrain
     /// View-model for displaying and generating terrain
     /// </summary>
     [Serializable]
-    public class TerrainViewModel : ViewModelStrategy<object, (Mesh, Texture2D)>
+    public class TerrainViewModel : ViewModel<object, (Mesh, Texture2D)>
     {
         /// <summary>
         /// Visibility of the editor.
@@ -34,10 +34,10 @@ namespace App.ViewModels.Terrain
         private float heightScale;
 
         [SerializeField]
-        private NoiseViewModel noiseViewModel;
+        private NoiseViewModel noiseViewModel = null;
         
         [SerializeField]
-        private TextureViewModel textureViewModel;
+        private TextureViewModel textureViewModel = null;
 
         public override EventBus<AppEvent> EventBus
         {

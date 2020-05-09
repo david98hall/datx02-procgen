@@ -106,7 +106,7 @@
   <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
   <h5 id="Cities_Roads_LSystem_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class LSystem</code></pre>
+    <pre><code class="lang-csharp hljs">class LSystem</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -123,7 +123,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LSystem(char c, Vector2 origin, IInjector&lt;TerrainInfo&gt; terrainInjector)</code></pre>
+    <pre><code class="lang-csharp hljs">LSystem(char c, Vector2 origin, IInjector&lt;TerrainInfo&gt; terrainInjector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -195,7 +195,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">float maxX</code></pre>
+    <pre><code class="lang-csharp hljs">readonly float maxX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -224,7 +224,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">float maxZ</code></pre>
+    <pre><code class="lang-csharp hljs">readonly float maxZ</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -253,7 +253,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">float minX</code></pre>
+    <pre><code class="lang-csharp hljs">readonly float minX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -282,7 +282,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">float minZ</code></pre>
+    <pre><code class="lang-csharp hljs">readonly float minZ</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -311,7 +311,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RoadNetwork network</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly RoadNetwork network</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -340,7 +340,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">float pi</code></pre>
+    <pre><code class="lang-csharp hljs">const float pi = 3.14159274F</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -369,7 +369,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IDictionary&lt;char, string&gt; ruleset</code></pre>
+    <pre><code class="lang-csharp hljs">readonly IDictionary&lt;char, string&gt; ruleset</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -427,7 +427,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Queue&lt;LSystem.State&gt; states</code></pre>
+    <pre><code class="lang-csharp hljs">readonly Queue&lt;LSystem.State&gt; states</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -456,7 +456,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">float toRad</code></pre>
+    <pre><code class="lang-csharp hljs">const float toRad = 0.0174532924F</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -543,7 +543,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystem_Grid_Cities_Roads_LSystem_State_.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystem.Grid(Cities.Roads.LSystem.State)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystem.cs/#L238">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystem.cs/#L239">View Source</a>
   </span>
   <a id="Cities_Roads_LSystem_Grid_" data-uid="Cities.Roads.LSystem.Grid*"></a>
   <h4 id="Cities_Roads_LSystem_Grid_Cities_Roads_LSystem_State_" data-uid="Cities.Roads.LSystem.Grid(Cities.Roads.LSystem.State)">Grid(LSystem.State)</h4>
@@ -592,7 +592,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystem_isWithinMesh_UnityEngine_Vector3_.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystem.isWithinMesh(UnityEngine.Vector3)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystem.cs/#L329">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystem.cs/#L330">View Source</a>
   </span>
   <a id="Cities_Roads_LSystem_isWithinMesh_" data-uid="Cities.Roads.LSystem.isWithinMesh*"></a>
   <h4 id="Cities_Roads_LSystem_isWithinMesh_UnityEngine_Vector3_" data-uid="Cities.Roads.LSystem.isWithinMesh(UnityEngine.Vector3)">isWithinMesh(Vector3)</h4>
@@ -639,7 +639,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystem_noIntersects_UnityEngine_Vector3_System_Single_.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystem.noIntersects(UnityEngine.Vector3%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystem.cs/#L320">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystem.cs/#L321">View Source</a>
   </span>
   <a id="Cities_Roads_LSystem_noIntersects_" data-uid="Cities.Roads.LSystem.noIntersects*"></a>
   <h4 id="Cities_Roads_LSystem_noIntersects_UnityEngine_Vector3_System_Single_" data-uid="Cities.Roads.LSystem.noIntersects(UnityEngine.Vector3,System.Single)">noIntersects(Vector3, Single)</h4>
@@ -695,7 +695,7 @@
     <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Roads_LSystem_Rewrite.md&amp;value=---%0Auid%3A%20Cities.Roads.LSystem.Rewrite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystem.cs/#L80">View Source</a>
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Roads/LSystem.cs/#L81">View Source</a>
   </span>
   <a id="Cities_Roads_LSystem_Rewrite_" data-uid="Cities.Roads.LSystem.Rewrite*"></a>
   <h4 id="Cities_Roads_LSystem_Rewrite" data-uid="Cities.Roads.LSystem.Rewrite">Rewrite()</h4>
@@ -704,7 +704,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Rewrite()</code></pre>
+    <pre><code class="lang-csharp hljs">void Rewrite()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>

@@ -17,7 +17,7 @@ namespace Cities.Plots
         /// Initializes the strategy with a RoadNetwork injector.
         /// </summary>
         /// <param name="injector">The RoadNetwork injector.</param>
-        public CombinedStrategy(IInjector<(RoadNetwork, TerrainInfo)> injector) : base(injector)
+        internal CombinedStrategy(IInjector<(RoadNetwork, TerrainInfo)> injector) : base(injector)
         {
             _adjacentStrategy = new AdjacentStrategy(injector);
 

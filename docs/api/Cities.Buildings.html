@@ -77,8 +77,21 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
+      <h4><a class="xref" href="Cities.Buildings.Building.html">Building</a></h4>
+      <section><p>Generated buildings. Each building is defined by its vertices, bounds, position and facing.</p>
+</section>
+      <h4><a class="xref" href="Cities.Buildings.ExtrusionStrategy.html">ExtrusionStrategy</a></h4>
+      <section><p>Generator for buildings.
+Will use strategy to construct building according to lot shape and population density (NYI).
+Some plots are suitable for multiple buildings; these should be split into street-bordering
+buildings and a central green area. This can be done by a Lot generator.</p>
+</section>
       <h4><a class="xref" href="Cities.Buildings.Factory.html">Factory</a></h4>
       <section><p>Creates strategies for generating buildings.</p>
+</section>
+      <h4><a class="xref" href="Cities.Buildings.Lot.html">Lot</a></h4>
+      <section><p>Contains exactly one building.
+Contains area, center and facing for building generation operations.</p>
 </section>
 </article>
           </div>

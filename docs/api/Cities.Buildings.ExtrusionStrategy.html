@@ -1,0 +1,816 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ExtrusionStrategy
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ExtrusionStrategy
+   ">
+    <meta name="generator" content="docfx 2.50.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Cities.Buildings.ExtrusionStrategy">
+  
+  
+  <h1 id="Cities_Buildings_ExtrusionStrategy" data-uid="Cities.Buildings.ExtrusionStrategy" class="text-break">Class ExtrusionStrategy
+  </h1>
+  <div class="markdown level0 summary"><p>Generator for buildings.
+Will use strategy to construct building according to lot shape and population density (NYI).
+Some plots are suitable for multiple buildings; these should be split into street-bordering
+buildings and a central green area. This can be done by a Lot generator.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Interfaces.Strategy-2.html">Strategy</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Buildings.Building.html">Building</a>&gt;&gt;</div>
+    <div class="level2"><span class="xref">ExtrusionStrategy</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Interfaces.IGenerator-1.html">IGenerator</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Buildings.Building.html">Building</a>&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_CancelToken">Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.CancelToken</a>
+    </div>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Injector">Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Injector</a>
+    </div>
+    <div>
+      <a class="xref" href="Interfaces.Strategy-2.html#Interfaces_Strategy_2_Generate">Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;.Generate()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cities.Buildings.html">Cities.Buildings</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="Cities_Buildings_ExtrusionStrategy_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">class ExtrusionStrategy : Strategy&lt;(TerrainInfo, IEnumerable&lt;Plot&gt;), IEnumerable&lt;Building&gt;&gt;, IGenerator&lt;IEnumerable&lt;Building&gt;&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy__ctor_Interfaces_IInjector_System_ValueTuple_Terrain_TerrainInfo_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.%23ctor(Interfaces.IInjector%7BSystem.ValueTuple%7BTerrain.TerrainInfo%2CSystem.Collections.Generic.IEnumerable%7BCities.Plots.Plot%7D%7D%7D%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L63">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy__ctor_" data-uid="Cities.Buildings.ExtrusionStrategy.#ctor*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy__ctor_Interfaces_IInjector_System_ValueTuple_Terrain_TerrainInfo_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____System_Single_System_Single_" data-uid="Cities.Buildings.ExtrusionStrategy.#ctor(Interfaces.IInjector{System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}},System.Single,System.Single)">ExtrusionStrategy(IInjector&lt;(TerrainInfo TerrainInfo, IEnumerable&lt;Plot&gt; Plots)&gt;, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Construct a building extrusion strategy, using injector inputs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ExtrusionStrategy(IInjector&lt;(TerrainInfo TerrainInfo, IEnumerable&lt;Plot&gt; Plots)&gt; injector, float minArea, float maxArea)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Interfaces.IInjector-1.html">IInjector</a>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="Terrain.TerrainInfo.html">TerrainInfo</a>, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Plots.Plot.html">Plot</a>&gt;&gt;&gt;</td>
+        <td><span class="parametername">injector</span></td>
+        <td><p>The injector for height map and plots.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">minArea</span></td>
+        <td><p>The minimal area of lot.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">maxArea</span></td>
+        <td><p>The maximal area of lot.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_buildings.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.buildings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L33">View Source</a>
+  </span>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_buildings" data-uid="Cities.Buildings.ExtrusionStrategy.buildings">buildings</h4>
+  <div class="markdown level1 summary"><p>The generated buildings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;Building&gt; buildings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Cities.Buildings.Building.html">Building</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_heatMap.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.heatMap%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L38">View Source</a>
+  </span>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_heatMap" data-uid="Cities.Buildings.ExtrusionStrategy.heatMap">heatMap</h4>
+  <div class="markdown level1 summary"><p>Population heat map for determining building types and height.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float[, ] heatMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span>[,]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_maxArea.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.maxArea%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L53">View Source</a>
+  </span>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_maxArea" data-uid="Cities.Buildings.ExtrusionStrategy.maxArea">maxArea</h4>
+  <div class="markdown level1 summary"><p>Maximal lot area for a building to be placed on it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly float maxArea</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_minArea.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.minArea%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L48">View Source</a>
+  </span>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_minArea" data-uid="Cities.Buildings.ExtrusionStrategy.minArea">minArea</h4>
+  <div class="markdown level1 summary"><p>Minimal lot area for a building to be placed on it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">readonly float minArea</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_plots.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.plots%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L28">View Source</a>
+  </span>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_plots" data-uid="Cities.Buildings.ExtrusionStrategy.plots">plots</h4>
+  <div class="markdown level1 summary"><p>The plots to generate buildings on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable plots</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IEnumerable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_BuildMesh_System_Collections_Generic_ICollection_UnityEngine_Vector3__System_Collections_Generic_ICollection_System_Int32__.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.BuildMesh(System.Collections.Generic.ICollection%7BUnityEngine.Vector3%7D%2CSystem.Collections.Generic.ICollection%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L292">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_BuildMesh_" data-uid="Cities.Buildings.ExtrusionStrategy.BuildMesh*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_BuildMesh_System_Collections_Generic_ICollection_UnityEngine_Vector3__System_Collections_Generic_ICollection_System_Int32__" data-uid="Cities.Buildings.ExtrusionStrategy.BuildMesh(System.Collections.Generic.ICollection{UnityEngine.Vector3},System.Collections.Generic.ICollection{System.Int32})">BuildMesh(ICollection&lt;Vector3&gt;, ICollection&lt;Int32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructs a mesh out of the given vertices and triangles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Mesh BuildMesh(ICollection&lt;Vector3&gt; verts, ICollection&lt;int&gt; tris)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">verts</span></td>
+        <td><p>The list of points to add to the mesh.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">tris</span></td>
+        <td><p>The indices for the vertex array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Mesh</span></td>
+        <td><p>The mesh constructed from the arrays.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_ConstructSideFaces_System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_System_Int32__.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.ConstructSideFaces(System.Collections.Generic.IList%7BUnityEngine.Vector3%7D%2CSystem.Collections.Generic.IList%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L252">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_ConstructSideFaces_" data-uid="Cities.Buildings.ExtrusionStrategy.ConstructSideFaces*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_ConstructSideFaces_System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_System_Int32__" data-uid="Cities.Buildings.ExtrusionStrategy.ConstructSideFaces(System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{System.Int32})">ConstructSideFaces(IList&lt;Vector3&gt;, IList&lt;Int32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructs a simple face of 4 vertices for each edge, connecting the extruded polygon
+to the base one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">(ICollection&lt;Vector3&gt;, ICollection&lt;int&gt;) ConstructSideFaces(IList&lt;Vector3&gt; verts, IList&lt;int&gt; tris)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">verts</span></td>
+        <td><p>The full list of vertices.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">tris</span></td>
+        <td><p>The full list of triangles.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;, <span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Int32</span>&gt;&gt;</td>
+        <td><p>The provided vertices and triangles with added sides.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_ExtrudePolygon_System_Collections_Generic_IList_UnityEngine_Vector3__System_Single_.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.ExtrudePolygon(System.Collections.Generic.IList%7BUnityEngine.Vector3%7D%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L221">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_ExtrudePolygon_" data-uid="Cities.Buildings.ExtrusionStrategy.ExtrudePolygon*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_ExtrudePolygon_System_Collections_Generic_IList_UnityEngine_Vector3__System_Single_" data-uid="Cities.Buildings.ExtrusionStrategy.ExtrudePolygon(System.Collections.Generic.IList{UnityEngine.Vector3},System.Single)">ExtrudePolygon(IList&lt;Vector3&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Extends a polygon upwards and connects the vertices on the sides.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">(ICollection&lt;Vector3&gt;, ICollection&lt;int&gt;) ExtrudePolygon(IList&lt;Vector3&gt; vertices, float distance)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">vertices</span></td>
+        <td><p>The points of the original 2D shape.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to extend the polygon.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;, <span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Int32</span>&gt;&gt;</td>
+        <td><p>A tuple of the new vertex and index list.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_Generate.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.Generate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L83">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_Generate_" data-uid="Cities.Buildings.ExtrusionStrategy.Generate*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_Generate" data-uid="Cities.Buildings.ExtrusionStrategy.Generate">Generate()</h4>
+  <div class="markdown level1 summary"><p>Generate all buildings in all the supplied plots. Can be used with a lot generator
+or just a single plot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Building&gt; Generate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Cities.Buildings.Building.html">Building</a>&gt;</td>
+        <td><p>The set of all generated buildings.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Interfaces.Strategy&lt;System.ValueTuple&lt;Terrain.TerrainInfo, System.Collections.Generic.IEnumerable&lt;Cities.Plots.Plot&gt;&gt;, System.Collections.Generic.IEnumerable&lt;Cities.Buildings.Building&gt;&gt;.Generate()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_GetBuildings_System_Collections_Generic_ICollection_Cities_Buildings_Lot__.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.GetBuildings(System.Collections.Generic.ICollection%7BCities.Buildings.Lot%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L113">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_GetBuildings_" data-uid="Cities.Buildings.ExtrusionStrategy.GetBuildings*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_GetBuildings_System_Collections_Generic_ICollection_Cities_Buildings_Lot__" data-uid="Cities.Buildings.ExtrusionStrategy.GetBuildings(System.Collections.Generic.ICollection{Cities.Buildings.Lot})">GetBuildings(ICollection&lt;Lot&gt;)</h4>
+  <div class="markdown level1 summary"><p>Generate all buildings in a set of lots. Will only generate one building per lot.
+These may be convex or concave shapes, and the building appearance will be based on it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void GetBuildings(ICollection&lt;Lot&gt; lots)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Cities.Buildings.Lot.html">Lot</a>&gt;</td>
+        <td><span class="parametername">lots</span></td>
+        <td><p>The lots to generate a building in.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_MinimumHeightInBounds_System_Collections_Generic_IList_UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds(System.Collections.Generic.IList%7BUnityEngine.Vector3%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L192">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_MinimumHeightInBounds_" data-uid="Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_MinimumHeightInBounds_System_Collections_Generic_IList_UnityEngine_Vector3__" data-uid="Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds(System.Collections.Generic.IList{UnityEngine.Vector3})">MinimumHeightInBounds(IList&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Get the minimum height in the bounding box of the building, ensuring it is below
+terrain height.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float MinimumHeightInBounds(IList&lt;Vector3&gt; poly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">poly</span></td>
+        <td><p>The polygonal shape.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The minimum value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_SetBaseHeight_System_Collections_Generic_IList_UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.SetBaseHeight(System.Collections.Generic.IList%7BUnityEngine.Vector3%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L157">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_SetBaseHeight_" data-uid="Cities.Buildings.ExtrusionStrategy.SetBaseHeight*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_SetBaseHeight_System_Collections_Generic_IList_UnityEngine_Vector3__" data-uid="Cities.Buildings.ExtrusionStrategy.SetBaseHeight(System.Collections.Generic.IList{UnityEngine.Vector3})">SetBaseHeight(IList&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the height of the terrain for each building base vertex, as well as the minimum
+height for any points under the shape so that it is always under the mesh.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">(IList&lt;Vector3&gt; vertices, float max) SetBaseHeight(IList&lt;Vector3&gt; poly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">poly</span></td>
+        <td><p>The polygonal 2D shape of the building.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;, <span class="xref">System.Single</span>&gt;</td>
+        <td><p>The y-translated shape and the maximum height.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_ToXZ_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.ToXZ(System.Collections.Generic.IEnumerable%7BUnityEngine.Vector3%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L307">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_ToXZ_" data-uid="Cities.Buildings.ExtrusionStrategy.ToXZ*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_ToXZ_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__" data-uid="Cities.Buildings.ExtrusionStrategy.ToXZ(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})">ToXZ(IEnumerable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;Vector2&gt; ToXZ(IEnumerable&lt;Vector3&gt; vecs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="parametername">vecs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">UnityEngine.Vector2</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy_ValidLot_Cities_Buildings_Lot_.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy.ValidLot(Cities.Buildings.Lot)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L146">View Source</a>
+  </span>
+  <a id="Cities_Buildings_ExtrusionStrategy_ValidLot_" data-uid="Cities.Buildings.ExtrusionStrategy.ValidLot*"></a>
+  <h4 id="Cities_Buildings_ExtrusionStrategy_ValidLot_Cities_Buildings_Lot_" data-uid="Cities.Buildings.ExtrusionStrategy.ValidLot(Cities.Buildings.Lot)">ValidLot(Lot)</h4>
+  <div class="markdown level1 summary"><p>Check the parameters to determine whether a building can be placed inside the lot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ValidLot(Lot lot)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cities.Buildings.Lot.html">Lot</a></td>
+        <td><span class="parametername">lot</span></td>
+        <td><p>The lot to potentially place the building in.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Can be placed or not.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Interfaces.IGenerator-1.html">IGenerator&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/new/master/apiSpec/new?filename=Cities_Buildings_ExtrusionStrategy.md&amp;value=---%0Auid%3A%20Cities.Buildings.ExtrusionStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/david98hall/datx02-procgen/blob/master/Assets/Scripts/Cities/Buildings/ExtrusionStrategy.cs/#L21" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -16,7 +16,7 @@ namespace Cities.Plots
         /// Initializes the strategy with a RoadNetwork injector.
         /// </summary>
         /// <param name="injector">The RoadNetwork injector.</param>
-        public ClockwiseCycleStrategy(IInjector<RoadNetwork> injector) : base(injector)
+        internal ClockwiseCycleStrategy(IInjector<RoadNetwork> injector) : base(injector)
         {
         }
 
@@ -26,7 +26,7 @@ namespace Cities.Plots
         /// Finds all cycles in the road network.
         /// </summary>
         /// <returns>All found cycles.</returns>
-        protected IEnumerable<IReadOnlyCollection<Vector3>> GetAllCyclesXz()
+        private IEnumerable<IReadOnlyCollection<Vector3>> GetAllCyclesXz()
         {
             // XZ-projection of the undirected road network
             var roadNetwork = Injector.Get().GetXZProjection().GetAsUndirected();
@@ -167,7 +167,7 @@ namespace Cities.Plots
         
         // Converts a Vector3 to a Vector2 with
         // Vector3's z-coordinate as the Vector2's y-coordinate
-        protected static Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
+        private static Vector2 Vec3ToVec2(Vector3 v) => new Vector2(v.x, v.z);
         
     }
 }

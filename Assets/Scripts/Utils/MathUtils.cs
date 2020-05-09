@@ -1,5 +1,5 @@
 ﻿using System;
-using Utils.Concurrency;
+using Utils.Parallelism;
 using Random = UnityEngine.Random;
 
 namespace Utils

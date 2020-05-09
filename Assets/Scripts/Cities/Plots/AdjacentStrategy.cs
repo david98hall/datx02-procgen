@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Xml.Schema;
 using UnityEngine;
 using Cities.Roads;
 using Interfaces;
@@ -22,7 +19,7 @@ namespace Cities.Plots
         /// Initializes the strategy with a RoadNetwork injector.
         /// </summary>
         /// <param name="injector">The RoadNetwork injector.</param>
-        public AdjacentStrategy(IInjector<(RoadNetwork, TerrainInfo)> injector) : base(injector)
+        internal AdjacentStrategy(IInjector<(RoadNetwork, TerrainInfo)> injector) : base(injector)
         {
             _prevPlots = new HashSet<Plot>();
         }
@@ -31,7 +28,7 @@ namespace Cities.Plots
         /// Adds plots to the previously existing plots that will be taken into account in generation.
         /// </summary>
         /// <param name="plots">The already existing plots to add.</param>
-        public void AddExistingPlots(IEnumerable<Plot> plots)
+        internal void AddExistingPlots(IEnumerable<Plot> plots)
         {
             _prevPlots = _prevPlots.Concat(plots);
         }
