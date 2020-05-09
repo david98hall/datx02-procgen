@@ -117,7 +117,7 @@ namespace Cities.Roads
         /// <summary>
         /// Clears the start and goal nodes in <see cref="_paths"/>.
         /// </summary>
-        public void Clear() => _paths.Clear();
+        internal void Clear() => _paths.Clear();
 
         #endregion
 

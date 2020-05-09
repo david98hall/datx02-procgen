@@ -8,18 +8,18 @@ using Cities.Plots;
 /// Contains exactly one building.
 /// Contains area, center and facing for building generation operations.
 /// </summary>
-public class Lot
+internal class Lot
 {
-    public readonly float area;
+    internal readonly float area;
     //public readonly Vector3 center;
-    public readonly Vector2 facing;
+    internal readonly Vector2 facing;
 
     /// <summary>
     /// The polygonal shape of the lot.
     /// </summary>
     internal IEnumerable<Vector3> Vertices { get; }
 
-    public Lot(IEnumerable<Vector3> vertices)
+    internal Lot(IEnumerable<Vector3> vertices)
     {
         Vertices = vertices;
 

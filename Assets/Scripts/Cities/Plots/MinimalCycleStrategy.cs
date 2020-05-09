@@ -29,7 +29,7 @@ namespace Cities.Plots
         /// Initializes the strategy with a RoadNetwork injector.
         /// </summary>
         /// <param name="injector">The RoadNetwork injector.</param>
-        public MinimalCycleStrategy(IInjector<RoadNetwork> injector) : base(injector)
+        internal MinimalCycleStrategy(IInjector<RoadNetwork> injector) : base(injector)
         {
             _clockwiseCycleStrategy = new ClockwiseCycleStrategy(injector);
         }

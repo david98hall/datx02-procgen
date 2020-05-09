@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Extensions;
@@ -17,7 +16,7 @@ using Utils.Parallelism;
 /// Some plots are suitable for multiple buildings; these should be split into street-bordering 
 /// buildings and a central green area. This can be done by a Lot generator.
 /// </summary>
-public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
+internal class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnumerable<Building>>
 {
     #region Fields
 
@@ -59,7 +58,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     /// <param name="injector">The injector for height map and plots.</param>
     /// <param name="minArea">The minimal area of lot.</param>
     /// <param name="maxArea">The maximal area of lot.</param>
-    public ExtrusionStrategy(
+    internal ExtrusionStrategy(
         IInjector<(TerrainInfo TerrainInfo, IEnumerable<Plot> Plots)> injector, 
         float minArea, 
         float maxArea) 
@@ -109,7 +108,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     /// These may be convex or concave shapes, and the building appearance will be based on it.
     /// </summary>
     /// <param name="lots">The lots to generate a building in.</param>
-    public void GetBuildings(ICollection<Lot> lots)
+    private void GetBuildings(ICollection<Lot> lots)
     {
         foreach (Lot lot in lots)
         {

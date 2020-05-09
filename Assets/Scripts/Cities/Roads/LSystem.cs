@@ -12,21 +12,21 @@ namespace Cities.Roads
     /// <summary>
     /// A way of generating roads using a non-deterministic L-system.
     /// </summary>
-    public class LSystem
+    internal class LSystem
     {
         /// <summary>
         /// Describes the position and direction of the L-system
         /// </summary>
-        public class State{
-            public Vector3 pos;
-            public double angle;
+        private class State{
+            internal Vector3 pos;
+            internal double angle;
 
-            public State(Vector3 pos, double angle)
+            internal State(Vector3 pos, double angle)
             {
                 this.pos = pos;
                 this.angle = angle;
             }
-            public State(){
+            internal State(){
                 pos = Vector3.zero;
                 angle = 0;
             }
@@ -40,22 +40,22 @@ namespace Cities.Roads
         // [ -> Start working on the next state in the queue, saving the current one
         // ] -> Mark the current state as finished, and proceed to the next one in the queue
 
-        public IDictionary<char, string> ruleset = new Dictionary<char, string>();
-        StringBuilder tree;
-        private float minX;
-        private float minZ;
-        private float maxX;
-        private float maxZ;
-        public RoadNetwork network = new RoadNetwork();
-        State state;
-        Queue<State> states = new Queue<State>();
-        private float toRad = Mathf.Deg2Rad;
-        private float pi = Mathf.PI;
+        private readonly IDictionary<char, string> ruleset = new Dictionary<char, string>();
+        private StringBuilder tree;
+        private readonly float minX;
+        private readonly float minZ;
+        private readonly float maxX;
+        private readonly float maxZ;
+        public readonly RoadNetwork network = new RoadNetwork();
+        private State state;
+        private readonly Queue<State> states = new Queue<State>();
+        private const float toRad = Mathf.Deg2Rad;
+        private const float pi = Mathf.PI;
 
         private readonly IInjector<TerrainInfo> _terrainInjector;
         private TerrainInfo TerrainInfo => _terrainInjector.Get();
 
-        public LSystem(char c, Vector2 origin, IInjector<TerrainInfo> terrainInjector)
+        internal LSystem(char c, Vector2 origin, IInjector<TerrainInfo> terrainInjector)
         {
             _terrainInjector = terrainInjector;
             var heightMap = TerrainInfo.HeightMap;
@@ -74,10 +74,11 @@ namespace Cities.Roads
         public override string ToString(){
             return tree.ToString();
         }
+        
         /// <summary>
         /// Rewrites the String within the L-system according to the ruleset, and generates roads.
         /// </summary>
-        public void Rewrite()
+        internal void Rewrite()
         {
             Random rdm = new Random();
             int tries;

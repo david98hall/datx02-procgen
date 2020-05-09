@@ -19,7 +19,7 @@ namespace Cities.Plots
         /// Initializes this strategy by setting the RoadNetwork injector.
         /// </summary>
         /// <param name="roadNetworkInjector">The RoadNetwork injector.</param>
-        public BruteMinimalCycleStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
+        internal BruteMinimalCycleStrategy(IInjector<RoadNetwork> roadNetworkInjector) : base(roadNetworkInjector)
         {
         }
         
