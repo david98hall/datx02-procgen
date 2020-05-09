@@ -366,7 +366,7 @@ PrefabInstance:
     - target: {fileID: 2857107792722119141, guid: 618f259ca8856494ebb0cc9a75e707b7,
         type: 3}
       propertyPath: cityViewModel.plotViewModel.plotStrategy
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 618f259ca8856494ebb0cc9a75e707b7, type: 3}

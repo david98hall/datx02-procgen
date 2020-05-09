@@ -89,15 +89,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
             // Cancel if requested
             if (CancelToken.IsCancellationRequested) return null;
 
-        //LotGenerator lg = new LotGenerator((Plot)plots.Current, 0);
-        //ICollection<Lot> lots = lg.Generate();
-
-        var vertices = p.Vertices;
-
-            //var vertices = new List<Vector3> { new Vector3(1f, 0f, 1f), new Vector3(5f, 0f, 2f), new Vector3(3f, 0f, 1.5f), new Vector3(10f, 0f, 1f), new Vector3(6f, 0f, 3f), new Vector3(8f, 0f, 5f),
-            //    new Vector3(12f, 0f, 7f), new Vector3(10f, 0f, 8f), new Vector3(10f, 0f, 10f), new Vector3(4f, 0f, 3f), new Vector3(1f, 0f, 10f), new Vector3(2f, 0f, 5f), new Vector3(1f, 0f, 1f)};
-
-            //var vertices = new List<Vector3> { new Vector3(1f, 0f, 1f), new Vector3(10f, 0f, 1f), new Vector3(10f, 0f, 10f), new Vector3(1f, 0f, 10f), new Vector3(1f, 0f, 1f) };
+            var vertices = p.Vertices;
 
             // Necessary for non-counter-clockwise plots
             if (!Maths2D.PointsAreCounterClockwise(vertices.ToList()))
@@ -105,24 +97,11 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
 
             Lot lot = new Lot(vertices);
 
-            Profiler.BeginSample("Buildings");
-
-            Test(lot);
-
-            Profiler.EndSample();
+            GetBuildings(new List<Lot> { lot });
         }
 
         return buildings;
     }
-
-    private void Test(Lot lot)
-    {
-        //for (int i = 0; i < 1000; i++)
-        //{
-            GetBuildings(new List<Lot> { lot });
-        //}
-    }
-
 
     /// <summary>
     /// Generate all buildings in a set of lots. Will only generate one building per lot.
@@ -150,7 +129,7 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
                 vertices.RemoveAt(vertices.Count - 1);
 
                 // Make sure we can construct a sensible footprint, otherwise skip this building
-                vertices = CutCorners(vertices, 45f);
+                vertices = CutCorners(vertices, 35f, .5f);
                 if (vertices == null)
                     continue;
 
@@ -180,43 +159,57 @@ public class ExtrusionStrategy : Strategy<(TerrainInfo, IEnumerable<Plot>), IEnu
     /// </summary>
     /// <param name="vertices">The polygon to trim.</param>
     /// <param name="minAngle">The smallest allowed angle.</param>
-    private IList<Vector3> CutCorners(IList<Vector3> vertices, float minAngle)
+    private IList<Vector3> CutCorners(IList<Vector3> vertices, float minAngle, float minArea)
     {
-
-        // priority queue of angles?
-        // TODO: only does a single pass, but removal of a corner may produce new illegal corners - while loop?
-
-        Debug.Log("New Poly: ");
-
-        List<Vector3> verts = new List<Vector3>(vertices.Count);
-
-        int j = vertices.Count - 1;
-        int i = j - 1;
-        for (int k = 0; k < vertices.Count;)
-        {
-
-            var p0 = vertices[i];
-            var p1 = vertices[j];
-            var p2 = vertices[k];
-
-            var v0 = p2 - p1;
-            var v1 = p0 - p1;
-
-            float angle = Vector2.SignedAngle(v0.ToXZ(), v1.ToXZ());
-
-            if ( !(angle > 0f && angle < minAngle) ) 
-            {
-                verts.Add(p1);
-                Debug.Log(verts.Count + ", " + p1);
-            }
-
-            i = j;
-            j = k++;
-        }
-        if (verts.Count < 3)
+        if (vertices.Count < 3)
             return null;
 
-        return verts;
+        int n = vertices.Count;
+        int i = 0;
+        var verts = new LinkedList<Vector3>(vertices);
+        vertices.Clear();
+
+        // Filter out the points that are inside the angle limit until whole list has been traversed
+        var v1 = verts.Last;
+        var v0 = v1.Previous;
+        var v2 = verts.First;
+        while (i < n && verts.Count > 3)
+        {
+            var e0 = v2.Value - v1.Value;
+            var e1 = v0.Value - v1.Value;
+
+            float angle = Vector2.SignedAngle(e0.ToXZ(), e1.ToXZ());
+            float area = Maths2D.CalculatePolygonArea(new List<Vector2> {v0.Value.ToXZ(), v1.Value.ToXZ(), v2.Value.ToXZ()});
+
+            // We add the point if it's within the angle limit, or remove it and step backwards
+            // to check the now-modified angle of the previous point and go from there.
+            if ( (angle <= 0f || angle >= minAngle) && area > minArea)
+            {
+                if (!vertices.Contains(v1.Value))
+                    vertices.Add(v1.Value);
+
+                v0 = v1;
+                v1 = v2;
+                v2 = v2.Next ?? verts.First;
+
+                i++;
+            }
+            else
+            {
+                if (vertices.Contains(v1.Value))
+                    vertices.Remove(v1.Value);
+                verts.Remove(v1);
+
+                v1 = v0;
+                v0 = v0.Previous ?? verts.Last;
+            }
+        }
+
+        // Too many invalid points will lead to invalid plot
+        if (vertices.Count < 3)
+            return null;
+
+        return vertices;
     }
 
     /// <summary>
