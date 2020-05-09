@@ -20,12 +20,12 @@ namespace Cities
         /// <summary>
         /// The network of roads in the city.
         /// </summary>
-        public RoadNetwork RoadNetwork { get; internal set; }
+        public RoadNetwork RoadNetwork { get; set; }
 
         /// <summary>
         /// All plots (places to build) in the city.
         /// </summary>
-        internal IEnumerable<Plot> Plots
+        public IEnumerable<Plot> Plots
         {
             get => _plots.Select(p => (Plot) p.Clone());
             set => _plots = value;

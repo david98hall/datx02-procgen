@@ -1,6 +1,4 @@
 using System;
-using Interfaces;
-using Terrain;
 using UnityEngine;
 
 namespace Utils

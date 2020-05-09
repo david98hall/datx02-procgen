@@ -22,7 +22,7 @@ namespace Textures
         /// constructs the factory with a new noise map injector
         /// </summary>
         /// <param name="noiseMapInjector"></param>
-        internal Factory(IInjector<float[,]> noiseMapInjector)
+        public Factory(IInjector<float[,]> noiseMapInjector)
         {
             _noiseMapInjector = noiseMapInjector;
         }

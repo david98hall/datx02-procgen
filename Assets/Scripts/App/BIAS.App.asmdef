@@ -1,0 +1,16 @@
+{
+    "name": "BIAS.App",
+    "references": [
+        "GUID:94edb18ee54627045999fe48c0a66fa1",
+        "GUID:73b1c6c88f16f1844a6a02caccd1d4ed"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

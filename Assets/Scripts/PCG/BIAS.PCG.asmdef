@@ -1,0 +1,15 @@
+{
+    "name": "BIAS.PCG",
+    "references": [
+        "GUID:73b1c6c88f16f1844a6a02caccd1d4ed"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

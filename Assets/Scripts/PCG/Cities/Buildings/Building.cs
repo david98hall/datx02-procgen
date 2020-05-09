@@ -12,11 +12,11 @@ namespace Cities.Buildings
 
         private float height;
 
-        internal Vector3 position;
+        private Vector3 position;
 
-        internal Vector2 facing;
+        private Vector2 facing;
 
-        internal  Mesh mesh;
+        public readonly Mesh mesh;
 
         /// <summary>
         /// All of the vertices, triangles and uvs that make up the building. Each side is its own polygon, 
