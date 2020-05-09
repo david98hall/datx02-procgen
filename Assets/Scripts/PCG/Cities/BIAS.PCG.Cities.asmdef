@@ -1,6 +1,7 @@
 {
-    "name": "BIAS.PCG",
+    "name": "BIAS.PCG.Cities",
     "references": [
+        "GUID:9b87899da6216614aa17e93f71d794da",
         "GUID:73b1c6c88f16f1844a6a02caccd1d4ed"
     ],
     "includePlatforms": [],

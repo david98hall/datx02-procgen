@@ -1,11 +1,7 @@
 {
-    "name": "BIAS.App",
+    "name": "BIAS.PCG.Noise",
     "references": [
-        "GUID:73b1c6c88f16f1844a6a02caccd1d4ed",
-        "GUID:6cdef8b593286ac4dbfbb504d02b980b",
-        "GUID:9b87899da6216614aa17e93f71d794da",
-        "GUID:ca39b17183288ae44866f0b74359c929",
-        "GUID:841b554dee5093b4aaeba6ddfb958e53"
+        "GUID:73b1c6c88f16f1844a6a02caccd1d4ed"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
