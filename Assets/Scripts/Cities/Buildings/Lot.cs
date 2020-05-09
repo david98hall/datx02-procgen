@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Utils.Geometry;
 
 namespace Cities.Buildings
 {
@@ -17,25 +18,24 @@ namespace Cities.Buildings
         /// <summary>
         /// The polygonal shape of the lot.
         /// </summary>
-        internal IEnumerable<Vector3> Vertices { get; }
+        internal IList<Vector3> Vertices { get; }
 
-        internal Lot(IEnumerable<Vector3> vertices)
+        internal Lot(IList<Vector3> vertices)
         {
             Vertices = vertices;
 
-            List<Vector3> v = vertices.ToList();
-            float area = 0;
-            for (int i = 1; i < v.Count; i++)
+            this.area = Maths2D.CalculatePolygonArea((IEnumerable<Vector2>) ToXZ(vertices));
+        }
+
+        private List<Vector2> ToXZ(IEnumerable<Vector3> vecs)
+        {
+            List<Vector2> vecsXZ = new List<Vector2>();
+
+            foreach (Vector3 v in vecs)
             {
-                float a = v[i - 1].x * v[i].z;
-                float b = v[i - 1].z * v[i].x;
-
-                area += (a - b);
+                vecsXZ.Add(new Vector2(v.x, v.z));
             }
-            this.area = Mathf.Abs(area / 2);
-
-            //this.center = center;
-            //this.facing = facing;
+            return vecsXZ;
         }
     }
 }
