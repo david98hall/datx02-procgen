@@ -1867,6 +1867,245 @@ references:
   commentId: N:Cities.Buildings
   fullName: Cities.Buildings
   nameWithType: Cities.Buildings
+- uid: Cities.Buildings.Building
+  name: Building
+  href: api/Cities.Buildings.Building.html
+  commentId: T:Cities.Buildings.Building
+  fullName: Cities.Buildings.Building
+  nameWithType: Building
+- uid: Cities.Buildings.Building.#ctor(UnityEngine.Vector3,UnityEngine.Vector2,UnityEngine.Mesh)
+  name: Building(Vector3, Vector2, Mesh)
+  href: api/Cities.Buildings.Building.html#Cities_Buildings_Building__ctor_UnityEngine_Vector3_UnityEngine_Vector2_UnityEngine_Mesh_
+  commentId: M:Cities.Buildings.Building.#ctor(UnityEngine.Vector3,UnityEngine.Vector2,UnityEngine.Mesh)
+  fullName: Cities.Buildings.Building.Building(UnityEngine.Vector3, UnityEngine.Vector2, UnityEngine.Mesh)
+  nameWithType: Building.Building(Vector3, Vector2, Mesh)
+- uid: Cities.Buildings.Building.#ctor*
+  name: Building
+  href: api/Cities.Buildings.Building.html#Cities_Buildings_Building__ctor_
+  commentId: Overload:Cities.Buildings.Building.#ctor
+  isSpec: "True"
+  fullName: Cities.Buildings.Building.Building
+  nameWithType: Building.Building
+- uid: Cities.Buildings.Building.facing
+  name: facing
+  href: api/Cities.Buildings.Building.html#Cities_Buildings_Building_facing
+  commentId: F:Cities.Buildings.Building.facing
+  fullName: Cities.Buildings.Building.facing
+  nameWithType: Building.facing
+- uid: Cities.Buildings.Building.height
+  name: height
+  href: api/Cities.Buildings.Building.html#Cities_Buildings_Building_height
+  commentId: F:Cities.Buildings.Building.height
+  fullName: Cities.Buildings.Building.height
+  nameWithType: Building.height
+- uid: Cities.Buildings.Building.mesh
+  name: mesh
+  href: api/Cities.Buildings.Building.html#Cities_Buildings_Building_mesh
+  commentId: F:Cities.Buildings.Building.mesh
+  fullName: Cities.Buildings.Building.mesh
+  nameWithType: Building.mesh
+- uid: Cities.Buildings.Building.position
+  name: position
+  href: api/Cities.Buildings.Building.html#Cities_Buildings_Building_position
+  commentId: F:Cities.Buildings.Building.position
+  fullName: Cities.Buildings.Building.position
+  nameWithType: Building.position
+- uid: Cities.Buildings.Building.width
+  name: width
+  href: api/Cities.Buildings.Building.html#Cities_Buildings_Building_width
+  commentId: F:Cities.Buildings.Building.width
+  fullName: Cities.Buildings.Building.width
+  nameWithType: Building.width
+- uid: Cities.Buildings.ExtrusionStrategy
+  name: ExtrusionStrategy
+  href: api/Cities.Buildings.ExtrusionStrategy.html
+  commentId: T:Cities.Buildings.ExtrusionStrategy
+  fullName: Cities.Buildings.ExtrusionStrategy
+  nameWithType: ExtrusionStrategy
+- uid: Cities.Buildings.ExtrusionStrategy.#ctor(Interfaces.IInjector{System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}},System.Single,System.Single)
+  name: ExtrusionStrategy(IInjector<(TerrainInfo TerrainInfo, IEnumerable<Plot> Plots)>, Single, Single)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy__ctor_Interfaces_IInjector_System_ValueTuple_Terrain_TerrainInfo_System_Collections_Generic_IEnumerable_Cities_Plots_Plot____System_Single_System_Single_
+  commentId: M:Cities.Buildings.ExtrusionStrategy.#ctor(Interfaces.IInjector{System.ValueTuple{Terrain.TerrainInfo,System.Collections.Generic.IEnumerable{Cities.Plots.Plot}}},System.Single,System.Single)
+  name.vb: ExtrusionStrategy(IInjector(Of (TerrainInfo As TerrainInfo, Plots As IEnumerable(Of Plot))), Single, Single)
+  fullName: Cities.Buildings.ExtrusionStrategy.ExtrusionStrategy(Interfaces.IInjector<System.ValueTuple<Terrain.TerrainInfo, System.Collections.Generic.IEnumerable<Cities.Plots.Plot>>>, System.Single, System.Single)
+  fullName.vb: Cities.Buildings.ExtrusionStrategy.ExtrusionStrategy(Interfaces.IInjector(Of System.ValueTuple(Of Terrain.TerrainInfo, System.Collections.Generic.IEnumerable(Of Cities.Plots.Plot))), System.Single, System.Single)
+  nameWithType: ExtrusionStrategy.ExtrusionStrategy(IInjector<(TerrainInfo TerrainInfo, IEnumerable<Plot> Plots)>, Single, Single)
+  nameWithType.vb: ExtrusionStrategy.ExtrusionStrategy(IInjector(Of (TerrainInfo As TerrainInfo, Plots As IEnumerable(Of Plot))), Single, Single)
+- uid: Cities.Buildings.ExtrusionStrategy.#ctor*
+  name: ExtrusionStrategy
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy__ctor_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.#ctor
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.ExtrusionStrategy
+  nameWithType: ExtrusionStrategy.ExtrusionStrategy
+- uid: Cities.Buildings.ExtrusionStrategy.buildings
+  name: buildings
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_buildings
+  commentId: F:Cities.Buildings.ExtrusionStrategy.buildings
+  fullName: Cities.Buildings.ExtrusionStrategy.buildings
+  nameWithType: ExtrusionStrategy.buildings
+- uid: Cities.Buildings.ExtrusionStrategy.BuildMesh(System.Collections.Generic.ICollection{UnityEngine.Vector3},System.Collections.Generic.ICollection{System.Int32})
+  name: BuildMesh(ICollection<Vector3>, ICollection<Int32>)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_BuildMesh_System_Collections_Generic_ICollection_UnityEngine_Vector3__System_Collections_Generic_ICollection_System_Int32__
+  commentId: M:Cities.Buildings.ExtrusionStrategy.BuildMesh(System.Collections.Generic.ICollection{UnityEngine.Vector3},System.Collections.Generic.ICollection{System.Int32})
+  name.vb: BuildMesh(ICollection(Of Vector3), ICollection(Of Int32))
+  fullName: Cities.Buildings.ExtrusionStrategy.BuildMesh(System.Collections.Generic.ICollection<UnityEngine.Vector3>, System.Collections.Generic.ICollection<System.Int32>)
+  fullName.vb: Cities.Buildings.ExtrusionStrategy.BuildMesh(System.Collections.Generic.ICollection(Of UnityEngine.Vector3), System.Collections.Generic.ICollection(Of System.Int32))
+  nameWithType: ExtrusionStrategy.BuildMesh(ICollection<Vector3>, ICollection<Int32>)
+  nameWithType.vb: ExtrusionStrategy.BuildMesh(ICollection(Of Vector3), ICollection(Of Int32))
+- uid: Cities.Buildings.ExtrusionStrategy.BuildMesh*
+  name: BuildMesh
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_BuildMesh_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.BuildMesh
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.BuildMesh
+  nameWithType: ExtrusionStrategy.BuildMesh
+- uid: Cities.Buildings.ExtrusionStrategy.ConstructSideFaces(System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{System.Int32})
+  name: ConstructSideFaces(IList<Vector3>, IList<Int32>)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_ConstructSideFaces_System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_System_Int32__
+  commentId: M:Cities.Buildings.ExtrusionStrategy.ConstructSideFaces(System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{System.Int32})
+  name.vb: ConstructSideFaces(IList(Of Vector3), IList(Of Int32))
+  fullName: Cities.Buildings.ExtrusionStrategy.ConstructSideFaces(System.Collections.Generic.IList<UnityEngine.Vector3>, System.Collections.Generic.IList<System.Int32>)
+  fullName.vb: Cities.Buildings.ExtrusionStrategy.ConstructSideFaces(System.Collections.Generic.IList(Of UnityEngine.Vector3), System.Collections.Generic.IList(Of System.Int32))
+  nameWithType: ExtrusionStrategy.ConstructSideFaces(IList<Vector3>, IList<Int32>)
+  nameWithType.vb: ExtrusionStrategy.ConstructSideFaces(IList(Of Vector3), IList(Of Int32))
+- uid: Cities.Buildings.ExtrusionStrategy.ConstructSideFaces*
+  name: ConstructSideFaces
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_ConstructSideFaces_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.ConstructSideFaces
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.ConstructSideFaces
+  nameWithType: ExtrusionStrategy.ConstructSideFaces
+- uid: Cities.Buildings.ExtrusionStrategy.ExtrudePolygon(System.Collections.Generic.IList{UnityEngine.Vector3},System.Single)
+  name: ExtrudePolygon(IList<Vector3>, Single)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_ExtrudePolygon_System_Collections_Generic_IList_UnityEngine_Vector3__System_Single_
+  commentId: M:Cities.Buildings.ExtrusionStrategy.ExtrudePolygon(System.Collections.Generic.IList{UnityEngine.Vector3},System.Single)
+  name.vb: ExtrudePolygon(IList(Of Vector3), Single)
+  fullName: Cities.Buildings.ExtrusionStrategy.ExtrudePolygon(System.Collections.Generic.IList<UnityEngine.Vector3>, System.Single)
+  fullName.vb: Cities.Buildings.ExtrusionStrategy.ExtrudePolygon(System.Collections.Generic.IList(Of UnityEngine.Vector3), System.Single)
+  nameWithType: ExtrusionStrategy.ExtrudePolygon(IList<Vector3>, Single)
+  nameWithType.vb: ExtrusionStrategy.ExtrudePolygon(IList(Of Vector3), Single)
+- uid: Cities.Buildings.ExtrusionStrategy.ExtrudePolygon*
+  name: ExtrudePolygon
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_ExtrudePolygon_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.ExtrudePolygon
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.ExtrudePolygon
+  nameWithType: ExtrusionStrategy.ExtrudePolygon
+- uid: Cities.Buildings.ExtrusionStrategy.Generate
+  name: Generate()
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_Generate
+  commentId: M:Cities.Buildings.ExtrusionStrategy.Generate
+  fullName: Cities.Buildings.ExtrusionStrategy.Generate()
+  nameWithType: ExtrusionStrategy.Generate()
+- uid: Cities.Buildings.ExtrusionStrategy.Generate*
+  name: Generate
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_Generate_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.Generate
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.Generate
+  nameWithType: ExtrusionStrategy.Generate
+- uid: Cities.Buildings.ExtrusionStrategy.GetBuildings(System.Collections.Generic.ICollection{Cities.Buildings.Lot})
+  name: GetBuildings(ICollection<Lot>)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_GetBuildings_System_Collections_Generic_ICollection_Cities_Buildings_Lot__
+  commentId: M:Cities.Buildings.ExtrusionStrategy.GetBuildings(System.Collections.Generic.ICollection{Cities.Buildings.Lot})
+  name.vb: GetBuildings(ICollection(Of Lot))
+  fullName: Cities.Buildings.ExtrusionStrategy.GetBuildings(System.Collections.Generic.ICollection<Cities.Buildings.Lot>)
+  fullName.vb: Cities.Buildings.ExtrusionStrategy.GetBuildings(System.Collections.Generic.ICollection(Of Cities.Buildings.Lot))
+  nameWithType: ExtrusionStrategy.GetBuildings(ICollection<Lot>)
+  nameWithType.vb: ExtrusionStrategy.GetBuildings(ICollection(Of Lot))
+- uid: Cities.Buildings.ExtrusionStrategy.GetBuildings*
+  name: GetBuildings
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_GetBuildings_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.GetBuildings
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.GetBuildings
+  nameWithType: ExtrusionStrategy.GetBuildings
+- uid: Cities.Buildings.ExtrusionStrategy.heatMap
+  name: heatMap
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_heatMap
+  commentId: F:Cities.Buildings.ExtrusionStrategy.heatMap
+  fullName: Cities.Buildings.ExtrusionStrategy.heatMap
+  nameWithType: ExtrusionStrategy.heatMap
+- uid: Cities.Buildings.ExtrusionStrategy.maxArea
+  name: maxArea
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_maxArea
+  commentId: F:Cities.Buildings.ExtrusionStrategy.maxArea
+  fullName: Cities.Buildings.ExtrusionStrategy.maxArea
+  nameWithType: ExtrusionStrategy.maxArea
+- uid: Cities.Buildings.ExtrusionStrategy.minArea
+  name: minArea
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_minArea
+  commentId: F:Cities.Buildings.ExtrusionStrategy.minArea
+  fullName: Cities.Buildings.ExtrusionStrategy.minArea
+  nameWithType: ExtrusionStrategy.minArea
+- uid: Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds(System.Collections.Generic.IList{UnityEngine.Vector3})
+  name: MinimumHeightInBounds(IList<Vector3>)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_MinimumHeightInBounds_System_Collections_Generic_IList_UnityEngine_Vector3__
+  commentId: M:Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds(System.Collections.Generic.IList{UnityEngine.Vector3})
+  name.vb: MinimumHeightInBounds(IList(Of Vector3))
+  fullName: Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds(System.Collections.Generic.IList<UnityEngine.Vector3>)
+  fullName.vb: Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds(System.Collections.Generic.IList(Of UnityEngine.Vector3))
+  nameWithType: ExtrusionStrategy.MinimumHeightInBounds(IList<Vector3>)
+  nameWithType.vb: ExtrusionStrategy.MinimumHeightInBounds(IList(Of Vector3))
+- uid: Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds*
+  name: MinimumHeightInBounds
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_MinimumHeightInBounds_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.MinimumHeightInBounds
+  nameWithType: ExtrusionStrategy.MinimumHeightInBounds
+- uid: Cities.Buildings.ExtrusionStrategy.plots
+  name: plots
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_plots
+  commentId: F:Cities.Buildings.ExtrusionStrategy.plots
+  fullName: Cities.Buildings.ExtrusionStrategy.plots
+  nameWithType: ExtrusionStrategy.plots
+- uid: Cities.Buildings.ExtrusionStrategy.SetBaseHeight(System.Collections.Generic.IList{UnityEngine.Vector3})
+  name: SetBaseHeight(IList<Vector3>)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_SetBaseHeight_System_Collections_Generic_IList_UnityEngine_Vector3__
+  commentId: M:Cities.Buildings.ExtrusionStrategy.SetBaseHeight(System.Collections.Generic.IList{UnityEngine.Vector3})
+  name.vb: SetBaseHeight(IList(Of Vector3))
+  fullName: Cities.Buildings.ExtrusionStrategy.SetBaseHeight(System.Collections.Generic.IList<UnityEngine.Vector3>)
+  fullName.vb: Cities.Buildings.ExtrusionStrategy.SetBaseHeight(System.Collections.Generic.IList(Of UnityEngine.Vector3))
+  nameWithType: ExtrusionStrategy.SetBaseHeight(IList<Vector3>)
+  nameWithType.vb: ExtrusionStrategy.SetBaseHeight(IList(Of Vector3))
+- uid: Cities.Buildings.ExtrusionStrategy.SetBaseHeight*
+  name: SetBaseHeight
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_SetBaseHeight_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.SetBaseHeight
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.SetBaseHeight
+  nameWithType: ExtrusionStrategy.SetBaseHeight
+- uid: Cities.Buildings.ExtrusionStrategy.ToXZ(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name: ToXZ(IEnumerable<Vector3>)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_ToXZ_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Cities.Buildings.ExtrusionStrategy.ToXZ(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name.vb: ToXZ(IEnumerable(Of Vector3))
+  fullName: Cities.Buildings.ExtrusionStrategy.ToXZ(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Cities.Buildings.ExtrusionStrategy.ToXZ(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  nameWithType: ExtrusionStrategy.ToXZ(IEnumerable<Vector3>)
+  nameWithType.vb: ExtrusionStrategy.ToXZ(IEnumerable(Of Vector3))
+- uid: Cities.Buildings.ExtrusionStrategy.ToXZ*
+  name: ToXZ
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_ToXZ_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.ToXZ
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.ToXZ
+  nameWithType: ExtrusionStrategy.ToXZ
+- uid: Cities.Buildings.ExtrusionStrategy.ValidLot(Cities.Buildings.Lot)
+  name: ValidLot(Lot)
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_ValidLot_Cities_Buildings_Lot_
+  commentId: M:Cities.Buildings.ExtrusionStrategy.ValidLot(Cities.Buildings.Lot)
+  fullName: Cities.Buildings.ExtrusionStrategy.ValidLot(Cities.Buildings.Lot)
+  nameWithType: ExtrusionStrategy.ValidLot(Lot)
+- uid: Cities.Buildings.ExtrusionStrategy.ValidLot*
+  name: ValidLot
+  href: api/Cities.Buildings.ExtrusionStrategy.html#Cities_Buildings_ExtrusionStrategy_ValidLot_
+  commentId: Overload:Cities.Buildings.ExtrusionStrategy.ValidLot
+  isSpec: "True"
+  fullName: Cities.Buildings.ExtrusionStrategy.ValidLot
+  nameWithType: ExtrusionStrategy.ValidLot
 - uid: Cities.Buildings.Factory
   name: Factory
   href: api/Cities.Buildings.Factory.html
@@ -1917,6 +2156,53 @@ references:
   isSpec: "True"
   fullName: Cities.Buildings.Factory.CreateExtrusionStrategy
   nameWithType: Factory.CreateExtrusionStrategy
+- uid: Cities.Buildings.Lot
+  name: Lot
+  href: api/Cities.Buildings.Lot.html
+  commentId: T:Cities.Buildings.Lot
+  fullName: Cities.Buildings.Lot
+  nameWithType: Lot
+- uid: Cities.Buildings.Lot.#ctor(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name: Lot(IEnumerable<Vector3>)
+  href: api/Cities.Buildings.Lot.html#Cities_Buildings_Lot__ctor_System_Collections_Generic_IEnumerable_UnityEngine_Vector3__
+  commentId: M:Cities.Buildings.Lot.#ctor(System.Collections.Generic.IEnumerable{UnityEngine.Vector3})
+  name.vb: Lot(IEnumerable(Of Vector3))
+  fullName: Cities.Buildings.Lot.Lot(System.Collections.Generic.IEnumerable<UnityEngine.Vector3>)
+  fullName.vb: Cities.Buildings.Lot.Lot(System.Collections.Generic.IEnumerable(Of UnityEngine.Vector3))
+  nameWithType: Lot.Lot(IEnumerable<Vector3>)
+  nameWithType.vb: Lot.Lot(IEnumerable(Of Vector3))
+- uid: Cities.Buildings.Lot.#ctor*
+  name: Lot
+  href: api/Cities.Buildings.Lot.html#Cities_Buildings_Lot__ctor_
+  commentId: Overload:Cities.Buildings.Lot.#ctor
+  isSpec: "True"
+  fullName: Cities.Buildings.Lot.Lot
+  nameWithType: Lot.Lot
+- uid: Cities.Buildings.Lot.area
+  name: area
+  href: api/Cities.Buildings.Lot.html#Cities_Buildings_Lot_area
+  commentId: F:Cities.Buildings.Lot.area
+  fullName: Cities.Buildings.Lot.area
+  nameWithType: Lot.area
+- uid: Cities.Buildings.Lot.facing
+  name: facing
+  href: api/Cities.Buildings.Lot.html#Cities_Buildings_Lot_facing
+  commentId: F:Cities.Buildings.Lot.facing
+  fullName: Cities.Buildings.Lot.facing
+  nameWithType: Lot.facing
+- uid: Cities.Buildings.Lot.Vertices
+  name: Vertices
+  href: api/Cities.Buildings.Lot.html#Cities_Buildings_Lot_Vertices
+  commentId: P:Cities.Buildings.Lot.Vertices
+  fullName: Cities.Buildings.Lot.Vertices
+  nameWithType: Lot.Vertices
+- uid: Cities.Buildings.Lot.Vertices*
+  name: Vertices
+  href: api/Cities.Buildings.Lot.html#Cities_Buildings_Lot_Vertices_
+  commentId: Overload:Cities.Buildings.Lot.Vertices
+  isSpec: "True"
+  fullName: Cities.Buildings.Lot.Vertices
+  nameWithType: Lot.Vertices
 - uid: Cities.City
   name: City
   href: api/Cities.City.html
