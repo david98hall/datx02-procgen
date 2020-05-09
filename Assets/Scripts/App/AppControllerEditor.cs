@@ -3,7 +3,6 @@ using System.Threading;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using Utils.Parallelism;
 
 namespace App
 {

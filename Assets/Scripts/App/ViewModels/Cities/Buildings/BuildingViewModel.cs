@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using Cities.Buildings;
 using Cities.Plots;
 using Interfaces;
 using Services;
